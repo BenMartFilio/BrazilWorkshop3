@@ -45,6 +45,8 @@ namespace Barrage.UI
 
         private void Start()
         {
+            // S'assurer que l'inventaire est initialisé avant le spawn
+            inventaire.InitialiserInventaire();
             SpawnFormulaires();
         }
 
@@ -112,36 +114,39 @@ namespace Barrage.UI
                 return;
             }
 
-            // Instancier le prefab (Canvas Environment + image enfant)
-            GameObject instance = Instantiate(data.prefab);
+            // Lire la texture depuis le prefab sans l'instancier dans la scène
+            RawImage sourceImage = data.prefab.GetComponentInChildren<RawImage>(true);
+            Texture2D texture = sourceImage != null ? sourceImage.texture as Texture2D : null;
 
-            // Chercher récursivement le premier RawImage dans la hiérarchie
-            RawImage rawImage = instance.GetComponentInChildren<RawImage>(true);
-            if (rawImage == null)
+            if (texture == null)
             {
-                Debug.LogError($"[FormulaireUIManager] Aucun RawImage trouvé dans le prefab '{data.prefab.name}'.");
-                Destroy(instance);
+                Debug.LogError($"[FormulaireUIManager] Aucune texture trouvée dans le prefab '{data.prefab.name}'.");
                 return;
             }
 
-            Transform imageTransform = rawImage.transform;
-            imageTransform.SetParent(poche.transform, false);
+            // Créer un GameObject UI propre, enfant direct de la poche
+            var go = new GameObject(data.prefab.name, typeof(RectTransform), typeof(CanvasRenderer), typeof(RawImage));
+            go.transform.SetParent(poche.transform, false);
 
-            // Réinitialiser les ancres pour un centrage correct dans la poche
-            var rt = imageTransform.GetComponent<RectTransform>();
-            rt.anchorMin = new Vector2(0.5f, 0.5f);
-            rt.anchorMax = new Vector2(0.5f, 0.5f);
-            rt.pivot = new Vector2(0.5f, 0.5f);
+            // Etirer pour remplir la poche
+            var rt = go.GetComponent<RectTransform>();
+            rt.anchorMin = Vector2.zero;
+            rt.anchorMax = Vector2.one;
+            rt.pivot     = new Vector2(0.5f, 0.5f);
+
+            // Assigner la texture
+            var img = go.GetComponent<RawImage>();
+            img.texture       = texture;
+            img.raycastTarget = true;
 
             // Ajouter le comportement drag-and-drop
-            var formulaireUI = imageTransform.gameObject.AddComponent<FormulaireUI>();
+            var formulaireUI = go.AddComponent<FormulaireUI>();
             formulaireUI.Initialiser(type, this);
 
             int index = poche.AjouterFormulaire(formulaireUI);
-            rt.anchoredPosition = poche.ObtenirPositionPourIndex(index);
-
-            // Détruire le wrapper Canvas vide (l'image a été re-parentée, il est maintenant vide)
-            Destroy(instance);
+            var (oMin, oMax) = poche.ObtenirOffsetsPourIndex(index);
+            rt.offsetMin = oMin;
+            rt.offsetMax = oMax;
         }
 
         // ── Logique de jeu ─────────────────────────────────────────────────────

@@ -6,11 +6,14 @@ namespace Barrage.UI
     /// <summary>
     /// Gère une pile de formulaires dans une poche de la PartieBasse.
     /// Seul le formulaire au sommet de la pile peut être attrapé.
+    /// Les cartes s'étirent pour remplir la poche ; les cartes inférieures ont un padding
+    /// plus grand pour donner un effet visuel de profondeur.
     /// </summary>
     [RequireComponent(typeof(RectTransform))]
     public class PocheUI : MonoBehaviour
     {
-        private const float OFFSET_PILE = 8f;
+        private const float PADDING_BASE = 8f;
+        private const float OFFSET_PILE  = 6f;
 
         public RectTransform RectTransform { get; private set; }
 
@@ -38,7 +41,7 @@ namespace Barrage.UI
             return _pile.Count - 1;
         }
 
-        /// <summary>Retire un formulaire de la pile et reposition les cartes restantes.</summary>
+        /// <summary>Retire un formulaire de la pile et repositionne les cartes restantes.</summary>
         public void RetirerFormulaire(FormulaireUI formulaire)
         {
             if (!_pile.Remove(formulaire)) return;
@@ -47,11 +50,19 @@ namespace Barrage.UI
             RafraichirDisposition();
         }
 
-        /// <summary>Retourne la position anchorée cible pour un formulaire à l'index donné.</summary>
-        public Vector2 ObtenirPositionPourIndex(int index)
+        /// <summary>
+        /// Retourne les offsets RectTransform pour un index donné.
+        /// Le sommet a le padding minimal ; les cartes dessous ont un padding croissant.
+        /// </summary>
+        public (Vector2 offsetMin, Vector2 offsetMax) ObtenirOffsetsPourIndex(int index)
         {
-            return new Vector2(0f, index * OFFSET_PILE);
+            int depthFromTop = (_pile.Count - 1) - index;
+            float p = PADDING_BASE + depthFromTop * OFFSET_PILE;
+            return (new Vector2(p, p), new Vector2(-p, -p));
         }
+
+        /// <summary>Conservé pour la compatibilité avec l'animation de chute (les cartes stretch n'ont pas d'anchoredPosition).</summary>
+        public Vector2 ObtenirPositionPourIndex(int index) => Vector2.zero;
 
         /// <summary>Repositionne tous les formulaires de la pile selon leur index.</summary>
         public void RafraichirDisposition()
@@ -59,8 +70,12 @@ namespace Barrage.UI
             for (int i = 0; i < _pile.Count; i++)
             {
                 if (_pile[i] == null) continue;
-                _pile[i].GetComponent<RectTransform>().anchoredPosition = ObtenirPositionPourIndex(i);
+                var rt = _pile[i].GetComponent<RectTransform>();
+                var (oMin, oMax) = ObtenirOffsetsPourIndex(i);
+                rt.offsetMin = oMin;
+                rt.offsetMax = oMax;
             }
         }
     }
 }
+

@@ -21,11 +21,17 @@ namespace Barrage.UI
             RectTransform = GetComponent<RectTransform>();
         }
 
-        /// <summary>Reçoit un formulaire déposé par le joueur, le détruit et notifie les abonnés.</summary>
+        /// <summary>Reçoit un formulaire du système poche (FormulaireUI).</summary>
         public void RecevoirFormulaire(FormulaireUI formulaire)
+            => RecevoirInterne(formulaire.Type, formulaire.gameObject);
+
+        /// <summary>Reçoit un formulaire du système libre (FormulaireLibre).</summary>
+        public void RecevoirFormulaire(FormulaireLibre formulaire)
+            => RecevoirInterne(formulaire.Type, formulaire.gameObject);
+
+        private void RecevoirInterne(FormulaireType type, GameObject go)
         {
-            FormulaireType type = formulaire.Type;
-            Destroy(formulaire.gameObject);
+            Destroy(go);
             OnFormulaireRemis?.Invoke(type);
             Debug.Log($"[MainDuGarde] Formulaire remis : {type}");
         }

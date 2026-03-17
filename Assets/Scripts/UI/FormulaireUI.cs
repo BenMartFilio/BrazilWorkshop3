@@ -8,8 +8,10 @@ namespace Barrage.UI
 {
     /// <summary>
     /// Comportement drag-and-drop d'une carte formulaire dans l'UI.
+    /// Au repos, les cartes s'étirent pour remplir leur poche (ancres 0→1).
+    /// Pendant le drag elles passent dans la CoucheGlissement avec une taille fixe,
+    /// puis animent leur retour en stretch à la fin du drag.
     /// Seul le formulaire au sommet de sa poche peut être attrapé.
-    /// Si relâché hors d'une zone valide, la carte retombe dans la poche la plus proche.
     /// </summary>
     [RequireComponent(typeof(RectTransform))]
     public class FormulaireUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
@@ -40,27 +42,32 @@ namespace Barrage.UI
 
         public void OnBeginDrag(PointerEventData eventData)
         {
-            // Bloquer le drag pendant une animation de chute
             if (_coroutineChute != null) return;
-            // Seul le sommet de la pile est attrapable
             if (_pocheActuelle != null && !_pocheActuelle.EstAuSommet(this)) return;
 
             _dragActif = true;
             _pocheActuelle?.RetirerFormulaire(this);
 
-            // Désactiver le raycast pour ne pas bloquer la détection des zones sous la carte
             if (_rawImage != null) _rawImage.raycastTarget = false;
 
-            // Déplacer vers la couche de glissement (rendu au-dessus de tout)
-            transform.SetParent(_uiManager.CoucheGlissement, true);
+            // Mémoriser taille et position monde avant le re-parentage
+            float largeur = _rectTransform.rect.width  * _rectTransform.lossyScale.x;
+            float hauteur = _rectTransform.rect.height * _rectTransform.lossyScale.y;
+            Vector3 centre = _rectTransform.position;
+
+            // Passer en mode taille fixe dans la CoucheGlissement
+            transform.SetParent(_uiManager.CoucheGlissement, false);
             transform.SetAsLastSibling();
 
-            // Calculer l'offset entre le curseur et le centre de la carte
+            _rectTransform.anchorMin = new Vector2(0.5f, 0.5f);
+            _rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+            _rectTransform.pivot     = new Vector2(0.5f, 0.5f);
+            _rectTransform.sizeDelta = new Vector2(largeur, hauteur);
+            _rectTransform.position  = centre;
+
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                _uiManager.CoucheGlissement,
-                eventData.position,
-                eventData.pressEventCamera,
-                out Vector2 localPos);
+                _uiManager.CoucheGlissement, eventData.position,
+                eventData.pressEventCamera, out Vector2 localPos);
             _offsetGlissement = _rectTransform.anchoredPosition - localPos;
         }
 
@@ -69,10 +76,8 @@ namespace Barrage.UI
             if (!_dragActif) return;
 
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                _uiManager.CoucheGlissement,
-                eventData.position,
-                eventData.pressEventCamera,
-                out Vector2 localPos);
+                _uiManager.CoucheGlissement, eventData.position,
+                eventData.pressEventCamera, out Vector2 localPos);
 
             _rectTransform.anchoredPosition = localPos + _offsetGlissement;
         }
@@ -85,16 +90,14 @@ namespace Barrage.UI
             if (_rawImage != null) _rawImage.raycastTarget = true;
 
             Vector2 screenPos = eventData.position;
-            Camera cam = eventData.pressEventCamera;
+            Camera cam        = eventData.pressEventCamera;
 
-            // Priorité : main du garde
             if (_uiManager.EstSurMainDuGarde(screenPos, cam))
             {
                 _uiManager.EnvoyerAMainDuGarde(this);
                 return;
             }
 
-            // Sinon : poche sous le pointeur, ou la plus proche
             PocheUI cible = _uiManager.TrouverPocheSousPointeur(screenPos, cam)
                           ?? _uiManager.TrouverPocheProche(_rectTransform.position);
 
@@ -103,25 +106,53 @@ namespace Barrage.UI
 
         private IEnumerator TomberVersPoche(PocheUI poche)
         {
-            int index = poche.AjouterFormulaire(this);
+            // Taille et position monde actuelles (carte en mode fixe dans CoucheGlissement)
+            Vector3 positionMonde = _rectTransform.position;
+            float largeurMonde    = _rectTransform.rect.width  * _rectTransform.lossyScale.x;
+            float hauteurMonde    = _rectTransform.rect.height * _rectTransform.lossyScale.y;
 
-            // Re-parentage en conservant la position monde
-            transform.SetParent(poche.transform, true);
+            // Enregistrer dans la poche et basculer en mode stretch
+            int index = poche.AjouterFormulaire(this);
+            transform.SetParent(poche.transform, false);
             transform.SetAsLastSibling();
 
-            Vector2 posDepart = _rectTransform.anchoredPosition;
-            Vector2 posCible = poche.ObtenirPositionPourIndex(index);
+            _rectTransform.anchorMin = Vector2.zero;
+            _rectTransform.anchorMax = Vector2.one;
+            _rectTransform.pivot     = new Vector2(0.5f, 0.5f);
+
+            // Offsets cibles
+            var (oMinCible, oMaxCible) = poche.ObtenirOffsetsPourIndex(index);
+
+            // Calculer les offsets de départ depuis la position monde courante
+            var pocheRT = poche.RectTransform;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                pocheRT,
+                RectTransformUtility.WorldToScreenPoint(null, positionMonde),
+                null, out Vector2 localCenter);
+
+            float dL = largeurMonde  * 0.5f;
+            float dH = hauteurMonde  * 0.5f;
+            float pw = pocheRT.rect.width;
+            float ph = pocheRT.rect.height;
+
+            Vector2 oMinDepart = new Vector2(localCenter.x - dL,      localCenter.y - dH);
+            Vector2 oMaxDepart = new Vector2(localCenter.x + dL - pw, localCenter.y + dH - ph);
+
+            _rectTransform.offsetMin = oMinDepart;
+            _rectTransform.offsetMax = oMaxDepart;
 
             float elapsed = 0f;
             while (elapsed < DUREE_CHUTE)
             {
                 elapsed += Time.deltaTime;
                 float t = Mathf.SmoothStep(0f, 1f, elapsed / DUREE_CHUTE);
-                _rectTransform.anchoredPosition = Vector2.Lerp(posDepart, posCible, t);
+                _rectTransform.offsetMin = Vector2.Lerp(oMinDepart, oMinCible, t);
+                _rectTransform.offsetMax = Vector2.Lerp(oMaxDepart, oMaxCible, t);
                 yield return null;
             }
 
-            _rectTransform.anchoredPosition = posCible;
+            _rectTransform.offsetMin = oMinCible;
+            _rectTransform.offsetMax = oMaxCible;
             _coroutineChute = null;
         }
     }
