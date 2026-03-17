@@ -1,16 +1,12 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayGame : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    private int LevelNext = 1;
 
-    // Update is called once per frame
-    void Update()
+    public void ChangeLevel(int level)
     {
-        
-    }
+       SceneManager.LoadScene(level);
+    } //Mettre fondu en noir, ou effet original pour changer écran chargement
 }
