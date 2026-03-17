@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba1b6ad469211b4e824123fb1d31db1, type: 3}
+  m_Name: FormulaireData_Conformite
+  m_EditorClassIdentifier: Assembly-CSharp::Barrage.Formulaires.FormulaireData
+  type: 3
+  prefab: {fileID: 2953062039822681135, guid: 49c11b26da426134584d2b5293bcfac8, type: 3}

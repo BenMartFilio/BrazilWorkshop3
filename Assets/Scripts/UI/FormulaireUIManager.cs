@@ -1,0 +1,186 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+using UnityEngine.UI;
+using Barrage.Formulaires;
+
+namespace Barrage.UI
+{
+    /// <summary>
+    /// Gère l'affichage et la distribution des formulaires dans les poches de la PartieBasse.
+    /// Calcule la répartition optimale (moitié dans la première poche, puis les suivantes)
+    /// et interleave les types pour maximiser la variété dans chaque poche.
+    /// </summary>
+    public class FormulaireUIManager : MonoBehaviour
+    {
+        [Header("Zones UI")]
+        [SerializeField] private PocheUI premièrePoche;
+        [SerializeField] private PocheUI deuxièmePoche;
+        [SerializeField] private PocheUI dernièrePoche;
+        [SerializeField] private MainDuGardeUI mainDuGarde;
+
+        [Tooltip("RectTransform transparent rendu au-dessus de tout, utilisé pendant le glissement.")]
+        [SerializeField] private RectTransform coucheGlissement;
+
+        [Header("Données")]
+        [SerializeField] private FormulaireInventaire inventaire;
+        [SerializeField] private List<FormulaireData> formulairesData = new();
+
+        private PocheUI[] _poches;
+        private readonly Dictionary<FormulaireType, FormulaireData> _dataParType = new();
+
+        /// <summary>RectTransform de la couche de glissement (drag layer).</summary>
+        public RectTransform CoucheGlissement => coucheGlissement;
+
+        private void Awake()
+        {
+            _poches = new[] { premièrePoche, deuxièmePoche, dernièrePoche };
+
+            foreach (var data in formulairesData.Where(d => d != null))
+                _dataParType[data.type] = data;
+
+            mainDuGarde.OnFormulaireRemis += OnFormulaireRemisAuGarde;
+        }
+
+        private void Start()
+        {
+            SpawnFormulaires();
+        }
+
+        private void OnDestroy()
+        {
+            if (mainDuGarde != null)
+                mainDuGarde.OnFormulaireRemis -= OnFormulaireRemisAuGarde;
+        }
+
+        // ── Spawn & distribution ───────────────────────────────────────────────
+
+        private void SpawnFormulaires()
+        {
+            List<FormulaireType> liste = BuildListeInterleaved();
+            int n = liste.Count;
+
+            // Distribution : moitié dans la première poche, moitié du reste dans la deuxième
+            int p1 = Mathf.CeilToInt(n / 2f);
+            int p2 = Mathf.CeilToInt((n - p1) / 2f);
+            int p3 = n - p1 - p2;
+
+            int idx = 0;
+            for (int i = 0; i < p1 && idx < n; i++) SpawnDansPoche(liste[idx++], premièrePoche);
+            for (int i = 0; i < p2 && idx < n; i++) SpawnDansPoche(liste[idx++], deuxièmePoche);
+            for (int i = 0; i < p3 && idx < n; i++) SpawnDansPoche(liste[idx++], dernièrePoche);
+        }
+
+        /// <summary>
+        /// Construit une liste interleaved des types de formulaires selon les quantités de l'inventaire.
+        /// Les types les plus fréquents sont distribués en premier pour maximiser la variété par poche.
+        /// </summary>
+        private List<FormulaireType> BuildListeInterleaved()
+        {
+            var comptes = new Dictionary<FormulaireType, int>();
+            foreach (FormulaireType type in Enum.GetValues(typeof(FormulaireType)))
+                comptes[type] = inventaire.ObtenirQuantité(type);
+
+            var résultat = new List<FormulaireType>();
+            bool anyLeft = true;
+
+            while (anyLeft)
+            {
+                anyLeft = false;
+                IEnumerable<FormulaireType> typesTriés = comptes
+                    .OrderByDescending(kv => kv.Value)
+                    .Select(kv => kv.Key);
+
+                foreach (var type in typesTriés)
+                {
+                    if (comptes[type] <= 0) continue;
+                    résultat.Add(type);
+                    comptes[type]--;
+                    anyLeft = true;
+                }
+            }
+
+            return résultat;
+        }
+
+        private void SpawnDansPoche(FormulaireType type, PocheUI poche)
+        {
+            if (!_dataParType.TryGetValue(type, out var data) || data.prefab == null)
+            {
+                Debug.LogWarning($"[FormulaireUIManager] Aucun prefab configuré pour : {type}");
+                return;
+            }
+
+            // Instancier le prefab (Canvas Environment + image enfant)
+            GameObject instance = Instantiate(data.prefab);
+
+            // Chercher récursivement le premier RawImage dans la hiérarchie
+            RawImage rawImage = instance.GetComponentInChildren<RawImage>(true);
+            if (rawImage == null)
+            {
+                Debug.LogError($"[FormulaireUIManager] Aucun RawImage trouvé dans le prefab '{data.prefab.name}'.");
+                Destroy(instance);
+                return;
+            }
+
+            Transform imageTransform = rawImage.transform;
+            imageTransform.SetParent(poche.transform, false);
+
+            // Réinitialiser les ancres pour un centrage correct dans la poche
+            var rt = imageTransform.GetComponent<RectTransform>();
+            rt.anchorMin = new Vector2(0.5f, 0.5f);
+            rt.anchorMax = new Vector2(0.5f, 0.5f);
+            rt.pivot = new Vector2(0.5f, 0.5f);
+
+            // Ajouter le comportement drag-and-drop
+            var formulaireUI = imageTransform.gameObject.AddComponent<FormulaireUI>();
+            formulaireUI.Initialiser(type, this);
+
+            int index = poche.AjouterFormulaire(formulaireUI);
+            rt.anchoredPosition = poche.ObtenirPositionPourIndex(index);
+
+            // Détruire le wrapper Canvas vide (l'image a été re-parentée, il est maintenant vide)
+            Destroy(instance);
+        }
+
+        // ── Logique de jeu ─────────────────────────────────────────────────────
+
+        private void OnFormulaireRemisAuGarde(FormulaireType type)
+        {
+            inventaire.Retirer(type, 1);
+            Debug.Log($"[FormulaireUIManager] Inventaire mis à jour après remise : {type} → {inventaire.ObtenirQuantité(type)} restants");
+        }
+
+        /// <summary>Envoie un formulaire à la main du garde et met à jour l'inventaire.</summary>
+        public void EnvoyerAMainDuGarde(FormulaireUI formulaire)
+        {
+            mainDuGarde.RecevoirFormulaire(formulaire);
+        }
+
+        // ── Helpers de détection ───────────────────────────────────────────────
+
+        /// <summary>Retourne true si la position écran est dans la zone de la main du garde.</summary>
+        public bool EstSurMainDuGarde(Vector2 screenPos, Camera cam)
+        {
+            return RectTransformUtility.RectangleContainsScreenPoint(mainDuGarde.RectTransform, screenPos, cam);
+        }
+
+        /// <summary>Retourne la poche dont la zone contient la position écran, ou null si aucune.</summary>
+        public PocheUI TrouverPocheSousPointeur(Vector2 screenPos, Camera cam)
+        {
+            foreach (var poche in _poches)
+            {
+                if (RectTransformUtility.RectangleContainsScreenPoint(poche.RectTransform, screenPos, cam))
+                    return poche;
+            }
+            return null;
+        }
+
+        /// <summary>Retourne la poche la plus proche d'une position monde.</summary>
+        public PocheUI TrouverPocheProche(Vector3 positionMonde)
+        {
+            return _poches.OrderBy(p => Vector3.Distance(p.transform.position, positionMonde)).First();
+        }
+    }
+}
