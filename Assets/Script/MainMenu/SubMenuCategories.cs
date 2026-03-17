@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
@@ -8,9 +9,11 @@ public class SubMenuCategories : MonoBehaviour
     private float sizeMultiplier = 1.2f;
     private GameObject actualSelected;
     private GameObject baseWidthSelected;
+    private GameObject baseFondSelected;
     private TMP_Text baseTextSelected;
     [SerializeField] private GameObject BaseSelected;
     [SerializeField] private GameObject WidthSelected;
+    [SerializeField] private GameObject FondSelected;
     [SerializeField] private TMP_Text textSelected;
     Vector3 actualSize;
     Vector2 actualWidth;
@@ -20,6 +23,7 @@ public class SubMenuCategories : MonoBehaviour
         ToAim(BaseSelected);
         ToAim2D(WidthSelected);
         ToAimText(textSelected);
+        ToAimSelection(FondSelected);
     }
 
 
@@ -77,6 +81,53 @@ public class SubMenuCategories : MonoBehaviour
         }
         _SizeToDown.transform.localScale = toScale;
     }
+
+
+    // PARTIE ZONE SELECTION ---------------------------------------------
+
+    public void ToAimSelection(GameObject aimed)
+    {
+        ToHighter(aimed);
+    }
+
+    public void ToHighter(GameObject resized)
+    {
+        resized.transform.localScale = new Vector3(1f, 1f, 1f);
+        actualSize = resized.transform.localScale;
+        
+
+        if (baseFondSelected != resized)
+        {
+            resized.transform.localScale /= 1.5f;
+            resized.SetActive(true);
+            StartCoroutine(LerpHighter(0.1f, resized));
+
+            if (baseFondSelected != null)
+            {
+                ToDisapear(baseFondSelected);
+            }
+        }
+        baseFondSelected = resized;
+    }
+
+    public void ToDisapear(GameObject oldSelected)
+    {
+        oldSelected.gameObject.SetActive(false);
+    }
+
+    IEnumerator LerpHighter(float time, GameObject _SizeToUp)
+    {
+        float elapsed = 0;
+        Vector3 toScale = new Vector3(actualSize.x, actualSize.y / 1.5f, actualSize.z);
+        while (elapsed < time)
+        {
+            _SizeToUp.transform.localScale = Vector3.Lerp(toScale, actualSize, elapsed / time);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        _SizeToUp.transform.localScale = new Vector3(1f,1f,1f);
+    }
+
 
 
     // PARTIE CASE QUI S'ÉLARGIS ------------------------------
