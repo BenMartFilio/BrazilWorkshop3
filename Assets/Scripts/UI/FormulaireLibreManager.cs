@@ -68,6 +68,7 @@ namespace Barrage.UI
 
             mainDuGarde.OnFormulaireRemis    += OnFormulaireRemisAuGarde;
             mainDuGarde.OnFormulaireIncorrect += OnFormulaireIncorrect;
+            mainDuGarde.OnBarrageValidé       += GriserToutesLesCartes;
         }
 
         private void Start()
@@ -97,6 +98,7 @@ namespace Barrage.UI
             {
                 mainDuGarde.OnFormulaireRemis    -= OnFormulaireRemisAuGarde;
                 mainDuGarde.OnFormulaireIncorrect -= OnFormulaireIncorrect;
+                mainDuGarde.OnBarrageValidé       -= GriserToutesLesCartes;
             }
         }
 
@@ -295,12 +297,28 @@ namespace Barrage.UI
                 carte.Secouer(duréeSecousseCartes, intensitéSecousseCartes);
         }
 
+        /// <summary>
+        /// Grise toutes les cartes restantes dans la partie basse pour indiquer
+        /// que le barrage est terminé et que le joueur ne peut plus interagir avec elles.
+        /// </summary>
+        private void GriserToutesLesCartes()
+        {
+            foreach (var carte in _cartes)
+                carte.Griser();
+        }
+
         /// <summary>Soumet une carte à la main du garde, la retire de la liste et la détruit.</summary>
         public void EnvoyerAMainDuGarde(FormulaireLibre carte)
         {
             _cartes.Remove(carte);
             mainDuGarde.RecevoirFormulaire(carte);
         }
+
+        /// <summary>
+        /// Retourne une copie de la liste des cartes actives.
+        /// Utilisé par AnimationGameOver pour accéder aux cartes sans modifier la liste interne.
+        /// </summary>
+        public List<FormulaireLibre> ObtenirCartes() => new List<FormulaireLibre>(_cartes);
 
         // ── Helpers de détection ───────────────────────────────────────────────
 

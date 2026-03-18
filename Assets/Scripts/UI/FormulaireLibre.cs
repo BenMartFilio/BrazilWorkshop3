@@ -52,6 +52,8 @@ namespace Barrage.UI
         private bool    _enDerive;        // dérive horizontale active
         private Vector2 _offsetGlissement;
         private bool    _premierContactPossible; // true juste après un drop, en attente du premier contact
+        private bool    _grisée;           // true quand la carte est grisée (barrage terminé)
+        private bool    _animéeGameOver;   // true quand la carte converge vers "GAME OVER"
         private Coroutine _rotationSnap;  // coroutine d'alignement vers côté le plus long
         private Coroutine _secousse;      // coroutine de secousse synchronisée avec SecousseEcran
 
@@ -82,8 +84,8 @@ namespace Barrage.UI
 
         private void Update()
         {
-            // Pendant le drag, la carte suit le pointeur — pas de physique
-            if (_enDrag) return;
+            // Pendant le drag ou l'animation Game Over, la physique est désactivée
+            if (_enDrag || _animéeGameOver) return;
 
             // Gravité : accélération vers le bas, plafonnée
             _velocity.y = Mathf.Max(_velocity.y - GRAVITE * Time.deltaTime, -VITESSE_CHUTE_MAX);
@@ -110,6 +112,9 @@ namespace Barrage.UI
 
         public void OnBeginDrag(PointerEventData eventData)
         {
+            // Bloquer le drag si la carte est grisée (barrage terminé)
+            if (_grisée) return;
+
             _enDrag   = true;
             _enDerive = false;
             _velocity = Vector2.zero;
@@ -265,6 +270,101 @@ namespace Barrage.UI
             }
 
             _secousse = null;
+        }
+
+        // ── Animation Game Over ───────────────────────────────────────────────
+
+        /// <summary>
+        /// Phase 1 : explosé — applique une impulsion violente dans une direction aléatoire
+        /// et désactive la physique de contrainte de bords.
+        /// </summary>
+        public void ExplosionGameOver(Vector2 impulsion)
+        {
+            _animéeGameOver   = true;
+            _enDrag           = false;
+            _velocity         = Vector2.zero;
+
+            if (_rawImage != null) _rawImage.raycastTarget = false;
+
+            // Remonter dans la couche de glissement pour ne plus être contrainte par PartieBasse
+            transform.SetParent(_coucheGlissement, true);
+
+            // Appliquer l'impulsion manuellement via une coroutine libre
+            StartCoroutine(CoroutineExplosion(impulsion));
+        }
+
+        private IEnumerator CoroutineExplosion(Vector2 vitesse)
+        {
+            float duréeExplosion = 0.55f;
+            float t = 0f;
+            while (t < duréeExplosion)
+            {
+                t += Time.deltaTime;
+                // Ralentissement naturel
+                vitesse = Vector2.Lerp(vitesse, Vector2.zero, Time.deltaTime * 2.5f);
+                _rectTransform.anchoredPosition += vitesse * Time.deltaTime;
+                yield return null;
+            }
+        }
+
+        /// <summary>
+        /// Phase 2 : convergence — interpole position, taille et rotation vers les valeurs cibles.
+        /// Tinte la carte en blanc pur pour que seule la lettre "GAME OVER" soit visible.
+        /// </summary>
+        public IEnumerator AnimerVers(Vector2 positionCible, Vector2 tailleCible,
+                                      float rotationCible, Color couleurCible, float durée)
+        {
+            // S'assurer que la carte est bien dans la couche de glissement
+            if (transform.parent != _coucheGlissement)
+                transform.SetParent(_coucheGlissement, true);
+
+            Vector2 posDepart     = _rectTransform.anchoredPosition;
+            Vector2 tailleDepart  = _rectTransform.sizeDelta;
+            float   rotDepart     = _rectTransform.localEulerAngles.z;
+            if (rotDepart > 180f) rotDepart -= 360f;
+
+            Color   couleurDepart = _rawImage != null ? _rawImage.color : Color.white;
+
+            float t = 0f;
+            while (t < durée)
+            {
+                t += Time.deltaTime;
+                float p = Mathf.SmoothStep(0f, 1f, t / durée);
+
+                _rectTransform.anchoredPosition = Vector2.Lerp(posDepart, positionCible, p);
+                _rectTransform.sizeDelta        = Vector2.Lerp(tailleDepart, tailleCible, p);
+                _rectTransform.localEulerAngles = new Vector3(0f, 0f,
+                    Mathf.LerpAngle(rotDepart, rotationCible, p));
+
+                if (_rawImage != null)
+                    _rawImage.color = Color.Lerp(couleurDepart, couleurCible, p);
+
+                yield return null;
+            }
+
+            _rectTransform.anchoredPosition = positionCible;
+            _rectTransform.sizeDelta        = tailleCible;
+            _rectTransform.localEulerAngles = new Vector3(0f, 0f, rotationCible);
+            if (_rawImage != null) _rawImage.color = couleurCible;
+        }
+
+        // ── Grisage (barrage validé) ──────────────────────────────────────────
+
+        private static readonly Color COULEUR_GRISÉE = new Color(0.45f, 0.45f, 0.45f, 0.7f);
+
+        /// <summary>
+        /// Grise visuellement la carte et désactive son interaction drag.
+        /// Appelé quand le joueur valide le barrage courant.
+        /// </summary>
+        public void Griser()
+        {
+            _grisée = true;
+
+            if (_rawImage != null)
+            {
+                _rawImage.color         = COULEUR_GRISÉE;
+                _rawImage.raycastTarget = false;
+            }
         }
 
         // ── Helpers ───────────────────────────────────────────────────────────

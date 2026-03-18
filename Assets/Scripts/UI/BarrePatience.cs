@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -54,12 +55,16 @@ namespace Barrage.UI
         private Vector2       _positionBase;
         private Material      _matRemplissage;
         private bool          _enPenalite;
+        private bool          _épuiséeDéclenché;
 
         /// <summary>Valeur de patience normalisée entre 0 et 1.</summary>
         public float PatienceNormalisée => _patience / PATIENCE_MAX;
 
         /// <summary>True quand la patience atteint 0.</summary>
         public bool EstEpuisée => _patience <= 0f;
+
+        /// <summary>Déclenché une seule fois quand la patience atteint 0.</summary>
+        public event Action OnPatienceEpuisée;
 
         private void Awake()
         {
@@ -77,7 +82,15 @@ namespace Barrage.UI
 
         private void Update()
         {
-            if (EstEpuisée) return;
+            if (EstEpuisée)
+            {
+                if (!_épuiséeDéclenché)
+                {
+                    _épuiséeDéclenché = true;
+                    OnPatienceEpuisée?.Invoke();
+                }
+                return;
+            }
 
             _patience = Mathf.Max(0f, _patience - VITESSE_VIDAGE * Time.deltaTime);
 

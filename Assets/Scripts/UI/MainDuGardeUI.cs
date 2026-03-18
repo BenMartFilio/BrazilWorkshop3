@@ -45,6 +45,9 @@ namespace Barrage.UI
         /// <summary>Déclenché lorsqu'un formulaire incorrect ou dans le mauvais ordre est remis.</summary>
         public event Action OnFormulaireIncorrect;
 
+        /// <summary>Déclenché une seule fois quand toute la séquence du barrage est complétée.</summary>
+        public event Action OnBarrageValidé;
+
         private void Awake()
         {
             RectTransform = GetComponent<RectTransform>();
@@ -68,6 +71,12 @@ namespace Barrage.UI
                 OnFormulaireRemis?.Invoke(type);
                 Debug.Log($"[MainDuGarde] ✓ Correct : {type}");
                 StartCoroutine(AnimerPositif(go));
+
+                if (listeAttenteGarde.EstTerminée)
+                {
+                    Debug.Log("[MainDuGarde] ✓ Barrage validé — séquence complète.");
+                    OnBarrageValidé?.Invoke();
+                }
             }
             else
             {
