@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
@@ -15,6 +16,8 @@ public class SubMenuCategories : MonoBehaviour
     [SerializeField] private GameObject WidthSelected;
     [SerializeField] private GameObject FondSelected;
     [SerializeField] private TMP_Text textSelected;
+    private bool coroutineAnim;
+    private float animDuration = 0.1f;
     Vector3 actualSize;
     Vector2 actualWidth;
 
@@ -26,6 +29,16 @@ public class SubMenuCategories : MonoBehaviour
         ToAimSelection(FondSelected);
     }
 
+    IEnumerator Delay(GameObject toGiveBack, Action<GameObject> callback)
+    {
+        yield return new WaitForSeconds(animDuration);
+        callback?.Invoke(toGiveBack);
+    }
+    IEnumerator Delay2(TMP_Text toGiveBack)
+    {
+        yield return new WaitForSeconds(animDuration);
+        ToDisplayText(toGiveBack);
+    }
 
     // PARTIE ICONE QUI GROSSIS ---------------------------------------------
 
@@ -36,27 +49,35 @@ public class SubMenuCategories : MonoBehaviour
 
     public void ToSizeUp(GameObject resized)
     {
-        actualSize = resized.transform.localScale;
-
-        if (actualSelected != resized)
+        if (coroutineAnim == true)
         {
-            StartCoroutine(LerpScale(0.1f, resized));
-
-            if (actualSelected != null)
-            {
-                ToSizeDown(actualSelected);
-            }
+            StartCoroutine(Delay(resized, ToSizeUp));
         }
-        actualSelected = resized;
+        else
+        {
+            actualSize = resized.transform.localScale;
+
+            if (actualSelected != resized)
+            {
+                StartCoroutine(LerpScale(animDuration, resized));
+
+                if (actualSelected != null)
+                {
+                    ToSizeDown(actualSelected);
+                }
+            }
+            actualSelected = resized;
+        }
     }
 
     private void ToSizeDown(GameObject oldSelected)
     {
-        StartCoroutine(LerpUnscale(0.1f, oldSelected));
+        StartCoroutine(LerpUnscale(animDuration, oldSelected));
     }
 
     IEnumerator LerpScale(float time, GameObject _SizeToUp)
     {
+        coroutineAnim = true;
         float elapsed = 0;
         Vector3 toScale = actualSize * sizeMultiplier;
         while (elapsed < time)
@@ -66,6 +87,7 @@ public class SubMenuCategories : MonoBehaviour
             yield return null;
         }
         _SizeToUp.transform.localScale = toScale;
+        coroutineAnim = false;
     }
 
     IEnumerator LerpUnscale(float time, GameObject _SizeToDown)
@@ -92,22 +114,29 @@ public class SubMenuCategories : MonoBehaviour
 
     private void ToHighter(GameObject resized)
     {
-        resized.transform.localScale = new Vector3(1f, 1f, 1f);
-        actualSize = resized.transform.localScale;
-        
-
-        if (baseFondSelected != resized)
+        if (coroutineAnim == true)
         {
-            resized.transform.localScale /= 1.5f;
-            resized.SetActive(true);
-            StartCoroutine(LerpHighter(0.1f, resized));
-
-            if (baseFondSelected != null)
-            {
-                ToDisapear(baseFondSelected);
-            }
+            StartCoroutine(Delay(resized, ToHighter));
         }
-        baseFondSelected = resized;
+        else 
+        {
+            resized.transform.localScale = new Vector3(1f, 1f, 1f);
+            actualSize = resized.transform.localScale;
+
+
+            if (baseFondSelected != resized)
+            {
+                resized.transform.localScale /= 1.5f;
+                resized.SetActive(true);
+                StartCoroutine(LerpHighter(animDuration, resized));
+
+                if (baseFondSelected != null)
+                {
+                    ToDisapear(baseFondSelected);
+                }
+            }
+            baseFondSelected = resized;
+        }
     }
 
     private void ToDisapear(GameObject oldSelected)
@@ -139,22 +168,29 @@ public class SubMenuCategories : MonoBehaviour
 
     private void ToSizeUp2D(GameObject rewidth)
     {
-        actualWidth = rewidth.GetComponent<RectTransform>().sizeDelta;
-        if (baseWidthSelected != rewidth)
+        if (coroutineAnim == true)
         {
-            StartCoroutine(LerpScale2D(0.1f, rewidth));
-
-            if (baseWidthSelected != null)
-            {
-                ToSizeDown2D(baseWidthSelected);
-            }
+            StartCoroutine(Delay(rewidth, ToSizeUp2D));
         }
-        baseWidthSelected = rewidth;
+        else
+        {
+            actualWidth = rewidth.GetComponent<RectTransform>().sizeDelta;
+            if (baseWidthSelected != rewidth)
+            {
+                StartCoroutine(LerpScale2D(animDuration, rewidth));
+
+                if (baseWidthSelected != null)
+                {
+                    ToSizeDown2D(baseWidthSelected);
+                }
+            }
+            baseWidthSelected = rewidth;
+        }
     }
 
     private void ToSizeDown2D(GameObject oldSelected)
     {
-        StartCoroutine(LerpUnscale2D(0.1f, oldSelected));
+        StartCoroutine(LerpUnscale2D(animDuration, oldSelected));
     }
 
     IEnumerator LerpScale2D(float time, GameObject _WidthToUp)
@@ -195,21 +231,28 @@ public class SubMenuCategories : MonoBehaviour
 
     private void ToDisplayText(TMP_Text text)
     {
-        if (baseTextSelected != text)
+        if (coroutineAnim == true)
         {
-            StartCoroutine(LerpShowText(0.1f, text));
-
-            if (baseTextSelected != null)
-            {
-                ToTextHide(baseTextSelected);
-            }
+            StartCoroutine(Delay2(text));
         }
-        baseTextSelected = text;
+        else
+        {
+            if (baseTextSelected != text)
+            {
+                StartCoroutine(LerpShowText(animDuration, text));
+
+                if (baseTextSelected != null)
+                {
+                    ToTextHide(baseTextSelected);
+                }
+            }
+            baseTextSelected = text;
+        }
     }
 
     private void ToTextHide(TMP_Text oldSelected)
     {
-        StartCoroutine(LerpHideText(0.1f, oldSelected));
+        StartCoroutine(LerpHideText(animDuration, oldSelected));
     }
 
     IEnumerator LerpShowText(float time, TMP_Text text)
