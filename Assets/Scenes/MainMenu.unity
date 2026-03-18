@@ -594,6 +594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlaySubMenu
   _playMenu: {fileID: 578683884}
+  _playBouton: {fileID: 330534695}
   _shopMenu: {fileID: 1938874020}
   _inventoryMenu: {fileID: 1124431611}
 --- !u!4 &215803648
@@ -812,7 +813,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &330534696
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1676,7 +1677,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &578683885
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2714,7 +2715,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1124431612
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4086,7 +4087,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1938874021
 RectTransform:
   m_ObjectHideFlags: 0
