@@ -50,7 +50,7 @@ public class SubMenuCategories : MonoBehaviour
         actualSelected = resized;
     }
 
-    public void ToSizeDown(GameObject oldSelected)
+    private void ToSizeDown(GameObject oldSelected)
     {
         StartCoroutine(LerpUnscale(0.1f, oldSelected));
     }
@@ -90,7 +90,7 @@ public class SubMenuCategories : MonoBehaviour
         ToHighter(aimed);
     }
 
-    public void ToHighter(GameObject resized)
+    private void ToHighter(GameObject resized)
     {
         resized.transform.localScale = new Vector3(1f, 1f, 1f);
         actualSize = resized.transform.localScale;
@@ -110,7 +110,7 @@ public class SubMenuCategories : MonoBehaviour
         baseFondSelected = resized;
     }
 
-    public void ToDisapear(GameObject oldSelected)
+    private void ToDisapear(GameObject oldSelected)
     {
         oldSelected.gameObject.SetActive(false);
     }
@@ -137,7 +137,7 @@ public class SubMenuCategories : MonoBehaviour
         ToSizeUp2D(width);
     }
 
-    public void ToSizeUp2D(GameObject rewidth)
+    private void ToSizeUp2D(GameObject rewidth)
     {
         actualWidth = rewidth.GetComponent<RectTransform>().sizeDelta;
         if (baseWidthSelected != rewidth)
@@ -152,7 +152,7 @@ public class SubMenuCategories : MonoBehaviour
         baseWidthSelected = rewidth;
     }
 
-    public void ToSizeDown2D(GameObject oldSelected)
+    private void ToSizeDown2D(GameObject oldSelected)
     {
         StartCoroutine(LerpUnscale2D(0.1f, oldSelected));
     }
@@ -193,7 +193,7 @@ public class SubMenuCategories : MonoBehaviour
         ToDisplayText(text);
     }
 
-    public void ToDisplayText(TMP_Text text)
+    private void ToDisplayText(TMP_Text text)
     {
         if (baseTextSelected != text)
         {
@@ -207,7 +207,7 @@ public class SubMenuCategories : MonoBehaviour
         baseTextSelected = text;
     }
 
-    public void ToTextHide(TMP_Text oldSelected)
+    private void ToTextHide(TMP_Text oldSelected)
     {
         StartCoroutine(LerpHideText(0.1f, oldSelected));
     }
