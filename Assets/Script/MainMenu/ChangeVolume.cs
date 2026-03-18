@@ -10,21 +10,25 @@ public class ChangeVolume : MonoBehaviour
     [SerializeField] private AudioMixerGroup backgroundGroup;
     [SerializeField] private AudioMixerGroup masterGroup;
 
+    [SerializeField] private Slider slider;
+    [SerializeField] private Slider sliderMusic;
+    [SerializeField] private Slider sliderBG;
+
     public void ChangeMasterVolume()
     {
-        float newvalue = GetComponent<Slider>().value;
+        float newvalue = slider.value;
         masterGroup.audioMixer.SetFloat("Volume", Mathf.Log10(Mathf.Clamp(newvalue, 0.0001f, 1f)) * 20);
     }
 
     public void ChangeMusicVolume()
     {
-        float newvalue = GetComponent<Slider>().value;
+        float newvalue = sliderMusic.value;
         musicGroup.audioMixer.SetFloat("Volume", Mathf.Log10(Mathf.Clamp(newvalue, 0.0001f, 1f)) * 20);
     }
 
     public void ChangeBackGroundVolume()
     {
-        float newvalue = GetComponent<Slider>().value;
+        float newvalue = sliderBG.value;
         backgroundGroup.audioMixer.SetFloat("Volume", Mathf.Log10(Mathf.Clamp(newvalue, 0.0001f, 1f)) * 20);
     }
 }
