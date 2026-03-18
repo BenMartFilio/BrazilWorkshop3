@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -11,6 +12,17 @@ public class SoundManager : MonoBehaviour
     private AudioSource musicSource;
     private AudioSource backgroundSource;
 
+    [SerializeField] private AudioEventDispatcher _AudioEventDispatcher;
+
+    private void OnEnable()
+    {
+        _AudioEventDispatcher.OnAudioEvent += PlaySound;
+    }
+
+    private void OnDisable()
+    {
+        
+    }
 
     private void Start()
     {
@@ -44,6 +56,21 @@ public class SoundManager : MonoBehaviour
             else if (source.outputAudioMixerGroup == backgroundGroup)
                 backgroundSource = source;
         }
+
+   // A UTILISER POUR CALL     _AudioEventDispatcher.PlayAudio(_DeathAudioType);
+    }
+
+    private void PlaySound(AudioClip son)
+    {
+        backgroundSource.PlayOneShot(son);
+    }
+
+
+    public void PlayMusic(AudioClip music)
+    {
+        musicSource.Stop();
+        musicSource.clip = music;
+        musicSource.Play();
     }
 }
 
