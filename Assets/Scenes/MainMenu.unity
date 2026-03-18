@@ -3677,8 +3677,8 @@ MonoBehaviour:
   backgroundGroup: {fileID: -6447396952168062428, guid: 1004856e83b55944ebe242f8e2c4d96f, type: 2}
   _AudioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
   _AudioClip: {fileID: 8300000, guid: 46dd0242d62f5584f9fe4658ee4b7516, type: 3}
-  _AudioClip2: 0
-  _AudioClip3: 0
+  _AudioClip2: 1
+  _AudioClip3: 9
 --- !u!114 &903584755
 MonoBehaviour:
   m_ObjectHideFlags: 0

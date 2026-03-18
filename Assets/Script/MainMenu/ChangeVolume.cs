@@ -17,18 +17,18 @@ public class ChangeVolume : MonoBehaviour
     public void ChangeMasterVolume()
     {
         float newvalue = slider.value;
-        masterGroup.audioMixer.SetFloat("Volume", Mathf.Log10(Mathf.Clamp(newvalue, 0.0001f, 1f)) * 20);
+        masterGroup.audioMixer.SetFloat("Master_Volume", Mathf.Log10(Mathf.Clamp(newvalue, 0.0001f, 1f)) * 20);
     }
 
     public void ChangeMusicVolume()
     {
         float newvalue = sliderMusic.value;
-        musicGroup.audioMixer.SetFloat("Volume", Mathf.Log10(Mathf.Clamp(newvalue, 0.0001f, 1f)) * 20);
+        musicGroup.audioMixer.SetFloat("Music_Volume", Mathf.Log10(Mathf.Clamp(newvalue, 0.0001f, 1f)) * 20);
     }
 
     public void ChangeBackGroundVolume()
     {
         float newvalue = sliderBG.value;
-        backgroundGroup.audioMixer.SetFloat("Volume", Mathf.Log10(Mathf.Clamp(newvalue, 0.0001f, 1f)) * 20);
+        backgroundGroup.audioMixer.SetFloat("BG_Volume", Mathf.Log10(Mathf.Clamp(newvalue, 0.0001f, 1f)) * 20);
     }
 }
