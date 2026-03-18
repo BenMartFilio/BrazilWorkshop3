@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -7,95 +8,145 @@ namespace Barrage.UI
 {
     /// <summary>
     /// Carte formulaire libre dans la PartieBasse.
-    /// Taille fixe, draggable partout dans la zone, avec inertie (dérive) à la relâche.
-    /// Si déposée sur la MainDuGarde, elle est remise au garde.
+    /// - Taille fixe, soumise à une gravité faible permanente.
+    /// - Pendant le drag : re-parentée dans CoucheGlissement (Canvas root) → drag libre
+    ///   sur tout l'écran, y compris la PartieHaute et la MainDuGarde.
+    /// - À la relâche : retour dans PartieBasse avec inertie horizontale + gravité.
     /// </summary>
     [RequireComponent(typeof(RectTransform))]
     public class FormulaireLibre : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
     {
-        private const float DEMI_VIE_DERIVE   = 0.22f;  // la vitesse est divisée par 2 toutes les 0.22s
-        private const float VITESSE_MAX_DERIVE = 1200f;  // px/s — plafond d'inertie
-        private const float VITESSE_ARRET      = 8f;    // px/s — seuil d'arrêt
+        // ── Physique ──────────────────────────────────────────────────────
+        private const float GRAVITE            = 80f;    // px/s² vers le bas
+        private const float VITESSE_CHUTE_MAX  = 250f;   // px/s — vitesse terminale
+        private const float DEMI_VIE_DERIVE    = 0.22f;  // s — décroissance horizontale
+        private const float VITESSE_MAX_DERIVE = 1200f;  // px/s — plafond inertie au lâcher
+        private const float VITESSE_ARRET      = 6f;     // px/s — seuil d'arrêt horizontal
+        private const float IMPULSION_REBOND   = 180f;   // px/s — vitesse de rebond au premier contact
+
+        // ── Orientation ───────────────────────────────────────────────────────
+        private const float ROTATION_SNAP_DUREE = 0.25f; // s — durée du retour vers l'angle le plus proche à 0°/180°
+        private const float ROTATION_SNAP_SEUIL = 1f;    // ° — en dessous, considéré comme déjà aligné
+
+        // ── Secousse des cartes ───────────────────────────────────────────────
+        private const float FREQUENCE_SECOUSSE = 22f;    // identique à SecousseEcran
 
         public FormulaireType Type { get; private set; }
 
+        /// <summary>Expose le RectTransform pour la résolution de collisions externe.</summary>
+        public RectTransform Rt => _rectTransform;
+
+        /// <summary>True quand la carte est en cours de drag (dans CoucheGlissement).</summary>
+        public bool EstEnDrag => _enDrag;
+
         private RectTransform _rectTransform;
-        private RawImage _rawImage;
+        private RawImage      _rawImage;
         private FormulaireLibreManager _manager;
         private RectTransform _partieBasse;
-        private Vector2 _tailleFixe;
+        private RectTransform _coucheGlissement;
+        private Vector2       _tailleFixe;
 
-        private Vector2 _velocity;
+        private Vector2 _velocity;        // px/s dans l'espace local de _partieBasse (hors drag)
         private Vector2 _lastAnchoredPos;
-        private bool _enDerive;
-        private bool _dragActif;
+        private bool    _enDrag;
+        private bool    _enDerive;        // dérive horizontale active
         private Vector2 _offsetGlissement;
+        private bool    _premierContactPossible; // true juste après un drop, en attente du premier contact
+        private Coroutine _rotationSnap;  // coroutine d'alignement vers côté le plus long
+        private Coroutine _secousse;      // coroutine de secousse synchronisée avec SecousseEcran
+
+        // ── Initialisation ────────────────────────────────────────────────────
 
         /// <summary>Initialise la carte avec sa taille fixe et ses dépendances.</summary>
         public void Initialiser(FormulaireType type, FormulaireLibreManager manager,
-                                RectTransform partieBasse, Vector2 tailleFixe)
+                                RectTransform partieBasse, RectTransform coucheGlissement,
+                                Vector2 tailleFixe)
         {
-            Type         = type;
-            _manager     = manager;
-            _partieBasse = partieBasse;
-            _tailleFixe  = tailleFixe;
+            Type              = type;
+            _manager          = manager;
+            _partieBasse      = partieBasse;
+            _coucheGlissement = coucheGlissement;
+            _tailleFixe       = tailleFixe;
 
             _rectTransform = GetComponent<RectTransform>();
             _rawImage      = GetComponent<RawImage>();
 
-            // Ancre centrée, taille fixe
+            // Taille fixe, ancrée au centre de la PartieBasse
             _rectTransform.anchorMin = new Vector2(0.5f, 0.5f);
             _rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
             _rectTransform.pivot     = new Vector2(0.5f, 0.5f);
             _rectTransform.sizeDelta = tailleFixe;
         }
 
+        // ── Physique ──────────────────────────────────────────────────────────
+
         private void Update()
         {
-            if (!_enDerive) return;
+            // Pendant le drag, la carte suit le pointeur — pas de physique
+            if (_enDrag) return;
 
-            // Décroissance exponentielle de la vitesse
-            float decay = Mathf.Pow(0.5f, Time.deltaTime / DEMI_VIE_DERIVE);
-            _velocity *= decay;
+            // Gravité : accélération vers le bas, plafonnée
+            _velocity.y = Mathf.Max(_velocity.y - GRAVITE * Time.deltaTime, -VITESSE_CHUTE_MAX);
 
+            // Dérive horizontale : décroissance exponentielle
+            if (_enDerive)
+            {
+                float decay = Mathf.Pow(0.5f, Time.deltaTime / DEMI_VIE_DERIVE);
+                _velocity.x *= decay;
+
+                if (Mathf.Abs(_velocity.x) < VITESSE_ARRET)
+                {
+                    _velocity.x = 0f;
+                    _enDerive   = false;
+                }
+            }
+
+            // Appliquer le mouvement et contraindre dans PartieBasse
             Vector2 newPos = _rectTransform.anchoredPosition + _velocity * Time.deltaTime;
             _rectTransform.anchoredPosition = ClampAvecFriction(newPos);
-
-            if (_velocity.sqrMagnitude < VITESSE_ARRET * VITESSE_ARRET)
-            {
-                _velocity  = Vector2.zero;
-                _enDerive  = false;
-            }
         }
+
+        // ── Drag & Drop ───────────────────────────────────────────────────────
 
         public void OnBeginDrag(PointerEventData eventData)
         {
-            _enDerive  = false;
-            _dragActif = true;
-            _velocity  = Vector2.zero;
+            _enDrag   = true;
+            _enDerive = false;
+            _velocity = Vector2.zero;
 
             if (_rawImage != null) _rawImage.raycastTarget = false;
 
-            // Amener au premier plan dans la PartieBasse
+            // Mémoriser la position écran avant re-parentage (SSO : world pos = screen pos)
+            Vector3 screenPos = _rectTransform.position;
+
+            // Monter dans CoucheGlissement pour un rendu au-dessus de tout et un drag libre
+            transform.SetParent(_coucheGlissement, false);
             transform.SetAsLastSibling();
 
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                _partieBasse, eventData.position, eventData.pressEventCamera, out Vector2 localPos);
+            _rectTransform.anchorMin = new Vector2(0.5f, 0.5f);
+            _rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+            _rectTransform.pivot     = new Vector2(0.5f, 0.5f);
+            _rectTransform.sizeDelta = _tailleFixe;
+            _rectTransform.position  = screenPos; // restaurer la position visuelle
 
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                _coucheGlissement, eventData.position, eventData.pressEventCamera,
+                out Vector2 localPos);
             _offsetGlissement = _rectTransform.anchoredPosition - localPos;
             _lastAnchoredPos  = _rectTransform.anchoredPosition;
         }
 
         public void OnDrag(PointerEventData eventData)
         {
-            if (!_dragActif) return;
+            if (!_enDrag) return;
 
+            // Mouvement libre sans contrainte — la carte peut traverser toutes les zones
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                _partieBasse, eventData.position, eventData.pressEventCamera, out Vector2 localPos);
+                _coucheGlissement, eventData.position, eventData.pressEventCamera,
+                out Vector2 localPos);
 
-            Vector2 newPos = ClampAvecFriction(localPos + _offsetGlissement);
+            Vector2 newPos = localPos + _offsetGlissement;
 
-            // Calculer la vitesse pour l'inertie
             if (Time.deltaTime > 0f)
                 _velocity = (newPos - _lastAnchoredPos) / Time.deltaTime;
 
@@ -105,8 +156,8 @@ namespace Barrage.UI
 
         public void OnEndDrag(PointerEventData eventData)
         {
-            if (!_dragActif) return;
-            _dragActif = false;
+            if (!_enDrag) return;
+            _enDrag = false;
 
             if (_rawImage != null) _rawImage.raycastTarget = true;
 
@@ -117,26 +168,176 @@ namespace Barrage.UI
                 return;
             }
 
-            // Sinon : appliquer l'inertie
-            _velocity = Vector2.ClampMagnitude(_velocity, VITESSE_MAX_DERIVE);
-            if (_velocity.sqrMagnitude > VITESSE_ARRET * VITESSE_ARRET)
+            // Retour dans PartieBasse en conservant la position visuelle
+            RetournerDansPartieBasse();
+
+            // Conserver uniquement la composante horizontale de l'inertie ;
+            // la gravité reprend immédiatement en Update
+            _velocity.x = Mathf.Clamp(_velocity.x, -VITESSE_MAX_DERIVE, VITESSE_MAX_DERIVE);
+            _velocity.y = 0f;
+
+            if (Mathf.Abs(_velocity.x) > VITESSE_ARRET)
+                _enDerive = true;
+
+            // Activer la détection du premier contact inter-carte post-drop
+            _premierContactPossible = true;
+
+            // Aligner vers le côté le plus long (landscape → 0°/180°, portrait → aucune rotation)
+            DémarrerSnapRotation();
+        }
+
+        // ── Orientation ───────────────────────────────────────────────────────
+
+        /// <summary>
+        /// Lance une coroutine qui ramène la carte vers l'angle 0° ou 180° (côté le plus long horizontal)
+        /// si la carte est en mode paysage (largeur > hauteur), sans intervenir si elle est portrait.
+        /// </summary>
+        private void DémarrerSnapRotation()
+        {
+            // Seulement si la carte est plus large que haute (côté le plus long = côté horizontal)
+            if (_tailleFixe.x <= _tailleFixe.y) return;
+
+            if (_rotationSnap != null) StopCoroutine(_rotationSnap);
+            _rotationSnap = StartCoroutine(SnapRotation());
+        }
+
+        private IEnumerator SnapRotation()
+        {
+            float angleDepart = _rectTransform.localEulerAngles.z;
+            // Normaliser dans [-180, 180]
+            if (angleDepart > 180f) angleDepart -= 360f;
+
+            // L'angle cible le plus proche parmi 0° et ±180°
+            float cible = Mathf.Abs(angleDepart) <= 90f ? 0f : (angleDepart > 0f ? 180f : -180f);
+
+            float t = 0f;
+            while (t < ROTATION_SNAP_DUREE)
+            {
+                t += Time.deltaTime;
+                float p = Mathf.SmoothStep(0f, 1f, t / ROTATION_SNAP_DUREE);
+                float angle = Mathf.LerpAngle(angleDepart, cible, p);
+                _rectTransform.localEulerAngles = new Vector3(0f, 0f, angle);
+                yield return null;
+            }
+
+            _rectTransform.localEulerAngles = new Vector3(0f, 0f, cible);
+            _rotationSnap = null;
+        }
+
+        // ── Secousse synchronisée avec SecousseEcran ──────────────────────────
+
+        /// <summary>
+        /// Déclenche une secousse de position sur la carte au rythme du camerashake.
+        /// Les paramètres doivent correspondre à ceux de SecousseEcran pour rester synchrones.
+        /// </summary>
+        public void Secouer(float duréeS, float intensitéPx)
+        {
+            if (_enDrag) return;
+
+            if (_secousse != null)
+                StopCoroutine(_secousse);
+
+            _secousse = StartCoroutine(CoroutineSecousse(duréeS, intensitéPx));
+        }
+
+        private IEnumerator CoroutineSecousse(float duréeS, float intensitéPx)
+        {
+            float offsetX = Random.Range(0f, 100f);
+            float offsetY = Random.Range(0f, 100f);
+
+            float t = 0f;
+            while (t < duréeS)
+            {
+                // Attendre la fin de Update/LateUpdate pour surcharger la position sans conflit
+                yield return new WaitForEndOfFrame();
+
+                // Interrompre si la carte a été saisie pendant la secousse
+                if (_enDrag) break;
+
+                t += Time.deltaTime;
+
+                float décroiss = 1f - Mathf.SmoothStep(0f, 1f, t / duréeS);
+                float dx = (Mathf.PerlinNoise(offsetX + t * FREQUENCE_SECOUSSE, 0f) - 0.5f) * 2f;
+                float dy = (Mathf.PerlinNoise(0f, offsetY + t * FREQUENCE_SECOUSSE) - 0.5f) * 2f;
+
+                // Décalage additif sur la position physique courante
+                _rectTransform.anchoredPosition += new Vector2(dx, dy) * intensitéPx * décroiss;
+            }
+
+            _secousse = null;
+        }
+
+        // ── Helpers ───────────────────────────────────────────────────────────
+
+        /// <summary>Re-parente la carte dans PartieBasse en conservant la position écran.</summary>
+        private void RetournerDansPartieBasse()
+        {
+            Vector3 screenPos = _rectTransform.position;
+
+            transform.SetParent(_partieBasse, false);
+
+            _rectTransform.anchorMin = new Vector2(0.5f, 0.5f);
+            _rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+            _rectTransform.pivot     = new Vector2(0.5f, 0.5f);
+            _rectTransform.sizeDelta = _tailleFixe;
+            _rectTransform.position  = screenPos;
+
+            // Clamp immédiat si relâchée hors de PartieBasse
+            _rectTransform.anchoredPosition =
+                ClampAvecFriction(_rectTransform.anchoredPosition);
+        }
+
+        /// <summary>
+        /// Applique une correction de position issue de la résolution de collision inter-cartes.
+        /// Appelée par FormulaireLibreManager.LateUpdate — jamais pendant le drag.
+        /// Déclenche un rebond élastique au premier contact post-drop.
+        /// </summary>
+        public void AppliquerCorrectionCollision(Vector2 correction)
+        {
+            if (_enDrag) return;
+
+            // Premier contact après un drop : impulsion de rebond dans la direction opposée au push
+            if (_premierContactPossible && correction.sqrMagnitude > 0f)
+            {
+                _premierContactPossible = false;
+                Vector2 direction = correction.normalized;
+                AjouterImpulsion(direction * IMPULSION_REBOND);
+            }
+
+            Rect  r  = _partieBasse.rect;
+            float hw = _tailleFixe.x * 0.5f;
+            float hh = _tailleFixe.y * 0.5f;
+            Vector2 p = _rectTransform.anchoredPosition + correction;
+
+            _rectTransform.anchoredPosition = new Vector2(
+                Mathf.Clamp(p.x, r.xMin + hw, r.xMax - hw),
+                Mathf.Clamp(p.y, r.yMin + hh, r.yMax - hh));
+        }
+
+        /// <summary>Ajoute une impulsion instantanée à la vitesse physique de la carte.</summary>
+        public void AjouterImpulsion(Vector2 impulsion)
+        {
+            _velocity += impulsion;
+            _velocity.x = Mathf.Clamp(_velocity.x, -VITESSE_MAX_DERIVE, VITESSE_MAX_DERIVE);
+            _velocity.y = Mathf.Max(_velocity.y, -VITESSE_CHUTE_MAX);
+
+            if (Mathf.Abs(_velocity.x) > VITESSE_ARRET)
                 _enDerive = true;
         }
 
         /// <summary>
-        /// Clamp la position dans les bounds de la PartieBasse.
-        /// Annule la composante de vitesse correspondante en cas de collision avec le bord.
+        /// Contraint la position dans les bounds de PartieBasse.
+        /// Annule la composante de vitesse correspondante en cas de collision avec un bord.
         /// </summary>
         private Vector2 ClampAvecFriction(Vector2 pos)
         {
-            Rect r  = _partieBasse.rect;
+            Rect  r  = _partieBasse.rect;
             float hw = _tailleFixe.x * 0.5f;
             float hh = _tailleFixe.y * 0.5f;
 
             float cx = Mathf.Clamp(pos.x, r.xMin + hw, r.xMax - hw);
             float cy = Mathf.Clamp(pos.y, r.yMin + hh, r.yMax - hh);
 
-            // Stopper la dérive sur le bord touché
             if (!Mathf.Approximately(cx, pos.x)) _velocity.x = 0f;
             if (!Mathf.Approximately(cy, pos.y)) _velocity.y = 0f;
 

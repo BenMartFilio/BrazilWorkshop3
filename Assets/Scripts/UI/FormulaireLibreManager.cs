@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -15,26 +16,47 @@ namespace Barrage.UI
     public class FormulaireLibreManager : MonoBehaviour
     {
         [Header("Zones UI")]
-        [Tooltip("RectTransform de la zone basse où les cartes sont déposées (Canvas propre).")]
+        [Tooltip("RectTransform de la zone basse où les cartes vivent au repos.")]
         [SerializeField] private RectTransform partieBasse;
+        [Tooltip("RectTransform de la couche de glissement (Canvas root) utilisée pendant le drag.")]
+        [SerializeField] private RectTransform coucheGlissement;
         [SerializeField] private MainDuGardeUI mainDuGarde;
+        [SerializeField] private BarrePatience barrePatience;
+
+        [Header("Feedbacks")]
+        [Tooltip("Composant de secousse de l'écran (placé sur le Canvas racine ou un parent).")]
+        [SerializeField] private SecousseEcran secousseEcran;
+        [Tooltip("Composant de retour haptique (peut être sur n'importe quel GameObject actif).")]
+        [SerializeField] private RetourHaptique retourHaptique;
+
+        [Tooltip("Durée de la secousse des formulaires (doit correspondre à celle de SecousseEcran).")]
+        [SerializeField] private float duréeSecousseCartes = 0.40f;
+        [Tooltip("Intensité de la secousse des formulaires en pixels.")]
+        [SerializeField] private float intensitéSecousseCartes = 6f;
 
         [Header("Apparence")]
         [Tooltip("Taille fixe de chaque carte en pixels.")]
         [SerializeField] private Vector2 tailleFixeCarte = new Vector2(189f, 336f);
 
-        [Tooltip("Facteur d'écartement entre les cartes dans le tas (pixels par racine d'index).")]
-        [SerializeField] private float facteurEcartement = 28f;
-
         [Tooltip("Amplitude maximale de la rotation aléatoire initiale (degrés).")]
         [SerializeField] private float rotationMax = 14f;
+
+        [Tooltip("Marge en pixels par rapport aux bords de la partieBasse pour le spawn des cartes.")]
+        [SerializeField] private float margeSpawnBords = 20f;
+
+        [Tooltip("Vitesse horizontale initiale maximale aléatoire (px/s) pour disperser les cartes au spawn.")]
+        [SerializeField] private float vitesseSpawnMax = 80f;
 
         [Header("Données")]
         [SerializeField] private FormulaireInventaire inventaire;
         [SerializeField] private List<FormulaireData> formulairesData = new();
 
-        // Angle d'or en radians — donne une spirale de Fibonacci uniforme
-        private const float ANGLE_OR = 2.39996323f;
+        // ── Collision inter-cartes ────────────────────────────────────────────
+        // Zone de collision = centre de la carte, avec 30 % de marge sur chaque bord.
+        // → collisionHalfSize = tailleFixeCarte * 0.5 * (1 - 0.30) = tailleFixeCarte * 0.35
+        private const float MARGE_COLLISION      = 0.30f; // fraction de marge côté carte
+        private const float RESTITUTION          = 0.5f;  // fraction de l'overlap corrigée par itération
+        private const int   ITERATIONS_COLLISION = 3;     // passes par LateUpdate
 
         private readonly List<FormulaireLibre> _cartes = new();
         private readonly Dictionary<FormulaireType, FormulaireData> _dataParType = new();
@@ -44,19 +66,38 @@ namespace Barrage.UI
             foreach (var data in formulairesData.Where(d => d != null))
                 _dataParType[data.type] = data;
 
-            mainDuGarde.OnFormulaireRemis += OnFormulaireRemisAuGarde;
+            mainDuGarde.OnFormulaireRemis    += OnFormulaireRemisAuGarde;
+            mainDuGarde.OnFormulaireIncorrect += OnFormulaireIncorrect;
         }
 
         private void Start()
         {
             inventaire.InitialiserInventaire();
+            StartCoroutine(SpawnApresLayout());
+        }
+
+        /// <summary>
+        /// Attend que le layout Canvas soit calculé avant de spawner et positionner les cartes,
+        /// afin que partieBasse.rect retourne des dimensions réelles.
+        /// </summary>
+        private IEnumerator SpawnApresLayout()
+        {
+            // Attendre deux frames : le premier EndOfFrame initialise le Canvas,
+            // le second garantit que les Canvas imbriqués (PartieBasse est un Canvas enfant)
+            // ont bien propagé leurs dimensions.
+            yield return new WaitForEndOfFrame();
+            yield return new WaitForEndOfFrame();
+
             SpawnToutesLesCartes();
         }
 
         private void OnDestroy()
         {
             if (mainDuGarde != null)
-                mainDuGarde.OnFormulaireRemis -= OnFormulaireRemisAuGarde;
+            {
+                mainDuGarde.OnFormulaireRemis    -= OnFormulaireRemisAuGarde;
+                mainDuGarde.OnFormulaireIncorrect -= OnFormulaireIncorrect;
+            }
         }
 
         // ── Spawn ──────────────────────────────────────────────────────────────
@@ -68,7 +109,7 @@ namespace Barrage.UI
             foreach (var type in liste)
                 SpawnCarte(type);
 
-            PositionnerEnTas();
+            PositionnerAléatoirement();
         }
 
         private void SpawnCarte(FormulaireType type)
@@ -100,27 +141,61 @@ namespace Barrage.UI
             img.raycastTarget = true;
 
             var carte = go.AddComponent<FormulaireLibre>();
-            carte.Initialiser(type, this, partieBasse, tailleFixeCarte);
+            carte.Initialiser(type, this, partieBasse, coucheGlissement, tailleFixeCarte);
 
             _cartes.Add(carte);
         }
 
-        /// <summary>Repositionne toutes les cartes en tas spirale de Fibonacci.</summary>
-        private void PositionnerEnTas()
+        /// <summary>
+        /// Positionne chaque carte à une position entièrement aléatoire dans les bounds de la partieBasse.
+        /// Une vélocité horizontale initiale légère est appliquée pour briser la symétrie dès le début.
+        /// La physique (gravité + collisions) prend ensuite le relais pour établir un tas naturel.
+        /// </summary>
+        private void PositionnerAléatoirement()
         {
-            int n = _cartes.Count;
-            for (int i = 0; i < n; i++)
+            // GetLocalCorners retourne les 4 coins en espace local du RectTransform.
+            // On utilise Min/Max sur tous les coins pour gérer les rects à hauteur négative
+            // (PartieBasse est en stretch avec sizeDelta négatif, les coins sont inversés en Y).
+            Vector3[] coins = new Vector3[4];
+            partieBasse.GetLocalCorners(coins);
+
+            float localXMin = Mathf.Min(coins[0].x, coins[1].x, coins[2].x, coins[3].x);
+            float localXMax = Mathf.Max(coins[0].x, coins[1].x, coins[2].x, coins[3].x);
+            float localYMin = Mathf.Min(coins[0].y, coins[1].y, coins[2].y, coins[3].y);
+            float localYMax = Mathf.Max(coins[0].y, coins[1].y, coins[2].y, coins[3].y);
+
+            float hw = tailleFixeCarte.x * 0.5f;
+            float hh = tailleFixeCarte.y * 0.5f;
+
+            float xMin = localXMin + hw + margeSpawnBords;
+            float xMax = localXMax - hw - margeSpawnBords;
+            float yMin = localYMin + hh + margeSpawnBords;
+            float yMax = localYMax - hh - margeSpawnBords;
+
+            // Réduire les marges si la zone est trop petite pour la taille des cartes
+            if (xMin > xMax) { xMin = localXMin + hw; xMax = localXMax - hw; }
+            if (yMin > yMax) { yMin = localYMin + hh; yMax = localYMax - hh; }
+
+            if (xMin > xMax || yMin > yMax)
             {
-                // Spirale de Fibonacci : rayon croissant + angle d'or → jamais deux cartes superposées
-                float rayon = facteurEcartement * Mathf.Sqrt(i);
-                float angle = i * ANGLE_OR;
+                Debug.LogError($"[FormulaireLibreManager] PartieBasse trop petite pour spawner les cartes " +
+                               $"(bounds X:[{localXMin:F1},{localXMax:F1}] Y:[{localYMin:F1},{localYMax:F1}], taille={tailleFixeCarte}).");
+                return;
+            }
 
-                Vector2 pos = new Vector2(Mathf.Cos(angle) * rayon, Mathf.Sin(angle) * rayon);
-                float rotation  = UnityEngine.Random.Range(-rotationMax, rotationMax);
+            foreach (var carte in _cartes)
+            {
+                float x        = UnityEngine.Random.Range(xMin, xMax);
+                float y        = UnityEngine.Random.Range(yMin, yMax);
+                float rotation = UnityEngine.Random.Range(-rotationMax, rotationMax);
 
-                var rt = _cartes[i].GetComponent<RectTransform>();
-                rt.anchoredPosition = pos;
+                var rt = carte.GetComponent<RectTransform>();
+                rt.anchoredPosition = new Vector2(x, y);
                 rt.localEulerAngles = new Vector3(0f, 0f, rotation);
+
+                float vx = UnityEngine.Random.Range(-vitesseSpawnMax, vitesseSpawnMax);
+                float vy = UnityEngine.Random.Range(-vitesseSpawnMax * 0.5f, vitesseSpawnMax * 0.5f);
+                carte.AjouterImpulsion(new Vector2(vx, vy));
             }
         }
 
@@ -153,11 +228,71 @@ namespace Barrage.UI
             return résultat;
         }
 
+        // ── Collision ─────────────────────────────────────────────────────────
+
+        private void LateUpdate()
+        {
+            for (int i = 0; i < ITERATIONS_COLLISION; i++)
+                ResoudreCollisions();
+        }
+
+        /// <summary>
+        /// Résout les collisions entre toutes les paires de cartes via AABB.
+        /// La zone de collision est centrée sur la carte avec MARGE_COLLISION (30 %) de chaque côté,
+        /// ce qui autorise le chevauchement des bords tout en empêchant la superposition totale.
+        /// </summary>
+        private void ResoudreCollisions()
+        {
+            // Demi-taille de la zone de collision : 70 % de la demi-taille de la carte
+            Vector2 collHalf = tailleFixeCarte * 0.5f * (1f - MARGE_COLLISION);
+
+            for (int i = 0; i < _cartes.Count; i++)
+            {
+                for (int j = i + 1; j < _cartes.Count; j++)
+                {
+                    // Exclure toute paire impliquant une carte en cours de drag
+                    if (_cartes[i].EstEnDrag || _cartes[j].EstEnDrag) continue;
+
+                    Vector2 posA  = _cartes[i].Rt.anchoredPosition;
+                    Vector2 posB  = _cartes[j].Rt.anchoredPosition;
+                    Vector2 delta = posA - posB;
+
+                    // Détection AABB sur les zones de collision
+                    float overlapX = collHalf.x * 2f - Mathf.Abs(delta.x);
+                    float overlapY = collHalf.y * 2f - Mathf.Abs(delta.y);
+
+                    if (overlapX <= 0f || overlapY <= 0f) continue; // pas de collision
+
+                    // Vecteur de séparation sur l'axe de moindre pénétration (MTV)
+                    float signX = delta.x >= 0f ? 1f : -1f;
+                    float signY = delta.y >= 0f ? 1f : -1f;
+
+                    Vector2 push = overlapX < overlapY
+                        ? new Vector2(overlapX * signX, 0f)
+                        : new Vector2(0f, overlapY * signY);
+
+                    // Correction symétrique entre les deux cartes libres
+                    _cartes[i].AppliquerCorrectionCollision( push * 0.5f * RESTITUTION);
+                    _cartes[j].AppliquerCorrectionCollision(-push * 0.5f * RESTITUTION);
+                }
+            }
+        }
+
         // ── Logique de jeu ─────────────────────────────────────────────────────
 
         private void OnFormulaireRemisAuGarde(FormulaireType type)
         {
             inventaire.Retirer(type, 1);
+        }
+
+        private void OnFormulaireIncorrect()
+        {
+            barrePatience?.AppliquerPénalité();
+            secousseEcran?.Secouer();
+            RetourHaptique.VibrerDoubleImpulsion();
+
+            foreach (var carte in _cartes)
+                carte.Secouer(duréeSecousseCartes, intensitéSecousseCartes);
         }
 
         /// <summary>Soumet une carte à la main du garde, la retire de la liste et la détruit.</summary>

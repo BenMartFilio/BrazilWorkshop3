@@ -12,12 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c738f08b1737ee04dbdf2b1339dd6abc, type: 3}
   m_Name: FormulaireInventaire
   m_EditorClassIdentifier: Assembly-CSharp::Barrage.Formulaires.FormulaireInventaire
-  "quantit\xE9sInitiales":
-  - type: 0
-    "quantit\xE9": 5
-  - type: 1
-    "quantit\xE9": 3
-  - type: 2
-    "quantit\xE9": 2
-  - type: 3
-    "quantit\xE9": 6
+  "quantit\xE9sInitiales": []
