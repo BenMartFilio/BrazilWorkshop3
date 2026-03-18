@@ -5,16 +5,13 @@ public class PlaySubMenu : MonoBehaviour
 {
     [SerializeField] private GameObject _playMenu;
     [SerializeField] private GameObject _playBouton;
-    private RectTransform _rectBouton;
-    private Vector3 _boutonPosition;
+    [SerializeField] private GameObject _optionBouton;
 
     [SerializeField] private GameObject _shopMenu;
     [SerializeField] private GameObject _inventoryMenu;
 
     private void Start()
     {
-        _rectBouton = _playBouton.GetComponent<RectTransform>();
-        _boutonPosition = _rectBouton.localPosition;
         OnPlayDisplay();
     }
     public void OnPlayDisplay()
@@ -28,18 +25,25 @@ public class PlaySubMenu : MonoBehaviour
         _shopMenu.SetActive(false);
         _inventoryMenu.SetActive(false);
         StartButtonDisplay();
+        StartButtonOptionDisplay();
     }
 
     private void StartButtonDisplay()
     {
-        StartCoroutine(LerpPosition(0.2f));
+        StartCoroutine(LerpPosition(0.2f,_playBouton, new Vector3(0,-200,0)));
+    }
+    private void StartButtonOptionDisplay()
+    {
+        StartCoroutine(LerpPosition(0.2f,_optionBouton, new Vector3(-150,0,0)));
     }
 
 
-    IEnumerator LerpPosition(float time)
+    IEnumerator LerpPosition(float time, GameObject Bouton, Vector3 newDirection)
     {
+        RectTransform _rectBouton = Bouton.GetComponent<RectTransform>();
+        Vector3 _boutonPosition = _rectBouton.localPosition;
         float elapsed = 0;
-        Vector3 newPosition = new Vector3 (_boutonPosition.x, _boutonPosition.y-200, _boutonPosition.z);
+        Vector3 newPosition = _boutonPosition+newDirection;
         
         _rectBouton.localPosition = newPosition;
         
@@ -51,6 +55,12 @@ public class PlaySubMenu : MonoBehaviour
         }
         _rectBouton.localPosition = _boutonPosition;
     }
+
+
+
+
+
+
 
 
     public void OnShopDisplay()
