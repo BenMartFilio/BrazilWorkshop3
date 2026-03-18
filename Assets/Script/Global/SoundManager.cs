@@ -13,6 +13,9 @@ public class SoundManager : MonoBehaviour
     private AudioSource backgroundSource;
 
     [SerializeField] private AudioEventDispatcher _AudioEventDispatcher;
+    [SerializeField] private AudioClip _AudioClip;
+    [SerializeField] private AudioType _AudioClip2;
+    [SerializeField] private AudioType _AudioClip3;
 
     private void OnEnable()
     {
@@ -57,7 +60,11 @@ public class SoundManager : MonoBehaviour
                 backgroundSource = source;
         }
 
-   // A UTILISER POUR CALL     _AudioEventDispatcher.PlayAudio(_DeathAudioType);
+        _AudioEventDispatcher.PlayAudio(_AudioClip2);
+        _AudioEventDispatcher.PlayAudio(_AudioClip3);
+
+        PlayMusic(_AudioClip);
+        // A UTILISER POUR CALL     _AudioEventDispatcher.PlayAudio(_DeathAudioType);
     }
 
     private void PlaySound(AudioClip son)
