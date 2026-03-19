@@ -724,7 +724,7 @@ namespace Barrage.Effets
         // ══════════════════════════════════════════════════════════════════════
 
         // ── 1. NUAGE PRINCIPAL ────────────────────────────────────────────────
-        //     Grand volume billowing, bruit Perlin, s'étend et monte doucement.
+        //     Petit puff compact derrière le pneu, s'estompe rapidement.
         private void ConfigNuage(ParticleSystem ps)
         {
             float e = echelle;
@@ -732,16 +732,16 @@ namespace Barrage.Effets
             var main = ps.main;
             main.loop             = true;
             main.simulationSpace  = ParticleSystemSimulationSpace.World;
-            main.startLifetime    = new ParticleSystem.MinMaxCurve(2.2f, 4.0f);
+            main.startLifetime    = new ParticleSystem.MinMaxCurve(0.5f, 1.0f);
             main.startSpeed       = new ParticleSystem.MinMaxCurve(0.7f * e, 2.0f * e);
-            main.startSize        = new ParticleSystem.MinMaxCurve(0.12f * e, 0.28f * e);
+            main.startSize        = new ParticleSystem.MinMaxCurve(0.10f * e, 0.22f * e);
             main.startRotation    = new ParticleSystem.MinMaxCurve(-Mathf.PI, Mathf.PI);
             main.startColor       = new ParticleSystem.MinMaxGradient(couleurSable, couleurCendre);
             main.gravityModifier  = new ParticleSystem.MinMaxCurve(0.025f);
-            main.maxParticles     = 300;
+            main.maxParticles     = 80;
 
             var em = ps.emission;
-            em.rateOverTime = new ParticleSystem.MinMaxCurve(22f);
+            em.rateOverTime = new ParticleSystem.MinMaxCurve(18f);
 
             // Cône large ouvert vers -Z (derrière le véhicule)
             var shape = ps.shape;
@@ -752,7 +752,7 @@ namespace Barrage.Effets
             shape.radiusThickness   = 1f;
             shape.rotation          = new Vector3(90f, 0f, 0f); // +Y local → -Z local
 
-            // Couleur : sable chaud → gris cendre → vapeur blanche → transparent
+            // Apparaît vite, s'efface très rapidement
             var colL = ps.colorOverLifetime;
             colL.enabled = true;
             var g = new Gradient();
@@ -766,21 +766,20 @@ namespace Barrage.Effets
                 new GradientAlphaKey[]
                 {
                     new GradientAlphaKey(0.00f, 0.000f),
-                    new GradientAlphaKey(0.62f, 0.090f),
-                    new GradientAlphaKey(0.48f, 0.420f),
-                    new GradientAlphaKey(0.20f, 0.750f),
-                    new GradientAlphaKey(0.00f, 1.000f),
+                    new GradientAlphaKey(0.55f, 0.060f),  // pic rapide
+                    new GradientAlphaKey(0.20f, 0.350f),  // chute brusque
+                    new GradientAlphaKey(0.00f, 0.650f),  // transparent à 65 % de la vie
                 }
             );
             colL.color = new ParticleSystem.MinMaxGradient(g);
 
-            // Taille : micro au spawn → large nuage billowing
+            // Croissance modérée — reste compact
             var szL = ps.sizeOverLifetime;
             szL.enabled = true;
             szL.size = new ParticleSystem.MinMaxCurve(1f, new AnimationCurve(
-                new Keyframe(0.00f, 0.15f, 2.5f,  2.5f),
-                new Keyframe(0.25f, 1.00f, 1.2f,  1.2f),
-                new Keyframe(1.00f, 3.40f, 0.3f,  0.3f)
+                new Keyframe(0.00f, 0.20f, 2.5f,  2.5f),
+                new Keyframe(0.30f, 1.00f, 0.6f,  0.6f),
+                new Keyframe(1.00f, 1.50f, 0.0f,  0.0f)   // ×1.5 max au lieu de ×3.4
             ));
 
             // Rotation propre des particules (tumble)
@@ -791,11 +790,11 @@ namespace Barrage.Effets
             // Bruit de Perlin — mouvement organique non-uniforme
             var noise = ps.noise;
             noise.enabled     = true;
-            noise.strength    = new ParticleSystem.MinMaxCurve(0.45f * e);
+            noise.strength    = new ParticleSystem.MinMaxCurve(0.30f * e);
             noise.frequency   = 0.55f;
             noise.scrollSpeed = new ParticleSystem.MinMaxCurve(0.20f);
-            noise.octaveCount = 3;
-            noise.quality     = ParticleSystemNoiseQuality.Medium;
+            noise.octaveCount = 2;
+            noise.quality     = ParticleSystemNoiseQuality.Low;
 
             // Résistance de l'air — ralentit les particules avec le temps
             var limV = ps.limitVelocityOverLifetime;
@@ -805,7 +804,6 @@ namespace Barrage.Effets
             limV.dampen   = 0.12f;
 
             // Montée lente en World space — la poussière s'élève
-            // Toutes les courbes doivent être dans le même mode (TwoConstants).
             var velL = ps.velocityOverLifetime;
             velL.enabled = true;
             velL.space   = ParticleSystemSimulationSpace.World;
@@ -956,7 +954,7 @@ namespace Barrage.Effets
         }
 
         // ── 4. TRAÎNÉE LONGUE ─────────────────────────────────────────────────
-        //     Nappe de poussière très légère qui persiste au sol après le passage.
+        //     Fine nappe rase, courte durée, s'estompe vite.
         private void ConfigTrainée(ParticleSystem ps)
         {
             float e = echelle;
@@ -964,17 +962,16 @@ namespace Barrage.Effets
             var main = ps.main;
             main.loop             = true;
             main.simulationSpace  = ParticleSystemSimulationSpace.World;
-            main.startLifetime    = new ParticleSystem.MinMaxCurve(5.0f, 8.0f);
-            main.startSpeed       = new ParticleSystem.MinMaxCurve(0.0f, 0.22f * e);
-            main.startSize        = new ParticleSystem.MinMaxCurve(0.35f * e, 0.75f * e);
+            main.startLifetime    = new ParticleSystem.MinMaxCurve(0.6f, 1.2f);  // 5-8 s → 0.6-1.2 s
+            main.startSpeed       = new ParticleSystem.MinMaxCurve(0.0f, 0.18f * e);
+            main.startSize        = new ParticleSystem.MinMaxCurve(0.20f * e, 0.45f * e);
             main.startRotation    = new ParticleSystem.MinMaxCurve(-Mathf.PI, Mathf.PI);
-            // Très transparente dès la création
             main.startColor       = new ParticleSystem.MinMaxGradient(
-                new Color(0.93f, 0.86f, 0.70f, 0.16f),
-                new Color(0.87f, 0.80f, 0.66f, 0.22f)
+                new Color(0.93f, 0.86f, 0.70f, 0.18f),
+                new Color(0.87f, 0.80f, 0.66f, 0.25f)
             );
             main.gravityModifier  = new ParticleSystem.MinMaxCurve(0.0f);
-            main.maxParticles     = 180;
+            main.maxParticles     = 40;  // 180 → 40
 
             var em = ps.emission;
             em.rateOverTime = new ParticleSystem.MinMaxCurve(6f);
@@ -985,7 +982,7 @@ namespace Barrage.Effets
             shape.shapeType = ParticleSystemShapeType.Box;
             shape.scale     = new Vector3(0.24f * e, 0.02f, 0.20f * e);
 
-            // Couleur : beige chaud → blanc vapeur → invisible
+            // Apparaît brièvement puis s'évanouit rapidement
             var colL = ps.colorOverLifetime;
             colL.enabled = true;
             var g = new Gradient();
@@ -993,32 +990,32 @@ namespace Barrage.Effets
                 new GradientColorKey[]
                 {
                     new GradientColorKey(new Color(0.92f, 0.83f, 0.67f), 0.00f),
-                    new GradientColorKey(new Color(0.95f, 0.91f, 0.83f), 0.40f),
+                    new GradientColorKey(new Color(0.95f, 0.91f, 0.83f), 0.35f),
                     new GradientColorKey(new Color(0.97f, 0.95f, 0.93f), 1.00f),
                 },
                 new GradientAlphaKey[]
                 {
                     new GradientAlphaKey(0.00f, 0.000f),
-                    new GradientAlphaKey(0.22f, 0.055f),
-                    new GradientAlphaKey(0.17f, 0.500f),
-                    new GradientAlphaKey(0.00f, 1.000f),
+                    new GradientAlphaKey(0.20f, 0.050f),  // pic d'opacité bas dès le départ
+                    new GradientAlphaKey(0.08f, 0.350f),  // chute rapide
+                    new GradientAlphaKey(0.00f, 0.600f),  // invisible à 60 % de la vie
                 }
             );
             colL.color = new ParticleSystem.MinMaxGradient(g);
 
-            // S'étale massivement en s'éloignant
+            // Légère expansion — reste petite, ne grandit pas démesurément
             var szL = ps.sizeOverLifetime;
             szL.enabled = true;
             szL.size = new ParticleSystem.MinMaxCurve(1f, new AnimationCurve(
-                new Keyframe(0.00f, 0.22f),
-                new Keyframe(0.18f, 1.00f),
-                new Keyframe(1.00f, 6.00f)
+                new Keyframe(0.00f, 0.25f),
+                new Keyframe(0.25f, 1.00f),
+                new Keyframe(1.00f, 2.00f)   // ×2 max au lieu de ×6
             ));
 
             // Bruit lent = dispersion organique et naturelle
             var noise = ps.noise;
             noise.enabled     = true;
-            noise.strength    = new ParticleSystem.MinMaxCurve(0.16f * e);
+            noise.strength    = new ParticleSystem.MinMaxCurve(0.10f * e);
             noise.frequency   = 0.20f;
             noise.scrollSpeed = new ParticleSystem.MinMaxCurve(0.035f);
             noise.octaveCount = 2;
