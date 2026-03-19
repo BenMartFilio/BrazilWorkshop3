@@ -275,6 +275,24 @@ namespace Barrage.UI
         // ── Animation Game Over ───────────────────────────────────────────────
 
         /// <summary>
+        /// Fige immédiatement la physique de la carte (gravité, inertie) sans déclencher
+        /// d'animation. Appelé après la mise en place Game Over pour que les cartes
+        /// restent en position.
+        /// </summary>
+        public void FigerPourGameOver()
+        {
+            _animéeGameOver = true;
+            _enDrag         = false;
+            _velocity       = Vector2.zero;
+
+            if (_rawImage != null) _rawImage.raycastTarget = false;
+        }
+
+        /// <summary>True si la carte est figée pour l'animation de game over.
+        /// Utilisé par FormulaireLibreManager pour exclure ces cartes de la résolution de collisions.</summary>
+        public bool EstFigéePourGameOver => _animéeGameOver;
+
+        /// <summary>
         /// Phase 1 : explosé — applique une impulsion violente dans une direction aléatoire
         /// et désactive la physique de contrainte de bords.
         /// </summary>
@@ -394,7 +412,7 @@ namespace Barrage.UI
         /// </summary>
         public void AppliquerCorrectionCollision(Vector2 correction)
         {
-            if (_enDrag) return;
+            if (_enDrag || _animéeGameOver) return;
 
             // Premier contact après un drop : impulsion de rebond dans la direction opposée au push
             if (_premierContactPossible && correction.sqrMagnitude > 0f)

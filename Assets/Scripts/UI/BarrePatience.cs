@@ -19,7 +19,7 @@ namespace Barrage.UI
     public class BarrePatience : MonoBehaviour
     {
         // ── Paramètres de jeu ────────────────────────────────────────────────
-        private const float PATIENCE_MAX    = 100f;
+        private const float PATIENCE_MAX    = 160f;
         private const float POINTS_PENALITE = 10f;  // points perdus par erreur
         private const float VITESSE_VIDAGE  = 3f;   // points/s de décroissance naturelle
 

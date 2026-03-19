@@ -8,25 +8,35 @@ namespace Barrage.UI
 {
     /// <summary>
     /// Orchestre l'animation de Game Over :
-    ///   1. Phase explosion  — chaque carte reçoit une impulsion aléatoire et vole dans tous les sens.
-    ///   2. Phase attente    — délai avant la convergence.
-    ///   3. Phase convergence — les cartes se redimensionnent et se replacent pour former "GAME OVER".
+    ///   1. Phase mise en place  — les 8 cartes glissent vers la formation "GAME / OVER"
+    ///                             en deux rangées de 4. Les cartes ne sont plus déplaçables.
+    ///   2. Phase tamponnage     — toutes les 0.5 s, une lettre est tamponnée sur sa carte
+    ///                             via une animation scale-punch (impression d'un tampon encreur).
     ///
     /// Doit être abonné à BarrePatience.OnPatienceEpuisée.
     /// </summary>
     public class AnimationGameOver : MonoBehaviour
     {
         // ── Timing ───────────────────────────────────────────────────────────
-        private const float DUREE_EXPLOSION    = 0.6f;  // s — vol chaotique
-        private const float DELAI_CONVERGENCE  = 0.2f;  // s — pause avant convergence
-        private const float DUREE_CONVERGENCE  = 1.1f;  // s — animation vers "GAME OVER"
-        private const float DUREE_FADE_TEXTE   = 0.5f;  // s — fondu entrant du texte TMP
+        private const float DUREE_MISE_EN_PLACE  = 0.9f;   // s — glissement des cartes vers leurs slots
+        private const float DELAI_AVANT_TAMPONS  = 0.3f;   // s — pause après la mise en place
+        private const float DELAI_ENTRE_TAMPONS  = 0.5f;   // s — entre chaque lettre tamponnée
+
+        // ── Vérification du positionnement ───────────────────────────────────
+        private const float SEUIL_POSITION_OK    = 4f;     // px — écart max accepté par rapport au slot
+        private const int   MAX_TENTATIVES_POS   = 5;      // tentatives de correction avant d'abandonner
+        private const float DUREE_CORRECTION_POS = 0.25f;  // s — durée de la coroutine de correction
+
+        // ── Tampon ────────────────────────────────────────────────────────────
+        private const float TAMPON_DUREE_DESCENTE = 0.07f; // s — le texte "tombe" vers la carte
+        private const float TAMPON_ECRASE_SCALE   = 1.25f; // pic de scale au moment de l'impact
+        private const float TAMPON_DUREE_REBOND   = 0.18f; // s — retour à l'échelle normale
+        private const float TAMPON_ROTATION_MAX   = 6f;    // ° — légère inclinaison aléatoire
 
         // ── Layout "GAME OVER" ───────────────────────────────────────────────
-        // Deux lignes : "GAME" (4 cartes) et "OVER" (4 cartes).
-        // La 9e carte (si présente) sert d'espace central ou est masquée.
         private const string LIGNE_1 = "GAME";
         private const string LIGNE_2 = "OVER";
+        private const int    NB_CARTES_REQUISES = 8;
 
         [Header("Références")]
         [Tooltip("RectTransform du Canvas racine (couche de glissement) — espace de référence pour le layout.")]
@@ -36,27 +46,33 @@ namespace Barrage.UI
         [Tooltip("BarrePatience dont OnPatienceEpuisée déclenche l'animation.")]
         [SerializeField] private BarrePatience barrePatience;
 
-        [Header("Texte GAME OVER")]
-        [Tooltip("Prefab TextMeshProUGUI instancié par-dessus les cartes une fois la formation terminée.")]
+        [Header("Texte tamponné")]
+        [Tooltip("Police utilisée pour les lettres tamponnées sur chaque carte.")]
         [SerializeField] private TMP_FontAsset fonteGameOver;
-        [SerializeField] private float          taillePolice = 220f;
-        [SerializeField] private Color          couleurTexte = new Color(0.95f, 0.12f, 0.08f, 1f);
+        [SerializeField] private float taillePolice  = 160f;
+        [SerializeField] private Color couleurTexte  = new Color(0.88f, 0.08f, 0.06f, 1f);
+
+        [Header("Anneau tamponné")]
+        [Tooltip("Rayon de base du cercle tampon en pixels.")]
+        [SerializeField] private float anneauRayon    = 103f;
+        [Tooltip("Épaisseur de l'anneau en pixels.")]
+        [SerializeField] private float anneauEpaisseur = 20f;
+        [Tooltip("Amplitude du bruit sur le bord extérieur (bavure externe).")]
+        [SerializeField] private float anneauBaveExt  = 15f;
+        [Tooltip("Amplitude du bruit sur le bord intérieur (bavure interne).")]
+        [SerializeField] private float anneauBaveInt  = 8f;
 
         [Header("Layout")]
-        [Tooltip("Hauteur d'une ligne de cartes en pixels (espace de la CoucheGlissement).")]
-        [SerializeField] private float hauteurLigne    = 360f;
+        [Tooltip("Hauteur d'une ligne de cartes en pixels.")]
+        [SerializeField] private float hauteurLigne  = 340f;
         [Tooltip("Largeur d'une carte-lettre en pixels.")]
-        [SerializeField] private float largeurLettre   = 180f;
-        [Tooltip("Espacement horizontal entre cartes d'une même ligne.")]
-        [SerializeField] private float espacementH     = 12f;
+        [SerializeField] private float largeurLettre = 175f;
+        [Tooltip("Espacement horizontal entre les cartes d'une même ligne.")]
+        [SerializeField] private float espacementH   = 14f;
         [Tooltip("Espacement vertical entre les deux lignes.")]
-        [SerializeField] private float espacementV     = 20f;
-        [Tooltip("Centre vertical du bloc GAME OVER (0 = centre du canvas).")]
-        [SerializeField] private float offsetY         = 0f;
-
-        [Header("Explosion")]
-        [SerializeField] private float vitesseExplosionMin = 600f;
-        [SerializeField] private float vitesseExplosionMax = 1400f;
+        [SerializeField] private float espacementV   = 18f;
+        [Tooltip("Décalage vertical du bloc par rapport au centre du canvas.")]
+        [SerializeField] private float offsetY       = 0f;
 
         private void OnEnable()
         {
@@ -70,7 +86,7 @@ namespace Barrage.UI
                 barrePatience.OnPatienceEpuisée -= Déclencher;
         }
 
-        /// <summary>Point d'entrée : lance la séquence complète.</summary>
+        /// <summary>Point d'entrée : lance la séquence complète de game over.</summary>
         public void Déclencher()
         {
             StartCoroutine(SequenceGameOver());
@@ -78,71 +94,225 @@ namespace Barrage.UI
 
         private IEnumerator SequenceGameOver()
         {
-            // Récupérer toutes les cartes encore présentes
-            List<FormulaireLibre> cartes = formulaireManager.ObtenirCartes();
-            if (cartes.Count == 0) yield break;
+            // Garantir qu'il y a exactement NB_CARTES_REQUISES cartes disponibles.
+            formulaireManager.CompleterCartesGameOver(NB_CARTES_REQUISES);
 
-            // ── Phase 1 : Explosion ──────────────────────────────────────────
-            foreach (var carte in cartes)
+            List<FormulaireLibre> cartes = formulaireManager.ObtenirCartes();
+
+            int nb = Mathf.Min(cartes.Count, NB_CARTES_REQUISES);
+            if (nb == 0)
             {
-                float angle    = UnityEngine.Random.Range(0f, 360f) * Mathf.Deg2Rad;
-                float vitesse  = UnityEngine.Random.Range(vitesseExplosionMin, vitesseExplosionMax);
-                var   impulsion = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * vitesse;
-                carte.ExplosionGameOver(impulsion);
+                Debug.LogError("[AnimationGameOver] Aucune carte disponible après complétion. " +
+                               "Vérifier que 'Formulaires Data' est renseigné dans FormulaireLibreManager.");
+                yield break;
             }
 
-            yield return new WaitForSeconds(DUREE_EXPLOSION + DELAI_CONVERGENCE);
+            List<(Vector2 pos, Vector2 taille)> slots = CalculerSlots();
 
-            // ── Phase 2 : Calcul des positions cibles ────────────────────────
-            List<(Vector2 pos, Vector2 taille)> slots = CalculerSlots(cartes.Count);
-
-            // ── Phase 3 : Convergence parallèle ─────────────────────────────
+            // ── Phase 1 : Mise en place ──────────────────────────────────────
             var convergences = new List<Coroutine>();
 
-            for (int i = 0; i < cartes.Count; i++)
+            for (int i = 0; i < nb; i++)
             {
-                int idx = i < slots.Count ? i : slots.Count - 1;
-                (Vector2 pos, Vector2 taille) = slots[idx];
-
-                // Couleur translucide foncée pour que les lettres TMP se lisent bien dessus
-                Color couleurCible = new Color(0.12f, 0.12f, 0.18f, 0.88f);
-
-                var co = StartCoroutine(cartes[i].AnimerVers(pos, taille, 0f, couleurCible, DUREE_CONVERGENCE));
+                (Vector2 pos, Vector2 taille) = slots[i];
+                var co = StartCoroutine(cartes[i].AnimerVers(
+                    pos, taille, 0f, Color.white, DUREE_MISE_EN_PLACE));
                 convergences.Add(co);
             }
 
-            // Attendre la fin de toutes les convergences
             foreach (var co in convergences)
                 yield return co;
 
-            // ── Phase 4 : Afficher le texte "GAME OVER" ─────────────────────
-            yield return StartCoroutine(AfficherTexteGameOver());
+            // Figer la physique — exclut aussi ces cartes de ResoudreCollisions()
+            for (int i = 0; i < nb; i++)
+                cartes[i].FigerPourGameOver();
+
+            // ── Vérification et correction du positionnement ─────────────────
+            // Les collisions inter-cartes peuvent avoir déplacé certaines cartes juste
+            // avant le figer. On vérifie que chacune est bien sur son slot et on la
+            // replace si nécessaire, jusqu'à MAX_TENTATIVES_POS fois.
+            for (int tentative = 0; tentative < MAX_TENTATIVES_POS; tentative++)
+            {
+                // Attendre une frame pour laisser LateUpdate terminer sa passe de collision
+                yield return null;
+
+                bool toutesOk = true;
+                for (int i = 0; i < nb; i++)
+                {
+                    if (cartes[i] == null) continue;
+
+                    Vector2 posActuelle = cartes[i].Rt.anchoredPosition;
+                    Vector2 posVoulue   = slots[i].pos;
+                    float   ecart       = Vector2.Distance(posActuelle, posVoulue);
+
+                    if (ecart > SEUIL_POSITION_OK)
+                    {
+                        toutesOk = false;
+                        // Correction douce vers le slot cible
+                        yield return StartCoroutine(cartes[i].AnimerVers(
+                            posVoulue, slots[i].taille, 0f, Color.white, DUREE_CORRECTION_POS));
+                    }
+                }
+
+                if (toutesOk) break;
+            }
+
+            // Forcer la position exacte pour éliminer tout résidu de dérive
+            for (int i = 0; i < nb; i++)
+            {
+                if (cartes[i] == null) continue;
+                cartes[i].Rt.anchoredPosition = slots[i].pos;
+            }
+
+            yield return new WaitForSeconds(DELAI_AVANT_TAMPONS);
+
+            // ── Phase 2 : Tamponnage lettre par lettre ───────────────────────
+            string texteComplet = LIGNE_1 + LIGNE_2; // "GAMEOVER"
+
+            for (int i = 0; i < nb; i++)
+            {
+                char lettre = i < texteComplet.Length ? texteComplet[i] : '?';
+
+                // On passe la position du slot directement — plus de lecture sur carte.Rt
+                // (la carte peut être détruite entre deux tampons).
+                yield return StartCoroutine(
+                    TamponnerLettre(slots[i].pos, lettre, slots[i].taille));
+
+                if (i < nb - 1)
+                    yield return new WaitForSeconds(DELAI_ENTRE_TAMPONS);
+            }
         }
 
+        // ── Tamponnage ────────────────────────────────────────────────────────
+
         /// <summary>
-        /// Calcule les positions et tailles des slots en deux lignes ("GAME" / "OVER")
-        /// centrées dans la CoucheGlissement.
-        /// Les cartes en surplus (au-delà de 8) sont regroupées sur le dernier slot.
+        /// Crée un conteneur enfant de coucheGlissement avec :
+        ///   - TamponCirculaireUI (rendu en arrière-plan — effet tampon encreur)
+        ///   - TextMeshProUGUI    (rendu au premier plan — la lettre)
+        /// Le conteneur descend depuis le haut de la carte avec un fondu entrant,
+        /// puis subit un scale-punch à l'impact.
+        /// Reçoit directement la position du slot pour éviter tout accès sur carte.Rt
+        /// (la carte peut avoir été détruite entre deux tampons).
         /// </summary>
-        private List<(Vector2, Vector2)> CalculerSlots(int nbCartes)
+        private IEnumerator TamponnerLettre(Vector2 posSlot, char lettre, Vector2 tailleCarte)
+        {
+            // ── Conteneur parent (gère position + scale pour les deux enfants) ─
+            var container = new GameObject($"Tampon_{lettre}", typeof(RectTransform));
+            container.transform.SetParent(coucheGlissement, false);
+            container.layer = LayerMask.NameToLayer("UI");
+
+            var rtC = container.GetComponent<RectTransform>();
+            rtC.anchorMin = new Vector2(0.5f, 0.5f);
+            rtC.anchorMax = new Vector2(0.5f, 0.5f);
+            rtC.pivot     = new Vector2(0.5f, 0.5f);
+            rtC.sizeDelta = tailleCarte;
+
+            float inclinaison = Random.Range(-TAMPON_ROTATION_MAX, TAMPON_ROTATION_MAX);
+            rtC.localEulerAngles = new Vector3(0f, 0f, inclinaison);
+
+            // ── Anneau (enfant 0 — rendu derrière la lettre) ──────────────────
+            var goAnneau = new GameObject("Anneau", typeof(RectTransform), typeof(CanvasRenderer));
+            goAnneau.transform.SetParent(container.transform, false);
+            goAnneau.layer = LayerMask.NameToLayer("UI");
+
+            var rtA = goAnneau.GetComponent<RectTransform>();
+            rtA.anchorMin = new Vector2(0.5f, 0.5f);
+            rtA.anchorMax = new Vector2(0.5f, 0.5f);
+            rtA.pivot     = new Vector2(0.5f, 0.5f);
+            rtA.sizeDelta = tailleCarte;
+
+            var anneau = goAnneau.AddComponent<TamponCirculaireUI>();
+            anneau.color = new Color(couleurTexte.r, couleurTexte.g, couleurTexte.b, 0f);
+            anneau.Initialiser(
+                Random.Range(0, 99999),
+                anneauRayon, anneauEpaisseur,
+                anneauBaveExt, anneauBaveInt);
+
+            // ── Lettre TMP (enfant 1 — rendu devant l'anneau) ─────────────────
+            var goLettre = new GameObject("Lettre",
+                typeof(RectTransform), typeof(CanvasRenderer), typeof(TextMeshProUGUI));
+            goLettre.transform.SetParent(container.transform, false);
+            goLettre.layer = LayerMask.NameToLayer("UI");
+
+            var rtL = goLettre.GetComponent<RectTransform>();
+            rtL.anchorMin = new Vector2(0.5f, 0.5f);
+            rtL.anchorMax = new Vector2(0.5f, 0.5f);
+            rtL.pivot     = new Vector2(0.5f, 0.5f);
+            rtL.sizeDelta = tailleCarte;
+
+            var tmp = goLettre.GetComponent<TextMeshProUGUI>();
+            tmp.text               = lettre.ToString();
+            tmp.fontSize           = taillePolice;
+            tmp.fontStyle          = FontStyles.Bold;
+            tmp.alignment          = TextAlignmentOptions.Center;
+            tmp.enableWordWrapping = false;
+            tmp.color              = new Color(couleurTexte.r, couleurTexte.g, couleurTexte.b, 0f);
+            if (fonteGameOver != null) tmp.font = fonteGameOver;
+
+            // ── Positions de départ / cible depuis le slot (pas depuis carte.Rt) ──
+            Vector2 posDepart = posSlot + new Vector2(0f, tailleCarte.y * 1.5f);
+            Vector2 posCible  = posSlot;
+
+            rtC.anchoredPosition = posDepart;
+            rtC.localScale       = Vector3.one;
+
+            // ── Phase 1 : descente rapide + apparition en fondu ───────────────
+            float t = 0f;
+            while (t < TAMPON_DUREE_DESCENTE)
+            {
+                t += Time.deltaTime;
+                float p      = Mathf.SmoothStep(0f, 1f, t / TAMPON_DUREE_DESCENTE);
+                Color cAlpha = new Color(couleurTexte.r, couleurTexte.g, couleurTexte.b, p);
+
+                rtC.anchoredPosition = Vector2.Lerp(posDepart, posCible, p);
+                tmp.color            = cAlpha;
+                anneau.color         = cAlpha;
+                yield return null;
+            }
+
+            rtC.anchoredPosition = posCible;
+            Color cFull = new Color(couleurTexte.r, couleurTexte.g, couleurTexte.b, 1f);
+            tmp.color    = cFull;
+            anneau.color = cFull;
+
+            // ── Phase 2 : impact scale-punch ──────────────────────────────────
+            rtC.localScale = Vector3.one * TAMPON_ECRASE_SCALE;
+
+            t = 0f;
+            while (t < TAMPON_DUREE_REBOND)
+            {
+                t += Time.deltaTime;
+                float p = Mathf.SmoothStep(0f, 1f, t / TAMPON_DUREE_REBOND);
+                rtC.localScale = Vector3.one * Mathf.Lerp(TAMPON_ECRASE_SCALE, 1f, p);
+                yield return null;
+            }
+
+            rtC.localScale = Vector3.one;
+        }
+
+        // ── Layout ────────────────────────────────────────────────────────────
+
+        /// <summary>
+        /// Calcule les 8 slots (position + taille) formant "GAME" (ligne 1) et "OVER" (ligne 2),
+        /// centrés dans la coucheGlissement.
+        /// </summary>
+        private List<(Vector2, Vector2)> CalculerSlots()
         {
             var résultat = new List<(Vector2, Vector2)>();
-            Vector2 taille = new Vector2(largeurLettre, hauteurLigne);
+            var taille   = new Vector2(largeurLettre, hauteurLigne);
 
-            string[] lignes    = { LIGNE_1, LIGNE_2 };
-            int      nbLignes  = lignes.Length;
+            string[] lignes       = { LIGNE_1, LIGNE_2 };
             float    largMaxLigne = Mathf.Max(LIGNE_1.Length, LIGNE_2.Length);
-            float    blocLargeur = largMaxLigne * largeurLettre + (largMaxLigne - 1) * espacementH;
-            float    blocHauteur = nbLignes * hauteurLigne + (nbLignes - 1) * espacementV;
+            float    blocHauteur  = lignes.Length * hauteurLigne + (lignes.Length - 1) * espacementV;
 
             float yDepart = offsetY + blocHauteur * 0.5f - hauteurLigne * 0.5f;
 
             for (int l = 0; l < lignes.Length; l++)
             {
-                int    nbLettres  = lignes[l].Length;
-                float  largLigne  = nbLettres * largeurLettre + (nbLettres - 1) * espacementH;
-                float  xDepart    = -largLigne * 0.5f + largeurLettre * 0.5f;
-                float  y          = yDepart - l * (hauteurLigne + espacementV);
+                int   nbLettres = lignes[l].Length;
+                float largLigne = nbLettres * largeurLettre + (nbLettres - 1) * espacementH;
+                float xDepart   = -largLigne * 0.5f + largeurLettre * 0.5f;
+                float y         = yDepart - l * (hauteurLigne + espacementV);
 
                 for (int c = 0; c < nbLettres; c++)
                 {
@@ -152,51 +322,6 @@ namespace Barrage.UI
             }
 
             return résultat;
-        }
-
-        /// <summary>
-        /// Crée un TextMeshProUGUI par-dessus les cartes formant "GAME\nOVER"
-        /// et l'anime en fondu entrant.
-        /// </summary>
-        private IEnumerator AfficherTexteGameOver()
-        {
-            var go = new GameObject("TexteGameOver", typeof(RectTransform), typeof(CanvasRenderer),
-                                    typeof(TextMeshProUGUI));
-            go.transform.SetParent(coucheGlissement, false);
-            go.layer = LayerMask.NameToLayer("UI");
-
-            var rt = go.GetComponent<RectTransform>();
-            rt.anchorMin        = new Vector2(0.5f, 0.5f);
-            rt.anchorMax        = new Vector2(0.5f, 0.5f);
-            rt.pivot            = new Vector2(0.5f, 0.5f);
-            rt.anchoredPosition = new Vector2(0f, offsetY);
-            rt.sizeDelta        = new Vector2(2000f, 900f);
-
-            var tmp = go.GetComponent<TextMeshProUGUI>();
-            tmp.text              = "GAME\nOVER";
-            tmp.fontSize          = taillePolice;
-            tmp.fontStyle         = FontStyles.Bold;
-            tmp.alignment         = TextAlignmentOptions.Center;
-            tmp.enableWordWrapping = false;
-            tmp.lineSpacing       = -20f;
-
-            if (fonteGameOver != null)
-                tmp.font = fonteGameOver;
-
-            // Fondu entrant
-            Color cFinal  = couleurTexte;
-            Color cDepart = new Color(cFinal.r, cFinal.g, cFinal.b, 0f);
-            tmp.color = cDepart;
-
-            float t = 0f;
-            while (t < DUREE_FADE_TEXTE)
-            {
-                t += Time.deltaTime;
-                tmp.color = Color.Lerp(cDepart, cFinal, Mathf.SmoothStep(0f, 1f, t / DUREE_FADE_TEXTE));
-                yield return null;
-            }
-
-            tmp.color = cFinal;
         }
     }
 }

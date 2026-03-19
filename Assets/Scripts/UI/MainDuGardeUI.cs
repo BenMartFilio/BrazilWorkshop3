@@ -24,11 +24,7 @@ namespace Barrage.UI
         [SerializeField] private ListeAttenteGarde listeAttenteGarde;
 
         // ── Animation positive ────────────────────────────────────────────────
-        private const float POS_ECHELLE_MAX  = 1.25f;  // pic de grossissement
-        private const float POS_DUREE_MONTEE = 0.15f;  // s vers le pic
-        private const float POS_DUREE_WOBBLE = 0.60f;  // s d'agitation douce
-        private const float POS_WOBBLE_AMP   = 8f;     // degrés — gentil
-        private const float POS_WOBBLE_FREQ  = 3.5f;   // Hz
+        // (constantes déplacées dans AnimerPositif)
 
         // ── Animation négative ────────────────────────────────────────────────
         private const float NEG_VITESSE_INITIALE  = 3200f; // px/s — très violent
@@ -88,6 +84,14 @@ namespace Barrage.UI
 
         // ── Animation positive ────────────────────────────────────────────────
 
+        private const float POS_DUREE_PULSE   = 0.55f;  // s — durée du pulsé trémolo
+        private const float POS_PULSE_SCALE   = 0.06f;  // amplitude relative du grow/shrink (±6 %)
+        private const float POS_PULSE_FREQ    = 18f;    // Hz — vibration rapide façon trémolo
+        private const float POS_WOBBLE_AMP    = 3f;     // ° — légère rotation oscillante
+        private const float POS_WOBBLE_FREQ   = 9f;     // Hz — rotation rapide synchronisée
+        private const float POS_DUREE_FADEOUT = 0.30f;  // s — fondu + rétrécissement de sortie
+        private const float POS_SHRINK_FINAL  = 0.75f;  // échelle finale avant destruction
+
         private IEnumerator AnimerPositif(GameObject go)
         {
             if (go == null) yield break;
@@ -97,37 +101,62 @@ namespace Barrage.UI
 
             SetRaycast(go, false);
 
-            // Reparenter dans PartieHaute en preservant la position visuelle exacte.
-            // worldPositionStays = true : Unity recalcule anchoredPosition automatiquement.
-            if (partieHaute != null)
-                rt.SetParent(partieHaute, true);
-
+            // Immobiliser le formulaire exactement là où il a été lâché — pas de re-parentage.
+            // Le formulaire reste visible dans la MainDuGarde pendant toute l'animation.
             Vector3 échelleInitiale = rt.localScale;
+            Vector3 rotInitiale     = rt.localEulerAngles;
 
-            // Phase 1 : grossissement doux
+            // ── Phase 1 : trémolo (pulse + wobble) ──────────────────────────
             float t = 0f;
-            while (t < POS_DUREE_MONTEE)
+            while (t < POS_DUREE_PULSE)
             {
                 if (go == null) yield break;
                 t += Time.deltaTime;
-                float p = Mathf.SmoothStep(0f, 1f, t / POS_DUREE_MONTEE);
-                rt.localScale = échelleInitiale * Mathf.Lerp(1f, POS_ECHELLE_MAX, p);
+
+                float ratio    = t / POS_DUREE_PULSE;
+                // Enveloppe : monte vite, s'estompe progressivement vers la fin
+                float envelope = Mathf.Sin(ratio * Mathf.PI);
+
+                // Pulse scale : oscillation rapide autour de l'échelle initiale
+                float pulseFactor = 1f + Mathf.Sin(t * POS_PULSE_FREQ * Mathf.PI * 2f)
+                                       * POS_PULSE_SCALE * envelope;
+
+                // Wobble rotation : légère oscillation angulaire décalée de π/2
+                float wobbleAngle = Mathf.Sin(t * POS_WOBBLE_FREQ * Mathf.PI * 2f + Mathf.PI * 0.5f)
+                                  * POS_WOBBLE_AMP * envelope;
+
+                rt.localScale       = échelleInitiale * pulseFactor;
+                rt.localEulerAngles = new Vector3(0f, 0f, rotInitiale.z + wobbleAngle);
                 yield return null;
             }
 
-            // Phase 2 : agitation gentille avec retour progressif à l'échelle initiale
+            // ── Phase 2 : fondu + rétrécissement ────────────────────────────
+            // Récupérer tous les Graphic pour le fondu alpha.
+            var graphics = go.GetComponentsInChildren<Graphic>(true);
+
+            // Capturer les alphas initiaux de chaque graphic pour un fondu proportionnel.
+            float[] alphasInit = new float[graphics.Length];
+            for (int i = 0; i < graphics.Length; i++)
+                alphasInit[i] = graphics[i].color.a;
+
             t = 0f;
-            while (t < POS_DUREE_WOBBLE)
+            while (t < POS_DUREE_FADEOUT)
             {
                 if (go == null) yield break;
                 t += Time.deltaTime;
-                float ratio    = t / POS_DUREE_WOBBLE;
-                float décroiss = 1f - ratio;
-                float angle    = Mathf.Sin(t * POS_WOBBLE_FREQ * Mathf.PI * 2f) * POS_WOBBLE_AMP * décroiss;
-                float échelle  = Mathf.Lerp(POS_ECHELLE_MAX, 1f, ratio);
+                float p = Mathf.SmoothStep(0f, 1f, t / POS_DUREE_FADEOUT);
 
-                rt.localScale       = échelleInitiale * échelle;
-                rt.localEulerAngles = new Vector3(0f, 0f, angle);
+                // Rétrécissement doux vers POS_SHRINK_FINAL
+                rt.localScale = échelleInitiale * Mathf.Lerp(1f, POS_SHRINK_FINAL, p);
+
+                // Fondu alpha
+                for (int i = 0; i < graphics.Length; i++)
+                {
+                    Color c = graphics[i].color;
+                    c.a = Mathf.Lerp(alphasInit[i], 0f, p);
+                    graphics[i].color = c;
+                }
+
                 yield return null;
             }
 

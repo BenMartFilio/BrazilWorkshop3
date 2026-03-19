@@ -252,8 +252,10 @@ namespace Barrage.UI
             {
                 for (int j = i + 1; j < _cartes.Count; j++)
                 {
-                    // Exclure toute paire impliquant une carte en cours de drag
-                    if (_cartes[i].EstEnDrag || _cartes[j].EstEnDrag) continue;
+                    // Exclure toute paire impliquant une carte en drag ou figée pour le game over —
+                    // les cartes figées doivent rester exactement à leur slot, sans être repoussées.
+                    if (_cartes[i].EstEnDrag         || _cartes[j].EstEnDrag)         continue;
+                    if (_cartes[i].EstFigéePourGameOver || _cartes[j].EstFigéePourGameOver) continue;
 
                     Vector2 posA  = _cartes[i].Rt.anchoredPosition;
                     Vector2 posB  = _cartes[j].Rt.anchoredPosition;
@@ -319,6 +321,60 @@ namespace Barrage.UI
         /// Utilisé par AnimationGameOver pour accéder aux cartes sans modifier la liste interne.
         /// </summary>
         public List<FormulaireLibre> ObtenirCartes() => new List<FormulaireLibre>(_cartes);
+
+        /// <summary>
+        /// Spawne des cartes supplémentaires jusqu'à atteindre <paramref name="cible"/>.
+        /// Utilisé par AnimationGameOver pour garantir qu'il y a toujours assez de cartes.
+        /// Les cartes sont placées directement dans la coucheGlissement hors de l'écran
+        /// pour qu'AnimerVers() puisse les animer sans conflit d'espace de coordonnées.
+        /// </summary>
+        public void CompleterCartesGameOver(int cible)
+        {
+            int manquantes = cible - _cartes.Count;
+            if (manquantes <= 0) return;
+
+            // Construire la liste des types disponibles depuis _dataParType.
+            // Si formulairesData est vide dans l'Inspector, _dataParType sera vide aussi —
+            // on logue une erreur explicite pour guider le développeur.
+            var types = new List<FormulaireType>(_dataParType.Keys);
+            if (types.Count == 0)
+            {
+                Debug.LogError("[FormulaireLibreManager] CompleterCartesGameOver : _dataParType est vide. " +
+                               "Vérifie que la liste 'Formulaires Data' est renseignée dans l'Inspector " +
+                               "du FormulaireLibreManager.");
+                return;
+            }
+
+            // Position de départ hors écran dans coucheGlissement (sous le bas visible).
+            // On utilise les coins de coucheGlissement pour trouver le bas réel.
+            Vector3[] coins = new Vector3[4];
+            coucheGlissement.GetLocalCorners(coins);
+            float yHorsEcran = Mathf.Min(coins[0].y, coins[1].y, coins[2].y, coins[3].y)
+                               - tailleFixeCarte.y * 2f;
+
+            for (int i = 0; i < manquantes; i++)
+            {
+                FormulaireType type = types[i % types.Count];
+                int avantSpawn      = _cartes.Count;
+                SpawnCarte(type);
+
+                if (_cartes.Count <= avantSpawn) continue; // SpawnCarte a échoué
+
+                var carte = _cartes[_cartes.Count - 1];
+                var rt    = carte.Rt;
+
+                // Re-parenter dans coucheGlissement AVANT qu'AnimerVers le fasse,
+                // pour que anchoredPosition soit dans le bon espace de coordonnées.
+                rt.SetParent(coucheGlissement, false);
+                rt.anchoredPosition = new Vector2(
+                    UnityEngine.Random.Range(-tailleFixeCarte.x, tailleFixeCarte.x),
+                    yHorsEcran);
+                rt.localEulerAngles = Vector3.zero;
+
+                // Figer la physique immédiatement — ces cartes ne doivent pas tomber.
+                carte.FigerPourGameOver();
+            }
+        }
 
         // ── Helpers de détection ───────────────────────────────────────────────
 

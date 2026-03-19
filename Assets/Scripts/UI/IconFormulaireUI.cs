@@ -22,11 +22,27 @@ namespace Barrage.UI
 
         private RawImage _rawImage;
         private Coroutine _animation;
+        private bool _animationEnAttente;
 
         private void Awake()
         {
-            _rawImage = GetComponent<RawImage>();
-            Masquer();
+            InitialiserComposants();
+            // Masquer via SetActive directement pour éviter la récursion avant que
+            // _rawImage soit initialisé.
+            gameObject.SetActive(false);
+            transform.localScale = Vector3.zero;
+        }
+
+        private void OnEnable()
+        {
+            // Démarre l'animation ici, car StartCoroutine nécessite un GameObject actif.
+            // OnEnable est appelé juste après que SetActive(true) ait rendu le GameObject actif.
+            if (_animationEnAttente)
+            {
+                _animationEnAttente = false;
+                if (_animation != null) StopCoroutine(_animation);
+                _animation = StartCoroutine(AnimerApparition());
+            }
         }
 
         /// <summary>
@@ -35,17 +51,27 @@ namespace Barrage.UI
         /// </summary>
         public void Afficher(Texture texture, int quantité)
         {
-            gameObject.SetActive(true);
-            _rawImage.texture = texture;
-            texteQuantité.text = quantité > 1 ? $"×{quantité}" : string.Empty;
+            // Initialisation de secours si Awake n'a pas été appelé (slot inactif au démarrage).
+            InitialiserComposants();
 
-            if (_animation != null) StopCoroutine(_animation);
-            _animation = StartCoroutine(AnimerApparition());
+            _rawImage.texture = texture;
+
+            if (texteQuantité != null)
+                texteQuantité.text = quantité > 1 ? $"×{quantité}" : string.Empty;
+            else
+                Debug.LogWarning($"[IconFormulaireUI] texteQuantité non assigné sur {gameObject.name}.", this);
+
+            // Marquer l'animation comme en attente avant SetActive,
+            // car OnEnable sera appelé immédiatement dans SetActive(true).
+            _animationEnAttente = true;
+            gameObject.SetActive(true);
         }
 
         /// <summary>Masque et réinitialise ce slot.</summary>
         public void Masquer()
         {
+            _animationEnAttente = false;
+
             if (_animation != null)
             {
                 StopCoroutine(_animation);
@@ -54,6 +80,12 @@ namespace Barrage.UI
 
             gameObject.SetActive(false);
             transform.localScale = Vector3.zero;
+        }
+
+        private void InitialiserComposants()
+        {
+            if (_rawImage == null)
+                _rawImage = GetComponent<RawImage>();
         }
 
         private IEnumerator AnimerApparition()
