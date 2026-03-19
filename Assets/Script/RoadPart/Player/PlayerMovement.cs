@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
@@ -11,6 +12,9 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private AudioEventDispatcher _AudioEventDispatcher;
     [SerializeField] private AudioType _MoveAudioType;
+
+    public float moveDuration = 0.1f;
+    public float maxLeanAngle = 45f;
 
     private void OnEnable()
     {
@@ -48,8 +52,53 @@ public class PlayerMovement : MonoBehaviour
     }
     private void UpdatePosition()
     {
-        transform.position = m_transforms[m_index].position;
+        Vector3 newPosition = m_transforms[m_index].position;
+        MoveToX(newPosition.x);
         Quaternion actualRotation = transform.rotation;
         transform.rotation = actualRotation;
+    }
+
+    public void MoveToX(float targetX)
+    {
+        StopAllCoroutines();
+        StartCoroutine(SmoothMove(targetX));
+    }
+
+    IEnumerator SmoothMove(float targetX)
+    {
+        float startX = transform.position.x;
+        float time = 0f;
+
+        float direction = Mathf.Sign(targetX - startX); // droite = 1, gauche = 1
+
+        while (time < moveDuration)
+        {
+            time += Time.deltaTime;
+            float t = Mathf.Clamp01(time / moveDuration);
+
+            // même easing pour synchroniser mouvement + rotation
+            float easedT = EaseInOut(t);
+
+            // --- POSITION ---
+            float newX = Mathf.Lerp(startX, targetX, easedT);
+            transform.position = new Vector3(newX, transform.position.y, transform.position.z);
+
+            // --- ROTATION ---
+            float leanFactor = Mathf.Sin(easedT * Mathf.PI);
+            float angle = leanFactor * maxLeanAngle * direction;
+
+            transform.rotation = Quaternion.Euler(0, 0, -angle);
+
+            yield return null;
+        }
+
+        // reset propre
+        transform.position = new Vector3(targetX, transform.position.y, transform.position.z);
+        transform.rotation = Quaternion.identity;
+    }
+
+    float EaseInOut(float t)
+    {
+        return t * t * (3f - 2f * t);
     }
 }
