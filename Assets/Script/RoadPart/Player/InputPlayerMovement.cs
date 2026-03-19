@@ -40,12 +40,15 @@ public class InputPlayerMovement : MonoBehaviour
 
         if (Mathf.Abs(delta.x) > Mathf.Abs(delta.y))
         {
-            MoveRight();
-            Debug.Log(delta.x > 0 ? "Swipe Right" : "Swipe Left");
+            bool right = delta.x > 0;
+
+            if (right) MoveRight();
+            else MoveLeft();
+
+            Debug.Log(right ? "Swipe Right" : "Swipe Left");
         }
         else
         {
-            MoveLeft();
             Debug.Log(delta.y > 0 ? "Swipe Up" : "Swipe Down");
         }
     }
