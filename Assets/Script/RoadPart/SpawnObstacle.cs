@@ -37,7 +37,11 @@ public class SpawnObstacle : MonoBehaviour
 
     private void SpawnRate()
     {
-        generalSpeed = Mathf.Clamp(generalSpeed + 1, 5, 30);
+        generalSpeed = Mathf.Clamp(generalSpeed + 1, 0, 30);
+        for (int i = 0; i < obstacles.Length; i++)
+        {
+            obstacles[i].GetComponent<ScrollingElement>().UpdateSpeed(generalSpeed);
+        }
     }
 
     IEnumerator SpawnRoutine()
@@ -61,7 +65,7 @@ public class SpawnObstacle : MonoBehaviour
 
         obj.transform.SetPositionAndRotation(new Vector3(_fallingLines[randomNumber].transform.position.x, transform.position.y, transform.position.z), obstacles[index].transform.rotation);
         obj.SetActive(true);
-        obj.GetComponent<ScrollingElement>().speed = Mathf.Clamp(obj.GetComponent<ScrollingElement>().speed+generalSpeed, 5, 30);
+     //   obj.GetComponent<ScrollingElement>().UpdateSpeed(generalSpeed);
     }
 
     int GetNextObstacleIndex()
