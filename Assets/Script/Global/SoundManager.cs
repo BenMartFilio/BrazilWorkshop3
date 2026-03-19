@@ -56,7 +56,6 @@ public class SoundManager : MonoBehaviour
             else if (source.outputAudioMixerGroup == backgroundGroup)
                 backgroundSource = source;
         }
-
         // A UTILISER POUR CALL     _AudioEventDispatcher.PlayAudio(_DeathAudioType);
     }
 

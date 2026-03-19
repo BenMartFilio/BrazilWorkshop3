@@ -34,6 +34,7 @@ public class AdaptOnScreen : MonoBehaviour
         transform.localScale = new Vector3(scaleX, scaleY, 1f);
 
         float scaleRoad = scaleX / 3;  //Envoyer la valeur dans les 3 positions ref
+        float offSet = worldWidth - scaleX/2;
 
        
     }
