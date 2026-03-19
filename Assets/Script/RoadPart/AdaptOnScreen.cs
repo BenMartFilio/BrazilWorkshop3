@@ -6,7 +6,7 @@ public class AdaptOnScreen : MonoBehaviour
 {
     private Camera cam;
     private SpriteRenderer sr;
-
+    [SerializeField] private GameObject[] ReferencesToPoint;
     void Awake()
     {
         cam = Camera.main;
@@ -33,9 +33,15 @@ public class AdaptOnScreen : MonoBehaviour
 
         transform.localScale = new Vector3(scaleX, scaleY, 1f);
 
-        float scaleRoad = scaleX / 3;  //Envoyer la valeur dans les 3 positions ref
-        float offSet = worldWidth - scaleX/2;
+        float widthSprite = sr.sprite.bounds.size.x*scaleX;
 
+        float scaleRoad = widthSprite / 3;  //Envoyer la valeur dans les 3 positions ref
+        float offSet = (worldWidth - widthSprite) / 2;
+
+        for (int i = 0; i < ReferencesToPoint.Length; i++)
+        {
+            ReferencesToPoint[i].transform.position = new Vector3(scaleRoad * (i + 1)-(worldWidth-scaleRoad)+offSet, ReferencesToPoint[i].transform.position.y, ReferencesToPoint[i].transform.position.z);
+        }
        
     }
 }
