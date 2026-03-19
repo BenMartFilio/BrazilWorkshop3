@@ -200,7 +200,74 @@ Transform:
   m_GameObject: {fileID: 234882523}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5401788, y: 0, z: 0}
+  m_LocalPosition: {x: 1.8749998, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &441541521
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 441541523}
+  - component: {fileID: 441541522}
+  m_Layer: 0
+  m_Name: Effetpapiervirevolte
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &441541522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441541521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdce557db6e202b408434f8bcc856b3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Barrage.Effets.VirevoltePapier
+  texturesFeuilles:
+  - {fileID: 2800000, guid: 47491f56a8bca9f45859b27004198543, type: 3}
+  - {fileID: 2800000, guid: 5a25a6f91e3f5d84484054ccf83ba288, type: 3}
+  couleurs:
+  - {r: 1, g: 1, b: 1, a: 1}
+  opaciteMin: 0.55
+  opaciteMax: 1
+  sortingLayerName: Default
+  sortingOrder: 0
+  nombreFeuilles: 15
+  tailleZone: {x: 2000, y: 2000}
+  directionVent: {x: 0.4, y: -0.15}
+  vitesseMin: 0.15
+  vitesseMax: 0.55
+  amplitudeOscillation: 0.38
+  frequenceOscillationMin: 0.4
+  frequenceOscillationMax: 1.3
+  rotationVitesseMin: 20
+  rotationVitesseMax: 165
+  tailleMin: 2
+  tailleMax: 2
+  flipFreqMin: 0.3
+  flipFreqMax: 1
+--- !u!4 &441541523
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441541521}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.0000001192093, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -231,7 +298,7 @@ Transform:
   m_GameObject: {fileID: 483668379}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.00000011920929, y: 0, z: 0}
+  m_LocalPosition: {x: -0.00000011920929, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -262,7 +329,7 @@ Transform:
   m_GameObject: {fileID: 1121532490}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5401785, y: 0, z: 0}
+  m_LocalPosition: {x: -1.875, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -744,7 +811,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 10, z: 0}
-  m_LocalScale: {x: 0.14257634, y: 0.1937609, z: 1}
+  m_LocalScale: {x: 0.17357118, y: 0.1937609, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -882,7 +949,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.14257634, y: 0.1937609, z: 1}
+  m_LocalScale: {x: 0.17357118, y: 0.1937609, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -931,3 +998,4 @@ SceneRoots:
   - {fileID: 220667608}
   - {fileID: 1725592337}
   - {fileID: 1313671860}
+  - {fileID: 441541523}
