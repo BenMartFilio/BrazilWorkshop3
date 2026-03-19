@@ -247,12 +247,12 @@ MonoBehaviour:
   opaciteMin: 0.55
   opaciteMax: 1
   sortingLayerName: Default
-  sortingOrder: 0
+  sortingOrder: 10
   nombreFeuilles: 35
   directionVent: {x: 0.4, y: -0.15}
-  vitesseMin: 0.15
-  vitesseMax: 0.55
-  amplitudeOscillation: 0.38
+  vitesseMin: 3.25
+  vitesseMax: 5
+  amplitudeOscillation: 0.1
   frequenceOscillationMin: 0.4
   frequenceOscillationMax: 1.3
   rotationVitesseMin: 20
