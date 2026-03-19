@@ -62,12 +62,27 @@ namespace Barrage.Effets
         [Tooltip("Teinte des débris (graviers sombres).")]
         [SerializeField] private Color couleurDebris  = new Color(0.35f, 0.27f, 0.19f, 1f);
 
+        // ── Rendu ─────────────────────────────────────────────────────────────
+        [Header("Rendu")]
+        [Tooltip("Sorting layer appliqué à tous les renderers de particules.\n" +
+                 "Doit correspondre exactement à un nom de sorting layer du projet\n" +
+                 "(Project Settings → Tags and Layers → Sorting Layers).")]
+        [SerializeField] private string coucheTri = "Player";
+
+        [Tooltip("Ordre de rendu au sein de la couche de tri.\n" +
+                 "Plus la valeur est élevée, plus les particules apparaissent en avant-plan.\n" +
+                 "Modifiable en temps réel.")]
+        [SerializeField] private int ordreTri = 0;
+
         // ── État interne ──────────────────────────────────────────────────────
         private ParticleSystem _psNuage;
         private ParticleSystem _psSable;
         private ParticleSystem _psDebris;
         private ParticleSystem _psTrainee;
         private ParticleSystem _psSol;
+
+        // Renderers stockés pour AppliquerTri() — évite GetComponent à chaque OnValidate.
+        private ParticleSystemRenderer[] _renderers;
 
         // Tailles de base capturées après la configuration initiale (en unités monde * echelle).
         // AppliquerTaille() les multiplie par tailleMultiplicateur pour un ajustement temps réel.
@@ -210,6 +225,15 @@ namespace Barrage.Effets
             _psTrainee = BuildSous("PS_TrainéeLongue",  ConfigTrainée, _matPoussiere);
             _psSol     = BuildSous("PS_ContactSol",     ConfigSol,     _matPoussiere);
 
+            _renderers = new ParticleSystemRenderer[]
+            {
+                _psNuage.GetComponent<ParticleSystemRenderer>(),
+                _psSable.GetComponent<ParticleSystemRenderer>(),
+                _psDebris.GetComponent<ParticleSystemRenderer>(),
+                _psTrainee.GetComponent<ParticleSystemRenderer>(),
+                _psSol.GetComponent<ParticleSystemRenderer>(),
+            };
+
             // Capturer les tailles de base issues de la configuration (avec echelle appliquée)
             _baseTailleNuage   = _psNuage.main.startSizeMultiplier;
             _baseTailleSable   = _psSable.main.startSizeMultiplier;
@@ -247,6 +271,7 @@ namespace Barrage.Effets
             AppliquerDirection();
             AppliquerVitesseDiffusion();
             AppliquerDuréeVie();
+            AppliquerTri();
         }
 
         private void OnValidate()
@@ -257,6 +282,7 @@ namespace Barrage.Effets
             AppliquerDirection();
             AppliquerVitesseDiffusion();
             AppliquerDuréeVie();
+            AppliquerTri();
         }
 
         // ── Matériaux URP Particles/Unlit transparents ────────────────────────
@@ -447,6 +473,23 @@ namespace Barrage.Effets
             if (ps == null) return;
             var m = ps.main;
             m.startLifetimeMultiplier = baseDurée * duréeVieParticules;
+        }
+
+        // ── Couche et ordre de rendu ──────────────────────────────────────────
+
+        /// <summary>
+        /// Applique <see cref="coucheTri"/> et <see cref="ordreTri"/> à tous les renderers.
+        /// Modifiable en temps réel depuis l'Inspector.
+        /// </summary>
+        private void AppliquerTri()
+        {
+            if (_renderers == null) return;
+            foreach (var r in _renderers)
+            {
+                if (r == null) continue;
+                r.sortingLayerName = coucheTri;
+                r.sortingOrder     = ordreTri;
+            }
         }
 
         // ══════════════════════════════════════════════════════════════════════

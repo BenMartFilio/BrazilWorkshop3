@@ -188,11 +188,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: echelle
-      value: 0.8
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: vitesseDiffusion
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: directionVerticale
@@ -200,11 +200,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: "dur\xE9eVieParticules"
-      value: 1.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: tailleMultiplicateur
-      value: 0.8
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: facteurCroissanceParticules
@@ -274,11 +274,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: echelle
-      value: 0.8
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: vitesseDiffusion
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: directionVerticale
@@ -286,11 +286,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: "dur\xE9eVieParticules"
-      value: 1.5
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: tailleMultiplicateur
-      value: 0.8
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: facteurCroissanceParticules
