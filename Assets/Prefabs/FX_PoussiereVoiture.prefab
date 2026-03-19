@@ -45,7 +45,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Barrage.Effets.PoussiereVoiture
   vitesseVehicule: 1
-  echelle: 1
-  couleurSable: {r: 0.82, g: 0.65, b: 0.44, a: 1}
-  couleurCendre: {r: 0.68, g: 0.64, b: 0.56, a: 1}
-  couleurDebris: {r: 0.35, g: 0.27, b: 0.19, a: 1}
+  echelle: 0.6
+  tailleMultiplicateur: 0.25
+  facteurCroissanceParticules: 0.25
+  directionVerticale: 0
+  vitesseDiffusion: 1.5
+  "dur\xE9eVieParticules": 0.5
+  tailleTrainee: 1
+  palette: 1
+  couleurSable: {r: 0.08, g: 0.07, b: 0.06, a: 1}
+  couleurCendre: {r: 0.24, g: 0.21, b: 0.17, a: 1}
+  couleurDebris: {r: 0.05, g: 0.04, b: 0.03, a: 1}
+  coucheTri: Decors
+  ordreTri: 0

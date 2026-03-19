@@ -45,7 +45,7 @@ namespace Barrage.Effets
 
         // ── Rendu ─────────────────────────────────────────────────────────────
         [Header("Rendu")]
-        [SerializeField] private string sortingLayerName = "Default";
+        [SerializeField] private string sortingLayerName = "Décor";
         [SerializeField] private int    sortingOrder     = 0;
 
         // ── Quantité ──────────────────────────────────────────────────────────
@@ -108,6 +108,13 @@ namespace Barrage.Effets
         private float    _tempsCumul;
 
         // ── Initialisation ────────────────────────────────────────────────────
+
+        private void OnValidate()
+        {
+            // Met à jour les SpriteRenderers déjà créés lorsque les champs Rendu
+            // sont modifiés depuis l'Inspector, même sans redémarrer le Play Mode.
+            AppliquerTri();
+        }
 
         private void Start()
         {
@@ -231,6 +238,23 @@ namespace Barrage.Effets
             }
 
             return new Vector2(largeur * margeZone, hauteur * margeZone);
+        }
+
+        // ── Tri de rendu ──────────────────────────────────────────────────────
+
+        /// <summary>
+        /// Applique <see cref="sortingLayerName"/> et <see cref="sortingOrder"/> à tous
+        /// les SpriteRenderers enfants déjà créés. Appelée depuis OnValidate pour que
+        /// les modifications Inspector soient effectives immédiatement sur les instances
+        /// déjà placées en scène.
+        /// </summary>
+        private void AppliquerTri()
+        {
+            foreach (var sr in GetComponentsInChildren<SpriteRenderer>(includeInactive: true))
+            {
+                sr.sortingLayerName = sortingLayerName;
+                sr.sortingOrder     = sortingOrder;
+            }
         }
 
         // ── Création d'une feuille ────────────────────────────────────────────

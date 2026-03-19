@@ -2,6 +2,17 @@ using UnityEngine;
 
 namespace Barrage.Effets
 {
+    /// <summary>Palette de couleurs prédéfinie pour l'effet de poussière.</summary>
+    public enum PalettePoussière
+    {
+        /// <summary>Sable chaud — tons beiges et bruns. Convient aux pistes en terre.</summary>
+        Sable,
+        /// <summary>Goudron — gris foncés et cendres. Convient aux routes asphaltées.</summary>
+        Goudron,
+        /// <summary>Couleurs définies manuellement via les champs ci-dessous.</summary>
+        Personnalisée,
+    }
+
     /// <summary>
     /// Effet procédural de poussière de pneu — 5 systèmes de particules superposés :
     ///   1. <b>Nuage principal</b>    — grand volume de poussière billowing, bruit Perlin.
@@ -53,13 +64,29 @@ namespace Barrage.Effets
                  "Modifiable en temps réel.")]
         [SerializeField, Min(0.01f)] private float duréeVieParticules = 1f;
 
+        [Tooltip("Multiplicateur de taille appliqué uniquement à la traînée longue (PS_TrainéeLongue).\n" +
+                 "S'ajoute au Taille Multiplicateur global : taille effective = tailleMultiplicateur × tailleTrainee.\n" +
+                 "0.5 = traînée deux fois plus fine  /  3 = nappe très large.\n" +
+                 "Modifiable en temps réel.")]
+        [SerializeField, Min(0.01f)] private float tailleTrainee = 1f;
+
         // ── Couleurs ──────────────────────────────────────────────────────────
         [Header("Palette")]
-        [Tooltip("Teinte principale de la poussière (sable chaud).")]
+        [Tooltip("Sable     → beiges et bruns chauds (piste en terre).\n" +
+                 "Goudron   → gris foncés et cendres (route asphaltée).\n" +
+                 "Personnalisée → utilise les trois champs couleur ci-dessous.")]
+        [SerializeField] private PalettePoussière palette = PalettePoussière.Sable;
+
+        [Tooltip("Teinte principale (nuage, grains, sol).\n" +
+                 "Ignorée si la palette n'est pas 'Personnalisée'.")]
         [SerializeField] private Color couleurSable   = new Color(0.82f, 0.65f, 0.44f, 1f);
-        [Tooltip("Teinte secondaire (cendre froide).")]
+
+        [Tooltip("Teinte secondaire (cendre, traînée).\n" +
+                 "Ignorée si la palette n'est pas 'Personnalisée'.")]
         [SerializeField] private Color couleurCendre  = new Color(0.68f, 0.64f, 0.56f, 1f);
-        [Tooltip("Teinte des débris (graviers sombres).")]
+
+        [Tooltip("Teinte des débris / graviers.\n" +
+                 "Ignorée si la palette n'est pas 'Personnalisée'.")]
         [SerializeField] private Color couleurDebris  = new Color(0.35f, 0.27f, 0.19f, 1f);
 
         // ── Rendu ─────────────────────────────────────────────────────────────
@@ -67,7 +94,7 @@ namespace Barrage.Effets
         [Tooltip("Sorting layer appliqué à tous les renderers de particules.\n" +
                  "Doit correspondre exactement à un nom de sorting layer du projet\n" +
                  "(Project Settings → Tags and Layers → Sorting Layers).")]
-        [SerializeField] private string coucheTri = "Player";
+        [SerializeField] private string coucheTri = "Décor";
 
         [Tooltip("Ordre de rendu au sein de la couche de tri.\n" +
                  "Plus la valeur est élevée, plus les particules apparaissent en avant-plan.\n" +
@@ -214,6 +241,20 @@ namespace Barrage.Effets
             }
         }
 
+        /// <summary>
+        /// Multiplicateur de taille de la traînée longue uniquement.
+        /// S'applique en plus de <see cref="TailleMultiplicateur"/>.
+        /// </summary>
+        public float TailleTrainee
+        {
+            get => tailleTrainee;
+            set
+            {
+                tailleTrainee = Mathf.Max(0.01f, value);
+                AppliquerTailleTrainee();
+            }
+        }
+
         // ── Lifecycle ─────────────────────────────────────────────────────────
 
         private void Awake()
@@ -271,7 +312,9 @@ namespace Barrage.Effets
             AppliquerDirection();
             AppliquerVitesseDiffusion();
             AppliquerDuréeVie();
+            AppliquerTailleTrainee();
             AppliquerTri();
+            AppliquerCouleurs();
         }
 
         private void OnValidate()
@@ -282,7 +325,9 @@ namespace Barrage.Effets
             AppliquerDirection();
             AppliquerVitesseDiffusion();
             AppliquerDuréeVie();
+            AppliquerTailleTrainee();
             AppliquerTri();
+            AppliquerCouleurs();
         }
 
         // ── Matériaux URP Particles/Unlit transparents ────────────────────────
@@ -353,6 +398,174 @@ namespace Barrage.Effets
             em.rateOverTime = new ParticleSystem.MinMaxCurve(rate);
         }
 
+        // ── Palette de couleurs ───────────────────────────────────────────────
+
+        // Presets Sable
+        private static readonly Color K_SABLE_PRINCIPALE = new Color(0.84f, 0.67f, 0.44f);
+        private static readonly Color K_SABLE_SECONDAIRE = new Color(0.76f, 0.72f, 0.63f);
+        private static readonly Color K_SABLE_DEBRIS     = new Color(0.35f, 0.27f, 0.19f);
+        private static readonly Color K_SABLE_VAPEUR     = new Color(0.92f, 0.89f, 0.85f);
+
+        // Presets Goudron — asphalte quasi-noir, sous-ton brun chaud caractéristique du bitume
+        private static readonly Color K_GOUDRON_PRINCIPALE = new Color(0.08f, 0.07f, 0.06f); // bitume frais — quasi-noir brun
+        private static readonly Color K_GOUDRON_SECONDAIRE = new Color(0.24f, 0.21f, 0.17f); // poussière d'asphalte usé — brun foncé
+        private static readonly Color K_GOUDRON_DEBRIS     = new Color(0.05f, 0.04f, 0.03f); // gravillon goudronné — noir profond
+        private static readonly Color K_GOUDRON_VAPEUR     = new Color(0.32f, 0.28f, 0.23f); // fumée/vapeur chaude de bitume — gris brun
+
+        /// <summary>
+        /// Résout les couleurs actives selon la <see cref="palette"/> sélectionnée,
+        /// puis les applique à <c>main.startColor</c> et <c>colorOverLifetime</c>
+        /// sur chacun des 5 systèmes de particules.
+        /// </summary>
+        private void AppliquerCouleurs()
+        {
+            // ── 1. Résolution de la palette ───────────────────────────────────
+            // Exécutée en Edit Mode comme en Play Mode (pas de dépendance aux PS).
+            Color principale, secondaire, debrisCol, vapeur;
+
+            switch (palette)
+            {
+                case PalettePoussière.Goudron:
+                    principale = K_GOUDRON_PRINCIPALE;
+                    secondaire = K_GOUDRON_SECONDAIRE;
+                    debrisCol  = K_GOUDRON_DEBRIS;
+                    vapeur     = K_GOUDRON_VAPEUR;
+                    break;
+
+                case PalettePoussière.Sable:
+                    principale = K_SABLE_PRINCIPALE;
+                    secondaire = K_SABLE_SECONDAIRE;
+                    debrisCol  = K_SABLE_DEBRIS;
+                    vapeur     = K_SABLE_VAPEUR;
+                    break;
+
+                default: // Personnalisée
+                    principale = couleurSable;
+                    secondaire = couleurCendre;
+                    debrisCol  = couleurDebris;
+                    vapeur     = Color.Lerp(secondaire, Color.white, 0.55f);
+                    break;
+            }
+
+            // ── 2. Synchronisation des champs Inspector ───────────────────────
+            // Visible immédiatement dans l'Inspector, même hors Play Mode.
+            if (palette != PalettePoussière.Personnalisée)
+            {
+                couleurSable  = principale;
+                couleurCendre = secondaire;
+                couleurDebris = debrisCol;
+            }
+
+            // ── 3. Application aux systèmes de particules ─────────────────────
+            // Les PS n'existent qu'au runtime (créés dans Awake) : sortie anticipée en Edit Mode.
+            if (_psNuage == null) return;
+
+            // Mettre à jour la teinte de base des matériaux partagés
+            if (_matPoussiere != null)
+                _matPoussiere.color = new Color(principale.r, principale.g, principale.b, 1f);
+            if (_matDebris != null)
+                _matDebris.color = new Color(debrisCol.r, debrisCol.g, debrisCol.b, 1f);
+
+            // startColor
+            SetStartColor(_psNuage,   principale, secondaire);
+            SetStartColor(_psSable,   principale, Color.Lerp(principale, secondaire, 0.5f));
+            SetStartColor(_psDebris,  debrisCol,  Color.Lerp(debrisCol, Color.black, 0.3f));
+            SetStartColor(_psTrainee, Color.Lerp(principale, vapeur, 0.3f), Color.Lerp(secondaire, vapeur, 0.3f));
+            SetStartColor(_psSol,     principale, Color.Lerp(principale, secondaire, 0.55f));
+
+            // colorOverLifetime
+            SetColorOverLifetime(_psNuage,
+                new GradientColorKey[]
+                {
+                    new GradientColorKey(principale,                                0.00f),
+                    new GradientColorKey(Color.Lerp(principale, secondaire, 0.55f), 0.38f),
+                    new GradientColorKey(vapeur,                                    1.00f),
+                },
+                new GradientAlphaKey[]
+                {
+                    new GradientAlphaKey(0.00f, 0.000f),
+                    new GradientAlphaKey(0.62f, 0.090f),
+                    new GradientAlphaKey(0.48f, 0.420f),
+                    new GradientAlphaKey(0.20f, 0.750f),
+                    new GradientAlphaKey(0.00f, 1.000f),
+                });
+
+            SetColorOverLifetime(_psSable,
+                new GradientColorKey[]
+                {
+                    new GradientColorKey(Color.Lerp(principale, Color.white, 0.18f), 0.0f),
+                    new GradientColorKey(secondaire,                                  1.0f),
+                },
+                new GradientAlphaKey[]
+                {
+                    new GradientAlphaKey(0.90f, 0.00f),
+                    new GradientAlphaKey(0.55f, 0.40f),
+                    new GradientAlphaKey(0.00f, 1.00f),
+                });
+
+            SetColorOverLifetime(_psDebris,
+                new GradientColorKey[]
+                {
+                    new GradientColorKey(debrisCol,                                  0.00f),
+                    new GradientColorKey(debrisCol,                                  0.70f),
+                    new GradientColorKey(Color.Lerp(debrisCol, Color.black, 0.4f),   1.00f),
+                },
+                new GradientAlphaKey[]
+                {
+                    new GradientAlphaKey(1.00f, 0.00f),
+                    new GradientAlphaKey(0.92f, 0.65f),
+                    new GradientAlphaKey(0.00f, 1.00f),
+                });
+
+            SetColorOverLifetime(_psTrainee,
+                new GradientColorKey[]
+                {
+                    new GradientColorKey(principale,                             0.00f),
+                    new GradientColorKey(Color.Lerp(principale, vapeur, 0.45f),  0.40f),
+                    new GradientColorKey(vapeur,                                 1.00f),
+                },
+                new GradientAlphaKey[]
+                {
+                    new GradientAlphaKey(0.00f, 0.000f),
+                    new GradientAlphaKey(0.22f, 0.055f),
+                    new GradientAlphaKey(0.17f, 0.500f),
+                    new GradientAlphaKey(0.00f, 1.000f),
+                });
+
+            SetColorOverLifetime(_psSol,
+                new GradientColorKey[]
+                {
+                    new GradientColorKey(Color.Lerp(principale, Color.white, 0.12f), 0.0f),
+                    new GradientColorKey(Color.Lerp(principale, secondaire, 0.65f),  1.0f),
+                },
+                new GradientAlphaKey[]
+                {
+                    new GradientAlphaKey(0.78f, 0.00f),
+                    new GradientAlphaKey(0.35f, 0.45f),
+                    new GradientAlphaKey(0.00f, 1.00f),
+                });
+        }
+
+        private static void SetStartColor(ParticleSystem ps, Color min, Color max)
+        {
+            if (ps == null) return;
+            var m = ps.main;
+            m.startColor = new ParticleSystem.MinMaxGradient(min, max);
+        }
+
+        private static void SetColorOverLifetime(
+            ParticleSystem   ps,
+            GradientColorKey[] colorKeys,
+            GradientAlphaKey[] alphaKeys)
+        {
+            if (ps == null) return;
+            var g = new Gradient();
+            g.SetKeys(colorKeys, alphaKeys);
+            var col = ps.colorOverLifetime;
+            col.enabled = true;
+            col.color   = new ParticleSystem.MinMaxGradient(g);
+        }
+
         // ── Modulation de la taille des particules ────────────────────────────
 
         /// <summary>
@@ -374,6 +587,20 @@ namespace Barrage.Effets
             if (ps == null) return;
             var m = ps.main;
             m.startSizeMultiplier = baseTaille * tailleMultiplicateur;
+        }
+
+        // ── Taille individuelle de la traînée ─────────────────────────────────
+
+        /// <summary>
+        /// Applique <see cref="tailleTrainee"/> uniquement sur <c>PS_TrainéeLongue</c>.
+        /// Le résultat final est : baseTailleTrainee × tailleMultiplicateur × tailleTrainee.
+        /// Appelée après <see cref="AppliquerTaille"/> pour écraser la valeur de la traînée.
+        /// </summary>
+        private void AppliquerTailleTrainee()
+        {
+            if (_psTrainee == null) return;
+            var m = _psTrainee.main;
+            m.startSizeMultiplier = _baseTailleTrainee * tailleMultiplicateur * tailleTrainee;
         }
 
         // ── Modulation de la croissance des particules ────────────────────────
