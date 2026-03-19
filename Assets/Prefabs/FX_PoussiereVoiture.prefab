@@ -51,10 +51,10 @@ MonoBehaviour:
   directionVerticale: 0
   vitesseDiffusion: 1.5
   "dur\xE9eVieParticules": 0.5
-  tailleTrainee: 1
+  tailleTrainee: 0.05
   palette: 1
   couleurSable: {r: 0.08, g: 0.07, b: 0.06, a: 1}
   couleurCendre: {r: 0.24, g: 0.21, b: 0.17, a: 1}
   couleurDebris: {r: 0.05, g: 0.04, b: 0.03, a: 1}
-  coucheTri: Decors
+  coucheTri: "D\xE9cor"
   ordreTri: 0
