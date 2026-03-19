@@ -20,8 +20,6 @@ public class SpawnObstacle : MonoBehaviour
 
     [SerializeField] private TimeManager _timeManager;
     [SerializeField] private GameObject[] _fallingLines;
-
-    [SerializeField] private int _spawnDelayDuration = 3;
     private int randomNumber;
 
 
@@ -38,9 +36,9 @@ public class SpawnObstacle : MonoBehaviour
     private void SpawnRate()
     {
         generalSpeed = Mathf.Clamp(generalSpeed + 1, 0, 30);
-        for (int i = 0; i < obstacles.Length; i++)
+        for (int i = 0; i < poolObject.Count; i++)
         {
-            obstacles[i].GetComponent<ScrollingElement>().UpdateSpeed(generalSpeed);
+            poolObject[i].GetComponent<ScrollingElement>().UpdateSpeed(generalSpeed);
         }
     }
 
@@ -65,7 +63,7 @@ public class SpawnObstacle : MonoBehaviour
 
         obj.transform.SetPositionAndRotation(new Vector3(_fallingLines[randomNumber].transform.position.x, transform.position.y, transform.position.z), obstacles[index].transform.rotation);
         obj.SetActive(true);
-     //   obj.GetComponent<ScrollingElement>().UpdateSpeed(generalSpeed);
+        obj.GetComponent<ScrollingElement>().UpdateSpeed(generalSpeed);
     }
 
     int GetNextObstacleIndex()

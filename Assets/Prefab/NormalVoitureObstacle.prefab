@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9164298874183069356}
   - component: {fileID: -585756259183171405}
   m_Layer: 0
-  m_Name: Obstacle1
+  m_Name: NormalVoitureObstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,8 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ace56ea3d17b7b547a2f3b8aa6bd25c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScrollingElement
-  speed: 10
-  baseSpeed: 10
+  baseSpeed: 4
 --- !u!65 &-585756259183171405
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -97,8 +96,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4572643954948628692}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -151,7 +150,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 8dda8e866457a4143a0a8d6a5cfc325b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5fc42e0f659d12c439bb9e722f1a7fcf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -174,6 +173,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeSkin
   sprites:
-  - {fileID: 21300000, guid: 8dda8e866457a4143a0a8d6a5cfc325b, type: 3}
-  - {fileID: 21300000, guid: beaf06fdc1a25144ea61c175216c1fa2, type: 3}
-  - {fileID: 21300000, guid: 219163fa44138e94dac6dd9bbf028e54, type: 3}
+  - {fileID: 21300000, guid: 5fc42e0f659d12c439bb9e722f1a7fcf, type: 3}
+  - {fileID: 21300000, guid: 920d1136ab89ca249a31d19504c436a9, type: 3}
+  - {fileID: 21300000, guid: 95abad663f0992147b268155a31dc180, type: 3}
