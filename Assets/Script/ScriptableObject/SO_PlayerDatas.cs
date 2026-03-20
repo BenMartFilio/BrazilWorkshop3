@@ -17,8 +17,6 @@ public class SO_PlayerDatas : ScriptableObject
 {
     public string Name;
     public int BestScore;
-    public int Score2;
-    public int Score3;
     public int Level;
     public float generalVolume;
     public float musicVolume;
@@ -43,8 +41,6 @@ public class SO_PlayerDatas : ScriptableObject
         // donc je dois les affecter aux variables de mon scriptable object
         Name = datas.Name;
         BestScore = datas.BestScore;
-        Score2 = datas.Score2;
-        Score3 = datas.Score3;
         Level = datas.Level;
         allHighScores = datas.allHighScores;
         allObjectInInventory = datas.allObjectInInventory;
@@ -63,8 +59,6 @@ public class SO_PlayerDatas : ScriptableObject
         PlayerDatas datas = new PlayerDatas();
         datas.Name = Name;
         datas.BestScore = BestScore;
-        datas.Score2 = Score2;
-        datas.Score3 = Score3;
         datas.Level = Level;
         datas.allHighScores = allHighScores;
         datas.allObjectInInventory = allObjectInInventory;

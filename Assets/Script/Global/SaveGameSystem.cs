@@ -18,5 +18,25 @@ public class SaveGameSystem : MonoBehaviour
         playerDatas.SaveDatas();
     }
 
-    //s'inscrire à quand l'application se ferme, pour sauvegarder à ce moment là
+
+
+    private void OnApplicationPause(bool pause)
+    {
+        if (pause)
+        {
+            SaveGame();
+        }
+    }
+        
+    void OnApplicationFocus(bool hasFocus)
+    {
+        if (!hasFocus)
+            SaveGame();
+    }
+    private void OnApplicationQuit()
+    {
+        SaveGame();
+    }
+
+    //APPELER LES SAVE QUAND : achat monnaie (nouvelle valeur), quand changement monnaie in game (fin de niveau), quand achat object (nouvelle monnaie, et nouveau inventaire)
 }

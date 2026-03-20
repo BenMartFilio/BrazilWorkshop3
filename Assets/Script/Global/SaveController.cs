@@ -9,16 +9,14 @@ public class PlayerDatas
 {
     public string Name = "ErrorName404";
     public int BestScore = 0;
-    public int Score2 = 0;
-    public int Score3 = 0;
     public int Level = 1;
     public List<MiniGameHighScores> allHighScores = new List<MiniGameHighScores>();
     public List<InventoryObject> allObjectInInventory = new List<InventoryObject>();
-    public float generalVolume;
-    public float musicVolume;
-    public float SFXVolume;
-    public int generalMonney;
-    public int premiumMonney;
+    public float generalVolume = 1f;
+    public float musicVolume = 1f;
+    public float SFXVolume = 1f;
+    public int generalMonney = 10000;
+    public int premiumMonney = 100;
 
 }
 
@@ -31,7 +29,7 @@ public class SaveController
 
     public void Save(PlayerDatas datas)
     {
-        string json = JsonUtility.ToJson(datas, prettyPrint: true);
+        string json = JsonUtility.ToJson(datas, prettyPrint: false);
         File.WriteAllText(GetPath(), contents: json);
     }
 
