@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         m_index = 1;
-        UpdatePosition();
+        transform.position = m_transforms[m_index].position;
     }
 
     public void MoveToNextPosition()

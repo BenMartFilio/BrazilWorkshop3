@@ -960,6 +960,7 @@ MonoBehaviour:
   _AudioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
   _MoveAudioType: 0
   moveDuration: 0.1
+  maxLeanAngle: 45
 --- !u!1 &1851805913
 GameObject:
   m_ObjectHideFlags: 0
