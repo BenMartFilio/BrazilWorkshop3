@@ -188,7 +188,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: palette
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: tailleTrainee
@@ -196,39 +196,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: couleurSable.b
-      value: 0.44
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: couleurSable.g
-      value: 0.67
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: couleurSable.r
-      value: 0.84
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: couleurCendre.b
-      value: 0.63
+      value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: couleurCendre.g
-      value: 0.72
+      value: 0.21
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: couleurCendre.r
-      value: 0.76
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: couleurDebris.b
-      value: 0.19
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: couleurDebris.g
-      value: 0.27
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: couleurDebris.r
-      value: 0.35
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: directionVerticale
@@ -310,7 +310,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: palette
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: tailleTrainee
@@ -318,39 +318,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: couleurSable.b
-      value: 0.44
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: couleurSable.g
-      value: 0.67
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: couleurSable.r
-      value: 0.84
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: couleurCendre.b
-      value: 0.63
+      value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: couleurCendre.g
-      value: 0.72
+      value: 0.21
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: couleurCendre.r
-      value: 0.76
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: couleurDebris.b
-      value: 0.19
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: couleurDebris.g
-      value: 0.27
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: couleurDebris.r
-      value: 0.35
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: directionVerticale
