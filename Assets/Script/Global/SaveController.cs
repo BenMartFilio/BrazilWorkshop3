@@ -8,11 +8,18 @@ using static SO_PlayerDatas;
 public class PlayerDatas
 {
     public string Name = "ErrorName404";
-    public int Score1 = 0;
+    public int BestScore = 0;
     public int Score2 = 0;
     public int Score3 = 0;
     public int Level = 1;
     public List<MiniGameHighScores> allHighScores = new List<MiniGameHighScores>();
+    public List<InventoryObject> allObjectInInventory = new List<InventoryObject>();
+    public float generalVolume;
+    public float musicVolume;
+    public float SFXVolume;
+    public int generalMonney;
+    public int premiumMonney;
+
 }
 
 public class SaveController
