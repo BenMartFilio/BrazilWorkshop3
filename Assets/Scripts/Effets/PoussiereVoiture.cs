@@ -14,6 +14,38 @@ namespace Barrage.Effets
     }
 
     /// <summary>
+    /// Paramètres ajustables depuis l'Inspector pour un seul système de particules.
+    /// Tous les champs sont en unités brutes — les multiplicateurs globaux s'appliquent par-dessus.
+    /// </summary>
+    [System.Serializable]
+    public sealed class ParamètresPS
+    {
+        [Tooltip("Active ou désactive ce système. Un système désactivé n'émet aucune particule.")]
+        public bool actif = true;
+
+        [Tooltip("Particules émises par seconde (ignoré pour les Débris qui utilisent des bursts).")]
+        [Min(0f)] public float tauxEmission = 10f;
+
+        [Tooltip("Taille minimale à la naissance (unités monde × échelle globale).")]
+        [Min(0.001f)] public float tailleMin = 0.10f;
+
+        [Tooltip("Taille maximale à la naissance (unités monde × échelle globale).")]
+        [Min(0.001f)] public float tailleMax = 0.22f;
+
+        [Tooltip("Durée de vie minimale en secondes.")]
+        [Min(0.01f)] public float duréeMin = 0.5f;
+
+        [Tooltip("Durée de vie maximale en secondes.")]
+        [Min(0.01f)] public float duréeMax = 1.0f;
+
+        [Tooltip("Vitesse d'éjection minimale (unités monde/s × échelle globale).")]
+        [Min(0f)] public float vitesseMin = 0.5f;
+
+        [Tooltip("Vitesse d'éjection maximale (unités monde/s × échelle globale).")]
+        [Min(0f)] public float vitesseMax = 2.0f;
+    }
+
+    /// <summary>
     /// Effet procédural de poussière de pneu — 5 systèmes de particules superposés :
     ///   1. <b>Nuage principal</b>    — grand volume de poussière billowing, bruit Perlin.
     ///   2. <b>Grains de sable</b>   — éjection rapide de grains fins à la sortie du pneu.
@@ -70,6 +102,28 @@ namespace Barrage.Effets
                  "Modifiable en temps réel.")]
         [SerializeField, Min(0.01f)] private float tailleTrainee = 1f;
 
+        [Tooltip("Cocher pour les véhicules 'inversés' dont la direction visuelle est opposée au sens normal.\n" +
+                 "Les particules spawneront à distance du point d'émission et convergeront VERS lui,\n" +
+                 "démarrant petites et grossissant en approchant — donnant l'illusion d'une traînée\n" +
+                 "qui remonte vers les roues.  Modifiable en temps réel.")]
+        [SerializeField] private bool estInversé = false;
+
+        [Tooltip("Rayon de spawn (unités monde × échelle) : distance à laquelle les particules\n" +
+                 "apparaissent autour du point d'émission quand estInversé est actif.\n" +
+                 "Modifiable en temps réel.")]
+        [SerializeField, Min(0.01f)] private float distanceSpawnInversé = 0.35f;
+
+        [Tooltip("Vitesse de convergence radiale vers le point d'émission (unités monde/s).\n" +
+                 "Plus la valeur est élevée, plus les particules arrivent vite au centre.\n" +
+                 "Modifiable en temps réel.")]
+        [SerializeField, Min(0.01f)] private float vitesseAttraction = 1.5f;
+
+        [Tooltip("GameObject cible : les particules convergeront vers sa position en world space.\n" +
+                 "Mettre un GameObject vide dans le prefab du véhicule et l'assigner ici.\n" +
+                 "La direction est recalculée chaque frame — aucun décalage quelle que soit la vitesse du jeu.\n" +
+                 "Si laissé vide, fallback sur la convergence radiale locale.")]
+        [SerializeField] private Transform cible;
+
         // ── Couleurs ──────────────────────────────────────────────────────────
         [Header("Palette")]
         [Tooltip("Sable     → beiges et bruns chauds (piste en terre).\n" +
@@ -101,6 +155,61 @@ namespace Barrage.Effets
                  "Modifiable en temps réel.")]
         [SerializeField] private int ordreTri = 0;
 
+        // ── Systèmes de particules individuels ───────────────────────────────
+        [Header("1 · Nuage Principal")]
+        [SerializeField] private ParamètresPS nuage = new ParamètresPS
+        {
+            actif = true, tauxEmission = 18f,
+            tailleMin = 0.10f, tailleMax = 0.22f,
+            duréeMin = 0.5f,  duréeMax = 1.0f,
+            vitesseMin = 0.7f, vitesseMax = 2.0f,
+        };
+
+        [Header("2 · Grains de Sable")]
+        [SerializeField] private ParamètresPS sable = new ParamètresPS
+        {
+            actif = true, tauxEmission = 65f,
+            tailleMin = 0.014f, tailleMax = 0.052f,
+            duréeMin = 0.20f,   duréeMax = 0.65f,
+            vitesseMin = 2.8f,  vitesseMax = 6.5f,
+        };
+
+        [Header("3 · Débris / Graviers")]
+        [SerializeField] private ParamètresPS débris = new ParamètresPS
+        {
+            actif = true, tauxEmission = 0f,
+            tailleMin = 0.036f, tailleMax = 0.105f,
+            duréeMin = 0.55f,   duréeMax = 1.40f,
+            vitesseMin = 1.8f,  vitesseMax = 5.0f,
+        };
+
+        [Tooltip("Nombre minimal de graviers par burst.")]
+        [SerializeField, Min(1f)] private float débrisBurstMin = 1f;
+
+        [Tooltip("Nombre maximal de graviers par burst.")]
+        [SerializeField, Min(1f)] private float débrisBurstMax = 4f;
+
+        [Tooltip("Intervalle entre chaque burst (secondes).")]
+        [SerializeField, Min(0.05f)] private float débrisBurstIntervalle = 0.35f;
+
+        [Header("4 · Traînée Longue")]
+        [SerializeField] private ParamètresPS traînée = new ParamètresPS
+        {
+            actif = true, tauxEmission = 6f,
+            tailleMin = 0.20f, tailleMax = 0.45f,
+            duréeMin = 0.6f,  duréeMax = 1.2f,
+            vitesseMin = 0.0f, vitesseMax = 0.18f,
+        };
+
+        [Header("5 · Contact Sol")]
+        [SerializeField] private ParamètresPS sol = new ParamètresPS
+        {
+            actif = true, tauxEmission = 45f,
+            tailleMin = 0.05f, tailleMax = 0.18f,
+            duréeMin = 0.12f,  duréeMax = 0.45f,
+            vitesseMin = 0.9f, vitesseMax = 2.8f,
+        };
+
         // ── État interne ──────────────────────────────────────────────────────
         private ParticleSystem _psNuage;
         private ParticleSystem _psSable;
@@ -111,15 +220,7 @@ namespace Barrage.Effets
         // Renderers stockés pour AppliquerTri() — évite GetComponent à chaque OnValidate.
         private ParticleSystemRenderer[] _renderers;
 
-        // Tailles de base capturées après la configuration initiale (en unités monde * echelle).
-        // AppliquerTaille() les multiplie par tailleMultiplicateur pour un ajustement temps réel.
-        private float _baseTailleNuage;
-        private float _baseTailleSable;
-        private float _baseTailleDebris;
-        private float _baseTailleTrainee;
-        private float _baseTailleSol;
-
-        // Multiplicateurs de base de la courbe SizeOverLifetime (= 1f pour une courbe normalisée).
+        // Multiplicateurs de base de la courbe SizeOverLifetime (capturés après Config).
         // AppliquerCroissance() les multiplie par facteurCroissanceParticules.
         private float _baseCroissanceNuage;
         private float _baseCroissanceSable;
@@ -127,22 +228,8 @@ namespace Barrage.Effets
         private float _baseCroissanceTrainee;
         private float _baseCroissanceSol;
 
-        // Multiplicateurs de vitesse de base (startSpeedMultiplier issu de la config).
-        private float _baseVitesseNuage;
-        private float _baseVitesseSable;
-        private float _baseVitesseDebris;
-        private float _baseVitesseTrainee;
-        private float _baseVitesseSol;
-
-        // Multiplicateurs de durée de vie de base (startLifetimeMultiplier issu de la config).
-        private float _baseDuréeNuage;
-        private float _baseDuréeSable;
-        private float _baseDuréeDebris;
-        private float _baseDuréeTrainee;
-        private float _baseDuréeSol;
-
-        // Vélocité Y de base définie dans velocityOverLifetime (midpoint entre min et max).
-        // AppliquerDirection() ajoute directionVerticale en world space par-dessus.
+        // Vélocité Y de base du nuage (montée organique issue de ConfigNuage).
+        // AppliquerDirection() y additionne directionVerticale.
         private float _baseVelYNuage;
 
         private Material _matPoussiere;
@@ -255,6 +342,32 @@ namespace Barrage.Effets
             }
         }
 
+        /// <summary>
+        /// Active le mode inversé : les particules convergent vers <see cref="cible"/>
+        /// (ou vers le pivot local si cible est null) depuis une sphère de rayon
+        /// <see cref="distanceSpawnInversé"/>, en grossissant.
+        /// </summary>
+        public bool EstInversé
+        {
+            get => estInversé;
+            set
+            {
+                estInversé = value;
+                AppliquerDirection();
+                AppliquerModeAttiré();
+            }
+        }
+
+        /// <summary>
+        /// Cible vers laquelle les particules convergent quand <see cref="estInversé"/> est actif.
+        /// La direction est recalculée chaque frame dans Update — synchronisée avec la vitesse du jeu.
+        /// </summary>
+        public Transform Cible
+        {
+            get => cible;
+            set => cible = value;
+        }
+
         // ── Lifecycle ─────────────────────────────────────────────────────────
 
         private void Awake()
@@ -275,37 +388,17 @@ namespace Barrage.Effets
                 _psSol.GetComponent<ParticleSystemRenderer>(),
             };
 
-            // Capturer les tailles de base issues de la configuration (avec echelle appliquée)
-            _baseTailleNuage   = _psNuage.main.startSizeMultiplier;
-            _baseTailleSable   = _psSable.main.startSizeMultiplier;
-            _baseTailleDebris  = _psDebris.main.startSizeMultiplier;
-            _baseTailleTrainee = _psTrainee.main.startSizeMultiplier;
-            _baseTailleSol     = _psSol.main.startSizeMultiplier;
-
-            // Capturer les multiplicateurs SizeOverLifetime de base
+            // Capturer les multiplicateurs SizeOverLifetime de base (pour facteurCroissanceParticules)
             _baseCroissanceNuage   = _psNuage.sizeOverLifetime.sizeMultiplier;
             _baseCroissanceSable   = _psSable.sizeOverLifetime.sizeMultiplier;
             _baseCroissanceDebris  = _psDebris.sizeOverLifetime.sizeMultiplier;
             _baseCroissanceTrainee = _psTrainee.sizeOverLifetime.sizeMultiplier;
             _baseCroissanceSol     = _psSol.sizeOverLifetime.sizeMultiplier;
 
-            // Capturer les vitesses d'éjection de base
-            _baseVitesseNuage   = _psNuage.main.startSpeedMultiplier;
-            _baseVitesseSable   = _psSable.main.startSpeedMultiplier;
-            _baseVitesseDebris  = _psDebris.main.startSpeedMultiplier;
-            _baseVitesseTrainee = _psTrainee.main.startSpeedMultiplier;
-            _baseVitesseSol     = _psSol.main.startSpeedMultiplier;
-
-            // Capturer les durées de vie de base
-            _baseDuréeNuage   = _psNuage.main.startLifetimeMultiplier;
-            _baseDuréeSable   = _psSable.main.startLifetimeMultiplier;
-            _baseDuréeDebris  = _psDebris.main.startLifetimeMultiplier;
-            _baseDuréeTrainee = _psTrainee.main.startLifetimeMultiplier;
-            _baseDuréeSol     = _psSol.main.startLifetimeMultiplier;
-
-            // Capturer la vélocité Y de base du nuage (seul système avec velocityOverLifetime.y != 0)
+            // Capturer la vélocité Y de base du nuage (montée organique définie dans ConfigNuage)
             _baseVelYNuage = _psNuage.velocityOverLifetime.yMultiplier;
 
+            AppliquerActif();
             AppliquerVitesse();
             AppliquerTaille();
             AppliquerCroissance();
@@ -313,12 +406,15 @@ namespace Barrage.Effets
             AppliquerVitesseDiffusion();
             AppliquerDuréeVie();
             AppliquerTailleTrainee();
+            AppliquerEmission();
             AppliquerTri();
             AppliquerCouleurs();
+            AppliquerModeAttiré(); // doit rester en dernier — écrase forme et vélocité si estInversé
         }
 
         private void OnValidate()
         {
+            AppliquerActif();
             AppliquerVitesse();
             AppliquerTaille();
             AppliquerCroissance();
@@ -326,8 +422,42 @@ namespace Barrage.Effets
             AppliquerVitesseDiffusion();
             AppliquerDuréeVie();
             AppliquerTailleTrainee();
+            AppliquerEmission();
             AppliquerTri();
             AppliquerCouleurs();
+            AppliquerModeAttiré(); // doit rester en dernier
+        }
+
+        private void Update()
+        {
+            if (!estInversé || cible == null || _psNuage == null) return;
+
+            // Direction world-space recalculée chaque frame — suit la cible quelles que soient
+            // les variations de vitesse du jeu ou le mouvement du véhicule.
+            Vector3 delta = cible.position - transform.position;
+            float   dist  = delta.magnitude;
+            if (dist < 0.001f) return;
+
+            Vector3 dir = delta / dist; // normalisation sans allocation
+            float   v   = vitesseAttraction;
+
+            SetVelocitéVersCible(_psNuage,   dir, v * 1.0f);
+            SetVelocitéVersCible(_psSable,   dir, v * 1.4f);
+            SetVelocitéVersCible(_psDebris,  dir, v * 1.0f);
+            SetVelocitéVersCible(_psTrainee, dir, v * 0.7f);
+            SetVelocitéVersCible(_psSol,     dir, v * 1.6f);
+        }
+
+        private static void SetVelocitéVersCible(ParticleSystem ps, Vector3 dir, float vitesse)
+        {
+            if (ps == null) return;
+            var vel = ps.velocityOverLifetime;
+            vel.enabled = true;
+            vel.space   = ParticleSystemSimulationSpace.World;
+            vel.radial  = new ParticleSystem.MinMaxCurve(0f);
+            vel.x       = new ParticleSystem.MinMaxCurve(dir.x * vitesse);
+            vel.y       = new ParticleSystem.MinMaxCurve(dir.y * vitesse);
+            vel.z       = new ParticleSystem.MinMaxCurve(dir.z * vitesse);
         }
 
         // ── Matériaux URP Particles/Unlit transparents ────────────────────────
@@ -383,11 +513,11 @@ namespace Barrage.Effets
         {
             if (_psNuage == null) return;
             float v = vitesseVehicule;
-            SetRate(_psNuage,   v * 22f);
-            SetRate(_psSable,   v * 65f);
-            SetRate(_psDebris,  v *  0f);   // débris uniquement par bursts
-            SetRate(_psTrainee, v *  6f);
-            SetRate(_psSol,     v * 45f);
+            SetRate(_psNuage,   v * nuage.tauxEmission);
+            SetRate(_psSable,   v * sable.tauxEmission);
+            SetRate(_psDebris,  0f);                      // débris = bursts uniquement
+            SetRate(_psTrainee, v * traînée.tauxEmission);
+            SetRate(_psSol,     v * sol.tauxEmission);
         }
 
         /// <summary>Affecte le taux d'émission continu d'un système.</summary>
@@ -569,38 +699,39 @@ namespace Barrage.Effets
         // ── Modulation de la taille des particules ────────────────────────────
 
         /// <summary>
-        /// Applique <see cref="tailleMultiplicateur"/> sur les 5 systèmes via startSizeMultiplier.
-        /// Modifiable en temps réel depuis l'Inspector ou par code via <see cref="TailleMultiplicateur"/>.
+        /// Applique <see cref="tailleMultiplicateur"/> × les valeurs min/max de chaque struct
+        /// sur startSize des 5 systèmes. Les structs sont la source de vérité pour la taille de base.
         /// </summary>
         private void AppliquerTaille()
         {
             if (_psNuage == null) return;
-            AppliquerTaillePS(_psNuage,   _baseTailleNuage);
-            AppliquerTaillePS(_psSable,   _baseTailleSable);
-            AppliquerTaillePS(_psDebris,  _baseTailleDebris);
-            AppliquerTaillePS(_psTrainee, _baseTailleTrainee);
-            AppliquerTaillePS(_psSol,     _baseTailleSol);
+            SetTaillePS(_psNuage,   nuage,   tailleMultiplicateur);
+            SetTaillePS(_psSable,   sable,   tailleMultiplicateur);
+            SetTaillePS(_psDebris,  débris,  tailleMultiplicateur);
+            SetTaillePS(_psTrainee, traînée, tailleMultiplicateur * tailleTrainee);
+            SetTaillePS(_psSol,     sol,     tailleMultiplicateur);
         }
 
-        private void AppliquerTaillePS(ParticleSystem ps, float baseTaille)
+        private void SetTaillePS(ParticleSystem ps, ParamètresPS p, float mult)
         {
             if (ps == null) return;
             var m = ps.main;
-            m.startSizeMultiplier = baseTaille * tailleMultiplicateur;
+            m.startSize = new ParticleSystem.MinMaxCurve(
+                p.tailleMin * echelle * mult,
+                p.tailleMax * echelle * mult
+            );
         }
 
         // ── Taille individuelle de la traînée ─────────────────────────────────
 
         /// <summary>
-        /// Applique <see cref="tailleTrainee"/> uniquement sur <c>PS_TrainéeLongue</c>.
-        /// Le résultat final est : baseTailleTrainee × tailleMultiplicateur × tailleTrainee.
-        /// Appelée après <see cref="AppliquerTaille"/> pour écraser la valeur de la traînée.
+        /// Applique <see cref="tailleTrainee"/> uniquement sur PS_TrainéeLongue.
+        /// Résultat : traînée.tailleMin/Max × échelle × tailleMultiplicateur × tailleTrainee.
         /// </summary>
         private void AppliquerTailleTrainee()
         {
             if (_psTrainee == null) return;
-            var m = _psTrainee.main;
-            m.startSizeMultiplier = _baseTailleTrainee * tailleMultiplicateur * tailleTrainee;
+            SetTaillePS(_psTrainee, traînée, tailleMultiplicateur * tailleTrainee);
         }
 
         // ── Modulation de la croissance des particules ────────────────────────
@@ -627,18 +758,87 @@ namespace Barrage.Effets
             sol.sizeMultiplier = baseCroissance * facteurCroissanceParticules;
         }
 
+        // ── Mode inversé : attraction radiale vers le point d'émission ─────────
+
+        /// <summary>
+        /// Quand <see cref="estInversé"/> est actif, transforme tous les systèmes en mode "attiré" :
+        /// les particules naissent en sphère autour du pivot et convergent vers lui en grossissant.
+        /// Appelé EN DERNIER dans Awake et OnValidate pour écraser forme et vélocité.
+        /// </summary>
+        private void AppliquerModeAttiré()
+        {
+            if (_psNuage == null || !estInversé) return;
+
+            float rayon = distanceSpawnInversé * echelle;
+            float attr  = vitesseAttraction;
+
+            AppliquerAttiréPS(_psNuage,   rayon,         attr * 1.0f);
+            AppliquerAttiréPS(_psSable,   rayon * 0.65f, attr * 1.4f);
+            AppliquerAttiréPS(_psDebris,  rayon * 0.80f, attr * 1.0f);
+            AppliquerAttiréPS(_psTrainee, rayon * 1.30f, attr * 0.7f);
+            AppliquerAttiréPS(_psSol,     rayon * 0.45f, attr * 1.6f);
+        }
+
+        private void AppliquerAttiréPS(ParticleSystem ps, float rayon, float attraction)
+        {
+            if (ps == null) return;
+
+            // Spawn en coquille sphérique autour du point d'émission
+            var shape = ps.shape;
+            shape.shapeType       = ParticleSystemShapeType.Sphere;
+            shape.radius          = rayon;
+            shape.radiusThickness = 0f;   // surface uniquement
+            shape.rotation        = Vector3.zero;
+
+            // Vitesse initiale nulle — la vélocité (radiale ou directionnelle) prend le relais
+            var m = ps.main;
+            m.startSpeed = new ParticleSystem.MinMaxCurve(0f);
+
+            // ── Vélocité ──────────────────────────────────────────────────────
+            var vel = ps.velocityOverLifetime;
+            vel.enabled = true;
+
+            if (cible != null)
+            {
+                // Cible assignée : Update() recalcule la direction chaque frame en world space.
+                // On initialise à zéro — Update prend le relais immédiatement.
+                vel.space  = ParticleSystemSimulationSpace.World;
+                vel.radial = new ParticleSystem.MinMaxCurve(0f);
+                vel.x      = new ParticleSystem.MinMaxCurve(0f);
+                vel.y      = new ParticleSystem.MinMaxCurve(0f);
+                vel.z      = new ParticleSystem.MinMaxCurve(0f);
+            }
+            else
+            {
+                // Fallback : convergence radiale locale (comportement sans cible)
+                vel.space  = ParticleSystemSimulationSpace.Local;
+                vel.radial = new ParticleSystem.MinMaxCurve(-attraction);
+                vel.x      = new ParticleSystem.MinMaxCurve(0f);
+                vel.y      = new ParticleSystem.MinMaxCurve(0f);
+                vel.z      = new ParticleSystem.MinMaxCurve(0f);
+            }
+
+            // Taille : naît très petite, grossit en approchant la cible
+            var szL = ps.sizeOverLifetime;
+            szL.enabled = true;
+            szL.size    = new ParticleSystem.MinMaxCurve(1f, new AnimationCurve(
+                new Keyframe(0.00f, 0.05f, 3.0f, 3.0f),
+                new Keyframe(0.40f, 0.55f, 1.0f, 1.0f),
+                new Keyframe(1.00f, 1.00f, 0.0f, 0.0f)
+            ));
+        }
+
         // ── Direction verticale ───────────────────────────────────────────────
 
         /// <summary>
         /// Injecte <see cref="directionVerticale"/> dans velocityOverLifetime.y de chaque système.
-        /// Le nuage conserve sa montée organique de base à laquelle la valeur s'additionne ;
-        /// les autres systèmes partent de 0 et sont entièrement pilotés par ce paramètre.
+        /// Le nuage conserve sa montée organique de base à laquelle la valeur s'additionne.
+        /// Ignoré quand <see cref="estInversé"/> est actif (AppliquerModeAttiré prend le relais).
         /// </summary>
         private void AppliquerDirection()
         {
-            if (_psNuage == null) return;
+            if (_psNuage == null || estInversé) return;
 
-            // Nuage : la vélocité Y de base (montée organique) + directionVerticale
             SetVelocityY(_psNuage,   _baseVelYNuage + directionVerticale);
             SetVelocityY(_psSable,   directionVerticale);
             SetVelocityY(_psDebris,  directionVerticale);
@@ -658,48 +858,97 @@ namespace Barrage.Effets
             vel.z = new ParticleSystem.MinMaxCurve(0f, 0f);
         }
 
-        // ── Vitesse de diffusion ──────────────────────────────────────────────
+        // ── Vitesse d'éjection ────────────────────────────────────────────────
 
         /// <summary>
-        /// Applique <see cref="vitesseDiffusion"/> sur startSpeedMultiplier des 5 systèmes.
+        /// Applique <see cref="vitesseDiffusion"/> × les vitesses min/max de chaque struct
+        /// sur startSpeed des 5 systèmes.
         /// </summary>
         private void AppliquerVitesseDiffusion()
         {
             if (_psNuage == null) return;
-            AppliquerVitesseDiffusionPS(_psNuage,   _baseVitesseNuage);
-            AppliquerVitesseDiffusionPS(_psSable,   _baseVitesseSable);
-            AppliquerVitesseDiffusionPS(_psDebris,  _baseVitesseDebris);
-            AppliquerVitesseDiffusionPS(_psTrainee, _baseVitesseTrainee);
-            AppliquerVitesseDiffusionPS(_psSol,     _baseVitesseSol);
+            SetVitessePS(_psNuage,   nuage,   vitesseDiffusion);
+            SetVitessePS(_psSable,   sable,   vitesseDiffusion);
+            SetVitessePS(_psDebris,  débris,  vitesseDiffusion);
+            SetVitessePS(_psTrainee, traînée, vitesseDiffusion);
+            SetVitessePS(_psSol,     sol,     vitesseDiffusion);
         }
 
-        private void AppliquerVitesseDiffusionPS(ParticleSystem ps, float baseVitesse)
+        private void SetVitessePS(ParticleSystem ps, ParamètresPS p, float mult)
         {
             if (ps == null) return;
             var m = ps.main;
-            m.startSpeedMultiplier = baseVitesse * vitesseDiffusion;
+            m.startSpeed = new ParticleSystem.MinMaxCurve(
+                p.vitesseMin * echelle * mult,
+                p.vitesseMax * echelle * mult
+            );
         }
 
         // ── Durée de vie ──────────────────────────────────────────────────────
 
         /// <summary>
-        /// Applique <see cref="duréeVieParticules"/> sur startLifetimeMultiplier des 5 systèmes.
+        /// Applique <see cref="duréeVieParticules"/> × les durées min/max de chaque struct
+        /// sur startLifetime des 5 systèmes.
         /// </summary>
         private void AppliquerDuréeVie()
         {
             if (_psNuage == null) return;
-            AppliquerDuréeViePS(_psNuage,   _baseDuréeNuage);
-            AppliquerDuréeViePS(_psSable,   _baseDuréeSable);
-            AppliquerDuréeViePS(_psDebris,  _baseDuréeDebris);
-            AppliquerDuréeViePS(_psTrainee, _baseDuréeTrainee);
-            AppliquerDuréeViePS(_psSol,     _baseDuréeSol);
+            SetDuréePS(_psNuage,   nuage,   duréeVieParticules);
+            SetDuréePS(_psSable,   sable,   duréeVieParticules);
+            SetDuréePS(_psDebris,  débris,  duréeVieParticules);
+            SetDuréePS(_psTrainee, traînée, duréeVieParticules);
+            SetDuréePS(_psSol,     sol,     duréeVieParticules);
         }
 
-        private void AppliquerDuréeViePS(ParticleSystem ps, float baseDurée)
+        private static void SetDuréePS(ParticleSystem ps, ParamètresPS p, float mult)
         {
             if (ps == null) return;
             var m = ps.main;
-            m.startLifetimeMultiplier = baseDurée * duréeVieParticules;
+            m.startLifetime = new ParticleSystem.MinMaxCurve(
+                p.duréeMin * mult,
+                p.duréeMax * mult
+            );
+        }
+
+        // ── Activation / désactivation ────────────────────────────────────────
+
+        /// <summary>
+        /// Active ou désactive chaque système de particules selon le champ <c>actif</c> de son struct.
+        /// </summary>
+        private void AppliquerActif()
+        {
+            SetActifPS(_psNuage,   nuage.actif);
+            SetActifPS(_psSable,   sable.actif);
+            SetActifPS(_psDebris,  débris.actif);
+            SetActifPS(_psTrainee, traînée.actif);
+            SetActifPS(_psSol,     sol.actif);
+        }
+
+        private static void SetActifPS(ParticleSystem ps, bool actif)
+        {
+            if (ps == null) return;
+            if (ps.gameObject.activeSelf == actif) return;
+            ps.gameObject.SetActive(actif);
+            if (actif) ps.Play();
+        }
+
+        // ── Emission / bursts ─────────────────────────────────────────────────
+
+        /// <summary>
+        /// Applique les paramètres de burst des débris (min/max/intervalle) depuis l'Inspector.
+        /// </summary>
+        private void AppliquerEmission()
+        {
+            if (_psDebris == null) return;
+            var em = _psDebris.emission;
+            em.SetBursts(new ParticleSystem.Burst[]
+            {
+                new ParticleSystem.Burst(
+                    0f,
+                    new ParticleSystem.MinMaxCurve(débrisBurstMin, débrisBurstMax),
+                    0,
+                    débrisBurstIntervalle)
+            });
         }
 
         // ── Couche et ordre de rendu ──────────────────────────────────────────

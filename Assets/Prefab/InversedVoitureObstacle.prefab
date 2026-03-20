@@ -231,8 +231,20 @@ PrefabInstance:
       value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
+      propertyPath: nuage.tailleMax
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
+      propertyPath: nuage.tailleMin
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: directionVerticale
       value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
+      propertyPath: nuage.tauxEmission
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: "dur\xE9eVieParticules"
@@ -353,8 +365,20 @@ PrefabInstance:
       value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
+      propertyPath: nuage.tailleMax
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
+      propertyPath: nuage.tailleMin
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: directionVerticale
       value: 0.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
+      propertyPath: nuage.tauxEmission
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: e1ecdc3d47c4b054c8ad0f40ff4db2d7, type: 3}
       propertyPath: "dur\xE9eVieParticules"
