@@ -21,7 +21,5 @@ public class HighScoreList
 
 public enum MiniGameType
 {
-    GameAndWatch,
-    PizzaTime,
-    DeliveryTime
+    MainGame
 }

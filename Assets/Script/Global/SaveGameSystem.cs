@@ -3,11 +3,42 @@ using UnityEngine;
 public class SaveGameSystem : MonoBehaviour
 {
     [SerializeField] private SO_PlayerDatas playerDatas;
+    private static SaveGameSystem instance;
+    private static readonly object lockObj = new object();
+
+    public static SaveGameSystem Instance
+    {
+        get
+        {
+            lock (lockObj)
+            {
+                return instance;
+            }
+        }
+    }
+    private void Awake()
+    {
+        lock (lockObj)
+        {
+            if (instance == null)
+            {
+                instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else if (instance != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
+        }
+    }
 
     private void Start()
     {
         LoadSaveGame();
     }
+
+
     public void LoadSaveGame()
     {
         playerDatas.LoadDatas();
