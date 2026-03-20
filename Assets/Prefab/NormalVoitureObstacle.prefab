@@ -255,16 +255,164 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5803712750468623584}
     - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: sol.actif
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
       propertyPath: "estInvers\xE9"
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: nuage.actif
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: sable.actif
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "d\xE9bris.actif"
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: tailleTrainee
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "nuage.dur\xE9eMax"
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "nuage.dur\xE9eMin"
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: nuage.tailleMax
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: nuage.tailleMin
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "sable.dur\xE9eMax"
+      value: 3.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: sable.tailleMax
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: sable.tailleMin
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "tra\xEEn\xE9e.actif"
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: vitesseVehicule
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: nuage.vitesseMax
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: nuage.vitesseMin
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: sable.vitesseMax
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: sable.vitesseMin
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: simulationLocale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: vitesseDiffusion
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "d\xE9bris.tailleMax"
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "d\xE9bris.tailleMin"
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: vitesseAttraction
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: directionVerticale
+      value: 3.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "d\xE9bris.vitesseMax"
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "d\xE9bris.vitesseMin"
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: nuage.tauxEmission
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: sable.tauxEmission
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "dur\xE9eVieParticules"
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "tra\xEEn\xE9e.dur\xE9eMax"
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "tra\xEEn\xE9e.dur\xE9eMin"
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "tra\xEEn\xE9e.tailleMax"
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "tra\xEEn\xE9e.tailleMin"
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "d\xE9bris.tauxEmission"
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
       propertyPath: tailleMultiplicateur
-      value: 0.6
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "tra\xEEn\xE9e.vitesseMax"
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "tra\xEEn\xE9e.vitesseMin"
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "distanceSpawnInvers\xE9"
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
       propertyPath: facteurCroissanceParticules
-      value: 0.3
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 3892801408052325184, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
       propertyPath: m_LocalPosition.x
@@ -310,16 +458,44 @@ PrefabInstance:
       propertyPath: m_Name
       value: "FX_PoussiereVoitureInvers\xE9e (1)"
       objectReference: {fileID: 0}
+    - target: {fileID: 4936821040220609586, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4936821040220609586, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2588530548153633606}
   m_SourcePrefab: {fileID: 100100000, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
 --- !u!4 &2790438822739775942 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3892801408052325184, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
   m_PrefabInstance: {fileID: 1206862524352592518}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6069936981088036532 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4936821040220609586, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+  m_PrefabInstance: {fileID: 1206862524352592518}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2588530548153633606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6069936981088036532}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 048e43cd19d8a5a4c93ea6497ec36ad2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Barrage.Effets.PoussiereVoitureDebug
+  afficherOverlay: 1
+  afficherGizmos: 1
+  positionX: 10
+  positionY: 10
 --- !u!1001 &8699379412584989349
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -334,39 +510,159 @@ PrefabInstance:
       objectReference: {fileID: 951761086261798971}
     - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
       propertyPath: sol.actif
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
       propertyPath: "estInvers\xE9"
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: nuage.actif
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
       propertyPath: sable.actif
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
       propertyPath: "d\xE9bris.actif"
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: tailleTrainee
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "nuage.dur\xE9eMax"
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "nuage.dur\xE9eMin"
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
       propertyPath: nuage.tailleMax
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: nuage.tailleMin
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "sable.dur\xE9eMax"
+      value: 3.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: sable.tailleMax
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: sable.tailleMin
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
       propertyPath: "tra\xEEn\xE9e.actif"
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: vitesseVehicule
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: nuage.vitesseMax
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: nuage.vitesseMin
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: sable.vitesseMax
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: sable.vitesseMin
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: simulationLocale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: vitesseDiffusion
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "d\xE9bris.tailleMax"
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "d\xE9bris.tailleMin"
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: vitesseAttraction
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: directionVerticale
+      value: 3.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "d\xE9bris.vitesseMax"
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
       propertyPath: nuage.tauxEmission
-      value: 25
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: sable.tauxEmission
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "dur\xE9eVieParticules"
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "tra\xEEn\xE9e.dur\xE9eMax"
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "tra\xEEn\xE9e.dur\xE9eMin"
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "tra\xEEn\xE9e.tailleMax"
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "tra\xEEn\xE9e.tailleMin"
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "d\xE9bris.tauxEmission"
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
       propertyPath: tailleMultiplicateur
-      value: 0.6
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "tra\xEEn\xE9e.vitesseMax"
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "tra\xEEn\xE9e.vitesseMin"
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: "distanceSpawnInvers\xE9"
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2928112628533542977, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
       propertyPath: facteurCroissanceParticules
-      value: 0.3
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 3892801408052325184, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
       propertyPath: m_LocalPosition.x
@@ -412,11 +708,39 @@ PrefabInstance:
       propertyPath: m_Name
       value: "FX_PoussiereVoitureInvers\xE9e"
       objectReference: {fileID: 0}
+    - target: {fileID: 4936821040220609586, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4936821040220609586, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1033823276226398556}
   m_SourcePrefab: {fileID: 100100000, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+--- !u!1 &4339635953980120727 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4936821040220609586, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}
+  m_PrefabInstance: {fileID: 8699379412584989349}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1033823276226398556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4339635953980120727}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 048e43cd19d8a5a4c93ea6497ec36ad2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Barrage.Effets.PoussiereVoitureDebug
+  afficherOverlay: 1
+  afficherGizmos: 1
+  positionX: 10
+  positionY: 10
 --- !u!4 &5673520945149569509 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3892801408052325184, guid: 9abdfc44cc4e02547a4e4c4dac158519, type: 3}

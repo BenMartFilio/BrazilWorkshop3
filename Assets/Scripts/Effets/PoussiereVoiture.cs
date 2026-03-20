@@ -79,12 +79,21 @@ namespace Barrage.Effets
                  "Agit sur le multiplicateur de la courbe SizeOverLifetime de chaque système.")]
         [SerializeField, Min(0.01f)] private float facteurCroissanceParticules = 1f;
 
-        [Tooltip("Direction verticale des particules en world space.\n" +
-                 "  > 0  → les particules montent   (ex : poussière qui s'élève)\n" +
-                 "  = 0  → comportement par défaut (direction neutre)\n" +
-                 "  < 0  → les particules descendent (ex : gravats qui retombent)\n" +
+        [Tooltip("Direction verticale des particules.\n" +
+                 "  simulationLocale = false (World) : valeur en unités monde/s. Dépend de la vitesse du véhicule.\n" +
+                 "    > 0  → monte   /  < 0  → descend\n" +
+                 "  simulationLocale = true (Local)  : valeur RELATIVE au véhicule en u/s.\n" +
+                 "    > 0  → recule visuellement vers le haut  /  < 0  → vers le bas\n" +
+                 "    Recommandé pour les véhicules inversés — indépendant de la vitesse de scroll.\n" +
                  "Modifiable en temps réel.")]
-        [SerializeField, Range(-10f, 10f)] private float directionVerticale = 0f;
+        [SerializeField, Range(-20f, 20f)] private float directionVerticale = 0f;
+
+        [Tooltip("Cocher pour les véhicules dont la vitesse de scroll est élevée ou variable.\n" +
+                 "Les particules se déplacent alors dans l'espace LOCAL du véhicule :\n" +
+                 "  - elles suivent automatiquement le scroll (quel que soit baseSpeed)\n" +
+                 "  - directionVerticale devient une vitesse RELATIVE (~0.5–2 suffisent)\n" +
+                 "Laisser décoché pour le comportement World space d'origine.")]
+        [SerializeField] private bool simulationLocale = false;
 
         [Tooltip("Multiplicateur de vitesse d'éjection initiale des particules.\n" +
                  "1 = vitesse par défaut  /  0.5 = diffusion lente  /  2 = diffusion rapide.\n" +
@@ -242,6 +251,14 @@ namespace Barrage.Effets
 
         private const string SHADER_URP_PARTICLES = "Universal Render Pipeline/Particles/Unlit";
 
+        // Courbe de décélération pour le mode attiré — vitesse pleine → arrêt à 70% de la durée de vie.
+        // Partagée entre toutes les instances pour éviter les allocations dans Update().
+        private static readonly AnimationCurve CURVE_ATTIRÉ_DECEL = new AnimationCurve(
+            new Keyframe(0.00f, 1.0f,  0.0f, -0.5f),
+            new Keyframe(0.70f, 0.0f, -2.0f,  0.0f),
+            new Keyframe(1.00f, 0.0f,  0.0f,  0.0f)
+        );
+
         // ── API publique ──────────────────────────────────────────────────────
 
         /// <summary>
@@ -287,8 +304,9 @@ namespace Barrage.Effets
         }
 
         /// <summary>
-        /// Direction verticale des particules en world space.
-        /// Positif = vers le haut, négatif = vers le bas.
+        /// Direction verticale des particules.
+        /// En World space (<see cref="SimulationLocale"/> = false) : unités monde/s, dépend de la vitesse du véhicule.
+        /// En Local space (<see cref="SimulationLocale"/> = true)  : vitesse RELATIVE au véhicule (~0.5–2 suffisent).
         /// </summary>
         public float DirectionVerticale
         {
@@ -296,6 +314,21 @@ namespace Barrage.Effets
             set
             {
                 directionVerticale = value;
+                AppliquerDirection();
+            }
+        }
+
+        /// <summary>
+        /// Quand true, les particules sont simulées dans l'espace LOCAL du véhicule.
+        /// Elles suivent alors le scroll automatiquement et <see cref="DirectionVerticale"/>
+        /// devient une vitesse relative — recommandé pour les véhicules rapides ou inversés.
+        /// </summary>
+        public bool SimulationLocale
+        {
+            get => simulationLocale;
+            set
+            {
+                simulationLocale = value;
                 AppliquerDirection();
             }
         }
@@ -430,34 +463,9 @@ namespace Barrage.Effets
 
         private void Update()
         {
-            if (!estInversé || cible == null || _psNuage == null) return;
-
-            // Direction world-space recalculée chaque frame — suit la cible quelles que soient
-            // les variations de vitesse du jeu ou le mouvement du véhicule.
-            Vector3 delta = cible.position - transform.position;
-            float   dist  = delta.magnitude;
-            if (dist < 0.001f) return;
-
-            Vector3 dir = delta / dist; // normalisation sans allocation
-            float   v   = vitesseAttraction;
-
-            SetVelocitéVersCible(_psNuage,   dir, v * 1.0f);
-            SetVelocitéVersCible(_psSable,   dir, v * 1.4f);
-            SetVelocitéVersCible(_psDebris,  dir, v * 1.0f);
-            SetVelocitéVersCible(_psTrainee, dir, v * 0.7f);
-            SetVelocitéVersCible(_psSol,     dir, v * 1.6f);
-        }
-
-        private static void SetVelocitéVersCible(ParticleSystem ps, Vector3 dir, float vitesse)
-        {
-            if (ps == null) return;
-            var vel = ps.velocityOverLifetime;
-            vel.enabled = true;
-            vel.space   = ParticleSystemSimulationSpace.World;
-            vel.radial  = new ParticleSystem.MinMaxCurve(0f);
-            vel.x       = new ParticleSystem.MinMaxCurve(dir.x * vitesse);
-            vel.y       = new ParticleSystem.MinMaxCurve(dir.y * vitesse);
-            vel.z       = new ParticleSystem.MinMaxCurve(dir.z * vitesse);
+            // Aucune logique frame par frame requise en mode normal.
+            // En mode inversé avec Local simulation space, les particules suivent
+            // le véhicule automatiquement — la direction est calculée une fois dans AppliquerModeAttiré.
         }
 
         // ── Matériaux URP Particles/Unlit transparents ────────────────────────
@@ -762,7 +770,8 @@ namespace Barrage.Effets
 
         /// <summary>
         /// Quand <see cref="estInversé"/> est actif, transforme tous les systèmes en mode "attiré" :
-        /// les particules naissent en sphère autour du pivot et convergent vers lui en grossissant.
+        /// les particules naissent en hémisphère sous le pivot et convergent vers <see cref="cible"/>
+        /// (ou vers le bas si cible est null) en simulation locale — elles suivent le véhicule.
         /// Appelé EN DERNIER dans Awake et OnValidate pour écraser forme et vélocité.
         /// </summary>
         private void AppliquerModeAttiré()
@@ -772,51 +781,55 @@ namespace Barrage.Effets
             float rayon = distanceSpawnInversé * echelle;
             float attr  = vitesseAttraction;
 
-            AppliquerAttiréPS(_psNuage,   rayon,         attr * 1.0f);
-            AppliquerAttiréPS(_psSable,   rayon * 0.65f, attr * 1.4f);
-            AppliquerAttiréPS(_psDebris,  rayon * 0.80f, attr * 1.0f);
-            AppliquerAttiréPS(_psTrainee, rayon * 1.30f, attr * 0.7f);
-            AppliquerAttiréPS(_psSol,     rayon * 0.45f, attr * 1.6f);
-        }
-
-        private void AppliquerAttiréPS(ParticleSystem ps, float rayon, float attraction)
-        {
-            if (ps == null) return;
-
-            // Spawn en coquille sphérique autour du point d'émission
-            var shape = ps.shape;
-            shape.shapeType       = ParticleSystemShapeType.Sphere;
-            shape.radius          = rayon;
-            shape.radiusThickness = 0f;   // surface uniquement
-            shape.rotation        = Vector3.zero;
-
-            // Vitesse initiale nulle — la vélocité (radiale ou directionnelle) prend le relais
-            var m = ps.main;
-            m.startSpeed = new ParticleSystem.MinMaxCurve(0f);
-
-            // ── Vélocité ──────────────────────────────────────────────────────
-            var vel = ps.velocityOverLifetime;
-            vel.enabled = true;
-
+            // Direction vers cible en espace LOCAL du FX — constante car cible suit le véhicule.
+            // Calculée une seule fois ici ; Update() n'est pas nécessaire.
+            Vector3 dirLocale;
             if (cible != null)
             {
-                // Cible assignée : Update() recalcule la direction chaque frame en world space.
-                // On initialise à zéro — Update prend le relais immédiatement.
-                vel.space  = ParticleSystemSimulationSpace.World;
-                vel.radial = new ParticleSystem.MinMaxCurve(0f);
-                vel.x      = new ParticleSystem.MinMaxCurve(0f);
-                vel.y      = new ParticleSystem.MinMaxCurve(0f);
-                vel.z      = new ParticleSystem.MinMaxCurve(0f);
+                Vector3 delta = cible.position - transform.position;
+                float   dist  = delta.magnitude;
+                dirLocale = dist > 0.001f
+                    ? transform.InverseTransformDirection(delta / dist)
+                    : Vector3.down;
             }
             else
             {
-                // Fallback : convergence radiale locale (comportement sans cible)
-                vel.space  = ParticleSystemSimulationSpace.Local;
-                vel.radial = new ParticleSystem.MinMaxCurve(-attraction);
-                vel.x      = new ParticleSystem.MinMaxCurve(0f);
-                vel.y      = new ParticleSystem.MinMaxCurve(0f);
-                vel.z      = new ParticleSystem.MinMaxCurve(0f);
+                dirLocale = Vector3.down; // fallback
             }
+
+            AppliquerAttiréPS(_psNuage,   rayon,         attr * 1.0f, dirLocale);
+            AppliquerAttiréPS(_psSable,   rayon * 0.65f, attr * 1.4f, dirLocale);
+            AppliquerAttiréPS(_psDebris,  rayon * 0.80f, attr * 1.0f, dirLocale);
+            AppliquerAttiréPS(_psTrainee, rayon * 1.30f, attr * 0.7f, dirLocale);
+            AppliquerAttiréPS(_psSol,     rayon * 0.45f, attr * 1.6f, dirLocale);
+        }
+
+        private void AppliquerAttiréPS(ParticleSystem ps, float rayon, float attraction, Vector3 dirLocale)
+        {
+            if (ps == null) return;
+
+            // Simulation locale — les particules suivent le véhicule (identique au mode normal).
+            var m = ps.main;
+            m.simulationSpace = ParticleSystemSimulationSpace.Local;
+            m.startSpeed      = new ParticleSystem.MinMaxCurve(0f);
+
+            // Hémisphère orienté vers -Y local (bas) — spawn uniquement sous le point d'émission,
+            // les particules ne peuvent plus apparaître au-dessus du véhicule.
+            var shape = ps.shape;
+            shape.shapeType       = ParticleSystemShapeType.Hemisphere;
+            shape.radius          = rayon;
+            shape.radiusThickness = 0f;                        // surface seulement (coquille)
+            shape.rotation        = new Vector3(180f, 0f, 0f); // 180° sur X = ouvre vers -Y
+
+            // Vélocité locale vers cible avec décélération — arrêt à 70% de la durée de vie.
+            // Les particules ne dépassent pas la cible, restent sous le véhicule.
+            var vel = ps.velocityOverLifetime;
+            vel.enabled = true;
+            vel.space   = ParticleSystemSimulationSpace.Local;
+            vel.radial  = new ParticleSystem.MinMaxCurve(0f);
+            vel.x       = new ParticleSystem.MinMaxCurve(dirLocale.x * attraction, CURVE_ATTIRÉ_DECEL);
+            vel.y       = new ParticleSystem.MinMaxCurve(dirLocale.y * attraction, CURVE_ATTIRÉ_DECEL);
+            vel.z       = new ParticleSystem.MinMaxCurve(dirLocale.z * attraction, CURVE_ATTIRÉ_DECEL);
 
             // Taille : naît très petite, grossit en approchant la cible
             var szL = ps.sizeOverLifetime;
@@ -846,12 +859,23 @@ namespace Barrage.Effets
             SetVelocityY(_psSol,     directionVerticale);
         }
 
-        private static void SetVelocityY(ParticleSystem ps, float y)
+        private void SetVelocityY(ParticleSystem ps, float y)
         {
             if (ps == null) return;
+
+            // simulationLocale = true  → Local : les particules suivent le scroll du véhicule.
+            //   directionVerticale est une vitesse RELATIVE — indépendante de baseSpeed.
+            // simulationLocale = false → World : comportement d'origine, dépend de la vitesse.
+            var space = simulationLocale
+                ? ParticleSystemSimulationSpace.Local
+                : ParticleSystemSimulationSpace.World;
+
+            var m = ps.main;
+            m.simulationSpace = space;
+
             var vel = ps.velocityOverLifetime;
             vel.enabled = true;
-            vel.space   = ParticleSystemSimulationSpace.World;
+            vel.space   = space;
             // Conserver X et Z existants, ne modifier que Y
             vel.x = new ParticleSystem.MinMaxCurve(0f, 0f);
             vel.y = new ParticleSystem.MinMaxCurve(y,  y);
