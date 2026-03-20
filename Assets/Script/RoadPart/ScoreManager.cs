@@ -1,25 +1,16 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class ScoreManager : MonoBehaviour
 {
     private int score;
     private bool isDriving;
     private Coroutine scoreCoroutine;
-    public float speedScore=1.5f;
+    private float speedScore=39f;
     [SerializeField] private TMP_Text textScore;
-
-    public void ModifyScore(int toAdd)
-    {
-        score = score + toAdd;
-    }
-
-    public void SetScore(int newScore)
-    {
-        score = newScore;
-    }
-
+    
     IEnumerator ContiniousScore()
     {
         while (isDriving)
@@ -51,15 +42,20 @@ public class ScoreManager : MonoBehaviour
         NewSpeed(speedScore + toAdd);
     }
 
-    public void NewScore(int newScore)
+    private void UpdateSpeed()
+    {
+        AddToSpeed(10);
+    }
+
+    public void SetScore(int newScore)
     {
         score = newScore;
-        textScore.text = score.ToString();
+        textScore.text = score.ToString("D6");
     }
 
     public void AddToScore(int toAdd)
     {
-        NewScore(score + toAdd);
+        SetScore(score + toAdd);
     }
 
     private void Start()
