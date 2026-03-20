@@ -4,7 +4,8 @@ public class SaveGameSystem : MonoBehaviour
 {
     [SerializeField] private SO_PlayerDatas playerDatas;
     private static SaveGameSystem instance;
-    private static readonly object lockObj = new object();
+    private static readonly object lockObj = new object(); 
+    public static event System.Action OnSaveLoaded;
 
     public static SaveGameSystem Instance
     {
@@ -36,6 +37,7 @@ public class SaveGameSystem : MonoBehaviour
     private void Start()
     {
         LoadSaveGame();
+        OnSaveLoaded?.Invoke();
     }
 
 

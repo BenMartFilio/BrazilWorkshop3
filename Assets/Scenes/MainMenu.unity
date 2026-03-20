@@ -3694,6 +3694,8 @@ MonoBehaviour:
   slider: {fileID: 1852506196}
   sliderMusic: {fileID: 432383262}
   sliderBG: {fileID: 364529878}
+  save: {fileID: 1972051258}
+  playerDatas: {fileID: 11400000, guid: f469a69765f7c5c4aa607382bdb461df, type: 2}
 --- !u!1 &909203826
 GameObject:
   m_ObjectHideFlags: 0
