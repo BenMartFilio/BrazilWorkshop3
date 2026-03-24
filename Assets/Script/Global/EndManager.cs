@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EndManager : MonoBehaviour
 {
@@ -7,6 +9,7 @@ public class EndManager : MonoBehaviour
     [SerializeField] private ScoreManager _scoreManager;
     [SerializeField] private GoundMouvement[] _grounds;
     [SerializeField] private SpawnObstacleV2 _spawner;
+    [SerializeField] private GameObject _whiteScreen;
     public void OnDeath()
     {
         _timeManager.StopTime();
@@ -35,5 +38,22 @@ public class EndManager : MonoBehaviour
     private void RevivePanelDisplay()
     {
         _revivePanel.SetActive(true);
+    }
+
+    IEnumerator Whiter()
+    {
+        float t = 0;
+        float a = 0;
+        Image blanc = _whiteScreen.GetComponent<Image>();
+        Color tempColor = blanc.color;
+        while (t < 1)
+        {
+            t += Time.deltaTime;
+            a = Mathf.Lerp(0, 1, t);
+            tempColor.a = a;
+            blanc.color = tempColor;
+            yield return null;
+        }
+        
     }
 }
