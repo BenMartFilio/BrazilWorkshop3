@@ -363,6 +363,7 @@ GameObject:
   m_Component:
   - component: {fileID: 220667608}
   - component: {fileID: 220667609}
+  - component: {fileID: 220667610}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -392,7 +393,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 220667607}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45e6c007d8ff7b246957576f66dd5264, type: 3}
   m_Name: 
@@ -402,6 +403,28 @@ MonoBehaviour:
   - {fileID: 8536000752039434839, guid: 1a21e7d37ba08f340963451329619c09, type: 3}
   - {fileID: 535104966169734813, guid: 308300b4e94a1bd4ebce48fa3ece5fed, type: 3}
   - {fileID: 3434350175221258612, guid: 95cdca3f5eee2ea44ba57fb8c2a2759b, type: 3}
+  minDelay: 1
+  maxDelay: 3
+  isSpawning: 0
+  _timeManager: {fileID: 1725592336}
+  _fallingLines:
+  - {fileID: 1121532490}
+  - {fileID: 483668379}
+  - {fileID: 234882523}
+--- !u!114 &220667610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220667607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d95076d4f3fd23438cd5090d296d1ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnObstacleV2
+  patterns:
+  - {fileID: 11400000, guid: 6a9704d5c4443424888fabb67abf4572, type: 2}
   minDelay: 1
   maxDelay: 3
   isSpawning: 0
