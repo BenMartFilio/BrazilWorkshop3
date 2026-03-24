@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Runtime.CompilerServices;
+using TMPro;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -15,6 +16,9 @@ public class PlayerMovement : MonoBehaviour
 
     public float moveDuration = 0.1f;
     public float maxLeanAngle = 45f;
+
+    [SerializeField] private TMP_Text _coinsText;
+    private int _coinsCount = 0;
 
     private void OnEnable()
     {
@@ -100,5 +104,19 @@ public class PlayerMovement : MonoBehaviour
     float EaseInOut(float t)
     {
         return t * t * (3f - 2f * t);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<CollisionObstacle>() != null)
+        {
+            //Mettre mort
+        }
+        else if (other.GetComponent<CoinsScript>() != null)
+        {
+            other.GetComponent<CoinsScript>().OnCoinRecuperation();
+            _coinsCount++;
+            _coinsText.text = _coinsCount.ToString();
+        }
     }
 }
