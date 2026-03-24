@@ -4,6 +4,6 @@ public class CoinsScript : MonoBehaviour
 {
     public void OnCoinRecuperation()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

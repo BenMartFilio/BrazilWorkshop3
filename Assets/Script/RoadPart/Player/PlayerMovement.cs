@@ -106,11 +106,12 @@ public class PlayerMovement : MonoBehaviour
         return t * t * (3f - 2f * t);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.GetComponent<CollisionObstacle>() != null)
         {
-            //Mettre mort
+            Death();
+            
         }
         else if (other.GetComponent<CoinsScript>() != null)
         {
@@ -118,5 +119,10 @@ public class PlayerMovement : MonoBehaviour
             _coinsCount++;
             _coinsText.text = _coinsCount.ToString();
         }
+    }
+
+    private void Death()
+    {
+        Debug.Log("Mort");
     }
 }
