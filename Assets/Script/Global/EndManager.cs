@@ -29,6 +29,7 @@ public class EndManager : MonoBehaviour
             _grounds[i].StartMove();
         }
         _spawner.StartSpawning();
+        _revivePanel.SetActive(false);
     }
 
     private void RevivePanelDisplay()
