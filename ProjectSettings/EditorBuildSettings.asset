@@ -14,6 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MapRoad.unity
     guid: 4353b5293f00b5341ba01bf1149b13c2
+  - enabled: 1
+    path: Assets/Scenes/Barrage.unity
+    guid: 354478db9d01d08498ffaf9b73288f7c
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

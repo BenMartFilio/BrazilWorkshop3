@@ -2,13 +2,12 @@ using System.Collections;
 using UnityEngine;
 
 /// <summary>
-/// À placer sur le prefab du segment de barrage (ligne de la grille ObstaclePattern).
-/// Quand le joueur entre dans le trigger :
-///   1. Ralentit progressivement le sol et les obstacles jusqu'à zéro.
-///   2. Sauvegarde l'état complet dans DonnéesSession via SessionManager.
-///   3. Charge la scène Barrage.
+/// Déclenche la séquence de transition vers la scène Barrage quand le joueur
+/// entre dans le trigger. Les dimensions (Transform.localScale) et le sorting
+/// layer (SpriteRenderer) se configurent directement dans l'Inspector du prefab.
 /// </summary>
 [RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(ScrollingElement))]
 public class SegmentBarrage : MonoBehaviour
 {
     [Header("Ralentissement")]
@@ -21,8 +20,8 @@ public class SegmentBarrage : MonoBehaviour
     private SpawnObstacleV2  _spawner;
     private GoundMouvement[] _sols;
 
-    // Empêche un double déclenchement.
-    private bool _déclenché = false;
+    // Empêche un double déclenchement entre plusieurs instances de la même vague.
+    private static bool _barrageEnCours = false;
 
     private void Awake()
     {
@@ -31,7 +30,8 @@ public class SegmentBarrage : MonoBehaviour
 
     private void OnEnable()
     {
-        // Résolution automatique des dépendances de scène au moment du spawn.
+        _barrageEnCours = false;
+
         _joueur       = FindFirstObjectByType<PlayerMovement>();
         _scoreManager = FindFirstObjectByType<ScoreManager>();
         _spawner      = FindFirstObjectByType<SpawnObstacleV2>();
@@ -42,43 +42,53 @@ public class SegmentBarrage : MonoBehaviour
         if (_spawner == null)      Debug.LogError("[SegmentBarrage] SpawnObstacleV2 introuvable.");
     }
 
+    private void OnDisable()
+    {
+        _barrageEnCours = false;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (_déclenché) return;
+        if (_barrageEnCours) return;
         if (!other.TryGetComponent<PlayerMovement>(out _)) return;
 
-        _déclenché = true;
+        _barrageEnCours = true;
         StartCoroutine(SéquenceBarrage());
     }
 
     private IEnumerator SéquenceBarrage()
     {
-        // Stopper le spawn de nouveaux patterns pendant le freinage.
         _spawner?.StopSpawning();
 
-        // Capturer la vitesse AVANT le freinage pour la restaurer au retour dans MapRoad.
+        var scrolling = GetComponent<ScrollingElement>();
         float vitesseSolAvantFreinage = _sols != null && _sols.Length > 0 ? _sols[0].speed : 0f;
+        float vitesseBarrageAvantFreinage = scrolling != null ? scrolling.baseSpeed + vitesseSolAvantFreinage : vitesseSolAvantFreinage;
 
-        // Ralentir progressivement le sol vers 0.
         float temps = 0f;
         while (temps < duréeRalentissement)
         {
             temps += Time.deltaTime;
             float t = Mathf.SmoothStep(1f, 0f, temps / duréeRalentissement);
 
+            // Ralentir le sol.
             if (_sols != null)
                 foreach (var sol in _sols)
                     sol.speed = vitesseSolAvantFreinage * t;
 
+            // Ralentir le barrage au même rythme pour qu'il s'arrête devant le joueur.
+            if (scrolling != null)
+                scrolling.UpdateSpeed(vitesseSolAvantFreinage * t - scrolling.baseSpeed);
+
             yield return null;
         }
 
-        // Arrêt complet du sol.
+        // Arrêt complet.
         if (_sols != null)
             foreach (var sol in _sols)
                 sol.StopMove();
 
-        // Sauvegarder et transitionner vers Barrage.
+        scrolling?.StopMoving();
+
         if (SessionManager.Instance != null)
         {
             SessionManager.Instance.AllerAuBarrage(
