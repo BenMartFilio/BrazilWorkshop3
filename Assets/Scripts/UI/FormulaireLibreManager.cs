@@ -35,8 +35,11 @@ namespace Barrage.UI
         [SerializeField] private float intensitéSecousseCartes = 6f;
 
         [Header("Apparence")]
-        [Tooltip("Taille fixe de chaque carte en pixels.")]
-        [SerializeField] private Vector2 tailleFixeCarte = new Vector2(189f, 336f);
+        [Tooltip("Taille fixe de chaque type de formulaire en pixels (width × height).")]
+        [SerializeField] private Vector2 tailleCentraleDuRavitaillement        = new Vector2(189f, 336f);
+        [SerializeField] private Vector2 tailleConformitéSociale               = new Vector2(189f, 336f);
+        [SerializeField] private Vector2 tailleReclassificationDesIndividus    = new Vector2(189f, 336f);
+        [SerializeField] private Vector2 tailleSecuritéDesFrontièresIntérieures = new Vector2(189f, 336f);
 
         [Tooltip("Amplitude maximale de la rotation aléatoire initiale (degrés).")]
         [SerializeField] private float rotationMax = 14f;
@@ -60,11 +63,17 @@ namespace Barrage.UI
 
         private readonly List<FormulaireLibre> _cartes = new();
         private readonly Dictionary<FormulaireType, FormulaireData> _dataParType = new();
+        private readonly Dictionary<FormulaireType, Vector2> _tailleParType = new();
 
         private void Awake()
         {
             foreach (var data in formulairesData.Where(d => d != null))
                 _dataParType[data.type] = data;
+
+            _tailleParType[FormulaireType.CentraleDuRavitaillement]         = tailleCentraleDuRavitaillement;
+            _tailleParType[FormulaireType.ConformitéSociale]                = tailleConformitéSociale;
+            _tailleParType[FormulaireType.ReclassificationDesIndividus]     = tailleReclassificationDesIndividus;
+            _tailleParType[FormulaireType.SecuritéDesFrontièresIntérieures] = tailleSecuritéDesFrontièresIntérieures;
 
             mainDuGarde.OnFormulaireRemis    += OnFormulaireRemisAuGarde;
             mainDuGarde.OnFormulaireIncorrect += OnFormulaireIncorrect;
@@ -100,6 +109,14 @@ namespace Barrage.UI
                 mainDuGarde.OnFormulaireIncorrect -= OnFormulaireIncorrect;
                 mainDuGarde.OnBarrageValidé       -= GriserToutesLesCartes;
             }
+        }
+
+        // ── Helpers ───────────────────────────────────────────────────────────
+
+        /// <summary>Retourne la taille configurée pour un type de formulaire donné.</summary>
+        private Vector2 ObtenirTaille(FormulaireType type)
+        {
+            return _tailleParType.TryGetValue(type, out var t) ? t : tailleCentraleDuRavitaillement;
         }
 
         // ── Spawn ──────────────────────────────────────────────────────────────
@@ -143,7 +160,7 @@ namespace Barrage.UI
             img.raycastTarget = true;
 
             var carte = go.AddComponent<FormulaireLibre>();
-            carte.Initialiser(type, this, partieBasse, coucheGlissement, tailleFixeCarte);
+            carte.Initialiser(type, this, partieBasse, coucheGlissement, ObtenirTaille(type));
 
             _cartes.Add(carte);
         }
@@ -166,27 +183,27 @@ namespace Barrage.UI
             float localYMin = Mathf.Min(coins[0].y, coins[1].y, coins[2].y, coins[3].y);
             float localYMax = Mathf.Max(coins[0].y, coins[1].y, coins[2].y, coins[3].y);
 
-            float hw = tailleFixeCarte.x * 0.5f;
-            float hh = tailleFixeCarte.y * 0.5f;
-
-            float xMin = localXMin + hw + margeSpawnBords;
-            float xMax = localXMax - hw - margeSpawnBords;
-            float yMin = localYMin + hh + margeSpawnBords;
-            float yMax = localYMax - hh - margeSpawnBords;
-
-            // Réduire les marges si la zone est trop petite pour la taille des cartes
-            if (xMin > xMax) { xMin = localXMin + hw; xMax = localXMax - hw; }
-            if (yMin > yMax) { yMin = localYMin + hh; yMax = localYMax - hh; }
-
-            if (xMin > xMax || yMin > yMax)
-            {
-                Debug.LogError($"[FormulaireLibreManager] PartieBasse trop petite pour spawner les cartes " +
-                               $"(bounds X:[{localXMin:F1},{localXMax:F1}] Y:[{localYMin:F1},{localYMax:F1}], taille={tailleFixeCarte}).");
-                return;
-            }
-
             foreach (var carte in _cartes)
             {
+                Vector2 taille = ObtenirTaille(carte.Type);
+                float hw = taille.x * 0.5f;
+                float hh = taille.y * 0.5f;
+
+                float xMin = localXMin + hw + margeSpawnBords;
+                float xMax = localXMax - hw - margeSpawnBords;
+                float yMin = localYMin + hh + margeSpawnBords;
+                float yMax = localYMax - hh - margeSpawnBords;
+
+                if (xMin > xMax) { xMin = localXMin + hw; xMax = localXMax - hw; }
+                if (yMin > yMax) { yMin = localYMin + hh; yMax = localYMax - hh; }
+
+                if (xMin > xMax || yMin > yMax)
+                {
+                    Debug.LogError($"[FormulaireLibreManager] PartieBasse trop petite pour spawner '{carte.Type}' " +
+                                   $"(taille={taille}).");
+                    continue;
+                }
+
                 float x        = UnityEngine.Random.Range(xMin, xMax);
                 float y        = UnityEngine.Random.Range(yMin, yMax);
                 float rotation = UnityEngine.Random.Range(-rotationMax, rotationMax);
@@ -245,29 +262,26 @@ namespace Barrage.UI
         /// </summary>
         private void ResoudreCollisions()
         {
-            // Demi-taille de la zone de collision : 70 % de la demi-taille de la carte
-            Vector2 collHalf = tailleFixeCarte * 0.5f * (1f - MARGE_COLLISION);
-
             for (int i = 0; i < _cartes.Count; i++)
             {
                 for (int j = i + 1; j < _cartes.Count; j++)
                 {
-                    // Exclure toute paire impliquant une carte en drag ou figée pour le game over —
-                    // les cartes figées doivent rester exactement à leur slot, sans être repoussées.
-                    if (_cartes[i].EstEnDrag         || _cartes[j].EstEnDrag)         continue;
+                    if (_cartes[i].EstEnDrag            || _cartes[j].EstEnDrag)            continue;
                     if (_cartes[i].EstFigéePourGameOver || _cartes[j].EstFigéePourGameOver) continue;
+
+                    Vector2 collHalfA = ObtenirTaille(_cartes[i].Type) * 0.5f * (1f - MARGE_COLLISION);
+                    Vector2 collHalfB = ObtenirTaille(_cartes[j].Type) * 0.5f * (1f - MARGE_COLLISION);
+                    Vector2 collHalf  = (collHalfA + collHalfB) * 0.5f;
 
                     Vector2 posA  = _cartes[i].Rt.anchoredPosition;
                     Vector2 posB  = _cartes[j].Rt.anchoredPosition;
                     Vector2 delta = posA - posB;
 
-                    // Détection AABB sur les zones de collision
                     float overlapX = collHalf.x * 2f - Mathf.Abs(delta.x);
                     float overlapY = collHalf.y * 2f - Mathf.Abs(delta.y);
 
-                    if (overlapX <= 0f || overlapY <= 0f) continue; // pas de collision
+                    if (overlapX <= 0f || overlapY <= 0f) continue;
 
-                    // Vecteur de séparation sur l'axe de moindre pénétration (MTV)
                     float signX = delta.x >= 0f ? 1f : -1f;
                     float signY = delta.y >= 0f ? 1f : -1f;
 
@@ -275,7 +289,6 @@ namespace Barrage.UI
                         ? new Vector2(overlapX * signX, 0f)
                         : new Vector2(0f, overlapY * signY);
 
-                    // Correction symétrique entre les deux cartes libres
                     _cartes[i].AppliquerCorrectionCollision( push * 0.5f * RESTITUTION);
                     _cartes[j].AppliquerCorrectionCollision(-push * 0.5f * RESTITUTION);
                 }
@@ -346,11 +359,9 @@ namespace Barrage.UI
             }
 
             // Position de départ hors écran dans coucheGlissement (sous le bas visible).
-            // On utilise les coins de coucheGlissement pour trouver le bas réel.
             Vector3[] coins = new Vector3[4];
             coucheGlissement.GetLocalCorners(coins);
-            float yHorsEcran = Mathf.Min(coins[0].y, coins[1].y, coins[2].y, coins[3].y)
-                               - tailleFixeCarte.y * 2f;
+            float yBase = Mathf.Min(coins[0].y, coins[1].y, coins[2].y, coins[3].y);
 
             for (int i = 0; i < manquantes; i++)
             {
@@ -358,20 +369,18 @@ namespace Barrage.UI
                 int avantSpawn      = _cartes.Count;
                 SpawnCarte(type);
 
-                if (_cartes.Count <= avantSpawn) continue; // SpawnCarte a échoué
+                if (_cartes.Count <= avantSpawn) continue;
 
                 var carte = _cartes[_cartes.Count - 1];
                 var rt    = carte.Rt;
+                Vector2 t = ObtenirTaille(type);
 
-                // Re-parenter dans coucheGlissement AVANT qu'AnimerVers le fasse,
-                // pour que anchoredPosition soit dans le bon espace de coordonnées.
                 rt.SetParent(coucheGlissement, false);
                 rt.anchoredPosition = new Vector2(
-                    UnityEngine.Random.Range(-tailleFixeCarte.x, tailleFixeCarte.x),
-                    yHorsEcran);
+                    UnityEngine.Random.Range(-t.x, t.x),
+                    yBase - t.y * 2f);
                 rt.localEulerAngles = Vector3.zero;
 
-                // Figer la physique immédiatement — ces cartes ne doivent pas tomber.
                 carte.FigerPourGameOver();
             }
         }

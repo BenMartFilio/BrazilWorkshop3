@@ -8,9 +8,9 @@ namespace Barrage.UI
 {
     /// <summary>
     /// Comportement drag-and-drop d'une carte formulaire dans l'UI.
-    /// Au repos, les cartes s'étirent pour remplir leur poche (ancres 0→1).
-    /// Pendant le drag elles passent dans la CoucheGlissement avec une taille fixe,
-    /// puis animent leur retour en stretch à la fin du drag.
+    /// Les cartes ont une taille fixe héritée de leur prefab source.
+    /// Pendant le drag elles passent dans la CoucheGlissement en conservant leur taille,
+    /// puis animent leur retour centré dans la poche cible.
     /// Seul le formulaire au sommet de sa poche peut être attrapé.
     /// </summary>
     [RequireComponent(typeof(RectTransform))]
@@ -24,14 +24,16 @@ namespace Barrage.UI
         private RawImage _rawImage;
         private FormulaireUIManager _uiManager;
         private PocheUI _pocheActuelle;
+        private Vector2 _tailleOriginale;
         private Vector2 _offsetGlissement;
         private bool _dragActif;
         private Coroutine _coroutineChute;
 
-        /// <summary>Initialise la carte avec son type et le gestionnaire UI.</summary>
-        public void Initialiser(FormulaireType type, FormulaireUIManager uiManager)
+        /// <summary>Initialise la carte avec son type, sa taille fixe et le gestionnaire UI.</summary>
+        public void Initialiser(FormulaireType type, Vector2 tailleOriginale, FormulaireUIManager uiManager)
         {
             Type = type;
+            _tailleOriginale = tailleOriginale;
             _uiManager = uiManager;
             _rectTransform = GetComponent<RectTransform>();
             _rawImage = GetComponent<RawImage>();
@@ -50,19 +52,17 @@ namespace Barrage.UI
 
             if (_rawImage != null) _rawImage.raycastTarget = false;
 
-            // Mémoriser taille et position monde avant le re-parentage
-            float largeur = _rectTransform.rect.width  * _rectTransform.lossyScale.x;
-            float hauteur = _rectTransform.rect.height * _rectTransform.lossyScale.y;
+            // Mémoriser position monde avant le re-parentage
             Vector3 centre = _rectTransform.position;
 
-            // Passer en mode taille fixe dans la CoucheGlissement
+            // Passer dans la CoucheGlissement en taille fixe
             transform.SetParent(_uiManager.CoucheGlissement, false);
             transform.SetAsLastSibling();
 
             _rectTransform.anchorMin = new Vector2(0.5f, 0.5f);
             _rectTransform.anchorMax = new Vector2(0.5f, 0.5f);
             _rectTransform.pivot     = new Vector2(0.5f, 0.5f);
-            _rectTransform.sizeDelta = new Vector2(largeur, hauteur);
+            _rectTransform.sizeDelta = _tailleOriginale;
             _rectTransform.position  = centre;
 
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
@@ -106,53 +106,41 @@ namespace Barrage.UI
 
         private IEnumerator TomberVersPoche(PocheUI poche)
         {
-            // Taille et position monde actuelles (carte en mode fixe dans CoucheGlissement)
+            // Position monde actuelle (carte dans CoucheGlissement)
             Vector3 positionMonde = _rectTransform.position;
-            float largeurMonde    = _rectTransform.rect.width  * _rectTransform.lossyScale.x;
-            float hauteurMonde    = _rectTransform.rect.height * _rectTransform.lossyScale.y;
 
-            // Enregistrer dans la poche et basculer en mode stretch
+            // Enregistrer dans la poche et reparenter
             int index = poche.AjouterFormulaire(this);
             transform.SetParent(poche.transform, false);
             transform.SetAsLastSibling();
 
-            _rectTransform.anchorMin = Vector2.zero;
-            _rectTransform.anchorMax = Vector2.one;
-            _rectTransform.pivot     = new Vector2(0.5f, 0.5f);
+            // Rester en taille fixe centrée
+            _rectTransform.anchorMin    = new Vector2(0.5f, 0.5f);
+            _rectTransform.anchorMax    = new Vector2(0.5f, 0.5f);
+            _rectTransform.pivot        = new Vector2(0.5f, 0.5f);
+            _rectTransform.sizeDelta    = _tailleOriginale;
 
-            // Offsets cibles
-            var (oMinCible, oMaxCible) = poche.ObtenirOffsetsPourIndex(index);
+            // Position cible dans la poche
+            Vector2 positionCible = poche.ObtenirPositionPourIndex(index);
 
-            // Calculer les offsets de départ depuis la position monde courante
-            var pocheRT = poche.RectTransform;
+            // Convertir la position monde en coordonnées locales de la poche
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                pocheRT,
+                poche.RectTransform,
                 RectTransformUtility.WorldToScreenPoint(null, positionMonde),
-                null, out Vector2 localCenter);
+                null, out Vector2 positionDepart);
 
-            float dL = largeurMonde  * 0.5f;
-            float dH = hauteurMonde  * 0.5f;
-            float pw = pocheRT.rect.width;
-            float ph = pocheRT.rect.height;
-
-            Vector2 oMinDepart = new Vector2(localCenter.x - dL,      localCenter.y - dH);
-            Vector2 oMaxDepart = new Vector2(localCenter.x + dL - pw, localCenter.y + dH - ph);
-
-            _rectTransform.offsetMin = oMinDepart;
-            _rectTransform.offsetMax = oMaxDepart;
+            _rectTransform.anchoredPosition = positionDepart;
 
             float elapsed = 0f;
             while (elapsed < DUREE_CHUTE)
             {
                 elapsed += Time.deltaTime;
                 float t = Mathf.SmoothStep(0f, 1f, elapsed / DUREE_CHUTE);
-                _rectTransform.offsetMin = Vector2.Lerp(oMinDepart, oMinCible, t);
-                _rectTransform.offsetMax = Vector2.Lerp(oMaxDepart, oMaxCible, t);
+                _rectTransform.anchoredPosition = Vector2.Lerp(positionDepart, positionCible, t);
                 yield return null;
             }
 
-            _rectTransform.offsetMin = oMinCible;
-            _rectTransform.offsetMax = oMaxCible;
+            _rectTransform.anchoredPosition = positionCible;
             _coroutineChute = null;
         }
     }

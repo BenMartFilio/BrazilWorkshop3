@@ -2060,6 +2060,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5615432668658954335, guid: 1087b2ce886f765468424c7dccc72606, type: 3}
+      propertyPath: directionVent.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5615432668658954335, guid: 1087b2ce886f765468424c7dccc72606, type: 3}
+      propertyPath: directionVent.y
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 8034548227592441285, guid: 1087b2ce886f765468424c7dccc72606, type: 3}
       propertyPath: m_Name
       value: Effetpapiervirevolte

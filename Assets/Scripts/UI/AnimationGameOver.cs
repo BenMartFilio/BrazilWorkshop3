@@ -20,7 +20,6 @@ namespace Barrage.UI
         // ── Timing ───────────────────────────────────────────────────────────
         private const float DUREE_MISE_EN_PLACE  = 0.9f;   // s — glissement des cartes vers leurs slots
         private const float DELAI_AVANT_TAMPONS  = 0.3f;   // s — pause après la mise en place
-        private const float DELAI_ENTRE_TAMPONS  = 0.5f;   // s — entre chaque lettre tamponnée
 
         // ── Vérification du positionnement ───────────────────────────────────
         private const float SEUIL_POSITION_OK    = 4f;     // px — écart max accepté par rapport au slot
@@ -45,6 +44,12 @@ namespace Barrage.UI
         [SerializeField] private FormulaireLibreManager formulaireManager;
         [Tooltip("BarrePatience dont OnPatienceEpuisée déclenche l'animation.")]
         [SerializeField] private BarrePatience barrePatience;
+        [Tooltip("Canvas MainDuGarde à désactiver pendant l'animation de game over.")]
+        [SerializeField] private Canvas mainDuGarde;
+
+        [Header("Timing tampons")]
+        [Tooltip("Délai en secondes entre l'arrivée de chaque lettre tamponnée.")]
+        [SerializeField] private float delaiEntreTampons = 0.5f;
 
         [Header("Texte tamponné")]
         [Tooltip("Police utilisée pour les lettres tamponnées sur chaque carte.")]
@@ -94,6 +99,10 @@ namespace Barrage.UI
 
         private IEnumerator SequenceGameOver()
         {
+            // Désactiver le canvas MainDuGarde pendant toute l'animation
+            if (mainDuGarde != null)
+                mainDuGarde.gameObject.SetActive(false);
+
             // Garantir qu'il y a exactement NB_CARTES_REQUISES cartes disponibles.
             formulaireManager.CompleterCartesGameOver(NB_CARTES_REQUISES);
 
@@ -179,8 +188,12 @@ namespace Barrage.UI
                     TamponnerLettre(slots[i].pos, lettre, slots[i].taille));
 
                 if (i < nb - 1)
-                    yield return new WaitForSeconds(DELAI_ENTRE_TAMPONS);
+                    yield return new WaitForSeconds(delaiEntreTampons);
             }
+
+            // Réactiver le canvas MainDuGarde à la fin de l'animation
+            if (mainDuGarde != null)
+                mainDuGarde.gameObject.SetActive(true);
         }
 
         // ── Tamponnage ────────────────────────────────────────────────────────

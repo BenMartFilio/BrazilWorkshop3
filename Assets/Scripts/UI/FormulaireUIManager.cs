@@ -124,15 +124,20 @@ namespace Barrage.UI
                 return;
             }
 
+            // Lire les dimensions configurées dans le FormulaireData
+            Vector2 tailleOriginale = data.taille;
+
             // Créer un GameObject UI propre, enfant direct de la poche
             var go = new GameObject(data.prefab.name, typeof(RectTransform), typeof(CanvasRenderer), typeof(RawImage));
             go.transform.SetParent(poche.transform, false);
 
-            // Etirer pour remplir la poche
+            // Taille fixe centrée héritée du prefab source
             var rt = go.GetComponent<RectTransform>();
-            rt.anchorMin = Vector2.zero;
-            rt.anchorMax = Vector2.one;
-            rt.pivot     = new Vector2(0.5f, 0.5f);
+            rt.anchorMin        = new Vector2(0.5f, 0.5f);
+            rt.anchorMax        = new Vector2(0.5f, 0.5f);
+            rt.pivot            = new Vector2(0.5f, 0.5f);
+            rt.sizeDelta        = tailleOriginale;
+            rt.anchoredPosition = Vector2.zero;
 
             // Assigner la texture
             var img = go.GetComponent<RawImage>();
@@ -141,12 +146,10 @@ namespace Barrage.UI
 
             // Ajouter le comportement drag-and-drop
             var formulaireUI = go.AddComponent<FormulaireUI>();
-            formulaireUI.Initialiser(type, this);
+            formulaireUI.Initialiser(type, tailleOriginale, this);
 
             int index = poche.AjouterFormulaire(formulaireUI);
-            var (oMin, oMax) = poche.ObtenirOffsetsPourIndex(index);
-            rt.offsetMin = oMin;
-            rt.offsetMax = oMax;
+            rt.anchoredPosition = poche.ObtenirPositionPourIndex(index);
         }
 
         // ── Logique de jeu ─────────────────────────────────────────────────────

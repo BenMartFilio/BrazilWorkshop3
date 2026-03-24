@@ -14,6 +14,9 @@ namespace Barrage.Formulaires
         [Tooltip("Prefab visuel représentant ce formulaire dans la scène.")]
         public GameObject prefab;
 
+        [Tooltip("Taille d'affichage en pixels UI (width x height). Doit correspondre aux proportions du sprite.")]
+        public Vector2 taille = new Vector2(100f, 100f);
+
         /// <summary>
         /// Extrait la texture depuis la RawImage du prefab sans l'instancier dans la scène.
         /// Retourne null si le prefab ou la RawImage est absent.
