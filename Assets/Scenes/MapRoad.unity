@@ -362,7 +362,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 220667608}
-  - component: {fileID: 220667609}
   - component: {fileID: 220667610}
   m_Layer: 0
   m_Name: Spawner
@@ -386,31 +385,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &220667609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 220667607}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e6c007d8ff7b246957576f66dd5264, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpawnObstacle
-  obstacles:
-  - {fileID: 535104966169734813, guid: 25ce235d812beb447981ac7d49331942, type: 3}
-  - {fileID: 8536000752039434839, guid: 1a21e7d37ba08f340963451329619c09, type: 3}
-  - {fileID: 535104966169734813, guid: 308300b4e94a1bd4ebce48fa3ece5fed, type: 3}
-  - {fileID: 3434350175221258612, guid: 95cdca3f5eee2ea44ba57fb8c2a2759b, type: 3}
-  minDelay: 1
-  maxDelay: 3
-  isSpawning: 0
-  _timeManager: {fileID: 1725592336}
-  _fallingLines:
-  - {fileID: 1121532490}
-  - {fileID: 483668379}
-  - {fileID: 234882523}
 --- !u!114 &220667610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,8 +399,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SpawnObstacleV2
   patterns:
   - {fileID: 11400000, guid: 6a9704d5c4443424888fabb67abf4572, type: 2}
-  minDelay: 1
-  maxDelay: 3
+  - {fileID: 11400000, guid: 35ad9191018c5c041b5efe8126184b7b, type: 2}
+  baseObstacleSpeed: 5
+  gapBetweenPatterns: 2
   isSpawning: 0
   _timeManager: {fileID: 1725592336}
   _fallingLines:
