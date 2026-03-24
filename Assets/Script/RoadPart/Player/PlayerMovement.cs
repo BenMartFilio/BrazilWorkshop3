@@ -134,8 +134,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.GetComponent<CollisionObstacle>() != null)
         {
+            StartCoroutine(Camera.main.GetComponent<ScreenShake>().Shake(0.2f, 0.15f));
             Death();
-            
         }
         else if (other.GetComponent<CoinsScript>() != null)
         {
