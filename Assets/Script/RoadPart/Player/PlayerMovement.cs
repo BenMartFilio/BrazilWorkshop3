@@ -20,6 +20,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private TMP_Text _coinsText;
     private int _coinsCount = 0;
 
+
+    [SerializeField] private EndManager _endManager;
+
     private void OnEnable()
     {
         m_inputManager.OnMoveLeft += MoveToPreviousPosition;
@@ -123,6 +126,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Death()
     {
-        Debug.Log("Mort");
+        _endManager.OnDeath();
     }
 }

@@ -15,6 +15,7 @@ public class TimeManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(_timeStepDuration);
+            Debug.Log("Time");
             OnTimePassed?.Invoke();
         }
     }
