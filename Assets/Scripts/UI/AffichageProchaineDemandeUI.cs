@@ -30,6 +30,10 @@ namespace Barrage.UI
         [Tooltip("Délai entre l'apparition de chaque icône (secondes).")]
         [SerializeField] private float délaiEntreIcones = 0.15f;
 
+        [Header("Retour MapRoad")]
+        [Tooltip("Délai d'attente après la dernière icône avant de retourner sur MapRoad.")]
+        [SerializeField] private float délaiAvantRetour = 2f;
+
         private readonly Dictionary<FormulaireType, FormulaireData> _dataParType = new();
         private Coroutine _affichage;
 
@@ -109,6 +113,14 @@ namespace Barrage.UI
                 slots[i].Afficher(texture, comptes[type]);
                 yield return new WaitForSeconds(délaiEntreIcones);
             }
+
+            // Attendre puis retourner sur MapRoad avec l'état sauvegardé
+            yield return new WaitForSeconds(délaiAvantRetour);
+
+            if (SessionManager.Instance != null)
+                SessionManager.Instance.RetournerAMapRoad();
+            else
+                Debug.LogError("[AffichageProchaineDemandeUI] SessionManager introuvable — retour MapRoad annulé.");
 
             _affichage = null;
         }
