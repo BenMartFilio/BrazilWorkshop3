@@ -83,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
             time += Time.deltaTime;
             float t = Mathf.Clamp01(time / moveDuration);
 
-            // m�me easing pour synchroniser mouvement + rotation
+            // même easing pour synchroniser mouvement + rotation
             float easedT = EaseInOut(t);
 
             // --- POSITION ---

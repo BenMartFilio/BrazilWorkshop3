@@ -9,7 +9,7 @@ public class EndManager : MonoBehaviour
     [SerializeField] private ScoreManager _scoreManager;
     [SerializeField] private GoundMouvement[] _grounds;
     [SerializeField] private SpawnObstacleV2 _spawner;
-    [SerializeField] private GameObject _whiteScreen;
+    [SerializeField] private Image _whiteScreen;
     public void OnDeath()
     {
         _timeManager.StopTime();
@@ -25,6 +25,7 @@ public class EndManager : MonoBehaviour
 
     public void Revive()
     {
+        StartCoroutine(Whiter(0.3f));
         _timeManager.StartTime();
         _scoreManager.StartScore();
         for (int i = 0; i < _grounds.Length; i++)
@@ -40,20 +41,27 @@ public class EndManager : MonoBehaviour
         _revivePanel.SetActive(true);
     }
 
-    IEnumerator Whiter()
+    IEnumerator Whiter(float duration)
     {
-        float t = 0;
-        float a = 0;
-        Image blanc = _whiteScreen.GetComponent<Image>();
-        Color tempColor = blanc.color;
-        while (t < 1)
+        Color baseColor = _whiteScreen.color;
+        float time = 0f;
+
+        while (time < duration)
         {
-            t += Time.deltaTime;
-            a = Mathf.Lerp(0, 1, t);
-            tempColor.a = a;
-            blanc.color = tempColor;
+            time += Time.deltaTime;
+            float t = time / duration;
+
+            float value = Mathf.Sin(t * Mathf.PI);
+
+            Color c = baseColor;
+            c.a = value;
+            _whiteScreen.color = c;
+
             yield return null;
         }
-        
+
+        Color end = baseColor;
+        end.a = 0f;
+        _whiteScreen.color = end;
     }
 }
