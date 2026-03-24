@@ -213,6 +213,20 @@ public class SpawnObstacleV2 : MonoBehaviour
         }
     }
 
+    // ── Session ───────────────────────────────────────────────────────────────
+
+    /// <summary>Sauvegarde la vitesse générale dans les données de session.</summary>
+    public void SauvegarderDansSession(DonnéesSession données)
+    {
+        données.vitesseGénérale = _generalSpeed;
+    }
+
+    /// <summary>Restaure la vitesse générale depuis les données de session.</summary>
+    public void RestaurerDepuisSession(float vitesse)
+    {
+        _generalSpeed = vitesse;
+    }
+
     // ── Shuffle-bag ───────────────────────────────────────────────────────────
 
     private int GetNextPatternIndex()

@@ -83,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
             time += Time.deltaTime;
             float t = Mathf.Clamp01(time / moveDuration);
 
-            // m�me easing pour synchroniser mouvement + rotation
+            // m�me easing pour synchroniser mouvement + rotation
             float easedT = EaseInOut(t);
 
             // --- POSITION ---
@@ -107,6 +107,27 @@ public class PlayerMovement : MonoBehaviour
     float EaseInOut(float t)
     {
         return t * t * (3f - 2f * t);
+    }
+
+    // ── Session ───────────────────────────────────────────────────────────────
+
+    /// <summary>Sauvegarde la position et les pièces dans les données de session.</summary>
+    public void SauvegarderDansSession(DonnéesSession données)
+    {
+        données.indexLane = m_index;
+        données.pièces    = _coinsCount;
+    }
+
+    /// <summary>Restaure la position et les pièces depuis les données de session.</summary>
+    public void RestaurerDepuisSession(int indexLane, int pièces)
+    {
+        m_index     = Mathf.Clamp(indexLane, 0, m_transforms.Length - 1);
+        _coinsCount = pièces;
+        _coinsText.text = _coinsCount.ToString();
+        transform.position = new Vector3(
+            m_transforms[m_index].position.x,
+            transform.position.y,
+            transform.position.z);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

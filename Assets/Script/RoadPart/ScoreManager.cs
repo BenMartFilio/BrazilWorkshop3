@@ -58,6 +58,22 @@ public class ScoreManager : MonoBehaviour
         SetScore(score + toAdd);
     }
 
+    // ── Session ───────────────────────────────────────────────────────────────
+
+    /// <summary>Sauvegarde le score et la vitesse dans les données de session.</summary>
+    public void SauvegarderDansSession(DonnéesSession données)
+    {
+        données.score        = score;
+        données.vitesseScore = speedScore;
+    }
+
+    /// <summary>Restaure le score et la vitesse depuis les données de session.</summary>
+    public void RestaurerDepuisSession(int scoreSauvegardé, float vitesseSauvegardée)
+    {
+        speedScore = vitesseSauvegardée;
+        SetScore(scoreSauvegardé);
+    }
+
     private void Start()
     {
         StartScore();

@@ -25,6 +25,14 @@ public class GoundMouvement : MonoBehaviour
         speed = Mathf.Clamp(speed + 1, 0, maxSpeed);
     }
 
+    // ── Session ───────────────────────────────────────────────────────────────
+
+    /// <summary>Restaure la vitesse du sol depuis les données de session.</summary>
+    public void RestaurerDepuisSession(float vitesse)
+    {
+        speed = vitesse;
+    }
+
     void Update()
     {
         if (!started)
