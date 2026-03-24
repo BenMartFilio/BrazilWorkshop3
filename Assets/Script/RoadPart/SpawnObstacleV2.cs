@@ -9,12 +9,25 @@ using UnityEngine;
 /// consume their delay). After the last row, the coroutine waits for it
 /// to fully exit the screen before starting the next pattern.
 /// Speed scaling is preserved from SpawnObstacle.
+/// Le pattern Barrage est exclu du shuffle-bag normal et se déclenche
+/// automatiquement après un nombre aléatoire de signaux TimeManager (entre
+/// barrageSingauxMin et barrageSignauxMax).
 /// </summary>
 public class SpawnObstacleV2 : MonoBehaviour
 {
-    [Header("Patterns")]
-    [Tooltip("List of ObstaclePattern assets to pick from.")]
+    [Header("Patterns normaux")]
+    [Tooltip("List of ObstaclePattern assets to pick from (ne pas inclure le pattern Barrage).")]
     public ObstaclePattern[] patterns;
+
+    [Header("Pattern Barrage")]
+    [Tooltip("Pattern spécial déclenché après un nombre de signaux TimeManager.")]
+    [SerializeField] private ObstaclePattern patternBarrage;
+
+    [Tooltip("Nombre minimum de signaux TimeManager avant l'apparition du Barrage.")]
+    [SerializeField] private int barrageSignauxMin = 5;
+
+    [Tooltip("Nombre maximum de signaux TimeManager avant l'apparition du Barrage.")]
+    [SerializeField] private int barrageSignauxMax = 7;
 
     [Header("Speed Reference")]
     [Tooltip("Must match the baseSpeed value on the obstacles' ScrollingElement.")]
@@ -43,6 +56,11 @@ public class SpawnObstacleV2 : MonoBehaviour
     // ── Coroutine handle ──────────────────────────────────────────────────────
     private Coroutine _spawningCoroutine;
 
+    // ── Compteur Barrage ──────────────────────────────────────────────────────
+    private int _signauxEcoulés = 0;
+    private int _prochainBarrageÀ = 0;
+    private bool _barrageEnAttente = false;
+
     /// <summary>Y threshold below which ScrollingElement.Update despawns objects.</summary>
     private const float DespawnY = -20f;
 
@@ -60,10 +78,11 @@ public class SpawnObstacleV2 : MonoBehaviour
 
     private void Start()
     {
+        TirerProchainSeuilBarrage();
         StartSpawning();
     }
 
-    // ── Speed scaling (mirrors SpawnObstacle.SpawnRate) ───────────────────────
+    // ── Speed scaling ─────────────────────────────────────────────────────────
 
     private void OnTimePassed()
     {
@@ -73,9 +92,17 @@ public class SpawnObstacleV2 : MonoBehaviour
         {
             foreach (GameObject obj in bucket)
             {
-                if (obj != null)
-                    obj.GetComponent<ScrollingElement>().UpdateSpeed(_generalSpeed);
+                if (obj != null && obj.TryGetComponent<ScrollingElement>(out var scrolling))
+                    scrolling.UpdateSpeed(_generalSpeed);
             }
+        }
+
+        // Compter les signaux et marquer le barrage comme attendu au bon moment.
+        if (!_barrageEnAttente && patternBarrage != null)
+        {
+            _signauxEcoulés++;
+            if (_signauxEcoulés >= _prochainBarrageÀ)
+                _barrageEnAttente = true;
         }
     }
 
@@ -89,16 +116,15 @@ public class SpawnObstacleV2 : MonoBehaviour
         {
             foreach (GameObject obj in bucket)
             {
-                if (obj != null && obj.activeInHierarchy)
+                if (obj != null && obj.activeInHierarchy && obj.TryGetComponent<ScrollingElement>(out var scrolling))
                 {
-                    obj.GetComponent<ScrollingElement>().StartMoving();
-                    obj.GetComponent<ScrollingElement>().UpdateSpeed(_generalSpeed);
-                    obj.GetComponent<ScrollingElement>().Dispawn();
+                    scrolling.StartMoving();
+                    scrolling.UpdateSpeed(_generalSpeed);
+                    scrolling.Dispawn();
                 }
             }
         }
         _spawningCoroutine ??= StartCoroutine(SpawnRoutine());
-
     }
 
     /// <summary>Stops spawning and freezes all pooled objects.</summary>
@@ -116,8 +142,8 @@ public class SpawnObstacleV2 : MonoBehaviour
         {
             foreach (GameObject obj in bucket)
             {
-                if (obj != null && obj.activeInHierarchy)
-                    obj.GetComponent<ScrollingElement>().StopMoving();
+                if (obj != null && obj.activeInHierarchy && obj.TryGetComponent<ScrollingElement>(out var scrolling))
+                    scrolling.StopMoving();
             }
         }
     }
@@ -128,13 +154,6 @@ public class SpawnObstacleV2 : MonoBehaviour
     {
         while (isSpawning)
         {
-            if (patterns == null || patterns.Length == 0)
-            {
-                Debug.LogWarning("[SpawnObstacleV2] No patterns assigned.");
-                yield return null;
-                continue;
-            }
-
             if (_fallingLines == null || _fallingLines.Length < 3)
             {
                 Debug.LogWarning("[SpawnObstacleV2] _fallingLines needs at least 3 entries.");
@@ -142,10 +161,29 @@ public class SpawnObstacleV2 : MonoBehaviour
                 continue;
             }
 
-            ObstaclePattern pattern = patterns[GetNextPatternIndex()];
-            if (pattern == null) continue;
+            // Si le barrage est en attente, on le spawn à la place du prochain pattern normal.
+            ObstaclePattern prochain;
+            if (_barrageEnAttente)
+            {
+                prochain = patternBarrage;
+                _barrageEnAttente = false;
+                _signauxEcoulés = 0;
+                TirerProchainSeuilBarrage();
+            }
+            else
+            {
+                if (patterns == null || patterns.Length == 0)
+                {
+                    Debug.LogWarning("[SpawnObstacleV2] No patterns assigned.");
+                    yield return null;
+                    continue;
+                }
+                prochain = patterns[GetNextPatternIndex()];
+            }
 
-            yield return StartCoroutine(SpawnPatternCoroutine(pattern));
+            if (prochain == null) continue;
+
+            yield return StartCoroutine(SpawnPatternCoroutine(prochain));
         }
     }
 
@@ -158,17 +196,11 @@ public class SpawnObstacleV2 : MonoBehaviour
     {
         for (int rowIndex = 0; rowIndex < pattern.rows.Count; rowIndex++)
         {
-            // Spawn this row (empty lanes are skipped but the wait still happens).
             SpawnRow(pattern.rows[rowIndex]);
-
-            // Wait for the virtual distance of one rowSpacing to be travelled.
-            // Speed is re-sampled every frame so acceleration is accounted for.
             yield return StartCoroutine(WaitForDistance(pattern.rowSpacing));
         }
 
-        // Wait for the last row to travel from the spawn Y down to DespawnY,
-        // plus the configured gap before the next pattern begins.
-        float exitDistance = ((transform.position.y - DespawnY) + gapBetweenPatterns)*0;
+        float exitDistance = ((transform.position.y - DespawnY) + gapBetweenPatterns) * 0;
         yield return StartCoroutine(WaitForDistance(exitDistance));
     }
 
@@ -208,7 +240,9 @@ public class SpawnObstacleV2 : MonoBehaviour
 
                 obj.transform.SetPositionAndRotation(spawnPos, prefab.transform.rotation);
                 obj.SetActive(true);
-                obj.GetComponent<ScrollingElement>().UpdateSpeed(_generalSpeed);
+
+                if (obj.TryGetComponent<ScrollingElement>(out var scrolling))
+                    scrolling.UpdateSpeed(_generalSpeed);
             }
         }
     }
@@ -248,6 +282,13 @@ public class SpawnObstacleV2 : MonoBehaviour
         return index;
     }
 
+    // ── Barrage ───────────────────────────────────────────────────────────────
+
+    private void TirerProchainSeuilBarrage()
+    {
+        _prochainBarrageÀ = Random.Range(barrageSignauxMin, barrageSignauxMax + 1);
+    }
+
     // ── Object pool ───────────────────────────────────────────────────────────
 
     private GameObject GetFromPool(GameObject prefab)
@@ -268,3 +309,4 @@ public class SpawnObstacleV2 : MonoBehaviour
         return newObj;
     }
 }
+

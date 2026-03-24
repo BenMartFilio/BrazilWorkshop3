@@ -47,9 +47,10 @@ public class SessionManager : MonoBehaviour
         PlayerMovement joueur,
         ScoreManager   scoreManager,
         SpawnObstacleV2 spawner,
-        GoundMouvement[] sols)
+        GoundMouvement[] sols,
+        float vitesseSolAvantRalentissement = -1f)
     {
-        SauvegarderMapRoad(joueur, scoreManager, spawner, sols);
+        SauvegarderMapRoad(joueur, scoreManager, spawner, sols, vitesseSolAvantRalentissement);
         SceneManager.LoadScene(nomScèneBarrage);
     }
 
@@ -95,13 +96,18 @@ public class SessionManager : MonoBehaviour
         PlayerMovement   joueur,
         ScoreManager     scoreManager,
         SpawnObstacleV2  spawner,
-        GoundMouvement[] sols)
+        GoundMouvement[] sols,
+        float vitesseSolAvantRalentissement = -1f)
     {
         joueur.SauvegarderDansSession(données);
         scoreManager.SauvegarderDansSession(données);
         spawner.SauvegarderDansSession(données);
 
-        if (sols != null && sols.Length > 0)
+        // Si une vitesse pré-ralentissement est fournie, on la sauvegarde
+        // à la place de la vitesse actuelle (qui serait 0 après le freinage).
+        if (vitesseSolAvantRalentissement >= 0f)
+            données.vitesseSol = vitesseSolAvantRalentissement;
+        else if (sols != null && sols.Length > 0)
             données.vitesseSol = sols[0].speed;
 
         données.sessionValide = true;

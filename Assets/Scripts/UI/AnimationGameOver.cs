@@ -283,7 +283,7 @@ namespace Barrage.UI
             tmp.fontSize           = taillePolice;
             tmp.fontStyle          = FontStyles.Bold;
             tmp.alignment          = TextAlignmentOptions.Center;
-            tmp.enableWordWrapping = false;
+            tmp.textWrappingMode   = TextWrappingModes.NoWrap;
             tmp.color              = new Color(couleurTexte.r, couleurTexte.g, couleurTexte.b, 0f);
             if (fonteGameOver != null) tmp.font = fonteGameOver;
 

@@ -400,6 +400,10 @@ MonoBehaviour:
   patterns:
   - {fileID: 11400000, guid: 6a9704d5c4443424888fabb67abf4572, type: 2}
   - {fileID: 11400000, guid: 35ad9191018c5c041b5efe8126184b7b, type: 2}
+  - {fileID: 11400000, guid: 6c1aba09edc94a640b6f40b8475f0396, type: 2}
+  patternBarrage: {fileID: 0}
+  barrageSignauxMin: 5
+  barrageSignauxMax: 7
   baseObstacleSpeed: 5
   gapBetweenPatterns: 2
   isSpawning: 0
@@ -1503,6 +1507,7 @@ MonoBehaviour:
   - {fileID: 1851805917}
   - {fileID: 1587615504}
   _spawner: {fileID: 220667610}
+  _whiteScreen: {fileID: 301436728}
 --- !u!4 &1232534110
 Transform:
   m_ObjectHideFlags: 0
