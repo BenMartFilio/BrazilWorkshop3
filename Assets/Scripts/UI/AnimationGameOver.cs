@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 namespace Barrage.UI
@@ -50,6 +51,12 @@ namespace Barrage.UI
         [Header("Timing tampons")]
         [Tooltip("Délai en secondes entre l'arrivée de chaque lettre tamponnée.")]
         [SerializeField] private float delaiEntreTampons = 0.5f;
+
+        [Header("Retour au menu")]
+        [Tooltip("Délai en secondes après le dernier tampon avant le chargement de la scène menu.")]
+        [SerializeField] private float délaiAvantMenu = 2f;
+        [Tooltip("Nom exact de la scène menu à charger (doit être présente dans Build Settings).")]
+        [SerializeField] private string nomScèneMenu = "MainMenu";
 
         [Header("Texte tamponné")]
         [Tooltip("Police utilisée pour les lettres tamponnées sur chaque carte.")]
@@ -194,6 +201,10 @@ namespace Barrage.UI
             // Réactiver le canvas MainDuGarde à la fin de l'animation
             if (mainDuGarde != null)
                 mainDuGarde.gameObject.SetActive(true);
+
+            // Attendre puis retourner sur la scène menu
+            yield return new WaitForSeconds(délaiAvantMenu);
+            SceneManager.LoadScene(nomScèneMenu);
         }
 
         // ── Tamponnage ────────────────────────────────────────────────────────
