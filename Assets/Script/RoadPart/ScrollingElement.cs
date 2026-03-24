@@ -33,5 +33,14 @@ public class ScrollingElement : MonoBehaviour
     {
         isMoving = false;
     }
+    public void StartMoving()
+    {
+        isMoving = true;
+    }
+
+    public void Dispawn()
+    {
+        gameObject.SetActive(false);
+    }
 
 }

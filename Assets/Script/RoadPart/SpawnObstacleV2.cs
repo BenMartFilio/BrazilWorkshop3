@@ -85,7 +85,20 @@ public class SpawnObstacleV2 : MonoBehaviour
     public void StartSpawning()
     {
         isSpawning = true;
+        foreach (List<GameObject> bucket in _pool.Values)
+        {
+            foreach (GameObject obj in bucket)
+            {
+                if (obj != null && obj.activeInHierarchy)
+                {
+                    obj.GetComponent<ScrollingElement>().StartMoving();
+                    obj.GetComponent<ScrollingElement>().UpdateSpeed(_generalSpeed);
+                    obj.GetComponent<ScrollingElement>().Dispawn();
+                }
+            }
+        }
         _spawningCoroutine ??= StartCoroutine(SpawnRoutine());
+
     }
 
     /// <summary>Stops spawning and freezes all pooled objects.</summary>
@@ -180,20 +193,23 @@ public class SpawnObstacleV2 : MonoBehaviour
 
         for (int lane = 0; lane < 3; lane++)
         {
-            GameObject prefab = row.lanes[lane];
-            if (prefab == null) continue;
+            if (isSpawning)
+            {
+                GameObject prefab = row.lanes[lane];
+                if (prefab == null) continue;
 
-            GameObject obj = GetFromPool(prefab);
+                GameObject obj = GetFromPool(prefab);
 
-            Vector3 spawnPos = new Vector3(
-                _fallingLines[lane].transform.position.x,
-                transform.position.y,
-                transform.position.z
-            );
+                Vector3 spawnPos = new Vector3(
+                    _fallingLines[lane].transform.position.x,
+                    transform.position.y,
+                    transform.position.z
+                );
 
-            obj.transform.SetPositionAndRotation(spawnPos, prefab.transform.rotation);
-            obj.SetActive(true);
-            obj.GetComponent<ScrollingElement>().UpdateSpeed(_generalSpeed);
+                obj.transform.SetPositionAndRotation(spawnPos, prefab.transform.rotation);
+                obj.SetActive(true);
+                obj.GetComponent<ScrollingElement>().UpdateSpeed(_generalSpeed);
+            }
         }
     }
 

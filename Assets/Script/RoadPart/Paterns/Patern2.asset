@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 943cd639361512b49ac512074cd78f88, type: 3}
   m_Name: Patern2
   m_EditorClassIdentifier: Assembly-CSharp::ObstaclePattern
-  rowCount: 6
+  rowCount: 11
   rowSpacing: 2
   rows:
   - lanes:
@@ -38,4 +38,24 @@ MonoBehaviour:
   - lanes:
     - {fileID: 0}
     - {fileID: 0}
+    - {fileID: 0}
+  - lanes:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - lanes:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - lanes:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - lanes:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - lanes:
+    - {fileID: 0}
+    - {fileID: 8536000752039434839, guid: 1a21e7d37ba08f340963451329619c09, type: 3}
     - {fileID: 0}
