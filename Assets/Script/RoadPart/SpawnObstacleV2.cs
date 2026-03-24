@@ -57,8 +57,8 @@ public class SpawnObstacleV2 : MonoBehaviour
     private Coroutine _spawningCoroutine;
 
     // ── Compteur Barrage ──────────────────────────────────────────────────────
-    private int _signauxEcoulés = 0;
-    private int _prochainBarrageÀ = 0;
+    private int _signauxEcoules = 0;
+    private int _prochainBarrageA = 0;
     private bool _barrageEnAttente = false;
 
     /// <summary>Y threshold below which ScrollingElement.Update despawns objects.</summary>
@@ -100,8 +100,8 @@ public class SpawnObstacleV2 : MonoBehaviour
         // Compter les signaux et marquer le barrage comme attendu au bon moment.
         if (!_barrageEnAttente && patternBarrage != null)
         {
-            _signauxEcoulés++;
-            if (_signauxEcoulés >= _prochainBarrageÀ)
+            _signauxEcoules++;
+            if (_signauxEcoules >= _prochainBarrageA)
                 _barrageEnAttente = true;
         }
     }
@@ -167,7 +167,7 @@ public class SpawnObstacleV2 : MonoBehaviour
             {
                 prochain = patternBarrage;
                 _barrageEnAttente = false;
-                _signauxEcoulés = 0;
+                _signauxEcoules = 0;
                 TirerProchainSeuilBarrage();
             }
             else
@@ -250,9 +250,9 @@ public class SpawnObstacleV2 : MonoBehaviour
     // ── Session ───────────────────────────────────────────────────────────────
 
     /// <summary>Sauvegarde la vitesse générale dans les données de session.</summary>
-    public void SauvegarderDansSession(DonnéesSession données)
+    public void SauvegarderDansSession(DonnéesSession donnees)
     {
-        données.vitesseGénérale = _generalSpeed;
+        donnees.vitesseGénérale = _generalSpeed;
     }
 
     /// <summary>Restaure la vitesse générale depuis les données de session.</summary>
@@ -286,7 +286,7 @@ public class SpawnObstacleV2 : MonoBehaviour
 
     private void TirerProchainSeuilBarrage()
     {
-        _prochainBarrageÀ = Random.Range(barrageSignauxMin, barrageSignauxMax + 1);
+        _prochainBarrageA = Random.Range(barrageSignauxMin, barrageSignauxMax + 1);
     }
 
     // ── Object pool ───────────────────────────────────────────────────────────

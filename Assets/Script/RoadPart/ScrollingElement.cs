@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class ScrollingElement : MonoBehaviour
 {
-    private float speed = 0;
-    public float baseSpeed = 5;
+    private float speed = 0f;
+    public float baseSpeed = 5f;
     private bool isMoving = true;
 
     public void UpdateSpeed(float addToNewSpeed)

@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class GoundMouvement : MonoBehaviour
 {
-    public float speed = 5f;
+    public float speed = 0f;
+    private float baseSpeed = 5f;
+    private float _generalSpeed = 0f;
     public float width;
     public bool started = true;
     [SerializeField] private int maxSpeed = 35;
@@ -22,7 +24,8 @@ public class GoundMouvement : MonoBehaviour
 
     public void Acceleration()
     {
-        speed = Mathf.Clamp(speed + 1, 0, maxSpeed);
+        _generalSpeed = Mathf.Clamp(_generalSpeed + 1, 0, 30);
+        speed = Mathf.Clamp(baseSpeed + _generalSpeed, 0, 30 + baseSpeed);
     }
 
     // ── Session ───────────────────────────────────────────────────────────────
