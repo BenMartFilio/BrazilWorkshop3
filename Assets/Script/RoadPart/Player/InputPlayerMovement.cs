@@ -36,7 +36,10 @@ public class InputPlayerMovement : MonoBehaviour
         Vector2 delta = endPos - startPos;
 
         if (delta.magnitude < minDistance)
+        {
+            TapScreen();
             return;
+        }
 
         if (Mathf.Abs(delta.x) > Mathf.Abs(delta.y))
         {
@@ -45,7 +48,6 @@ public class InputPlayerMovement : MonoBehaviour
             if (right) MoveRight();
             else MoveLeft();
 
-            Debug.Log(right ? "Swipe Right" : "Swipe Left");
         }
         else
         {
