@@ -47,6 +47,8 @@ namespace Barrage.UI
         [SerializeField] private BarrePatience barrePatience;
         [Tooltip("Canvas MainDuGarde à désactiver pendant l'animation de game over.")]
         [SerializeField] private Canvas mainDuGarde;
+        [Tooltip("Vignette d'assombrissement à animer en début de game over.")]
+        [SerializeField] private VignetteGameOver vignette;
 
         [Header("Timing tampons")]
         [Tooltip("Délai en secondes entre l'arrivée de chaque lettre tamponnée.")]
@@ -109,6 +111,10 @@ namespace Barrage.UI
             // Désactiver le canvas MainDuGarde pendant toute l'animation
             if (mainDuGarde != null)
                 mainDuGarde.gameObject.SetActive(false);
+
+            // Attendre que la vignette atteigne son alpha initial AVANT de lancer les animations
+            if (vignette != null)
+                yield return StartCoroutine(vignette.AnimerApparition());
 
             // Garantir qu'il y a exactement NB_CARTES_REQUISES cartes disponibles.
             formulaireManager.CompleterCartesGameOver(NB_CARTES_REQUISES);
@@ -185,14 +191,22 @@ namespace Barrage.UI
             // ── Phase 2 : Tamponnage lettre par lettre ───────────────────────
             string texteComplet = LIGNE_1 + LIGNE_2; // "GAMEOVER"
 
+            // L'alpha monte de alphaInitial (déjà atteint) jusqu'à 1.0 sur nb tampons.
+            // Chaque tampon déclenche une transition douce vers le palier suivant.
             for (int i = 0; i < nb; i++)
             {
                 char lettre = i < texteComplet.Length ? texteComplet[i] : '?';
 
-                // On passe la position du slot directement — plus de lecture sur carte.Rt
-                // (la carte peut être détruite entre deux tampons).
                 yield return StartCoroutine(
                     TamponnerLettre(slots[i].pos, lettre, slots[i].taille));
+
+                // Amplifier la vignette après chaque tampon (non bloquant)
+                if (vignette != null)
+                {
+                    float progression = (i + 1f) / nb;
+                    float alphaVoulu  = Mathf.Lerp(vignette.AlphaInitial, 1f, progression);
+                    vignette.AnimerVersAlpha(alphaVoulu, delaiEntreTampons * 0.9f);
+                }
 
                 if (i < nb - 1)
                     yield return new WaitForSeconds(delaiEntreTampons);

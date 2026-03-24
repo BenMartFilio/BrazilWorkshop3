@@ -918,6 +918,123 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!1 &596540861
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 596540865}
+  - component: {fileID: 596540864}
+  - component: {fileID: 596540863}
+  - component: {fileID: 596540862}
+  m_Layer: 0
+  m_Name: VignetteGameOver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &596540862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596540861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 927d52c002991204d91714914119ca38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Barrage.UI.VignetteGameOver
+  couleurVignette: {r: 0, g: 0, b: 0, a: 1}
+  "intensit\xE9Centre": 0.221
+  "intensit\xE9Bords": 1
+  courbeFalloff:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  "r\xE9solutionTexture": 256
+  alphaInitial: 0.539
+  "dur\xE9eApparition": 1.2
+  "dur\xE9eDisparition": 0.6
+  "afficherAuD\xE9marrage": 0
+--- !u!114 &596540863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596540861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 0}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &596540864
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596540861}
+  m_CullTransparentMesh: 1
+--- !u!224 &596540865
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596540861}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -974.184, y: 1908.9272}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &667012159
 GameObject:
   m_ObjectHideFlags: 0
@@ -1801,6 +1918,123 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1278430551}
   m_CullTransparentMesh: 1
+--- !u!1 &1430661138
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1430661139}
+  - component: {fileID: 1430661142}
+  - component: {fileID: 1430661141}
+  - component: {fileID: 1430661140}
+  m_Layer: 5
+  m_Name: VignetteGameOver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1430661139
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430661138}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1561070701}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1430661140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430661138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 927d52c002991204d91714914119ca38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Barrage.UI.VignetteGameOver
+  couleurVignette: {r: 0, g: 0, b: 0, a: 1}
+  "intensit\xE9Centre": 0.05
+  "intensit\xE9Bords": 0.85
+  courbeFalloff:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  "r\xE9solutionTexture": 256
+  alphaInitial: 0.3
+  "dur\xE9eApparition": 0.9
+  "dur\xE9eDisparition": 0.6
+  "afficherAuD\xE9marrage": 0
+--- !u!114 &1430661141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430661138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 0}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1430661142
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430661138}
+  m_CullTransparentMesh: 1
 --- !u!1 &1537443426
 GameObject:
   m_ObjectHideFlags: 0
@@ -2015,6 +2249,7 @@ RectTransform:
   - {fileID: 384073875}
   - {fileID: 270055788}
   - {fileID: 1172865316}
+  - {fileID: 1430661139}
   - {fileID: 394224744}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2519,7 +2754,7 @@ MonoBehaviour:
   secousseEcran: {fileID: 1561070703}
   retourHaptique: {fileID: 1561070702}
   "dur\xE9eSecousseCartes": 0.8
-  "intensit\xE9SecousseCartes": 150
+  "intensit\xE9SecousseCartes": 50
   tailleCentraleDuRavitaillement: {x: 300, y: 300}
   "tailleConformit\xE9Sociale": {x: 438, y: 264}
   tailleReclassificationDesIndividus: {x: 295, y: 447}
@@ -2563,8 +2798,11 @@ MonoBehaviour:
   coucheGlissement: {fileID: 394224744}
   formulaireManager: {fileID: 1914613286}
   barrePatience: {fileID: 1689963564}
-  mainDuGarde: {fileID: 0}
+  mainDuGarde: {fileID: 1172865319}
+  vignette: {fileID: 1430661140}
   delaiEntreTampons: 0.28
+  "d\xE9laiAvantMenu": 2
+  "nomSc\xE8neMenu": MainMenu
   fonteGameOver: {fileID: 0}
   taillePolice: 220
   couleurTexte: {r: 0.95, g: 0.12, b: 0.08, a: 1}
@@ -2833,3 +3071,4 @@ SceneRoots:
   - {fileID: 1914613287}
   - {fileID: 60437564}
   - {fileID: 1886951797}
+  - {fileID: 596540865}
