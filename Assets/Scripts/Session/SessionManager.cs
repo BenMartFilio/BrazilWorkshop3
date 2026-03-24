@@ -15,7 +15,7 @@ public class SessionManager : MonoBehaviour
     // ── Configuration ─────────────────────────────────────────────────────────
 
     [Tooltip("ScriptableObject partagé contenant les données de session.")]
-    [SerializeField] private DonnéesSession données;
+    [SerializeField] private DonnéesSession donnees;
 
     [Tooltip("Nom exact de la scène MapRoad.")]
     [SerializeField] private string nomScèneMapRoad = "MapRoad";
@@ -73,21 +73,21 @@ public class SessionManager : MonoBehaviour
         SpawnObstacleV2  spawner,
         GoundMouvement[] sols)
     {
-        if (!données.sessionValide)
+        if (!donnees.sessionValide)
             return;
 
-        joueur.RestaurerDepuisSession(données.indexLane, données.pièces);
-        scoreManager.RestaurerDepuisSession(données.score, données.vitesseScore);
-        spawner.RestaurerDepuisSession(données.vitesseGénérale);
+        joueur.RestaurerDepuisSession(donnees.indexLane, donnees.pièces);
+        scoreManager.RestaurerDepuisSession(donnees.score, donnees.vitesseScore);
+        spawner.RestaurerDepuisSession(donnees.vitesseGénérale);
 
         foreach (var sol in sols)
-            sol.RestaurerDepuisSession(données.vitesseSol);
+            sol.RestaurerDepuisSession(donnees.vitesseSol);
     }
 
     /// <summary>Remet la session à zéro (nouvelle partie).</summary>
     public void NouvellePartie()
     {
-        données.Réinitialiser();
+        donnees.Réinitialiser();
     }
 
     // ── Sauvegarde interne ────────────────────────────────────────────────────
@@ -99,17 +99,17 @@ public class SessionManager : MonoBehaviour
         GoundMouvement[] sols,
         float vitesseSolAvantRalentissement = -1f)
     {
-        joueur.SauvegarderDansSession(données);
-        scoreManager.SauvegarderDansSession(données);
-        spawner.SauvegarderDansSession(données);
+        joueur.SauvegarderDansSession(donnees);
+        scoreManager.SauvegarderDansSession(donnees);
+        spawner.SauvegarderDansSession(donnees);
 
         // Si une vitesse pré-ralentissement est fournie, on la sauvegarde
         // à la place de la vitesse actuelle (qui serait 0 après le freinage).
         if (vitesseSolAvantRalentissement >= 0f)
-            données.vitesseSol = vitesseSolAvantRalentissement;
+            donnees.vitesseSol = vitesseSolAvantRalentissement;
         else if (sols != null && sols.Length > 0)
-            données.vitesseSol = sols[0].speed;
+            donnees.vitesseSol = sols[0].speed;
 
-        données.sessionValide = true;
+        donnees.sessionValide = true;
     }
 }

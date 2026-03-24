@@ -66,6 +66,9 @@ public class SpawnObstacleV2 : MonoBehaviour
 
     // ─────────────────────────────────────────────────────────────────────────
 
+    [SerializeField] private GoundMouvement[] _grounds;
+
+
     private void OnEnable()
     {
         _timeManager.OnTimePassed += OnTimePassed;
@@ -94,6 +97,10 @@ public class SpawnObstacleV2 : MonoBehaviour
             {
                 if (obj != null && obj.TryGetComponent<ScrollingElement>(out var scrolling))
                     scrolling.UpdateSpeed(_generalSpeed);
+            }
+            for (int i = 0; i < _grounds.Length; i++)
+            {
+                _grounds[i].UpdateSpeed(_generalSpeed);
             }
         }
 

@@ -2,30 +2,23 @@ using UnityEngine;
 
 public class GoundMouvement : MonoBehaviour
 {
+    public float baseSpeed = 5f;
     public float speed = 0f;
-    private float baseSpeed = 5f;
     private float _generalSpeed = 0f;
     public float width;
     public bool started = true;
     [SerializeField] private int maxSpeed = 35;
 
-    [SerializeField] private TimeManager _timeManager;
 
 
-    private void OnEnable()
+    private void Start()
     {
-        _timeManager.OnTimePassed += Acceleration;
+        speed = baseSpeed;
     }
 
-    private void OnDisable()
+    public void UpdateSpeed(float addToNewSpeed)
     {
-        _timeManager.OnTimePassed -= Acceleration;
-    }
-
-    public void Acceleration()
-    {
-        _generalSpeed = Mathf.Clamp(_generalSpeed + 1, 0, 30);
-        speed = Mathf.Clamp(baseSpeed + _generalSpeed, 0, 30 + baseSpeed);
+        speed = Mathf.Clamp(baseSpeed + addToNewSpeed, 0, 30 + baseSpeed);
     }
 
     // ── Session ───────────────────────────────────────────────────────────────

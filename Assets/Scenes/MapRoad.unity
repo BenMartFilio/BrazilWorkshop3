@@ -412,6 +412,9 @@ MonoBehaviour:
   - {fileID: 1121532490}
   - {fileID: 483668379}
   - {fileID: 234882523}
+  _grounds:
+  - {fileID: 1851805917}
+  - {fileID: 1587615504}
 --- !u!1 &234882523
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,7 +597,9 @@ MonoBehaviour:
   joueur: {fileID: 1838184139}
   scoreManager: {fileID: 925628590}
   spawner: {fileID: 220667610}
-  sols: []
+  sols:
+  - {fileID: 1851805917}
+  - {fileID: 1587615504}
 --- !u!4 &378087653
 Transform:
   m_ObjectHideFlags: 0
@@ -639,7 +644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b680d92669ceca4dbbee3de467c4e35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SessionManager
-  "donn\xE9es": {fileID: 11400000, guid: a38ed096d3c17df43a3e1b832d57cb13, type: 2}
+  donnees: {fileID: 0}
   "nomSc\xE8neMapRoad": MapRoad
   "nomSc\xE8neBarrage": Barrage
 --- !u!4 &400828209
@@ -2005,6 +2010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1526b823f153349439a957ec67561cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GoundMouvement
+  baseSpeed: 5
   speed: 5
   width: 10
   started: 1
@@ -2473,6 +2479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1526b823f153349439a957ec67561cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GoundMouvement
+  baseSpeed: 5
   speed: 5
   width: 10
   started: 1
