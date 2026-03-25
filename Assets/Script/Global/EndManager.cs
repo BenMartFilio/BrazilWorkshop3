@@ -10,6 +10,7 @@ public class EndManager : MonoBehaviour
     [SerializeField] private GoundMouvement[] _grounds;
     [SerializeField] private SpawnObstacleV2 _spawner;
     [SerializeField] private Image _whiteScreen;
+    [SerializeField] private BackToMenu _backToMenu;
     public void OnDeath()
     {
         _timeManager.StopTime();
@@ -20,6 +21,7 @@ public class EndManager : MonoBehaviour
         }
         _spawner.StopSpawning();
         RevivePanelDisplay();
+        _backToMenu.StartTimer();
     }
 
 
