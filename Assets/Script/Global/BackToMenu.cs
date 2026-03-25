@@ -1,10 +1,12 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BackToMenu : MonoBehaviour
 {
     private bool inScore = false;
     private Coroutine _timer;
+    [SerializeField] private Image _toFill;
     public void DisplayEndScore()
     {
         Debug.Log("Display end");
@@ -27,6 +29,7 @@ public class BackToMenu : MonoBehaviour
             {
                 yield return null;
             }
+            _toFill.fillAmount = Mathf.InverseLerp(time, 0f, elapsed);
             elapsed += Time.deltaTime;
             yield return null;
         }
