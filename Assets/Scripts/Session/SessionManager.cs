@@ -66,6 +66,8 @@ public class SessionManager : MonoBehaviour
     /// <summary>
     /// Restaure l'état MapRoad depuis les données sauvegardées.
     /// À appeler depuis MapRoad dans Start() (après que tous les composants sont prêts).
+    /// Si <see cref="DonnéesSession.sessionValide"/> est false (nouvelle partie),
+    /// aucune restauration n'est effectuée et les composants conservent leurs valeurs par défaut.
     /// </summary>
     public void RestaurerMapRoad(
         PlayerMovement   joueur,
@@ -73,15 +75,32 @@ public class SessionManager : MonoBehaviour
         SpawnObstacleV2  spawner,
         GoundMouvement[] sols)
     {
+        if (donnees == null)
+        {
+            Debug.LogError("[SessionManager] DonnéesSession non assigné dans l'Inspector — restauration annulée.");
+            return;
+        }
+
+        // Pas de session sauvegardée → nouvelle partie, rien à restaurer.
         if (!donnees.sessionValide)
             return;
+
+        if (joueur == null)       { Debug.LogError("[SessionManager] joueur est null — restauration annulée.");       return; }
+        if (scoreManager == null) { Debug.LogError("[SessionManager] scoreManager est null — restauration annulée."); return; }
+        if (spawner == null)      { Debug.LogError("[SessionManager] spawner est null — restauration annulée.");      return; }
 
         joueur.RestaurerDepuisSession(donnees.indexLane, donnees.pièces);
         scoreManager.RestaurerDepuisSession(donnees.score, donnees.vitesseScore);
         spawner.RestaurerDepuisSession(donnees.vitesseGénérale);
 
-        foreach (var sol in sols)
-            sol.RestaurerDepuisSession(donnees.vitesseSol);
+        if (sols != null)
+            foreach (var sol in sols)
+                sol.RestaurerDepuisSession(donnees.vitesseSol);
+
+        // Invalider la session immédiatement après restauration.
+        // Tout rechargement ultérieur de MapRoad (nouvelle partie, mort, menu)
+        // démarrera proprement sans restaurer cet état.
+        donnees.sessionValide = false;
     }
 
     /// <summary>Remet la session à zéro (nouvelle partie).</summary>
@@ -99,6 +118,12 @@ public class SessionManager : MonoBehaviour
         GoundMouvement[] sols,
         float vitesseSolAvantRalentissement = -1f)
     {
+        if (donnees == null)
+        {
+            Debug.LogError("[SessionManager] DonnéesSession non assigné dans l'Inspector — sauvegarde annulée.");
+            return;
+        }
+
         joueur.SauvegarderDansSession(donnees);
         scoreManager.SauvegarderDansSession(donnees);
         spawner.SauvegarderDansSession(donnees);

@@ -29,6 +29,17 @@ public class SpawnObstacleV2 : MonoBehaviour
     [Tooltip("Nombre maximum de signaux TimeManager avant l'apparition du Barrage.")]
     [SerializeField] private int barrageSignauxMax = 7;
 
+    [Tooltip("Distance vide (unités monde) imposée avant d'émettre le pattern Barrage (laisse la route dégagée).")]
+    [SerializeField] private float gapAvantBarrage = 10f;
+
+    [Tooltip("Distance vide (unités monde) imposée après le pattern Barrage (avant que les obstacles normaux reprennent).")]
+    [SerializeField] private float gapAprèsBarrage = 10f;
+
+    [Tooltip("Décalage X du root SegmentBarrage par rapport au centre de la route. " +
+             "Compense l'offset interne du prefab (BarriereInspection localX=-23.9 × scale0.1 = -2.39) " +
+             "pour que la barrière tombe au centre et le bureau à droite.")]
+    [SerializeField] private float barrageOffsetX = 2.39f;
+
     [Header("Speed Reference")]
     [Tooltip("Must match the baseSpeed value on the obstacles' ScrollingElement.")]
     public float baseObstacleSpeed = 5f;
@@ -61,6 +72,13 @@ public class SpawnObstacleV2 : MonoBehaviour
     private int _prochainBarrageA = 0;
     private bool _barrageEnAttente = false;
 
+    /// <summary>
+    /// Bloque les mises à jour de vitesse sur les sols et les objets du pool
+    /// pendant la séquence de freinage du barrage, pour que la décélération
+    /// contrôlée par SegmentBarrage ne soit pas écrasée par OnTimePassed.
+    /// </summary>
+    private bool _miseAJourVitessePausée = false;
+
     /// <summary>Y threshold below which ScrollingElement.Update despawns objects.</summary>
     private const float DespawnY = -20f;
 
@@ -91,25 +109,31 @@ public class SpawnObstacleV2 : MonoBehaviour
     {
         _generalSpeed = Mathf.Clamp(_generalSpeed + 1, 0, 30);
 
-        foreach (List<GameObject> bucket in _pool.Values)
+        // Ne pas écraser les vitesses pendant le freinage du barrage.
+        if (!_miseAJourVitessePausée)
         {
-            foreach (GameObject obj in bucket)
+            foreach (List<GameObject> bucket in _pool.Values)
             {
-                if (obj != null && obj.TryGetComponent<ScrollingElement>(out var scrolling))
-                    scrolling.UpdateSpeed(_generalSpeed);
+                foreach (GameObject obj in bucket)
+                {
+                    if (obj != null && obj.TryGetComponent<ScrollingElement>(out var scrolling))
+                        scrolling.UpdateSpeed(_generalSpeed);
+                }
             }
+
             for (int i = 0; i < _grounds.Length; i++)
-            {
                 _grounds[i].UpdateSpeed(_generalSpeed);
-            }
         }
 
-        // Compter les signaux et marquer le barrage comme attendu au bon moment.
         if (!_barrageEnAttente && patternBarrage != null)
         {
             _signauxEcoules++;
+            Debug.Log($"[SpawnObstacleV2] Signal {_signauxEcoules}/{_prochainBarrageA}");
             if (_signauxEcoules >= _prochainBarrageA)
+            {
                 _barrageEnAttente = true;
+                Debug.Log("[SpawnObstacleV2] *** BARRAGE EN ATTENTE ***");
+            }
         }
     }
 
@@ -119,6 +143,8 @@ public class SpawnObstacleV2 : MonoBehaviour
     public void StartSpawning()
     {
         isSpawning = true;
+        _miseAJourVitessePausée = false;
+
         foreach (List<GameObject> bucket in _pool.Values)
         {
             foreach (GameObject obj in bucket)
@@ -134,10 +160,12 @@ public class SpawnObstacleV2 : MonoBehaviour
         _spawningCoroutine ??= StartCoroutine(SpawnRoutine());
     }
 
-    /// <summary>Stops spawning and freezes all pooled objects.</summary>
+    /// <summary>Stops spawning, freeze tous les objets du pool et bloque les
+    /// mises à jour de vitesse pour laisser SegmentBarrage gérer la décélération.</summary>
     public void StopSpawning()
     {
         isSpawning = false;
+        _miseAJourVitessePausée = true;
 
         if (_spawningCoroutine != null)
         {
@@ -169,25 +197,39 @@ public class SpawnObstacleV2 : MonoBehaviour
             }
 
             // Si le barrage est en attente, on le spawn à la place du prochain pattern normal.
-            ObstaclePattern prochain;
             if (_barrageEnAttente)
             {
-                prochain = patternBarrage;
+                Debug.Log("[SpawnObstacleV2] Entrée bloc barrage — attente gap avant...");
+
+                // Route vide AVANT le barrage.
+                yield return StartCoroutine(WaitForDistance(gapAvantBarrage));
+
                 _barrageEnAttente = false;
                 _signauxEcoules = 0;
                 TirerProchainSeuilBarrage();
-            }
-            else
-            {
-                if (patterns == null || patterns.Length == 0)
-                {
-                    Debug.LogWarning("[SpawnObstacleV2] No patterns assigned.");
-                    yield return null;
-                    continue;
-                }
-                prochain = patterns[GetNextPatternIndex()];
+
+                Debug.Log("[SpawnObstacleV2] Spawn du pattern barrage...");
+
+                // Spawn centré + gap vide APRÈS le barrage.
+                if (patternBarrage != null)
+                    yield return StartCoroutine(SpawnPatternCoroutineBarrage(patternBarrage));
+
+                // Arrêter tout nouveau spawn : le barrage est en route vers le joueur.
+                // Aucun obstacle ne doit apparaître pendant sa descente.
+                // SéquenceBarrage.StopSpawning() prendra le relais quand la proximité est détectée.
+                isSpawning = false;
+                _spawningCoroutine = null;
+                yield break;
             }
 
+            if (patterns == null || patterns.Length == 0)
+            {
+                Debug.LogWarning("[SpawnObstacleV2] No patterns assigned.");
+                yield return null;
+                continue;
+            }
+
+            ObstaclePattern prochain = patterns[GetNextPatternIndex()];
             if (prochain == null) continue;
 
             yield return StartCoroutine(SpawnPatternCoroutine(prochain));
@@ -203,12 +245,74 @@ public class SpawnObstacleV2 : MonoBehaviour
     {
         for (int rowIndex = 0; rowIndex < pattern.rows.Count; rowIndex++)
         {
+            // Interrompre immédiatement si le barrage est en attente — aucune
+            // row supplémentaire ne doit apparaître au-dessus du barrage.
+            if (_barrageEnAttente) yield break;
+
             SpawnRow(pattern.rows[rowIndex]);
             yield return StartCoroutine(WaitForDistance(pattern.rowSpacing));
         }
 
-        float exitDistance = ((transform.position.y - DespawnY) + gapBetweenPatterns) * 0;
-        yield return StartCoroutine(WaitForDistance(exitDistance));
+        // Attendre le gap configuré avant de lancer le pattern suivant.
+        // gapBetweenPatterns est ajustable dans l'Inspector du Spawner.
+        yield return StartCoroutine(WaitForDistance(gapBetweenPatterns));
+    }
+
+    /// <summary>
+    /// Coroutine de spawn dédiée au pattern Barrage : place chaque row centrée
+    /// sur la route (position X du spawner) puis attend un gap vide après le
+    /// dernier élément avant que les patterns normaux reprennent.
+    /// </summary>
+    private IEnumerator SpawnPatternCoroutineBarrage(ObstaclePattern pattern)
+    {
+        for (int rowIndex = 0; rowIndex < pattern.rows.Count; rowIndex++)
+        {
+            SpawnBarrageRow(pattern.rows[rowIndex]);
+            yield return StartCoroutine(WaitForDistance(pattern.rowSpacing));
+        }
+
+        // Gap vide après le barrage — laisse la route dégagée à la reprise.
+        yield return StartCoroutine(WaitForDistance(gapAprèsBarrage));
+    }
+
+    /// <summary>
+    /// Variante de SpawnRow pour le barrage : prend le premier prefab non-null
+    /// de la row et le place centré sur la route (position X du spawner),
+    /// indépendamment du système de lanes.
+    /// </summary>
+    private void SpawnBarrageRow(PatternRow row)
+    {
+        if (row == null) return;
+
+        GameObject prefab = null;
+        foreach (var lane in row.lanes)
+        {
+            if (lane != null) { prefab = lane; break; }
+        }
+        if (prefab == null)
+        {
+            Debug.LogWarning("[SpawnObstacleV2] SpawnBarrageRow : aucun prefab trouvé dans la row.");
+            return;
+        }
+
+        GameObject obj = GetFromPool(prefab);
+
+        float centreX = (_fallingLines != null && _fallingLines.Length > 1
+            ? _fallingLines[1].transform.position.x
+            : transform.position.x) + barrageOffsetX;
+
+        Vector3 spawnPos = new Vector3(centreX, transform.position.y, transform.position.z);
+
+        obj.transform.SetPositionAndRotation(spawnPos, prefab.transform.rotation);
+        obj.SetActive(true);
+
+        // UpdateSpeed appelé après SetActive : sur un objet nouvellement instancié,
+        // ScrollingElement.Start() n'a pas encore tourné, donc UpdateSpeed sera lu
+        // correctement par Update(). Sur un objet recyclé, Start() ne re-tournera pas.
+        if (obj.TryGetComponent<ScrollingElement>(out var scrolling))
+            scrolling.UpdateSpeed(_generalSpeed);
+
+        Debug.Log($"[SpawnObstacleV2] SegmentBarrage spawné à {spawnPos} | vitesse générale={_generalSpeed}");
     }
 
     /// <summary>
