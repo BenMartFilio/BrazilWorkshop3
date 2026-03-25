@@ -20,8 +20,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private TMP_Text _coinsText;
     private int _coinsCount = 0;
 
+    private bool _canMoving = true;
+    private Coroutine _coroutine;
 
     [SerializeField] private EndManager _endManager;
+
+    private Quaternion _rotate;
 
     private void OnEnable()
     {
@@ -32,12 +36,17 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        _rotate = transform.rotation;
         m_index = 1;
         transform.position = m_transforms[m_index].position;
     }
 
     public void MoveToNextPosition()
     {
+        if (!_canMoving)
+        {
+            return;
+        }
         _AudioEventDispatcher.PlayAudio(_MoveAudioType);
         m_index += m_moveSpeed;
         m_index = Mathf.Clamp(m_index, 0, m_transforms.Length - 1);
@@ -45,6 +54,10 @@ public class PlayerMovement : MonoBehaviour
     }
     public void MoveToPreviousPosition()
     {
+        if (!_canMoving)
+        {
+            return;
+        }
         _AudioEventDispatcher.PlayAudio(_MoveAudioType);
         m_index -= m_moveSpeed;
         m_index = Mathf.Clamp(m_index, 0, m_transforms.Length - 1);
@@ -67,8 +80,11 @@ public class PlayerMovement : MonoBehaviour
 
     public void MoveToX(float targetX)
     {
-        StopAllCoroutines();
-        StartCoroutine(SmoothMove(targetX));
+        if (_coroutine != null)
+        {
+            StopCoroutine(_coroutine);
+        }
+        _coroutine = StartCoroutine(SmoothMove(targetX));
     }
 
     IEnumerator SmoothMove(float targetX)
@@ -148,5 +164,17 @@ public class PlayerMovement : MonoBehaviour
     private void Death()
     {
         _endManager.OnDeath();
+    }
+
+    public void StopMove()
+    {
+        _canMoving = false;
+        StopCoroutine(_coroutine);
+    }
+
+    public void StartMove()
+    {
+        _canMoving = true;
+        transform.SetPositionAndRotation(m_transforms[m_index].position, _rotate);
     }
 }

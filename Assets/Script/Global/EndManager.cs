@@ -11,6 +11,7 @@ public class EndManager : MonoBehaviour
     [SerializeField] private SpawnObstacleV2 _spawner;
     [SerializeField] private Image _whiteScreen;
     [SerializeField] private BackToMenu _backToMenu;
+    [SerializeField] private PlayerMovement _playerMovement;
     public void OnDeath()
     {
         _timeManager.StopTime();
@@ -20,6 +21,7 @@ public class EndManager : MonoBehaviour
             _grounds[i].StopMove();
         }
         _spawner.StopSpawning();
+        _playerMovement.StopMove();
         RevivePanelDisplay();
         _backToMenu.StartTimer();
     }
@@ -34,6 +36,7 @@ public class EndManager : MonoBehaviour
         {
             _grounds[i].StartMove();
         }
+        _playerMovement.StartMove();
         _spawner.StartSpawning();
         _revivePanel.SetActive(false);
     }

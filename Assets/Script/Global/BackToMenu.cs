@@ -12,7 +12,6 @@ public class BackToMenu : MonoBehaviour
         Debug.Log("Display end");
         StopCoroutine(_timer);
         inScore = true;
-        Time.timeScale = 0f;
     }
 
     public void StartTimer()
