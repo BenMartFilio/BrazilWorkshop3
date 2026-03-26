@@ -15,7 +15,8 @@ public enum AudioType
     TicTac,
     Pickup,
     CarWindow,
-    StartEngine
+    StartEngine,
+    UIClick
 }
 //Deux audio source (à faire) une qui fait la musique, et l'autre les sons (les sons sont joué un par un)
 [System.Serializable]
