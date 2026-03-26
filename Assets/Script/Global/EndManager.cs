@@ -27,6 +27,7 @@ public class EndManager : MonoBehaviour
         _playerMovement.StopMove();
         RevivePanelDisplay();
         _backToMenu.StartTimer();
+        SaveScoreAndCoin();
     }
 
 
