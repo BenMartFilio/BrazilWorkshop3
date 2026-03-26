@@ -14,10 +14,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioEventDispatcher
   audioClips:
   - audioType: 1
-    audioClip: {fileID: 8300000, guid: 46dd0242d62f5584f9fe4658ee4b7516, type: 3}
+    audioClip: {fileID: 8300000, guid: ed7fe8c5b72db5f4ca2e2f233f170d9e, type: 3}
   - audioType: 2
-    audioClip: {fileID: 8300000, guid: 6891b813e2dc0004b891f57dd2b14a31, type: 3}
-  - audioType: 0
+    audioClip: {fileID: 8300000, guid: bee8df2a920da6b4cbca6dc40015837f, type: 3}
+  - audioType: 3
     audioClip: {fileID: 0}
+  - audioType: 4
+    audioClip: {fileID: 8300000, guid: e4c35fdfa8c06514885eac60c279ad68, type: 3}
+  - audioType: 5
+    audioClip: {fileID: 8300000, guid: 7fe9a63890740b948b9bdcf2238faa06, type: 3}
+  - audioType: 6
+    audioClip: {fileID: 8300000, guid: 6b606e774b7870a468ee549263d61133, type: 3}
+  - audioType: 7
+    audioClip: {fileID: 8300000, guid: 4704d431ef9a5254b9840f0293363ae7, type: 3}
+  - audioType: 8
+    audioClip: {fileID: 8300000, guid: 91a33e121b376f44494c5a8fd0ef2a8f, type: 3}
   - audioType: 9
-    audioClip: {fileID: 8300000, guid: 31220683582f6c74fac6d805fba440a0, type: 3}
+    audioClip: {fileID: 8300000, guid: 63fe06d3eff61cb4dbfa761d14eb0767, type: 3}
+  - audioType: 10
+    audioClip: {fileID: 8300000, guid: a5e84b408966043438063cba3283719f, type: 3}
+  - audioType: 11
+    audioClip: {fileID: 8300000, guid: 4ae8a7ccbdef9f0419ecb2e39177d5e4, type: 3}
+  - audioType: 12
+    audioClip: {fileID: 8300000, guid: 6db1de794fd3e8044851cc6cee91115a, type: 3}

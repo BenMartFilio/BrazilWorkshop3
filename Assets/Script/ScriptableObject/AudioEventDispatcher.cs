@@ -4,17 +4,18 @@ using UnityEngine;
 public enum AudioType
 {
     None,
-    ObjectMovement,
-    PlayerMovement,
-    Destruction,
-    Death,
-    Get,
-    SpecialGet,
-    PlayGame,
-    Button,
-    Start,
-    WindMoves
-
+    Gard,
+    PaperGet,
+    PaperSet,
+    Pneu,
+    Correct,
+    Wrong,
+    Crash,
+    GameOver,
+    TicTac,
+    Pickup,
+    CarWindow,
+    StartEngine
 }
 //Deux audio source (à faire) une qui fait la musique, et l'autre les sons (les sons sont joué un par un)
 [System.Serializable]
