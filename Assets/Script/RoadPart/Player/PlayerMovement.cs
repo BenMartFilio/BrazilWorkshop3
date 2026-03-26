@@ -33,6 +33,12 @@ public class PlayerMovement : MonoBehaviour
         m_inputManager.OnMoveRight += MoveToNextPosition;
     }
 
+    private void OnDisable()
+    {
+        m_inputManager.OnMoveLeft -= MoveToPreviousPosition;
+        m_inputManager.OnMoveRight -= MoveToNextPosition;
+    }
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -148,14 +154,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        CoinsScript a = other.GetComponent<CoinsScript>();
         if (other.GetComponent<CollisionObstacle>() != null)
         {
             StartCoroutine(Camera.main.GetComponent<ScreenShake>().Shake(0.2f, 0.15f));
             Death();
         }
-        else if (other.GetComponent<CoinsScript>() != null)
+        else if (a != null)
         {
-            other.GetComponent<CoinsScript>().OnCoinRecuperation();
+            a.OnCoinRecuperation();
             _coinsCount++;
             _coinsText.text = _coinsCount.ToString();
         }

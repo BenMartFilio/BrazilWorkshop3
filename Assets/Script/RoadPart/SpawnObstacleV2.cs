@@ -128,11 +128,9 @@ public class SpawnObstacleV2 : MonoBehaviour
         if (!_barrageEnAttente && patternBarrage != null)
         {
             _signauxEcoules++;
-            Debug.Log($"[SpawnObstacleV2] Signal {_signauxEcoules}/{_prochainBarrageA}");
             if (_signauxEcoules >= _prochainBarrageA)
             {
                 _barrageEnAttente = true;
-                Debug.Log("[SpawnObstacleV2] *** BARRAGE EN ATTENTE ***");
             }
         }
     }

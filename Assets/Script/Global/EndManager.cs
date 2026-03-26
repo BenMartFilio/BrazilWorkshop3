@@ -12,6 +12,7 @@ public class EndManager : MonoBehaviour
     [SerializeField] private Image _whiteScreen;
     [SerializeField] private BackToMenu _backToMenu;
     [SerializeField] private PlayerMovement _playerMovement;
+    [SerializeField] private Aspiration _aspiration;
     public void OnDeath()
     {
         _timeManager.StopTime();
@@ -21,6 +22,7 @@ public class EndManager : MonoBehaviour
             _grounds[i].StopMove();
         }
         _spawner.StopSpawning();
+        _aspiration.isDead = true;
         _playerMovement.StopMove();
         RevivePanelDisplay();
         _backToMenu.StartTimer();
@@ -37,6 +39,7 @@ public class EndManager : MonoBehaviour
             _grounds[i].StartMove();
         }
         _playerMovement.StartMove();
+        _aspiration.isDead = false;
         _spawner.StartSpawning();
         _revivePanel.SetActive(false);
     }
