@@ -19,6 +19,7 @@ public class SaveGameSystem : MonoBehaviour
     }
     private void Awake()
     {
+        Application.targetFrameRate = 60;
         lock (lockObj)
         {
             if (instance == null)
