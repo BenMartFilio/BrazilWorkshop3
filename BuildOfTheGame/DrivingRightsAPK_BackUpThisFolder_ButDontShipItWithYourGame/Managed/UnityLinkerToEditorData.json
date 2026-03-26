@@ -61,10 +61,7 @@
           },
           {
             "name": "AudioClip",
-            "scenes": [
-              "Assets/Scenes/MainMenu.unity",
-              "Assets/Scenes/MapRoad.unity"
-            ],
+            "scenes": [],
             "dependencyType": 0,
             "icon": null
           },
@@ -111,11 +108,8 @@
           },
           {
             "name": "AudioResource",
-            "scenes": [
-              "Assets/Scenes/MainMenu.unity",
-              "Assets/Scenes/MapRoad.unity"
-            ],
-            "dependencyType": 0,
+            "scenes": [],
+            "dependencyType": 1,
             "icon": null
           },
           {
@@ -1496,8 +1490,7 @@
             "scenes": [
               "Assets/Scenes/Barrage.unity",
               "Assets/Scenes/MainMenu.unity",
-              "Assets/Scenes/MapRoad.unity",
-              "Assets/Scenes/ResultScene.unity"
+              "Assets/Scenes/MapRoad.unity"
             ],
             "dependencyType": 0,
             "icon": null
