@@ -106,7 +106,7 @@ public class SessionManager : MonoBehaviour
     /// <summary>Remet la session à zéro (nouvelle partie).</summary>
     public void NouvellePartie()
     {
-        donnees.Réinitialiser();
+        donnees.Reinitialiser();
     }
 
     // ── Sauvegarde interne ────────────────────────────────────────────────────

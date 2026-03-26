@@ -33,8 +33,11 @@ public class DonnéesSession : ScriptableObject
     [Tooltip("Vrai si une session MapRoad a déjà été sauvegardée.")]
     public bool sessionValide = false;
 
+
+    public int[] documentsPosseded = new int[0];
+
     /// <summary>Remet toutes les valeurs à leur état initial.</summary>
-    public void Réinitialiser()
+    public void Reinitialiser()
     {
         indexLane      = 1;
         pièces         = 0;
@@ -43,5 +46,6 @@ public class DonnéesSession : ScriptableObject
         vitesseGénérale = 0f;
         vitesseSol     = 5f;
         sessionValide  = false;
+        documentsPosseded = new int[0];
     }
 }
