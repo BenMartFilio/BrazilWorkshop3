@@ -23,6 +23,9 @@ public class SO_PlayerDatas : ScriptableObject
     public float SFXVolume;
     public int generalMonney;
     public int premiumMonney;
+    public int actualScoreNotSaved;
+    public int actualCoinsNotSaved;
+    public bool isAnHighScore;
 
 
     public List<MiniGameHighScores> allHighScores = new List<MiniGameHighScores>();

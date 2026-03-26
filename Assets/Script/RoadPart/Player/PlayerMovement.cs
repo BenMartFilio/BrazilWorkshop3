@@ -187,4 +187,10 @@ public class PlayerMovement : MonoBehaviour
         _canMoving = true;
         transform.SetPositionAndRotation(m_transforms[m_index].position, _rotate);
     }
+
+
+    public int ReturnCoins()
+    {
+        return _coinsCount;
+    }
 }

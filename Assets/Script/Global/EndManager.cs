@@ -13,6 +13,7 @@ public class EndManager : MonoBehaviour
     [SerializeField] private BackToMenu _backToMenu;
     [SerializeField] private PlayerMovement _playerMovement;
     [SerializeField] private Aspiration _aspiration;
+    [SerializeField] private SO_PlayerDatas _playerDatas;
     public void OnDeath()
     {
         _timeManager.StopTime();
@@ -71,5 +72,22 @@ public class EndManager : MonoBehaviour
         Color end = baseColor;
         end.a = 0f;
         _whiteScreen.color = end;
+    }
+
+
+    private void SaveScoreAndCoin()
+    {
+        int actualScore = _scoreManager.ReturnScore();
+        int actualCoins = _playerMovement.ReturnCoins();
+        _playerDatas.generalMonney += actualCoins;
+        _playerDatas.actualCoinsNotSaved = actualCoins;
+        _playerDatas.actualScoreNotSaved = actualScore;
+        if (actualScore > _playerDatas.BestScore)
+        {
+            _playerDatas.BestScore = actualScore;
+            _playerDatas.isAnHighScore = true;
+        }
+
+        _playerDatas.SaveDatas();
     }
 }

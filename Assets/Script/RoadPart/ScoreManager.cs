@@ -1,11 +1,12 @@
 using System.Collections;
+using System.ComponentModel;
 using TMPro;
 using UnityEngine;
 using static UnityEngine.Rendering.DebugUI;
 
 public class ScoreManager : MonoBehaviour
 {
-    private int score;
+    protected int score;
     private bool isDriving;
     private Coroutine scoreCoroutine;
     private float speedScore=39f;
@@ -77,5 +78,11 @@ public class ScoreManager : MonoBehaviour
     private void Start()
     {
         StartScore();
+    }
+
+
+    public int ReturnScore()
+    {
+        return score;
     }
 }
