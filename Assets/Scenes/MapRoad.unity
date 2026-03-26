@@ -1732,6 +1732,7 @@ MonoBehaviour:
   _backToMenu: {fileID: 756102038}
   _playerMovement: {fileID: 1838184139}
   _aspiration: {fileID: 1185453011}
+  _playerDatas: {fileID: 11400000, guid: f469a69765f7c5c4aa607382bdb461df, type: 2}
 --- !u!4 &1232534110
 Transform:
   m_ObjectHideFlags: 0
