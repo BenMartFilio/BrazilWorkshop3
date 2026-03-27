@@ -602,7 +602,7 @@ MonoBehaviour:
   sols:
   - {fileID: 1851805917}
   - {fileID: 1587615504}
-  barreProgression: {fileID: 0}
+  barreProgression: {fileID: 1833950802}
 --- !u!4 &378087653
 Transform:
   m_ObjectHideFlags: 0
@@ -1407,8 +1407,8 @@ RectTransform:
   m_GameObject: {fileID: 1023605558}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 864982723}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2166,6 +2166,7 @@ MonoBehaviour:
   _playerMovement: {fileID: 1838184139}
   _aspiration: {fileID: 1185453011}
   _playerDatas: {fileID: 11400000, guid: f469a69765f7c5c4aa607382bdb461df, type: 2}
+  _barreProgression: {fileID: 1833950802}
 --- !u!4 &1232534110
 Transform:
   m_ObjectHideFlags: 0
@@ -3498,6 +3499,7 @@ MonoBehaviour:
   _slider: {fileID: 1833950803}
   _handleRoue: {fileID: 1023605559}
   vitesseRotation: 180
+  "d\xE9laiArriv\xE9eBarrage": 2
 --- !u!114 &1833950803
 MonoBehaviour:
   m_ObjectHideFlags: 0

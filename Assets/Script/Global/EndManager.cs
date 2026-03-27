@@ -14,22 +14,22 @@ public class EndManager : MonoBehaviour
     [SerializeField] private PlayerMovement _playerMovement;
     [SerializeField] private Aspiration _aspiration;
     [SerializeField] private SO_PlayerDatas _playerDatas;
+    [SerializeField] private BarreProgressionBarrage _barreProgression;
+
     public void OnDeath()
     {
         _timeManager.StopTime();
         _scoreManager.StopScore();
-        for (int i = 0; i<_grounds.Length; i++)
-        {
+        for (int i = 0; i < _grounds.Length; i++)
             _grounds[i].StopMove();
-        }
         _spawner.StopSpawning();
         _aspiration.isDead = true;
         _playerMovement.StopMove();
+        _barreProgression?.Geler();
         RevivePanelDisplay();
         _backToMenu.StartTimer();
         SaveScoreAndCoin();
     }
-
 
     public void Revive()
     {
@@ -37,12 +37,11 @@ public class EndManager : MonoBehaviour
         _timeManager.StartTime();
         _scoreManager.StartScore();
         for (int i = 0; i < _grounds.Length; i++)
-        {
             _grounds[i].StartMove();
-        }
         _playerMovement.StartMove();
         _aspiration.isDead = false;
         _spawner.StartSpawning();
+        _barreProgression?.Dégeler();
         _revivePanel.SetActive(false);
     }
 

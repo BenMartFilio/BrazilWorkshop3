@@ -27,11 +27,18 @@ public class BarreProgressionBarrage : MonoBehaviour
     [Tooltip("Degrés par seconde de rotation de la roue (vitesse de base).")]
     [SerializeField] private float vitesseRotation = 120f;
 
+    [Header("Correction timing")]
+    [Tooltip("Durée en secondes entre le spawn du barrage et son arrivée visuelle à l'écran. " +
+             "Ajoutée à la durée totale du cycle pour que la roue atteigne le haut " +
+             "exactement quand le barrage devient visible.")]
+    [SerializeField] private float délaiArrivéeBarrage = 2f;
+
     // ── État interne ──────────────────────────────────────────────────────────
     private float _valeurAffichée = 0f;     // valeur courante [0-1], ne recule jamais
     private float _tempsEcoulé   = 0f;      // temps écoulé dans le cycle courant
     private float _duréeTotale   = 0f;      // duréeSignal × seuilBarrage
     private bool  _gelé          = false;   // true quand la barre est bloquée à 1
+    private bool  _pausé         = false;   // true quand la mort stoppe la progression
 
     private void Start()
     {
@@ -51,10 +58,10 @@ public class BarreProgressionBarrage : MonoBehaviour
     {
         if (_spawner == null || _slider == null) return;
 
-        // Si gelé en haut, rien à faire sauf tourner la roue lentement
-        if (_gelé)
+        // Mort ou barre gelée en haut : juste tourner la roue
+        if (_pausé || _gelé)
         {
-            TournerRoue(1f);
+            TournerRoue(_valeurAffichée);
             return;
         }
 
@@ -94,12 +101,19 @@ public class BarreProgressionBarrage : MonoBehaviour
         _valeurAffichée = 0f;
         _tempsEcoulé    = 0f;
         _gelé           = false;
+        _pausé          = false;
 
         if (_slider != null)
             _slider.value = 0f;
 
         InitialiserCycle();
     }
+
+    /// <summary>Stoppe la progression de la barre (mort du joueur).</summary>
+    public void Geler() => _pausé = true;
+
+    /// <summary>Reprend la progression de la barre (revive).</summary>
+    public void Dégeler() => _pausé = false;
 
     // ── Utilitaires ───────────────────────────────────────────────────────────
 
@@ -110,7 +124,10 @@ public class BarreProgressionBarrage : MonoBehaviour
 
         float duréeSignal = Mathf.Max(0.1f, _spawner.DuréeSignal);
         int   seuil       = Mathf.Max(1, _spawner.SeuilBarrage);
-        _duréeTotale      = duréeSignal * seuil;
+
+        // On ajoute le délai visuel d'arrivée du barrage : la roue doit atteindre
+        // le haut de la barre exactement quand le barrage devient visible, pas quand il spawne.
+        _duréeTotale = duréeSignal * seuil + délaiArrivéeBarrage;
     }
 
     /// <summary>Tourne la roue proportionnellement à la progression.</summary>
