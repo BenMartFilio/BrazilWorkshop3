@@ -50,6 +50,26 @@ public class PlayerMovement : MonoBehaviour
         transform.position = m_transforms[m_index].position;
     }
 
+
+    [SerializeField] private float _collisionCheckRadius = 0.4f;
+
+    /// <summary>Retourne true si un obstacle occupe la lane à la position X cible.</summary>
+    private bool IsLaneBlocked(float targetX)
+    {
+        Vector2 checkPos = new Vector2(targetX, transform.position.y);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(checkPos, _collisionCheckRadius);
+
+        foreach (Collider2D hit in hits)
+        {
+            if (hit.gameObject != gameObject && hit.TryGetComponent<CollisionObstacle>(out _))
+                return true;
+        }
+        return false;
+    }
+
+
+
+
     public void MoveToNextPosition()
     {
         if (!_canMoving)
@@ -59,6 +79,12 @@ public class PlayerMovement : MonoBehaviour
         _AudioEventDispatcher.PlayAudio(_MoveAudioType);
         m_index += m_moveSpeed;
         m_index = Mathf.Clamp(m_index, 0, m_transforms.Length - 1);
+        if (IsLaneBlocked(m_transforms[m_index].position.x))
+        {
+            m_index -= m_moveSpeed;
+            OnSemiCollision();
+        }
+
         UpdatePosition();
     }
     public void MoveToPreviousPosition()
@@ -70,6 +96,12 @@ public class PlayerMovement : MonoBehaviour
         _AudioEventDispatcher.PlayAudio(_MoveAudioType);
         m_index -= m_moveSpeed;
         m_index = Mathf.Clamp(m_index, 0, m_transforms.Length - 1);
+        if (IsLaneBlocked(m_transforms[m_index].position.x))
+        {
+            m_index += m_moveSpeed;
+            OnSemiCollision();
+        }
+
         UpdatePosition();
     }
     public void MoveToDirection(int direction) //direction -1 ou 1
@@ -187,6 +219,20 @@ public class PlayerMovement : MonoBehaviour
             a.OnCoinRecuperation();
             _coinsCount++;
             _coinsText.text = _coinsCount.ToString();
+        }
+    }
+
+    private void OnSemiCollision()
+    {
+        if (IamAlreadyTouched == false)
+        {
+                StartCoroutine(Camera.main.GetComponent<ScreenShake>().Shake(0.2f, 0.15f));
+                StartCoroutine(SimpleCollision());
+        }
+        else
+        {
+            StartCoroutine(Camera.main.GetComponent<ScreenShake>().Shake(0.2f, 0.15f));
+            Death();
         }
     }
 
