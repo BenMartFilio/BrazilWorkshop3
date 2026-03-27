@@ -60,33 +60,35 @@ namespace Barrage.UI
         [Tooltip("Nom exact de la scène menu à charger (doit être présente dans Build Settings).")]
         [SerializeField] private string nomScèneMenu = "MainMenu";
 
-        [Header("Texte tamponné")]
+        [Header("Cartes — taille et disposition")]
+        [Tooltip("Largeur d'une carte-lettre en pixels. Valeur originale : 175.")]
+        [SerializeField] private float largeurLettre = 105f;
+        [Tooltip("Hauteur d'une carte-lettre en pixels. Valeur originale : 340.")]
+        [SerializeField] private float hauteurLigne  = 204f;
+        [Tooltip("Espacement horizontal entre les cartes d'une même ligne.")]
+        [SerializeField] private float espacementH   = 10f;
+        [Tooltip("Espacement vertical entre les deux lignes GAME / OVER.")]
+        [SerializeField] private float espacementV   = 14f;
+        [Tooltip("Décalage vertical du bloc 'GAME OVER' par rapport au centre du canvas. Négatif = vers le bas.")]
+        [SerializeField] private float offsetY       = 0f;
+
+        [Header("Lettre tamponnée")]
         [Tooltip("Police utilisée pour les lettres tamponnées sur chaque carte.")]
         [SerializeField] private TMP_FontAsset fonteGameOver;
-        [SerializeField] private float taillePolice  = 160f;
+        [Tooltip("Taille de la lettre en points. Valeur originale : 160.")]
+        [SerializeField] private float taillePolice  = 96f;
+        [Tooltip("Couleur de la lettre et de l'anneau tamponné.")]
         [SerializeField] private Color couleurTexte  = new Color(0.88f, 0.08f, 0.06f, 1f);
 
         [Header("Anneau tamponné")]
-        [Tooltip("Rayon de base du cercle tampon en pixels.")]
-        [SerializeField] private float anneauRayon    = 103f;
-        [Tooltip("Épaisseur de l'anneau en pixels.")]
-        [SerializeField] private float anneauEpaisseur = 20f;
-        [Tooltip("Amplitude du bruit sur le bord extérieur (bavure externe).")]
-        [SerializeField] private float anneauBaveExt  = 15f;
-        [Tooltip("Amplitude du bruit sur le bord intérieur (bavure interne).")]
-        [SerializeField] private float anneauBaveInt  = 8f;
-
-        [Header("Layout")]
-        [Tooltip("Hauteur d'une ligne de cartes en pixels.")]
-        [SerializeField] private float hauteurLigne  = 340f;
-        [Tooltip("Largeur d'une carte-lettre en pixels.")]
-        [SerializeField] private float largeurLettre = 175f;
-        [Tooltip("Espacement horizontal entre les cartes d'une même ligne.")]
-        [SerializeField] private float espacementH   = 14f;
-        [Tooltip("Espacement vertical entre les deux lignes.")]
-        [SerializeField] private float espacementV   = 18f;
-        [Tooltip("Décalage vertical du bloc par rapport au centre du canvas.")]
-        [SerializeField] private float offsetY       = 0f;
+        [Tooltip("Rayon du cercle tampon en pixels. Valeur originale : 103.")]
+        [SerializeField] private float anneauRayon    = 62f;
+        [Tooltip("Épaisseur du trait de l'anneau en pixels. Valeur originale : 20.")]
+        [SerializeField] private float anneauEpaisseur = 12f;
+        [Tooltip("Amplitude du bruit sur le bord extérieur (bavure externe). Valeur originale : 15.")]
+        [SerializeField] private float anneauBaveExt  = 9f;
+        [Tooltip("Amplitude du bruit sur le bord intérieur (bavure interne). Valeur originale : 8.")]
+        [SerializeField] private float anneauBaveInt  = 5f;
 
         private void OnEnable()
         {
@@ -149,42 +151,57 @@ namespace Barrage.UI
             for (int i = 0; i < nb; i++)
                 cartes[i].FigerPourGameOver();
 
-            // ── Vérification et correction du positionnement ─────────────────
-            // Les collisions inter-cartes peuvent avoir déplacé certaines cartes juste
-            // avant le figer. On vérifie que chacune est bien sur son slot et on la
-            // replace si nécessaire, jusqu'à MAX_TENTATIVES_POS fois.
+            // ── Vérification et replacement avant tamponnage ──────────────────
+            // On attend 2 frames pour que LateUpdate ait fini toute passe résiduelle
+            // de collision avant de mesurer les écarts.
+            yield return null;
+            yield return null;
+
+            // Collecter toutes les cartes hors de leur slot et les corriger EN PARALLÈLE.
+            // On boucle jusqu'à ce que toutes soient en place (max MAX_TENTATIVES_POS tours).
             for (int tentative = 0; tentative < MAX_TENTATIVES_POS; tentative++)
             {
-                // Attendre une frame pour laisser LateUpdate terminer sa passe de collision
-                yield return null;
+                var corrections = new List<Coroutine>();
 
-                bool toutesOk = true;
                 for (int i = 0; i < nb; i++)
                 {
                     if (cartes[i] == null) continue;
 
-                    Vector2 posActuelle = cartes[i].Rt.anchoredPosition;
-                    Vector2 posVoulue   = slots[i].pos;
-                    float   ecart       = Vector2.Distance(posActuelle, posVoulue);
+                    float ecart = Vector2.Distance(
+                        cartes[i].Rt.anchoredPosition, slots[i].pos);
 
                     if (ecart > SEUIL_POSITION_OK)
                     {
-                        toutesOk = false;
-                        // Correction douce vers le slot cible
-                        yield return StartCoroutine(cartes[i].AnimerVers(
-                            posVoulue, slots[i].taille, 0f, Color.white, DUREE_CORRECTION_POS));
+                        // Lancer la correction en parallèle (ne pas bloquer ici)
+                        var co = StartCoroutine(cartes[i].AnimerVers(
+                            slots[i].pos, slots[i].taille, 0f, Color.white, DUREE_CORRECTION_POS));
+                        corrections.Add(co);
                     }
                 }
 
-                if (toutesOk) break;
+                // Si aucune correction n'a été nécessaire, toutes les cartes sont en place
+                if (corrections.Count == 0) break;
+
+                // Attendre que TOUTES les corrections parallèles soient terminées
+                foreach (var co in corrections)
+                    yield return co;
+
+                // Laisser LateUpdate se stabiliser avant la prochaine vérification
+                yield return null;
             }
 
-            // Forcer la position exacte pour éliminer tout résidu de dérive
+            // Forcer la position, la taille et la rotation exactes sur toutes les cartes —
+            // garantie absolue avant d'afficher les tampons.
             for (int i = 0; i < nb; i++)
             {
                 if (cartes[i] == null) continue;
                 cartes[i].Rt.anchoredPosition = slots[i].pos;
+                cartes[i].Rt.sizeDelta        = slots[i].taille;
+                cartes[i].Rt.localEulerAngles = Vector3.zero;
             }
+
+            // Une frame de rendu pour que l'affichage soit à jour avant les tampons
+            yield return null;
 
             yield return new WaitForSeconds(DELAI_AVANT_TAMPONS);
 

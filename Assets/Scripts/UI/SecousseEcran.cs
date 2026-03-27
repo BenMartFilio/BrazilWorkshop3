@@ -62,6 +62,11 @@ namespace Barrage.UI
         {
             _positionBase = cible.localPosition;
 
+            // Normaliser l'intensité par rapport à la hauteur de référence 1920px
+            // pour que l'effet soit identique sur tous les formats d'écran.
+            float scale     = Screen.height / 1920f;
+            float intensité = intensitéPx * scale;
+
             // Offset aléatoire dans l'espace Perlin pour éviter les répétitions
             float offsetX = Random.Range(0f, 100f);
             float offsetY = Random.Range(0f, 100f);
@@ -78,7 +83,7 @@ namespace Barrage.UI
                 float dx = (Mathf.PerlinNoise(offsetX + t * FREQUENCE, 0f) - 0.5f) * 2f;
                 float dy = (Mathf.PerlinNoise(0f, offsetY + t * FREQUENCE) - 0.5f) * 2f;
 
-                cible.localPosition = _positionBase + new Vector3(dx, dy, 0f) * intensitéPx * décroiss;
+                cible.localPosition = _positionBase + new Vector3(dx, dy, 0f) * intensité * décroiss;
 
                 yield return null;
             }

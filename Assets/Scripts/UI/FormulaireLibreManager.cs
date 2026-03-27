@@ -139,23 +139,37 @@ namespace Barrage.UI
                 return;
             }
 
-            // Lire la texture directement depuis le prefab (sans l'instancier dans la scène)
-            RawImage sourceImage = data.prefab.GetComponentInChildren<RawImage>(true);
-            Texture2D texture    = sourceImage != null ? sourceImage.texture as Texture2D : null;
+            // Utiliser ExtraireTexture() qui remonte correctement dans la hiérarchie du prefab,
+            // quel que soit le GameObject racine (Canvas wrapper, etc.)
+            Texture2D texture = data.ExtraireTexture();
 
             if (texture == null)
             {
-                Debug.LogError($"[FormulaireLibreManager] Aucune texture dans '{data.prefab.name}'.");
+                // Fallback : chercher dans tous les enfants incluant les inactifs
+                var rawImages = data.prefab.GetComponentsInChildren<UnityEngine.UI.RawImage>(true);
+                foreach (var ri in rawImages)
+                {
+                    if (ri.texture is Texture2D tex)
+                    {
+                        texture = tex;
+                        break;
+                    }
+                }
+            }
+
+            if (texture == null)
+            {
+                Debug.LogError($"[FormulaireLibreManager] Aucune texture trouvée dans '{data.prefab.name}'. " +
+                               $"Vérifier que le prefab contient un RawImage avec une texture assignée.");
                 return;
             }
 
-            // Créer un GameObject UI propre directement dans la PartieBasse
             var go = new GameObject(data.prefab.name,
-                typeof(RectTransform), typeof(CanvasRenderer), typeof(RawImage));
+                typeof(RectTransform), typeof(CanvasRenderer), typeof(UnityEngine.UI.RawImage));
             go.transform.SetParent(partieBasse, false);
             go.layer = LayerMask.NameToLayer("UI");
 
-            var img       = go.GetComponent<RawImage>();
+            var img       = go.GetComponent<UnityEngine.UI.RawImage>();
             img.texture       = texture;
             img.raycastTarget = true;
 
