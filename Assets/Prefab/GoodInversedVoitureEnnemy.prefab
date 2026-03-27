@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4572643954948628692}
   - component: {fileID: 9164298874183069356}
   - component: {fileID: 5542340264763600772}
+  - component: {fileID: -8199693475487559548}
   m_Layer: 0
   m_Name: GoodInversedVoitureEnnemy
   m_TagString: Untagged
@@ -99,6 +100,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.81, y: 1.39}
   m_EdgeRadius: 0
+--- !u!114 &-8199693475487559548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535104966169734813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a00e8d5a7951a4c488581869d6b1f81e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CollisionObstacle
+  prefabExplosion: {fileID: 0}
 --- !u!1 &3610982495355649786
 GameObject:
   m_ObjectHideFlags: 0

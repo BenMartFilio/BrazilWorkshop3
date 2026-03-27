@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9164298874183069356}
   - component: {fileID: 3375826670825401157}
   - component: {fileID: 1758867094290201204}
+  - component: {fileID: 6749420585842989356}
   m_Layer: 0
   m_Name: GoodNormalVoitureObstacle
   m_TagString: Untagged
@@ -129,6 +130,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6749420585842989356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535104966169734813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a00e8d5a7951a4c488581869d6b1f81e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CollisionObstacle
+  prefabExplosion: {fileID: 0}
 --- !u!1 &2861961816579948195
 GameObject:
   m_ObjectHideFlags: 0
