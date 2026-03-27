@@ -1,4 +1,5 @@
 using UnityEngine;
+using Barrage.Formulaires;
 
 /// <summary>
 /// ScriptableObject portant toutes les données de session persistantes
@@ -42,18 +43,28 @@ public class DonnéesSession : ScriptableObject
     [Tooltip("Seuil tiré aléatoirement pour le prochain barrage.")]
     public int prochainBarrageA = 0;
 
+    [Header("Prochaine demande barrage")]
+    [Tooltip("Liste des formulaires demandés au prochain barrage. " +
+             "Vide = le barrage génère une demande aléatoire.")]
+    public FormulaireType[] prochaineDemandeBarrage = new FormulaireType[0];
+
+    /// <summary>True si une demande spécifique a été sauvegardée pour le prochain barrage.</summary>
+    public bool AUneDemandeSauvegardée => prochaineDemandeBarrage != null
+                                          && prochaineDemandeBarrage.Length > 0;
+
     /// <summary>Remet toutes les valeurs à leur état initial.</summary>
     public void Reinitialiser()
     {
-        indexLane         = 1;
-        pièces            = 0;
-        score             = 0;
-        vitesseScore      = 39f;
-        vitesseGénérale   = 0f;
-        vitesseSol        = 5f;
-        sessionValide     = false;
-        documentsPosseded = new int[0];
-        signauxEcoules    = 0;
-        prochainBarrageA  = 0;
+        indexLane                 = 1;
+        pièces                    = 0;
+        score                     = 0;
+        vitesseScore              = 39f;
+        vitesseGénérale           = 0f;
+        vitesseSol                = 5f;
+        sessionValide             = false;
+        documentsPosseded         = new int[0];
+        signauxEcoules            = 0;
+        prochainBarrageA          = 0;
+        prochaineDemandeBarrage   = new FormulaireType[0];
     }
 }

@@ -22,6 +22,10 @@ namespace Barrage.UI
         [Header("Validation")]
         [Tooltip("ScriptableObject définissant la séquence ordonnée des formulaires attendus.")]
         [SerializeField] private ListeAttenteGarde listeAttenteGarde;
+        [Tooltip("ScriptableObject de session — contient la demande sauvegardée du barrage précédent.")]
+        [SerializeField] private DonnéesSession donnéesSession;
+        [Tooltip("Demande aléatoire de secours si aucune demande n'est sauvegardée en session.")]
+        [SerializeField] private DemandeBarrage demandeAléatoire;
 
         // ── Animation positive ────────────────────────────────────────────────
         // (constantes déplacées dans AnimerPositif)
@@ -47,7 +51,11 @@ namespace Barrage.UI
         private void Awake()
         {
             RectTransform = GetComponent<RectTransform>();
-            listeAttenteGarde?.Réinitialiser();
+
+            // Charger la séquence depuis la session (demande du barrage précédent)
+            // ou générer aléatoirement si c'est le premier barrage.
+            if (listeAttenteGarde != null)
+                listeAttenteGarde.ChargerDepuisSession(donnéesSession, demandeAléatoire);
         }
 
         /// <summary>Reçoit un formulaire du système poche (FormulaireUI).</summary>

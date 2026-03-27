@@ -25,6 +25,8 @@ namespace Barrage.UI
         [SerializeField] private List<FormulaireData> formulairesData = new();
         [Tooltip("MainDuGardeUI dont l'événement OnBarrageValidé déclenche l'affichage.")]
         [SerializeField] private MainDuGardeUI mainDuGarde;
+        [Tooltip("ScriptableObject de session partagé — pour sauvegarder la prochaine demande.")]
+        [SerializeField] private DonnéesSession donnéesSession;
 
         [Header("Animation")]
         [Tooltip("Délai entre l'apparition de chaque icône (secondes).")]
@@ -116,6 +118,16 @@ namespace Barrage.UI
 
             // Attendre puis retourner sur MapRoad avec l'état sauvegardé
             yield return new WaitForSeconds(délaiAvantRetour);
+
+            // Persister la prochaine demande dans DonnéesSession avant de changer de scène
+            if (donnéesSession != null && demande != null)
+            {
+                var liste = new FormulaireType[demande.Formulaires.Count];
+                for (int i = 0; i < demande.Formulaires.Count; i++)
+                    liste[i] = demande.Formulaires[i];
+
+                donnéesSession.prochaineDemandeBarrage = liste;
+            }
 
             if (SessionManager.Instance != null)
                 SessionManager.Instance.RetournerAMapRoad();

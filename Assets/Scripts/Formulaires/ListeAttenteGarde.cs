@@ -38,5 +38,45 @@ namespace Barrage.Formulaires
 
         /// <summary>True quand tous les formulaires de la séquence ont été remis.</summary>
         public bool EstTerminée => _indexCourant >= séquence.Count;
+
+        /// <summary>
+        /// Charge la séquence depuis les données de session sauvegardées (demande du barrage précédent).
+        /// Si aucune demande n'est sauvegardée, charge depuis <paramref name="demandeAléatoire"/>
+        /// en la régénérant aléatoirement.
+        /// Réinitialise l'index à 0 dans tous les cas.
+        /// </summary>
+        public void ChargerDepuisSession(DonnéesSession donnees, DemandeBarrage demandeAléatoire)
+        {
+            séquence.Clear();
+            _indexCourant = 0;
+
+            if (donnees != null && donnees.AUneDemandeSauvegardée)
+            {
+                // Utiliser la demande sauvegardée depuis le barrage précédent
+                foreach (var type in donnees.prochaineDemandeBarrage)
+                    séquence.Add(type);
+
+                // Consommer la demande — le prochain appel utilisera une nouvelle aléatoire
+                donnees.prochaineDemandeBarrage = new FormulaireType[0];
+
+                Debug.Log($"[ListeAttenteGarde] Séquence chargée depuis session : " +
+                          $"{séquence.Count} formulaires.");
+            }
+            else if (demandeAléatoire != null)
+            {
+                // Aucune demande sauvegardée → générer aléatoirement
+                demandeAléatoire.Régénérer();
+
+                foreach (var type in demandeAléatoire.Formulaires)
+                    séquence.Add(type);
+
+                Debug.Log($"[ListeAttenteGarde] Séquence générée aléatoirement : " +
+                          $"{séquence.Count} formulaires.");
+            }
+            else
+            {
+                Debug.LogError("[ListeAttenteGarde] Aucune demande session ni DemandeBarrage fournie.");
+            }
+        }
     }
 }
