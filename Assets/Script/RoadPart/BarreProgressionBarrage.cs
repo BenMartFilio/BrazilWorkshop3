@@ -2,66 +2,123 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// Barre de progression affichant la distance avant le prochain barrage.
-/// Le marqueur (roue 10×10px) monte du bas du rail vers le haut au rythme
-/// du décompte de signaux TimeManager géré par SpawnObstacleV2.
-/// La roue est pivotée à 90° Z pour être verticale et tourne en continu.
+/// Pilote un Slider Unity (vertical, BottomToTop) représentant la progression
+/// vers le prochain barrage.
+///
+/// Stratégie de lissage :
+///   - On connaît la durée totale du cycle = SeuilBarrage × DuréeSignal.
+///   - On mesure le temps écoulé depuis le début du cycle.
+///   - La valeur affichée = Lerp(0, 1, tempsEcoulé / duréeTotale).
+///   - C'est un mouvement strictement continu, sans saut ni palier.
+///
+/// Gel : dès que BarrageEnAttente est vrai ET que la valeur affichée
+///   a atteint 1, elle y reste jusqu'à RéinitialiserPourNouveauCycle().
+///
+/// La roue ne peut jamais reculer — _valeurAffichée est toujours ≥ à la frame précédente.
 /// </summary>
 public class BarreProgressionBarrage : MonoBehaviour
 {
     [Header("Références")]
     [SerializeField] private SpawnObstacleV2 _spawner;
-    [SerializeField] private RectTransform   _marqueurRoue;
-    [SerializeField] private RectTransform   _railRect;
+    [SerializeField] private Slider          _slider;
+    [SerializeField] private RectTransform   _handleRoue;
 
-    [Header("Rotation roue")]
-    [Tooltip("Degrés par seconde de rotation de la roue.")]
-    [SerializeField] private float vitesseRotation = 180f;
+    [Header("Rotation handle")]
+    [Tooltip("Degrés par seconde de rotation de la roue (vitesse de base).")]
+    [SerializeField] private float vitesseRotation = 120f;
 
-    // ── Taille fixe du marqueur ───────────────────────────────────────────────
-    private const float TAILLE_MARQUEUR = 10f;
-
-    // ── Bornes de déplacement (calculées depuis le rail) ─────────────────────
-    private float _yMin;
-    private float _yMax;
+    // ── État interne ──────────────────────────────────────────────────────────
+    private float _valeurAffichée = 0f;     // valeur courante [0-1], ne recule jamais
+    private float _tempsEcoulé   = 0f;      // temps écoulé dans le cycle courant
+    private float _duréeTotale   = 0f;      // duréeSignal × seuilBarrage
+    private bool  _gelé          = false;   // true quand la barre est bloquée à 1
 
     private void Start()
     {
-        // Forcer la taille de la roue à 10×10
-        _marqueurRoue.sizeDelta = new Vector2(TAILLE_MARQUEUR, TAILLE_MARQUEUR);
+        if (_slider == null) return;
 
-        // Rotation initiale 90° Z : Roue.png est horizontale, on la redresse
-        _marqueurRoue.localEulerAngles = new Vector3(0f, 0f, 90f);
+        _slider.direction    = Slider.Direction.BottomToTop;
+        _slider.minValue     = 0f;
+        _slider.maxValue     = 1f;
+        _slider.wholeNumbers = false;
+        _slider.interactable = false;
+        _slider.value        = 0f;
 
-        RecalculerBornes();
+        InitialiserCycle();
     }
 
     private void Update()
     {
-        if (_spawner == null || _marqueurRoue == null) return;
+        if (_spawner == null || _slider == null) return;
 
-        RecalculerBornes();
+        // Si gelé en haut, rien à faire sauf tourner la roue lentement
+        if (_gelé)
+        {
+            TournerRoue(1f);
+            return;
+        }
 
-        // Positionner la roue selon la progression (0 = bas, 1 = haut)
-        float progression              = _spawner.Progression;
-        float yPos                     = Mathf.Lerp(_yMin, _yMax, progression);
-        _marqueurRoue.anchoredPosition = new Vector2(0f, yPos);
+        // Recalculer la durée totale si le seuil a changé (1er frame après Start)
+        if (_duréeTotale <= 0f)
+            InitialiserCycle();
 
-        // Rotation continue simulant le roulement
-        _marqueurRoue.Rotate(Vector3.forward, -vitesseRotation * Time.deltaTime, Space.Self);
+        // Avancer le temps
+        _tempsEcoulé += Time.deltaTime;
+
+        // Valeur cible basée sur le temps réel écoulé vs durée totale attendue
+        float cible = (_duréeTotale > 0f)
+            ? Mathf.Clamp01(_tempsEcoulé / _duréeTotale)
+            : 0f;
+
+        // La valeur ne peut jamais reculer
+        _valeurAffichée = Mathf.Max(_valeurAffichée, cible);
+        _slider.value   = _valeurAffichée;
+
+        // Gel automatique dès que le barrage est en attente ET qu'on est au maximum
+        if (_spawner.BarrageEnAttente)
+        {
+            _valeurAffichée = 1f;
+            _slider.value   = 1f;
+            _gelé           = true;
+        }
+
+        TournerRoue(_valeurAffichée);
     }
 
     /// <summary>
-    /// Calcule _yMin/_yMax depuis les bords réels du rail.
-    /// La roue (pivot centré) reste toujours dans les limites du rail.
+    /// Réinitialise la barre à 0 pour un nouveau cycle barrage.
+    /// À appeler depuis MapRoadSessionBridge après un retour de barrage réussi.
     /// </summary>
-    private void RecalculerBornes()
+    public void RéinitialiserPourNouveauCycle()
     {
-        float moitié      = TAILLE_MARQUEUR * 0.5f;
-        float h           = _railRect.rect.height;
-        float railYCentre = _railRect.anchoredPosition.y;
+        _valeurAffichée = 0f;
+        _tempsEcoulé    = 0f;
+        _gelé           = false;
 
-        _yMin = railYCentre - h * 0.5f + moitié;
-        _yMax = railYCentre + h * 0.5f - moitié;
+        if (_slider != null)
+            _slider.value = 0f;
+
+        InitialiserCycle();
+    }
+
+    // ── Utilitaires ───────────────────────────────────────────────────────────
+
+    /// <summary>Calcule la durée totale du cycle courant depuis le spawner.</summary>
+    private void InitialiserCycle()
+    {
+        if (_spawner == null) return;
+
+        float duréeSignal = Mathf.Max(0.1f, _spawner.DuréeSignal);
+        int   seuil       = Mathf.Max(1, _spawner.SeuilBarrage);
+        _duréeTotale      = duréeSignal * seuil;
+    }
+
+    /// <summary>Tourne la roue proportionnellement à la progression.</summary>
+    private void TournerRoue(float progression)
+    {
+        if (_handleRoue == null) return;
+
+        float facteur = 0.5f + progression * 0.5f;
+        _handleRoue.Rotate(Vector3.forward, -vitesseRotation * facteur * Time.deltaTime, Space.Self);
     }
 }

@@ -8,15 +8,22 @@ using UnityEngine;
 public class MapRoadSessionBridge : MonoBehaviour
 {
     [Header("Références scène MapRoad")]
-    [SerializeField] private PlayerMovement    joueur;
-    [SerializeField] private ScoreManager      scoreManager;
-    [SerializeField] private SpawnObstacleV2   spawner;
-    [SerializeField] private GoundMouvement[]  sols;
+    [SerializeField] private PlayerMovement       joueur;
+    [SerializeField] private ScoreManager         scoreManager;
+    [SerializeField] private SpawnObstacleV2      spawner;
+    [SerializeField] private GoundMouvement[]     sols;
+    [SerializeField] private BarreProgressionBarrage barreProgression;
 
     private void Start()
     {
-        if (SessionManager.Instance != null)
-            SessionManager.Instance.RestaurerMapRoad(joueur, scoreManager, spawner, sols);
+        if (SessionManager.Instance == null) return;
+
+        SessionManager.Instance.RestaurerMapRoad(joueur, scoreManager, spawner, sols);
+
+        // Si on revient d'un barrage réussi, la progression repart de 0
+        // car SpawnObstacleV2.RestaurerProgressionDepuisSession a déjà tiré un nouveau seuil.
+        if (barreProgression != null)
+            barreProgression.RéinitialiserPourNouveauCycle();
     }
 
     /// <summary>

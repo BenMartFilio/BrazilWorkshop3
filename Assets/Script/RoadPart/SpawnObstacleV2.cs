@@ -24,10 +24,10 @@ public class SpawnObstacleV2 : MonoBehaviour
     [SerializeField] private ObstaclePattern patternBarrage;
 
     [Tooltip("Nombre minimum de signaux TimeManager avant l'apparition du Barrage.")]
-    [SerializeField] private int barrageSignauxMin = 2;
+    [SerializeField] private int barrageSignauxMin = 5;
 
     [Tooltip("Nombre maximum de signaux TimeManager avant l'apparition du Barrage.")]
-    [SerializeField] private int barrageSignauxMax = 3;
+    [SerializeField] private int barrageSignauxMax = 7;
 
     [Tooltip("Distance vide (unités monde) imposée avant d'émettre le pattern Barrage (laisse la route dégagée).")]
     [SerializeField] private float gapAvantBarrage = 10f;
@@ -202,9 +202,9 @@ public class SpawnObstacleV2 : MonoBehaviour
                 // Route vide AVANT le barrage.
                 yield return StartCoroutine(WaitForDistance(gapAvantBarrage));
 
+                // NE PAS remettre _signauxEcoules à 0 ici — BarreProgressionBarrage gère son propre cycle.
+                // NE PAS appeler TirerProchainSeuilBarrage ici — sera fait à la réinitialisation.
                 _barrageEnAttente = false;
-                _signauxEcoules = 0;
-                TirerProchainSeuilBarrage();
 
                 Debug.Log("[SpawnObstacleV2] Spawn du pattern barrage...");
 
@@ -213,8 +213,6 @@ public class SpawnObstacleV2 : MonoBehaviour
                     yield return StartCoroutine(SpawnPatternCoroutineBarrage(patternBarrage));
 
                 // Arrêter tout nouveau spawn : le barrage est en route vers le joueur.
-                // Aucun obstacle ne doit apparaître pendant sa descente.
-                // SéquenceBarrage.StopSpawning() prendra le relais quand la proximité est détectée.
                 isSpawning = false;
                 _spawningCoroutine = null;
                 yield break;
@@ -358,28 +356,50 @@ public class SpawnObstacleV2 : MonoBehaviour
 
     // ── Session ───────────────────────────────────────────────────────────────
 
-    /// <summary>Sauvegarde la vitesse générale dans les données de session.</summary>
+    /// <summary>Sauvegarde la vitesse générale et la progression barrage dans les données de session.</summary>
     public void SauvegarderDansSession(DonnéesSession donnees)
     {
-        donnees.vitesseGénérale = _generalSpeed;
+        donnees.vitesseGénérale  = _generalSpeed;
+        donnees.signauxEcoules   = _signauxEcoules;
+        donnees.prochainBarrageA = _prochainBarrageA;
     }
 
-    /// <summary>Restaure la vitesse générale depuis les données de session.</summary>
+    /// <summary>Restaure la vitesse générale et la progression barrage depuis les données de session.</summary>
     public void RestaurerDepuisSession(float vitesse)
     {
         _generalSpeed = vitesse;
     }
 
+    /// <summary>Restaure la progression barrage après un retour de scène Barrage réussie.</summary>
+    public void RestaurerProgressionDepuisSession(DonnéesSession donnees)
+    {
+        // Nouveau tirage : le barrage vient d'être complété, on repart de zéro
+        _signauxEcoules  = 0;
+        _barrageEnAttente = false;
+        TirerProchainSeuilBarrage();
+    }
+
     // ── Progression barrage (0 → 1) ───────────────────────────────────────────
 
     /// <summary>
-    /// Retourne la progression normalisée (0 = début, 1 = barrage imminent)
-    /// basée sur le nombre de signaux TimeManager écoulés vs le seuil tiré.
-    /// Vaut 1 dès que _barrageEnAttente est vrai.
+    /// Progression discrète (0 → 1) basée uniquement sur le décompte de signaux.
+    /// Retourne 1 dès que le seuil est atteint, indépendamment de _barrageEnAttente.
+    /// Ne redescend jamais — TirerProchainSeuilBarrage() ne remet PAS _signauxEcoules à 0 ici.
+    /// C'est RéinitialiserPourNouveauCycle() côté UI qui repart de 0.
     /// </summary>
     public float Progression =>
-        _barrageEnAttente ? 1f :
-        (_prochainBarrageA > 0 ? Mathf.Clamp01((float)_signauxEcoules / _prochainBarrageA) : 0f);
+        (_prochainBarrageA > 0
+            ? Mathf.Clamp01((float)_signauxEcoules / _prochainBarrageA)
+            : 0f);
+
+    /// <summary>Durée en secondes d'un signal TimeManager — utilisée pour lisser la progression.</summary>
+    public float DuréeSignal => _timeManager != null ? _timeManager._timeStepDuration : 1.5f;
+
+    /// <summary>Vrai si le barrage est en attente de spawn (progression = 1 verrouillée).</summary>
+    public bool BarrageEnAttente => _barrageEnAttente;
+
+    /// <summary>Seuil total de signaux pour ce cycle — utilisé pour calculer la durée totale attendue.</summary>
+    public int SeuilBarrage => _prochainBarrageA;
 
     // ── Shuffle-bag ───────────────────────────────────────────────────────────
 
