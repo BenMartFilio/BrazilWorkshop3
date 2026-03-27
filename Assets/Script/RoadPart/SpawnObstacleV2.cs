@@ -370,6 +370,17 @@ public class SpawnObstacleV2 : MonoBehaviour
         _generalSpeed = vitesse;
     }
 
+    // ── Progression barrage (0 → 1) ───────────────────────────────────────────
+
+    /// <summary>
+    /// Retourne la progression normalisée (0 = début, 1 = barrage imminent)
+    /// basée sur le nombre de signaux TimeManager écoulés vs le seuil tiré.
+    /// Vaut 1 dès que _barrageEnAttente est vrai.
+    /// </summary>
+    public float Progression =>
+        _barrageEnAttente ? 1f :
+        (_prochainBarrageA > 0 ? Mathf.Clamp01((float)_signauxEcoules / _prochainBarrageA) : 0f);
+
     // ── Shuffle-bag ───────────────────────────────────────────────────────────
 
     private int GetNextPatternIndex()

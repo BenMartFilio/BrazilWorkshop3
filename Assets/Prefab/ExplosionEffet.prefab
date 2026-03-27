@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4791631959593948771
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5228521267474530321}
+  - component: {fileID: 2917595608360245341}
+  m_Layer: 0
+  m_Name: ExplosionEffet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5228521267474530321
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4791631959593948771}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -282, y: 724, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2917595608360245341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4791631959593948771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 939efb981e37ec940afef8b5463204ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ExplosionCircles
+  spriteNoir: {fileID: 21300000, guid: 073bbee2e9fcbb441a14536b1c74cfbe, type: 3}
+  spriteRouge: {fileID: 21300000, guid: c9fcd30eec0e68c4d8fc4fbd53d96223, type: 3}
+  spriteOrange: {fileID: 21300000, guid: 0ac99566be83c4c40ac41585a7a0fbe1, type: 3}
+  spriteJaune: {fileID: 21300000, guid: edd6999c7727e8d428b0e386ff0e80fc, type: 3}
+  previewActif: 0
+  nombreDebrisNoirs: 10
+  tailleDebrisNoir: 0.12
+  vitesseDebrisMin: 6.55
+  vitesseDebrisMax: 10.55
+  dureeDebris: 0.55
+  nombreRouges: 3
+  tailleRougeMin: 3
+  tailleRougeMax: 4
+  dureeRouge: 0.45
+  frequenceScintille: 22
+  nombreOranges: 6
+  tailleOrange: 2
+  rayonAnneau: 2.5
+  vitesseOrangeMin: 1.2
+  vitesseOrangeMax: 2.5
+  dureeOrange: 0.42
+  nombreJaunesParOrange: 2
+  tailleJaune: 1
+  offsetJauneRayon: 0.3
+  vitesseJauneMin: 1.8
+  vitesseJauneMax: 3.2
+  dureeJaune: 0.3
+  sortingLayerName: Gameplay
+  sortingOrder: 10

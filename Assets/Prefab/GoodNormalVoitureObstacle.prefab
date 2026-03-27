@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4572643954948628692}
   - component: {fileID: 9164298874183069356}
+  - component: {fileID: -4361720177518787814}
   m_Layer: 0
   m_Name: GoodNormalVoitureObstacle
   m_TagString: Untagged
@@ -50,6 +51,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScrollingElement
   baseSpeed: 4
+--- !u!114 &-4361720177518787814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535104966169734813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a00e8d5a7951a4c488581869d6b1f81e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CollisionObstacle
+  prefabExplosion: {fileID: 4791631959593948771, guid: 0dd8d9523f3eb4d46afa4593215849f5, type: 3}
 --- !u!1 &2861961816579948195
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,6 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00e8d5a7951a4c488581869d6b1f81e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionObstacle
+  prefabExplosion: {fileID: 0}
 --- !u!1 &8334298908888231861
 GameObject:
   m_ObjectHideFlags: 0

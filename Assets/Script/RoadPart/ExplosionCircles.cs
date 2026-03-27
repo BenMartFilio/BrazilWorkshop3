@@ -18,6 +18,13 @@ public class ExplosionCircles : MonoBehaviour
     [SerializeField] private Sprite spriteOrange;
     [SerializeField] private Sprite spriteJaune;
 
+    // ── Preview (test en Play Mode) ────────────────────────────────────────────
+    [Header("Preview")]
+    [Tooltip("Cocher pour spawner l'explosion toutes les 4 s en Play Mode (test uniquement).")]
+    [SerializeField] private bool previewActif = false;
+    private const float PREVIEW_INTERVALLE = 4f;
+    private Coroutine   _previewCoroutine;
+
     // ── Paramètres débris noirs ────────────────────────────────────────────────
     [Header("Débris noirs")]
     [SerializeField] private int   nombreDebrisNoirs    = 10;
@@ -66,6 +73,85 @@ public class ExplosionCircles : MonoBehaviour
     {
         transform.position = position;
         StartCoroutine(JouerRoutine());
+    }
+
+    // ── Cycle de vie ──────────────────────────────────────────────────────────
+
+    private void OnValidate()
+    {
+        // Démarre ou arrête la preview dès que la case est cochée/décochée dans l'Inspector
+        if (Application.isPlaying)
+        {
+            if (previewActif && _previewCoroutine == null)
+                _previewCoroutine = StartCoroutine(BouclePreview());
+            else if (!previewActif && _previewCoroutine != null)
+            {
+                StopCoroutine(_previewCoroutine);
+                _previewCoroutine = null;
+            }
+        }
+    }
+
+    private void Start()
+    {
+        if (previewActif)
+            _previewCoroutine = StartCoroutine(BouclePreview());
+    }
+
+    // ── Preview ───────────────────────────────────────────────────────────────
+
+    /// <summary>Spawne une instance temporaire de l'effet toutes les PREVIEW_INTERVALLE secondes.</summary>
+    private IEnumerator BouclePreview()
+    {
+        while (true)
+        {
+            SpawnerPreviewInstance();
+            yield return new WaitForSeconds(PREVIEW_INTERVALLE);
+        }
+    }
+
+    private void SpawnerPreviewInstance()
+    {
+        // On crée un clone temporaire indépendant : il se détruira lui-même à la fin de JouerRoutine
+        GameObject clone = new GameObject("ExplosionPreview_Temp");
+        clone.transform.position = transform.position;
+
+        ExplosionCircles fx = clone.AddComponent<ExplosionCircles>();
+
+        // Copier tous les paramètres depuis cette instance
+        fx.spriteNoir              = spriteNoir;
+        fx.spriteRouge             = spriteRouge;
+        fx.spriteOrange            = spriteOrange;
+        fx.spriteJaune             = spriteJaune;
+        fx.nombreDebrisNoirs       = nombreDebrisNoirs;
+        fx.tailleDebrisNoir        = tailleDebrisNoir;
+        fx.vitesseDebrisMin        = vitesseDebrisMin;
+        fx.vitesseDebrisMax        = vitesseDebrisMax;
+        fx.dureeDebris             = dureeDebris;
+        fx.nombreRouges            = nombreRouges;
+        fx.tailleRougeMin          = tailleRougeMin;
+        fx.tailleRougeMax          = tailleRougeMax;
+        fx.dureeRouge              = dureeRouge;
+        fx.frequenceScintille      = frequenceScintille;
+        fx.nombreOranges           = nombreOranges;
+        fx.tailleOrange            = tailleOrange;
+        fx.rayonAnneau             = rayonAnneau;
+        fx.vitesseOrangeMin        = vitesseOrangeMin;
+        fx.vitesseOrangeMax        = vitesseOrangeMax;
+        fx.dureeOrange             = dureeOrange;
+        fx.nombreJaunesParOrange   = nombreJaunesParOrange;
+        fx.tailleJaune             = tailleJaune;
+        fx.offsetJauneRayon        = offsetJauneRayon;
+        fx.vitesseJauneMin         = vitesseJauneMin;
+        fx.vitesseJauneMax         = vitesseJauneMax;
+        fx.dureeJaune              = dureeJaune;
+        fx.sortingLayerName        = sortingLayerName;
+        fx.sortingOrder            = sortingOrder;
+
+        // Ne pas activer le preview dans le clone
+        fx.previewActif = false;
+
+        fx.Jouer(clone.transform.position);
     }
 
     // ── Coroutine principale ───────────────────────────────────────────────────

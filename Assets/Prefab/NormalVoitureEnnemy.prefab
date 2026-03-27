@@ -64,6 +64,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00e8d5a7951a4c488581869d6b1f81e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionObstacle
+  prefabExplosion: {fileID: 4791631959593948771, guid: 0dd8d9523f3eb4d46afa4593215849f5, type: 3}
 --- !u!61 &1203901159713210639
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -192,8 +192,12 @@ public class PlayerMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         CoinsScript a = other.GetComponent<CoinsScript>();
-        if (other.GetComponent<CollisionObstacle>() != null)
+        CollisionObstacle obstacle = other.GetComponent<CollisionObstacle>();
+
+        if (obstacle != null)
         {
+            obstacle.DeclencherExplosion(transform.position);
+
             if (IamAlreadyTouched == false)
             {
                 if (stateOfDeath == true)
@@ -212,7 +216,6 @@ public class PlayerMovement : MonoBehaviour
                 StartCoroutine(Camera.main.GetComponent<ScreenShake>().Shake(0.2f, 0.15f));
                 Death();
             }
-            
         }
         else if (a != null)
         {
