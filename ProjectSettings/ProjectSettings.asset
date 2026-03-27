@@ -910,7 +910,7 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
-    Purchasing: 0
+    Purchasing: 1
     Unity Ads: 0
   luminIcon:
     m_Name: 

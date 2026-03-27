@@ -25,6 +25,9 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private EndManager _endManager;
 
+    private bool stateOfDeath = false;
+    private bool IamAlreadyTouched = false;
+
     private Quaternion _rotate;
 
     private void OnEnable()
@@ -99,6 +102,7 @@ public class PlayerMovement : MonoBehaviour
         float time = 0f;
 
         float direction = Mathf.Sign(targetX - startX); // droite = 1, gauche = 1
+        stateOfDeath = true;
 
         while (time < moveDuration)
         {
@@ -124,6 +128,7 @@ public class PlayerMovement : MonoBehaviour
         // reset propre
         transform.position = new Vector3(targetX, transform.position.y, transform.position.z);
         transform.rotation = Quaternion.identity;
+        stateOfDeath = false;
     }
 
     float EaseInOut(float t)
@@ -157,8 +162,25 @@ public class PlayerMovement : MonoBehaviour
         CoinsScript a = other.GetComponent<CoinsScript>();
         if (other.GetComponent<CollisionObstacle>() != null)
         {
-            StartCoroutine(Camera.main.GetComponent<ScreenShake>().Shake(0.2f, 0.15f));
-            Death();
+            if (IamAlreadyTouched == false)
+            {
+                if (stateOfDeath == true)
+                {
+                    StartCoroutine(Camera.main.GetComponent<ScreenShake>().Shake(0.2f, 0.15f));
+                    StartCoroutine(SimpleCollision());
+                }
+                else
+                {
+                    StartCoroutine(Camera.main.GetComponent<ScreenShake>().Shake(0.2f, 0.15f));
+                    Death();
+                }
+            }
+            else
+            {
+                StartCoroutine(Camera.main.GetComponent<ScreenShake>().Shake(0.2f, 0.15f));
+                Death();
+            }
+            
         }
         else if (a != null)
         {
@@ -166,6 +188,13 @@ public class PlayerMovement : MonoBehaviour
             _coinsCount++;
             _coinsText.text = _coinsCount.ToString();
         }
+    }
+
+    IEnumerator SimpleCollision()
+    {
+        IamAlreadyTouched = true;
+        yield return new WaitForSeconds(1);
+        IamAlreadyTouched = false;
     }
 
     private void Death()
