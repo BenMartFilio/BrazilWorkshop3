@@ -9,15 +9,26 @@ public class TimeManager : MonoBehaviour
     [SerializeField] public float _timeStepDuration = 1.5f;
     Coroutine coroutineTemps = null;
     public event Action OnTimePassed;
+    private float tempTime = 0f;
+    private float NotResetTime = 0f;
 
     IEnumerator SpendingTime()
     {
         while (true)
         {
-            yield return new WaitForSeconds(_timeStepDuration);
+            tempTime = 0f;
+            float stepDuration = _timeStepDuration+NotResetTime;
+
+            while (tempTime < stepDuration)
+            {
+                tempTime += Time.deltaTime;
+                yield return null;
+            }
+
             OnTimePassed?.Invoke();
         }
     }
+
 
     public void Start()
     {
@@ -32,6 +43,7 @@ public class TimeManager : MonoBehaviour
     public void StopTime()
     {
         StopCoroutine(coroutineTemps);
+        NotResetTime = tempTime;
     }
 
     public void UpdateSpeedTimer(float newTime)
