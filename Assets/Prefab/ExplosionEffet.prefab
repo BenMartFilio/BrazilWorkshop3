@@ -71,5 +71,5 @@ MonoBehaviour:
   vitesseJauneMin: 1.8
   vitesseJauneMax: 3.2
   dureeJaune: 0.3
-  sortingLayerName: Gameplay
+  sortingLayerName: "D\xE9cor"
   sortingOrder: 10
