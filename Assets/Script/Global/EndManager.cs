@@ -23,6 +23,7 @@ public class EndManager : MonoBehaviour
         for (int i = 0; i < _grounds.Length; i++)
             _grounds[i].StopMove();
         _spawner.StopSpawning();
+        _spawner.PauserCompteurBarrage();
         _aspiration.isDead = true;
         _playerMovement.StopMove();
         _barreProgression?.Geler();
@@ -41,6 +42,7 @@ public class EndManager : MonoBehaviour
         _playerMovement.StartMove();
         _aspiration.isDead = false;
         _spawner.StartSpawning();
+        _spawner.ReprendreCompteurBarrage();
         _barreProgression?.Dégeler();
         _revivePanel.SetActive(false);
     }

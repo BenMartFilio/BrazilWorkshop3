@@ -5,16 +5,12 @@ using UnityEngine.UI;
 /// Pilote un Slider Unity (vertical, BottomToTop) représentant la progression
 /// vers le prochain barrage.
 ///
-/// Stratégie de lissage :
-///   - On connaît la durée totale du cycle = SeuilBarrage × DuréeSignal.
-///   - On mesure le temps écoulé depuis le début du cycle.
-///   - La valeur affichée = Lerp(0, 1, tempsEcoulé / duréeTotale).
-///   - C'est un mouvement strictement continu, sans saut ni palier.
+/// Timing : duréeTotale = (DuréeSignal × SeuilBarrage) + DuréeGapAvantBarrage + délaiArrivéeBarrage
+///   → la roue atteint 1 exactement quand le barrage arrive visuellement à l'écran.
 ///
-/// Gel : dès que BarrageEnAttente est vrai ET que la valeur affichée
-///   a atteint 1, elle y reste jusqu'à RéinitialiserPourNouveauCycle().
-///
-/// La roue ne peut jamais reculer — _valeurAffichée est toujours ≥ à la frame précédente.
+/// Mort / Revive : Geler() fige _tempsEcoulé. Dégeler() recalcule _tempsEcoulé
+///   depuis _valeurAffichée pour repartir du bon point même si la durée totale
+///   a légèrement dérivé.
 /// </summary>
 public class BarreProgressionBarrage : MonoBehaviour
 {
@@ -28,17 +24,16 @@ public class BarreProgressionBarrage : MonoBehaviour
     [SerializeField] private float vitesseRotation = 120f;
 
     [Header("Correction timing")]
-    [Tooltip("Durée en secondes entre le spawn du barrage et son arrivée visuelle à l'écran. " +
-             "Ajoutée à la durée totale du cycle pour que la roue atteigne le haut " +
-             "exactement quand le barrage devient visible.")]
+    [Tooltip("Durée en secondes entre l'arrivée du barrage à l'écran et le moment où il a spawné. " +
+             "Ajustez jusqu'à ce que la roue atteigne le haut exactement quand le barrage est visible.")]
     [SerializeField] private float délaiArrivéeBarrage = 2f;
 
     // ── État interne ──────────────────────────────────────────────────────────
-    private float _valeurAffichée = 0f;     // valeur courante [0-1], ne recule jamais
-    private float _tempsEcoulé   = 0f;      // temps écoulé dans le cycle courant
-    private float _duréeTotale   = 0f;      // duréeSignal × seuilBarrage
-    private bool  _gelé          = false;   // true quand la barre est bloquée à 1
-    private bool  _pausé         = false;   // true quand la mort stoppe la progression
+    private float _valeurAffichée = 0f;
+    private float _tempsEcoulé   = 0f;
+    private float _duréeTotale   = 0f;
+    private bool  _gelé          = false;   // bloqué à 1 quand barrage est en attente
+    private bool  _pausé         = false;   // mort du joueur
 
     private void Start()
     {
@@ -58,30 +53,21 @@ public class BarreProgressionBarrage : MonoBehaviour
     {
         if (_spawner == null || _slider == null) return;
 
-        // Mort ou barre gelée en haut : juste tourner la roue
         if (_pausé || _gelé)
         {
             TournerRoue(_valeurAffichée);
             return;
         }
 
-        // Recalculer la durée totale si le seuil a changé (1er frame après Start)
         if (_duréeTotale <= 0f)
             InitialiserCycle();
 
-        // Avancer le temps
-        _tempsEcoulé += Time.deltaTime;
+        _tempsEcoulé    += Time.deltaTime;
+        float cible      = Mathf.Clamp01(_tempsEcoulé / _duréeTotale);
+        _valeurAffichée  = Mathf.Max(_valeurAffichée, cible);
+        _slider.value    = _valeurAffichée;
 
-        // Valeur cible basée sur le temps réel écoulé vs durée totale attendue
-        float cible = (_duréeTotale > 0f)
-            ? Mathf.Clamp01(_tempsEcoulé / _duréeTotale)
-            : 0f;
-
-        // La valeur ne peut jamais reculer
-        _valeurAffichée = Mathf.Max(_valeurAffichée, cible);
-        _slider.value   = _valeurAffichée;
-
-        // Gel automatique dès que le barrage est en attente ET qu'on est au maximum
+        // Gel dès que le barrage est en attente
         if (_spawner.BarrageEnAttente)
         {
             _valeurAffichée = 1f;
@@ -93,8 +79,7 @@ public class BarreProgressionBarrage : MonoBehaviour
     }
 
     /// <summary>
-    /// Réinitialise la barre à 0 pour un nouveau cycle barrage.
-    /// À appeler depuis MapRoadSessionBridge après un retour de barrage réussi.
+    /// Réinitialise la barre à 0 pour un nouveau cycle (retour de barrage réussi).
     /// </summary>
     public void RéinitialiserPourNouveauCycle()
     {
@@ -109,28 +94,40 @@ public class BarreProgressionBarrage : MonoBehaviour
         InitialiserCycle();
     }
 
-    /// <summary>Stoppe la progression de la barre (mort du joueur).</summary>
+    /// <summary>Stoppe la progression (mort du joueur).</summary>
     public void Geler() => _pausé = true;
 
-    /// <summary>Reprend la progression de la barre (revive).</summary>
-    public void Dégeler() => _pausé = false;
+    /// <summary>
+    /// Reprend la progression (revive).
+    /// Recalcule _tempsEcoulé depuis _valeurAffichée pour que la distance
+    /// restante corresponde exactement à ce qu'il restait avant la mort.
+    /// </summary>
+    public void Dégeler()
+    {
+        // On repositionne le curseur de temps au bon endroit dans la durée totale
+        // en partant de la valeur affichée figée, peu importe le temps réel écoulé.
+        if (_duréeTotale > 0f)
+            _tempsEcoulé = _valeurAffichée * _duréeTotale;
+
+        _pausé = false;
+    }
 
     // ── Utilitaires ───────────────────────────────────────────────────────────
 
-    /// <summary>Calcule la durée totale du cycle courant depuis le spawner.</summary>
+    /// <summary>
+    /// Durée totale du cycle = signaux × durée/signal + gap avant barrage + délai visuel.
+    /// </summary>
     private void InitialiserCycle()
     {
         if (_spawner == null) return;
 
-        float duréeSignal = Mathf.Max(0.1f, _spawner.DuréeSignal);
-        int   seuil       = Mathf.Max(1, _spawner.SeuilBarrage);
+        float duréeSignal    = Mathf.Max(0.1f, _spawner.DuréeSignal);
+        int   seuil          = Mathf.Max(1, _spawner.SeuilBarrage);
+        float duréeGap       = _spawner.DuréeGapAvantBarrage;
 
-        // On ajoute le délai visuel d'arrivée du barrage : la roue doit atteindre
-        // le haut de la barre exactement quand le barrage devient visible, pas quand il spawne.
-        _duréeTotale = duréeSignal * seuil + délaiArrivéeBarrage;
+        _duréeTotale = duréeSignal * seuil + duréeGap + délaiArrivéeBarrage;
     }
 
-    /// <summary>Tourne la roue proportionnellement à la progression.</summary>
     private void TournerRoue(float progression)
     {
         if (_handleRoue == null) return;

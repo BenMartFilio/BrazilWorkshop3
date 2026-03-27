@@ -79,6 +79,12 @@ public class SpawnObstacleV2 : MonoBehaviour
     /// </summary>
     private bool _miseAJourVitessePausée = false;
 
+    /// <summary>
+    /// Bloque l'incrément de _signauxEcoules pendant la mort du joueur.
+    /// Empêche le compteur barrage d'avancer pendant le revive menu.
+    /// </summary>
+    private bool _compteurBarragePausé = false;
+
     /// <summary>Y threshold below which ScrollingElement.Update despawns objects.</summary>
     private const float DespawnY = -20f;
 
@@ -125,7 +131,7 @@ public class SpawnObstacleV2 : MonoBehaviour
                 _grounds[i].UpdateSpeed(_generalSpeed);
         }
 
-        if (!_barrageEnAttente && patternBarrage != null)
+        if (!_barrageEnAttente && patternBarrage != null && !_compteurBarragePausé)
         {
             _signauxEcoules++;
             if (_signauxEcoules >= _prochainBarrageA)
@@ -136,6 +142,12 @@ public class SpawnObstacleV2 : MonoBehaviour
     }
 
     // ── Public control ────────────────────────────────────────────────────────
+
+    /// <summary>Gèle le compteur de signaux barrage (mort du joueur).</summary>
+    public void PauserCompteurBarrage() => _compteurBarragePausé = true;
+
+    /// <summary>Reprend le compteur de signaux barrage (revive).</summary>
+    public void ReprendreCompteurBarrage() => _compteurBarragePausé = false;
 
     /// <summary>Starts the spawn coroutine.</summary>
     public void StartSpawning()
@@ -400,6 +412,13 @@ public class SpawnObstacleV2 : MonoBehaviour
 
     /// <summary>Seuil total de signaux pour ce cycle — utilisé pour calculer la durée totale attendue.</summary>
     public int SeuilBarrage => _prochainBarrageA;
+
+    /// <summary>
+    /// Durée en secondes du gap vide avant le barrage, convertie depuis la distance monde.
+    /// Utilisée par BarreProgressionBarrage pour inclure ce délai dans le timing total.
+    /// </summary>
+    public float DuréeGapAvantBarrage =>
+        (baseObstacleSpeed > 0f) ? gapAvantBarrage / baseObstacleSpeed : 0f;
 
     // ── Shuffle-bag ───────────────────────────────────────────────────────────
 
