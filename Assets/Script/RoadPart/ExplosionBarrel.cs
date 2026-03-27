@@ -13,6 +13,6 @@ public class ExplosionBarrel : MonoBehaviour
 
         Instantiate(fxPrefab, transform.position, Quaternion.identity);
 
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

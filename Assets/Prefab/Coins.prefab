@@ -106,6 +106,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScrollingElement
   baseSpeed: 5
+  isExploded: 0
+  FXExplosion: {fileID: 0}
+  carcasse: {fileID: 0}
+  canExplose: 0
 --- !u!212 &7949118632677217141
 SpriteRenderer:
   serializedVersion: 2

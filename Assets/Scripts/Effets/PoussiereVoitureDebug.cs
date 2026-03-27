@@ -155,6 +155,10 @@ namespace Barrage.Effets
             }
 
             // Ligne vers cible si disponible
+            if (_fx == null)
+            {
+                return;
+            }
             var cibleProp = _fx.Cible;
             if (cibleProp != null)
             {

@@ -30,7 +30,7 @@ public class GoundMouvement : MonoBehaviour
         speed = vitesse;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (!started)
         {

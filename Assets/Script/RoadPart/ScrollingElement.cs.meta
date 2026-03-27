@@ -1,2 +1,13 @@
 fileFormatVersion: 2
 guid: ace56ea3d17b7b547a2f3b8aa6bd25c8
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - FXExplosion: {instanceID: 0}
+  - carcasse: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
