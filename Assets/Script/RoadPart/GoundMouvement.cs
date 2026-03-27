@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class GoundMouvement : MonoBehaviour
@@ -52,5 +53,26 @@ public class GoundMouvement : MonoBehaviour
     public void StopMove()
     {
         started = false;
+    }
+
+
+    public void Ralentissement(float duration)
+    {
+        StartCoroutine(Slower(duration));
+    }
+
+    private IEnumerator Slower(float duration)
+    {
+        float elapsedTime = 0f;
+        float startSpeed = speed;
+
+        while (elapsedTime < duration)
+        {
+            speed = Mathf.Lerp(startSpeed, 0f, elapsedTime / duration);
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        speed = 0f;
     }
 }

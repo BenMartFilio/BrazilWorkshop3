@@ -24,10 +24,10 @@ public class SpawnObstacleV2 : MonoBehaviour
     [SerializeField] private ObstaclePattern patternBarrage;
 
     [Tooltip("Nombre minimum de signaux TimeManager avant l'apparition du Barrage.")]
-    [SerializeField] private int barrageSignauxMin = 5;
+    [SerializeField] private int barrageSignauxMin = 2;
 
     [Tooltip("Nombre maximum de signaux TimeManager avant l'apparition du Barrage.")]
-    [SerializeField] private int barrageSignauxMax = 7;
+    [SerializeField] private int barrageSignauxMax = 3;
 
     [Tooltip("Distance vide (unités monde) imposée avant d'émettre le pattern Barrage (laisse la route dégagée).")]
     [SerializeField] private float gapAvantBarrage = 10f;
@@ -107,7 +107,7 @@ public class SpawnObstacleV2 : MonoBehaviour
 
     private void OnTimePassed()
     {
-        _generalSpeed = Mathf.Clamp(_generalSpeed + 1, 0, 30);
+        _generalSpeed = Mathf.Clamp(_generalSpeed + 0.5f, 0, 30);
 
         // Ne pas écraser les vitesses pendant le freinage du barrage.
         if (!_miseAJourVitessePausée)

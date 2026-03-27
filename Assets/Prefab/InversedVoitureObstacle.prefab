@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ace56ea3d17b7b547a2f3b8aa6bd25c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScrollingElement
-  baseSpeed: 10
+  baseSpeed: 8.5
 --- !u!114 &8970223820571211778
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -222,4 +222,23 @@ public class PlayerMovement : MonoBehaviour
     {
         return _coinsCount;
     }
+
+
+    public void MoveUp(float duration)
+    {
+        _canMoving = false;
+        StartCoroutine(UpperMoves(duration));
+    }
+
+    private IEnumerator UpperMoves(float duration)
+    {
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            rb.MovePosition(rb.position + Vector2.up * 3 * Time.deltaTime);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+    }
 }

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 /// <summary>
@@ -16,6 +17,7 @@ public class SegmentBarrage : MonoBehaviour
     private BoxCollider2D    _collider;
 
     private static bool _barrageEnCours = false;
+
 
     private void Awake()
     {
@@ -51,15 +53,42 @@ public class SegmentBarrage : MonoBehaviour
 
         _barrageEnCours = true;
         Debug.Log("[SegmentBarrage] Joueur détecté dans la box → chargement scène Barrage.");
-        DéclencherTransition();
+        DeclencherTransition();
     }
 
     /// <summary>Arrête le spawn et charge immédiatement la scène Barrage.</summary>
-    private void DéclencherTransition()
+    private void DeclencherTransition()
     {
         float vitesseInitiale = _sols != null && _sols.Length > 0 ? _sols[0].speed : 0f;
 
         _spawner?.StopSpawning();
+
+        StartCoroutine(StopBeforeBarrage(vitesseInitiale));
+
+        /*
+        if (SessionManager.Instance != null)
+        {
+            SessionManager.Instance.AllerAuBarrage(
+                _joueur, _scoreManager, _spawner, _sols,
+                vitesseSolAvantRalentissement: vitesseInitiale);
+        }
+        else
+        {
+            Debug.LogError("[SegmentBarrage] SessionManager introuvable — transition annulée.");
+        }
+        */
+    }
+
+    IEnumerator StopBeforeBarrage(float vitesseInitiale)
+    {
+        float duration = 2f;
+        _joueur.MoveUp(duration);
+        foreach (GoundMouvement moves in _sols)
+        {
+            moves.Ralentissement(duration);
+        }
+
+        yield return new WaitForSeconds(duration+0.2f);
 
         if (SessionManager.Instance != null)
         {
