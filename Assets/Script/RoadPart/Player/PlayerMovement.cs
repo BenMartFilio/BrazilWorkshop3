@@ -236,7 +236,7 @@ public class PlayerMovement : MonoBehaviour
 
         while (elapsedTime < duration)
         {
-            rb.MovePosition(rb.position + Vector2.up * 3 * Time.deltaTime);
+            rb.MovePosition(rb.position + Vector2.up * 4f * Time.deltaTime);
             elapsedTime += Time.deltaTime;
             yield return null;
         }

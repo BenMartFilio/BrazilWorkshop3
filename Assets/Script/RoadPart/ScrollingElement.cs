@@ -43,4 +43,9 @@ public class ScrollingElement : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    public void SetSpeed(float newSpeed)
+    {
+        speed = newSpeed;
+    }
+
 }

@@ -56,23 +56,50 @@ public class GoundMouvement : MonoBehaviour
     }
 
 
-    public void Ralentissement(float duration)
+    public void Ralentissement(float duration, ScrollingElement barrage)
     {
-        StartCoroutine(Slower(duration));
+        StartCoroutine(Slower1(duration, barrage));
     }
 
-    private IEnumerator Slower(float duration)
+    private IEnumerator Slower(float duration, ScrollingElement barrage)
     {
         float elapsedTime = 0f;
         float startSpeed = speed;
+        barrage.StartMoving();
 
         while (elapsedTime < duration)
         {
-            speed = Mathf.Lerp(startSpeed, 0f, elapsedTime / duration);
+            float t = elapsedTime / duration;
+            float easedT = 1f - Mathf.Pow(1f - t, 5); // puissance 4 = freinage fort
+
+            speed = Mathf.Lerp(startSpeed, 0f, easedT);
+            barrage.SetSpeed(speed);
 
             elapsedTime += Time.deltaTime;
             yield return null;
+
         }
         speed = 0f;
+    }
+    private IEnumerator Slower1(float duration, ScrollingElement barrage)
+    {
+        float elapsedTime = 0f;
+        float startSpeed = speed;
+        barrage.StartMoving();
+
+        while (elapsedTime < 0.2f)
+        {
+            float t = elapsedTime / 0.2f;
+            float easedT = 1f - Mathf.Pow(1f - t, 5);
+
+            speed = Mathf.Lerp(startSpeed, 5f, easedT);
+            barrage.SetSpeed(speed);
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+
+        }
+        speed = 5f;
+        StartCoroutine(Slower(duration-0.2f, barrage));
     }
 }

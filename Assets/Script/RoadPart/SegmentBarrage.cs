@@ -85,7 +85,7 @@ public class SegmentBarrage : MonoBehaviour
         _joueur.MoveUp(duration);
         foreach (GoundMouvement moves in _sols)
         {
-            moves.Ralentissement(duration);
+            moves.Ralentissement(duration, GetComponent<ScrollingElement>());
         }
 
         yield return new WaitForSeconds(duration+0.2f);
