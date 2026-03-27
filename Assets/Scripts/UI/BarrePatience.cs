@@ -28,6 +28,14 @@ namespace Barrage.UI
         private const float SHAKE_AMPLITUDE    = 5f;    // px
         private const float SHAKE_DUREE        = 0.32f; // s
 
+        // ── Tremblement passif continu (selon la couleur de la barre) ─────────
+        private const float TREMBLE_VERT_AMPLITUDE   = 0.8f;  // px — discret
+        private const float TREMBLE_VERT_FREQUENCE   = 8f;    // Hz
+        private const float TREMBLE_ORANGE_AMPLITUDE = 3.5f;  // px — nerveux
+        private const float TREMBLE_ORANGE_FREQUENCE = 22f;   // Hz
+        private const float TREMBLE_ROUGE_AMPLITUDE  = 7f;    // px — très nerveux
+        private const float TREMBLE_ROUGE_FREQUENCE  = 45f;   // Hz
+
         // ── IDs des propriétés shader ─────────────────────────────────────────
         private static readonly int ID_Fill          = Shader.PropertyToID("_FillAmount");
         private static readonly int ID_SeuilMoyenne  = Shader.PropertyToID("_SeuilMoyenne");
@@ -56,6 +64,7 @@ namespace Barrage.UI
         private Material      _matRemplissage;
         private bool          _enPenalite;
         private bool          _épuiséeDéclenché;
+        private float         _trembleTemps;
 
         /// <summary>Valeur de patience normalisée entre 0 et 1.</summary>
         public float PatienceNormalisée => _patience / PATIENCE_MAX;
@@ -96,6 +105,38 @@ namespace Barrage.UI
 
             if (!_enPenalite)
                 EnvoyerFillAuShader(PatienceNormalisée);
+
+            AppliquerTremblement();
+        }
+
+        /// <summary>Applique un tremblement passif continu selon le niveau de patience.</summary>
+        private void AppliquerTremblement()
+        {
+            if (_enPenalite) return;
+
+            float amplitude;
+            float frequence;
+            float normalized = PatienceNormalisée;
+
+            if (normalized > seuilMoyenne)
+            {
+                amplitude = TREMBLE_VERT_AMPLITUDE;
+                frequence = TREMBLE_VERT_FREQUENCE;
+            }
+            else if (normalized > seuilBasse)
+            {
+                amplitude = TREMBLE_ORANGE_AMPLITUDE;
+                frequence = TREMBLE_ORANGE_FREQUENCE;
+            }
+            else
+            {
+                amplitude = TREMBLE_ROUGE_AMPLITUDE;
+                frequence = TREMBLE_ROUGE_FREQUENCE;
+            }
+
+            _trembleTemps           += Time.deltaTime;
+            float offsetX            = Mathf.Sin(_trembleTemps * frequence * Mathf.PI * 2f) * amplitude;
+            _rt.anchoredPosition     = _positionBase + new Vector2(offsetX, 0f);
         }
 
         private void OnDestroy()
@@ -161,7 +202,7 @@ namespace Barrage.UI
                 _rt.anchoredPosition     = _positionBase + new Vector2(offsetX, 0f);
                 yield return null;
             }
-            _rt.anchoredPosition = _positionBase;
+            // Ne pas fixer à _positionBase : le tremblement passif reprend dans Update
         }
 
         // ── Shader ────────────────────────────────────────────────────────────

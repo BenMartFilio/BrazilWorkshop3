@@ -2387,6 +2387,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5a3c4ff13e6dfe54987b6018d7a349eb, type: 2}
   mainDuGarde: {fileID: 1172865320}
   "d\xE9laiEntreIcones": 0.15
+  "d\xE9laiAvantRetour": 2
 --- !u!1 &1619771586
 GameObject:
   m_ObjectHideFlags: 0
