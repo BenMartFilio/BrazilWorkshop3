@@ -12,8 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 943cd639361512b49ac512074cd78f88, type: 3}
   m_Name: Barrage
   m_EditorClassIdentifier: Assembly-CSharp::ObstaclePattern
-  rowCount: 1
+  rowCount: 3
   rowSpacing: 2
   rows:
   - lanes:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - lanes:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - lanes:
     - {fileID: 3101599933398964544, guid: 4d21c4f7e706c044085abbe0837e49db, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
