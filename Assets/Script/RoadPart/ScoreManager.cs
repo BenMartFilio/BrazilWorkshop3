@@ -7,10 +7,14 @@ using static UnityEngine.Rendering.DebugUI;
 public class ScoreManager : MonoBehaviour
 {
     protected int score;
+    private int bestscore;
     private bool isDriving;
     private Coroutine scoreCoroutine;
     private float speedScore=39f;
     [SerializeField] private TMP_Text textScore;
+    [SerializeField] private TMP_Text bestScoreText;
+    [SerializeField] private GameObject bestScoreParent;
+    [SerializeField] private SO_PlayerDatas playerDatas;
     
     IEnumerator ContiniousScore()
     {
@@ -20,6 +24,39 @@ public class ScoreManager : MonoBehaviour
             yield return new WaitForSeconds(Mathf.Clamp(1/speedScore,0.0001f,1));
         }
     }
+    IEnumerator ContiniousBestScore()
+    {
+        bestscore = playerDatas.BestScore;
+        while (score < bestscore)
+        {
+            bestScoreText.text = (bestscore - score).ToString();
+            yield return new WaitForSeconds(Mathf.Clamp(1/speedScore,0.0001f,1));
+        }
+        StartCoroutine(FadeOutBestScore(0.1f));
+    }
+
+    IEnumerator FadeOutBestScore(float duration)
+    {
+        CanvasGroup canvasGroup = bestScoreParent.GetComponent<CanvasGroup>();
+
+        if (canvasGroup == null)
+            canvasGroup = bestScoreParent.AddComponent<CanvasGroup>();
+
+        float startAlpha = canvasGroup.alpha;
+        float time = 0f;
+
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            canvasGroup.alpha = Mathf.Lerp(startAlpha, 0f, time / duration);
+            yield return null;
+        }
+
+        canvasGroup.alpha = 0f;
+
+        bestScoreParent.SetActive(false);
+    }
+
 
     public void StopScore()
     {
@@ -31,6 +68,7 @@ public class ScoreManager : MonoBehaviour
     {
         isDriving = true;
         scoreCoroutine = StartCoroutine(ContiniousScore());
+        StartCoroutine(ContiniousBestScore());
     }
 
     public void NewSpeed(float newSpeed)

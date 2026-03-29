@@ -15,9 +15,12 @@ MonoBehaviour:
   Name: ErrorName404
   BestScore: 200
   Level: 1
-  generalVolume: 0.46639693
-  musicVolume: 0.8155871
-  SFXVolume: 1
-  generalMonney: 10000
+  generalVolume: 1
+  musicVolume: 0.34339824
+  SFXVolume: 0
+  generalMonney: 10083
   premiumMonney: 100
+  actualScoreNotSaved: 171
+  actualCoinsNotSaved: 3
+  isAnHighScore: 1
   allHighScores: []
