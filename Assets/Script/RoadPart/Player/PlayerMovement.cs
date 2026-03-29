@@ -276,6 +276,8 @@ public class PlayerMovement : MonoBehaviour
     public void MoveUp(float duration)
     {
         _canMoving = false;
+        m_index = 1;
+        UpdatePosition();
         StartCoroutine(UpperMoves(duration));
     }
 
