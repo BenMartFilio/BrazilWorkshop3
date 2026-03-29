@@ -4,18 +4,27 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class CoinsUpdater : MonoBehaviour
 {
-    private int value;
+    private int valueCoin;
+    private int valuePremium;
     [SerializeField] private TMP_Text _textCoin;
+    [SerializeField] private TMP_Text _textPremium;
     [SerializeField] private SO_PlayerDatas _playerDatas;
 
     private void Start()
     {
-        Affichage();
+        AffichageCoin();
+        AffichagePremium();
     }
-    private void Affichage()
+    private void AffichageCoin()
     {
-        value = _playerDatas.generalMonney;
-        _textCoin.text = SystemOfChange(value);
+        valueCoin = _playerDatas.generalMonney;
+        _textCoin.text = SystemOfChange(valueCoin);
+    }
+
+    private void AffichagePremium()
+    {
+        valuePremium = _playerDatas.premiumMonney;
+        _textPremium.text = SystemOfChange(valuePremium);
     }
 
     private string SystemOfChange(int value)

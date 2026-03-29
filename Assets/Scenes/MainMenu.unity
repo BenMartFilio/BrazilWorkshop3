@@ -7058,6 +7058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CoinsUpdater
   _textCoin: {fileID: 889620239}
+  _textPremium: {fileID: 1375598440}
   _playerDatas: {fileID: 11400000, guid: f469a69765f7c5c4aa607382bdb461df, type: 2}
 --- !u!4 &1572064531
 Transform:
