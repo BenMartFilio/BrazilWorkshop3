@@ -144,7 +144,6 @@ public class ScrollingElement : MonoBehaviour
             _sprite.sprite = carcasse;
             inCarcasse = true;
             speed = speed + tempbaseSpeed;
-            Debug.Log(speed);
         }
         coll.WhenExplosion();
     }

@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class Aspiration : MonoBehaviour
 {
-    [SerializeField] private Image _feedbackLogo;
+    [SerializeField] private GameObject _feedbackLogo;
     [SerializeField] private InputPlayerMovement _input;
 
     private ChangeSkin _documents;
@@ -67,6 +67,8 @@ public class Aspiration : MonoBehaviour
         { 
             _documents = collision.GetComponent<ChangeSkin>();
             canAspire = true;
+            _feedbackLogo.SetActive(true);
+            Debug.Log("Enabled");
         }
     }
 
@@ -75,6 +77,8 @@ public class Aspiration : MonoBehaviour
         if (other.GetComponent<ChangeSkin>() == _documents)
         {
             canAspire = false;
+            _feedbackLogo.SetActive(false);
+            Debug.Log("Disabled");
         }
     }
 }
