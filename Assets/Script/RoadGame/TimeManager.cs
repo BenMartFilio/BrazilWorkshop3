@@ -30,20 +30,31 @@ public class TimeManager : MonoBehaviour
     }
 
 
+    [Tooltip("Si false, le TimeManager ne démarre pas automatiquement dans Start(). " +
+             "Utile quand un système externe (ex : MapRoadSessionBridge) contrôle le démarrage.")]
+    [SerializeField] private bool démarrerAutomatiquement = true;
+
     public void Start()
     {
-        StartTime();
+        if (démarrerAutomatiquement)
+            StartTime();
     }
 
     public void StartTime()
     {
+        if (coroutineTemps != null)
+            StopCoroutine(coroutineTemps);
+
         coroutineTemps = StartCoroutine(SpendingTime());
     }
 
     public void StopTime()
     {
+        if (coroutineTemps == null) return;
+
         StopCoroutine(coroutineTemps);
-        NotResetTime = tempTime;
+        coroutineTemps = null;
+        NotResetTime   = tempTime;
     }
 
     public void UpdateSpeedTimer(float newTime)

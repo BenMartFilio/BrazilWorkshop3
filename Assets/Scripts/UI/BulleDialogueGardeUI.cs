@@ -7,19 +7,24 @@ using Barrage.Formulaires;
 namespace Barrage.UI
 {
     /// <summary>
-    /// Affiche les répliques du garde dans la bulle de dialogue en fonction
-    /// des événements du barrage : demande de documents, bon/mauvais document,
-    /// barrage validé, barrage échoué (game over), séquence suivante.
+    /// Affiche les répliques du garde dans une bulle de dialogue.
+    ///
+    /// Deux instances coexistent dans la scène :
+    ///   - Bulle haute (<see cref="estBulleRouge"/> = false) → active pour les états Vert et Orange.
+    ///   - Bulle basse (<see cref="estBulleRouge"/> = true)  → active uniquement pour l'état Rouge.
+    ///
+    /// <see cref="VisuelGardeUI.OnEtatChange"/> pilote le basculement entre les deux bulles.
+    /// Lors d'une transition, la réplique en cours est transférée à la bulle qui prend le relais.
     /// </summary>
     [RequireComponent(typeof(CanvasGroup))]
     public class BulleDialogueGardeUI : MonoBehaviour
     {
         // ── Durées d'affichage ────────────────────────────────────────────────
-        private const float DUREE_AFFICHAGE_DOCUMENT   = 2.5f;  // s — bon ou mauvais document
-        private const float DUREE_AFFICHAGE_VALIDATION = 4.0f;  // s — barrage validé ou refusé
-        private const float DUREE_FONDU                = 0.25f; // s — fondu in/out
+        private const float DUREE_AFFICHAGE_DOCUMENT   = 2.5f;
+        private const float DUREE_AFFICHAGE_VALIDATION = 4.0f;
+        private const float DUREE_FONDU                = 0.25f;
 
-        // ── Répliques par contexte ────────────────────────────────────────────
+        // ── Répliques ─────────────────────────────────────────────────────────
 
         private static readonly string[] REPLIQUES_DEMANDE = new[]
         {
@@ -57,46 +62,57 @@ namespace Barrage.UI
             "Au prochain poste, vous devrez présenter ces documents."
         };
 
-        // ── Références ────────────────────────────────────────────────────────
+        // ── Champs sérialisés ─────────────────────────────────────────────────
+
+        [Header("Identité de la bulle")]
+        [Tooltip("Coché sur la bulle BASSE (état Rouge). Décoché sur la bulle HAUTE (états Vert + Orange).")]
+        [SerializeField] private bool estBulleRouge;
 
         [Header("Références")]
-        [Tooltip("Composant TextMeshProUGUI de la bulle de dialogue.")]
-        [SerializeField] private TextMeshProUGUI texteDialogue;
-
-        [Tooltip("MainDuGardeUI dont les événements pilotent les répliques.")]
-        [SerializeField] private MainDuGardeUI mainDuGarde;
-
-        [Tooltip("BarrePatience dont OnPatienceEpuisée déclenche la réplique d'arrestation.")]
-        [SerializeField] private BarrePatience barrePatience;
-
-        [Tooltip("AffichageProchaineDemandeUI dont OnBarrageValidé déclenche la réplique suivante. " +
-                 "Laissez vide si non utilisé.")]
+        [SerializeField] private TextMeshProUGUI            texteDialogue;
+        [SerializeField] private MainDuGardeUI              mainDuGarde;
+        [SerializeField] private BarrePatience              barrePatience;
         [SerializeField] private AffichageProchaineDemandeUI affichageSuivant;
+        [SerializeField] private VisuelGardeUI              visuelGarde;
 
-        [Header("Délai initial (demande des documents)")]
-        [Tooltip("Délai en secondes avant d'afficher la première réplique de demande au démarrage.")]
+        [Tooltip("L'autre bulle — celle qui prend le relais lors d'un changement d'état.")]
+        [SerializeField] private BulleDialogueGardeUI       autresBulle;
+
+        [Header("Timing")]
         [SerializeField, Min(0f)] private float délaiDemande = 1.0f;
 
         // ── État interne ──────────────────────────────────────────────────────
 
         private CanvasGroup _canvasGroup;
         private Coroutine   _coroutineActive;
+        private Coroutine   _coroutineMasquage; // fondu sortant lors d'un CéderLaParole
         private bool        _barrageTerminé;
+        private bool        _visible; // true dès qu'un fondu entrant a commencé
+
+        // Réplique en cours transmise lors d'un basculement
+        private string  _texteEnCours;
+        private float   _duréeRestante = -1f; // -1 = persistante
+
+        // ── Propriété ─────────────────────────────────────────────────────────
+
+        /// <summary>True si cette bulle est actuellement la bulle active.</summary>
+        public bool EstActive => EstBulleActivePourEtat(visuelGarde != null
+            ? visuelGarde.EtatCourant
+            : VisuelGardeUI.EtatGarde.Vert);
 
         // ── Lifecycle ─────────────────────────────────────────────────────────
 
         private void Awake()
         {
             _canvasGroup = GetComponent<CanvasGroup>();
-            _canvasGroup.alpha          = 0f;
-            _canvasGroup.interactable   = false;
-            _canvasGroup.blocksRaycasts = false;
+            MasquerImmédiatement();
         }
 
         private void Start()
         {
-            // Afficher la première demande de documents après un court délai
-            LancerRéplique(REPLIQUES_DEMANDE, duréeAffichage: -1f); // persistante jusqu'au 1er doc
+            // Seule la bulle active au démarrage lance la première réplique
+            if (EstActive)
+                LancerRéplique(REPLIQUES_DEMANDE, duréeAffichage: -1f);
         }
 
         private void OnEnable()
@@ -110,6 +126,9 @@ namespace Barrage.UI
 
             if (barrePatience != null)
                 barrePatience.OnPatienceEpuisée += OnPatienceEpuisée;
+
+            if (visuelGarde != null)
+                visuelGarde.OnEtatChange += OnEtatGardeChange;
         }
 
         private void OnDisable()
@@ -123,38 +142,44 @@ namespace Barrage.UI
 
             if (barrePatience != null)
                 barrePatience.OnPatienceEpuisée -= OnPatienceEpuisée;
+
+            if (visuelGarde != null)
+                visuelGarde.OnEtatChange -= OnEtatGardeChange;
         }
 
         // ── Handlers d'événements ─────────────────────────────────────────────
 
         private void OnFormulaireRemis(FormulaireType _)
         {
-            if (_barrageTerminé) return;
+            if (_barrageTerminé || !EstActive) return;
 
             LancerRéplique(REPLIQUES_BON_DOCUMENT, DUREE_AFFICHAGE_DOCUMENT,
                 rappel: () =>
                 {
-                    // Revenir à la réplique de demande si le barrage n'est pas encore terminé
-                    if (!_barrageTerminé)
+                    if (!_barrageTerminé && EstActive)
                         LancerRéplique(REPLIQUES_DEMANDE, duréeAffichage: -1f);
                 });
         }
 
         private void OnFormulaireIncorrect()
         {
-            if (_barrageTerminé) return;
+            if (_barrageTerminé || !EstActive) return;
 
             LancerRéplique(REPLIQUES_MAUVAIS_DOCUMENT, DUREE_AFFICHAGE_DOCUMENT,
                 rappel: () =>
                 {
-                    if (!_barrageTerminé)
+                    if (!_barrageTerminé && EstActive)
                         LancerRéplique(REPLIQUES_DEMANDE, duréeAffichage: -1f);
                 });
         }
 
         private void OnBarrageValidé()
         {
+            // Marquer les deux bulles : l'une est active mais l'autre doit aussi savoir
+            // que le barrage est terminé en cas de transition d'état imminente.
             _barrageTerminé = true;
+            if (!EstActive) return;
+
             LancerRéplique(REPLIQUES_BARRAGE_VALIDE, DUREE_AFFICHAGE_VALIDATION,
                 rappel: () => LancerRéplique(REPLIQUES_SEQUENCE_SUIVANTE, duréeAffichage: -1f));
         }
@@ -162,28 +187,114 @@ namespace Barrage.UI
         private void OnPatienceEpuisée()
         {
             _barrageTerminé = true;
+            if (!EstActive) return;
+
             LancerRéplique(REPLIQUES_BARRAGE_NON_VALIDE, duréeAffichage: -1f);
+        }
+
+        /// <summary>
+        /// Appelé par <see cref="VisuelGardeUI"/> lors d'un changement d'état.
+        /// La bulle qui devient active reprend la réplique en cours de l'autre.
+        /// </summary>
+        private void OnEtatGardeChange(VisuelGardeUI.EtatGarde nouvelEtat)
+        {
+            bool doitEtreActive = EstBulleActivePourEtat(nouvelEtat);
+
+            if (doitEtreActive)
+            {
+                // Je prends le relais — je reprends le texte de l'autre bulle
+                string texteAReprendre = autresBulle != null ? autresBulle._texteEnCours : null;
+                autresBulle?.CéderLaParole();
+
+                if (!string.IsNullOrEmpty(texteAReprendre))
+                    LancerRéplicueDirecte(texteAReprendre, duréeAffichage: -1f);
+                else if (!_barrageTerminé)
+                    LancerRéplique(REPLIQUES_DEMANDE, duréeAffichage: -1f);
+            }
+            else
+            {
+                // Je cède la parole — l'autre bulle s'en chargera
+                CéderLaParole();
+            }
+        }
+
+        // ── API interne (appelée par l'autre bulle) ───────────────────────────
+
+        /// <summary>
+        /// Stoppe toute coroutine en cours, fait disparaître la bulle en fondu,
+        /// puis la masque. Appelé quand l'autre bulle prend le relais.
+        /// </summary>
+        public void CéderLaParole()
+        {
+            // Arrêter toute coroutine de dialogue ou de masquage en cours
+            if (_coroutineActive != null)
+            {
+                StopCoroutine(_coroutineActive);
+                _coroutineActive = null;
+            }
+            if (_coroutineMasquage != null)
+            {
+                StopCoroutine(_coroutineMasquage);
+                _coroutineMasquage = null;
+            }
+
+            if (_visible)
+            {
+                // Fondu sortant : la bulle était visible, on la fait disparaître
+                _coroutineMasquage = StartCoroutine(FondirEtMasquer());
+            }
+            else
+            {
+                MasquerImmédiatement();
+            }
+
+            _texteEnCours = null;
+            _visible      = false;
+        }
+
+        private IEnumerator FondirEtMasquer()
+        {
+            float alphaDepart = _canvasGroup.alpha;
+            float t = 0f;
+            while (t < DUREE_FONDU)
+            {
+                t += Time.deltaTime;
+                _canvasGroup.alpha = Mathf.Lerp(alphaDepart, 0f, Mathf.SmoothStep(0f, 1f, t / DUREE_FONDU));
+                yield return null;
+            }
+            MasquerImmédiatement();
+            _coroutineMasquage = null;
         }
 
         // ── Affichage ─────────────────────────────────────────────────────────
 
-        /// <summary>
-        /// Lance l'affichage d'une réplique aléatoire du tableau donné.
-        /// Si <paramref name="duréeAffichage"/> est négatif, la bulle reste visible indéfiniment.
-        /// <paramref name="rappel"/> est invoqué après la disparition (si durée positive).
-        /// </summary>
         private void LancerRéplique(string[] répliques, float duréeAffichage, Action rappel = null)
+        {
+            string texte = ChoisirAléatoire(répliques);
+            LancerRéplicueDirecte(texte, duréeAffichage, rappel);
+        }
+
+        private void LancerRéplicueDirecte(string texte, float duréeAffichage, Action rappel = null)
         {
             if (_coroutineActive != null)
                 StopCoroutine(_coroutineActive);
 
-            string texte = ChoisirAléatoire(répliques);
+            _texteEnCours  = texte;
+            _duréeRestante = duréeAffichage;
             _coroutineActive = StartCoroutine(AfficherRéplique(texte, duréeAffichage, rappel));
         }
 
         private IEnumerator AfficherRéplique(string texte, float duréeAffichage, Action rappel)
         {
-            // Fondu entrant
+            _visible = true;
+
+            // Annuler un éventuel fondu sortant encore en cours
+            if (_coroutineMasquage != null)
+            {
+                StopCoroutine(_coroutineMasquage);
+                _coroutineMasquage = null;
+            }
+
             yield return StartCoroutine(AnimerAlpha(0f, 1f, DUREE_FONDU));
 
             if (texteDialogue != null)
@@ -191,16 +302,17 @@ namespace Barrage.UI
 
             if (duréeAffichage < 0f)
             {
-                // Persistent — on reste visible sans timer
+                // Persistant — coroutine terminée mais la bulle reste visible
                 _coroutineActive = null;
                 yield break;
             }
 
             yield return new WaitForSeconds(duréeAffichage);
 
-            // Fondu sortant
             yield return StartCoroutine(AnimerAlpha(1f, 0f, DUREE_FONDU));
 
+            _texteEnCours    = null;
+            _visible         = false;
             _coroutineActive = null;
             rappel?.Invoke();
         }
@@ -217,7 +329,24 @@ namespace Barrage.UI
             _canvasGroup.alpha = vers;
         }
 
+        private void MasquerImmédiatement()
+        {
+            _canvasGroup.alpha          = 0f;
+            _canvasGroup.interactable   = false;
+            _canvasGroup.blocksRaycasts = false;
+        }
+
         // ── Helpers ───────────────────────────────────────────────────────────
+
+        /// <summary>
+        /// Détermine si cette bulle doit être active pour un état donné du garde.
+        /// </summary>
+        private bool EstBulleActivePourEtat(VisuelGardeUI.EtatGarde etat)
+        {
+            return estBulleRouge
+                ? etat == VisuelGardeUI.EtatGarde.Rouge
+                : etat != VisuelGardeUI.EtatGarde.Rouge;
+        }
 
         private static string ChoisirAléatoire(string[] répliques)
         {

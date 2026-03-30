@@ -75,7 +75,13 @@ namespace Barrage.Formulaires
             }
             else
             {
-                Debug.LogError("[ListeAttenteGarde] Aucune demande session ni DemandeBarrage fournie.");
+                Debug.LogError("[ListeAttenteGarde] Aucune demande session ni DemandeBarrage fournie. " +
+                               "Vérifiez que 'demandeAléatoire' est assigné sur MainDuGardeUI. " +
+                               "Génération d'une séquence de secours avec un formulaire par défaut.");
+
+                // Fallback absolu : un seul formulaire du premier type connu,
+                // pour éviter que le barrage soit indéfiniment bloqué.
+                séquence.Add(FormulaireType.CentraleDuRavitaillement);
             }
         }
     }

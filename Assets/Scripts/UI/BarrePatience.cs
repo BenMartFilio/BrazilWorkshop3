@@ -69,6 +69,12 @@ namespace Barrage.UI
         /// <summary>Valeur de patience normalisée entre 0 et 1.</summary>
         public float PatienceNormalisée => _patience / PATIENCE_MAX;
 
+        /// <summary>Seuil en dessous duquel la barre passe en orange (0–1).</summary>
+        public float SeuilMoyenne => seuilMoyenne;
+
+        /// <summary>Seuil en dessous duquel la barre passe en rouge (0–1).</summary>
+        public float SeuilBasse => seuilBasse;
+
         /// <summary>True quand la patience atteint 0.</summary>
         public bool EstEpuisée => _patience <= 0f;
 
