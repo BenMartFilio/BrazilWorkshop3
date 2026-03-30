@@ -13,7 +13,10 @@ public class ScrollingElement : MonoBehaviour
         {
             speed = Mathf.Clamp(baseSpeed + addToNewSpeed, 0, 30 + tempbaseSpeed);
         }
-        speed = Mathf.Clamp(baseSpeed+addToNewSpeed, 0, 30+baseSpeed);
+        else
+        {
+            speed = Mathf.Clamp(baseSpeed + addToNewSpeed, 0, 30 + baseSpeed);
+        }
     }
 
     void FixedUpdate()
@@ -24,7 +27,7 @@ public class ScrollingElement : MonoBehaviour
         }
         if (_rb == null)
         {
-            transform.Translate(Vector3.down * speed * Time.deltaTime);
+            transform.Translate(Vector3.down * speed * Time.fixedDeltaTime);
 
             if (transform.position.y < -20)
             {

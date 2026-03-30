@@ -37,7 +37,7 @@ public class GoundMouvement : MonoBehaviour
             return;
         }
 
-        transform.Translate(Vector3.down * speed * Time.deltaTime);
+        transform.Translate(Vector3.down * speed * Time.fixedDeltaTime);
 
         if (transform.position.y <= -width)
         {
