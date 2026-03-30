@@ -334,7 +334,7 @@ public class SpawnObstacleV2 : MonoBehaviour
         {
             float currentSpeed = baseObstacleSpeed + _generalSpeed;
             travelled += currentSpeed * Time.deltaTime;
-            yield return null;
+            yield return new WaitForFixedUpdate();  // REMETTRE NULL SI BUG
         }
     }
 
