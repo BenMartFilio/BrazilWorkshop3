@@ -7,6 +7,7 @@ public class UpdaterScore : MonoBehaviour
     [SerializeField] private SO_PlayerDatas _playerDatas;
     [SerializeField] private TMP_Text _scoreText;
     [SerializeField] private TMP_Text _coinsText;
+    [SerializeField] private CoinsUpdater updater;
 
     private void Start()
     {
@@ -55,6 +56,7 @@ public class UpdaterScore : MonoBehaviour
             yield return null;
         }
         _coinsText.text = coins.ToString();
+        updater.StartCoroutineCounter();
     }
 
 
