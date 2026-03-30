@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using static UnityEngine.Rendering.DebugUI;
@@ -12,6 +13,12 @@ public class CoinsUpdater : MonoBehaviour
     [SerializeField] private SO_PlayerDatas _playerDatas;
     [SerializeField] private bool waitCoin = false;
     private Vector3 originalScale;
+
+    [SerializeField] GameObject coinPrefab;
+    [SerializeField] Transform spawnPoint;
+    [SerializeField] Transform targetText;
+
+    List<GameObject> spawnedCoins = new List<GameObject>();
 
     private void Start()
     {
@@ -77,17 +84,24 @@ public class CoinsUpdater : MonoBehaviour
     IEnumerator CoinToCounter()
     {
         //faire spawn pièce
-        yield return new WaitForSeconds(1);
+        yield return StartCoroutine(SpawnCoins());
+
+        yield return new WaitForSeconds(0.3f);
         // faire monter le premier (1/3 des pièces)
+        yield return MoveCoin(spawnedCoins[0]);
         valueCoin = _playerDatas.generalMonney - Mathf.CeilToInt((_playerDatas.actualCoinsNotSaved/3)*2);
         _textCoin.text = SystemOfChange(valueCoin);
         StartCoroutine(SizeText());
-        yield return new WaitForSeconds(0.7f);
+
+        yield return new WaitForSeconds(0.1f);
+        yield return MoveCoin(spawnedCoins[1]);
         // faire monter le deuxième (2/3 des pièces)
         valueCoin = _playerDatas.generalMonney - Mathf.CeilToInt((_playerDatas.actualCoinsNotSaved/3));
         _textCoin.text = SystemOfChange(valueCoin);
         StartCoroutine(SizeText());
-        yield return new WaitForSeconds(0.7f);
+
+        yield return new WaitForSeconds(0.1f);
+        yield return MoveCoin(spawnedCoins[2]);
         // faire monter le dernier (3/3 des pièces)
         valueCoin = _playerDatas.generalMonney;
         _textCoin.text = SystemOfChange(valueCoin);
@@ -121,5 +135,88 @@ public class CoinsUpdater : MonoBehaviour
         }
 
         _textCoin.transform.localScale = originalScale;
+    }
+
+
+
+    IEnumerator SpawnCoins()
+    {
+        spawnedCoins.Clear();
+        Vector2 basePos = spawnPoint.GetComponent<RectTransform>().anchoredPosition;
+
+        for (int i = 0; i < 3; i++)
+        {
+            GameObject coin = Instantiate(coinPrefab, spawnPoint.position, Quaternion.identity, spawnPoint.parent);
+            RectTransform rt = coin.GetComponent<RectTransform>();
+            float randomY = Random.Range(-10f, 10f);
+            float randomX = Random.Range(-5f, 5f);   
+
+            rt.anchoredPosition = basePos + new Vector2(i * 30f + randomX, randomY);
+
+            coin.transform.SetAsLastSibling();
+            rt.localScale = Vector3.zero;
+
+            spawnedCoins.Add(coin);
+
+            StartCoroutine(BounceCoin(rt));
+
+            yield return new WaitForSeconds(0.15f);
+        }
+    }
+
+    IEnumerator MoveCoin(GameObject coin)
+    {
+        RectTransform rt = coin.GetComponent<RectTransform>();
+
+        Vector3 start = coin.transform.position;
+        Vector3 end = targetText.position;
+
+        float duration = Random.Range(0.4f, 0.7f); 
+        float t = 0;
+
+        while (t < duration)
+        {
+            t += Time.deltaTime;
+            float progress = Mathf.SmoothStep(0, 1, t / duration);
+
+            coin.transform.position = Vector3.Lerp(start, end, progress)
+                                    + Vector3.up * Mathf.Sin(progress * Mathf.PI) * 50f;
+
+            float scale = Mathf.Lerp(1f, 0.7f, progress);
+            rt.localScale = Vector3.one * scale;
+
+            yield return null;
+        }
+
+        Destroy(coin);
+    }
+
+    IEnumerator BounceCoin(RectTransform rt)
+    {
+        Vector3 normalScale = Vector3.one;
+        Vector3 smallScale = Vector3.zero;
+        Vector3 bigScale = Vector3.one * 1.3f;
+
+        float t = 0;
+
+        float duration1 = 0.15f;
+        while (t < duration1)
+        {
+            t += Time.deltaTime;
+            rt.localScale = Vector3.Lerp(smallScale, bigScale, t / duration1);
+            yield return null;
+        }
+
+        t = 0;
+
+        float duration2 = 0.1f;
+        while (t < duration2)
+        {
+            t += Time.deltaTime;
+            rt.localScale = Vector3.Lerp(bigScale, normalScale, t / duration2);
+            yield return null;
+        }
+
+        rt.localScale = normalScale;
     }
 }
