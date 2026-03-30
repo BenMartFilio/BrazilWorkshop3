@@ -19,7 +19,7 @@ public class IAPManager : MonoBehaviour
     public static class ProductIDs
     {
         public const string REMOVE_ADS = "com.mygame.remove_ads";
-        public const string COINS_100 = "com.mygame.coins_100";   //mettre nom jeu et le truc de google play en gros com.LEJEU.LEPRODUIT (il peut aussi y avoir le nom de l'entreprise)
+        public const string COINS_100 = "com.mygame.coins_100";
         public const string PREMIUM_PACK = "com.mygame.premium_pack";
     }
 
@@ -31,7 +31,7 @@ public class IAPManager : MonoBehaviour
 
     // --- Events ---
     public event Action<string> OnPurchaseSuccess;
-    public event Action<string, string> OnPurchaseFailure;   // productId, reason
+    public event Action<string, string> OnPurchaseFailure;
     public event Action<string> OnStoreConnectFailed;
 
     // -------------------------------------------------------------------------
@@ -43,10 +43,7 @@ public class IAPManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    private async void Start()
-    {
-        await InitializeAsync();
-    }
+    private async void Start() => await InitializeAsync();
 
     // -------------------------------------------------------------------------
     // Initialisation
@@ -57,12 +54,14 @@ public class IAPManager : MonoBehaviour
         {
             _store = UnityIAPServices.StoreController();
 
-            // Abonnement aux événements du store
             _store.OnPurchasePending += HandlePurchasePending;
             _store.OnPurchaseConfirmed += HandlePurchaseConfirmed;
             _store.OnPurchaseFailed += HandlePurchaseFailed;
+            _store.OnPurchaseDeferred += HandlePurchaseDeferred;
+            _store.OnProductsFetchFailed += HandleProductsFetchFailed;
+            // Le bon type du delegate : Action<IEnumerable<Product>>
+            _store.OnProductsFetched += HandleProductsFetched;
 
-            // Connexion au store (App Store / Google Play)
             await _store.Connect();
 
             IsConnected = true;
@@ -77,6 +76,17 @@ public class IAPManager : MonoBehaviour
         }
     }
 
+    // Signature corrigée : IEnumerable<Product> au lieu de ProductFetchedCollection
+    private void HandleProductsFetched(IEnumerable<Product> products)
+    {
+        var list = products.ToList();
+        Debug.Log($"[IAP] {list.Count} product(s) fetched successfully.");
+        foreach (var product in list)
+        {
+            Debug.Log($"[IAP] Product ready: {product.definition.id} — {product.metadata.localizedPriceString}");
+        }
+    }
+
     private void FetchProducts()
     {
         var definitions = new List<ProductDefinition>
@@ -87,58 +97,40 @@ public class IAPManager : MonoBehaviour
         };
 
         _store.FetchProducts(definitions);
-        Debug.Log("[IAP] Products fetched.");
+        Debug.Log("[IAP] FetchProducts called.");
     }
 
-    // -------------------------------------------------------------------------
     // Achat
 
-    /// <summary>Initiates a purchase using the typed enum key.</summary>
     public void BuyProduct(ProductKey key)
     {
-        if (!IsConnected)
-        {
-            Debug.LogWarning("[IAP] Store not connected.");
-            return;
-        }
+        if (!IsConnected) { Debug.LogWarning("[IAP] Store not connected."); return; }
 
-        string id = key switch
-        {
-            ProductKey.RemoveAds => ProductIDs.REMOVE_ADS,
-            ProductKey.Coins100 => ProductIDs.COINS_100,
-            ProductKey.PremiumPack => ProductIDs.PREMIUM_PACK,
-            _ => null
-        };
-
-        if (id == null)
-        {
-            Debug.LogWarning($"[IAP] Unknown product key: {key}");
-            return;
-        }
+        string id = KeyToId(key);
+        if (id == null) { Debug.LogWarning($"[IAP] Unknown product key: {key}"); return; }
 
         _store.PurchaseProduct(id);
     }
 
-    /// <summary>Returns localized price string (e.g. "1,99 €") or empty string.</summary>
     public string GetLocalizedPrice(ProductKey key)
     {
         if (!IsConnected) return string.Empty;
 
-        string id = key switch
-        {
-            ProductKey.RemoveAds => ProductIDs.REMOVE_ADS,
-            ProductKey.Coins100 => ProductIDs.COINS_100,
-            ProductKey.PremiumPack => ProductIDs.PREMIUM_PACK,
-            _ => null
-        };
-
+        string id = KeyToId(key);
         if (id == null) return string.Empty;
 
-        var product = _store.GetProductById(id);
-        return product?.metadata.localizedPriceString ?? string.Empty;
+        return _store.GetProductById(id)?.metadata.localizedPriceString ?? string.Empty;
     }
 
-    // -------------------------------------------------------------------------
+    // Helper centralisé pour éviter la duplication du switch
+    private string KeyToId(ProductKey key) => key switch
+    {
+        ProductKey.RemoveAds => ProductIDs.REMOVE_ADS,
+        ProductKey.Coins100 => ProductIDs.COINS_100,
+        ProductKey.PremiumPack => ProductIDs.PREMIUM_PACK,
+        _ => null
+    };
+
     // Handlers du store
 
     private void HandlePurchasePending(PendingOrder order)
@@ -147,10 +139,6 @@ public class IAPManager : MonoBehaviour
         if (product == null) return;
 
         Debug.Log($"[IAP] Purchase pending: {product.definition.id}");
-
-        // Pour les consumables : on peut accorder la récompense ici et confirmer.
-        // Pour une validation serveur : NE PAS appeler ConfirmPurchase ici —
-        // valider côté serveur d'abord, puis appeler ConfirmPurchase en callback.
         _store.ConfirmPurchase(order);
     }
 
@@ -176,7 +164,18 @@ public class IAPManager : MonoBehaviour
         OnPurchaseFailure?.Invoke(productId, reason);
     }
 
-    // -------------------------------------------------------------------------
+    private void HandlePurchaseDeferred(DeferredOrder order)
+    {
+        // Ask to Buy (iOS) — ne jamais accorder la récompense ici
+        var product = order.CartOrdered.Items().FirstOrDefault()?.Product;
+        Debug.Log($"[IAP] Purchase deferred (awaiting approval): {product?.definition.id}");
+    }
+
+    private void HandleProductsFetchFailed(ProductFetchFailed failure)
+    {
+        Debug.LogError($"[IAP] Products fetch failed: {failure.FailureReason}");
+    }
+
     // Récompenses
 
     private void GrantReward(string productId)
@@ -204,8 +203,7 @@ public class IAPManager : MonoBehaviour
         }
     }
 
-    // -------------------------------------------------------------------------
-    // Restauration des achats (iOS obligatoire)
+    // Restauration (obligatoire iOS)
 
     public void RestorePurchases()
     {
@@ -213,14 +211,11 @@ public class IAPManager : MonoBehaviour
 
         _store.RestoreTransactions((success, error) =>
         {
-            if (success)
-                Debug.Log("[IAP] Restore completed successfully.");
-            else
-                Debug.LogError($"[IAP] Restore failed: {error}");
+            if (success) Debug.Log("[IAP] Restore completed successfully.");
+            else Debug.LogError($"[IAP] Restore failed: {error}");
         });
     }
 
-    // -------------------------------------------------------------------------
 
     private void OnDestroy()
     {
@@ -228,5 +223,8 @@ public class IAPManager : MonoBehaviour
         _store.OnPurchasePending -= HandlePurchasePending;
         _store.OnPurchaseConfirmed -= HandlePurchaseConfirmed;
         _store.OnPurchaseFailed -= HandlePurchaseFailed;
+        _store.OnPurchaseDeferred -= HandlePurchaseDeferred;
+        _store.OnProductsFetchFailed -= HandleProductsFetchFailed;
+        _store.OnProductsFetched -= HandleProductsFetched;
     }
 }
