@@ -10,7 +10,11 @@ public class GoundMouvement : MonoBehaviour
     public bool started = true;
     [SerializeField] private int maxSpeed = 35;
 
-
+    /// <summary>
+    /// Multiplicateur global applique dans UpdateSpeed.
+    /// Partage la meme semantique que ScrollingElement.FacteurVitesseGlobal.
+    /// </summary>
+    public static float FacteurVitesseGlobal = 1f;
 
     private void Start()
     {
@@ -19,7 +23,7 @@ public class GoundMouvement : MonoBehaviour
 
     public void UpdateSpeed(float addToNewSpeed)
     {
-        speed = Mathf.Clamp(baseSpeed + addToNewSpeed, 0, 30 + baseSpeed);
+        speed = Mathf.Clamp((baseSpeed + addToNewSpeed) * FacteurVitesseGlobal, 0, (30 + baseSpeed) * FacteurVitesseGlobal);
     }
 
     // ── Session ───────────────────────────────────────────────────────────────

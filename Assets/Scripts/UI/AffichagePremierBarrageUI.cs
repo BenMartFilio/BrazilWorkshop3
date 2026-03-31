@@ -60,29 +60,71 @@ namespace Barrage.UI
                 slot.Masquer();
         }
 
+        private void Start()
+        {
+            // Aucune demande sauvegardée = première partie ou données vides → rien à afficher.
+            if (donnéesSession == null || !donnéesSession.AUneDemandeSauvegardée)
+            {
+                Debug.Log("[AffichagePremierBarrageUI] Aucune demande en session — rappel non affiché.");
+                return;
+            }
+
+            var types = new List<FormulaireType>(donnéesSession.prochaineDemandeBarrage);
+            Debug.Log($"[AffichagePremierBarrageUI] Rappel de la demande ({types.Count} entrées) : " +
+                      string.Join(", ", types));
+
+            StartCoroutine(SéquenceRappel(types));
+        }
+
         // ── API ───────────────────────────────────────────────────────────────
 
         /// <summary>
-        /// Démarre la séquence d'affichage. Appelé par <see cref="MapRoadSessionBridge"/>.
+        /// Conservé pour compatibilité. Le rappel se déclenche maintenant automatiquement
+        /// depuis <see cref="Start"/> — cette méthode n'a plus besoin d'être appelée.
         /// </summary>
         public void Lancer(MapRoadSessionBridge bridge)
         {
             _bridge = bridge;
-            StartCoroutine(SéquenceIntro());
         }
 
         // ── Séquence ──────────────────────────────────────────────────────────
 
-        private IEnumerator SéquenceIntro()
+        /// <summary>
+        /// Affiche les icônes de la demande à apporter au prochain barrage,
+        /// puis les masque après <see cref="duréeAffichage"/> secondes.
+        /// Le jeu tourne normalement en dessous — aucun gel.
+        /// </summary>
+        private IEnumerator SéquenceRappel(List<FormulaireType> types)
         {
-            // Ce script n'est plus utilisé depuis la refonte du flux de démarrage.
-            // Le premier barrage est maintenant géré côté scène Barrage
-            // par PremierBarrageController + AffichageProchaineDemandeUI.LancerDirectement().
-            // On appelle DémarrerJeu directement pour ne pas bloquer MapRoad si ce
-            // composant se retrouve encore actif dans une ancienne configuration de scène.
-            Debug.LogWarning("[AffichagePremierBarrageUI] Ce composant est obsolète — " +
-                             "supprimez-le de la scène MapRoad.");
-            yield break;
+            // Filtrage : ne conserver que les types affichables
+            var affichables = new List<FormulaireType>();
+            var texturesParType = new Dictionary<FormulaireType, Texture2D>();
+
+            foreach (var type in types)
+            {
+                if (texturesParType.ContainsKey(type)) continue;
+                if (!_dataParType.TryGetValue(type, out var data)) continue;
+                Texture2D texture = data.ExtraireTexture();
+                if (texture == null) continue;
+                affichables.Add(type);
+                texturesParType[type] = texture;
+            }
+
+            int nbSlots = Mathf.Min(affichables.Count, slots.Count);
+            Debug.Log($"[AffichagePremierBarrageUI] Affichage de {nbSlots} icône(s) de rappel.");
+
+            for (int i = 0; i < nbSlots; i++)
+            {
+                slots[i].Afficher(texturesParType[affichables[i]], 1);
+                yield return new WaitForSeconds(délaiEntreIcones);
+            }
+
+            yield return new WaitForSeconds(duréeAffichage);
+
+            foreach (var slot in slots)
+                slot.Masquer();
+
+            Debug.Log("[AffichagePremierBarrageUI] Rappel terminé — icônes masquées.");
         }
 
         // ── Helpers ───────────────────────────────────────────────────────────

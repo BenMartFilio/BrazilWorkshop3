@@ -7,15 +7,22 @@ public class ScrollingElement : MonoBehaviour
     private bool isMoving = true;
     private SpriteRenderer _sprite;
 
+    /// <summary>
+    /// Multiplicateur global applique a toutes les vitesses calculees dans UpdateSpeed.
+    /// Mis a 0.5f par EffetsObjetsSpeciaux (Montre a Gousset), restaure a 1f a la fin.
+    /// Statique : s'applique automatiquement a tout spawn futur sans snapshot.
+    /// </summary>
+    public static float FacteurVitesseGlobal = 1f;
+
     public void UpdateSpeed(float addToNewSpeed)
     {
         if (inCarcasse)
         {
-            speed = Mathf.Clamp(tempbaseSpeed + addToNewSpeed, 0, 30 + tempbaseSpeed);
+            speed = Mathf.Clamp((tempbaseSpeed + addToNewSpeed) * FacteurVitesseGlobal, 0, (30 + tempbaseSpeed) * FacteurVitesseGlobal);
         }
         else
         {
-            speed = Mathf.Clamp(baseSpeed + addToNewSpeed, 0, 30 + baseSpeed);
+            speed = Mathf.Clamp((baseSpeed + addToNewSpeed) * FacteurVitesseGlobal, 0, (30 + baseSpeed) * FacteurVitesseGlobal);
         }
     }
 
