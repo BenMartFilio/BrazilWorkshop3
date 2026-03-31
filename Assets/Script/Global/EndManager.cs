@@ -15,6 +15,7 @@ public class EndManager : MonoBehaviour
     [SerializeField] private Aspiration _aspiration;
     [SerializeField] private SO_PlayerDatas _playerDatas;
     [SerializeField] private BarreProgressionBarrage _barreProgression;
+    public int reviveCounter = 0;
 
     public void OnDeath()
     {
@@ -44,6 +45,7 @@ public class EndManager : MonoBehaviour
         _spawner.StartSpawning();
         _spawner.ReprendreCompteurBarrage();
         _barreProgression?.Dégeler();
+        reviveCounter++;
         _revivePanel.SetActive(false);
     }
 
