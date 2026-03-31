@@ -16,15 +16,15 @@ MonoBehaviour:
   rowSpacing: 2
   rows:
   - lanes:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - lanes:
-    - {fileID: 0}
+    - {fileID: 3434350175221258612, guid: 95cdca3f5eee2ea44ba57fb8c2a2759b, type: 3}
     - {fileID: 0}
     - {fileID: 0}
   - lanes:
     - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - lanes:
+    - {fileID: 3434350175221258612, guid: 95cdca3f5eee2ea44ba57fb8c2a2759b, type: 3}
     - {fileID: 535104966169734813, guid: 48faf7e222bfe7c44a5e9deb7bc0f020, type: 3}
     - {fileID: 0}
   - lanes:
