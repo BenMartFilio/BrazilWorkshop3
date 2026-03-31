@@ -27,5 +27,7 @@ public class ReviveButtonPremium : MonoBehaviour
             Debug.Log("Pas d'argent");
             //Afficher boutique
         }
+
+        _playerDatas.SaveDatas();
     }
 }
