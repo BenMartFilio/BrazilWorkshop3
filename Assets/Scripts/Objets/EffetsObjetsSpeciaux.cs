@@ -24,15 +24,21 @@ namespace ObjetsSpeciaux
         private const int   TIRELIRE_MULTIPLICATEUR_PIECES = 2;
 
         // ── Constantes : Gateau Chinois ───────────────────────────────────────
-        private const float GATEAU_DUREE = 20f;
+        private const float GATEAU_DUREE          = 20f;
         private const float GATEAU_CHANCE_ESQUIVE = 0.50f;
+        private const float GATEAU_BLINK_DUREE    = 0.35f;
+        private const float GATEAU_BLINK_INTERVALLE = 0.05f;
 
         // ── Constantes : Radar a Obstacles ────────────────────────────────────
         private const float RADAR_DUREE             = 20f;
-        private const float RADAR_FLASH_DUREE       = 0.6f;
+        private const float RADAR_FLASH_DUREE       = 1.0f;
+        private const float RADAR_FLASH_INTERVALLE  = 0.18f;
+        private const float RADAR_ANTICIPATION      = 0.5f;
         private const float RADAR_ONDE_INTERVALLE   = 1.2f;
         private const float RADAR_ONDE_DUREE_SCALE  = 0.5f;
         private const float RADAR_ONDE_SCALE_MAX    = 3f;
+        private const string RADAR_SORTING_LAYER    = "Player";
+        private const int    RADAR_SORTING_ORDER    = 10;
 
         // ── Constantes : Aspirateur ───────────────────────────────────────────
         private const float ASPIRATEUR_DUREE                 = 20f;
@@ -64,7 +70,7 @@ namespace ObjetsSpeciaux
         [SerializeField] private Sprite spriteAspirateurVoiture;
 
         [Header("Radar")]
-        [SerializeField] private GameObject prefabIndicateurObstacle;
+        [SerializeField] private Sprite spriteExclamation;
 
         [Header("Post-Process")]
         [SerializeField] private Volume volumePostProcess;
@@ -86,8 +92,6 @@ namespace ObjetsSpeciaux
         private Coroutine _coroutineAspirateur;
 
         private bool _montreActive;
-        private ScrollingElement[] _scrollingElementsSnapshot;
-        private float[] _vitessesOriginales;
         private float[] _vitessesOriginalesSols;
         private Coroutine _coroutineMontre;
 
@@ -101,6 +105,21 @@ namespace ObjetsSpeciaux
                 volumePostProcess.profile.TryGet(out _colorAdjustments);
             else if (volumePostProcess != null)
                 Debug.LogWarning("[EffetsObjetsSpeciaux] Volume assigne mais aucun VolumeProfile -- effet Montre (desaturation) desactive.");
+        }
+
+        private void Start()
+        {
+            // Avertissements pour les assets visuels optionnels non assignes.
+            if (spriteAspirateurVoiture == null)
+                Debug.LogWarning("[EffetsObjetsSpeciaux] spriteAspirateurVoiture non assigne -- l'effet Aspirateur ne changera pas le sprite de la voiture.");
+            if (spriteExclamation == null)
+                Debug.LogWarning("[EffetsObjetsSpeciaux] spriteExclamation non assigne -- le Radar affichera un carre rouge de fallback.");
+            if (ondeRadar == null)
+                Debug.LogWarning("[EffetsObjetsSpeciaux] ondeRadar non assigne -- l'animation d'onde du Radar est desactivee.");
+            if (haloDoree == null)
+                Debug.LogWarning("[EffetsObjetsSpeciaux] haloDoree non assigne -- le visuel de la Tirelire Cochon est desactive.");
+            if (haloRouge == null)
+                Debug.LogWarning("[EffetsObjetsSpeciaux] haloRouge non assigne -- le visuel du Gateau Chinois est desactive.");
         }
 
         private void OnEnable()
@@ -264,6 +283,7 @@ namespace ObjetsSpeciaux
         /// <summary>
         /// Tente d'esquiver l'obstacle via l'effet Gateau Chinois.
         /// Retourne true si l'obstacle a ete annule (le caller doit ignorer la collision).
+        /// L'obstacle clignote brievement avant d'etre desactive.
         /// </summary>
         public bool TenterEsquiveGateau(CollisionObstacle obstacle, Vector3 positionCollision)
         {
@@ -273,11 +293,30 @@ namespace ObjetsSpeciaux
             if (Random.value < GATEAU_CHANCE_ESQUIVE)
             {
                 obstacle.DeclencherExplosion(positionCollision);
-                obstacle.gameObject.SetActive(false);
+                StartCoroutine(BlinkEtDesactiverObstacle(obstacle.gameObject));
                 return true;
             }
 
             return false;
+        }
+
+        private IEnumerator BlinkEtDesactiverObstacle(GameObject obstacle)
+        {
+            SpriteRenderer sr = obstacle != null ? obstacle.GetComponent<SpriteRenderer>() : null;
+            float elapsed = 0f;
+
+            while (elapsed < GATEAU_BLINK_DUREE && obstacle != null)
+            {
+                elapsed += GATEAU_BLINK_INTERVALLE;
+                if (sr != null) sr.enabled = !sr.enabled;
+                yield return new WaitForSeconds(GATEAU_BLINK_INTERVALLE);
+            }
+
+            if (obstacle != null)
+            {
+                if (sr != null) sr.enabled = true;
+                obstacle.SetActive(false);
+            }
         }
 
         // ── Objet 6 : Radar a Obstacles (actif, route) ────────────────────────
@@ -357,9 +396,13 @@ namespace ObjetsSpeciaux
         }
 
         /// <summary>A appeler par SpawnObstacleV2 lors de chaque spawn si le radar est actif.</summary>
-        public void SignalerNouvelObstacle(Vector3 positionObstacle)
+        public void SignalerNouvelObstacle(Vector3 positionObstacle, GameObject obstacle)
         {
-            if (!_radarActif || prefabIndicateurObstacle == null)
+            if (!_radarActif)
+                return;
+
+            // Ne pas signaler les pièces.
+            if (obstacle != null && obstacle.GetComponent<CoinsScript>() != null)
                 return;
 
             StartCoroutine(AfficherIndicateurObstacle(positionObstacle));
@@ -367,22 +410,33 @@ namespace ObjetsSpeciaux
 
         private IEnumerator AfficherIndicateurObstacle(Vector3 positionObstacle)
         {
+            // Attendre un court instant avant d'afficher : l'obstacle vient de spawner
+            // hors écran, le blink apparaît légèrement en avance sur son arrivée visible.
+            yield return new WaitForSeconds(RADAR_ANTICIPATION);
+
             Camera cam = Camera.main;
             float bordHaut = cam != null
                 ? cam.transform.position.y + cam.orthographicSize - 0.5f
                 : 5f;
 
             Vector3 posIndicateur = new Vector3(positionObstacle.x, bordHaut, positionObstacle.z);
-            GameObject indicateur = Instantiate(prefabIndicateurObstacle, posIndicateur, Quaternion.identity);
 
-            SpriteRenderer sr = indicateur != null ? indicateur.GetComponent<SpriteRenderer>() : null;
+            // Creer l'indicateur directement depuis le sprite Exclamation assigne en Inspector.
+            GameObject indicateur = new GameObject("IndicateurRadar");
+            indicateur.transform.position = posIndicateur;
+            indicateur.transform.localScale = Vector3.one * 0.5f;
+
+            SpriteRenderer sr = indicateur.AddComponent<SpriteRenderer>();
+            sr.sprite           = spriteExclamation; // null => carre blanc de fallback Unity
+            sr.color            = spriteExclamation != null ? Color.white : Color.red;
+            sr.sortingLayerName = RADAR_SORTING_LAYER;
+            sr.sortingOrder     = RADAR_SORTING_ORDER;
 
             float t = 0f;
             while (t < RADAR_FLASH_DUREE && indicateur != null)
             {
                 t += Time.deltaTime;
-                // Blink : alterner visible/invisible toutes les 0.1 s
-                bool visible = (Mathf.FloorToInt(t / 0.1f) % 2) == 0;
+                bool visible = (Mathf.FloorToInt(t / RADAR_FLASH_INTERVALLE) % 2) == 0;
                 if (sr != null)
                     sr.enabled = visible;
 
@@ -403,10 +457,18 @@ namespace ObjetsSpeciaux
 
             _aspirateurActif = true;
 
-            if (spriteVoiture != null && spriteAspirateurVoiture != null)
+            if (spriteVoiture != null)
             {
-                _spriteOriginalVoiture  = spriteVoiture.sprite;
-                spriteVoiture.sprite    = spriteAspirateurVoiture;
+                _spriteOriginalVoiture = spriteVoiture.sprite;
+
+                if (spriteAspirateurVoiture != null)
+                    spriteVoiture.sprite = spriteAspirateurVoiture;
+                else
+                    Debug.LogWarning("[EffetsObjetsSpeciaux] Aspirateur actif mais spriteAspirateurVoiture non assigne -- assigner le sprite dans l'Inspector.");
+            }
+            else
+            {
+                Debug.LogWarning("[EffetsObjetsSpeciaux] Aspirateur actif mais spriteVoiture non assigne.");
             }
 
             _coroutineAspirateur = StartCoroutine(EffetAspirateur());
@@ -441,8 +503,7 @@ namespace ObjetsSpeciaux
         /// <summary>Declenche l'effet Montre a Gousset pendant MONTRE_DUREE secondes.</summary>
         public void UtiliserMontreAGousset()
         {
-            // Restaurer les vitesses d'abord si un effet est deja actif,
-            // pour eviter un double-ralentissement lors d'un re-declenchement.
+            // Restaurer d'abord si deja actif pour eviter un double-ralentissement.
             if (_coroutineMontre != null)
             {
                 StopCoroutine(_coroutineMontre);
@@ -451,29 +512,22 @@ namespace ObjetsSpeciaux
 
             _montreActive = true;
 
-            // Ralentir tous les ScrollingElement actifs.
-            // On capture un nouveau snapshot apres la restauration ci-dessus.
-            _scrollingElementsSnapshot = FindObjectsByType<ScrollingElement>(FindObjectsSortMode.None);
-            _vitessesOriginales = new float[_scrollingElementsSnapshot.Length];
-            for (int i = 0; i < _scrollingElementsSnapshot.Length; i++)
-            {
-                _vitessesOriginales[i] = _scrollingElementsSnapshot[i].baseSpeed;
-                _scrollingElementsSnapshot[i].SetSpeed(_vitessesOriginales[i] * MONTRE_FACTEUR_VITESSE);
-            }
-
-            // Ralentir les sols
+            // Sauvegarder les vitesses des sols avant de les modifier.
             if (grounds != null)
             {
                 _vitessesOriginalesSols = new float[grounds.Length];
                 for (int i = 0; i < grounds.Length; i++)
-                {
                     if (grounds[i] != null)
-                    {
                         _vitessesOriginalesSols[i] = grounds[i].speed;
-                        grounds[i].speed *= MONTRE_FACTEUR_VITESSE;
-                    }
-                }
             }
+
+            // Appliquer le facteur global : tous les UpdateSpeed futurs (spawns, OnTimePassed)
+            // utiliseront automatiquement ce facteur -- aucun snapshot necessaire.
+            ScrollingElement.FacteurVitesseGlobal = MONTRE_FACTEUR_VITESSE;
+            GoundMouvement.FacteurVitesseGlobal   = MONTRE_FACTEUR_VITESSE;
+
+            // Forcer le recalcul immediat sur tous les objets deja actifs.
+            spawner?.RefreshVitesses();
 
             // Desaturation URP
             if (_colorAdjustments != null)
@@ -492,24 +546,19 @@ namespace ObjetsSpeciaux
         {
             _montreActive = false;
 
-            // Restaurer les vitesses des ScrollingElement (remet baseSpeed comme vitesse effective)
-            if (_scrollingElementsSnapshot != null)
-            {
-                for (int i = 0; i < _scrollingElementsSnapshot.Length; i++)
-                {
-                    if (_scrollingElementsSnapshot[i] != null)
-                        _scrollingElementsSnapshot[i].SetSpeed(_vitessesOriginales[i]);
-                }
-            }
+            // Retirer le facteur global : tous les UpdateSpeed futurs reviennent a la normale.
+            ScrollingElement.FacteurVitesseGlobal = 1f;
+            GoundMouvement.FacteurVitesseGlobal   = 1f;
 
-            // Restaurer les vitesses des sols
+            // Forcer le recalcul immediat sur tous les objets actifs.
+            spawner?.RefreshVitesses();
+
+            // Restaurer les vitesses des sols depuis la sauvegarde.
             if (grounds != null && _vitessesOriginalesSols != null)
             {
                 for (int i = 0; i < grounds.Length && i < _vitessesOriginalesSols.Length; i++)
-                {
                     if (grounds[i] != null)
                         grounds[i].speed = _vitessesOriginalesSols[i];
-                }
             }
 
             // Restaurer la saturation

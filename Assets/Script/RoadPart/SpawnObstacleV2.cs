@@ -52,9 +52,10 @@ public class SpawnObstacleV2 : MonoBehaviour
     /// <summary>
     /// Declenche a chaque fois qu'un obstacle est spawne dans la scene.
     /// La position transmise est celle du spawn (haut de l'ecran).
+    /// Le GameObject transmis permet au Radar de filtrer les pieces.
     /// Utilise par EffetsObjetsSpeciaux.SignalerNouvelObstacle pour l'effet Radar.
     /// </summary>
-    public event System.Action<Vector3> OnObstacleSpawne;
+    public event System.Action<Vector3, GameObject> OnObstacleSpawne;
 
     public bool isSpawning = false;
 
@@ -157,6 +158,29 @@ public class SpawnObstacleV2 : MonoBehaviour
 
     /// <summary>Reprend le compteur de signaux barrage (revive).</summary>
     public void ReprendreCompteurBarrage() => _compteurBarragePausé = false;
+
+    /// <summary>
+    /// Force le recalcul des vitesses de tous les objets actifs du pool et des sols
+    /// en tenant compte du FacteurVitesseGlobal courant.
+    /// A appeler depuis EffetsObjetsSpeciaux apres avoir change ScrollingElement.FacteurVitesseGlobal.
+    /// </summary>
+    public void RefreshVitesses()
+    {
+        foreach (List<GameObject> bucket in _pool.Values)
+        {
+            foreach (GameObject obj in bucket)
+            {
+                if (obj != null && obj.activeInHierarchy && obj.TryGetComponent<ScrollingElement>(out var scrolling))
+                    scrolling.UpdateSpeed(_generalSpeed);
+            }
+        }
+
+        if (_grounds != null)
+        {
+            foreach (GoundMouvement g in _grounds)
+                if (g != null) g.UpdateSpeed(_generalSpeed);
+        }
+    }
 
     /// <summary>Starts the spawn coroutine.</summary>
     public void StartSpawning()
@@ -329,7 +353,7 @@ public class SpawnObstacleV2 : MonoBehaviour
         if (obj.TryGetComponent<ScrollingElement>(out var scrolling))
             scrolling.UpdateSpeed(_generalSpeed);
 
-        OnObstacleSpawne?.Invoke(spawnPos);
+        OnObstacleSpawne?.Invoke(spawnPos, obj);
 
         Debug.Log($"[SpawnObstacleV2] SegmentBarrage spawné à {spawnPos} | vitesse générale={_generalSpeed}");
     }
@@ -374,7 +398,7 @@ public class SpawnObstacleV2 : MonoBehaviour
                 if (obj.TryGetComponent<ScrollingElement>(out var scrolling))
                     scrolling.UpdateSpeed(_generalSpeed);
 
-                OnObstacleSpawne?.Invoke(spawnPos);
+                OnObstacleSpawne?.Invoke(spawnPos, obj);
             }
         }
     }
