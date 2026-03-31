@@ -50,9 +50,14 @@ public class ScrollingElement : MonoBehaviour
     }
     private void Start()
     {
-        speed = baseSpeed;
         tempbaseSpeed = 5 - baseSpeed;
     }
+
+    private void StartToUsed(float addToNewSpeed)
+    {
+        speed = Mathf.Clamp(baseSpeed + addToNewSpeed, 0, 30 + baseSpeed);
+    }
+
 
     private Rigidbody2D _rb;
     private void Awake()
