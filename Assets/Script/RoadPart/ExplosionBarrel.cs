@@ -10,8 +10,9 @@ public class ExplosionBarrel : MonoBehaviour
         {
             return;
         }
-
-        Instantiate(fxPrefab, transform.position, Quaternion.identity);
+        Debug.Log("Explosion");
+        GameObject fx = Instantiate(fxPrefab, transform.position, Quaternion.identity);
+        fx.GetComponent<ExplosionCircles>()?.Jouer(transform.position);
 
         gameObject.SetActive(false);
     }

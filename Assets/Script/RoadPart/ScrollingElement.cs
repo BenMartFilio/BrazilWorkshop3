@@ -151,7 +151,7 @@ public class ScrollingElement : MonoBehaviour
         if (FXExplosion != null)
         {
             GameObject fx = Instantiate(FXExplosion, transform.position, Quaternion.identity);
-            fx.GetComponent<ExplosionCircles>()?.Jouer(transform.position); ;
+            fx.GetComponent<ExplosionCircles>()?.Jouer(transform.position); 
         }
         if (carcasse != null)
         {
