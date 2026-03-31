@@ -13,6 +13,7 @@ public class SegmentBarrage : MonoBehaviour
     private PlayerMovement   _joueur;
     private ScoreManager     _scoreManager;
     private SpawnObstacleV2  _spawner;
+    private EndManager       _end;
     private GoundMouvement[] _sols;
     private BoxCollider2D    _collider;
 
@@ -32,6 +33,7 @@ public class SegmentBarrage : MonoBehaviour
         _joueur       = FindFirstObjectByType<PlayerMovement>();
         _scoreManager = FindFirstObjectByType<ScoreManager>();
         _spawner      = FindFirstObjectByType<SpawnObstacleV2>();
+        _end      = FindFirstObjectByType<EndManager>();
         _sols         = FindObjectsByType<GoundMouvement>(FindObjectsSortMode.None);
 
         Debug.Log($"[SegmentBarrage] Activé. Joueur={_joueur != null} " +
@@ -93,7 +95,7 @@ public class SegmentBarrage : MonoBehaviour
         if (SessionManager.Instance != null)
         {
             SessionManager.Instance.AllerAuBarrage(
-                _joueur, _scoreManager, _spawner, _sols,
+                _joueur, _scoreManager, _spawner, _end, _sols,
                 vitesseSolAvantRalentissement: vitesseInitiale);
         }
         else

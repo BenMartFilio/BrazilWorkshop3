@@ -60,6 +60,12 @@ public class ReviveButtonAd : MonoBehaviour
 
     private void LoadAd()
     {
+        if (_rewardedAd == null)
+        {
+            Debug.LogWarning("RewardedAd not initialized yet");
+            return;
+        }
+
         SetButtonInteractable(false);
         _rewardedAd.LoadAd();
     }
@@ -107,17 +113,18 @@ public class ReviveButtonAd : MonoBehaviour
 
     private void OnAdClosed(LevelPlayAdInfo adInfo)
     {
-        if (!_rewardGranted) return;
+        MainThreadDispatcher.Enqueue(() =>
+        {
+            if (!_rewardGranted) return;
 
-        _reviveCount++;
-        PlayerPrefs.SetInt(ReviveCountKey, _reviveCount);
-        PlayerPrefs.Save();
+            _reviveCount++;
+            PlayerPrefs.SetInt(ReviveCountKey, _reviveCount);
+            PlayerPrefs.Save();
+            _endManager.Revive();
+            ApplyReviveCountState();
 
-        _endManager.Revive();
-        ApplyReviveCountState();
-
-        if (_reviveCount < MaxRevives)
-            LoadAd();
+            if (_reviveCount < MaxRevives) LoadAd();
+        });
     }
 
     // --- Helpers état ---

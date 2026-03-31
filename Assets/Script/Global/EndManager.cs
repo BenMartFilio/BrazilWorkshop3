@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -93,5 +94,18 @@ public class EndManager : MonoBehaviour
         }
 
         _playerDatas.SaveDatas();
+    }
+
+
+    /// <summary>Sauvegarde la position et les pièces dans les données de session.</summary>
+    public void SauvegarderDansSession(DonnéesSession données)
+    {
+        données.revive = reviveCounter;
+    }
+
+    /// <summary>Restaure la position et les pièces depuis les données de session.</summary>
+    public void RestaurerDepuisSession(int revive)
+    {
+        reviveCounter = revive;
     }
 }

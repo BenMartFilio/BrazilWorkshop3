@@ -17,6 +17,7 @@ public class MapRoadSessionBridge : MonoBehaviour
     [SerializeField] private ScoreManager            scoreManager;
     [SerializeField] private SpawnObstacleV2         spawner;
     [SerializeField] private GoundMouvement[]        sols;
+    [SerializeField] private EndManager              end;
     [SerializeField] private BarreProgressionBarrage barreProgression;
 
     [Header("Systèmes à geler pendant l'intro")]
@@ -31,7 +32,7 @@ public class MapRoadSessionBridge : MonoBehaviour
     private void Start()
     {
         if (SessionManager.Instance != null)
-            SessionManager.Instance.RestaurerMapRoad(joueur, scoreManager, spawner, sols);
+            SessionManager.Instance.RestaurerMapRoad(joueur, scoreManager, spawner, end, sols);
 
         if (barreProgression != null)
             barreProgression.RéinitialiserPourNouveauCycle();
@@ -103,6 +104,6 @@ public class MapRoadSessionBridge : MonoBehaviour
             return;
         }
 
-        SessionManager.Instance.AllerAuBarrage(joueur, scoreManager, spawner, sols);
+        SessionManager.Instance.AllerAuBarrage(joueur, scoreManager, spawner, end, sols);
     }
 }

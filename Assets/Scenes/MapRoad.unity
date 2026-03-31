@@ -1178,6 +1178,7 @@ MonoBehaviour:
   sols:
   - {fileID: 1851805917}
   - {fileID: 1587615504}
+  end: {fileID: 1232534109}
   barreProgression: {fileID: 1833950802}
   timeManager: {fileID: 1725592336}
   affichageIntro: {fileID: 798479313}
@@ -1191,6 +1192,50 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -974.184, y: 1908.9272, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &387908999
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 387909001}
+  - component: {fileID: 387909000}
+  m_Layer: 0
+  m_Name: MainThreadDispatcher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &387909000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387908999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c593181ad2c6b544999e446377e88ee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MainThreadDispatcher
+--- !u!4 &387909001
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387908999}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 828.3809, y: 1306.2122, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2395,6 +2440,7 @@ GameObject:
   - component: {fileID: 1035029383}
   - component: {fileID: 1035029382}
   - component: {fileID: 1035029385}
+  - component: {fileID: 1035029386}
   m_Layer: 5
   m_Name: ReviveButton (1)
   m_TagString: Untagged
@@ -2518,6 +2564,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ReviveButtonAd
   _rewardedAdUnitId: YOUR_REWARDED_AD_UNIT_ID
   _endManager: {fileID: 1232534109}
+--- !u!114 &1035029386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035029380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3640463e3813a334db5b5e06e47d7ae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoutonPressedScript
+  pressedScale: 0.9
+  bounceScale: 1.06
+  animationSpeed: 12
+  enableVibration: 1
 --- !u!1 &1058231961
 GameObject:
   m_ObjectHideFlags: 0
@@ -5963,3 +6025,4 @@ SceneRoots:
   - {fileID: 1232534110}
   - {fileID: 400828209}
   - {fileID: 378087653}
+  - {fileID: 387909001}

@@ -52,6 +52,9 @@ public class DonnéesSession : ScriptableObject
     public bool AUneDemandeSauvegardée => prochaineDemandeBarrage != null
                                           && prochaineDemandeBarrage.Length > 0;
 
+
+    public int revive = 0;
+
     /// <summary>Remet toutes les valeurs à leur état initial.</summary>
     public void Reinitialiser()
     {
