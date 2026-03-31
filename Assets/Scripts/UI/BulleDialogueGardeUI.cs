@@ -17,6 +17,9 @@ namespace Barrage.UI
     /// Lors d'une transition, la réplique en cours est transférée à la bulle qui prend le relais.
     /// </summary>
     [RequireComponent(typeof(CanvasGroup))]
+    // Priorité -100 : Awake() doit lire AUneDemandeSauvegardée
+    // avant que MainDuGardeUI (ordre 0) n'appelle ChargerDepuisSession() qui l'efface.
+    [DefaultExecutionOrder(-100)]
     public class BulleDialogueGardeUI : MonoBehaviour
     {
         // ── Durées d'affichage ────────────────────────────────────────────────
@@ -62,6 +65,11 @@ namespace Barrage.UI
             "Au prochain poste, vous devrez présenter ces documents."
         };
 
+        private static readonly string[] REPLIQUES_PREMIER_BARRAGE = new[]
+        {
+            "Il vous faudrait ces formulaires pour passer le prochain contrôle, souvenez vous en !"
+        };
+
         // ── Champs sérialisés ─────────────────────────────────────────────────
 
         [Header("Identité de la bulle")]
@@ -74,6 +82,7 @@ namespace Barrage.UI
         [SerializeField] private BarrePatience              barrePatience;
         [SerializeField] private AffichageProchaineDemandeUI affichageSuivant;
         [SerializeField] private VisuelGardeUI              visuelGarde;
+        [SerializeField] private DonnéesSession             donnéesSession;
 
         [Tooltip("L'autre bulle — celle qui prend le relais lors d'un changement d'état.")]
         [SerializeField] private BulleDialogueGardeUI       autresBulle;
@@ -85,13 +94,13 @@ namespace Barrage.UI
 
         private CanvasGroup _canvasGroup;
         private Coroutine   _coroutineActive;
-        private Coroutine   _coroutineMasquage; // fondu sortant lors d'un CéderLaParole
+        private Coroutine   _coroutineMasquage;
         private bool        _barrageTerminé;
-        private bool        _visible; // true dès qu'un fondu entrant a commencé
+        private bool        _visible;
+        private bool        _estPremierBarrage; // capturé dans Awake avant effacement
 
-        // Réplique en cours transmise lors d'un basculement
         private string  _texteEnCours;
-        private float   _duréeRestante = -1f; // -1 = persistante
+        private float   _duréeRestante = -1f;
 
         // ── Propriété ─────────────────────────────────────────────────────────
 
@@ -106,12 +115,19 @@ namespace Barrage.UI
         {
             _canvasGroup = GetComponent<CanvasGroup>();
             MasquerImmédiatement();
+
+            // Lire ici — avant que MainDuGardeUI.Awake() n'appelle
+            // ListeAttenteGarde.ChargerDepuisSession() qui efface prochaineDemandeBarrage.
+            _estPremierBarrage = donnéesSession == null || !donnéesSession.AUneDemandeSauvegardée;
         }
 
         private void Start()
         {
-            // Seule la bulle active au démarrage lance la première réplique
-            if (EstActive)
+            if (!EstActive) return;
+
+            if (_estPremierBarrage)
+                LancerRéplique(REPLIQUES_PREMIER_BARRAGE, duréeAffichage: -1f);
+            else
                 LancerRéplique(REPLIQUES_DEMANDE, duréeAffichage: -1f);
         }
 

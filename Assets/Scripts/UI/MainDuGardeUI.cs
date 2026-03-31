@@ -52,8 +52,15 @@ namespace Barrage.UI
         {
             RectTransform = GetComponent<RectTransform>();
 
-            // Charger la séquence depuis la session (demande du barrage précédent)
-            // ou générer aléatoirement si c'est le premier barrage.
+            // Premier barrage (aucun document sauvegardé) : la zone de dépôt
+            // est désactivée — PremierBarrageController gère ce cas.
+            if (donnéesSession == null || !donnéesSession.AUneDemandeSauvegardée)
+            {
+                enabled = false;
+                return;
+            }
+
+            // Charger la séquence depuis la session (demande du barrage précédent).
             if (listeAttenteGarde != null)
                 listeAttenteGarde.ChargerDepuisSession(donnéesSession, demandeAléatoire);
         }

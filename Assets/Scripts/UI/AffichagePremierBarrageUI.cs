@@ -75,63 +75,14 @@ namespace Barrage.UI
 
         private IEnumerator SéquenceIntro()
         {
-            // Construire la liste de types à afficher
-            var types = ObtenirTypesÀAfficher();
-
-            if (types.Count == 0)
-            {
-                // Rien à afficher — démarrer directement
-                _bridge.DémarrerJeu();
-                yield break;
-            }
-
-            // Regrouper par type et compter les occurrences
-            var typesOrdrés = new List<FormulaireType>();
-            var comptes     = new Dictionary<FormulaireType, int>();
-
-            foreach (var type in types)
-            {
-                if (!comptes.ContainsKey(type))
-                {
-                    typesOrdrés.Add(type);
-                    comptes[type] = 0;
-                }
-                comptes[type]++;
-            }
-
-            // Afficher les slots un à un
-            int nbSlots = Mathf.Min(typesOrdrés.Count, slots.Count);
-
-            for (int i = 0; i < nbSlots; i++)
-            {
-                FormulaireType type = typesOrdrés[i];
-
-                if (!_dataParType.TryGetValue(type, out var data))
-                {
-                    Debug.LogWarning($"[AffichagePremierBarrageUI] Aucun FormulaireData pour : {type}");
-                    continue;
-                }
-
-                Texture2D texture = data.ExtraireTexture();
-                if (texture == null)
-                {
-                    Debug.LogWarning($"[AffichagePremierBarrageUI] Aucune texture dans le prefab de : {type}");
-                    continue;
-                }
-
-                slots[i].Afficher(texture, comptes[type]);
-                yield return new WaitForSeconds(délaiEntreIcones);
-            }
-
-            // Attendre la durée d'affichage totale
-            yield return new WaitForSeconds(duréeAffichage);
-
-            // Masquer les icônes
-            foreach (var slot in slots)
-                slot.Masquer();
-
-            // Lancer le jeu
-            _bridge.DémarrerJeu();
+            // Ce script n'est plus utilisé depuis la refonte du flux de démarrage.
+            // Le premier barrage est maintenant géré côté scène Barrage
+            // par PremierBarrageController + AffichageProchaineDemandeUI.LancerDirectement().
+            // On appelle DémarrerJeu directement pour ne pas bloquer MapRoad si ce
+            // composant se retrouve encore actif dans une ancienne configuration de scène.
+            Debug.LogWarning("[AffichagePremierBarrageUI] Ce composant est obsolète — " +
+                             "supprimez-le de la scène MapRoad.");
+            yield break;
         }
 
         // ── Helpers ───────────────────────────────────────────────────────────

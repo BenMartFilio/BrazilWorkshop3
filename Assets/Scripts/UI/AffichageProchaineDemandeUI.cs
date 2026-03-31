@@ -71,6 +71,19 @@ namespace Barrage.UI
         }
 
         /// <summary>
+        /// Déclenche directement l'affichage de la prochaine demande sans attendre
+        /// l'événement <see cref="MainDuGardeUI.OnBarrageValidé"/>.
+        /// Utilisé par <see cref="PremierBarrageController"/> au premier barrage.
+        /// </summary>
+        public void LancerDirectement()
+        {
+            demande?.Régénérer();
+
+            if (_affichage != null) StopCoroutine(_affichage);
+            _affichage = StartCoroutine(AfficherIconesUneParUne());
+        }
+
+        /// <summary>
         /// Affiche les icônes une à une en regroupant par type :
         /// chaque slot reçoit un type distinct avec la quantité totale de ce type dans la demande.
         /// L'ordre des slots suit l'ordre d'apparition des types dans la demande.

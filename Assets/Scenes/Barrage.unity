@@ -515,6 +515,53 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &346490932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 346490934}
+  - component: {fileID: 346490933}
+  m_Layer: 0
+  m_Name: PremierBarrageController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &346490933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346490932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9deca1642f960e4bbaa8e75d74926cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Barrage.UI.PremierBarrageController
+  "donn\xE9esSession": {fileID: 11400000, guid: a38ed096d3c17df43a3e1b832d57cb13, type: 2}
+  affichageDemande: {fileID: 1589822217}
+  "d\xE9laiAvantAffichageDemande": 1
+--- !u!4 &346490934
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346490932}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 140.44989, y: 726.7827, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &384073874
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,6 +924,7 @@ MonoBehaviour:
   barrePatience: {fileID: 1689963564}
   affichageSuivant: {fileID: 1589822217}
   visuelGarde: {fileID: 1875195585}
+  "donn\xE9esSession": {fileID: 11400000, guid: a38ed096d3c17df43a3e1b832d57cb13, type: 2}
   autresBulle: {fileID: 1985469384}
   "d\xE9laiDemande": 1
 --- !u!225 &568267692
@@ -3375,6 +3423,7 @@ MonoBehaviour:
   barrePatience: {fileID: 1689963564}
   affichageSuivant: {fileID: 1589822217}
   visuelGarde: {fileID: 1875195585}
+  "donn\xE9esSession": {fileID: 11400000, guid: a38ed096d3c17df43a3e1b832d57cb13, type: 2}
   autresBulle: {fileID: 568267691}
   "d\xE9laiDemande": 1
 --- !u!225 &1985469385
@@ -3666,3 +3715,4 @@ SceneRoots:
   - {fileID: 60437564}
   - {fileID: 1886951797}
   - {fileID: 596540865}
+  - {fileID: 346490934}
