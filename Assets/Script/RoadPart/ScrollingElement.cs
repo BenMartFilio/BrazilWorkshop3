@@ -11,7 +11,7 @@ public class ScrollingElement : MonoBehaviour
     {
         if (inCarcasse)
         {
-            speed = Mathf.Clamp(baseSpeed + addToNewSpeed, 0, 30 + tempbaseSpeed);
+            speed = Mathf.Clamp(tempbaseSpeed + addToNewSpeed, 0, 30 + tempbaseSpeed);
         }
         else
         {
