@@ -574,6 +574,7 @@ GameObject:
   - component: {fileID: 384073878}
   - component: {fileID: 384073876}
   - component: {fileID: 384073879}
+  - component: {fileID: 384073880}
   m_Layer: 5
   m_Name: PartieBasse
   m_TagString: Untagged
@@ -666,6 +667,18 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
+--- !u!225 &384073880
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384073874}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &394224743
 GameObject:
   m_ObjectHideFlags: 0

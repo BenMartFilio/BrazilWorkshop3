@@ -65,6 +65,11 @@ namespace Barrage.UI
         private readonly Dictionary<FormulaireType, FormulaireData> _dataParType = new();
         private readonly Dictionary<FormulaireType, Vector2> _tailleParType = new();
 
+        // CanvasGroup sur partieBasse — assombrit la zone cartes quand la prochaine demande s'affiche.
+        private CanvasGroup _voilePartieBasse;
+
+        private const float ALPHA_ASSOMBRI = 0.25f;
+
         private void Awake()
         {
             foreach (var data in formulairesData.Where(d => d != null))
@@ -74,6 +79,8 @@ namespace Barrage.UI
             _tailleParType[FormulaireType.ConformitéSociale]                = tailleConformitéSociale;
             _tailleParType[FormulaireType.ReclassificationDesIndividus]     = tailleReclassificationDesIndividus;
             _tailleParType[FormulaireType.SecuritéDesFrontièresIntérieures] = tailleSecuritéDesFrontièresIntérieures;
+
+            _voilePartieBasse = partieBasse != null ? partieBasse.GetComponent<CanvasGroup>() : null;
 
             mainDuGarde.OnFormulaireRemis    += OnFormulaireRemisAuGarde;
             mainDuGarde.OnFormulaireIncorrect += OnFormulaireIncorrect;
@@ -338,13 +345,20 @@ namespace Barrage.UI
         }
 
         /// <summary>
-        /// Grise toutes les cartes restantes dans la partie basse pour indiquer
-        /// que le barrage est terminé et que le joueur ne peut plus interagir avec elles.
+        /// Grise toutes les cartes et assombrit la zone basse pour mettre en valeur
+        /// les icônes de la prochaine demande affichées après la validation du barrage.
         /// </summary>
         private void GriserToutesLesCartes()
         {
             foreach (var carte in _cartes)
                 carte.Griser();
+
+            if (_voilePartieBasse != null)
+            {
+                _voilePartieBasse.alpha          = ALPHA_ASSOMBRI;
+                _voilePartieBasse.interactable   = false;
+                _voilePartieBasse.blocksRaycasts = false;
+            }
         }
 
         /// <summary>Soumet une carte à la main du garde, la retire de la liste et la détruit.</summary>
