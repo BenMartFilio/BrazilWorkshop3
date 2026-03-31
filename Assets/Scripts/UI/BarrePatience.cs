@@ -19,7 +19,7 @@ namespace Barrage.UI
     public class BarrePatience : MonoBehaviour
     {
         // ── Paramètres de jeu ────────────────────────────────────────────────
-        private const float PATIENCE_MAX    = 160f;
+        public const float PATIENCE_MAX    = 160f;
         private const float POINTS_PENALITE = 10f;  // points perdus par erreur
         private const float VITESSE_VIDAGE  = 3f;   // points/s de décroissance naturelle
 
@@ -165,6 +165,15 @@ namespace Barrage.UI
 
             StartCoroutine(AnimerPerte());
             StartCoroutine(AnimerSecousse());
+        }
+
+        /// <summary>
+        /// Ajoute directement un nombre de points à la patience, dans la limite de PATIENCE_MAX.
+        /// Utilisé par l'effet Liasse de Billets.
+        /// </summary>
+        public void AjouterPatience(float points)
+        {
+            _patience = Mathf.Min(PATIENCE_MAX, _patience + points);
         }
 
         // ── Animations ────────────────────────────────────────────────────────

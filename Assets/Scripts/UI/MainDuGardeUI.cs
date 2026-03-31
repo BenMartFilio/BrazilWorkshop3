@@ -91,6 +91,47 @@ namespace Barrage.UI
         public void RecevoirFormulaire(FormulaireLibre formulaire)
             => RecevoirInterne(formulaire.Type, formulaire.gameObject);
 
+        /// <summary>
+        /// Valide le prochain formulaire attendu sans en fournir un réel.
+        /// Utilisé par les effets Formulaire Passe-Partout et Badge du Gouvernement.
+        /// Avance la séquence de listeAttenteGarde et déclenche OnFormulaireRemis / OnBarrageValidé.
+        /// </summary>
+        public void ValiderAvecPassePartout()
+        {
+            if (listeAttenteGarde == null)
+            {
+                Debug.LogError("[MainDuGardeUI] ValiderAvecPassePartout -- listeAttenteGarde non assignée.");
+                return;
+            }
+
+            if (listeAttenteGarde.EstTerminée)
+            {
+                Debug.LogWarning("[MainDuGardeUI] ValiderAvecPassePartout -- barrage déjà terminé.");
+                return;
+            }
+
+            // Trouver le prochain type restant et le valider
+            FormulaireType? prochainType = listeAttenteGarde.ProchainTypeRestant();
+            if (prochainType == null)
+            {
+                Debug.LogWarning("[MainDuGardeUI] ValiderAvecPassePartout -- aucun type restant trouvé.");
+                return;
+            }
+
+            bool valide = listeAttenteGarde.ValiderProchain(prochainType.Value);
+            if (valide)
+            {
+                OnFormulaireRemis?.Invoke(prochainType.Value);
+                Debug.Log($"[MainDuGardeUI] ValiderAvecPassePartout -- {prochainType.Value} validé. EstTerminée={listeAttenteGarde.EstTerminée}");
+
+                if (listeAttenteGarde.EstTerminée)
+                {
+                    Debug.Log("[MainDuGardeUI] ValiderAvecPassePartout -- barrage entierement validé.");
+                    OnBarrageValidé?.Invoke();
+                }
+            }
+        }
+
         private void RecevoirInterne(FormulaireType type, GameObject go)
         {
             Debug.Log($"[MainDuGardeUI] RecevoirInterne({type}) — listeAttenteGarde={listeAttenteGarde?.name ?? "NULL"}, " +

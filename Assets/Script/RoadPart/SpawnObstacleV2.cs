@@ -47,6 +47,15 @@ public class SpawnObstacleV2 : MonoBehaviour
     [Tooltip("Extra distance (world units) added between the end of one pattern and the start of the next.")]
     public float gapBetweenPatterns = 2f;
 
+    // ── Evenement de spawn (Radar a Obstacles) ────────────────────────────────
+
+    /// <summary>
+    /// Declenche a chaque fois qu'un obstacle est spawne dans la scene.
+    /// La position transmise est celle du spawn (haut de l'ecran).
+    /// Utilise par EffetsObjetsSpeciaux.SignalerNouvelObstacle pour l'effet Radar.
+    /// </summary>
+    public event System.Action<Vector3> OnObstacleSpawne;
+
     public bool isSpawning = false;
 
     [Header("References")]
@@ -320,6 +329,8 @@ public class SpawnObstacleV2 : MonoBehaviour
         if (obj.TryGetComponent<ScrollingElement>(out var scrolling))
             scrolling.UpdateSpeed(_generalSpeed);
 
+        OnObstacleSpawne?.Invoke(spawnPos);
+
         Debug.Log($"[SpawnObstacleV2] SegmentBarrage spawné à {spawnPos} | vitesse générale={_generalSpeed}");
     }
 
@@ -362,6 +373,8 @@ public class SpawnObstacleV2 : MonoBehaviour
 
                 if (obj.TryGetComponent<ScrollingElement>(out var scrolling))
                     scrolling.UpdateSpeed(_generalSpeed);
+
+                OnObstacleSpawne?.Invoke(spawnPos);
             }
         }
     }

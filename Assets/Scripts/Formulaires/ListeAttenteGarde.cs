@@ -59,6 +59,20 @@ namespace Barrage.Formulaires
         public bool EstTerminée => _restants <= 0;
 
         /// <summary>
+        /// Retourne le premier type de formulaire encore attendu, ou null si la séquence est terminée.
+        /// Utilisé par ValiderAvecPassePartout pour identifier le prochain type à valider.
+        /// </summary>
+        public FormulaireType? ProchainTypeRestant()
+        {
+            foreach (var kv in _comptesRuntime)
+            {
+                if (kv.Value > 0)
+                    return kv.Key;
+            }
+            return null;
+        }
+
+        /// <summary>
         /// Charge la demande runtime depuis les données de session sauvegardées (demande du barrage précédent).
         /// Si aucune demande n'est sauvegardée, charge depuis <paramref name="demandeAléatoire"/>
         /// en la régénérant aléatoirement.

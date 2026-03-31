@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Runtime.CompilerServices;
 using TMPro;
+using ObjetsSpeciaux;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -24,6 +25,9 @@ public class PlayerMovement : MonoBehaviour
     private Coroutine _coroutine;
 
     [SerializeField] private EndManager _endManager;
+
+    [Tooltip("Reference optionnelle a EffetsObjetsSpeciaux pour les effets Gateau Chinois et Tirelire Cochon.")]
+    [SerializeField] private EffetsObjetsSpeciaux _effets;
 
     private bool stateOfDeath = false;
     private bool IamAlreadyTouched = false;
@@ -196,6 +200,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (obstacle != null)
         {
+            // Effet Gateau Chinois : tenter d'esquiver avant le traitement normal
+            if (_effets != null && _effets.TenterEsquiveGateau(obstacle, transform.position))
+                return;
+
             obstacle.DeclencherExplosion(transform.position);
 
             if (IamAlreadyTouched == false)
@@ -220,7 +228,8 @@ public class PlayerMovement : MonoBehaviour
         else if (a != null)
         {
             a.OnCoinRecuperation();
-            _coinsCount++;
+            // Effet Tirelire Cochon : appliquer le multiplicateur de pieces
+            _coinsCount += _effets != null ? _effets.ObtenirMultiplicateurPieces() : 1;
             _coinsText.text = _coinsCount.ToString();
         }
     }
