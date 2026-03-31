@@ -426,7 +426,9 @@ UnityEngine.CanvasGroup::get_ignoreParentGroups_Injected
 UnityEngine.CanvasGroup::get_interactable_Injected
 UnityEngine.CanvasGroup::get_alpha_Injected
 UnityEngine.CanvasGroup::set_alpha_Injected
+UnityEngine.CanvasGroup::set_blocksRaycasts_Injected
 UnityEngine.CanvasGroup::set_ignoreParentGroups_Injected
+UnityEngine.CanvasGroup::set_interactable_Injected
 UnityEngine.CanvasRenderer::get_cullTransparentMesh_Injected
 UnityEngine.CanvasRenderer::get_cull_Injected
 UnityEngine.CanvasRenderer::get_hasMoved_Injected
@@ -1041,6 +1043,8 @@ UnityEngine.Object::FindObjectFromInstanceID_Injected
 UnityEngine.Object::ForceLoadFromInstanceID_Injected
 UnityEngine.Object::Internal_CloneSingleWithParent_Injected
 UnityEngine.Object::Internal_CloneSingle_Injected
+UnityEngine.Object::Internal_InstantiateSingleWithParent_Injected
+UnityEngine.Object::Internal_InstantiateSingle_Injected
 UnityEngine.Object::DestroyImmediate_Injected
 UnityEngine.Object::Destroy_Injected
 UnityEngine.Object::DontDestroyOnLoad_Injected
@@ -1130,6 +1134,7 @@ UnityEngine.Physics::SendOnCollisionExit_Injected
 UnityEngine.Physics::SendOnCollisionStay_Injected
 UnityEngine.Physics2D::get_queriesHitTriggers
 UnityEngine.Physics2D::GetRayIntersectionAll_Internal_Injected
+UnityEngine.Physics2D::OverlapCircleAll_Internal_Injected
 UnityEngine.PhysicsScene::Internal_RaycastTest_Injected
 UnityEngine.PhysicsScene::Internal_Raycast_Injected
 UnityEngine.PhysicsScene::Internal_RaycastNonAlloc_Injected
@@ -1148,7 +1153,9 @@ UnityEngine.PlayerConnectionInternal::PollInternal
 UnityEngine.PlayerConnectionInternal::RegisterInternal_Injected
 UnityEngine.PlayerConnectionInternal::SendMessage_Injected
 UnityEngine.PlayerConnectionInternal::UnregisterInternal_Injected
+UnityEngine.PlayerPrefs::TrySetInt_Injected
 UnityEngine.PlayerPrefs::TrySetSetString_Injected
+UnityEngine.PlayerPrefs::GetInt_Injected
 UnityEngine.PlayerPrefs::GetString_Injected
 UnityEngine.PlayerPrefs::Save
 UnityEngine.Profiling.Profiler::GetRuntimeMemorySizeLong_Injected
@@ -1176,6 +1183,7 @@ UnityEngine.Quaternion::Internal_ToEulerRad_Injected
 UnityEngine.Random::RandomRangeInt
 UnityEngine.Random::Range
 UnityEngine.Random::get_value
+UnityEngine.Random::GetRandomUnitCircle
 UnityEngine.Random::InitState
 UnityEngine.Random::get_state_Injected
 UnityEngine.Random::set_state_Injected
@@ -1593,6 +1601,7 @@ UnityEngine.Sprite::get_rect_Injected
 UnityEngine.Sprite::get_uv_Injected
 UnityEngine.Sprite::get_vertices_Injected
 UnityEngine.SpriteRenderer::get_sprite_Injected
+UnityEngine.SpriteRenderer::get_color_Injected
 UnityEngine.SpriteRenderer::set_color_Injected
 UnityEngine.SpriteRenderer::set_sprite_Injected
 UnityEngine.SubsystemDescriptorBindings::GetId_Injected
@@ -1841,6 +1850,7 @@ UnityEngine.Transform::GetRoot_Injected
 UnityEngine.Transform::Internal_LookAt_Injected
 UnityEngine.Transform::InverseTransformDirection_Injected
 UnityEngine.Transform::InverseTransformPoint_Injected
+UnityEngine.Transform::RotateAroundInternal_Injected
 UnityEngine.Transform::SetAsFirstSibling_Injected
 UnityEngine.Transform::SetAsLastSibling_Injected
 UnityEngine.Transform::SetLocalPositionAndRotation_Injected
