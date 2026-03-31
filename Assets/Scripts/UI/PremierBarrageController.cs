@@ -1,4 +1,5 @@
 using System.Collections;
+using Barrage.UI;
 using UnityEngine;
 
 namespace Barrage.UI
@@ -30,6 +31,8 @@ namespace Barrage.UI
         [Header("Références")]
         [Tooltip("AffichageProchaineDemandeUI à déclencher pour afficher et sauvegarder la prochaine demande.")]
         [SerializeField] private AffichageProchaineDemandeUI affichageDemande;
+        [Tooltip("FormulaireLibreManager pour griser les cartes avant l'affichage de la demande.")]
+        [SerializeField] private FormulaireLibreManager formulaireManager;
 
         [Header("Timing")]
         [Tooltip("Délai (s) entre l'apparition du message du garde et l'affichage des icônes de demande.")]
@@ -70,9 +73,21 @@ namespace Barrage.UI
             Debug.Log($"[PremierBarrageController] SéquencePremierBarrage — attente de {délaiAvantAffichageDemande}s...");
             yield return new WaitForSeconds(délaiAvantAffichageDemande);
 
+            // Griser les cartes exactement comme le fait OnBarrageValidé pour les barrages normaux,
+            // afin que les icônes de la prochaine demande soient bien visibles.
+            if (formulaireManager != null)
+            {
+                Debug.Log("[PremierBarrageController] GriserToutesLesCartes().");
+                formulaireManager.GriserToutesLesCartes();
+            }
+            else
+            {
+                Debug.LogWarning("[PremierBarrageController] formulaireManager non assigné — les cartes ne seront pas grisées.");
+            }
+
             if (affichageDemande != null)
             {
-                Debug.Log("[PremierBarrageController] LancerDirectement() →");
+                Debug.Log("[PremierBarrageController] LancerDirectement().");
                 affichageDemande.LancerDirectement();
             }
             else

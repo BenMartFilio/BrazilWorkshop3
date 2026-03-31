@@ -18,14 +18,22 @@ namespace Barrage.Formulaires
         public Vector2 taille = new Vector2(100f, 100f);
 
         /// <summary>
-        /// Extrait la texture depuis la RawImage du prefab sans l'instancier dans la scène.
-        /// Retourne null si le prefab ou la RawImage est absent.
+        /// Extrait la première texture non-null depuis un RawImage du prefab sans l'instancier.
+        /// Parcourt tous les enfants (y compris inactifs) pour éviter qu'un RawImage
+        /// sans texture en tête de hiérarchie ne masque le vrai visuel.
+        /// Retourne null si le prefab est absent ou qu'aucun RawImage n'a de texture.
         /// </summary>
         public Texture2D ExtraireTexture()
         {
             if (prefab == null) return null;
-            var raw = prefab.GetComponentInChildren<UnityEngine.UI.RawImage>(true);
-            return raw != null ? raw.texture as Texture2D : null;
+
+            foreach (var raw in prefab.GetComponentsInChildren<UnityEngine.UI.RawImage>(true))
+            {
+                if (raw.texture is Texture2D tex)
+                    return tex;
+            }
+
+            return null;
         }
     }
 }

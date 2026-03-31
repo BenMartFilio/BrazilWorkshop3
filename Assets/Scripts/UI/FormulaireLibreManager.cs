@@ -157,28 +157,12 @@ namespace Barrage.UI
                 return;
             }
 
-            // Utiliser ExtraireTexture() qui remonte correctement dans la hiérarchie du prefab,
-            // quel que soit le GameObject racine (Canvas wrapper, etc.)
             Texture2D texture = data.ExtraireTexture();
 
             if (texture == null)
             {
-                // Fallback : chercher dans tous les enfants incluant les inactifs
-                var rawImages = data.prefab.GetComponentsInChildren<UnityEngine.UI.RawImage>(true);
-                foreach (var ri in rawImages)
-                {
-                    if (ri.texture is Texture2D tex)
-                    {
-                        texture = tex;
-                        break;
-                    }
-                }
-            }
-
-            if (texture == null)
-            {
                 Debug.LogError($"[FormulaireLibreManager] Aucune texture trouvée dans '{data.prefab.name}'. " +
-                               $"Vérifier que le prefab contient un RawImage avec une texture assignée.");
+                               "Vérifier que le prefab contient un RawImage avec une texture assignée.");
                 return;
             }
 
@@ -347,8 +331,10 @@ namespace Barrage.UI
         /// <summary>
         /// Grise toutes les cartes et assombrit la zone basse pour mettre en valeur
         /// les icônes de la prochaine demande affichées après la validation du barrage.
+        /// Appelé automatiquement via <see cref="MainDuGardeUI.OnBarrageValidé"/> pour les barrages normaux,
+        /// et manuellement par <see cref="PremierBarrageController"/> pour le premier barrage.
         /// </summary>
-        private void GriserToutesLesCartes()
+        public void GriserToutesLesCartes()
         {
             foreach (var carte in _cartes)
                 carte.Griser();
