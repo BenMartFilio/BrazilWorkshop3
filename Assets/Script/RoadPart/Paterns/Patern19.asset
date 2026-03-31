@@ -10,15 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 943cd639361512b49ac512074cd78f88, type: 3}
-  m_Name: Patern2
+  m_Name: Patern19
   m_EditorClassIdentifier: Assembly-CSharp::ObstaclePattern
-  rowCount: 15
+  rowCount: 16
   rowSpacing: 2
   rows:
   - lanes:
-    - {fileID: 8536000752039434839, guid: 1a21e7d37ba08f340963451329619c09, type: 3}
-    - {fileID: 8536000752039434839, guid: 1a21e7d37ba08f340963451329619c09, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - lanes:
     - {fileID: 3434350175221258612, guid: 95cdca3f5eee2ea44ba57fb8c2a2759b, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+  - lanes:
+    - {fileID: 3434350175221258612, guid: 95cdca3f5eee2ea44ba57fb8c2a2759b, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+  - lanes:
+    - {fileID: 3434350175221258612, guid: 95cdca3f5eee2ea44ba57fb8c2a2759b, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+  - lanes:
+    - {fileID: 0}
+    - {fileID: 535104966169734813, guid: 4358817d2666bd84f94e569447100fa3, type: 3}
+    - {fileID: 0}
   - lanes:
     - {fileID: 0}
     - {fileID: 0}
@@ -28,43 +44,31 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
   - lanes:
-    - {fileID: 535104966169734813, guid: 25ce235d812beb447981ac7d49331942, type: 3}
     - {fileID: 0}
     - {fileID: 3434350175221258612, guid: 95cdca3f5eee2ea44ba57fb8c2a2759b, type: 3}
+    - {fileID: 0}
   - lanes:
     - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 535104966169734813, guid: 308300b4e94a1bd4ebce48fa3ece5fed, type: 3}
+  - lanes:
     - {fileID: 0}
     - {fileID: 3434350175221258612, guid: 95cdca3f5eee2ea44ba57fb8c2a2759b, type: 3}
+    - {fileID: 0}
   - lanes:
     - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - lanes:
+    - {fileID: 0}
+    - {fileID: 3434350175221258612, guid: 95cdca3f5eee2ea44ba57fb8c2a2759b, type: 3}
+    - {fileID: 0}
+  - lanes:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - lanes:
     - {fileID: 8536000752039434839, guid: 24496006ca44fd34a8ec7b068fe53205, type: 3}
-    - {fileID: 0}
-  - lanes:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - lanes:
-    - {fileID: 0}
-    - {fileID: 535104966169734813, guid: 25ce235d812beb447981ac7d49331942, type: 3}
-    - {fileID: 0}
-  - lanes:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - lanes:
-    - {fileID: 535104966169734813, guid: 25ce235d812beb447981ac7d49331942, type: 3}
-    - {fileID: 0}
-    - {fileID: 0}
-  - lanes:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - lanes:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-  - lanes:
-    - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
   - lanes:
