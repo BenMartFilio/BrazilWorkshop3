@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 943cd639361512b49ac512074cd78f88, type: 3}
-  m_Name: Patern29
+  m_Name: Patern53
   m_EditorClassIdentifier: Assembly-CSharp::ObstaclePattern
   rowCount: 16
-  rowSpacing: 2
+  rowSpacing: 3
   rows:
   - lanes:
     - {fileID: 0}
