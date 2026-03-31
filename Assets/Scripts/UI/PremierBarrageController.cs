@@ -43,10 +43,23 @@ namespace Barrage.UI
         {
             // On lit la valeur ici, avant que d'autres Awake() ne consomment la demande.
             _estPremierBarrage = donnéesSession == null || !donnéesSession.AUneDemandeSauvegardée;
+
+            Debug.Log($"[PremierBarrageController] Awake (ordre=-100) — donnéesSession={donnéesSession?.name ?? "NULL"}, " +
+                      $"AUneDemandeSauvegardée={donnéesSession?.AUneDemandeSauvegardée ?? false}, " +
+                      $"_estPremierBarrage={_estPremierBarrage}");
+
+            if (_estPremierBarrage && donnéesSession != null)
+            {
+                Debug.Log("[PremierBarrageController] prochaineDemandeBarrage actuel : " +
+                          (donnéesSession.prochaineDemandeBarrage?.Length > 0
+                              ? string.Join(", ", donnéesSession.prochaineDemandeBarrage)
+                              : "<vide — premier barrage confirmé>"));
+            }
         }
 
         private void Start()
         {
+            Debug.Log($"[PremierBarrageController] Start — _estPremierBarrage={_estPremierBarrage}");
             if (!_estPremierBarrage) return;
 
             StartCoroutine(SéquencePremierBarrage());
@@ -54,14 +67,19 @@ namespace Barrage.UI
 
         private IEnumerator SéquencePremierBarrage()
         {
-            // Laisser le temps au message du garde d'être visible avant d'afficher les icônes.
+            Debug.Log($"[PremierBarrageController] SéquencePremierBarrage — attente de {délaiAvantAffichageDemande}s...");
             yield return new WaitForSeconds(délaiAvantAffichageDemande);
 
             if (affichageDemande != null)
+            {
+                Debug.Log("[PremierBarrageController] LancerDirectement() →");
                 affichageDemande.LancerDirectement();
+            }
             else
+            {
                 Debug.LogError("[PremierBarrageController] affichageDemande non assigné — " +
                                "la demande ne sera pas affichée et le retour sur MapRoad ne se déclenchera pas.");
+            }
         }
     }
 }

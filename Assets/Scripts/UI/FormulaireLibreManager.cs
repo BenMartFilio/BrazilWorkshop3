@@ -83,6 +83,14 @@ namespace Barrage.UI
         private void Start()
         {
             inventaire.InitialiserInventaire();
+
+            // Log de l'inventaire complet au démarrage
+            var sb = new System.Text.StringBuilder();
+            sb.Append("[FormulaireLibreManager] Inventaire au démarrage : ");
+            foreach (FormulaireType t in Enum.GetValues(typeof(FormulaireType)))
+                sb.Append($"{t}×{inventaire.ObtenirQuantité(t)}  ");
+            Debug.Log(sb.ToString());
+
             StartCoroutine(SpawnApresLayout());
         }
 
@@ -124,6 +132,9 @@ namespace Barrage.UI
         private void SpawnToutesLesCartes()
         {
             List<FormulaireType> liste = BuildListeInterleaved();
+
+            Debug.Log($"[FormulaireLibreManager] SpawnToutesLesCartes — {liste.Count} cartes à spawner : " +
+                      string.Join(", ", liste));
 
             foreach (var type in liste)
                 SpawnCarte(type);
@@ -339,6 +350,8 @@ namespace Barrage.UI
         /// <summary>Soumet une carte à la main du garde, la retire de la liste et la détruit.</summary>
         public void EnvoyerAMainDuGarde(FormulaireLibre carte)
         {
+            Debug.Log($"[FormulaireLibreManager] EnvoyerAMainDuGarde — type={carte.Type}, " +
+                      $"cartes restantes avant retrait={_cartes.Count}");
             _cartes.Remove(carte);
             mainDuGarde.RecevoirFormulaire(carte);
         }

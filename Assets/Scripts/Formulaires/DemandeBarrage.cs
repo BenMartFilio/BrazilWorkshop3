@@ -6,14 +6,15 @@ namespace Barrage.Formulaires
 {
     /// <summary>
     /// ScriptableObject représentant la liste des formulaires requis pour valider un barrage.
-    /// Stocke une liste ordonnée de types à fournir, tirée aléatoirement entre 4 et 6 items
-    /// répartis sur les quatre types disponibles.
+    /// Génère une demande de N types UNIQUES tirés aléatoirement parmi les quatre disponibles
+    /// (N entre QUANTITE_MIN et le total disponible).
+    /// Aucun doublon : 1 icône affichée = exactement 1 formulaire à remettre.
     /// </summary>
     [CreateAssetMenu(fileName = "DemandeBarrage", menuName = "Barrage/Demande Barrage")]
     public class DemandeBarrage : ScriptableObject
     {
-        private const int QUANTITE_MIN = 4;
-        private const int QUANTITE_MAX = 6;
+        /// <summary>Nombre minimum de types uniques demandés par barrage.</summary>
+        private const int QUANTITE_MIN = 2;
 
         /// <summary>Déclenché chaque fois qu'une nouvelle demande est générée.</summary>
         public event Action OnDemandeRegénérée;
@@ -24,23 +25,38 @@ namespace Barrage.Formulaires
         private readonly List<FormulaireType> _formulaires = new();
 
         /// <summary>
-        /// Génère aléatoirement une nouvelle demande entre QUANTITE_MIN et QUANTITE_MAX formulaires,
-        /// répartis aléatoirement sur les quatre types.
+        /// Génère une demande aléatoire de N types UNIQUES (N entre QUANTITE_MIN
+        /// et le nombre total de FormulaireType disponibles).
+        /// Chaque type n'apparaît qu'une seule fois :
+        /// le nombre d'icônes affiché est identique au nombre de formulaires à remettre.
         /// </summary>
         public void Régénérer()
         {
             _formulaires.Clear();
 
-            int total = UnityEngine.Random.Range(QUANTITE_MIN, QUANTITE_MAX + 1);
-            var types = (FormulaireType[])Enum.GetValues(typeof(FormulaireType));
+            // Pool de tous les types disponibles.
+            var pool = new List<FormulaireType>((FormulaireType[])Enum.GetValues(typeof(FormulaireType)));
+
+            // Nombre de types à demander (min → max disponible).
+            int total = UnityEngine.Random.Range(QUANTITE_MIN, pool.Count + 1);
+
+            // Mélange Fisher-Yates pour un tirage sans remise.
+            for (int i = pool.Count - 1; i > 0; i--)
+            {
+                int j = UnityEngine.Random.Range(0, i + 1);
+                (pool[i], pool[j]) = (pool[j], pool[i]);
+            }
 
             for (int i = 0; i < total; i++)
-                _formulaires.Add(types[UnityEngine.Random.Range(0, types.Length)]);
+                _formulaires.Add(pool[i]);
+
+            Debug.Log($"[DemandeBarrage] ★ Régénérer() → {_formulaires.Count} types uniques : " +
+                      string.Join(", ", _formulaires));
 
             OnDemandeRegénérée?.Invoke();
         }
 
-        /// <summary>Retourne le nombre de formulaires d'un type donné dans la demande.</summary>
+        /// <summary>Retourne le nombre de formulaires d'un type donné dans la demande (0 ou 1 avec la nouvelle logique sans doublon).</summary>
         public int CompterType(FormulaireType type)
         {
             int count = 0;

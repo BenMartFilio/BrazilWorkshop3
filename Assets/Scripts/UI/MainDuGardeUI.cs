@@ -52,17 +52,35 @@ namespace Barrage.UI
         {
             RectTransform = GetComponent<RectTransform>();
 
-            // Premier barrage (aucun document sauvegardé) : la zone de dépôt
-            // est désactivée — PremierBarrageController gère ce cas.
-            if (donnéesSession == null || !donnéesSession.AUneDemandeSauvegardée)
+            bool aDemande = donnéesSession != null && donnéesSession.AUneDemandeSauvegardée;
+
+            Debug.Log($"[MainDuGardeUI] Awake — donnéesSession={donnéesSession?.name ?? "NULL"}, " +
+                      $"AUneDemandeSauvegardée={aDemande}");
+
+            if (!aDemande)
             {
+                Debug.Log("[MainDuGardeUI] Premier barrage détecté → composant désactivé (PremierBarrageController prend la main).");
                 enabled = false;
                 return;
             }
 
-            // Charger la séquence depuis la session (demande du barrage précédent).
+            if (donnéesSession != null)
+            {
+                Debug.Log($"[MainDuGardeUI] prochaineDemandeBarrage en session ({donnéesSession.prochaineDemandeBarrage?.Length ?? 0} entrées) : " +
+                          (donnéesSession.prochaineDemandeBarrage?.Length > 0
+                              ? string.Join(", ", donnéesSession.prochaineDemandeBarrage)
+                              : "<vide>"));
+            }
+
             if (listeAttenteGarde != null)
+            {
+                Debug.Log($"[MainDuGardeUI] Appel de ChargerDepuisSession sur '{listeAttenteGarde.name}'.");
                 listeAttenteGarde.ChargerDepuisSession(donnéesSession, demandeAléatoire);
+            }
+            else
+            {
+                Debug.LogError("[MainDuGardeUI] listeAttenteGarde non assignée — impossible de charger la demande !");
+            }
         }
 
         /// <summary>Reçoit un formulaire du système poche (FormulaireUI).</summary>
@@ -75,24 +93,27 @@ namespace Barrage.UI
 
         private void RecevoirInterne(FormulaireType type, GameObject go)
         {
+            Debug.Log($"[MainDuGardeUI] RecevoirInterne({type}) — listeAttenteGarde={listeAttenteGarde?.name ?? "NULL"}, " +
+                      $"enabled={enabled}");
+
             bool correct = listeAttenteGarde != null && listeAttenteGarde.ValiderProchain(type);
 
             if (correct)
             {
                 OnFormulaireRemis?.Invoke(type);
-                Debug.Log($"[MainDuGarde] ✓ Correct : {type}");
+                Debug.Log($"[MainDuGarde] ✓ Correct : {type}. EstTerminée={listeAttenteGarde.EstTerminée}");
                 StartCoroutine(AnimerPositif(go));
 
                 if (listeAttenteGarde.EstTerminée)
                 {
-                    Debug.Log("[MainDuGarde] ✓ Barrage validé — séquence complète.");
+                    Debug.Log("[MainDuGarde] ✓ Barrage validé — séquence complète. Déclenchement OnBarrageValidé.");
                     OnBarrageValidé?.Invoke();
                 }
             }
             else
             {
                 OnFormulaireIncorrect?.Invoke();
-                Debug.Log($"[MainDuGarde] ✗ Incorrect ou mauvais ordre : {type}");
+                Debug.LogWarning($"[MainDuGarde] ✗ Incorrect : {type} (non attendu ou déjà épuisé).");
                 StartCoroutine(AnimerNégatif(go));
             }
         }

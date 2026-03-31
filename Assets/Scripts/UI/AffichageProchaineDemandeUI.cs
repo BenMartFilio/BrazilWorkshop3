@@ -44,6 +44,10 @@ namespace Barrage.UI
             foreach (var data in formulairesData.Where(d => d != null))
                 _dataParType[data.type] = data;
 
+            Debug.Log($"[AffichageProchaineDemandeUI] Awake — {_dataParType.Count} FormulaireData chargés : " +
+                      string.Join(", ", _dataParType.Keys) +
+                      $" | {slots.Count} slots | demande={demande?.name ?? "NULL"} | donnéesSession={donnéesSession?.name ?? "NULL"}");
+
             // Masquer tous les slots au démarrage — rien ne s'affiche avant la validation
             foreach (var slot in slots)
                 slot.Masquer();
@@ -52,7 +56,14 @@ namespace Barrage.UI
         private void OnEnable()
         {
             if (mainDuGarde != null)
+            {
                 mainDuGarde.OnBarrageValidé += OnBarrageValidé;
+                Debug.Log("[AffichageProchaineDemandeUI] OnEnable — abonné à mainDuGarde.OnBarrageValidé.");
+            }
+            else
+            {
+                Debug.LogWarning("[AffichageProchaineDemandeUI] OnEnable — mainDuGarde est NULL, impossible de s'abonner à OnBarrageValidé !");
+            }
         }
 
         private void OnDisable()
@@ -63,6 +74,7 @@ namespace Barrage.UI
 
         private void OnBarrageValidé()
         {
+            Debug.Log("[AffichageProchaineDemandeUI] OnBarrageValidé reçu → Régénérer() + AfficherIconesUneParUne().");
             // Générer une nouvelle demande aléatoire puis l'afficher
             demande?.Régénérer();
 
@@ -77,6 +89,7 @@ namespace Barrage.UI
         /// </summary>
         public void LancerDirectement()
         {
+            Debug.Log("[AffichageProchaineDemandeUI] LancerDirectement() → Régénérer() + AfficherIconesUneParUne().");
             demande?.Régénérer();
 
             if (_affichage != null) StopCoroutine(_affichage);
@@ -90,13 +103,28 @@ namespace Barrage.UI
         /// </summary>
         private IEnumerator AfficherIconesUneParUne()
         {
+            // ── Snapshot immédiat ─────────────────────────────────────────────
+            var snapshot = new FormulaireType[demande.Formulaires.Count];
+            for (int i = 0; i < demande.Formulaires.Count; i++)
+                snapshot[i] = demande.Formulaires[i];
+
+            Debug.Log($"[AffichageProchaineDemandeUI] ── Snapshot capturé ({snapshot.Length} entrées) : " +
+                      (snapshot.Length > 0 ? string.Join(", ", snapshot) : "<vide>"));
+
+            if (snapshot.Length == 0)
+            {
+                Debug.LogWarning("[AffichageProchaineDemandeUI] Snapshot vide — " +
+                                 "vérifiez que demande.Régénérer() a bien été appelé avant LancerDirectement().");
+            }
+
             foreach (var slot in slots)
                 slot.Masquer();
 
+            // ── Construction de l'affichage (depuis le snapshot) ──────────────
             var typesOrdrés = new List<FormulaireType>();
             var comptes     = new Dictionary<FormulaireType, int>();
 
-            foreach (var type in demande.Formulaires)
+            foreach (var type in snapshot)
             {
                 if (!comptes.ContainsKey(type))
                 {
@@ -106,7 +134,11 @@ namespace Barrage.UI
                 comptes[type]++;
             }
 
+            Debug.Log($"[AffichageProchaineDemandeUI] Types uniques à afficher ({typesOrdrés.Count}) : " +
+                      string.Join(", ", typesOrdrés.Select(t => $"{t}×{comptes[t]}")));
+
             int nbSlots = Mathf.Min(typesOrdrés.Count, slots.Count);
+            Debug.Log($"[AffichageProchaineDemandeUI] Slots disponibles={slots.Count}, types à afficher={typesOrdrés.Count} → nbSlots utilisés={nbSlots}");
 
             for (int i = 0; i < nbSlots; i++)
             {
@@ -114,38 +146,48 @@ namespace Barrage.UI
 
                 if (!_dataParType.TryGetValue(type, out var data))
                 {
-                    Debug.LogWarning($"[AffichageProchaineDemandeUI] Aucun FormulaireData pour : {type}");
+                    Debug.LogWarning($"[AffichageProchaineDemandeUI] Aucun FormulaireData pour : {type} (slot {i} ignoré)");
                     continue;
                 }
 
                 Texture2D texture = data.ExtraireTexture();
                 if (texture == null)
                 {
-                    Debug.LogWarning($"[AffichageProchaineDemandeUI] Aucune texture dans le prefab de : {type}");
+                    Debug.LogWarning($"[AffichageProchaineDemandeUI] Aucune texture dans le prefab de : {type} (slot {i} ignoré)");
                     continue;
                 }
 
+                Debug.Log($"[AffichageProchaineDemandeUI] Slot {i} ← {type} ×{comptes[type]} (texture='{texture.name}')");
                 slots[i].Afficher(texture, comptes[type]);
                 yield return new WaitForSeconds(délaiEntreIcones);
             }
 
             // Attendre puis retourner sur MapRoad avec l'état sauvegardé
+            Debug.Log($"[AffichageProchaineDemandeUI] Attente de {délaiAvantRetour}s avant sauvegarde + retour MapRoad...");
             yield return new WaitForSeconds(délaiAvantRetour);
 
-            // Persister la prochaine demande dans DonnéesSession avant de changer de scène
-            if (donnéesSession != null && demande != null)
+            // ── Sauvegarde depuis le snapshot ──────────────────────────────────
+            if (donnéesSession != null)
             {
-                var liste = new FormulaireType[demande.Formulaires.Count];
-                for (int i = 0; i < demande.Formulaires.Count; i++)
-                    liste[i] = demande.Formulaires[i];
-
-                donnéesSession.prochaineDemandeBarrage = liste;
+                donnéesSession.prochaineDemandeBarrage = snapshot;
+                Debug.Log($"[AffichageProchaineDemandeUI] ★ Sauvegarde dans prochaineDemandeBarrage " +
+                          $"({snapshot.Length} entrées) : {string.Join(", ", snapshot)}");
+            }
+            else
+            {
+                Debug.LogError("[AffichageProchaineDemandeUI] donnéesSession est NULL — " +
+                               "la demande ne sera PAS sauvegardée ! Le prochain barrage ne correspondra pas.");
             }
 
             if (SessionManager.Instance != null)
+            {
+                Debug.Log("[AffichageProchaineDemandeUI] RetournerAMapRoad() appelé.");
                 SessionManager.Instance.RetournerAMapRoad();
+            }
             else
+            {
                 Debug.LogError("[AffichageProchaineDemandeUI] SessionManager introuvable — retour MapRoad annulé.");
+            }
 
             _affichage = null;
         }
