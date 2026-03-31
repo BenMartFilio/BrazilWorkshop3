@@ -103,80 +103,79 @@ namespace Barrage.UI
         /// </summary>
         private IEnumerator AfficherIconesUneParUne()
         {
-            // ── Snapshot immédiat ─────────────────────────────────────────────
-            var snapshot = new FormulaireType[demande.Formulaires.Count];
-            for (int i = 0; i < demande.Formulaires.Count; i++)
-                snapshot[i] = demande.Formulaires[i];
+            // ── Snapshot brut depuis la demande générée ───────────────────────
+            var snapshotBrut = new List<FormulaireType>(demande.Formulaires);
 
-            Debug.Log($"[AffichageProchaineDemandeUI] ── Snapshot capturé ({snapshot.Length} entrées) : " +
-                      (snapshot.Length > 0 ? string.Join(", ", snapshot) : "<vide>"));
+            Debug.Log($"[AffichageProchaineDemandeUI] ── Snapshot brut ({snapshotBrut.Count} entrées) : " +
+                      (snapshotBrut.Count > 0 ? string.Join(", ", snapshotBrut) : "<vide>"));
 
-            if (snapshot.Length == 0)
-            {
-                Debug.LogWarning("[AffichageProchaineDemandeUI] Snapshot vide — " +
-                                 "vérifiez que demande.Régénérer() a bien été appelé avant LancerDirectement().");
-            }
+            if (snapshotBrut.Count == 0)
+                Debug.LogWarning("[AffichageProchaineDemandeUI] Snapshot brut vide — vérifiez que Régénérer() a été appelé.");
 
             foreach (var slot in slots)
                 slot.Masquer();
 
-            // ── Construction de l'affichage (depuis le snapshot) ──────────────
-            var typesOrdrés = new List<FormulaireType>();
-            var comptes     = new Dictionary<FormulaireType, int>();
+            // ── Filtrage : on ne conserve que les types affichables ────────────
+            // Un type est affichable ssi il a un FormulaireData valide avec texture.
+            // C'est la liste filtrée qui sera affichée ET sauvegardée en session :
+            // affichage et validation seront toujours identiques.
+            var typesAffichables = new List<FormulaireType>();
+            var texturesParType  = new Dictionary<FormulaireType, Texture2D>();
 
-            foreach (var type in snapshot)
+            foreach (var type in snapshotBrut)
             {
-                if (!comptes.ContainsKey(type))
-                {
-                    typesOrdrés.Add(type);
-                    comptes[type] = 0;
-                }
-                comptes[type]++;
-            }
-
-            Debug.Log($"[AffichageProchaineDemandeUI] Types uniques à afficher ({typesOrdrés.Count}) : " +
-                      string.Join(", ", typesOrdrés.Select(t => $"{t}×{comptes[t]}")));
-
-            int nbSlots = Mathf.Min(typesOrdrés.Count, slots.Count);
-            Debug.Log($"[AffichageProchaineDemandeUI] Slots disponibles={slots.Count}, types à afficher={typesOrdrés.Count} → nbSlots utilisés={nbSlots}");
-
-            for (int i = 0; i < nbSlots; i++)
-            {
-                FormulaireType type = typesOrdrés[i];
+                if (texturesParType.ContainsKey(type)) continue; // déjà traité
 
                 if (!_dataParType.TryGetValue(type, out var data))
                 {
-                    Debug.LogWarning($"[AffichageProchaineDemandeUI] Aucun FormulaireData pour : {type} (slot {i} ignoré)");
+                    Debug.LogWarning($"[AffichageProchaineDemandeUI] ✗ Aucun FormulaireData pour '{type}' — " +
+                                     "type exclu de l'affichage ET de la sauvegarde session.");
                     continue;
                 }
 
                 Texture2D texture = data.ExtraireTexture();
                 if (texture == null)
                 {
-                    Debug.LogWarning($"[AffichageProchaineDemandeUI] Aucune texture dans le prefab de : {type} (slot {i} ignoré)");
+                    Debug.LogWarning($"[AffichageProchaineDemandeUI] ✗ Aucune texture pour '{type}' — " +
+                                     "type exclu de l'affichage ET de la sauvegarde session.");
                     continue;
                 }
 
-                Debug.Log($"[AffichageProchaineDemandeUI] Slot {i} ← {type} ×{comptes[type]} (texture='{texture.name}')");
-                slots[i].Afficher(texture, comptes[type]);
+                typesAffichables.Add(type);
+                texturesParType[type] = texture;
+            }
+
+            Debug.Log($"[AffichageProchaineDemandeUI] Types affichables après filtrage ({typesAffichables.Count}/{snapshotBrut.Count}) : " +
+                      string.Join(", ", typesAffichables));
+
+            // ── Affichage slot par slot ───────────────────────────────────────
+            int nbSlots = Mathf.Min(typesAffichables.Count, slots.Count);
+            Debug.Log($"[AffichageProchaineDemandeUI] Slots disponibles={slots.Count} → {nbSlots} icônes affichées.");
+
+            for (int i = 0; i < nbSlots; i++)
+            {
+                FormulaireType type = typesAffichables[i];
+                Debug.Log($"[AffichageProchaineDemandeUI] Slot {i} ← {type} (texture='{texturesParType[type].name}')");
+                slots[i].Afficher(texturesParType[type], 1);
                 yield return new WaitForSeconds(délaiEntreIcones);
             }
 
-            // Attendre puis retourner sur MapRoad avec l'état sauvegardé
+            // Attendre puis retourner sur MapRoad
             Debug.Log($"[AffichageProchaineDemandeUI] Attente de {délaiAvantRetour}s avant sauvegarde + retour MapRoad...");
             yield return new WaitForSeconds(délaiAvantRetour);
 
-            // ── Sauvegarde depuis le snapshot ──────────────────────────────────
+            // ── Sauvegarde : UNIQUEMENT les types affichés ────────────────────
+            // Le tableau sauvegardé est strictement égal à ce qui a été montré au joueur.
             if (donnéesSession != null)
             {
-                donnéesSession.prochaineDemandeBarrage = snapshot;
+                donnéesSession.prochaineDemandeBarrage = typesAffichables.ToArray();
                 Debug.Log($"[AffichageProchaineDemandeUI] ★ Sauvegarde dans prochaineDemandeBarrage " +
-                          $"({snapshot.Length} entrées) : {string.Join(", ", snapshot)}");
+                          $"({typesAffichables.Count} entrées) : {string.Join(", ", typesAffichables)}");
             }
             else
             {
                 Debug.LogError("[AffichageProchaineDemandeUI] donnéesSession est NULL — " +
-                               "la demande ne sera PAS sauvegardée ! Le prochain barrage ne correspondra pas.");
+                               "la demande ne sera PAS sauvegardée !");
             }
 
             if (SessionManager.Instance != null)
