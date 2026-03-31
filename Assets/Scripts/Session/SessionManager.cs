@@ -84,8 +84,13 @@ public class SessionManager : MonoBehaviour
         }
 
         // Pas de session sauvegardée → nouvelle partie, rien à restaurer.
+        // Réinitialisation explicite pour effacer les résidus ScriptableObject de la session éditeur précédente
+        // (ex : prochaineDemandeBarrage non-vide d'une partie antérieure).
         if (!donnees.sessionValide)
+        {
+            donnees.Reinitialiser();
             return;
+        }
 
         if (joueur == null)       { Debug.LogError("[SessionManager] joueur est null — restauration annulée.");       return; }
         if (scoreManager == null) { Debug.LogError("[SessionManager] scoreManager est null — restauration annulée."); return; }

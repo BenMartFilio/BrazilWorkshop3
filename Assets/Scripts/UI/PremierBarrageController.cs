@@ -44,11 +44,21 @@ namespace Barrage.UI
 
         private void Awake()
         {
+            // Nettoyage défensif : si sessionValide est false (aucune session MapRoad active)
+            // mais que prochaineDemandeBarrage est non-vide, c'est un résidu ScriptableObject
+            // d'une session éditeur précédente. On réinitialise pour repartir proprement.
+            if (donnéesSession != null && !donnéesSession.sessionValide && donnéesSession.AUneDemandeSauvegardée)
+            {
+                Debug.Log("[PremierBarrageController] Résidu ScriptableObject détecté (sessionValide=false mais prochaineDemandeBarrage non-vide) — Reinitialiser().");
+                donnéesSession.Reinitialiser();
+            }
+
             // On lit la valeur ici, avant que d'autres Awake() ne consomment la demande.
             _estPremierBarrage = donnéesSession == null || !donnéesSession.AUneDemandeSauvegardée;
 
             Debug.Log($"[PremierBarrageController] Awake (ordre=-100) — donnéesSession={donnéesSession?.name ?? "NULL"}, " +
                       $"AUneDemandeSauvegardée={donnéesSession?.AUneDemandeSauvegardée ?? false}, " +
+                      $"sessionValide={donnéesSession?.sessionValide ?? false}, " +
                       $"_estPremierBarrage={_estPremierBarrage}");
 
             if (_estPremierBarrage && donnéesSession != null)
