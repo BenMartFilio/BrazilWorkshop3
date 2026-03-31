@@ -3,10 +3,15 @@ using System.Collections;
 
 public class ScreenShake : MonoBehaviour
 {
+    Vector3 originalPos;
+
+    private void Awake()
+    {
+        originalPos = transform.localPosition;
+    }
+
     public IEnumerator Shake(float duration, float magnitude)
     {
-        Vector3 originalPos = transform.localPosition;
-
         float elapsed = 0f;
 
         while (elapsed < duration)

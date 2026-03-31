@@ -44,6 +44,9 @@ TagManager:
   - name: Fond
     uniqueID: 2436180845
     locked: 0
+  - name: Piece
+    uniqueID: 3480414259
+    locked: 0
   - name: Gameplay
     uniqueID: 3395439639
     locked: 0
