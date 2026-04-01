@@ -49,6 +49,28 @@ namespace ObjetsSpeciaux
         private const float MONTRE_FACTEUR_VITESSE = 0.50f;
         private const float MONTRE_SATURATION     = -100f;
 
+        // ── Identifiants effets (clés des événements) ─────────────────────────
+        private const string ID_TIRELIRE   = "TirelireCochon";
+        private const string ID_GATEAU     = "GateauChinois";
+        private const string ID_RADAR      = "RadarObstacles";
+        private const string ID_ASPIRATEUR = "Aspirateur";
+        private const string ID_MONTRE     = "MontreAGousset";
+
+        // ── Couleurs par effet (partagées avec EffetsDureeUI) ─────────────────
+        public static readonly Color CouleurTirelire   = new Color(1.00f, 0.82f, 0.10f, 1f);
+        public static readonly Color CouleurGateau     = new Color(1.00f, 0.25f, 0.15f, 1f);
+        public static readonly Color CouleurRadar      = new Color(0.20f, 0.85f, 1.00f, 1f);
+        public static readonly Color CouleurAspirateur = new Color(0.30f, 1.00f, 0.45f, 1f);
+        public static readonly Color CouleurMontre     = new Color(0.70f, 0.70f, 1.00f, 1f);
+
+        // ── Événements (abonnés par EffetsDureeUI) ────────────────────────────
+        /// <summary>Déclenché quand un effet temporel démarre. (id, durée, couleur, nomAffichage)</summary>
+        public event System.Action<string, float, Color, string> OnEffetDemarre;
+        /// <summary>Déclenché quand un effet se termine ou est remplacé.</summary>
+        public event System.Action<string> OnEffetTermine;
+        /// <summary>Déclenché quand le Gâteau Chinois esquive un obstacle.</summary>
+        public event System.Action OnEsquiveDeclenchee;
+
         // ── Dependances : Barrage (objets passifs) ────────────────────────────
         [Header("Barrage -- Objets Passifs")]
         [SerializeField] private BarrePatience barrePatience;
@@ -101,10 +123,32 @@ namespace ObjetsSpeciaux
 
         private void Awake()
         {
-            if (volumePostProcess != null && volumePostProcess.profile != null)
-                volumePostProcess.profile.TryGet(out _colorAdjustments);
-            else if (volumePostProcess != null)
-                Debug.LogWarning("[EffetsObjetsSpeciaux] Volume assigne mais aucun VolumeProfile -- effet Montre (desaturation) desactive.");
+            if (volumePostProcess == null)
+            {
+                Debug.LogWarning("[EffetsObjetsSpeciaux] volumePostProcess non assigne -- effet Montre (desaturation) desactive.");
+                return;
+            }
+
+            VolumeProfile profil = volumePostProcess.sharedProfile != null
+                ? volumePostProcess.sharedProfile
+                : volumePostProcess.profile;
+
+            if (profil == null)
+            {
+                Debug.LogWarning("[EffetsObjetsSpeciaux] Volume sans profil -- effet Montre (desaturation) desactive.");
+                return;
+            }
+
+            if (!profil.TryGet(out _colorAdjustments))
+            {
+                // The profile has no Color Adjustments override yet -- add one at runtime.
+                _colorAdjustments = profil.Add<ColorAdjustments>(overrides: false);
+                Debug.Log("[EffetsObjetsSpeciaux] Color Adjustments ajouté au profil PP_MontreDesaturation.");
+            }
+
+            // Always ensure the saturation override flag is on -- the asset may have it off.
+            _colorAdjustments.saturation.overrideState = true;
+            _colorAdjustments.saturation.value = 0f;
         }
 
         private void Start()
@@ -114,12 +158,8 @@ namespace ObjetsSpeciaux
                 Debug.LogWarning("[EffetsObjetsSpeciaux] spriteAspirateurVoiture non assigne -- l'effet Aspirateur ne changera pas le sprite de la voiture.");
             if (spriteExclamation == null)
                 Debug.LogWarning("[EffetsObjetsSpeciaux] spriteExclamation non assigne -- le Radar affichera un carre rouge de fallback.");
-            if (ondeRadar == null)
-                Debug.LogWarning("[EffetsObjetsSpeciaux] ondeRadar non assigne -- l'animation d'onde du Radar est desactivee.");
-            if (haloDoree == null)
-                Debug.LogWarning("[EffetsObjetsSpeciaux] haloDoree non assigne -- le visuel de la Tirelire Cochon est desactive.");
-            if (haloRouge == null)
-                Debug.LogWarning("[EffetsObjetsSpeciaux] haloRouge non assigne -- le visuel du Gateau Chinois est desactive.");
+
+            CreerHalosSiAbsents();
         }
 
         private void OnEnable()
@@ -213,6 +253,8 @@ namespace ObjetsSpeciaux
         /// <summary>Declenche l'effet Tirelire Cochon pendant TIRELIRE_DUREE secondes.</summary>
         public void UtiliserTirelireCochon()
         {
+            AnnulerEffetsActifsHormisCelui(ID_TIRELIRE);
+
             if (_coroutineTirelire != null)
                 StopCoroutine(_coroutineTirelire);
 
@@ -223,6 +265,7 @@ namespace ObjetsSpeciaux
                 haloDoree.SetActive(true);
 
             _coroutineTirelire = StartCoroutine(EffetTirelire());
+            OnEffetDemarre?.Invoke(ID_TIRELIRE, TIRELIRE_DUREE, CouleurTirelire, "Tirelire");
         }
 
         private IEnumerator EffetTirelire()
@@ -239,6 +282,7 @@ namespace ObjetsSpeciaux
             if (haloDoree != null)
                 haloDoree.SetActive(false);
 
+            OnEffetTermine?.Invoke(ID_TIRELIRE);
             _coroutineTirelire = null;
         }
 
@@ -253,6 +297,8 @@ namespace ObjetsSpeciaux
         /// <summary>Declenche l'effet Gateau Chinois pendant GATEAU_DUREE secondes.</summary>
         public void UtiliserGateauChinois()
         {
+            AnnulerEffetsActifsHormisCelui(ID_GATEAU);
+
             if (_coroutineGateau != null)
                 StopCoroutine(_coroutineGateau);
 
@@ -262,6 +308,7 @@ namespace ObjetsSpeciaux
                 haloRouge.SetActive(true);
 
             _coroutineGateau = StartCoroutine(EffetGateau());
+            OnEffetDemarre?.Invoke(ID_GATEAU, GATEAU_DUREE, CouleurGateau, "Gâteau");
         }
 
         private IEnumerator EffetGateau()
@@ -277,6 +324,7 @@ namespace ObjetsSpeciaux
             if (haloRouge != null)
                 haloRouge.SetActive(false);
 
+            OnEffetTermine?.Invoke(ID_GATEAU);
             _coroutineGateau = null;
         }
 
@@ -294,6 +342,8 @@ namespace ObjetsSpeciaux
             {
                 obstacle.DeclencherExplosion(positionCollision);
                 StartCoroutine(BlinkEtDesactiverObstacle(obstacle.gameObject));
+                StartCoroutine(FlashEsquive());
+                OnEsquiveDeclenchee?.Invoke();
                 return true;
             }
 
@@ -324,6 +374,8 @@ namespace ObjetsSpeciaux
         /// <summary>Declenche l'effet Radar a Obstacles pendant RADAR_DUREE secondes.</summary>
         public void UtiliserRadarObstacles()
         {
+            AnnulerEffetsActifsHormisCelui(ID_RADAR);
+
             if (_coroutineRadar != null)
                 StopCoroutine(_coroutineRadar);
 
@@ -338,6 +390,7 @@ namespace ObjetsSpeciaux
             }
 
             _coroutineRadar = StartCoroutine(EffetRadar());
+            OnEffetDemarre?.Invoke(ID_RADAR, RADAR_DUREE, CouleurRadar, "Radar");
         }
 
         private IEnumerator EffetRadar()
@@ -359,27 +412,29 @@ namespace ObjetsSpeciaux
             if (ondeRadar != null)
                 ondeRadar.SetActive(false);
 
+            OnEffetTermine?.Invoke(ID_RADAR);
             _coroutineRadar = null;
         }
 
         private IEnumerator AnimerOndeRadar()
         {
             SpriteRenderer sr = ondeRadar != null ? ondeRadar.GetComponent<SpriteRenderer>() : null;
-            Vector3 scaleBase = Vector3.one;
+            // La scale de base est (tailleUnites, tailleUnites, 1) définie à la création (1,1,1).
+            // On anime de 0 → RADAR_ONDE_SCALE_MAX en local scale pour que l'anneau s'étende.
+            float baseScale = ondeRadar != null ? ondeRadar.transform.localScale.x : 1f;
 
             while (_radarActif)
             {
-                // Expansion + fondu
                 float t = 0f;
                 while (t < RADAR_ONDE_DUREE_SCALE)
                 {
                     t += Time.deltaTime;
                     float ratio = Mathf.Clamp01(t / RADAR_ONDE_DUREE_SCALE);
-                    float scale = Mathf.Lerp(0f, RADAR_ONDE_SCALE_MAX, ratio);
-                    float alpha = Mathf.Lerp(0.4f, 0f, ratio);
+                    float scale = Mathf.Lerp(0f, RADAR_ONDE_SCALE_MAX * baseScale, ratio);
+                    float alpha = Mathf.Lerp(0.6f, 0f, ratio);
 
                     if (ondeRadar != null)
-                        ondeRadar.transform.localScale = scaleBase * scale;
+                        ondeRadar.transform.localScale = new Vector3(scale, scale, 1f);
 
                     if (sr != null)
                     {
@@ -390,6 +445,10 @@ namespace ObjetsSpeciaux
 
                     yield return null;
                 }
+
+                // Remettre à l'échelle de base entre deux pulses
+                if (ondeRadar != null)
+                    ondeRadar.transform.localScale = new Vector3(baseScale, baseScale, 1f);
 
                 yield return new WaitForSeconds(RADAR_ONDE_INTERVALLE);
             }
@@ -452,6 +511,8 @@ namespace ObjetsSpeciaux
         /// <summary>Declenche l'effet Aspirateur pendant ASPIRATEUR_DUREE secondes.</summary>
         public void UtiliserAspirateur()
         {
+            AnnulerEffetsActifsHormisCelui(ID_ASPIRATEUR);
+
             if (_coroutineAspirateur != null)
                 StopCoroutine(_coroutineAspirateur);
 
@@ -472,6 +533,7 @@ namespace ObjetsSpeciaux
             }
 
             _coroutineAspirateur = StartCoroutine(EffetAspirateur());
+            OnEffetDemarre?.Invoke(ID_ASPIRATEUR, ASPIRATEUR_DUREE, CouleurAspirateur, "Aspirateur");
         }
 
         private IEnumerator EffetAspirateur()
@@ -487,6 +549,7 @@ namespace ObjetsSpeciaux
             if (spriteVoiture != null && _spriteOriginalVoiture != null)
                 spriteVoiture.sprite = _spriteOriginalVoiture;
 
+            OnEffetTermine?.Invoke(ID_ASPIRATEUR);
             _coroutineAspirateur = null;
         }
 
@@ -503,6 +566,8 @@ namespace ObjetsSpeciaux
         /// <summary>Declenche l'effet Montre a Gousset pendant MONTRE_DUREE secondes.</summary>
         public void UtiliserMontreAGousset()
         {
+            AnnulerEffetsActifsHormisCelui(ID_MONTRE);
+
             // Restaurer d'abord si deja actif pour eviter un double-ralentissement.
             if (_coroutineMontre != null)
             {
@@ -534,6 +599,7 @@ namespace ObjetsSpeciaux
                 _colorAdjustments.saturation.Override(MONTRE_SATURATION);
 
             _coroutineMontre = StartCoroutine(EffetMontre());
+            OnEffetDemarre?.Invoke(ID_MONTRE, MONTRE_DUREE, CouleurMontre, "Montre");
         }
 
         private IEnumerator EffetMontre()
@@ -565,6 +631,7 @@ namespace ObjetsSpeciaux
             if (_colorAdjustments != null)
                 _colorAdjustments.saturation.Override(0f);
 
+            OnEffetTermine?.Invoke(ID_MONTRE);
             _coroutineMontre = null;
         }
 
@@ -572,6 +639,20 @@ namespace ObjetsSpeciaux
         public bool EstMontreActive() => _montreActive;
 
         // ── Arret d'urgence ───────────────────────────────────────────────────
+
+        /// <summary>
+        /// Annule tous les effets actifs à durée sauf celui identifié par <paramref name="idAConserver"/>.
+        /// Appelé en tête de chaque méthode UtiliserXxx pour garantir qu'un seul effet
+        /// temporel est actif à la fois, avec nettoyage propre (visuels + UI).
+        /// </summary>
+        private void AnnulerEffetsActifsHormisCelui(string idAConserver)
+        {
+            if (idAConserver != ID_TIRELIRE   && _coroutineTirelire   != null) { StopCoroutine(_coroutineTirelire);   TerminerTirelire(); }
+            if (idAConserver != ID_GATEAU     && _coroutineGateau     != null) { StopCoroutine(_coroutineGateau);     TerminerGateau(); }
+            if (idAConserver != ID_RADAR      && _coroutineRadar      != null) { StopCoroutine(_coroutineRadar);      TerminerRadar(); }
+            if (idAConserver != ID_ASPIRATEUR && _coroutineAspirateur != null) { StopCoroutine(_coroutineAspirateur); TerminerAspirateur(); }
+            if (idAConserver != ID_MONTRE     && _coroutineMontre     != null) { StopCoroutine(_coroutineMontre);     TerminerMontre(); }
+        }
 
         /// <summary>
         /// Annule tous les effets actifs de type route. A appeler depuis SegmentBarrage
@@ -593,6 +674,136 @@ namespace ObjetsSpeciaux
             TerminerMontre();
 
             Debug.Log("[EffetsObjetsSpeciaux] Tous les effets de route annules (transition barrage).");
+        }
+
+        // ── Génération des halos programmatiques ──────────────────────────────
+
+        private void CreerHalosSiAbsents()
+        {
+            if (spriteVoiture == null) return;
+
+            if (haloDoree == null)
+                haloDoree = CreerObjetHalo("HaloDoree",
+                    GenererTextureGlow(new Color(1f, 0.85f, 0.1f, 0.70f), 128), tailleUnites: 3.0f);
+
+            if (haloRouge == null)
+                haloRouge = CreerObjetHalo("HaloRouge",
+                    GenererTextureGlow(new Color(1f, 0.20f, 0.10f, 0.65f), 128), tailleUnites: 3.0f);
+
+            if (ondeRadar == null)
+                ondeRadar = CreerObjetHalo("OndeRadar",
+                    GenererTextureAnneau(new Color(0.2f, 0.85f, 1f, 0.85f), 128, epaisseur: 0.12f), tailleUnites: 1.0f);
+        }
+
+        /// <summary>Crée un GameObject avec SpriteRenderer parented à la RACINE du joueur (scale 1),
+        /// désactivé. tailleUnites = diamètre voulu en unités monde.</summary>
+        private GameObject CreerObjetHalo(string nom, Texture2D texture, float tailleUnites)
+        {
+            // pixelsPerUnit tel que le sprite fasse 1 unité monde,
+            // puis on règle localScale pour atteindre tailleUnites.
+            const float PPU = 100f;
+            Sprite sprite = Sprite.Create(
+                texture,
+                new Rect(0, 0, texture.width, texture.height),
+                new Vector2(0.5f, 0.5f),
+                PPU);
+
+            // Parent = racine du joueur (scale 1,1,1) pour ne pas hériter de l'échelle de SpritePlayer.
+            Transform parentTransform = spriteVoiture.transform.parent != null
+                ? spriteVoiture.transform.parent
+                : spriteVoiture.transform;
+
+            GameObject go          = new GameObject(nom);
+            go.transform.SetParent(parentTransform, worldPositionStays: false);
+            go.transform.localPosition = Vector3.zero;
+
+            // 1 unité monde = PPU pixels → tailleUnites unités monde.
+            float s = tailleUnites;
+            go.transform.localScale = new Vector3(s, s, 1f);
+
+            SpriteRenderer sr      = go.AddComponent<SpriteRenderer>();
+            sr.sprite              = sprite;
+            sr.sortingLayerName    = spriteVoiture.sortingLayerName;
+            sr.sortingOrder        = spriteVoiture.sortingOrder - 1;
+
+            go.SetActive(false);
+            return go;
+        }
+
+        private static Texture2D GenererTextureGlow(Color couleur, int resolution)
+        {
+            Texture2D tex    = new Texture2D(resolution, resolution, TextureFormat.RGBA32, mipChain: false);
+            Vector2   centre = new Vector2(resolution * 0.5f, resolution * 0.5f);
+            float     rayon  = resolution * 0.5f;
+
+            for (int y = 0; y < resolution; y++)
+            for (int x = 0; x < resolution; x++)
+            {
+                float t     = Mathf.Clamp01(Vector2.Distance(new Vector2(x, y), centre) / rayon);
+                float alpha = Mathf.Pow(1f - t, 2.2f) * couleur.a;
+                tex.SetPixel(x, y, new Color(couleur.r, couleur.g, couleur.b, alpha));
+            }
+
+            tex.Apply();
+            return tex;
+        }
+
+        private static Texture2D GenererTextureAnneau(Color couleur, int resolution, float epaisseur)
+        {
+            Texture2D tex    = new Texture2D(resolution, resolution, TextureFormat.RGBA32, mipChain: false);
+            Vector2   centre = new Vector2(resolution * 0.5f, resolution * 0.5f);
+            float     rayon  = resolution * 0.5f;
+            float     bande  = rayon * epaisseur;
+
+            for (int y = 0; y < resolution; y++)
+            for (int x = 0; x < resolution; x++)
+            {
+                float dist  = Vector2.Distance(new Vector2(x, y), centre);
+                float inner = rayon - bande;
+                float tIn   = Mathf.Clamp01((dist  - inner) / (bande * 0.35f));
+                float tOut  = Mathf.Clamp01((rayon - dist)  / (bande * 0.35f));
+                float alpha = Mathf.Min(tIn, tOut) * couleur.a;
+                tex.SetPixel(x, y, new Color(couleur.r, couleur.g, couleur.b, alpha));
+            }
+
+            tex.Apply();
+            return tex;
+        }
+
+        // ── Flash visuel esquive Gâteau Chinois ───────────────────────────────
+
+        private IEnumerator FlashEsquive()
+        {
+            const float DUREE     = 0.28f;
+            const float ALPHA_MAX = 0.55f;
+
+            GameObject canvasGo   = new GameObject("FlashEsquive");
+            Canvas canvas         = canvasGo.AddComponent<Canvas>();
+            canvas.renderMode     = RenderMode.ScreenSpaceOverlay;
+            canvas.sortingOrder   = 99;
+            canvasGo.AddComponent<UnityEngine.UI.CanvasScaler>();
+
+            GameObject imgGo              = new GameObject("Fond");
+            imgGo.transform.SetParent(canvasGo.transform, false);
+            UnityEngine.UI.Image img      = imgGo.AddComponent<UnityEngine.UI.Image>();
+            img.color                     = new Color(1f, 0.92f, 0.1f, ALPHA_MAX);
+            img.raycastTarget             = false;
+
+            RectTransform rt  = imgGo.GetComponent<RectTransform>();
+            rt.anchorMin      = Vector2.zero;
+            rt.anchorMax      = Vector2.one;
+            rt.sizeDelta      = Vector2.zero;
+
+            float elapsed = 0f;
+            while (elapsed < DUREE)
+            {
+                elapsed  += Time.unscaledDeltaTime;
+                img.color = new Color(1f, 0.92f, 0.1f,
+                    Mathf.Lerp(ALPHA_MAX, 0f, elapsed / DUREE));
+                yield return null;
+            }
+
+            Destroy(canvasGo);
         }
     }
 }

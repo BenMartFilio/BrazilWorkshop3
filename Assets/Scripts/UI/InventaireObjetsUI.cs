@@ -44,8 +44,10 @@ public class InventaireObjetsUI : MonoBehaviour
 
     // ── Références UI ─────────────────────────────────────────────────────────
     [Header("UI")]
-    [SerializeField] private Transform conteneurSlots;
+    [SerializeField] private Transform  conteneurSlots;
     [SerializeField] private GameObject prefabSlot;
+    [Tooltip("Sprite circulaire transmis aux slots pour l'anneau timer (ex: CercleSimple.png).")]
+    [SerializeField] private Sprite     spriteCircleTimer;
 
     // ── Cache ─────────────────────────────────────────────────────────────────
     private readonly Dictionary<string, ItemSlotUI> _slotsActifs = new Dictionary<string, ItemSlotUI>();
@@ -93,7 +95,7 @@ public class InventaireObjetsUI : MonoBehaviour
             return;
         }
 
-        slot.Initialiser(definition, quantite, OnSlotClique);
+        slot.Initialiser(definition, quantite, OnSlotClique, spriteCircleTimer);
         slotGo.SetActive(quantite > 0);
         _slotsActifs[definition.identifiant] = slot;
     }
@@ -130,7 +132,9 @@ public class InventaireObjetsUI : MonoBehaviour
         if (_slotsActifs.TryGetValue(identifiant, out ItemSlotUI slot))
         {
             slot.MettreAJourQuantite(entree.quantity);
-            slot.gameObject.SetActive(entree.quantity > 0);
+            // Keep the slot active regardless of quantity: if an effect timer just
+            // started on it, the ring needs a visible parent. EffetsDureeUI handles removal.
+            slot.gameObject.SetActive(true);
         }
     }
 
@@ -200,7 +204,28 @@ public class InventaireObjetsUI : MonoBehaviour
         Destroy(canvasGo);
     }
 
-    // ── Helpers ───────────────────────────────────────────────────────────────
+    // ── Helpers publics (utilisés par EffetsDureeUI) ──────────────────────────
+
+    /// <summary>Retourne le slot actif pour un identifiant, ou null s'il n'existe pas.</summary>
+    public ItemSlotUI ObtenirSlot(string identifiant)
+    {
+        _slotsActifs.TryGetValue(identifiant, out ItemSlotUI slot);
+        return slot;
+    }
+
+    /// <summary>
+    /// Supprime et retire un slot de la barre. Appelé par EffetsDureeUI quand
+    /// l'effet se termine et que la quantité était déjà à 0.
+    /// </summary>
+    public void SupprimerSlot(string identifiant)
+    {
+        if (!_slotsActifs.TryGetValue(identifiant, out ItemSlotUI slot)) return;
+        _slotsActifs.Remove(identifiant);
+        if (slot != null)
+            Destroy(slot.gameObject);
+    }
+
+    // ── Helpers privés ────────────────────────────────────────────────────────
 
     private InventoryEntry TrouverEntree(string identifiant)
     {
