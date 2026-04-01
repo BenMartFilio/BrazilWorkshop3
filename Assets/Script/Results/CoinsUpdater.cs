@@ -78,6 +78,10 @@ public class CoinsUpdater : MonoBehaviour
 
     public void StartCoroutineCounter()
     {
+        if (_playerDatas.actualCoinsNotSaved == 0)
+        {
+            return;
+        }
         StartCoroutine(CoinToCounter());
     }
 
@@ -93,14 +97,14 @@ public class CoinsUpdater : MonoBehaviour
         _textCoin.text = SystemOfChange(valueCoin);
         StartCoroutine(SizeText());
 
-        yield return new WaitForSeconds(0.1f);
+    //    yield return new WaitForSeconds(0.1f);
         yield return MoveCoin(spawnedCoins[1]);
         // faire monter le deuxième (2/3 des pièces)
         valueCoin = _playerDatas.generalMonney - Mathf.CeilToInt((_playerDatas.actualCoinsNotSaved/3));
         _textCoin.text = SystemOfChange(valueCoin);
         StartCoroutine(SizeText());
 
-        yield return new WaitForSeconds(0.1f);
+    //    yield return new WaitForSeconds(0.1f);
         yield return MoveCoin(spawnedCoins[2]);
         // faire monter le dernier (3/3 des pièces)
         valueCoin = _playerDatas.generalMonney;
@@ -171,7 +175,7 @@ public class CoinsUpdater : MonoBehaviour
         Vector3 start = coin.transform.position;
         Vector3 end = targetText.position;
 
-        float duration = Random.Range(0.4f, 0.7f); 
+        float duration = Random.Range(0.2f, 0.4f); 
         float t = 0;
 
         while (t < duration)
