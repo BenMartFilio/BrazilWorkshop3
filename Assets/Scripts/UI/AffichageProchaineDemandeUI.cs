@@ -44,6 +44,10 @@ namespace Barrage.UI
         [Tooltip("Délai (secondes) après la dernière icône avant que le bouton devienne visible.")]
         [SerializeField, Min(0f)] private float délaiApparitionBouton = 2f;
 
+        [Header("Barre de patience")]
+        [Tooltip("BarrePatience à geler dès que le barrage est validé pour empêcher le game over.")]
+        [SerializeField] private BarrePatience barrePatience;
+
         private readonly Dictionary<FormulaireType, FormulaireData> _dataParType = new();
         private Coroutine _affichage;
 
@@ -107,8 +111,11 @@ namespace Barrage.UI
 
         private void OnBarrageValidé()
         {
-            Debug.Log("[AffichageProchaineDemandeUI] OnBarrageValidé reçu → Régénérer() + AfficherIconesUneParUne().");
-            // Générer une nouvelle demande aléatoire puis l'afficher
+            Debug.Log("[AffichageProchaineDemandeUI] OnBarrageValidé reçu → Geler() + Régénérer() + AfficherIconesUneParUne().");
+
+            // Geler la barre immédiatement : le game over ne peut plus se déclencher.
+            barrePatience?.Geler();
+
             demande?.Régénérer();
 
             if (_affichage != null) StopCoroutine(_affichage);
@@ -122,7 +129,11 @@ namespace Barrage.UI
         /// </summary>
         public void LancerDirectement()
         {
-            Debug.Log("[AffichageProchaineDemandeUI] LancerDirectement() → Régénérer() + AfficherIconesUneParUne().");
+            Debug.Log("[AffichageProchaineDemandeUI] LancerDirectement() → Geler() + Régénérer() + AfficherIconesUneParUne().");
+
+            // Au premier barrage, la patience n'a pas encore de sens — on la gèle d'emblée.
+            barrePatience?.Geler();
+
             demande?.Régénérer();
 
             if (_affichage != null) StopCoroutine(_affichage);

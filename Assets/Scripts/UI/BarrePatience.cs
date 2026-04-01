@@ -10,8 +10,12 @@ namespace Barrage.UI
     /// - Se vide progressivement avec le temps.
     /// - Bord droit animé comme un signal électrique (shader custom).
     /// - Subit une perte animée de POINTS_PENALITE points sur erreur du joueur.
+    /// - Peut être gelée via Geler() : le décompte s'arrête et OnPatienceEpuisée ne se déclenche plus.
     ///
-    /// Structure créée automatiquement :
+    /// Visualisation déléguée à un IVisualisateurPatience optionnel (ex. BarrePatienceSlider).
+    /// Si aucun visualisateur n'est assigné, le système shader/Image interne est utilisé.
+    ///
+    /// Structure créée automatiquement (sans visualisateur externe) :
     ///   BarrePatience (RectTransform)
     ///   ├── Remplissage (Image avec shader Barrage/UI/BarrePatience — wave + glow)
     ///   └── Flash       (Image standard — flash rouge lors d'une pénalité)
@@ -19,14 +23,14 @@ namespace Barrage.UI
     public class BarrePatience : MonoBehaviour
     {
         // ── Paramètres de jeu ────────────────────────────────────────────────
-        public const float PATIENCE_MAX    = 160f;
+        public const float PATIENCE_MAX     = 160f;
         private const float POINTS_PENALITE = 10f;  // points perdus par erreur
         private const float VITESSE_VIDAGE  = 3f;   // points/s de décroissance naturelle
 
         // ── Animation de perte ────────────────────────────────────────────────
-        private const float FLASH_DUREE        = 0.45f; // s — durée totale du flash alpha
-        private const float SHAKE_AMPLITUDE    = 5f;    // px
-        private const float SHAKE_DUREE        = 0.32f; // s
+        private const float FLASH_DUREE     = 0.45f; // s — durée totale du flash alpha
+        private const float SHAKE_AMPLITUDE = 5f;    // px
+        private const float SHAKE_DUREE     = 0.32f; // s
 
         // ── Tremblement passif continu (selon la couleur de la barre) ─────────
         private const float TREMBLE_VERT_AMPLITUDE   = 0.8f;  // px — discret
@@ -37,14 +41,18 @@ namespace Barrage.UI
         private const float TREMBLE_ROUGE_FREQUENCE  = 45f;   // Hz
 
         // ── IDs des propriétés shader ─────────────────────────────────────────
-        private static readonly int ID_Fill          = Shader.PropertyToID("_FillAmount");
-        private static readonly int ID_SeuilMoyenne  = Shader.PropertyToID("_SeuilMoyenne");
-        private static readonly int ID_SeuilBasse    = Shader.PropertyToID("_SeuilBasse");
-        private static readonly int ID_ColorHaute    = Shader.PropertyToID("_ColorHaute");
-        private static readonly int ID_ColorMoyenne  = Shader.PropertyToID("_ColorMoyenne");
-        private static readonly int ID_ColorBasse    = Shader.PropertyToID("_ColorBasse");
+        private static readonly int ID_Fill         = Shader.PropertyToID("_FillAmount");
+        private static readonly int ID_SeuilMoyenne = Shader.PropertyToID("_SeuilMoyenne");
+        private static readonly int ID_SeuilBasse   = Shader.PropertyToID("_SeuilBasse");
+        private static readonly int ID_ColorHaute   = Shader.PropertyToID("_ColorHaute");
+        private static readonly int ID_ColorMoyenne = Shader.PropertyToID("_ColorMoyenne");
+        private static readonly int ID_ColorBasse   = Shader.PropertyToID("_ColorBasse");
 
-        [Header("Références (laissez vide pour génération automatique)")]
+        [Header("Visualisateur externe (optionnel)")]
+        [Tooltip("Assignez ici un BarrePatienceSlider pour utiliser le visuel Slider à la place du shader interne.")]
+        [SerializeField] private MonoBehaviour visualisateurExterne;
+
+        [Header("Références internes (laissez vide pour génération automatique)")]
         [SerializeField] private Image imageRemplissage;
         [SerializeField] private Image imageFlash;
 
@@ -65,6 +73,9 @@ namespace Barrage.UI
         private bool          _enPenalite;
         private bool          _épuiséeDéclenché;
         private float         _trembleTemps;
+        private bool          _gelée;
+
+        private IVisualisateurPatience _visualisateur;
 
         /// <summary>Valeur de patience normalisée entre 0 et 1.</summary>
         public float PatienceNormalisée => _patience / PATIENCE_MAX;
@@ -78,6 +89,9 @@ namespace Barrage.UI
         /// <summary>True quand la patience atteint 0.</summary>
         public bool EstEpuisée => _patience <= 0f;
 
+        /// <summary>True quand la barre est gelée (décompte et game over suspendus).</summary>
+        public bool EstGelée => _gelée;
+
         /// <summary>Déclenché une seule fois quand la patience atteint 0.</summary>
         public event Action OnPatienceEpuisée;
 
@@ -86,17 +100,29 @@ namespace Barrage.UI
             _rt       = GetComponent<RectTransform>();
             _patience = PATIENCE_MAX;
 
-            CreerImagesSiAbsentes();
+            // Résoudre le visualisateur externe en IVisualisateurPatience
+            if (visualisateurExterne != null && visualisateurExterne is IVisualisateurPatience v)
+                _visualisateur = v;
+
+            // Le système shader interne n'est créé que s'il n'y a pas de visualisateur externe
+            if (_visualisateur == null)
+                CreerImagesSiAbsentes();
         }
 
         private void Start()
         {
             _positionBase = _rt.anchoredPosition;
-            EnvoyerFillAuShader(1f);
+
+            if (_visualisateur != null)
+                _visualisateur.MettreAJour(1f, seuilMoyenne, seuilBasse, couleurHaute, couleurMoyenne, couleurBasse);
+            else
+                EnvoyerFillAuShader(1f);
         }
 
         private void Update()
         {
+            if (_gelée) return;
+
             if (EstEpuisée)
             {
                 if (!_épuiséeDéclenché)
@@ -110,7 +136,7 @@ namespace Barrage.UI
             _patience = Mathf.Max(0f, _patience - VITESSE_VIDAGE * Time.deltaTime);
 
             if (!_enPenalite)
-                EnvoyerFillAuShader(PatienceNormalisée);
+                NotifierVisualisateur(PatienceNormalisée);
 
             AppliquerTremblement();
         }
@@ -140,9 +166,9 @@ namespace Barrage.UI
                 frequence = TREMBLE_ROUGE_FREQUENCE;
             }
 
-            _trembleTemps           += Time.deltaTime;
-            float offsetX            = Mathf.Sin(_trembleTemps * frequence * Mathf.PI * 2f) * amplitude;
-            _rt.anchoredPosition     = _positionBase + new Vector2(offsetX, 0f);
+            _trembleTemps       += Time.deltaTime;
+            float offsetX        = Mathf.Sin(_trembleTemps * frequence * Mathf.PI * 2f) * amplitude;
+            _rt.anchoredPosition = _positionBase + new Vector2(offsetX, 0f);
         }
 
         private void OnDestroy()
@@ -156,10 +182,11 @@ namespace Barrage.UI
         /// <summary>
         /// Applique une pénalité de POINTS_PENALITE avec animation de flash et secousse.
         /// À connecter sur MainDuGardeUI.OnFormulaireIncorrect.
+        /// Ignoré si la barre est gelée.
         /// </summary>
         public void AppliquerPénalité()
         {
-            if (EstEpuisée) return;
+            if (EstEpuisée || _gelée) return;
 
             _patience = Mathf.Max(0f, _patience - POINTS_PENALITE);
 
@@ -176,6 +203,28 @@ namespace Barrage.UI
             _patience = Mathf.Min(PATIENCE_MAX, _patience + points);
         }
 
+        /// <summary>
+        /// Gèle la barre : le décompte s'arrête, les pénalités sont ignorées
+        /// et OnPatienceEpuisée ne peut plus se déclencher.
+        /// Appeler dès que le barrage est validé par le joueur.
+        /// </summary>
+        public void Geler()
+        {
+            _gelée = true;
+            // Stopper le tremblement passif en remettant la position à la base
+            _rt.anchoredPosition = _positionBase;
+            Debug.Log("[BarrePatience] Barre gelée — game over désactivé.");
+        }
+
+        /// <summary>
+        /// Dégèle la barre si elle avait été gelée (pour une future réinitialisation de scène).
+        /// </summary>
+        public void Dégeler()
+        {
+            _gelée = false;
+            Debug.Log("[BarrePatience] Barre dégelée.");
+        }
+
         // ── Animations ────────────────────────────────────────────────────────
 
         private IEnumerator AnimerPerte()
@@ -183,10 +232,13 @@ namespace Barrage.UI
             _enPenalite = true;
 
             // Saut immédiat de la barre au nouveau niveau
-            EnvoyerFillAuShader(PatienceNormalisée);
+            NotifierVisualisateur(PatienceNormalisée);
 
-            // Flash rouge : apparition instantanée, disparition progressive
-            if (imageFlash != null)
+            // Flash rouge sur le visualisateur externe
+            _visualisateur?.AnimerFlash(couleurFlash);
+
+            // Flash rouge interne (Image shader) : apparition instantanée, disparition progressive
+            if (_visualisateur == null && imageFlash != null)
             {
                 imageFlash.color   = couleurFlash;
                 imageFlash.enabled = true;
@@ -195,12 +247,16 @@ namespace Barrage.UI
                 while (t < FLASH_DUREE)
                 {
                     t += Time.deltaTime;
-                    float alpha       = Mathf.Lerp(couleurFlash.a, 0f, Mathf.SmoothStep(0f, 1f, t / FLASH_DUREE));
-                    imageFlash.color  = new Color(couleurFlash.r, couleurFlash.g, couleurFlash.b, alpha);
+                    float alpha      = Mathf.Lerp(couleurFlash.a, 0f, Mathf.SmoothStep(0f, 1f, t / FLASH_DUREE));
+                    imageFlash.color = new Color(couleurFlash.r, couleurFlash.g, couleurFlash.b, alpha);
                     yield return null;
                 }
 
                 imageFlash.enabled = false;
+            }
+            else
+            {
+                yield return new WaitForSeconds(FLASH_DUREE);
             }
 
             _enPenalite = false;
@@ -212,15 +268,23 @@ namespace Barrage.UI
             while (t < SHAKE_DUREE)
             {
                 t += Time.deltaTime;
-                float décroiss           = 1f - (t / SHAKE_DUREE);
-                float offsetX            = Mathf.Sin(t * 65f) * SHAKE_AMPLITUDE * décroiss;
-                _rt.anchoredPosition     = _positionBase + new Vector2(offsetX, 0f);
+                float décroiss       = 1f - (t / SHAKE_DUREE);
+                float offsetX        = Mathf.Sin(t * 65f) * SHAKE_AMPLITUDE * décroiss;
+                _rt.anchoredPosition = _positionBase + new Vector2(offsetX, 0f);
                 yield return null;
             }
             // Ne pas fixer à _positionBase : le tremblement passif reprend dans Update
         }
 
-        // ── Shader ────────────────────────────────────────────────────────────
+        // ── Shader interne ────────────────────────────────────────────────────
+
+        private void NotifierVisualisateur(float fill)
+        {
+            if (_visualisateur != null)
+                _visualisateur.MettreAJour(fill, seuilMoyenne, seuilBasse, couleurHaute, couleurMoyenne, couleurBasse);
+            else
+                EnvoyerFillAuShader(fill);
+        }
 
         private void EnvoyerFillAuShader(float fill)
         {
@@ -228,7 +292,7 @@ namespace Barrage.UI
             _matRemplissage.SetFloat(ID_Fill, fill);
         }
 
-        // ── Génération automatique ────────────────────────────────────────────
+        // ── Génération automatique (système shader interne) ───────────────────
 
         private void CreerImagesSiAbsentes()
         {
@@ -236,7 +300,6 @@ namespace Barrage.UI
             {
                 imageRemplissage = CreerImageEnfant("Remplissage", Color.white, useShader: true);
 
-                // Charger le shader et créer une instance de material
                 Shader shader = Shader.Find("Barrage/UI/BarrePatience");
                 if (shader != null)
                 {
@@ -273,15 +336,15 @@ namespace Barrage.UI
             go.transform.SetParent(transform, false);
             go.layer = LayerMask.NameToLayer("UI");
 
-            var rt        = go.GetComponent<RectTransform>();
-            rt.anchorMin  = Vector2.zero;
-            rt.anchorMax  = Vector2.one;
-            rt.offsetMin  = Vector2.zero;
-            rt.offsetMax  = Vector2.zero;
+            var rt       = go.GetComponent<RectTransform>();
+            rt.anchorMin = Vector2.zero;
+            rt.anchorMax = Vector2.one;
+            rt.offsetMin = Vector2.zero;
+            rt.offsetMax = Vector2.zero;
 
-            var img             = go.GetComponent<Image>();
-            img.color           = useShader ? Color.white : couleur;
-            img.raycastTarget   = false;
+            var img           = go.GetComponent<Image>();
+            img.color         = useShader ? Color.white : couleur;
+            img.raycastTarget = false;
             return img;
         }
     }
