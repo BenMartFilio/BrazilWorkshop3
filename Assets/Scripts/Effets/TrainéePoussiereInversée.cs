@@ -78,6 +78,11 @@ namespace Barrage.Effets
         [Tooltip("Ordre de rendu au sein du sorting layer.")]
         [SerializeField] private int ordreTri = 0;
 
+        [Tooltip("Matériau partagé pour les sprites de traînée (Sprites/Default ou URP 2D Sprite-Unlit).\n" +
+                 "Assigner l'asset FX_Mat_Trainee.mat depuis Assets/Materials/.\n" +
+                 "Si non assigné, le matériau sera créé au runtime via Shader.Find() — non fiable sur mobile.")]
+        [SerializeField] private Material matériauAsset;
+
         // ── État interne ──────────────────────────────────────────────────────
         private struct InstancePoussière
         {
@@ -237,7 +242,13 @@ namespace Barrage.Effets
         private void CréerRessources()
         {
             _sprite   = CréerSpriteCircle(TAILLE_TEXTURE);
-            _matériau = CréerMatériau();
+            _matériau = matériauAsset != null
+                ? matériauAsset   // asset sur disque — garanti dans le build mobile
+                : CréerMatériau(); // fallback runtime — non fiable sur mobile
+
+            if (matériauAsset == null)
+                Debug.LogWarning("[TrainéePoussiereInversée] matériauAsset non assigné — création runtime. " +
+                                 "Assigner FX_Mat_Trainee.mat dans l'Inspector pour garantir le rendu sur mobile.");
         }
 
         private void PréchaufferPool()

@@ -49,12 +49,67 @@ MonoBehaviour:
   tailleMultiplicateur: 0.25
   facteurCroissanceParticules: 0.25
   directionVerticale: 0
+  simulationLocale: 0
   vitesseDiffusion: 1.5
   "dur\xE9eVieParticules": 0.5
   tailleTrainee: 0.05
+  "estInvers\xE9": 0
+  "distanceSpawnInvers\xE9": 0.35
+  vitesseAttraction: 1.5
+  cible: {fileID: 0}
   palette: 1
   couleurSable: {r: 0.08, g: 0.07, b: 0.06, a: 1}
   couleurCendre: {r: 0.24, g: 0.21, b: 0.17, a: 1}
   couleurDebris: {r: 0.05, g: 0.04, b: 0.03, a: 1}
   coucheTri: "D\xE9cor"
   ordreTri: 0
+  "mat\xE9riauPoussi\xE8reAsset": {fileID: 2100000, guid: da191f5c960d82f49978ed2da36d9db0, type: 2}
+  "mat\xE9riauD\xE9brisAsset": {fileID: 2100000, guid: 19f607aae154abd4786035cf263cf77f, type: 2}
+  nuage:
+    actif: 1
+    tauxEmission: 18
+    tailleMin: 0.1
+    tailleMax: 0.22
+    "dur\xE9eMin": 0.5
+    "dur\xE9eMax": 1
+    vitesseMin: 0.7
+    vitesseMax: 2
+  sable:
+    actif: 1
+    tauxEmission: 65
+    tailleMin: 0.014
+    tailleMax: 0.052
+    "dur\xE9eMin": 0.2
+    "dur\xE9eMax": 0.65
+    vitesseMin: 2.8
+    vitesseMax: 6.5
+  "d\xE9bris":
+    actif: 1
+    tauxEmission: 0
+    tailleMin: 0.036
+    tailleMax: 0.105
+    "dur\xE9eMin": 0.55
+    "dur\xE9eMax": 1.4
+    vitesseMin: 1.8
+    vitesseMax: 5
+  "d\xE9brisBurstMin": 1
+  "d\xE9brisBurstMax": 4
+  "d\xE9brisBurstIntervalle": 0.35
+  "tra\xEEn\xE9e":
+    actif: 1
+    tauxEmission: 6
+    tailleMin: 0.2
+    tailleMax: 0.45
+    "dur\xE9eMin": 0.6
+    "dur\xE9eMax": 1.2
+    vitesseMin: 0
+    vitesseMax: 0.18
+  sol:
+    actif: 1
+    tauxEmission: 45
+    tailleMin: 0.05
+    tailleMax: 0.18
+    "dur\xE9eMin": 0.12
+    "dur\xE9eMax": 0.45
+    vitesseMin: 0.9
+    vitesseMax: 2.8

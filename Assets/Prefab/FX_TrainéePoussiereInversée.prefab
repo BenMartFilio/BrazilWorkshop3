@@ -59,3 +59,4 @@ MonoBehaviour:
   couleurFin: {r: 0.18, g: 0.15, b: 0.12, a: 0}
   coucheTri: "D\xE9cor"
   ordreTri: 0
+  "mat\xE9riauAsset": {fileID: 2100000, guid: 63ef35a20eed09e4790768c0c7a5db77, type: 2}

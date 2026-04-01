@@ -164,6 +164,16 @@ namespace Barrage.Effets
                  "Modifiable en temps réel.")]
         [SerializeField] private int ordreTri = 0;
 
+        [Tooltip("Matériau de base pour les particules de poussière (Particles/Unlit URP, mode Transparent).\n" +
+                 "Assigner l'asset FX_Mat_Poussiere.mat depuis Assets/Materials/.\n" +
+                 "Si non assigné, le matériau sera créé au runtime via Shader.Find() — non fiable sur mobile.")]
+        [SerializeField] private Material matériauPoussièreAsset;
+
+        [Tooltip("Matériau de base pour les débris (Particles/Unlit URP, mode Transparent).\n" +
+                 "Assigner l'asset FX_Mat_Debris.mat depuis Assets/Materials/.\n" +
+                 "Si non assigné, le matériau sera créé au runtime via Shader.Find() — non fiable sur mobile.")]
+        [SerializeField] private Material matériauDébrisAsset;
+
         // ── Systèmes de particules individuels ───────────────────────────────
         [Header("1 · Nuage Principal")]
         [SerializeField] private ParamètresPS nuage = new ParamètresPS
@@ -472,8 +482,30 @@ namespace Barrage.Effets
 
         private void BuildMaterials()
         {
-            _matPoussiere = CréerMatTransparent(couleurSable,  "FX_Mat_Poussiere");
-            _matDebris    = CréerMatTransparent(couleurDebris, "FX_Mat_Debris");
+            // Priorité aux assets sérialisés (garantis dans le build mobile).
+            // Fallback sur la création runtime uniquement si les assets ne sont pas assignés.
+            if (matériauPoussièreAsset != null)
+            {
+                // Instancier pour pouvoir modifier la couleur sans altérer l'asset partagé.
+                _matPoussiere = new Material(matériauPoussièreAsset) { name = "FX_Mat_Poussiere_Instance" };
+            }
+            else
+            {
+                Debug.LogWarning("[PoussiereVoiture] matériauPoussièreAsset non assigné — création runtime. " +
+                                 "Assigner FX_Mat_Poussiere.mat dans l'Inspector pour garantir le rendu sur mobile.");
+                _matPoussiere = CréerMatTransparent(couleurSable, "FX_Mat_Poussiere");
+            }
+
+            if (matériauDébrisAsset != null)
+            {
+                _matDebris = new Material(matériauDébrisAsset) { name = "FX_Mat_Debris_Instance" };
+            }
+            else
+            {
+                Debug.LogWarning("[PoussiereVoiture] matériauDébrisAsset non assigné — création runtime. " +
+                                 "Assigner FX_Mat_Debris.mat dans l'Inspector pour garantir le rendu sur mobile.");
+                _matDebris = CréerMatTransparent(couleurDebris, "FX_Mat_Debris");
+            }
         }
 
         private static Material CréerMatTransparent(Color couleur, string nom)

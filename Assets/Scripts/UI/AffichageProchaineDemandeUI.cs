@@ -37,6 +37,13 @@ namespace Barrage.UI
         [Tooltip("Délai d'attente après la dernière icône avant de retourner sur MapRoad.")]
         [SerializeField] private float délaiAvantRetour = 2f;
 
+        [Header("Bouton retour")]
+        [Tooltip("Bouton qui apparaît après l'affichage des icônes pour permettre au joueur de revenir sur MapRoad manuellement.")]
+        [SerializeField] private BoutonRetourMapRoad boutonRetour;
+
+        [Tooltip("Délai (secondes) après la dernière icône avant que le bouton devienne visible.")]
+        [SerializeField, Min(0f)] private float délaiApparitionBouton = 2f;
+
         private readonly Dictionary<FormulaireType, FormulaireData> _dataParType = new();
         private Coroutine _affichage;
 
@@ -129,6 +136,8 @@ namespace Barrage.UI
         /// </summary>
         private IEnumerator AfficherDemandeCourante()
         {
+            boutonRetour?.Masquer();
+
             foreach (var slot in slots)
                 slot.Masquer();
 
@@ -175,6 +184,8 @@ namespace Barrage.UI
         /// </summary>
         private IEnumerator AfficherIconesUneParUne()
         {
+            boutonRetour?.Masquer();
+
             var snapshotBrut = new List<FormulaireType>(demande.Formulaires);
 
             Debug.Log($"[AffichageProchaineDemandeUI] ── Snapshot brut ({snapshotBrut.Count}) : " +
@@ -195,10 +206,8 @@ namespace Barrage.UI
                 yield return new WaitForSeconds(délaiEntreIcones);
             }
 
-            Debug.Log($"[AffichageProchaineDemandeUI] Attente {délaiAvantRetour}s avant sauvegarde...");
-            yield return new WaitForSeconds(délaiAvantRetour);
-
-            // Sauvegarder UNIQUEMENT les types qui ont été affichés (nbSlots premiers).
+            // Sauvegarder immédiatement après l'affichage des icônes,
+            // avant que le joueur puisse cliquer sur le bouton.
             var àSauvegarder = affichables.Take(nbSlots).Select(p => p.type).ToArray();
 
             if (donnéesSession != null)
@@ -212,14 +221,28 @@ namespace Barrage.UI
                 Debug.LogError("[AffichageProchaineDemandeUI] donnéesSession NULL — demande non sauvegardée !");
             }
 
-            if (SessionManager.Instance != null)
+            if (boutonRetour != null)
             {
-                Debug.Log("[AffichageProchaineDemandeUI] RetournerAMapRoad().");
-                SessionManager.Instance.RetournerAMapRoad();
+                // Le bouton apparaît après délaiApparitionBouton secondes.
+                // C'est lui qui appelle RetournerAMapRoad au clic.
+                Debug.Log($"[AffichageProchaineDemandeUI] Bouton retour dans {délaiApparitionBouton}s.");
+                boutonRetour.AfficherApresDelai(délaiApparitionBouton);
             }
             else
             {
-                Debug.LogError("[AffichageProchaineDemandeUI] SessionManager introuvable — retour MapRoad annulé.");
+                // Pas de bouton assigné → retour automatique après délaiAvantRetour.
+                Debug.Log($"[AffichageProchaineDemandeUI] Attente {délaiAvantRetour}s avant retour automatique...");
+                yield return new WaitForSeconds(délaiAvantRetour);
+
+                if (SessionManager.Instance != null)
+                {
+                    Debug.Log("[AffichageProchaineDemandeUI] RetournerAMapRoad() automatique (boutonRetour non assigné).");
+                    SessionManager.Instance.RetournerAMapRoad();
+                }
+                else
+                {
+                    Debug.LogError("[AffichageProchaineDemandeUI] SessionManager introuvable — retour MapRoad annulé.");
+                }
             }
 
             _affichage = null;
