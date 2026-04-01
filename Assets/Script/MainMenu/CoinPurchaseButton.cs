@@ -23,6 +23,8 @@ public class CoinPurchaseButton : MonoBehaviour
     [SerializeField] private UnityEvent onPurchaseSuccess;
     [SerializeField] private UnityEvent onPurchaseFailed;
 
+    [SerializeField] private CoinsUpdater coinsUpdater;
+
     private Button _button;
     private int _cachedMonney = -1;
 
@@ -109,6 +111,7 @@ public class CoinPurchaseButton : MonoBehaviour
 
         playerDatas.generalMonney -= cost;
         playerDatas.SaveDatas();
+        coinsUpdater.AffichageCoin();
         onPurchaseSuccess?.Invoke();
         RefreshButtonState();
     }

@@ -40,13 +40,13 @@ public class CoinsUpdater : MonoBehaviour
         _textCoin.text = SystemOfChange(valueCoin);
     }
 
-    private void AffichageCoin()
+    public void AffichageCoin()
     {
         valueCoin = _playerDatas.generalMonney;
         _textCoin.text = SystemOfChange(valueCoin);
     }
 
-    private void AffichagePremium()
+    public void AffichagePremium()
     {
         valuePremium = _playerDatas.premiumMonney;
         _textPremium.text = SystemOfChange(valuePremium);
