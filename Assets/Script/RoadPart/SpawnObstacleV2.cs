@@ -411,12 +411,23 @@ public class SpawnObstacleV2 : MonoBehaviour
 
     // ── Session ───────────────────────────────────────────────────────────────
 
-    /// <summary>Sauvegarde la vitesse générale et la progression barrage dans les données de session.</summary>
+    /// <summary>
+    /// Sauvegarde la progression barrage pour le prochain retour sur MapRoad.
+    /// Le compteur de signaux est intentionnellement remis à 0 et un nouveau seuil
+    /// est tiré ici : au retour de barrage, le joueur repart toujours d'un cycle neuf
+    /// (barrageSignauxMin–barrageSignauxMax signaux avant le prochain barrage), et non pas
+    /// du seuil déjà atteint qui déclencherait un barrage immédiat dès le premier signal.
+    /// </summary>
     public void SauvegarderDansSession(DonnéesSession donnees)
     {
-        donnees.vitesseGénérale  = _generalSpeed;
-        donnees.signauxEcoules   = _signauxEcoules;
-        donnees.prochainBarrageA = _prochainBarrageA;
+        donnees.vitesseGénérale = _generalSpeed;
+
+        // Nouveau cycle : le prochain barrage apparaîtra dans barrageSignauxMin–barrageSignauxMax signaux.
+        donnees.signauxEcoules   = 0;
+        donnees.prochainBarrageA = Random.Range(barrageSignauxMin, barrageSignauxMax + 1);
+
+        Debug.Log($"[SpawnObstacleV2] Session sauvegardée — nouveau cycle barrage planifié : " +
+                  $"signaux=0/{donnees.prochainBarrageA}");
     }
 
     /// <summary>Restaure la vitesse générale depuis les données de session.</summary>

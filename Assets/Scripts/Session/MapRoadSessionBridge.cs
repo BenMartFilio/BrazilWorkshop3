@@ -34,6 +34,8 @@ public class MapRoadSessionBridge : MonoBehaviour
     /// <summary>
     /// Sauvegarde l'état et charge la scène Barrage.
     /// À appeler depuis la logique de déclenchement du barrage.
+    /// La vitesse du sol est lue AVANT tout ralentissement — si le sol a déjà ralenti
+    /// au moment de l'appel, passer vitesseSolAvantRalentissement explicitement.
     /// </summary>
     public void DéclencherBarrage()
     {
@@ -43,8 +45,14 @@ public class MapRoadSessionBridge : MonoBehaviour
             return;
         }
 
-        float vitesseAvantRalentissement = (sols != null && sols.Length > 0) ? sols[0].speed : 0f;
-        SessionManager.Instance.AllerAuBarrage(joueur, scoreManager, spawner, end, sols,
+        // Capturer la vitesse actuelle du sol comme vitesse de référence.
+        // Si des systèmes de ralentissement ont déjà tourné, la vitesse peut être réduite —
+        // dans ce cas, SegmentBarrage.DeclencherTransition() doit être utilisé à la place
+        // car il capture la vitesse avant le ralentissement.
+        float vitesseAvantRalentissement = sols != null && sols.Length > 0 ? sols[0].speed : -1f;
+
+        SessionManager.Instance.AllerAuBarrage(
+            joueur, scoreManager, spawner, end, sols,
             vitesseSolAvantRalentissement: vitesseAvantRalentissement);
     }
 }
