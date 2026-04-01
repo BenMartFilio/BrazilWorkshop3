@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5166693677178123663}
   - component: {fileID: 4821084130430748191}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BarriereInspection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -117606201
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 626d0cd0104704146984921c6f3e3cc6, type: 3}
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 6623929284760738613}
   - component: {fileID: 152454223998988829}
   - component: {fileID: 3047592526534555898}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SegmentBarrage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -187,6 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b8b4eda0195991458cc42ba9493cbe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SegmentBarrage
+  positionYGel: -2
 --- !u!212 &6623929284760738613
 SpriteRenderer:
   serializedVersion: 2
@@ -233,7 +234,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -117606201
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 9999
   m_MaskInteraction: 0
   m_Sprite: {fileID: 0}
@@ -259,6 +260,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScrollingElement
   baseSpeed: 5
+  isExploded: 0
+  FXExplosion: {fileID: 0}
+  carcasse: {fileID: 0}
+  carcasseSpeedFactor: 0.4
+  canExplose: 1
 --- !u!50 &3047592526534555898
 Rigidbody2D:
   serializedVersion: 5
@@ -296,7 +302,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2691214448214126691}
   - component: {fileID: 867513165085205766}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BureauInspection 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -364,7 +370,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -117606201
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 86e7d55bb755f33419827f2e16a3b138, type: 3}

@@ -56,6 +56,7 @@ MonoBehaviour:
   isExploded: 0
   FXExplosion: {fileID: 4791631959593948771, guid: 0dd8d9523f3eb4d46afa4593215849f5, type: 3}
   carcasse: {fileID: 21300000, guid: 5a4e7bcb0c68cd4488954e5d77cc6584, type: 3}
+  carcasseSpeedFactor: 0.4
   canExplose: 1
 --- !u!61 &1203901159713210639
 BoxCollider2D:
@@ -73,7 +74,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -252,7 +253,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -899527657
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 630721e174f1b834381f154cf6120452, type: 3}
