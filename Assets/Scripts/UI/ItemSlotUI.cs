@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,9 +10,29 @@ using UnityEngine.UI;
 /// </summary>
 public class ItemSlotUI : MonoBehaviour
 {
-    private const float ALPHA_GRISE  = 0.40f;
-    private const float TAILLE_TEXTE = 38f;
-    private const float EPAISSEUR    = 8f;   // épaisseur de l'anneau timer en pixels
+    // ── Mise en page ──────────────────────────────────────────────────────────
+    private const float ALPHA_GRISE      = 0.40f;
+    private const float TAILLE_TEXTE     = 38f;
+    private const float EPAISSEUR        = 8f;      // épaisseur de l'anneau timer en pixels
+    private const float TIMER_TEXTE_SIZE = 20f;
+
+    // ── Urgency feedback ──────────────────────────────────────────────────────
+    private const float BLINK_INTERVAL  = 0.125f;   // ~4 Hz
+    private const float SEUIL_BLINK     = 0.25f;    // ratio restant < 25 % → blink arc
+    private const float SEUIL_PULSE     = 0.10f;    // ratio restant < 10 % → pulse slot scale
+    private const float PULSE_AMPLITUDE = 0.05f;    // ±5 %
+
+    // ── Punch animation ───────────────────────────────────────────────────────
+    private const float PUNCH_SCALE     = 1.25f;
+    private const float PUNCH_DUREE_OUT = 0.08f;
+    private const float PUNCH_DUREE_IN  = 0.08f;
+
+    // ── Badge pulse ───────────────────────────────────────────────────────────
+    private const float BADGE_SCALE_MAX = 1.8f;
+    private const float BADGE_DUREE     = 0.20f;
+
+    // ── Apparition ────────────────────────────────────────────────────────────
+    private const float APPARITION_DUREE = 0.30f;
 
     [SerializeField] private Image            imageFond;
     [SerializeField] private Image            imageSprite;
@@ -19,12 +40,21 @@ public class ItemSlotUI : MonoBehaviour
     [SerializeField] private Button           bouton;
 
     // ── Timer ring ────────────────────────────────────────────────────────────
-    private GameObject _timerRoot;
-    private Image      _timerArc;
-    private float      _timerDuree;
-    private float      _timerRestant;
-    private bool       _timerActif;
-    private Sprite     _spriteCircle;
+    private GameObject      _timerRoot;
+    private Image           _timerArc;
+    private TextMeshProUGUI _timerTexte;
+    private float           _timerDuree;
+    private float           _timerRestant;
+    private bool            _timerActif;
+    private Sprite          _spriteCircle;
+
+    // ── Urgency state ─────────────────────────────────────────────────────────
+    private Color _couleurEffet;
+    private float _blinkTimer;
+    private bool  _blinkEtat;   // true = couleur normale, false = blanc
+
+    // ── Animation state ───────────────────────────────────────────────────────
+    private Coroutine _coroutinePunch;
 
     // ─────────────────────────────────────────────────────────────────────────
 
@@ -44,9 +74,44 @@ public class ItemSlotUI : MonoBehaviour
         if (!_timerActif) return;
 
         _timerRestant = Mathf.Max(0f, _timerRestant - Time.deltaTime);
+        float ratio   = _timerDuree > 0f ? _timerRestant / _timerDuree : 0f;
 
+        // ── Arc fill ──────────────────────────────────────────────────────────
         if (_timerArc != null)
-            _timerArc.fillAmount = _timerDuree > 0f ? _timerRestant / _timerDuree : 0f;
+            _timerArc.fillAmount = ratio;
+
+        // ── Seconds label : visible uniquement dans la seconde moitié ─────────
+        if (_timerTexte != null)
+        {
+            bool afficher = ratio < 0.5f;
+            _timerTexte.gameObject.SetActive(afficher);
+            if (afficher)
+                _timerTexte.text = Mathf.CeilToInt(_timerRestant).ToString();
+        }
+
+        // ── Urgency : blink arc à ~4 Hz quand < 25 % restant ─────────────────
+        if (ratio < SEUIL_BLINK && _timerArc != null)
+        {
+            _blinkTimer += Time.deltaTime;
+            if (_blinkTimer >= BLINK_INTERVAL)
+            {
+                _blinkTimer -= BLINK_INTERVAL;
+                _blinkEtat   = !_blinkEtat;
+                _timerArc.color = _blinkEtat ? _couleurEffet : Color.white;
+            }
+
+            // ── Pulse scale ±5 % quand < 10 % restant ────────────────────────
+            if (ratio < SEUIL_PULSE && _coroutinePunch == null)
+            {
+                float pulse      = 1f + Mathf.Sin(Time.time * Mathf.PI / BLINK_INTERVAL) * PULSE_AMPLITUDE;
+                transform.localScale = new Vector3(pulse, pulse, 1f);
+            }
+        }
+        else if (_timerArc != null)
+        {
+            // Rétablir la couleur canonique hors zone d'urgence.
+            _timerArc.color = _couleurEffet;
+        }
     }
 
     // ── Initialisation ────────────────────────────────────────────────────────
@@ -60,6 +125,9 @@ public class ItemSlotUI : MonoBehaviour
             Debug.LogError("[ItemSlotUI] Définition nulle passée à Initialiser.");
             return;
         }
+
+        // Réinitialiser toute échelle résiduelle d'un cycle de pool précédent.
+        transform.localScale = Vector3.one;
 
         _spriteCircle      = spriteCircle;
         imageSprite.sprite = definition.sprite;
@@ -97,6 +165,10 @@ public class ItemSlotUI : MonoBehaviour
     {
         ArreterTimer(supprimerSlot: false);
 
+        _couleurEffet = couleur;
+        _blinkTimer   = 0f;
+        _blinkEtat    = true;
+
         RectTransform rtSprite = imageSprite.rectTransform;
 
         _timerRoot = new GameObject("TimerRing");
@@ -114,18 +186,18 @@ public class ItemSlotUI : MonoBehaviour
             new Color(0f, 0f, 0f, 0.55f), Image.Type.Simple, Vector2.zero, Vector2.zero);
 
         // Arc coloré radial
-        GameObject arcGo      = new GameObject("Arc");
+        GameObject arcGo        = new GameObject("Arc");
         arcGo.transform.SetParent(_timerRoot.transform, false);
-        RectTransform rtArc   = arcGo.AddComponent<RectTransform>();
+        RectTransform rtArc     = arcGo.AddComponent<RectTransform>();
         EtirerFull(rtArc, Vector2.zero, Vector2.zero);
-        _timerArc             = arcGo.AddComponent<Image>();
-        _timerArc.sprite      = _spriteCircle;
-        _timerArc.color       = couleur;
-        _timerArc.type        = Image.Type.Filled;
-        _timerArc.fillMethod  = Image.FillMethod.Radial360;
-        _timerArc.fillOrigin  = (int)Image.Origin360.Top;
+        _timerArc               = arcGo.AddComponent<Image>();
+        _timerArc.sprite        = _spriteCircle;
+        _timerArc.color         = couleur;
+        _timerArc.type          = Image.Type.Filled;
+        _timerArc.fillMethod    = Image.FillMethod.Radial360;
+        _timerArc.fillOrigin    = (int)Image.Origin360.Top;
         _timerArc.fillClockwise = true;
-        _timerArc.fillAmount  = 1f;
+        _timerArc.fillAmount    = 1f;
         _timerArc.raycastTarget = false;
 
         // Disque intérieur qui creuse l'anneau
@@ -133,6 +205,21 @@ public class ItemSlotUI : MonoBehaviour
         ConstruireImage(_timerRoot.transform, "Interieur", _spriteCircle,
             new Color(0f, 0f, 0f, 0.55f), Image.Type.Simple,
             new Vector2(inset, inset), new Vector2(-inset, -inset));
+
+        // Label secondes centré (masqué jusqu'à < 50 % de durée restante)
+        GameObject texteGo        = new GameObject("TimerTexte");
+        texteGo.transform.SetParent(_timerRoot.transform, false);
+        RectTransform rtTexte     = texteGo.AddComponent<RectTransform>();
+        EtirerFull(rtTexte, Vector2.zero, Vector2.zero);
+        _timerTexte               = texteGo.AddComponent<TextMeshProUGUI>();
+        _timerTexte.fontSize      = TIMER_TEXTE_SIZE;
+        _timerTexte.fontWeight    = FontWeight.Bold;
+        _timerTexte.color         = Color.white;
+        _timerTexte.alignment     = TextAlignmentOptions.Center;
+        _timerTexte.outlineWidth  = 0.25f;
+        _timerTexte.outlineColor  = new Color32(0, 0, 0, 200);
+        _timerTexte.raycastTarget = false;
+        texteGo.SetActive(false);
 
         _timerDuree   = duree;
         _timerRestant = duree;
@@ -148,6 +235,10 @@ public class ItemSlotUI : MonoBehaviour
     {
         _timerActif = false;
         _timerArc   = null;
+        _timerTexte = null;
+
+        // Réinitialiser toute échelle d'urgence résiduelle.
+        transform.localScale = Vector3.one;
 
         if (_timerRoot != null)
         {
@@ -157,6 +248,111 @@ public class ItemSlotUI : MonoBehaviour
 
         if (supprimerSlot)
             Destroy(gameObject);
+    }
+
+    // ── Animations publiques ──────────────────────────────────────────────────
+
+    /// <summary>
+    /// Joue une animation de punch (scale 1 → 1.25 → 1) pour confirmer l'activation.
+    /// Appelé depuis <see cref="InventaireObjetsUI"/> au moment du clic.
+    /// </summary>
+    public void JouerPunchAnimation()
+    {
+        if (_coroutinePunch != null)
+            StopCoroutine(_coroutinePunch);
+
+        _coroutinePunch = StartCoroutine(CoroutinePunch());
+    }
+
+    /// <summary>
+    /// Pulse le badge de quantité (scale 1.8 → 1.0) pour signaler un changement de stock.
+    /// </summary>
+    public void PulserBadge()
+    {
+        StartCoroutine(CoroutinePulseBadge());
+    }
+
+    /// <summary>
+    /// Anime l'apparition du fond (alpha 0 → 1) pour les nouveaux slots créés en cours de partie.
+    /// </summary>
+    public void AnimerApparition()
+    {
+        StartCoroutine(CoroutineApparition());
+    }
+
+    // ── Coroutines ────────────────────────────────────────────────────────────
+
+    private IEnumerator CoroutinePunch()
+    {
+        float elapsed = 0f;
+        while (elapsed < PUNCH_DUREE_OUT)
+        {
+            elapsed += Time.unscaledDeltaTime;
+            float s  = Mathf.Lerp(1f, PUNCH_SCALE, elapsed / PUNCH_DUREE_OUT);
+            transform.localScale = new Vector3(s, s, 1f);
+            yield return null;
+        }
+
+        elapsed = 0f;
+        while (elapsed < PUNCH_DUREE_IN)
+        {
+            elapsed += Time.unscaledDeltaTime;
+            float s  = Mathf.Lerp(PUNCH_SCALE, 1f, elapsed / PUNCH_DUREE_IN);
+            transform.localScale = new Vector3(s, s, 1f);
+            yield return null;
+        }
+
+        transform.localScale = Vector3.one;
+        _coroutinePunch = null;
+    }
+
+    private IEnumerator CoroutinePulseBadge()
+    {
+        if (texteQuantite == null) yield break;
+
+        float elapsed = 0f;
+        while (elapsed < BADGE_DUREE)
+        {
+            elapsed += Time.unscaledDeltaTime;
+            float s  = Mathf.Lerp(BADGE_SCALE_MAX, 1f, elapsed / BADGE_DUREE);
+            texteQuantite.transform.localScale = new Vector3(s, s, 1f);
+            yield return null;
+        }
+
+        texteQuantite.transform.localScale = Vector3.one;
+    }
+
+    private IEnumerator CoroutineApparition()
+    {
+        // Forcer alpha à 0 immédiatement pour garantir un fondu depuis le noir,
+        // quelle que soit la valeur laissée par AppliquerEtatQuantite.
+        if (imageFond != null)
+        {
+            Color c = imageFond.color;
+            c.a     = 0f;
+            imageFond.color = c;
+        }
+
+        float elapsed = 0f;
+        while (elapsed < APPARITION_DUREE)
+        {
+            elapsed += Time.unscaledDeltaTime;
+            float t  = Mathf.Clamp01(elapsed / APPARITION_DUREE);
+            if (imageFond != null)
+            {
+                Color c = imageFond.color;
+                c.a     = t;
+                imageFond.color = c;
+            }
+            yield return null;
+        }
+
+        if (imageFond != null)
+        {
+            Color c = imageFond.color;
+            c.a     = 1f;
+            imageFond.color = c;
+        }
     }
 
     // ── Helpers ───────────────────────────────────────────────────────────────

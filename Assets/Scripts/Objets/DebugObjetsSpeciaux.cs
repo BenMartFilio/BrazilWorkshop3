@@ -70,7 +70,6 @@ public class DebugObjetsSpeciaux : MonoBehaviour
     {
         // Canvas dedié pour ne pas polluer MainCanvas
         GameObject canvasGo = new GameObject("DebugObjetsCanvas");
-        DontDestroyOnLoad(canvasGo);
         Canvas canvas = canvasGo.AddComponent<Canvas>();
         canvas.renderMode = RenderMode.ScreenSpaceOverlay;
         canvas.sortingOrder = 999;

@@ -361,7 +361,7 @@ namespace ObjetsSpeciaux
             {
                 elapsed += GATEAU_BLINK_INTERVALLE;
                 if (sr != null) sr.enabled = !sr.enabled;
-                yield return new WaitForSeconds(GATEAU_BLINK_INTERVALLE);
+                yield return new WaitForSecondsRealtime(GATEAU_BLINK_INTERVALLE);
             }
 
             if (obstacle != null)

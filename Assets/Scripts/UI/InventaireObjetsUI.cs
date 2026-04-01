@@ -122,6 +122,14 @@ public class InventaireObjetsUI : MonoBehaviour
 
         DispatchEffet(identifiant);
 
+        // Feedback visuel immédiat de confirmation de clic.
+        if (_slotsActifs.TryGetValue(identifiant, out ItemSlotUI slotPunch))
+            slotPunch.JouerPunchAnimation();
+
+#if UNITY_ANDROID || UNITY_IOS
+        Handheld.Vibrate();
+#endif
+
         DefinitionObjetSpecial def = catalogue.ObtenirDefinition(identifiant);
         if (def != null)
             AfficherOverlay(def.sprite);
@@ -132,6 +140,7 @@ public class InventaireObjetsUI : MonoBehaviour
         if (_slotsActifs.TryGetValue(identifiant, out ItemSlotUI slot))
         {
             slot.MettreAJourQuantite(entree.quantity);
+            slot.PulserBadge();
             // Keep the slot active regardless of quantity: if an effect timer just
             // started on it, the ring needs a visible parent. EffetsDureeUI handles removal.
             slot.gameObject.SetActive(true);
@@ -211,6 +220,33 @@ public class InventaireObjetsUI : MonoBehaviour
     {
         _slotsActifs.TryGetValue(identifiant, out ItemSlotUI slot);
         return slot;
+    }
+
+    /// <summary>
+    /// Ajoute un nouveau slot ou met à jour la quantité d'un slot existant.
+    /// Anime l'apparition pour les nouveaux items et pulse le badge pour tous les changements.
+    /// À appeler quand un objet spécial est ramassé en cours de partie.
+    /// </summary>
+    public void AjouterOuMettreAJourSlot(string id, int quantite)
+    {
+        if (_slotsActifs.TryGetValue(id, out ItemSlotUI slotExistant))
+        {
+            slotExistant.MettreAJourQuantite(quantite);
+            slotExistant.gameObject.SetActive(true);
+            slotExistant.PulserBadge();
+            return;
+        }
+
+        DefinitionObjetSpecial definition = catalogue?.ObtenirDefinition(id);
+        if (definition == null || definition.estPassif) return;
+
+        CreerSlot(definition, quantite);
+
+        if (_slotsActifs.TryGetValue(id, out ItemSlotUI nouveauSlot))
+        {
+            nouveauSlot.AnimerApparition();
+            nouveauSlot.PulserBadge();
+        }
     }
 
     /// <summary>
