@@ -17,7 +17,9 @@ namespace ObjetsSpeciaux
     public class EffetsObjetsSpeciaux : MonoBehaviour
     {
         // ── Constantes : Liasse de Billets ────────────────────────────────────
+        // Points de patience accordés directement (indépendant de patienceDepart).
         private const float LIASSE_RATIO_PATIENCE = 0.50f;
+        private const float LIASSE_PATIENCE_POINTS = 80f; // 50 % de la valeur par défaut (160)
 
         // ── Constantes : Tirelire Cochon ──────────────────────────────────────
         private const float TIRELIRE_DUREE = 20f;
@@ -189,7 +191,7 @@ namespace ObjetsSpeciaux
                 return;
             }
 
-            barrePatience.AjouterPatience(BarrePatience.PATIENCE_MAX * LIASSE_RATIO_PATIENCE);
+            barrePatience.AjouterPatience(LIASSE_PATIENCE_POINTS);
             Debug.Log("[EffetsObjetsSpeciaux] Liasse de billets -- patience remontee de 50 %.");
         }
 
