@@ -67,8 +67,8 @@ public class SessionManager : MonoBehaviour
     /// <summary>
     /// Restaure l'état MapRoad depuis les données sauvegardées.
     /// À appeler depuis MapRoad dans Start() (après que tous les composants sont prêts).
-    /// Si <see cref="DonnéesSession.sessionValide"/> est false (nouvelle partie),
-    /// aucune restauration n'est effectuée et les composants conservent leurs valeurs par défaut.
+    /// Si <see cref="DonnéesSession.sessionValide"/> est false (nouvelle partie ou game over),
+    /// réinitialise tout proprement et ne restaure rien.
     /// </summary>
     public void RestaurerMapRoad(
         PlayerMovement   joueur,
@@ -83,12 +83,13 @@ public class SessionManager : MonoBehaviour
             return;
         }
 
-        // Pas de session sauvegardée → nouvelle partie, rien à restaurer.
-        // Réinitialisation explicite pour effacer les résidus ScriptableObject de la session éditeur précédente
-        // (ex : prochaineDemandeBarrage non-vide d'une partie antérieure).
+        // Pas de session sauvegardée → nouvelle partie ou game over.
+        // On réinitialise tous les états pour repartir proprement.
         if (!donnees.sessionValide)
         {
             donnees.Reinitialiser();
+            spawner?.RéinitialiserProgressionBarrage();
+            Debug.Log("[SessionManager] Pas de session valide — nouvelle partie initialisée.");
             return;
         }
 
@@ -96,19 +97,26 @@ public class SessionManager : MonoBehaviour
         if (scoreManager == null) { Debug.LogError("[SessionManager] scoreManager est null — restauration annulée."); return; }
         if (spawner == null)      { Debug.LogError("[SessionManager] spawner est null — restauration annulée.");      return; }
 
+        // Arrêter le score avant de le restaurer pour éviter le double-démarrage de coroutine.
+        scoreManager.StopScore();
+
         joueur.RestaurerDepuisSession(donnees.indexLane, donnees.pièces);
         scoreManager.RestaurerDepuisSession(donnees.score, donnees.vitesseScore);
         spawner.RestaurerDepuisSession(donnees.vitesseGénérale);
+        spawner.RestaurerProgressionDepuisSession(donnees);  // ← signaux + seuil barrage
         end.RestaurerDepuisSession(donnees.revive);
 
         if (sols != null)
             foreach (var sol in sols)
                 sol.RestaurerDepuisSession(donnees.vitesseSol);
 
+        // Relancer le score après restauration.
+        scoreManager.StartScore();
+
         // Invalider la session immédiatement après restauration.
-        // Tout rechargement ultérieur de MapRoad (nouvelle partie, mort, menu)
-        // démarrera proprement sans restaurer cet état.
         donnees.sessionValide = false;
+
+        Debug.Log("[SessionManager] Session MapRoad restaurée avec succès.");
     }
 
     /// <summary>Remet la session à zéro (nouvelle partie).</summary>

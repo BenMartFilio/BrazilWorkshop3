@@ -46,7 +46,11 @@ public class BarreProgressionBarrage : MonoBehaviour
         _slider.interactable = false;
         _slider.value        = 0f;
 
-        InitialiserCycle();
+        // Le cycle sera initialisé dans le premier Update() une fois que
+        // SpawnObstacleV2 a été restauré par SessionManager (ordre Start() garanti
+        // par MapRoadSessionBridge qui s'exécute en Start() aussi).
+        // On diffère l'initialisation d'une frame pour laisser le spawner être prêt.
+        _duréeTotale = 0f;
     }
 
     private void Update()

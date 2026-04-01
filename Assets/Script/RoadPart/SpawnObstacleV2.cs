@@ -115,6 +115,9 @@ public class SpawnObstacleV2 : MonoBehaviour
 
     private void Start()
     {
+        // Le tirage initial est fait ici uniquement si aucune session n'est restaurée.
+        // Si une session valide existe, RestaurerProgressionDepuisSession() sera appelé
+        // depuis MapRoadSessionBridge.Start() et écrasera ce tirage.
         TirerProchainSeuilBarrage();
         StartSpawning();
     }
@@ -413,17 +416,35 @@ public class SpawnObstacleV2 : MonoBehaviour
         donnees.prochainBarrageA = _prochainBarrageA;
     }
 
-    /// <summary>Restaure la vitesse générale et la progression barrage depuis les données de session.</summary>
+    /// <summary>Restaure la vitesse générale depuis les données de session.</summary>
     public void RestaurerDepuisSession(float vitesse)
     {
         _generalSpeed = vitesse;
     }
 
-    /// <summary>Restaure la progression barrage après un retour de scène Barrage réussie.</summary>
+    /// <summary>
+    /// Restaure la progression barrage (signaux écoulés + seuil) depuis les données de session.
+    /// À appeler depuis MapRoadSessionBridge après un retour de barrage réussi
+    /// ET pour toute session valide (le seuil et les signaux ont pu être sauvegardés).
+    /// </summary>
     public void RestaurerProgressionDepuisSession(DonnéesSession donnees)
     {
-        // Nouveau tirage : le barrage vient d'être complété, on repart de zéro
-        _signauxEcoules  = 0;
+        _signauxEcoules   = donnees.signauxEcoules;
+        _prochainBarrageA = donnees.prochainBarrageA > 0
+            ? donnees.prochainBarrageA
+            : Random.Range(barrageSignauxMin, barrageSignauxMax + 1);
+        _barrageEnAttente = false;
+
+        Debug.Log($"[SpawnObstacleV2] Progression restaurée : signaux={_signauxEcoules}/{_prochainBarrageA}");
+    }
+
+    /// <summary>
+    /// Réinitialise complètement le compteur barrage pour une nouvelle partie.
+    /// À appeler quand sessionValide est false (nouvelle partie ou game over).
+    /// </summary>
+    public void RéinitialiserProgressionBarrage()
+    {
+        _signauxEcoules   = 0;
         _barrageEnAttente = false;
         TirerProchainSeuilBarrage();
     }

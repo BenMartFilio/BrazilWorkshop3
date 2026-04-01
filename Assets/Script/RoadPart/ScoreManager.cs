@@ -60,11 +60,17 @@ public class ScoreManager : MonoBehaviour
     public void StopScore()
     {
         isDriving = false;
-        StopCoroutine(scoreCoroutine);
+        if (scoreCoroutine != null)
+        {
+            StopCoroutine(scoreCoroutine);
+            scoreCoroutine = null;
+        }
     }
 
     public void StartScore()
     {
+        // Éviter de démarrer deux coroutines en parallèle si StartScore est appelé deux fois.
+        if (isDriving) return;
         isDriving = true;
         scoreCoroutine = StartCoroutine(ContiniousScore());
         StartCoroutine(ContiniousBestScore());

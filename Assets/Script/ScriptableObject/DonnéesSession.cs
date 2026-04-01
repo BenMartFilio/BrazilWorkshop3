@@ -69,5 +69,6 @@ public class DonnéesSession : ScriptableObject
         signauxEcoules            = 0;
         prochainBarrageA          = 0;
         prochaineDemandeBarrage   = new FormulaireType[0];
+        revive                    = 0;   // ← manquait : remise à zéro du compteur de revives
     }
 }

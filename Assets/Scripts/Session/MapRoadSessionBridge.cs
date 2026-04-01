@@ -17,10 +17,18 @@ public class MapRoadSessionBridge : MonoBehaviour
     private void Start()
     {
         if (SessionManager.Instance != null)
+        {
+            // RestaurerMapRoad gère les deux cas :
+            //   • sessionValide=true  → restauration complète (retour de barrage)
+            //   • sessionValide=false → réinitialisation propre (nouvelle partie / game over)
             SessionManager.Instance.RestaurerMapRoad(joueur, scoreManager, spawner, end, sols);
+        }
 
-        if (barreProgression != null)
-            barreProgression.RéinitialiserPourNouveauCycle();
+        // Réinitialiser la barre de progression uniquement quand on vient du Barrage
+        // (session valide au moment de l'appel précédent — mais elle est invalidée dans RestaurerMapRoad).
+        // On laisse BarreProgressionBarrage.Start() gérer son propre état initial.
+        // RéinitialiserPourNouveauCycle() n'est plus appelé ici car il écrasait
+        // le cycle en cours lors d'un simple retour de barrage.
     }
 
     /// <summary>
