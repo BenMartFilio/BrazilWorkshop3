@@ -91,6 +91,7 @@ public class Aspiration : MonoBehaviour
         _documents            = collision.GetComponent<ChangeSkin>();
         _tempsEntreeDansZone  = Time.time;
         canAspire             = true;
+        finished = true;
         _feedbackLogo.SetActive(true);
         shatter.ResetShatter();
         Debug.Log("Enabled");
