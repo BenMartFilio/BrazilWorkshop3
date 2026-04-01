@@ -12,7 +12,7 @@ namespace Barrage.UI
     /// (via l'événement OnBarrageValidé de MainDuGardeUI).
     /// Les icônes apparaissent une à une avec un délai, accompagnées du nombre requis par type.
     /// </summary>
-    [DefaultExecutionOrder(-50)]
+    [DefaultExecutionOrder(0)]
     public class AffichageProchaineDemandeUI : MonoBehaviour
     {
         [Header("Slots d'icônes (dans l'ordre d'affichage)")]
@@ -51,23 +51,14 @@ namespace Barrage.UI
         private readonly Dictionary<FormulaireType, FormulaireData> _dataParType = new();
         private Coroutine _affichage;
 
-        // Demande courante capturée en Awake() avant que MainDuGardeUI (order 0) efface la session.
-        private FormulaireType[] _demandeEnCours;
-
         private void Awake()
         {
             foreach (var data in formulairesData.Where(d => d != null))
                 _dataParType[data.type] = data;
 
-            // Capturer la demande courante AVANT que MainDuGardeUI.Awake() la supprime.
-            // MainDuGardeUI a l'ordre d'exécution par défaut (0) ; ce composant a -50.
-            _demandeEnCours = donnéesSession != null && donnéesSession.AUneDemandeSauvegardée
-                ? (FormulaireType[])donnéesSession.prochaineDemandeBarrage.Clone()
-                : null;
-
             Debug.Log($"[AffichageProchaineDemandeUI] Awake — {_dataParType.Count} FormulaireData : " +
                       string.Join(", ", _dataParType.Keys) +
-                      $" | {slots.Count} slots | demandeEnCours={(_demandeEnCours != null ? string.Join(", ", _demandeEnCours) : "aucune")}");
+                      $" | {slots.Count} slots");
 
             foreach (var slot in slots)
                 slot.Masquer();
@@ -75,19 +66,14 @@ namespace Barrage.UI
 
         private void Start()
         {
-            // Afficher la demande COURANTE si ce n'est pas le premier barrage.
-            // mainDuGarde.enabled est déjà positionné par MainDuGardeUI.Awake() (order 0),
-            // qui s'est exécuté après notre Awake() (order -50) mais avant tout Start().
-            bool demandeValide = _demandeEnCours != null && _demandeEnCours.Length > 0;
-            bool gardeActif    = mainDuGarde != null && mainDuGarde.enabled;
+            // Les slots restent masqués pendant toute la phase de remise de documents.
+            // Le joueur a déjà vu la demande courante à la fin du barrage précédent.
+            // L'affichage ne se déclenche QUE via OnBarrageValidé (barrages 2+)
+            // ou LancerDirectement() (premier barrage via PremierBarrageController).
+            foreach (var slot in slots)
+                slot.Masquer();
 
-            Debug.Log($"[AffichageProchaineDemandeUI] Start — demandeValide={demandeValide}, gardeActif={gardeActif}");
-
-            if (demandeValide && gardeActif)
-            {
-                if (_affichage != null) StopCoroutine(_affichage);
-                _affichage = StartCoroutine(AfficherDemandeCourante());
-            }
+            Debug.Log("[AffichageProchaineDemandeUI] Start — slots masqués, en attente de OnBarrageValidé.");
         }
 
         private void OnEnable()
@@ -99,7 +85,7 @@ namespace Barrage.UI
             }
             else
             {
-                Debug.LogWarning("[AffichageProchaineDemandeUI] OnEnable — mainDuGarde est NULL, impossible de s'abonner à OnBarrageValidé !");
+                Debug.LogWarning("[AffichageProchaineDemandeUI] OnEnable — mainDuGarde est NULL !");
             }
         }
 
@@ -111,14 +97,19 @@ namespace Barrage.UI
 
         private void OnBarrageValidé()
         {
-            Debug.Log("[AffichageProchaineDemandeUI] OnBarrageValidé reçu → Geler() + Régénérer() + AfficherIconesUneParUne().");
+            Debug.Log("[AffichageProchaineDemandeUI] OnBarrageValidé → Geler() + masquer icônes courantes + afficher prochaine demande.");
 
-            // Geler la barre immédiatement : le game over ne peut plus se déclencher.
             barrePatience?.Geler();
 
-            demande?.Régénérer();
+            // Arrêter AfficherDemandeCourante si elle tournait encore (ne devrait pas,
+            // mais sécurité en cas de délai entre icônes très long).
+            if (_affichage != null)
+            {
+                StopCoroutine(_affichage);
+                _affichage = null;
+            }
 
-            if (_affichage != null) StopCoroutine(_affichage);
+            demande?.Régénérer();
             _affichage = StartCoroutine(AfficherIconesUneParUne());
         }
 
@@ -138,33 +129,6 @@ namespace Barrage.UI
 
             if (_affichage != null) StopCoroutine(_affichage);
             _affichage = StartCoroutine(AfficherIconesUneParUne());
-        }
-
-        /// <summary>
-        /// Affiche les icônes de la demande COURANTE au début du barrage
-        /// pour que le joueur sache exactement quels formulaires présenter.
-        /// Utilise les mêmes slots que la prochaine demande.
-        /// </summary>
-        private IEnumerator AfficherDemandeCourante()
-        {
-            boutonRetour?.Masquer();
-
-            foreach (var slot in slots)
-                slot.Masquer();
-
-            var affichables = FiltrerAffichables(_demandeEnCours);
-            int nbSlots     = Mathf.Min(affichables.Count, slots.Count);
-
-            Debug.Log($"[AffichageProchaineDemandeUI] Demande COURANTE — {nbSlots} icône(s) : " +
-                      string.Join(", ", affichables.Take(nbSlots)));
-
-            for (int i = 0; i < nbSlots; i++)
-            {
-                slots[i].Afficher(affichables[i].texture, 1);
-                yield return new WaitForSeconds(délaiEntreIcones);
-            }
-
-            _affichage = null;
         }
 
         /// <summary>
