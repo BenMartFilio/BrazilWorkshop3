@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db71ed3cb4b53b1439db84cc2e9193cf, type: 3}
+  m_Name: SO_InventaireObjets
+  m_EditorClassIdentifier: Assembly-CSharp::SO_InventaireObjets
+  objets:
+  - identifiant: LiasseDeBillets
+    nomAffichage: Liasse de Billets
+    sprite: {fileID: 21300000, guid: eabcb30ab043f5141843b50044a30f4b, type: 3}
+    estPassif: 1
+  - identifiant: FormulairePasePartout
+    nomAffichage: Formulaire Passe-Partout
+    sprite: {fileID: 21300000, guid: 100c336d51233a742b699a253c4b79db, type: 3}
+    estPassif: 1
+  - identifiant: TirelireCochon
+    nomAffichage: Tirelire Cochon
+    sprite: {fileID: 21300000, guid: bb1109e944c86da48a0d48e0ec804c2b, type: 3}
+    estPassif: 0
+  - identifiant: GateauChinois
+    nomAffichage: "G\xE2teau Chinois"
+    sprite: {fileID: 21300000, guid: 06b187de32c092f4799d2a0d9844a373, type: 3}
+    estPassif: 0
+  - identifiant: RadarObstacles
+    nomAffichage: "Radar \xE0 Obstacles"
+    sprite: {fileID: 21300000, guid: 59cfb477aa900da4093bede88e317cb7, type: 3}
+    estPassif: 0
+  - identifiant: Aspirateur
+    nomAffichage: Aspirateur
+    sprite: {fileID: 21300000, guid: d311b8af498717743b649d0ff9c03dbc, type: 3}
+    estPassif: 0
+  - identifiant: MontreAGousset
+    nomAffichage: "Montre \xE0 Gousset"
+    sprite: {fileID: 21300000, guid: bad5870c01062c841bf1a56840fbb92f, type: 3}
+    estPassif: 0

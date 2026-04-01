@@ -13,14 +13,32 @@ MonoBehaviour:
   m_Name: SO_PlayerDatas
   m_EditorClassIdentifier: Assembly-CSharp::SO_PlayerDatas
   Name: ErrorName404
-  BestScore: 200
+  BestScore: 561
   Level: 1
   generalVolume: 1
   musicVolume: 0.34339824
   SFXVolume: 0
   generalMonney: 10083
   premiumMonney: 100
-  actualScoreNotSaved: 171
-  actualCoinsNotSaved: 523
+  actualScoreNotSaved: 561
+  actualCoinsNotSaved: 0
   isAnHighScore: 1
   allHighScores: []
+  allObjectInInventory:
+  - highScores:
+    - objectName: LiasseDeBillets
+      quantity: 3
+    - objectName: FormulairePasePartout
+      quantity: 3
+    - objectName: BadgeDuGouvernement
+      quantity: 3
+    - objectName: TirelireCochon
+      quantity: 3
+    - objectName: GateauChinois
+      quantity: 3
+    - objectName: RadarObstacles
+      quantity: 3
+    - objectName: Aspirateur
+      quantity: 2
+    - objectName: MontreAGousset
+      quantity: 2

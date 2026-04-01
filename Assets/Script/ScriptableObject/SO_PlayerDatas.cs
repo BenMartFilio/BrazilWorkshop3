@@ -7,6 +7,7 @@ public class MiniGameHighScores
 {
     public List<HighScoreEntry> highScores = new List<HighScoreEntry>();
 }
+[System.Serializable]
 public class InventoryObject
 {
     public List<InventoryEntry> highScores = new List<InventoryEntry>();
@@ -58,7 +59,7 @@ public class SO_PlayerDatas : ScriptableObject
     {
         CheckSaveSystem();
         // pour utiliser la fonction save de savesystem j'ai besoin de playerdatas
-        // donc je dois créer un playerdatas à partir de mon so
+        // donc je dois crï¿½er un playerdatas ï¿½ partir de mon so
         PlayerDatas datas = new PlayerDatas();
         datas.Name = Name;
         datas.BestScore = BestScore;
@@ -70,16 +71,28 @@ public class SO_PlayerDatas : ScriptableObject
         datas.SFXVolume = SFXVolume;
         datas.generalMonney = generalMonney;
         datas.premiumMonney = premiumMonney;
-        // j'envoie ça à la fonction save de savesystem
+        // j'envoie ï¿½a ï¿½ la fonction save de savesystem
         saveSystem.Save(datas);
+    }
+
+    /// <summary>Retourne la liste plate de toutes les InventoryEntry regroupÃ©es dans allObjectInInventory.</summary>
+    public List<InventoryEntry> ObtenirInventairePlat()
+    {
+        List<InventoryEntry> plat = new List<InventoryEntry>();
+        foreach (InventoryObject groupe in allObjectInInventory)
+        {
+            if (groupe != null)
+                plat.AddRange(groupe.highScores);
+        }
+        return plat;
     }
 
     private void CheckSaveSystem()
     {
-        // vérifier si savesystem contient un objet du type savesystem
+        // vï¿½rifier si savesystem contient un objet du type savesystem
         if (saveSystem == null)
         {
-            // s'il n'y a rien, j'en crée (instancie) un.
+            // s'il n'y a rien, j'en crï¿½e (instancie) un.
             saveSystem = new SaveController();
         }
     }
