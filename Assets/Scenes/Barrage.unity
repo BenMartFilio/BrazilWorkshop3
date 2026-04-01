@@ -1703,7 +1703,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 0}
-  m_Type: 3
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3524,6 +3524,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9619967b7934ec94bb7d10fbca8989e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Barrage.UI.BarrePatience
+  patienceDepart: 160
+  vitesseVidage: 3
+  pointsPenalite: 10
   visualisateurExterne: {fileID: 1689963565}
   imageRemplissage: {fileID: 0}
   imageFlash: {fileID: 0}
@@ -3533,6 +3536,15 @@ MonoBehaviour:
   couleurFlash: {r: 1, g: 0.1, b: 0.1, a: 0.7}
   seuilMoyenne: 0.5
   seuilBasse: 0.25
+  "flashDur\xE9e": 0.45
+  shakeAmplitude: 5
+  "shakeDur\xE9e": 0.32
+  trembleVertAmplitude: 0.8
+  trembleVertFrequence: 8
+  trembleOrangeAmplitude: 3.5
+  trembleOrangeFrequence: 22
+  trembleRougeAmplitude: 7
+  trembleRougeFrequence: 45
 --- !u!114 &1689963565
 MonoBehaviour:
   m_ObjectHideFlags: 0
