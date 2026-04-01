@@ -29,7 +29,7 @@ namespace Barrage.UI
             InitialiserComposants();
             // Masquer via SetActive directement pour éviter la récursion avant que
             // _rawImage soit initialisé.
-            gameObject.SetActive(false);
+         //   gameObject.SetActive(false);
             transform.localScale = Vector3.zero;
         }
 
