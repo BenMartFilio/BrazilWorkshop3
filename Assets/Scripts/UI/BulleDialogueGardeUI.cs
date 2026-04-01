@@ -222,9 +222,18 @@ namespace Barrage.UI
                 string texteAReprendre = autresBulle != null ? autresBulle._texteEnCours : null;
                 autresBulle?.CéderLaParole();
 
+                // Ne pas afficher de réplique de demande si le barrage est déjà terminé.
+                if (_barrageTerminé)
+                {
+                    // Reprendre uniquement le texte de fin déjà en cours (ex. "Bonne route.")
+                    if (!string.IsNullOrEmpty(texteAReprendre))
+                        LancerRéplicueDirecte(texteAReprendre, duréeAffichage: -1f);
+                    return;
+                }
+
                 if (!string.IsNullOrEmpty(texteAReprendre))
                     LancerRéplicueDirecte(texteAReprendre, duréeAffichage: -1f);
-                else if (!_barrageTerminé)
+                else
                     LancerRéplique(REPLIQUES_DEMANDE, duréeAffichage: -1f);
             }
             else

@@ -105,6 +105,13 @@ namespace Barrage.UI
             _rt       = GetComponent<RectTransform>();
             _patience = patienceDepart;
 
+            // La barre démarre toujours gelée.
+            // C'est MainDuGardeUI qui la dégèle via Dégeler() dans son Start(),
+            // uniquement pour les barrages où le joueur doit remettre des documents.
+            // Au premier barrage (et lors de l'affichage de la prochaine demande),
+            // elle reste gelée jusqu'à la fin de la scène.
+            _gelée = true;
+
             // Résoudre le visualisateur externe en IVisualisateurPatience
             if (visualisateurExterne != null && visualisateurExterne is IVisualisateurPatience v)
                 _visualisateur = v;

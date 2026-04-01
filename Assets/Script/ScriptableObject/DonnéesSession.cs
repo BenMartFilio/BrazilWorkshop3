@@ -34,8 +34,6 @@ public class DonnéesSession : ScriptableObject
     [Tooltip("Vrai si une session MapRoad a déjà été sauvegardée.")]
     public bool sessionValide = false;
 
-    public int[] documentsPosseded = new int[0];
-
     [Header("Progression barrage")]
     [Tooltip("Signaux TimeManager écoulés depuis le dernier tirage.")]
     public int signauxEcoules = 0;
@@ -65,10 +63,9 @@ public class DonnéesSession : ScriptableObject
         vitesseGénérale           = 0f;
         vitesseSol                = 5f;
         sessionValide             = false;
-        documentsPosseded         = new int[0];
         signauxEcoules            = 0;
         prochainBarrageA          = 0;
         prochaineDemandeBarrage   = new FormulaireType[0];
-        revive                    = 0;   // ← manquait : remise à zéro du compteur de revives
+        revive                    = 0;
     }
 }

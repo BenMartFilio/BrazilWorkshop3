@@ -62,14 +62,18 @@ namespace Barrage.UI
 
         private void Start()
         {
-            // Aucune demande sauvegardée = première partie ou données vides → rien à afficher.
-            if (donnéesSession == null || !donnéesSession.AUneDemandeSauvegardée)
+            // ObtenirTypesÀAfficher() gère les deux cas :
+            //   • session avec demande → rappel des documents à présenter
+            //   • nouvelle partie → génération aléatoire + sauvegarde en session
+            //     pour que le premier barrage exige exactement ces documents
+            var types = ObtenirTypesÀAfficher();
+
+            if (types.Count == 0)
             {
-                Debug.Log("[AffichagePremierBarrageUI] Aucune demande en session — rappel non affiché.");
+                Debug.Log("[AffichagePremierBarrageUI] Aucun type à afficher — rappel ignoré.");
                 return;
             }
 
-            var types = new List<FormulaireType>(donnéesSession.prochaineDemandeBarrage);
             Debug.Log($"[AffichagePremierBarrageUI] Rappel de la demande ({types.Count} entrées) : " +
                       string.Join(", ", types));
 

@@ -168,10 +168,21 @@ namespace Barrage.UI
 
         // ── Helpers de détection ───────────────────────────────────────────────
 
-        /// <summary>Retourne true si la position écran est dans la zone de la main du garde.</summary>
-        public bool EstSurMainDuGarde(Vector2 screenPos, Camera cam)
+        /// <summary>
+        /// Retourne true si la position écran est dans la zone de la main du garde.
+        /// La caméra utilisée est dérivée du Canvas racine de MainDuGarde :
+        ///   - Screen Space Overlay → null (comportement correct pour ce mode)
+        ///   - Screen Space Camera / World Space → worldCamera du canvas
+        /// Cela garantit un hit-test correct indépendamment de la caméra du canvas des cartes.
+        /// </summary>
+        public bool EstSurMainDuGarde(Vector2 screenPos, Camera _)
         {
-            return RectTransformUtility.RectangleContainsScreenPoint(mainDuGarde.RectTransform, screenPos, cam);
+            Canvas canvas = mainDuGarde.RectTransform.GetComponentInParent<Canvas>();
+            if (canvas != null) canvas = canvas.rootCanvas;
+            Camera camGarde = (canvas != null && canvas.renderMode != RenderMode.ScreenSpaceOverlay)
+                              ? canvas.worldCamera
+                              : null;
+            return RectTransformUtility.RectangleContainsScreenPoint(mainDuGarde.RectTransform, screenPos, camGarde);
         }
 
         /// <summary>Retourne la poche dont la zone contient la position écran, ou null si aucune.</summary>

@@ -11,7 +11,11 @@ namespace Barrage.UI
     /// Valide l'ordre de remise selon la séquence de ListeAttenteGarde.
     /// - Bon type au bon moment → animation positive (grossissement doux + agitation gentille).
     /// - Mauvais type ou mauvais ordre → animation négative (rebonds violents 1 s dans la PartieHaute).
+    ///
+    /// [DefaultExecutionOrder(-50)] : s'exécute APRÈS BulleDialogueGardeUI et PremierBarrageController
+    /// (ordre -100), qui lisent AUneDemandeSauvegardée avant que ChargerDepuisSession() l'efface.
     /// </summary>
+    [DefaultExecutionOrder(-50)]
     [RequireComponent(typeof(RectTransform))]
     public class MainDuGardeUI : MonoBehaviour
     {
@@ -26,6 +30,11 @@ namespace Barrage.UI
         [SerializeField] private DonnéesSession donnéesSession;
         [Tooltip("Demande aléatoire de secours si aucune demande n'est sauvegardée en session.")]
         [SerializeField] private DemandeBarrage demandeAléatoire;
+
+        [Header("Patience")]
+        [Tooltip("BarrePatience à dégeler au début du barrage (barrages normaux uniquement). " +
+                 "Au premier barrage, MainDuGardeUI est désactivé et ne dégèle donc pas la barre.")]
+        [SerializeField] private BarrePatience barrePatience;
 
         // ── Animation positive ────────────────────────────────────────────────
         // (constantes déplacées dans AnimerPositif)
@@ -80,6 +89,18 @@ namespace Barrage.UI
             else
             {
                 Debug.LogError("[MainDuGardeUI] listeAttenteGarde non assignée — impossible de charger la demande !");
+            }
+        }
+
+        private void Start()
+        {
+            // Ce Start() n'est atteint que si enabled=true (barrage normal avec remise de documents).
+            // On dégèle la patience ici : BarrePatience démarre gelée par défaut
+            // et ne doit se vider que pendant la phase de remise.
+            if (barrePatience != null)
+            {
+                barrePatience.Dégeler();
+                Debug.Log("[MainDuGardeUI] Start — BarrePatience dégelée, décompte actif.");
             }
         }
 

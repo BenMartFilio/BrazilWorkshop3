@@ -117,13 +117,11 @@ namespace Barrage.UI
         /// Déclenche directement l'affichage de la prochaine demande sans attendre
         /// l'événement <see cref="MainDuGardeUI.OnBarrageValidé"/>.
         /// Utilisé par <see cref="PremierBarrageController"/> au premier barrage.
+        /// La BarrePatience est déjà gelée dès son Awake — aucune action supplémentaire nécessaire.
         /// </summary>
         public void LancerDirectement()
         {
-            Debug.Log("[AffichageProchaineDemandeUI] LancerDirectement() → Geler() + Régénérer() + AfficherIconesUneParUne().");
-
-            // Au premier barrage, la patience n'a pas encore de sens — on la gèle d'emblée.
-            barrePatience?.Geler();
+            Debug.Log("[AffichageProchaineDemandeUI] LancerDirectement() → Régénérer() + AfficherIconesUneParUne().");
 
             demande?.Régénérer();
 
@@ -176,8 +174,9 @@ namespace Barrage.UI
 
             for (int i = 0; i < nbSlots; i++)
             {
-                Debug.Log($"[AffichageProchaineDemandeUI] Slot {i} ← {affichables[i].type}");
-                slots[i].Afficher(affichables[i].texture, 1);
+                int quantité = demande != null ? demande.CompterType(affichables[i].type) : 1;
+                Debug.Log($"[AffichageProchaineDemandeUI] Slot {i} ← {affichables[i].type} ×{quantité}");
+                slots[i].Afficher(affichables[i].texture, quantité);
                 yield return new WaitForSeconds(délaiEntreIcones);
             }
 

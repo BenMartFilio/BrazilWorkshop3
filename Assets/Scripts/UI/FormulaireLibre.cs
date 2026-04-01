@@ -166,8 +166,13 @@ namespace Barrage.UI
 
             if (_rawImage != null) _rawImage.raycastTarget = true;
 
-            // Priorité : dépôt sur la main du garde
-            if (_manager.EstSurMainDuGarde(eventData.position, eventData.pressEventCamera))
+            // Priorité : dépôt sur la main du garde.
+            // On utilise Camera.main plutôt que eventData.pressEventCamera car
+            // pressEventCamera peut être null en Screen Space - Camera si l'EventCamera
+            // du Canvas n'est pas configuré — RectangleContainsScreenPoint retombe alors
+            // en comportement Screen Space - Overlay et le hit-test échoue silencieusement.
+            Camera cam = Camera.main;
+            if (_manager.EstSurMainDuGarde(eventData.position, cam))
             {
                 _manager.EnvoyerAMainDuGarde(this);
                 return;

@@ -90,7 +90,10 @@ namespace Barrage.UI
             if (_rawImage != null) _rawImage.raycastTarget = true;
 
             Vector2 screenPos = eventData.position;
-            Camera cam        = eventData.pressEventCamera;
+            // Camera.main est utilisée à la place de eventData.pressEventCamera qui peut être
+            // null en Screen Space - Camera (EventCamera non configuré sur le Canvas),
+            // ce qui ferait échouer silencieusement les hit-tests de RectangleContainsScreenPoint.
+            Camera cam = Camera.main;
 
             if (_uiManager.EstSurMainDuGarde(screenPos, cam))
             {
@@ -123,11 +126,15 @@ namespace Barrage.UI
             // Position cible dans la poche
             Vector2 positionCible = poche.ObtenirPositionPourIndex(index);
 
-            // Convertir la position monde en coordonnées locales de la poche
+            // Convertir la position monde en coordonnées locales de la poche.
+            // On utilise Camera.main pour correspondre à la caméra du Canvas (Screen Space - Camera).
+            // WorldToScreenPoint(null, ...) utilisait la première caméra trouvée par Unity,
+            // ce qui pouvait produire une position de départ décalée.
+            Camera cam = Camera.main;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
                 poche.RectTransform,
-                RectTransformUtility.WorldToScreenPoint(null, positionMonde),
-                null, out Vector2 positionDepart);
+                RectTransformUtility.WorldToScreenPoint(cam, positionMonde),
+                cam, out Vector2 positionDepart);
 
             _rectTransform.anchoredPosition = positionDepart;
 
