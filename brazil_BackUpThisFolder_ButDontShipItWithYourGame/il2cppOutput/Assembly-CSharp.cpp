@@ -23685,12 +23685,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* ScoreManager_FadeOutBestScore_
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_StopScore_m31D042939BA61BF9EF3A7C43D253A842E7A0A829 (ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:63>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:62>
 		__this->___isDriving = (bool)0;
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:64>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:63>
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_0 = __this->___scoreCoroutine;
 		MonoBehaviour_StopCoroutine_mB0FC91BE84203BD8E360B3FBAE5B958B4C5ED22A(__this, L_0, NULL);
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:65>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:64>
 		return;
 	}
 }
@@ -23698,21 +23698,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_StopScore_m31D042939BA61BF9
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_StartScore_m7AF973B3EB29D1FE378552D50884A903C0E21793 (ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:69>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:68>
 		__this->___isDriving = (bool)1;
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:70>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:69>
 		RuntimeObject* L_0;
 		L_0 = ScoreManager_ContiniousScore_mCCC5BCE973C6516250121393DA1735262CB67CCE(__this, NULL);
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_1;
 		L_1 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_0, NULL);
 		__this->___scoreCoroutine = L_1;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___scoreCoroutine), (void*)L_1);
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:71>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:70>
 		RuntimeObject* L_2;
 		L_2 = ScoreManager_ContiniousBestScore_mD3B689FD52A1D256C82361D90F4CA1706EBD62B4(__this, NULL);
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_3;
 		L_3 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_2, NULL);
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:72>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:71>
 		return;
 	}
 }
@@ -23720,10 +23720,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_StartScore_m7AF973B3EB29D1F
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_NewSpeed_mF7C344EC7F95485DC008BB9DE73F9FFB33A1D97F (ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* __this, float ___0_newSpeed, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:76>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:75>
 		float L_0 = ___0_newSpeed;
 		__this->___speedScore = L_0;
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:77>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:76>
 		return;
 	}
 }
@@ -23731,11 +23731,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_NewSpeed_mF7C344EC7F95485DC
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_AddToSpeed_m35C93B20B863FA5A3241C37A1EFAC4B34D2F1CBA (ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* __this, int32_t ___0_toAdd, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:81>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:80>
 		float L_0 = __this->___speedScore;
 		int32_t L_1 = ___0_toAdd;
 		ScoreManager_NewSpeed_mF7C344EC7F95485DC008BB9DE73F9FFB33A1D97F_inline(__this, ((float)il2cpp_codegen_add(L_0, ((float)L_1))), NULL);
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:82>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:81>
 		return;
 	}
 }
@@ -23743,9 +23743,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_AddToSpeed_m35C93B20B863FA5
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_UpdateSpeed_mD2B1D307B0AD0AEC3B98607C5452F787226440E5 (ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:86>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:85>
 		ScoreManager_AddToSpeed_m35C93B20B863FA5A3241C37A1EFAC4B34D2F1CBA(__this, ((int32_t)10), NULL);
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:87>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:86>
 		return;
 	}
 }
@@ -23759,17 +23759,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_SetScore_m4936588FE5117762C
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:91>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:90>
 		int32_t L_0 = ___0_newScore;
 		__this->___score = L_0;
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:92>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:91>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_1 = __this->___textScore;
 		int32_t* L_2 = (int32_t*)(&__this->___score);
 		String_t* L_3;
 		L_3 = Int32_ToString_m967AECC237535C552A97A80C7875E31B98496CA9(L_2, _stringLiteral7BB53D65B097ACF1F141DEAE0184DC1BCFB14B07, NULL);
 		NullCheck(L_1);
 		VirtualActionInvoker1< String_t* >::Invoke(66, L_1, L_3);
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:93>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:92>
 		return;
 	}
 }
@@ -23777,11 +23777,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_SetScore_m4936588FE5117762C
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_AddToScore_m857D3A1B57D68D5D60F302204A9E64319B0C72A1 (ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* __this, int32_t ___0_toAdd, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:97>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:96>
 		int32_t L_0 = __this->___score;
 		int32_t L_1 = ___0_toAdd;
 		ScoreManager_SetScore_m4936588FE5117762CA0A56BC6BBFE66385DA64BF(__this, ((int32_t)il2cpp_codegen_add(L_0, L_1)), NULL);
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:98>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:97>
 		return;
 	}
 }
@@ -23789,17 +23789,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_AddToScore_m857D3A1B57D68D5
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_SauvegarderDansSession_m903FCD14F7C52262D3C8698434702C3A604B2884 (ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* __this, DonnUE9esSession_t1CFA1835B32890AB9D02B828E3675C625BD7BC1A* ___0_donnUE9es, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:105>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:104>
 		DonnUE9esSession_t1CFA1835B32890AB9D02B828E3675C625BD7BC1A* L_0 = ___0_donnUE9es;
 		int32_t L_1 = __this->___score;
 		NullCheck(L_0);
 		L_0->___score = L_1;
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:106>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:105>
 		DonnUE9esSession_t1CFA1835B32890AB9D02B828E3675C625BD7BC1A* L_2 = ___0_donnUE9es;
 		float L_3 = __this->___speedScore;
 		NullCheck(L_2);
 		L_2->___vitesseScore = L_3;
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:107>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:106>
 		return;
 	}
 }
@@ -23807,13 +23807,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_SauvegarderDansSession_m903
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_RestaurerDepuisSession_m1544C5781C780D5416D0EAB1954AABE3C1BFE46F (ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* __this, int32_t ___0_scoreSauvegardUE9, float ___1_vitesseSauvegardUE9e, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:112>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:111>
 		float L_0 = ___1_vitesseSauvegardUE9e;
 		__this->___speedScore = L_0;
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:113>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:112>
 		int32_t L_1 = ___0_scoreSauvegardUE9;
 		ScoreManager_SetScore_m4936588FE5117762CA0A56BC6BBFE66385DA64BF(__this, L_1, NULL);
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:114>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:113>
 		return;
 	}
 }
@@ -23821,9 +23821,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_RestaurerDepuisSession_m154
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_Start_m7E00370AD0134DB3AEA647B9BA69055725AA83FE (ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:118>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:117>
 		ScoreManager_StartScore_m7AF973B3EB29D1FE378552D50884A903C0E21793(__this, NULL);
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:119>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:118>
 		return;
 	}
 }
@@ -23831,7 +23831,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_Start_m7E00370AD0134DB3AEA6
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ScoreManager_ReturnScore_m5CB12E21530B04C842D9E3A30EF033D0EA50F649 (ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:124>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:123>
 		int32_t L_0 = __this->___score;
 		return L_0;
 	}
@@ -23840,7 +23840,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ScoreManager_ReturnScore_m5CB12E21530
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager__ctor_mE5C264C34A9CBBAB72DCF99CCCC9841AF8F9FEE6 (ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:13>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:12>
 		__this->___speedScore = (39.0f);
 		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
 		return;
@@ -23908,7 +23908,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CContiniousBestScoreU3Ed__10_MoveNext_
 IL_0017:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:29>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:28>
 		ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* L_4 = V_1;
 		ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* L_5 = V_1;
 		NullCheck(L_5);
@@ -23922,7 +23922,7 @@ IL_0017:
 
 IL_0031:
 	{
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:32>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:31>
 		ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* L_8 = V_1;
 		NullCheck(L_8);
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_9 = L_8->___bestScoreText;
@@ -23937,7 +23937,7 @@ IL_0031:
 		L_14 = Int32_ToString_m030E01C24E294D6762FB0B6F37CB541581F55CA5((&V_2), NULL);
 		NullCheck(L_9);
 		VirtualActionInvoker1< String_t* >::Invoke(66, L_9, L_14);
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:33>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:32>
 		ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* L_15 = V_1;
 		NullCheck(L_15);
 		float L_16 = L_15->___speedScore;
@@ -23958,7 +23958,7 @@ IL_0080:
 
 IL_0087:
 	{
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:30>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:29>
 		ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* L_19 = V_1;
 		NullCheck(L_19);
 		int32_t L_20 = L_19->___score;
@@ -23971,7 +23971,7 @@ IL_0087:
 		}
 	}
 	{
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:35>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:34>
 		ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* L_23 = V_1;
 		ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* L_24 = V_1;
 		NullCheck(L_24);
@@ -23980,7 +23980,7 @@ IL_0087:
 		NullCheck(L_23);
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_26;
 		L_26 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(L_23, L_25, NULL);
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:36>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:35>
 		return (bool)0;
 	}
 }
@@ -24075,11 +24075,11 @@ IL_0017:
 
 IL_0020:
 	{
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:23>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:22>
 		ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* L_4 = V_1;
 		NullCheck(L_4);
 		ScoreManager_AddToScore_m857D3A1B57D68D5D60F302204A9E64319B0C72A1(L_4, 1, NULL);
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:24>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:23>
 		ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* L_5 = V_1;
 		NullCheck(L_5);
 		float L_6 = L_5->___speedScore;
@@ -24100,7 +24100,7 @@ IL_0056:
 
 IL_005d:
 	{
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:21>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:20>
 		ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* L_9 = V_1;
 		NullCheck(L_9);
 		bool L_10 = L_9->___isDriving;
@@ -24110,7 +24110,7 @@ IL_005d:
 		}
 	}
 	{
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:26>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:25>
 		return (bool)0;
 	}
 }
@@ -24202,7 +24202,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CFadeOutBestScoreU3Ed__11_MoveNext_m47
 IL_001a:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:40>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:39>
 		ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* L_4 = V_1;
 		NullCheck(L_4);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_5 = L_4->___bestScoreParent;
@@ -24211,7 +24211,7 @@ IL_001a:
 		L_6 = GameObject_GetComponent_TisCanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094_m47C7F4214DFAAC752E331A1073AD1B7EA78DB3DD(L_5, GameObject_GetComponent_TisCanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094_m47C7F4214DFAAC752E331A1073AD1B7EA78DB3DD_RuntimeMethod_var);
 		__this->___U3CcanvasGroupU3E5__2 = L_6;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CcanvasGroupU3E5__2), (void*)L_6);
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:42>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:41>
 		CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* L_7 = __this->___U3CcanvasGroupU3E5__2;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_8;
@@ -24222,7 +24222,7 @@ IL_001a:
 		}
 	}
 	{
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:43>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:42>
 		ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* L_9 = V_1;
 		NullCheck(L_9);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_10 = L_9->___bestScoreParent;
@@ -24235,25 +24235,25 @@ IL_001a:
 
 IL_0051:
 	{
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:45>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:44>
 		CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* L_12 = __this->___U3CcanvasGroupU3E5__2;
 		NullCheck(L_12);
 		float L_13;
 		L_13 = CanvasGroup_get_alpha_mBFEA193D2886B27CC53B31F90F7A1659B67ED6DF(L_12, NULL);
 		__this->___U3CstartAlphaU3E5__3 = L_13;
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:46>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:45>
 		__this->___U3CtimeU3E5__4 = (0.0f);
 		goto IL_00c0;
 	}
 
 IL_006f:
 	{
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:50>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:49>
 		float L_14 = __this->___U3CtimeU3E5__4;
 		float L_15;
 		L_15 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
 		__this->___U3CtimeU3E5__4 = ((float)il2cpp_codegen_add(L_14, L_15));
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:51>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:50>
 		CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* L_16 = __this->___U3CcanvasGroupU3E5__2;
 		float L_17 = __this->___U3CstartAlphaU3E5__3;
 		float L_18 = __this->___U3CtimeU3E5__4;
@@ -24262,7 +24262,7 @@ IL_006f:
 		L_20 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_17, (0.0f), ((float)(L_18/L_19)), NULL);
 		NullCheck(L_16);
 		CanvasGroup_set_alpha_m5C06839316D948BB4F75ED72C87FA1F1A20C333F(L_16, L_20, NULL);
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:52>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:51>
 		__this->___U3CU3E2__current = NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)NULL);
 		__this->___U3CU3E1__state = 1;
@@ -24276,7 +24276,7 @@ IL_00b9:
 
 IL_00c0:
 	{
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:48>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:47>
 		float L_21 = __this->___U3CtimeU3E5__4;
 		float L_22 = __this->___duration;
 		if ((((float)L_21) < ((float)L_22)))
@@ -24285,17 +24285,17 @@ IL_00c0:
 		}
 	}
 	{
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:55>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:54>
 		CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* L_23 = __this->___U3CcanvasGroupU3E5__2;
 		NullCheck(L_23);
 		CanvasGroup_set_alpha_m5C06839316D948BB4F75ED72C87FA1F1A20C333F(L_23, (0.0f), NULL);
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:57>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:56>
 		ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* L_24 = V_1;
 		NullCheck(L_24);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_25 = L_24->___bestScoreParent;
 		NullCheck(L_25);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_25, (bool)0, NULL);
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:58>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:57>
 		return (bool)0;
 	}
 }
@@ -25102,7 +25102,7 @@ IL_0040:
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t ScoreManager_ReturnScore_m5CB12E21530B04C842D9E3A30EF033D0EA50F649_inline (ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:124>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:123>
 		int32_t L_0 = __this->___score;
 		return L_0;
 	}
@@ -26291,10 +26291,10 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* LevelPlayAdError_get_Er
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void ScoreManager_NewSpeed_mF7C344EC7F95485DC008BB9DE73F9FFB33A1D97F_inline (ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* __this, float ___0_newSpeed, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:76>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:75>
 		float L_0 = ___0_newSpeed;
 		__this->___speedScore = L_0;
-		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:77>
+		//<source_info:C:/Users/gabri/Desktop/UnityCoursGilbert/GabrielFarnet/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:76>
 		return;
 	}
 }

@@ -2,7 +2,6 @@ using System.Collections;
 using System.ComponentModel;
 using TMPro;
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI;
 
 public class ScoreManager : MonoBehaviour
 {
