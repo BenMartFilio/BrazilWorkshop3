@@ -3701,6 +3701,7 @@ MonoBehaviour:
   _feedbackLogo: {fileID: 55492459}
   _input: {fileID: 290452987}
   shatter: {fileID: 55492464}
+  _effets: {fileID: 0}
   canAspire: 0
   isDead: 0
   finished: 1

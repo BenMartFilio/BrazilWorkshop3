@@ -362,17 +362,20 @@ public class SpawnObstacleV2 : MonoBehaviour
     }
 
     /// <summary>
-    /// Waits until the accumulated virtual distance (speed × deltaTime)
-    /// reaches <paramref name="distance"/>. Re-samples speed every frame.
+    /// Waits until the accumulated virtual distance (speed × fixedDeltaTime)
+    /// reaches <paramref name="distance"/>. Reads the live ground speed each
+    /// physics tick to stay in sync with the actual scroll rate.
     /// </summary>
     private IEnumerator WaitForDistance(float distance)
     {
         float travelled = 0f;
         while (travelled < distance)
         {
-            float currentSpeed = baseObstacleSpeed + _generalSpeed;
-            travelled += currentSpeed * Time.deltaTime;
-            yield return null;  // REMETTRE NULL SI BUG
+            float currentSpeed = (_grounds != null && _grounds.Length > 0)
+                ? _grounds[0].speed
+                : baseObstacleSpeed + _generalSpeed;
+            travelled += currentSpeed * Time.fixedDeltaTime;
+            yield return new WaitForFixedUpdate();
         }
     }
 

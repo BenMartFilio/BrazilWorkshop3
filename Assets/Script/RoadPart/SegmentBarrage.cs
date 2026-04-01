@@ -41,6 +41,13 @@ public class SegmentBarrage : MonoBehaviour
         _collider           = GetComponent<BoxCollider2D>();
         _collider.isTrigger = true;
         _scrolling          = GetComponent<ScrollingElement>();
+
+        // Cache scene references once — these objects persist for the session lifetime.
+        _joueur       = FindFirstObjectByType<PlayerMovement>();
+        _scoreManager = FindFirstObjectByType<ScoreManager>();
+        _spawner      = FindFirstObjectByType<SpawnObstacleV2>();
+        _end          = FindFirstObjectByType<EndManager>();
+        _sols         = FindObjectsByType<GoundMouvement>(FindObjectsSortMode.None);
     }
 
     private void OnEnable()
@@ -48,15 +55,15 @@ public class SegmentBarrage : MonoBehaviour
         _barrageEnCours = false;
         _gelé           = false;
 
-        _joueur       = FindFirstObjectByType<PlayerMovement>();
-        _scoreManager = FindFirstObjectByType<ScoreManager>();
-        _spawner      = FindFirstObjectByType<SpawnObstacleV2>();
-        _end          = FindFirstObjectByType<EndManager>();
-        _sols         = FindObjectsByType<GoundMouvement>(FindObjectsSortMode.None);
+        // Safety re-fetch if a reference was lost (e.g., scene reload edge case).
+        if (_joueur == null)       _joueur       = FindFirstObjectByType<PlayerMovement>();
+        if (_scoreManager == null) _scoreManager = FindFirstObjectByType<ScoreManager>();
+        if (_spawner == null)      _spawner      = FindFirstObjectByType<SpawnObstacleV2>();
+        if (_end == null)          _end          = FindFirstObjectByType<EndManager>();
+        if (_sols == null || _sols.Length == 0)
+            _sols = FindObjectsByType<GoundMouvement>(FindObjectsSortMode.None);
 
-        Debug.Log($"[SegmentBarrage] Activé. Joueur={_joueur != null} " +
-                  $"| SessionManager={SessionManager.Instance != null}");
-
+        Debug.Log($"[SegmentBarrage] Activé. Joueur={_joueur != null} | SessionManager={SessionManager.Instance != null}");
         if (_joueur == null)       Debug.LogError("[SegmentBarrage] PlayerMovement introuvable.");
         if (_scoreManager == null) Debug.LogError("[SegmentBarrage] ScoreManager introuvable.");
         if (_spawner == null)      Debug.LogError("[SegmentBarrage] SpawnObstacleV2 introuvable.");

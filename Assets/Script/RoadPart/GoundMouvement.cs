@@ -23,7 +23,10 @@ public class GoundMouvement : MonoBehaviour
 
     public void UpdateSpeed(float addToNewSpeed)
     {
-        speed = Mathf.Clamp((baseSpeed + addToNewSpeed) * FacteurVitesseGlobal, 0, (30 + baseSpeed) * FacteurVitesseGlobal);
+        speed = Mathf.Clamp(
+            (baseSpeed + addToNewSpeed) * FacteurVitesseGlobal,
+            0,
+            maxSpeed * FacteurVitesseGlobal);
     }
 
     // ── Session ───────────────────────────────────────────────────────────────
@@ -62,48 +65,24 @@ public class GoundMouvement : MonoBehaviour
 
     public void Ralentissement(float duration, ScrollingElement barrage)
     {
-        StartCoroutine(Slower1(duration, barrage));
+        StartCoroutine(Slower(duration, barrage));
     }
 
     private IEnumerator Slower(float duration, ScrollingElement barrage)
     {
         float elapsedTime = 0f;
-        float startSpeed = speed;
+        float startSpeed  = speed;
         barrage.StartMoving();
 
         while (elapsedTime < duration)
         {
-            float t = elapsedTime / duration;
-            float easedT = 1f - Mathf.Pow(1f - t, 5); // puissance 4 = freinage fort
-
+            float t      = elapsedTime / duration;
+            float easedT = 1f - Mathf.Pow(1f - t, 5);
             speed = Mathf.Lerp(startSpeed, 0f, easedT);
             barrage.SetSpeed(speed);
-
             elapsedTime += Time.deltaTime;
             yield return null;
-
         }
         speed = 0f;
-    }
-    private IEnumerator Slower1(float duration, ScrollingElement barrage)
-    {
-        float elapsedTime = 0f;
-        float startSpeed = speed;
-        barrage.StartMoving();
-
-        while (elapsedTime < 0.2f)
-        {
-            float t = elapsedTime / 0.2f;
-            float easedT = 1f - Mathf.Pow(1f - t, 5);
-
-            speed = Mathf.Lerp(startSpeed, 5f, easedT);
-            barrage.SetSpeed(speed);
-
-            elapsedTime += Time.deltaTime;
-            yield return null;
-
-        }
-        speed = 5f;
-        StartCoroutine(Slower(duration-0.2f, barrage));
     }
 }

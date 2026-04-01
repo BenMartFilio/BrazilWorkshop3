@@ -43,6 +43,8 @@ public class MapRoadSessionBridge : MonoBehaviour
             return;
         }
 
-        SessionManager.Instance.AllerAuBarrage(joueur, scoreManager, spawner, end, sols);
+        float vitesseAvantRalentissement = (sols != null && sols.Length > 0) ? sols[0].speed : 0f;
+        SessionManager.Instance.AllerAuBarrage(joueur, scoreManager, spawner, end, sols,
+            vitesseSolAvantRalentissement: vitesseAvantRalentissement);
     }
 }

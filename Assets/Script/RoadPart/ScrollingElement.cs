@@ -57,7 +57,7 @@ public class ScrollingElement : MonoBehaviour
     }
     private void Start()
     {
-        tempbaseSpeed = 5 - baseSpeed;
+        tempbaseSpeed = -(baseSpeed * carcasseSpeedFactor);
     }
 
     private void StartToUsed(float addToNewSpeed)
@@ -96,10 +96,10 @@ public class ScrollingElement : MonoBehaviour
     {
         inCarcasse = false;
         isExploded = false;
-        if (tempSprite != null)
-        {
+        if (_sprite == null)
+            _sprite = GetComponentInChildren<SpriteRenderer>(includeInactive: true);
+        if (tempSprite != null && _sprite != null)
             _sprite.sprite = tempSprite;
-        }
     }
 
 
@@ -115,6 +115,7 @@ public class ScrollingElement : MonoBehaviour
     public GameObject FXExplosion;
     public Sprite carcasse;
     private bool inCarcasse = false;
+    [SerializeField] private float carcasseSpeedFactor = 0.4f;
     private float tempbaseSpeed;
     private Sprite tempSprite;
     public bool canExplose = true;
