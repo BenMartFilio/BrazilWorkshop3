@@ -1201,7 +1201,7 @@ MonoBehaviour:
   loopingPatternIndex: 4
   forcedCarSkinIndex: 0
   baseObstacleSpeed: 5
-  gapBetweenPatterns: 1
+  gapBetweenPatterns: 0
   _timeManager: {fileID: 1725592336}
   _fallingLines:
   - {fileID: 1121532490}
@@ -2284,6 +2284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 703772291}
   - component: {fileID: 703772290}
+  - component: {fileID: 703772292}
   m_Layer: 0
   m_Name: TutorialManager
   m_TagString: Untagged
@@ -2316,6 +2317,7 @@ MonoBehaviour:
   _panelSliderInfo: {fileID: 1180250228}
   _sliderHighlightOverlay: {fileID: 475502067}
   _tutoSliderAnimator: {fileID: 1833950804}
+  _inventaireObjetsUI: {fileID: 844100768}
   _fakeBrrageFadeDuration: 2
   _barrageSceneName: BarrageTuto
   _fadeImage: {fileID: 1388883382}
@@ -2334,6 +2336,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &703772292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703772289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f17a5583e88a6f848a3c5b41bf8e692f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TutoDeathHandler
+  _menuSceneName: MainMenu
+  _barrePatience: {fileID: 0}
 --- !u!1 &754818456
 GameObject:
   m_ObjectHideFlags: 0
@@ -3454,6 +3470,9 @@ MonoBehaviour:
   bounceScale: 1.06
   animationSpeed: 12
   enableVibration: 1
+  _audioEventDispatcher: {fileID: 0}
+  _click: 0
+  _muteSound: 0
 --- !u!1 &1047471274
 GameObject:
   m_ObjectHideFlags: 0
@@ -4529,6 +4548,9 @@ MonoBehaviour:
   bounceScale: 1.06
   animationSpeed: 12
   enableVibration: 1
+  _audioEventDispatcher: {fileID: 0}
+  _click: 0
+  _muteSound: 0
 --- !u!1 &1176915240
 GameObject:
   m_ObjectHideFlags: 0
@@ -5006,6 +5028,9 @@ MonoBehaviour:
   _feedbackLogo: {fileID: 55492459}
   _input: {fileID: 290452987}
   shatter: {fileID: 55492464}
+  _audioEventDispatcher: {fileID: 0}
+  _pickup: 0
+  inventaire: {fileID: 0}
   _effets: {fileID: 0}
   canAspire: 0
   isDead: 0
@@ -7848,6 +7873,7 @@ MonoBehaviour:
   m_inputManager: {fileID: 290452987}
   _AudioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
   _MoveAudioType: 0
+  _coinPickup: 0
   moveDuration: 0.1
   maxLeanAngle: 45
   _coinsText: {fileID: 11239705}

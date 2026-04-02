@@ -20,8 +20,12 @@ public class EndManager : MonoBehaviour
     [SerializeField] private AudioType _gameOver;
     public int reviveCounter = 0;
 
+    /// <summary>Fired immediately when the player dies. Subscribers are called before the revive panel appears.</summary>
+    public static event Action OnPlayerDied;
+
     public void OnDeath()
     {
+        OnPlayerDied?.Invoke();
         if(_audioEventDispatcher != null) _audioEventDispatcher.PlayAudio(_gameOver);
         _timeManager.StopTime();
         _scoreManager.StopScore();

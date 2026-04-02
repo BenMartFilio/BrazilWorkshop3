@@ -32,6 +32,10 @@ public class TutorialManager : MonoBehaviour
     [Tooltip("Animates the SliderBarrage fill when PanelSliderInfo is shown.")]
     [SerializeField] private TutoSliderAnimator _tutoSliderAnimator;
 
+    [Header("Items")]
+    [Tooltip("Reference to the item bar UI — all slots will be locked (greyed out) for the tutorial.")]
+    [SerializeField] private InventaireObjetsUI _inventaireObjetsUI;
+
     [Header("Transition")]
     [SerializeField] private float _fakeBrrageFadeDuration = 2f;
     [Tooltip("Name of the scene to load after the tutorial.")]
@@ -51,6 +55,7 @@ public class TutorialManager : MonoBehaviour
     private void Start()
     {
         ValidateReferences();
+        StartCoroutine(VerrouillerItemsApresStart());
 
         // Show goal panel and freeze gameplay immediately.
         if (_panelGoal != null)
@@ -65,6 +70,18 @@ public class TutorialManager : MonoBehaviour
 
         // Do NOT start the spawner yet — wait for the player to close the goal panel.
         PauseGame();
+    }
+
+    /// <summary>Waits one frame so InventaireObjetsUI.Start() has populated its slots, then locks them.</summary>
+    private IEnumerator VerrouillerItemsApresStart()
+    {
+        yield return null;
+
+        // Safety guard: only lock items when actually inside MapTuto.
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "MapTuto") yield break;
+
+        if (_inventaireObjetsUI != null)
+            _inventaireObjetsUI.VerrouillerPourTutoriel();
     }
 
     private void OnDestroy()

@@ -73,6 +73,10 @@ namespace Barrage.UI
         private void Start()
         {
             Debug.Log($"[PremierBarrageController] Start — _estPremierBarrage={_estPremierBarrage}");
+
+            // BarrageTuto handles its own flow entirely — never run the first-barrage sequence there.
+            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "BarrageTuto") return;
+
             if (!_estPremierBarrage) return;
 
             StartCoroutine(SéquencePremierBarrage());

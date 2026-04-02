@@ -213,6 +213,26 @@ public class InventaireObjetsUI : MonoBehaviour
         Destroy(canvasGo);
     }
 
+    // ── Tutoriel ──────────────────────────────────────────────────────────────
+
+    /// <summary>
+    /// Greys out every item slot and removes all click callbacks.
+    /// Call this once from TutorialManager to lock items during the tutorial.
+    /// Does not affect any other gameplay system.
+    /// Guards against being called outside the MapTuto scene.
+    /// </summary>
+    public void VerrouillerPourTutoriel()
+    {
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "MapTuto")
+        {
+            Debug.LogWarning("[InventaireObjetsUI] VerrouillerPourTutoriel called outside MapTuto — ignored.");
+            return;
+        }
+
+        foreach (ItemSlotUI slot in _slotsActifs.Values)
+            slot.VerrouillerPourTutoriel();
+    }
+
     // ── Helpers publics (utilisés par EffetsDureeUI) ──────────────────────────
 
     /// <summary>Retourne le slot actif pour un identifiant, ou null s'il n'existe pas.</summary>

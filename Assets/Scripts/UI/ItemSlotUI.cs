@@ -53,6 +53,9 @@ public class ItemSlotUI : MonoBehaviour
     private float _blinkTimer;
     private bool  _blinkEtat;   // true = couleur normale, false = blanc
 
+    // ── Tutorial lock ─────────────────────────────────────────────────────────
+    private bool _verrouillePourTutoriel = false;
+
     // ── Animation state ───────────────────────────────────────────────────────
     private Coroutine _coroutinePunch;
 
@@ -153,9 +156,9 @@ public class ItemSlotUI : MonoBehaviour
     /// <summary>
     /// True quand la quantité est à 0 (bouton désactivé).
     /// Utilisé par <see cref="EffetsDureeUI"/> pour savoir si le slot doit être supprimé
-    /// à la fin du timer.
+    /// à la fin du timer. Jamais vrai en mode tutoriel (le slot est verrouillé, pas épuisé).
     /// </summary>
-    public bool EstEpuise => bouton != null && !bouton.interactable;
+    public bool EstEpuise => !_verrouillePourTutoriel && bouton != null && !bouton.interactable;
 
     /// <summary>
     /// Superpose un anneau radial de durée sur l'image de l'objet.
@@ -357,8 +360,38 @@ public class ItemSlotUI : MonoBehaviour
 
     // ── Helpers ───────────────────────────────────────────────────────────────
 
+    /// <summary>
+    /// Greys out this slot and removes all click listeners for the tutorial.
+    /// The item remains visible but cannot be used.
+    /// Sets a persistent flag so AppliquerEtatQuantite never overrides the lock.
+    /// </summary>
+    public void VerrouillerPourTutoriel()
+    {
+        _verrouillePourTutoriel = true;
+
+        bouton.onClick.RemoveAllListeners();
+        bouton.interactable = false;
+
+        if (imageFond != null)
+        {
+            Color c = imageFond.color;
+            c.a = ALPHA_GRISE;
+            imageFond.color = c;
+        }
+
+        if (imageSprite != null)
+        {
+            Color c = imageSprite.color;
+            c.a = ALPHA_GRISE;
+            imageSprite.color = c;
+        }
+    }
+
     private void AppliquerEtatQuantite(int quantite, bool estPassif = false)
     {
+        // Never override a tutorial lock.
+        if (_verrouillePourTutoriel) return;
+
         bool disponible     = quantite > 0 && !estPassif;
         bouton.interactable = disponible;
 
