@@ -2109,6 +2109,7 @@ MonoBehaviour:
   listeAttenteGarde: {fileID: 11400000, guid: 99ca16e0de509d34390d52a7f36c5133, type: 2}
   "donn\xE9esSession": {fileID: 11400000, guid: a38ed096d3c17df43a3e1b832d57cb13, type: 2}
   "demandeAl\xE9atoire": {fileID: 11400000, guid: 3a7fb2656c6338e4ebf52e17309b00d7, type: 2}
+  barrePatience: {fileID: 0}
 --- !u!1 &1191513934
 GameObject:
   m_ObjectHideFlags: 0
