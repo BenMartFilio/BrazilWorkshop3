@@ -89,11 +89,12 @@ namespace Barrage.UI
 
         private void Start()
         {
-            inventaire.InitialiserInventaire();
+            // L'inventaire n'est pas réinitialisé ici : il doit persister depuis MapRoad.
+            // La réinitialisation est gérée par SessionReinitialiseur et SessionManager.
 
-            // Log de l'inventaire complet au démarrage
+            // Log de l'inventaire complet au démarrage (état réel, non réinitialisé)
             var sb = new System.Text.StringBuilder();
-            sb.Append("[FormulaireLibreManager] Inventaire au démarrage : ");
+            sb.Append("[FormulaireLibreManager] Inventaire au démarrage du barrage : ");
             foreach (FormulaireType t in Enum.GetValues(typeof(FormulaireType)))
                 sb.Append($"{t}×{inventaire.ObtenirQuantité(t)}  ");
             Debug.Log(sb.ToString());

@@ -46,8 +46,8 @@ namespace Barrage.UI
 
         private void Start()
         {
-            // S'assurer que l'inventaire est initialisé avant le spawn
-            inventaire.InitialiserInventaire();
+            // L'inventaire n'est pas réinitialisé ici : il doit persister depuis MapRoad.
+            // La réinitialisation est gérée par SessionReinitialiseur et SessionManager.
             SpawnFormulaires();
         }
 
