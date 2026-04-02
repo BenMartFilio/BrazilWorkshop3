@@ -8,6 +8,8 @@ public class Aspiration : MonoBehaviour
     [SerializeField] private GameObject _feedbackLogo;
     [SerializeField] private InputPlayerMovement _input;
     [SerializeField] private SpriteShatter shatter;
+    [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
+    [SerializeField] private AudioType _pickup;
 
     [Tooltip("Référence optionnelle à EffetsObjetsSpeciaux pour étendre la fenêtre d'aspiration (item Aspirateur).")]
     [SerializeField] private EffetsObjetsSpeciaux _effets;
@@ -65,6 +67,7 @@ public class Aspiration : MonoBehaviour
         canAspire = false;
         AnnulerExtension();
         FeedbackClicked();
+        if (_audioEventDispatcher != null) _audioEventDispatcher.PlayAudio(_pickup);
         int doc = _documents.OnAspiration();
         Debug.Log(doc);
     }
