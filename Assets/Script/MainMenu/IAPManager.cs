@@ -34,6 +34,10 @@ public class IAPManager : MonoBehaviour
     public event Action<string, string> OnPurchaseFailure;
     public event Action<string> OnStoreConnectFailed;
 
+    [Header("Données joueur")]
+    [SerializeField] private SO_PlayerDatas playerDatas;
+
+
     // -------------------------------------------------------------------------
 
     private void Awake()
@@ -188,12 +192,22 @@ public class IAPManager : MonoBehaviour
                 break;
 
             case ProductIDs.COINS_100:
-                // CurrencyManager.Instance.AddCoins(100);
+                if (playerDatas != null)
+                {
+                    playerDatas.premiumMonney += 100;
+                    playerDatas.SaveDatas();
+                    playerDatas.NotifyMonneyChanged();
+                }
                 Debug.Log("[IAP] 100 coins granted.");
                 break;
 
             case ProductIDs.PREMIUM_PACK:
-                // UnlockPremiumContent();
+                if (playerDatas != null)
+                {
+                    playerDatas.premiumMonney += 500;
+                    playerDatas.SaveDatas();
+                    playerDatas.NotifyMonneyChanged();
+                }
                 Debug.Log("[IAP] Premium pack unlocked.");
                 break;
 

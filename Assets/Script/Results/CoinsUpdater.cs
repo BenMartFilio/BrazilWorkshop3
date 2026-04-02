@@ -20,6 +20,24 @@ public class CoinsUpdater : MonoBehaviour
     [SerializeField] Transform targetText;
 
     List<GameObject> spawnedCoins = new List<GameObject>();
+    private void OnEnable()
+    {
+        if (_playerDatas != null)
+            _playerDatas.OnMonneyChanged += RefreshAll;
+    }
+
+    private void OnDisable()
+    {
+        if (_playerDatas != null)
+            _playerDatas.OnMonneyChanged -= RefreshAll;
+    }
+
+    private void RefreshAll()
+    {
+        AffichageCoin();
+        AffichagePremium();
+        AffichagePseudo();
+    }
 
     private void Start()
     {

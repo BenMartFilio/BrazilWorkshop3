@@ -18,8 +18,8 @@ MonoBehaviour:
   generalVolume: 1
   musicVolume: 1
   SFXVolume: 1
-  generalMonney: 200
-  premiumMonney: 0
+  generalMonney: 2200
+  premiumMonney: 60
   actualScoreNotSaved: 791
   actualCoinsNotSaved: 7
   isAnHighScore: 1
