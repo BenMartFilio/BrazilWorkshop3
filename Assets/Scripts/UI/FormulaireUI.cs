@@ -19,7 +19,9 @@ namespace Barrage.UI
         private const float DUREE_CHUTE = 0.35f;
 
         public FormulaireType Type { get; private set; }
-
+        [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
+        [SerializeField] private AudioType _paperGet;
+        [SerializeField] private AudioType _paperSet;
         private RectTransform _rectTransform;
         private RawImage _rawImage;
         private FormulaireUIManager _uiManager;
@@ -46,6 +48,8 @@ namespace Barrage.UI
         {
             if (_coroutineChute != null) return;
             if (_pocheActuelle != null && !_pocheActuelle.EstAuSommet(this)) return;
+
+            if (_audioEventDispatcher != null) _audioEventDispatcher.PlayAudio(_paperGet);
 
             _dragActif = true;
             _pocheActuelle?.RetirerFormulaire(this);
@@ -88,6 +92,8 @@ namespace Barrage.UI
             _dragActif = false;
 
             if (_rawImage != null) _rawImage.raycastTarget = true;
+
+            if (_audioEventDispatcher != null) _audioEventDispatcher.PlayAudio(_paperSet);
 
             Vector2 screenPos = eventData.position;
             // Camera.main est utilisée à la place de eventData.pressEventCamera qui peut être
