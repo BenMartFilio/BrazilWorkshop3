@@ -14,6 +14,7 @@ public class Aspiration : MonoBehaviour
     [SerializeField] private SpriteShatter shatter;
     [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
     [SerializeField] private AudioType _pickup;
+    [SerializeField] private AudioType _shatter;
 
     [Header("Inventaire")]
     [Tooltip("ScriptableObject inventaire dans lequel ajouter le formulaire aspiré.")]
@@ -92,7 +93,9 @@ public class Aspiration : MonoBehaviour
 
     private void FeedbackClicked()
     {
+        if(_audioEventDispatcher != null) _audioEventDispatcher.PlayAudio(_shatter);
         finished = false;
+
         shatter.Shatter();
     }
 
