@@ -83,6 +83,8 @@ namespace Barrage.UI
         [SerializeField] private AffichageProchaineDemandeUI affichageSuivant;
         [SerializeField] private VisuelGardeUI              visuelGarde;
         [SerializeField] private DonnéesSession             donnéesSession;
+        [SerializeField] private AudioEventDispatcher audioEventDispatcher;
+        [SerializeField] private AudioType _gardTalk;
 
         [Tooltip("L'autre bulle — celle qui prend le relais lors d'un changement d'état.")]
         [SerializeField] private BulleDialogueGardeUI       autresBulle;
@@ -303,6 +305,8 @@ namespace Barrage.UI
         {
             if (_coroutineActive != null)
                 StopCoroutine(_coroutineActive);
+
+            if (audioEventDispatcher != null) audioEventDispatcher.PlayAudio(_gardTalk);
 
             _texteEnCours  = texte;
             _duréeRestante = duréeAffichage;
