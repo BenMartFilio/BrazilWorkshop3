@@ -155,6 +155,14 @@ namespace Barrage.UI
 
         private void RecevoirInterne(FormulaireType type, GameObject go)
         {
+            // Sécurité : si MainDuGardeUI est désactivé (game over, premier barrage, etc.),
+            // on ignore silencieusement le drop plutôt que de planter.
+            if (!enabled)
+            {
+                Debug.LogWarning("[MainDuGardeUI] RecevoirInterne ignoré — composant désactivé (game over ?).");
+                return;
+            }
+
             Debug.Log($"[MainDuGardeUI] RecevoirInterne({type}) — listeAttenteGarde={listeAttenteGarde?.name ?? "NULL"}, " +
                       $"enabled={enabled}");
 

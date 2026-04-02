@@ -169,7 +169,8 @@ namespace Barrage.UI
         // ── Helpers de détection ───────────────────────────────────────────────
 
         /// <summary>
-        /// Retourne true si la position écran est dans la zone de la main du garde.
+        /// Retourne true si la position écran est dans la zone de la main du garde
+        /// ET que le composant MainDuGardeUI est actif (pas de game over, pas de premier barrage).
         /// La caméra utilisée est dérivée du Canvas racine de MainDuGarde :
         ///   - Screen Space Overlay → null (comportement correct pour ce mode)
         ///   - Screen Space Camera / World Space → worldCamera du canvas
@@ -177,6 +178,9 @@ namespace Barrage.UI
         /// </summary>
         public bool EstSurMainDuGarde(Vector2 screenPos, Camera _)
         {
+            // Si MainDuGardeUI est désactivé (game over, premier barrage…), la zone n'est pas valide.
+            if (mainDuGarde == null || !mainDuGarde.enabled) return false;
+
             Canvas canvas = mainDuGarde.RectTransform.GetComponentInParent<Canvas>();
             if (canvas != null) canvas = canvas.rootCanvas;
             Camera camGarde = (canvas != null && canvas.renderMode != RenderMode.ScreenSpaceOverlay)
