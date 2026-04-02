@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private AudioEventDispatcher _AudioEventDispatcher;
     [SerializeField] private AudioType _MoveAudioType;
+    [SerializeField] private AudioType _coinPickup;
 
     public float moveDuration = 0.1f;
     public float maxLeanAngle = 45f;
@@ -228,6 +229,7 @@ public class PlayerMovement : MonoBehaviour
         else if (a != null)
         {
             a.OnCoinRecuperation();
+            if(_AudioEventDispatcher)_AudioEventDispatcher.PlayAudio(_coinPickup);
             // Effet Tirelire Cochon : appliquer le multiplicateur de pieces
             _coinsCount += _effets != null ? _effets.ObtenirMultiplicateurPieces() : 1;
             _coinsText.text = _coinsCount.ToString();
