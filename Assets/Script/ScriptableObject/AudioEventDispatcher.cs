@@ -16,7 +16,13 @@ public enum AudioType
     Pickup,
     CarWindow,
     StartEngine,
-    UIClick
+    UIClick,
+    Swoosh,
+    Pay,
+    GetObject,
+    Shatter,
+    Coin,
+    FailPay
 }
 //Deux audio source (à faire) une qui fait la musique, et l'autre les sons (les sons sont joué un par un)
 [System.Serializable]

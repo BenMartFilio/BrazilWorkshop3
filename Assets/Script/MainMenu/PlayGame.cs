@@ -9,6 +9,7 @@ public class PlayGame : MonoBehaviour
     [SerializeField] private RectTransform canvasContent; // child root du Canvas
     [SerializeField] private AudioEventDispatcher audioEventDispatcher;
     [SerializeField] private AudioType _startEngine;
+    [SerializeField] private AudioType _swoosh;
 
     public Vector3 rotationAmount = new Vector3(0, 0, 120);
     public float duration = 1.5f;
@@ -20,6 +21,7 @@ public class PlayGame : MonoBehaviour
 
     public void PlayFlash()
     {
+        if(audioEventDispatcher != null) audioEventDispatcher.PlayAudio(_swoosh);
         StartCoroutine(FlashRoutine());
     }
 
