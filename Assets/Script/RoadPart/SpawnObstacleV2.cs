@@ -440,16 +440,19 @@ public class SpawnObstacleV2 : MonoBehaviour
     /// Restaure la progression barrage (signaux écoulés + seuil) depuis les données de session.
     /// À appeler depuis MapRoadSessionBridge après un retour de barrage réussi
     /// ET pour toute session valide (le seuil et les signaux ont pu être sauvegardés).
+    /// Remet toujours _compteurBarragePausé à false : au retour de barrage, le joueur
+    /// est vivant et le compteur doit être actif, quelle que soit la cause de l'arrêt précédent.
     /// </summary>
     public void RestaurerProgressionDepuisSession(DonnéesSession donnees)
     {
-        _signauxEcoules   = donnees.signauxEcoules;
-        _prochainBarrageA = donnees.prochainBarrageA > 0
+        _signauxEcoules      = donnees.signauxEcoules;
+        _prochainBarrageA    = donnees.prochainBarrageA > 0
             ? donnees.prochainBarrageA
             : Random.Range(barrageSignauxMin, barrageSignauxMax + 1);
-        _barrageEnAttente = false;
+        _barrageEnAttente    = false;
+        _compteurBarragePausé = false;   // ← toujours actif au retour de barrage
 
-        Debug.Log($"[SpawnObstacleV2] Progression restaurée : signaux={_signauxEcoules}/{_prochainBarrageA}");
+        Debug.Log($"[SpawnObstacleV2] Progression restaurée : signaux={_signauxEcoules}/{_prochainBarrageA}, compteur actif.");
     }
 
     /// <summary>

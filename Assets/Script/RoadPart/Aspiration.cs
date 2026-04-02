@@ -100,6 +100,11 @@ public class Aspiration : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         if (finished == false) return;
+
+        // Le Collider2D ou son GameObject peut avoir été détruit par le pool entre
+        // l'entrée et la sortie du trigger. L'opérateur == d'Unity détecte les fake-null.
+        if (other == null || other.gameObject == null) return;
+
         if (other.GetComponent<ChangeSkin>() != _documents) return;
 
         float dureePassage   = Time.time - _tempsEntreeDansZone;
@@ -115,7 +120,7 @@ public class Aspiration : MonoBehaviour
         else
         {
             canAspire = false;
-            _feedbackLogo.SetActive(false);
+            if (_feedbackLogo != null) _feedbackLogo.SetActive(false);
             Debug.Log("Disabled");
         }
     }
@@ -125,7 +130,7 @@ public class Aspiration : MonoBehaviour
     {
         yield return new WaitForSeconds(duree);
         canAspire = false;
-        _feedbackLogo.SetActive(false);
+        if (_feedbackLogo != null) _feedbackLogo.SetActive(false);
         _coroutineExtension = null;
         Debug.Log("Fenêtre étendue terminée");
     }
