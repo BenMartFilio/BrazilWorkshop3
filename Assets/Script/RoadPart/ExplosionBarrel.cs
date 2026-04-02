@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class ExplosionBarrel : MonoBehaviour
 {
+    [SerializeField] private AudioClip _explosionSound;
     public GameObject fxPrefab;
 
     private void OnCollisionEnter2D(Collision2D collision)

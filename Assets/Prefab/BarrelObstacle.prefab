@@ -203,6 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf6dc92363f435a4eaf3490f65833eba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExplosionBarrel
+  _explosionSound: {fileID: 8300000, guid: a58df645a50e6e04295a1bda3fa98525, type: 3}
   fxPrefab: {fileID: 4791631959593948771, guid: 0dd8d9523f3eb4d46afa4593215849f5, type: 3}
 --- !u!114 &-5950177233794210091
 MonoBehaviour:
@@ -217,3 +218,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionObstacle
   prefabExplosion: {fileID: 4791631959593948771, guid: 0dd8d9523f3eb4d46afa4593215849f5, type: 3}
+  _crashSound: {fileID: 8300000, guid: c98b5b74f198e2f46aa681eef1dfe4db, type: 3}

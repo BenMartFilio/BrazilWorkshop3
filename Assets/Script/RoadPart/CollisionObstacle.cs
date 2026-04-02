@@ -8,6 +8,8 @@ public class CollisionObstacle : MonoBehaviour
 {
     [Tooltip("Prefab FX_ExplosionCircles à instancier au point de collision.")]
     [SerializeField] private GameObject prefabExplosion;
+    [SerializeField] private AudioClip _crashSound;
+
 
     /// <summary>
     /// Instancie l'effet d'explosion à la position donnée et le joue.
@@ -16,6 +18,9 @@ public class CollisionObstacle : MonoBehaviour
     public void DeclencherExplosion(Vector3 positionCollision)
     {
         if (prefabExplosion == null) return;
+
+        if (_crashSound != null)
+            AudioSource.PlayClipAtPoint(_crashSound, positionCollision);
 
         GameObject instance = Instantiate(prefabExplosion, positionCollision, Quaternion.identity);
         ExplosionCircles fx = instance.GetComponent<ExplosionCircles>();
