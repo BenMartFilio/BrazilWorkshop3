@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Barrage.Formulaires;
 using ObjetsSpeciaux;
@@ -5,6 +6,9 @@ using UnityEngine;
 
 public class Aspiration : MonoBehaviour
 {
+    /// <summary>Fired whenever the player successfully collects a document from a colored car.</summary>
+    public static event Action OnDocumentCollected;
+
     [SerializeField] private GameObject _feedbackLogo;
     [SerializeField] private InputPlayerMovement _input;
     [SerializeField] private SpriteShatter shatter;
@@ -78,6 +82,7 @@ public class Aspiration : MonoBehaviour
         {
             inventaire?.Ajouter(type.Value);
             Debug.Log($"[Aspiration] +1 {type.Value} → total : {inventaire?.ObtenirQuantité(type.Value)}");
+            OnDocumentCollected?.Invoke();
         }
         else
         {
