@@ -2795,7 +2795,7 @@ MonoBehaviour:
   enableVibration: 1
   _audioEventDispatcher: {fileID: 0}
   _click: 0
-  _muteSound: 0
+  _muteSound: 1
 --- !u!1 &337661906
 GameObject:
   m_ObjectHideFlags: 0
