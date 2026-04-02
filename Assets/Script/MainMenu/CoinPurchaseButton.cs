@@ -35,9 +35,6 @@ public class CoinPurchaseButton : MonoBehaviour
         _button = GetComponent<Button>();
         _button.onClick.AddListener(OnButtonClicked);
 
-        confirmButton?.onClick.AddListener(OnConfirm);
-        cancelButton?.onClick.AddListener(OnCancel);
-
         // Panel fermé au départ
         if (confirmationPanel != null)
             confirmationPanel.SetActive(false);
@@ -91,6 +88,9 @@ public class CoinPurchaseButton : MonoBehaviour
             return;
         }
 
+        confirmButton?.onClick.AddListener(OnConfirm);
+        cancelButton?.onClick.AddListener(OnCancel);
+
         confirmationPanel.SetActive(true);
     }
 
@@ -120,6 +120,9 @@ public class CoinPurchaseButton : MonoBehaviour
     {
         if (confirmationPanel != null)
             confirmationPanel.SetActive(false);
+
+        if (confirmButton != null) confirmButton.onClick.RemoveListener(OnConfirm);
+        if (cancelButton != null) cancelButton.onClick.RemoveListener(OnCancel);
     }
 
     private void RefreshButtonState()
