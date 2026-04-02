@@ -26,6 +26,8 @@ public class CoinPurchaseButton : MonoBehaviour
     [SerializeField] private UnityEvent onPurchaseFailed;
 
     [SerializeField] private CoinsUpdater coinsUpdater;
+    [SerializeField] private AudioEventDispatcher audioEventDispatcher;
+    [SerializeField] private AudioType purchaseSound;
 
     private Button _button;
     private int _cachedMonney = -1;
@@ -112,7 +114,7 @@ public class CoinPurchaseButton : MonoBehaviour
     private void ExecutePurchase()
     {
         if (!ValidateSetup() || !CanAfford()) return;
-
+        if(audioEventDispatcher != null) audioEventDispatcher.PlayAudio(purchaseSound);
         playerDatas.generalMonney -= cost;
         playerDatas.SaveDatas();
         coinsUpdater.AffichageCoin();
