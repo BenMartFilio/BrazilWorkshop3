@@ -50,8 +50,12 @@ public class DonnéesSession : ScriptableObject
     public bool AUneDemandeSauvegardée => prochaineDemandeBarrage != null
                                           && prochaineDemandeBarrage.Length > 0;
 
-
     public int revive = 0;
+
+    [Header("Difficulté")]
+    [Tooltip("Nombre de barrages déjà complétés par le joueur depuis le début de la partie. " +
+             "Utilisé pour faire évoluer la complexité des demandes (nombre et doublons de formulaires).")]
+    public int nombreBarragesComplétés = 0;
 
     /// <summary>Remet toutes les valeurs à leur état initial.</summary>
     public void Reinitialiser()
@@ -67,5 +71,6 @@ public class DonnéesSession : ScriptableObject
         prochainBarrageA          = 0;
         prochaineDemandeBarrage   = new FormulaireType[0];
         revive                    = 0;
+        nombreBarragesComplétés   = 0;
     }
 }

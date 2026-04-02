@@ -151,7 +151,7 @@ namespace Barrage.UI
                 if (listeAttenteGarde.EstTerminée)
                 {
                     Debug.Log("[MainDuGardeUI] ValiderAvecPassePartout -- barrage entierement validé.");
-                    OnBarrageValidé?.Invoke();
+                    GelerEtValider();
                 }
             }
         }
@@ -181,8 +181,8 @@ namespace Barrage.UI
 
                 if (listeAttenteGarde.EstTerminée)
                 {
-                    Debug.Log("[MainDuGarde] ✓ Barrage validé — séquence complète. Déclenchement OnBarrageValidé.");
-                    OnBarrageValidé?.Invoke();
+                    Debug.Log("[MainDuGarde] ✓ Barrage validé — séquence complète.");
+                    GelerEtValider();
                 }
             }
             else
@@ -192,6 +192,24 @@ namespace Barrage.UI
                 Debug.LogWarning($"[MainDuGarde] ✗ Incorrect : {type} (non attendu ou déjà épuisé).");
                 StartCoroutine(AnimerNégatif(go));
             }
+        }
+
+        /// <summary>
+        /// Gèle immédiatement la barre de patience puis déclenche OnBarrageValidé.
+        /// Centralise les deux appels pour éviter toute désynchronisation entre
+        /// RecevoirInterne et ValiderAvecPassePartout.
+        /// </summary>
+        private void GelerEtValider()
+        {
+            // Stopper le décompte dès que tous les formulaires sont remis :
+            // le joueur a réussi à temps, la barre ne doit plus se vider.
+            if (barrePatience != null)
+            {
+                barrePatience.Geler();
+                Debug.Log("[MainDuGardeUI] BarrePatience gelée — barrage validé à temps.");
+            }
+
+            OnBarrageValidé?.Invoke();
         }
 
         // ── Animation positive ────────────────────────────────────────────────

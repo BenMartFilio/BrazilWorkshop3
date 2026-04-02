@@ -109,7 +109,9 @@ namespace Barrage.UI
                 _affichage = null;
             }
 
-            demande?.Régénérer();
+            // Passer le nombre de barrages déjà complétés pour calibrer la difficulté.
+            int barragesComplétés = donnéesSession != null ? donnéesSession.nombreBarragesComplétés : 0;
+            demande?.Régénérer(barragesComplétés);
             _affichage = StartCoroutine(AfficherIconesUneParUne());
         }
 
@@ -118,12 +120,15 @@ namespace Barrage.UI
         /// l'événement <see cref="MainDuGardeUI.OnBarrageValidé"/>.
         /// Utilisé par <see cref="PremierBarrageController"/> au premier barrage.
         /// La BarrePatience est déjà gelée dès son Awake — aucune action supplémentaire nécessaire.
+        /// Au premier barrage (nombreBarragesComplétés == 0), la difficulté est toujours facile.
         /// </summary>
         public void LancerDirectement()
         {
             Debug.Log("[AffichageProchaineDemandeUI] LancerDirectement() → Régénérer() + AfficherIconesUneParUne().");
 
-            demande?.Régénérer();
+            // Au premier barrage le compteur est 0 → palier facile garanti.
+            int barragesComplétés = donnéesSession != null ? donnéesSession.nombreBarragesComplétés : 0;
+            demande?.Régénérer(barragesComplétés);
 
             if (_affichage != null) StopCoroutine(_affichage);
             _affichage = StartCoroutine(AfficherIconesUneParUne());
@@ -187,8 +192,14 @@ namespace Barrage.UI
             if (donnéesSession != null)
             {
                 donnéesSession.prochaineDemandeBarrage = àSauvegarder;
+
+                // Incrémenter le compteur de barrages complétés : le prochain barrage
+                // utilisera ce nouveau total pour calibrer sa difficulté.
+                donnéesSession.nombreBarragesComplétés++;
+
                 Debug.Log($"[AffichageProchaineDemandeUI] ★ Sauvegardé ({àSauvegarder.Length}) : " +
-                          string.Join(", ", àSauvegarder));
+                          string.Join(", ", àSauvegarder) +
+                          $" | barragesComplétés={donnéesSession.nombreBarragesComplétés}");
             }
             else
             {
