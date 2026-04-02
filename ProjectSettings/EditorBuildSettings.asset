@@ -20,6 +20,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ResultScene.unity
     guid: 80bda7f4d9e498046a008cccb80edaff
+  - enabled: 1
+    path: Assets/Scenes/MapTuto.unity
+    guid: 35f47a766c676924193cdebfbe53f82a
+  - enabled: 1
+    path: Assets/Scenes/BarrageTuto.unity
+    guid: 92d716c1a7a15ba40a0f982d0197d5ab
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
