@@ -6,10 +6,10 @@ namespace Barrage.UI
     /// <summary>
     /// Bootstrap controller specific to the BarrageTuto scene.
     ///
-    /// Runs before PremierBarrageController (order -100) and MainDuGardeUI (order -50)
-    /// so it can inject a fixed 1×ITA demand into ListeAttenteGarde and mark the
-    /// DonnéesSession as valid, making the rest of the barrage pipeline treat this
-    /// as a normal barrage that requires the player to submit a real document.
+    /// Runs before PremierBarrageController (order -100) and MainDuGardeUI (order -50).
+    /// Initialises FormulaireLibreManager's inventory from its own quantitésInitiales,
+    /// then writes the matching demand into DonnéesSession so the guard pipeline is consistent.
+    /// No extra Inspector wiring required.
     /// </summary>
     [DefaultExecutionOrder(-200)]
     public class BarrageTutoController : MonoBehaviour
@@ -42,8 +42,29 @@ namespace Barrage.UI
                 return;
             }
 
-            // Build the fixed demand array and write it into DonnéesSession so that
-            // MainDuGardeUI.Awake() → ChargerDepuisSession() picks it up correctly.
+            // Initialise FormulaireLibreManager's inventory from its quantitésInitiales,
+            // then force-add the required documents so the spawn is guaranteed.
+            FormulaireLibreManager flm = FindAnyObjectByType<FormulaireLibreManager>();
+            if (flm != null)
+            {
+                FormulaireInventaire inv = flm.ObtenirInventaire();
+                if (inv != null)
+                {
+                    inv.InitialiserInventaire();
+                    inv.Ajouter(typeRequis, quantité);
+                    Debug.Log($"[BarrageTutoController] Inventaire initialisé → {quantité}×{typeRequis} injecté.");
+                }
+                else
+                {
+                    Debug.LogError("[BarrageTutoController] FormulaireLibreManager.ObtenirInventaire() retourne null.");
+                }
+            }
+            else
+            {
+                Debug.LogError("[BarrageTutoController] FormulaireLibreManager introuvable dans la scène.");
+            }
+
+            // Write into DonnéesSession so the guard-side pipeline (MainDuGardeUI) is consistent.
             var demande = new FormulaireType[quantité];
             for (int i = 0; i < quantité; i++)
                 demande[i] = typeRequis;
@@ -51,8 +72,7 @@ namespace Barrage.UI
             donnéesSession.prochaineDemandeBarrage = demande;
             donnéesSession.sessionValide           = true;
 
-            Debug.Log($"[BarrageTutoController] Injected fixed demand: {quantité}×{typeRequis}. " +
-                      $"sessionValide set to true — normal barrage flow will apply.");
+            Debug.Log($"[BarrageTutoController] DonnéesSession → {quantité}×{typeRequis}, sessionValide=true.");
         }
     }
 }

@@ -129,6 +129,9 @@ namespace Barrage.UI
 
         // ── Helpers ───────────────────────────────────────────────────────────
 
+        /// <summary>Expose the inventory so external bootstrappers can initialise it before Start().</summary>
+        public FormulaireInventaire ObtenirInventaire() => inventaire;
+
         /// <summary>Retourne la taille configurée pour un type de formulaire donné.</summary>
         private Vector2 ObtenirTaille(FormulaireType type)
         {
