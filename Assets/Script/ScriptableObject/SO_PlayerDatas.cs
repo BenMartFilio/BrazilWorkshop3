@@ -36,6 +36,11 @@ public class SO_PlayerDatas : ScriptableObject
 
     private SaveController saveSystem;
 
+
+    public event System.Action OnMonneyChanged;
+    public void NotifyMonneyChanged() => OnMonneyChanged?.Invoke();
+
+
     public void LoadDatas()
     {
         CheckSaveSystem();

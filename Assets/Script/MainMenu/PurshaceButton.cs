@@ -8,6 +8,13 @@ public class PurchaseButton : MonoBehaviour
     [SerializeField] private IAPManager.ProductKey productKey = IAPManager.ProductKey.Coins100;
     [SerializeField] private TMP_Text priceLabel; // Optionnel : affiche le prix localisé
 
+    [Header("Panel de succès")]
+    [Tooltip("Panel à activer une fois l'objet attribué.")]
+    [SerializeField] private GameObject successPanel;
+    [Tooltip("Image enfant du panel qui recevra le sprite de l'objet.")]
+    [SerializeField] private Image successItemIcon;
+    [SerializeField] private Sprite successSprite;
+
     private Button _button;
 
     private void Awake()
@@ -34,11 +41,27 @@ public class PurchaseButton : MonoBehaviour
             return;
         }
         IAPManager.Instance.BuyProduct(productKey);
+        OnPuchased();
     }
 
     private void OnDestroy()
     {
         if (_button != null)
             _button.onClick.RemoveListener(OnButtonClicked);
+    }
+
+    private void OnPuchased()
+    {
+        OpenSuccessPanel(successSprite);
+    }
+
+    private void OpenSuccessPanel(Sprite itemSprite)
+    {
+        if (successPanel == null) return;
+
+        if (successItemIcon != null)
+            successItemIcon.sprite = itemSprite;
+
+        successPanel.SetActive(true);
     }
 }
