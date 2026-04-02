@@ -134,7 +134,7 @@ public class CoinPurchaseButton : MonoBehaviour
         if (_button == null || playerDatas == null) return;
 
         bool affordable = CanAfford();
-        _button.interactable = affordable;
+    //    _button.interactable = affordable;
 
         if (priceLabel != null)
             priceLabel.color = affordable ? affordableColor : unaffordableColor;

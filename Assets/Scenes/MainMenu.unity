@@ -159,6 +159,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &14728301 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+  m_PrefabInstance: {fileID: 244497285}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &28884693
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,6 +673,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnableAfterDelay
   delayBTN: 0.5
+--- !u!1 &102623098 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+  m_PrefabInstance: {fileID: 1503949446}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &111309541
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,6 +826,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &121253434 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+  m_PrefabInstance: {fileID: 206927010}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &136969659
 GameObject:
   m_ObjectHideFlags: 0
@@ -1625,6 +1640,34 @@ PrefabInstance:
       propertyPath: confirmationDescriptionLabel
       value: 
       objectReference: {fileID: 1885018830}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 206927018}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: JouerEffetEchec
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BoutonEchecEffect, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: m_Name
       value: BoutonCoinTirelire
@@ -1640,13 +1683,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 206927018}
   m_SourcePrefab: {fileID: 100100000, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
 --- !u!224 &206927011 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 740860380250662971, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
   m_PrefabInstance: {fileID: 206927010}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &206927018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121253434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5812fa09e51c4abe10a84f80bd354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoutonEchecEffect
+  "dur\xE9e": 0.45
+  angleMax: 6
+  "fr\xE9quence": 28
+  graphic: {fileID: 0}
+  couleurEchec: {r: 1, g: 0.25, b: 0.25, a: 1}
+  "dur\xE9eFonduRetour": 0.3
 --- !u!1 &207684986
 GameObject:
   m_ObjectHideFlags: 0
@@ -2222,6 +2286,34 @@ PrefabInstance:
       propertyPath: confirmationDescriptionLabel
       value: 
       objectReference: {fileID: 1885018830}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 244497293}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: JouerEffetEchec
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BoutonEchecEffect, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: m_Name
       value: BoutonCoinG-Badge
@@ -2245,13 +2337,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 244497293}
   m_SourcePrefab: {fileID: 100100000, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
 --- !u!224 &244497286 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 740860380250662971, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
   m_PrefabInstance: {fileID: 244497285}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &244497293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14728301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5812fa09e51c4abe10a84f80bd354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoutonEchecEffect
+  "dur\xE9e": 0.45
+  angleMax: 6
+  "fr\xE9quence": 28
+  graphic: {fileID: 0}
+  couleurEchec: {r: 1, g: 0.25, b: 0.25, a: 1}
+  "dur\xE9eFonduRetour": 0.3
 --- !u!1 &246581197
 GameObject:
   m_ObjectHideFlags: 0
@@ -4295,6 +4408,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &518282888 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+  m_PrefabInstance: {fileID: 1049702347}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &542471981
 GameObject:
   m_ObjectHideFlags: 0
@@ -4932,6 +5050,34 @@ PrefabInstance:
       propertyPath: confirmationDescriptionLabel
       value: 
       objectReference: {fileID: 1885018830}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2126130639}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: JouerEffetEchec
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BoutonEchecEffect, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: m_Name
       value: BoutonCoinGateau
@@ -4979,7 +5125,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2126130639}
   m_SourcePrefab: {fileID: 100100000, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
 --- !u!224 &625276534 stripped
 RectTransform:
@@ -6124,6 +6273,34 @@ PrefabInstance:
       propertyPath: confirmationDescriptionLabel
       value: 
       objectReference: {fileID: 1885018830}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1487586023}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: JouerEffetEchec
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BoutonEchecEffect, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: m_Name
       value: BoutonCoinAntenne
@@ -6171,7 +6348,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1487586023}
   m_SourcePrefab: {fileID: 100100000, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
 --- !u!224 &794025170 stripped
 RectTransform:
@@ -8291,6 +8471,34 @@ PrefabInstance:
       propertyPath: confirmationDescriptionLabel
       value: 
       objectReference: {fileID: 1885018830}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1049702355}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: JouerEffetEchec
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BoutonEchecEffect, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: m_Name
       value: BoutonCoinPass
@@ -8338,13 +8546,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1049702355}
   m_SourcePrefab: {fileID: 100100000, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
 --- !u!224 &1049702348 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 740860380250662971, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
   m_PrefabInstance: {fileID: 1049702347}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1049702355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518282888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5812fa09e51c4abe10a84f80bd354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoutonEchecEffect
+  "dur\xE9e": 0.45
+  angleMax: 6
+  "fr\xE9quence": 28
+  graphic: {fileID: 0}
+  couleurEchec: {r: 1, g: 0.25, b: 0.25, a: 1}
+  "dur\xE9eFonduRetour": 0.3
 --- !u!1 &1053899634
 GameObject:
   m_ObjectHideFlags: 0
@@ -8740,7 +8969,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2144411220}
   m_SourcePrefab: {fileID: 100100000, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
 --- !u!224 &1073900527 stripped
 RectTransform:
@@ -10930,11 +11162,34 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1390242636 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+  m_PrefabInstance: {fileID: 2389437790453523071}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1390242637 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 740860380250662971, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
   m_PrefabInstance: {fileID: 2389437790453523071}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1390242645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390242636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5812fa09e51c4abe10a84f80bd354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoutonEchecEffect
+  "dur\xE9e": 0.45
+  angleMax: 6
+  "fr\xE9quence": 28
+  graphic: {fileID: 0}
+  couleurEchec: {r: 1, g: 0.25, b: 0.25, a: 1}
+  "dur\xE9eFonduRetour": 0.3
 --- !u!1 &1392256936
 GameObject:
   m_ObjectHideFlags: 0
@@ -11545,6 +11800,34 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &1487586016 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+  m_PrefabInstance: {fileID: 794025169}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1487586023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487586016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5812fa09e51c4abe10a84f80bd354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoutonEchecEffect
+  "dur\xE9e": 0.45
+  angleMax: 6
+  "fr\xE9quence": 28
+  graphic: {fileID: 0}
+  couleurEchec: {r: 1, g: 0.25, b: 0.25, a: 1}
+  "dur\xE9eFonduRetour": 0.3
+--- !u!1 &1492951917 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+  m_PrefabInstance: {fileID: 1658042305}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1503949446
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11670,6 +11953,34 @@ PrefabInstance:
       propertyPath: confirmationDescriptionLabel
       value: 
       objectReference: {fileID: 1885018830}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1503949454}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: JouerEffetEchec
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BoutonEchecEffect, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: m_Name
       value: BoutonCoinBillet
@@ -11717,13 +12028,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1503949454}
   m_SourcePrefab: {fileID: 100100000, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
 --- !u!224 &1503949447 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 740860380250662971, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
   m_PrefabInstance: {fileID: 1503949446}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1503949454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102623098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5812fa09e51c4abe10a84f80bd354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoutonEchecEffect
+  "dur\xE9e": 0.45
+  angleMax: 6
+  "fr\xE9quence": 28
+  graphic: {fileID: 0}
+  couleurEchec: {r: 1, g: 0.25, b: 0.25, a: 1}
+  "dur\xE9eFonduRetour": 0.3
 --- !u!1 &1515425920
 GameObject:
   m_ObjectHideFlags: 0
@@ -12653,6 +12985,34 @@ PrefabInstance:
       propertyPath: confirmationDescriptionLabel
       value: 
       objectReference: {fileID: 1885018830}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1658042313}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: JouerEffetEchec
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BoutonEchecEffect, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: m_Name
       value: BoutonCoinAspirateur
@@ -12700,13 +13060,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1658042313}
   m_SourcePrefab: {fileID: 100100000, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
 --- !u!224 &1658042306 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 740860380250662971, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
   m_PrefabInstance: {fileID: 1658042305}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1658042313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492951917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5812fa09e51c4abe10a84f80bd354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoutonEchecEffect
+  "dur\xE9e": 0.45
+  angleMax: 6
+  "fr\xE9quence": 28
+  graphic: {fileID: 0}
+  couleurEchec: {r: 1, g: 0.25, b: 0.25, a: 1}
+  "dur\xE9eFonduRetour": 0.3
 --- !u!1 &1697004332
 GameObject:
   m_ObjectHideFlags: 0
@@ -15317,6 +15698,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122319898}
   m_CullTransparentMesh: 1
+--- !u!1 &2126130632 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+  m_PrefabInstance: {fileID: 625276533}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2126130639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126130632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5812fa09e51c4abe10a84f80bd354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoutonEchecEffect
+  "dur\xE9e": 0.45
+  angleMax: 6
+  "fr\xE9quence": 28
+  graphic: {fileID: 0}
+  couleurEchec: {r: 1, g: 0.25, b: 0.25, a: 1}
+  "dur\xE9eFonduRetour": 0.3
 --- !u!1 &2132539702
 GameObject:
   m_ObjectHideFlags: 0
@@ -15457,6 +15861,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137271410}
   m_CullTransparentMesh: 1
+--- !u!1 &2144411213 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+  m_PrefabInstance: {fileID: 1073900526}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2144411220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144411213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5812fa09e51c4abe10a84f80bd354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoutonEchecEffect
+  "dur\xE9e": 0.45
+  angleMax: 6
+  "fr\xE9quence": 28
+  graphic: {fileID: 0}
+  couleurEchec: {r: 1, g: 0.25, b: 0.25, a: 1}
+  "dur\xE9eFonduRetour": 0.3
 --- !u!1001 &2389437790453523071
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15589,6 +16016,34 @@ PrefabInstance:
       propertyPath: confirmationDescriptionLabel
       value: 
       objectReference: {fileID: 1885018830}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1390242645}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: JouerEffetEchec
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BoutonEchecEffect, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: m_Name
       value: BoutonCoinMontre
@@ -15636,7 +16091,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1390242645}
   m_SourcePrefab: {fileID: 100100000, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
 --- !u!1001 &3254380190229409658
 PrefabInstance:
