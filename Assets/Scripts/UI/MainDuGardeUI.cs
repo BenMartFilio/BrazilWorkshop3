@@ -35,6 +35,9 @@ namespace Barrage.UI
         [Tooltip("BarrePatience à dégeler au début du barrage (barrages normaux uniquement). " +
                  "Au premier barrage, MainDuGardeUI est désactivé et ne dégèle donc pas la barre.")]
         [SerializeField] private BarrePatience barrePatience;
+        [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
+        [SerializeField] private AudioType _correct;
+        [SerializeField] private AudioType _incorrect;
 
         // ── Animation positive ────────────────────────────────────────────────
         // (constantes déplacées dans AnimerPositif)
@@ -170,6 +173,8 @@ namespace Barrage.UI
 
             if (correct)
             {
+                if(_audioEventDispatcher != null) _audioEventDispatcher.PlayAudio(_correct);
+                _audioEventDispatcher.PlayAudio(_correct);
                 OnFormulaireRemis?.Invoke(type);
                 Debug.Log($"[MainDuGarde] ✓ Correct : {type}. EstTerminée={listeAttenteGarde.EstTerminée}");
                 StartCoroutine(AnimerPositif(go));
@@ -182,6 +187,7 @@ namespace Barrage.UI
             }
             else
             {
+                if (_audioEventDispatcher != null) _audioEventDispatcher.PlayAudio(_incorrect);
                 OnFormulaireIncorrect?.Invoke();
                 Debug.LogWarning($"[MainDuGarde] ✗ Incorrect : {type} (non attendu ou déjà épuisé).");
                 StartCoroutine(AnimerNégatif(go));
