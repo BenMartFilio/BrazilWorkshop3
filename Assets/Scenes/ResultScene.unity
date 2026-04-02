@@ -269,6 +269,9 @@ MonoBehaviour:
   bounceScale: 1.06
   animationSpeed: 12
   enableVibration: 1
+  _audioEventDispatcher: {fileID: 0}
+  _click: 0
+  _muteSound: 0
 --- !u!1 &121650101
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,6 +497,9 @@ MonoBehaviour:
   bounceScale: 1.06
   animationSpeed: 12
   enableVibration: 1
+  _audioEventDispatcher: {fileID: 0}
+  _click: 0
+  _muteSound: 0
 --- !u!1 &315766591
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,6 +593,9 @@ MonoBehaviour:
   bounceScale: 1.06
   animationSpeed: 12
   enableVibration: 1
+  _audioEventDispatcher: {fileID: 0}
+  _click: 0
+  _muteSound: 0
 --- !u!1 &402176580
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,6 +840,9 @@ MonoBehaviour:
   bounceScale: 1.06
   animationSpeed: 12
   enableVibration: 1
+  _audioEventDispatcher: {fileID: 0}
+  _click: 0
+  _muteSound: 0
 --- !u!1 &439057994
 GameObject:
   m_ObjectHideFlags: 0
@@ -894,6 +906,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CoinsUpdater
   _textCoin: {fileID: 1542751290}
   _textPremium: {fileID: 1895683354}
+  _textPseudo: {fileID: 1717709280}
   _playerDatas: {fileID: 11400000, guid: f469a69765f7c5c4aa607382bdb461df, type: 2}
   waitCoin: 1
   coinPrefab: {fileID: 7319109094036730445, guid: a2c2baa78403bde49b0dda6e1c709419, type: 3}
@@ -3440,6 +3453,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayGame
   serrure: {fileID: 0}
   canvasContent: {fileID: 0}
+  audioEventDispatcher: {fileID: 0}
+  _startEngine: 0
   rotationAmount: {x: 0, y: 0, z: 120}
   duration: 1.5
   overlay: {fileID: 0}

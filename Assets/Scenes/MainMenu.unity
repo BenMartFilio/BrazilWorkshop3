@@ -4494,7 +4494,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &549283404
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4511,9 +4511,9 @@ RectTransform:
   - {fileID: 1411017032}
   m_Father: {fileID: 1753436818}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 155, y: -50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 250, y: 55.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &549283405
@@ -12683,6 +12683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CoinsUpdater
   _textCoin: {fileID: 889620239}
   _textPremium: {fileID: 1375598440}
+  _textPseudo: {fileID: 1259187292}
   _playerDatas: {fileID: 11400000, guid: f469a69765f7c5c4aa607382bdb461df, type: 2}
   waitCoin: 0
   coinPrefab: {fileID: 0}
@@ -13477,7 +13478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.HorizontalLayoutGroup
   m_Padding:
-    m_Left: 155
+    m_Left: 40
     m_Right: 0
     m_Top: 0
     m_Bottom: 0

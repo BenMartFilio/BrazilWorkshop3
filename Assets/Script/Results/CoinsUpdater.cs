@@ -10,6 +10,7 @@ public class CoinsUpdater : MonoBehaviour
     private int valuePremium;
     [SerializeField] private TMP_Text _textCoin;
     [SerializeField] private TMP_Text _textPremium;
+    [SerializeField] private TMP_Text _textPseudo;
     [SerializeField] private SO_PlayerDatas _playerDatas;
     [SerializeField] private bool waitCoin = false;
     private Vector3 originalScale;
@@ -32,12 +33,25 @@ public class CoinsUpdater : MonoBehaviour
             AffichageCoin();
         }
         AffichagePremium();
+        AffichagePseudo();
     }
 
     private void AffichageWaitCoin()
     {
         valueCoin = _playerDatas.generalMonney - _playerDatas.actualCoinsNotSaved;
         _textCoin.text = SystemOfChange(valueCoin);
+    }
+
+    public void AffichagePseudo()
+    {
+        if (_playerDatas.Name != null)
+        {
+            _textPseudo.text = _playerDatas.Name;
+        }
+        else
+        {
+            _textPseudo.text = "AnonymousPlayer";
+        }
     }
 
     public void AffichageCoin()
