@@ -97,6 +97,7 @@ namespace Barrage.UI
         private CanvasGroup _canvasGroup;
         private Coroutine   _coroutineActive;
         private Coroutine   _coroutineMasquage;
+        private Coroutine   _coroutineAlpha;    // ← coroutine AnimerAlpha en cours (fade-in ou fade-out)
         private bool        _barrageTerminé;
         private bool        _visible;
         private bool        _estPremierBarrage; // capturé dans Awake avant effacement
@@ -218,42 +219,34 @@ namespace Barrage.UI
         {
             bool doitEtreActive = EstBulleActivePourEtat(nouvelEtat);
 
-            if (doitEtreActive)
+            if (!doitEtreActive) return; // La bulle qui prend le relais gère le masquage de l'autre.
+
+            // Je prends le relais — je masque l'autre bulle immédiatement avant d'apparaître.
+            string texteAReprendre = autresBulle != null ? autresBulle._texteEnCours : null;
+            autresBulle?.CéderLaParoleSansAnimation();
+
+            if (_barrageTerminé)
             {
-                // Je prends le relais — je reprends le texte de l'autre bulle
-                string texteAReprendre = autresBulle != null ? autresBulle._texteEnCours : null;
-                autresBulle?.CéderLaParole();
-
-                // Ne pas afficher de réplique de demande si le barrage est déjà terminé.
-                if (_barrageTerminé)
-                {
-                    // Reprendre uniquement le texte de fin déjà en cours (ex. "Bonne route.")
-                    if (!string.IsNullOrEmpty(texteAReprendre))
-                        LancerRéplicueDirecte(texteAReprendre, duréeAffichage: -1f);
-                    return;
-                }
-
                 if (!string.IsNullOrEmpty(texteAReprendre))
                     LancerRéplicueDirecte(texteAReprendre, duréeAffichage: -1f);
-                else
-                    LancerRéplique(REPLIQUES_DEMANDE, duréeAffichage: -1f);
+                return;
             }
+
+            if (!string.IsNullOrEmpty(texteAReprendre))
+                LancerRéplicueDirecte(texteAReprendre, duréeAffichage: -1f);
             else
-            {
-                // Je cède la parole — l'autre bulle s'en chargera
-                CéderLaParole();
-            }
+                LancerRéplique(REPLIQUES_DEMANDE, duréeAffichage: -1f);
         }
 
         // ── API interne (appelée par l'autre bulle) ───────────────────────────
 
         /// <summary>
         /// Stoppe toute coroutine en cours, fait disparaître la bulle en fondu,
-        /// puis la masque. Appelé quand l'autre bulle prend le relais.
+        /// puis la masque. Appelé quand l'autre bulle prend le relais depuis l'état Rouge
+        /// vers Vert/Orange (fondu acceptable car pas de superposition).
         /// </summary>
         public void CéderLaParole()
         {
-            // Arrêter toute coroutine de dialogue ou de masquage en cours
             if (_coroutineActive != null)
             {
                 StopCoroutine(_coroutineActive);
@@ -266,15 +259,39 @@ namespace Barrage.UI
             }
 
             if (_visible)
-            {
-                // Fondu sortant : la bulle était visible, on la fait disparaître
                 _coroutineMasquage = StartCoroutine(FondirEtMasquer());
-            }
             else
-            {
                 MasquerImmédiatement();
+
+            _texteEnCours = null;
+            _visible      = false;
+        }
+
+        /// <summary>
+        /// Comme <see cref="CéderLaParole"/> mais masque la bulle instantanément, sans fondu.
+        /// À utiliser lors des transitions vers l'état Rouge pour éviter le chevauchement
+        /// visuel entre la bulle haute et la bulle basse.
+        /// </summary>
+        public void CéderLaParoleSansAnimation()
+        {
+            if (_coroutineActive != null)
+            {
+                StopCoroutine(_coroutineActive);
+                _coroutineActive = null;
+            }
+            if (_coroutineMasquage != null)
+            {
+                StopCoroutine(_coroutineMasquage);
+                _coroutineMasquage = null;
+            }
+            // Stopper AnimerAlpha avant MasquerImmédiatement — sinon elle écrase l'alpha à 1.
+            if (_coroutineAlpha != null)
+            {
+                StopCoroutine(_coroutineAlpha);
+                _coroutineAlpha = null;
             }
 
+            MasquerImmédiatement();
             _texteEnCours = null;
             _visible      = false;
         }
@@ -291,6 +308,7 @@ namespace Barrage.UI
             }
             MasquerImmédiatement();
             _coroutineMasquage = null;
+            _coroutineAlpha    = null;
         }
 
         // ── Affichage ─────────────────────────────────────────────────────────
@@ -324,21 +342,24 @@ namespace Barrage.UI
                 _coroutineMasquage = null;
             }
 
-            yield return StartCoroutine(AnimerAlpha(0f, 1f, DUREE_FONDU));
+            _coroutineAlpha = StartCoroutine(AnimerAlpha(0f, 1f, DUREE_FONDU));
+            yield return _coroutineAlpha;
+            _coroutineAlpha = null;
 
             if (texteDialogue != null)
                 texteDialogue.text = texte;
 
             if (duréeAffichage < 0f)
             {
-                // Persistant — coroutine terminée mais la bulle reste visible
                 _coroutineActive = null;
                 yield break;
             }
 
             yield return new WaitForSeconds(duréeAffichage);
 
-            yield return StartCoroutine(AnimerAlpha(1f, 0f, DUREE_FONDU));
+            _coroutineAlpha = StartCoroutine(AnimerAlpha(1f, 0f, DUREE_FONDU));
+            yield return _coroutineAlpha;
+            _coroutineAlpha = null;
 
             _texteEnCours    = null;
             _visible         = false;
