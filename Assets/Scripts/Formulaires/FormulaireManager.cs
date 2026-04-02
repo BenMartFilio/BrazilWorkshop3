@@ -23,7 +23,9 @@ namespace Barrage.Formulaires
         {
             ValiderConfiguration();
             IndexerFormulaires();
-            inventaire.InitialiserInventaire();
+            // Ne pas appeler inventaire.InitialiserInventaire() ici :
+            // l'inventaire doit persister entre les scènes MapRoad ↔ Barrage.
+            // La réinitialisation est gérée par SessionReinitialiseur et SessionManager.
         }
 
         private void ValiderConfiguration()

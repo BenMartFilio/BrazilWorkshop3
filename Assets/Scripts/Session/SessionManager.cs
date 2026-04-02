@@ -1,3 +1,4 @@
+using Barrage.Formulaires;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,6 +17,9 @@ public class SessionManager : MonoBehaviour
 
     [Tooltip("ScriptableObject partagé contenant les données de session.")]
     [SerializeField] private DonnéesSession donnees;
+
+    [Tooltip("Inventaire de formulaires à remettre à zéro lors d'un game over ou d'une nouvelle partie.")]
+    [SerializeField] private FormulaireInventaire formulaireInventaire;
 
     [Tooltip("Nom exact de la scène MapRoad.")]
     [SerializeField] private string nomScèneMapRoad = "MapRoad";
@@ -89,6 +93,7 @@ public class SessionManager : MonoBehaviour
         {
             donnees.Reinitialiser();
             spawner?.RéinitialiserProgressionBarrage();
+            formulaireInventaire?.ResetInventaire();
             Debug.Log("[SessionManager] Pas de session valide — nouvelle partie initialisée.");
             return;
         }

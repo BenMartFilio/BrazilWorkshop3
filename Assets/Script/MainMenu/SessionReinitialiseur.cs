@@ -1,3 +1,4 @@
+using Barrage.Formulaires;
 using UnityEngine;
 
 /// <summary>
@@ -11,6 +12,9 @@ public class SessionReinitialiseur : MonoBehaviour
     [Tooltip("ScriptableObject partagé contenant toutes les données de session.")]
     [SerializeField] private DonnéesSession donnéesSession;
 
+    [Tooltip("Inventaire de formulaires à remettre à zéro pour chaque nouvelle partie.")]
+    [SerializeField] private FormulaireInventaire formulaireInventaire;
+
     private void Awake()
     {
         if (donnéesSession == null)
@@ -22,5 +26,15 @@ public class SessionReinitialiseur : MonoBehaviour
 
         donnéesSession.Reinitialiser();
         Debug.Log("[SessionReinitialiseur] DonnéesSession réinitialisée au chargement du MainMenu.");
+
+        if (formulaireInventaire != null)
+        {
+            formulaireInventaire.ResetInventaire();
+            Debug.Log("[SessionReinitialiseur] FormulaireInventaire réinitialisé au chargement du MainMenu.");
+        }
+        else
+        {
+            Debug.LogWarning("[SessionReinitialiseur] FormulaireInventaire non assigné — l'inventaire ne sera pas remis à zéro.");
+        }
     }
 }

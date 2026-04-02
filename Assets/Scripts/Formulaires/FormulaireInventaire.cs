@@ -28,10 +28,9 @@ namespace Barrage.Formulaires
         /// <summary>Événement déclenché lorsque la quantité d'un formulaire change.</summary>
         public event Action<FormulaireType, int> OnQuantitéChangée;
 
-        private void OnEnable()
-        {
-            InitialiserInventaire();
-        }
+        // OnEnable intentionnellement absent : l'inventaire ne doit pas se réinitialiser
+        // automatiquement entre les scènes. La réinitialisation est déclenchée explicitement
+        // par SessionReinitialiseur (retour au menu) ou SessionManager (game over).
 
         /// <summary>Initialise l'inventaire à partir des valeurs configurées dans l'Inspector.</summary>
         public void InitialiserInventaire()
