@@ -28,6 +28,7 @@ public class CoinPurchaseButton : MonoBehaviour
     [SerializeField] private CoinsUpdater coinsUpdater;
     [SerializeField] private AudioEventDispatcher audioEventDispatcher;
     [SerializeField] private AudioType purchaseSound;
+    [SerializeField] private AudioType failSound;
 
     private Button _button;
     private int _cachedMonney = -1;
@@ -75,6 +76,7 @@ public class CoinPurchaseButton : MonoBehaviour
 
         if (!CanAfford())
         {
+            if (audioEventDispatcher != null) audioEventDispatcher.PlayAudio(failSound);
             Debug.LogWarning("[CoinPurchaseButton] Pièces insuffisantes.");
             onPurchaseFailed?.Invoke();
             return;

@@ -18,6 +18,7 @@ public class CoinsUpdater : MonoBehaviour
     [SerializeField] GameObject coinPrefab;
     [SerializeField] Transform spawnPoint;
     [SerializeField] Transform targetText;
+    [SerializeField] private AudioSource coinAudioSource;
 
     List<GameObject> spawnedCoins = new List<GameObject>();
     private void OnEnable()
@@ -123,6 +124,8 @@ public class CoinsUpdater : MonoBehaviour
         yield return StartCoroutine(SpawnCoins());
 
         yield return new WaitForSeconds(0.3f);
+
+        coinAudioSource.Play();
         // faire monter le premier (1/3 des pièces)
         yield return MoveCoin(spawnedCoins[0]);
         valueCoin = _playerDatas.generalMonney - Mathf.CeilToInt((_playerDatas.actualCoinsNotSaved/3)*2);
@@ -142,6 +145,8 @@ public class CoinsUpdater : MonoBehaviour
         valueCoin = _playerDatas.generalMonney;
         _textCoin.text = SystemOfChange(valueCoin);
         StartCoroutine(SizeText());
+
+        coinAudioSource.Stop();
 
     }
 
@@ -222,8 +227,9 @@ public class CoinsUpdater : MonoBehaviour
             rt.localScale = Vector3.one * scale;
 
             yield return null;
-        }
 
+        }
+        
         Destroy(coin);
     }
 
