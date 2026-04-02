@@ -16,10 +16,13 @@ public class EndManager : MonoBehaviour
     [SerializeField] private Aspiration _aspiration;
     [SerializeField] private SO_PlayerDatas _playerDatas;
     [SerializeField] private BarreProgressionBarrage _barreProgression;
+    [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
+    [SerializeField] private AudioType _gameOver;
     public int reviveCounter = 0;
 
     public void OnDeath()
     {
+        if(_audioEventDispatcher != null) _audioEventDispatcher.PlayAudio(_gameOver);
         _timeManager.StopTime();
         _scoreManager.StopScore();
         for (int i = 0; i < _grounds.Length; i++)
