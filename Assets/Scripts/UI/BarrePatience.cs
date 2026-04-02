@@ -71,6 +71,9 @@ namespace Barrage.UI
         [SerializeField, Min(0f)] private float trembleRougeAmplitude  = 7f;
         [SerializeField, Min(0f)] private float trembleRougeFrequence  = 45f;
 
+        [SerializeField] private AudioSource _tictacSound;
+        
+
         private float         _patience;
         private RectTransform _rt;
         private Vector2       _positionBase;
@@ -143,13 +146,24 @@ namespace Barrage.UI
             }
 
             _patience = Mathf.Max(0f, _patience - vitesseVidage * Time.deltaTime);
-
+            ManageTicTacSound();
             if (!_enPenalite)
                 NotifierVisualisateur(PatienceNormalisée);
 
             AppliquerTremblement();
         }
 
+        private void ManageTicTacSound()
+        {
+            if (_tictacSound == null) return;
+
+            bool TicTacActive = PatienceNormalisée <= seuilBasse;
+
+            if (TicTacActive && !_tictacSound.isPlaying)
+                _tictacSound.Play();
+            else if (!TicTacActive && _tictacSound.isPlaying)
+                _tictacSound.Stop();
+        }
         /// <summary>Tremblement passif : intensité croissante selon la couleur de la barre.</summary>
         private void AppliquerTremblement()
         {
@@ -209,6 +223,7 @@ namespace Barrage.UI
         {
             _gelée = true;
             _rt.anchoredPosition = _positionBase;
+            if (_tictacSound != null) _tictacSound.Stop();
             Debug.Log("[BarrePatience] Gelée — game over suspendu.");
         }
 
