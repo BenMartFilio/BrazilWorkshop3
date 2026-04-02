@@ -8,6 +8,7 @@ public class CoinPurchaseButton : MonoBehaviour
     [Header("Données")]
     [SerializeField] private SO_PlayerDatas playerDatas;
     [SerializeField] private int cost = 100;
+    [SerializeField][TextArea] private string itemDescription;
 
     [Header("UI")]
     [SerializeField] private TMP_Text priceLabel;
@@ -18,6 +19,7 @@ public class CoinPurchaseButton : MonoBehaviour
     [SerializeField] private GameObject confirmationPanel;
     [SerializeField] private Button confirmButton;
     [SerializeField] private Button cancelButton;
+    [SerializeField] private TMP_Text confirmationDescriptionLabel;
 
     [Header("Événements")]
     [SerializeField] private UnityEvent onPurchaseSuccess;
@@ -87,6 +89,8 @@ public class CoinPurchaseButton : MonoBehaviour
             ExecutePurchase();
             return;
         }
+        if (confirmationDescriptionLabel != null)
+            confirmationDescriptionLabel.text = itemDescription;
 
         confirmButton?.onClick.AddListener(OnConfirm);
         cancelButton?.onClick.AddListener(OnCancel);
