@@ -42,6 +42,9 @@ public class GemPurchaseButton : MonoBehaviour
     [SerializeField] private Image successItemIcon;
     [SerializeField] private Sprite successSprite;
 
+    [SerializeField] private AudioEventDispatcher audioEventDispatcher;
+    [SerializeField] private AudioType purchaseSound;
+
     #region Unity Lifecycle
 
     private void Awake()
@@ -119,7 +122,7 @@ public class GemPurchaseButton : MonoBehaviour
     private void ExecutePurchase()
     {
         if (!ValidateSetup() || !CanAfford()) return;
-
+        if(audioEventDispatcher != null) audioEventDispatcher.PlayAudio(purchaseSound);
         playerDatas.premiumMonney -= gemCost;
         playerDatas.generalMonney += goldReward;
         playerDatas.SaveDatas();

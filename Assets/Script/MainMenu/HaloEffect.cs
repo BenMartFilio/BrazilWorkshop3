@@ -19,12 +19,16 @@ public class HaloEffect : MonoBehaviour
     [SerializeField] private float pulseAmplitude = 0.08f;
     [Tooltip("Cycles par seconde.")]
     [SerializeField] private float pulseFrequency = 1.2f;
+    [SerializeField] private AudioEventDispatcher audioEventDispatcher;
+    [SerializeField] private AudioType _objectGetSound;
+    
 
     private Vector3 _baseScale;
 
     private void OnEnable()
     {
         _baseScale = transform.localScale;
+        if(audioEventDispatcher != null) audioEventDispatcher.PlayAudio(_objectGetSound);
     }
 
     private void Update()
