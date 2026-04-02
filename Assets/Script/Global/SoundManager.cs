@@ -21,7 +21,7 @@ public class SoundManager : MonoBehaviour
 
     private void OnDisable()
     {
-        
+        _AudioEventDispatcher.OnAudioEvent -= PlaySound;
     }
 
     private void Start()
