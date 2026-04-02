@@ -15,6 +15,10 @@ public class BoutonPressedScript : MonoBehaviour, IPointerDownHandler, IPointerU
     private Vector3 originalScale;
     private Coroutine currentAnimation;
 
+    [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
+    [SerializeField] private AudioType _click;
+    [SerializeField] private bool _muteSound = false;
+
     void Start()
     {
         originalScale = transform.localScale;
@@ -22,6 +26,7 @@ public class BoutonPressedScript : MonoBehaviour, IPointerDownHandler, IPointerU
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        if(_audioEventDispatcher != null && !_muteSound) _audioEventDispatcher.PlayAudio(_click);
         StartAnimation(originalScale * pressedScale);
     }
 

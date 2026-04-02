@@ -7,6 +7,8 @@ public class PlayGame : MonoBehaviour
 {
     [SerializeField] private GameObject serrure;
     [SerializeField] private RectTransform canvasContent; // child root du Canvas
+    [SerializeField] private AudioEventDispatcher audioEventDispatcher;
+    [SerializeField] private AudioType _startEngine;
 
     public Vector3 rotationAmount = new Vector3(0, 0, 120);
     public float duration = 1.5f;
@@ -52,6 +54,7 @@ public class PlayGame : MonoBehaviour
     public void LaunchGame()
     {
         StartCoroutine(RoutineRotation(rotationAmount, duration));
+        if(audioEventDispatcher != null) audioEventDispatcher.PlayAudio(_startEngine);
     }
 
     IEnumerator RoutineRotation(Vector3 rotation, float time)
