@@ -282,11 +282,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2f382276a78d2c48b04f3af5186a7a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeSkin
-  sprites:
-  - {fileID: 21300000, guid: d79da6c2e25a1f049a21c4779a614707, type: 3}
-  - {fileID: 21300000, guid: ddf292de45729ab4cb0bac27b29bbdea, type: 3}
-  - {fileID: 21300000, guid: ec53cca55e06f5147944a02fae7fe4a5, type: 3}
-  - {fileID: 21300000, guid: 8662fe5434c96a74c992845fd098128d, type: 3}
+  mappings:
+  - sprite: {fileID: 21300000, guid: d79da6c2e25a1f049a21c4779a614707, type: 3}
+    formulaireType: 0
+  - sprite: {fileID: 21300000, guid: ddf292de45729ab4cb0bac27b29bbdea, type: 3}
+    formulaireType: 2
+  - sprite: {fileID: 21300000, guid: ec53cca55e06f5147944a02fae7fe4a5, type: 3}
+    formulaireType: 3
+  - sprite: {fileID: 21300000, guid: 8662fe5434c96a74c992845fd098128d, type: 3}
+    formulaireType: 1
 --- !u!61 &5491382843949479247
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -1,7 +1,7 @@
 using System.Collections;
+using Barrage.Formulaires;
 using ObjetsSpeciaux;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Aspiration : MonoBehaviour
 {
@@ -11,17 +11,20 @@ public class Aspiration : MonoBehaviour
     [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
     [SerializeField] private AudioType _pickup;
 
+    [Header("Inventaire")]
+    [Tooltip("ScriptableObject inventaire dans lequel ajouter le formulaire aspiré.")]
+    [SerializeField] private FormulaireInventaire inventaire;
+
     [Tooltip("Référence optionnelle à EffetsObjetsSpeciaux pour étendre la fenêtre d'aspiration (item Aspirateur).")]
     [SerializeField] private EffetsObjetsSpeciaux _effets;
 
     private ChangeSkin _documents;
 
     public bool canAspire = false;
-    public bool isDead = false;
-    public bool finished = true;
+    public bool isDead    = false;
+    public bool finished  = true;
 
-    // Heure d'entrée du véhicule dans la zone trigger (pour calculer l'extension).
-    private float _tempsEntreeDansZone;
+    private float     _tempsEntreeDansZone;
     private Coroutine _coroutineExtension;
 
     private void Start()
@@ -68,8 +71,18 @@ public class Aspiration : MonoBehaviour
         AnnulerExtension();
         FeedbackClicked();
         if (_audioEventDispatcher != null) _audioEventDispatcher.PlayAudio(_pickup);
-        int doc = _documents.OnAspiration();
-        Debug.Log(doc);
+
+        FormulaireType? type = _documents != null ? _documents.ObtenirType() : null;
+
+        if (type.HasValue)
+        {
+            inventaire?.Ajouter(type.Value);
+            Debug.Log($"[Aspiration] +1 {type.Value} → total : {inventaire?.ObtenirQuantité(type.Value)}");
+        }
+        else
+        {
+            Debug.LogWarning("[Aspiration] Véhicule aspiré sans mapping FormulaireType valide — inventaire non modifié.");
+        }
     }
 
     private void FeedbackClicked()

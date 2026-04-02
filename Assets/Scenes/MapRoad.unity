@@ -152,10 +152,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 754818457}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 52.19, y: -20}
+  m_SizeDelta: {x: 42.19, y: 80.44}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &11239705
 MonoBehaviour:
@@ -310,9 +310,9 @@ RectTransform:
   - {fileID: 831746463}
   m_Father: {fileID: 646674025}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 500, y: 0}
   m_SizeDelta: {x: 340, y: 120}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &49276143
@@ -1824,7 +1824,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 499.99988, y: -154.8}
-  m_SizeDelta: {x: 0, y: 120}
+  m_SizeDelta: {x: 157.19, y: 120}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &754818458
 MonoBehaviour:
@@ -2768,6 +2768,9 @@ MonoBehaviour:
   bounceScale: 1.06
   animationSpeed: 12
   enableVibration: 1
+  _audioEventDispatcher: {fileID: 0}
+  _click: 0
+  _muteSound: 0
 --- !u!1 &1058231961
 GameObject:
   m_ObjectHideFlags: 0
@@ -3468,6 +3471,9 @@ MonoBehaviour:
   bounceScale: 1.06
   animationSpeed: 12
   enableVibration: 1
+  _audioEventDispatcher: {fileID: 0}
+  _click: 0
+  _muteSound: 0
 --- !u!1 &1176915240
 GameObject:
   m_ObjectHideFlags: 0
@@ -3701,6 +3707,9 @@ MonoBehaviour:
   _feedbackLogo: {fileID: 55492459}
   _input: {fileID: 290452987}
   shatter: {fileID: 55492464}
+  _audioEventDispatcher: {fileID: 0}
+  _pickup: 0
+  inventaire: {fileID: 11400000, guid: 4200459b05b33f64ba281a1ac40749c6, type: 2}
   _effets: {fileID: 0}
   canAspire: 0
   isDead: 0
@@ -4418,10 +4427,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 754818457}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 107.19, y: -60}
+  m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1458424801
 MonoBehaviour:
@@ -5619,6 +5628,7 @@ MonoBehaviour:
   m_inputManager: {fileID: 290452987}
   _AudioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
   _MoveAudioType: 0
+  _coinPickup: 0
   moveDuration: 0.1
   maxLeanAngle: 45
   _coinsText: {fileID: 11239705}

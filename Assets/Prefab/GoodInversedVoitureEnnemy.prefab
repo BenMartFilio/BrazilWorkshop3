@@ -114,6 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionObstacle
   prefabExplosion: {fileID: 0}
+  _crashSound: {fileID: 0}
 --- !u!1 &3610982495355649786
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,11 +221,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2f382276a78d2c48b04f3af5186a7a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeSkin
-  sprites:
-  - {fileID: 21300000, guid: 50502912c09718b4d9aa7c4d8d286f52, type: 3}
-  - {fileID: 21300000, guid: 5a8b6fc86640864438cd97f64d31e455, type: 3}
-  - {fileID: 21300000, guid: 2c202e3171db7e1478dafe7b74dad5b4, type: 3}
-  - {fileID: 21300000, guid: a066904d87d982b489b3873c9da70bd4, type: 3}
+  mappings:
+  - sprite: {fileID: 21300000, guid: 50502912c09718b4d9aa7c4d8d286f52, type: 3}
+    formulaireType: 0
+  - sprite: {fileID: 21300000, guid: 5a8b6fc86640864438cd97f64d31e455, type: 3}
+    formulaireType: 2
+  - sprite: {fileID: 21300000, guid: 2c202e3171db7e1478dafe7b74dad5b4, type: 3}
+    formulaireType: 3
+  - sprite: {fileID: 21300000, guid: a066904d87d982b489b3873c9da70bd4, type: 3}
+    formulaireType: 1
 --- !u!61 &6718998188001990848
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -284,6 +289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionObstacle
   prefabExplosion: {fileID: 0}
+  _crashSound: {fileID: 0}
 --- !u!1001 &2926725254245088014
 PrefabInstance:
   m_ObjectHideFlags: 0
