@@ -38,6 +38,7 @@ namespace Barrage.UI
         [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
         [SerializeField] private AudioType _correct;
         [SerializeField] private AudioType _incorrect;
+        [SerializeField] private AudioType _carWindow;
 
         // ── Animation positive ────────────────────────────────────────────────
         // (constantes déplacées dans AnimerPositif)
@@ -100,6 +101,7 @@ namespace Barrage.UI
             // Ce Start() n'est atteint que si enabled=true (barrage normal avec remise de documents).
             // On dégèle la patience ici : BarrePatience démarre gelée par défaut
             // et ne doit se vider que pendant la phase de remise.
+            if (_audioEventDispatcher != null) _audioEventDispatcher.PlayAudio(_carWindow);
             if (barrePatience != null)
             {
                 barrePatience.Dégeler();
