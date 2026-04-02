@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionObstacle
   prefabExplosion: {fileID: 0}
+  _crashSound: {fileID: 0}
 --- !u!1 &2861961816579948195
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,6 +346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionObstacle
   prefabExplosion: {fileID: 0}
+  _crashSound: {fileID: 0}
 --- !u!1 &8334298908888231861
 GameObject:
   m_ObjectHideFlags: 0

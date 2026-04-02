@@ -173,8 +173,7 @@ namespace Barrage.UI
 
             if (correct)
             {
-                if(_audioEventDispatcher != null) _audioEventDispatcher.PlayAudio(_correct);
-                _audioEventDispatcher.PlayAudio(_correct);
+                if (_audioEventDispatcher != null) _audioEventDispatcher.PlayAudio(_correct);
                 OnFormulaireRemis?.Invoke(type);
                 Debug.Log($"[MainDuGarde] ✓ Correct : {type}. EstTerminée={listeAttenteGarde.EstTerminée}");
                 StartCoroutine(AnimerPositif(go));
