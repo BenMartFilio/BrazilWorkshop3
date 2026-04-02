@@ -32,11 +32,12 @@ namespace Barrage.UI
         private Coroutine _coroutineChute;
 
         /// <summary>Initialise la carte avec son type, sa taille fixe et le gestionnaire UI.</summary>
-        public void Initialiser(FormulaireType type, Vector2 tailleOriginale, FormulaireUIManager uiManager)
+        public void Initialiser(FormulaireType type, Vector2 tailleOriginale, FormulaireUIManager uiManager, AudioEventDispatcher audioEventDispatcher)
         {
             Type = type;
             _tailleOriginale = tailleOriginale;
             _uiManager = uiManager;
+            _audioEventDispatcher = audioEventDispatcher;
             _rectTransform = GetComponent<RectTransform>();
             _rawImage = GetComponent<RawImage>();
         }

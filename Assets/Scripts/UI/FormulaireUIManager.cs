@@ -26,6 +26,7 @@ namespace Barrage.UI
         [Header("Données")]
         [SerializeField] private FormulaireInventaire inventaire;
         [SerializeField] private List<FormulaireData> formulairesData = new();
+        [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
 
         private PocheUI[] _poches;
         private readonly Dictionary<FormulaireType, FormulaireData> _dataParType = new();
@@ -146,7 +147,7 @@ namespace Barrage.UI
 
             // Ajouter le comportement drag-and-drop
             var formulaireUI = go.AddComponent<FormulaireUI>();
-            formulaireUI.Initialiser(type, tailleOriginale, this);
+            formulaireUI.Initialiser(type, tailleOriginale, this,_audioEventDispatcher);
 
             int index = poche.AjouterFormulaire(formulaireUI);
             rt.anchoredPosition = poche.ObtenirPositionPourIndex(index);
