@@ -34,7 +34,7 @@ public class ScrollingElement : MonoBehaviour
         }
         if (_rb == null)
         {
-            transform.Translate(Vector3.down * speed * Time.fixedDeltaTime);
+            transform.Translate(Vector3.down * speed * 0.8f * Time.fixedDeltaTime);
 
             if (transform.position.y < -20)
             {
@@ -49,7 +49,7 @@ public class ScrollingElement : MonoBehaviour
         }
         else
         {
-            _rb.MovePosition(_rb.position + Vector2.down * speed * Time.fixedDeltaTime);
+            _rb.MovePosition(_rb.position + Vector2.down * speed * 0.8f * Time.fixedDeltaTime);
 
             if (_rb.position.y < -20)
                 gameObject.SetActive(false);
