@@ -477,6 +477,8 @@ public class SpawnObstacleV2 : MonoBehaviour
     public void RestaurerDepuisSession(float vitesse)
     {
         _generalSpeed = vitesse;
+        _timeManager.Reupdate();
+        RefreshVitesses();
     }
 
     /// <summary>
