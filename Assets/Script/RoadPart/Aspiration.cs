@@ -32,6 +32,26 @@ public class Aspiration : MonoBehaviour
     private float     _tempsEntreeDansZone;
     private Coroutine _coroutineExtension;
 
+
+    [Header("Effet grossissement")]
+    [Tooltip("Amplitude maximale du grossissement en scale local (ex: 0.3 = +30%).")]
+    [SerializeField] private float _grossissementAmplitude = 0.3f;
+
+    [Tooltip("Durée totale de l'animation de grossissement en secondes.")]
+    [SerializeField] private float _grossissementDuree = 0.35f;
+
+    [Tooltip("Courbe de grossissement : montée rapide puis descente douce. X = temps normalisé [0,1], Y = valeur scale normalisée [0,1].")]
+    [SerializeField]
+    private AnimationCurve _grossissementCourbe = new AnimationCurve(
+        new Keyframe(0f, 0f, 0f, 8f),
+        new Keyframe(0.25f, 1f, 0f, 0f),
+        new Keyframe(1f, 0f, -2f, 0f)
+    );
+
+    [SerializeField] private GameObject _player;
+
+    private Coroutine _coroutineGrossissement;
+
     private void Start()
     {
         AdaptOnScreen();
@@ -84,6 +104,8 @@ public class Aspiration : MonoBehaviour
             inventaire?.Ajouter(type.Value);
             Debug.Log($"[Aspiration] +1 {type.Value} → total : {inventaire?.ObtenirQuantité(type.Value)}");
             OnDocumentCollected?.Invoke();
+            if (_player != null)
+                LancerGrossissement(_player.transform);
         }
         else
         {
@@ -165,4 +187,39 @@ public class Aspiration : MonoBehaviour
         StopCoroutine(_coroutineExtension);
         _coroutineExtension = null;
     }
+
+    private void LancerGrossissement(Transform cible)
+    {
+        if (_coroutineGrossissement != null)
+            StopCoroutine(_coroutineGrossissement);
+        _coroutineGrossissement = StartCoroutine(AnimerGrossissement(cible));
+    }
+
+    /// <summary>Anime un grossissement puis retour à la taille originale sur la cible, via une AnimationCurve.</summary>
+    private IEnumerator AnimerGrossissement(Transform cible)
+    {
+        if (cible == null) yield break;
+
+        Vector3 scaleInitiale = cible.localScale;
+        float elapsed = 0f;
+
+        while (elapsed < _grossissementDuree)
+        {
+            if (cible == null) yield break;
+
+            float t = elapsed / _grossissementDuree;
+            float valeurCourbe = _grossissementCourbe.Evaluate(t);
+            cible.localScale = scaleInitiale * (1f + valeurCourbe * _grossissementAmplitude);
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        // Garantit le retour exact à la taille initiale
+        if (cible != null)
+            cible.localScale = scaleInitiale;
+
+        _coroutineGrossissement = null;
+    }
+
 }

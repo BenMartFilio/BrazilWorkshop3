@@ -1014,7 +1014,7 @@ Transform:
   m_GameObject: {fileID: 234882523}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.6666665, y: -3, z: 0}
+  m_LocalPosition: {x: 1.5402842, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2807,6 +2807,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ReviveButtonAd
   _rewardedAdUnitId: YOUR_REWARDED_AD_UNIT_ID
   _endManager: {fileID: 1232534109}
+  _donneesSession: {fileID: 0}
 --- !u!114 &1035029386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3142,7 +3143,7 @@ Transform:
   m_GameObject: {fileID: 1121532490}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.6666667, y: -3, z: 0}
+  m_LocalPosition: {x: -1.5402844, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3762,14 +3763,50 @@ MonoBehaviour:
   _feedbackLogo: {fileID: 55492459}
   _input: {fileID: 290452987}
   shatter: {fileID: 55492464}
-  _audioEventDispatcher: {fileID: 0}
-  _pickup: 0
-  _shatter: 0
+  _audioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
+  _pickup: 10
+  _shatter: 17
   inventaire: {fileID: 11400000, guid: b96ec00b9f42a8742833630eee3708e8, type: 2}
   _effets: {fileID: 0}
   canAspire: 0
   isDead: 0
   finished: 1
+  _grossissementAmplitude: 0.3
+  _grossissementDuree: 0.35
+  _grossissementCourbe:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 8
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.25
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -2
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _player: {fileID: 1313671859}
 --- !u!50 &1185453012
 Rigidbody2D:
   serializedVersion: 5
@@ -4959,7 +4996,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 10, z: 0}
-  m_LocalScale: {x: 0.1542855, y: 0.1937609, z: 1}
+  m_LocalScale: {x: 0.14258613, y: 0.1937609, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -5134,6 +5171,7 @@ MonoBehaviour:
   barrePatience: {fileID: 0}
   mainDuGarde: {fileID: 0}
   listeAttenteGarde: {fileID: 0}
+  donneesJoueur: {fileID: 0}
   joueur: {fileID: 1838184139}
   spriteVoiture: {fileID: 1313671861}
   spawner: {fileID: 220667610}
@@ -5852,7 +5890,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1542855, y: 0.1937609, z: 1}
+  m_LocalScale: {x: 0.14258613, y: 0.1937609, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
