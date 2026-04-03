@@ -5011,7 +5011,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Vous \xEAtes pr\xEAt \xE0 fuir le pays !\n\nBonne chance pour la suite."
+  m_text: "Vous \xEAtes pr\xEAt \xE0 passer les inspections !\n\nBonne chance pour
+    la suite."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
