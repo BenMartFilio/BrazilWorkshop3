@@ -58,7 +58,7 @@ namespace Barrage.UI
         [Tooltip("Délai en secondes après le dernier tampon avant le chargement de la scène menu.")]
         [SerializeField] private float délaiAvantMenu = 2f;
         [Tooltip("Nom exact de la scène menu à charger (doit être présente dans Build Settings).")]
-        [SerializeField] private string nomScèneMenu = "MainMenu";
+        private string nomScèneMenu = "ResultScene";
 
         [Header("Cartes — taille et disposition")]
         [Tooltip("Largeur d'une carte-lettre en pixels. Valeur originale : 175.")]
