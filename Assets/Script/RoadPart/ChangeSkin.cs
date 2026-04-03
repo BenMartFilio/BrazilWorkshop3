@@ -53,6 +53,26 @@ public class ChangeSkin : MonoBehaviour
         ChangerSkin();
     }
 
+    /// <summary>
+    /// Force le skin correspondant au FormulaireType donné.
+    /// Si le type n'est pas trouvé dans les mappings, le skin reste aléatoire.
+    /// </summary>
+    public void ForceSkinParType(FormulaireType type)
+    {
+        if (mappings == null || mappings.Length == 0) return;
+
+        for (int i = 0; i < mappings.Length; i++)
+        {
+            if (mappings[i].formulaireType == type)
+            {
+                ForceSkin(i);
+                return;
+            }
+        }
+
+        Debug.LogWarning($"[ChangeSkin] Type {type} introuvable dans mappings — skin aléatoire.", this);
+    }
+
     /// <summary>Returns the index of the currently displayed skin mapping.</summary>
     public int OnAspiration()
     {

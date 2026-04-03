@@ -20,14 +20,14 @@ public class SpawnObstacleV2 : MonoBehaviour
     public ObstaclePattern[] patterns;
 
     [Header("Pattern Barrage")]
-    [Tooltip("Pattern spécial déclenché après un nombre de signaux TimeManager.")]
+    [Tooltip("Pattern spécial déclenché après un nombre de patterns normaux calculé par FormulaireSpawnBudget.")]
     [SerializeField] private ObstaclePattern patternBarrage;
 
-    [Tooltip("Nombre minimum de signaux TimeManager avant l'apparition du Barrage.")]
-    [SerializeField] private int barrageSignauxMin = 5;
+    [Tooltip("Nombre minimum de patterns normaux à spawner avant le barrage (fallback si aucune session valide).")]
+    [SerializeField] private int patternsMinFallback = 5;
 
-    [Tooltip("Nombre maximum de signaux TimeManager avant l'apparition du Barrage.")]
-    [SerializeField] private int barrageSignauxMax = 7;
+    [Tooltip("Nombre maximum de patterns normaux à spawner avant le barrage (fallback si aucune session valide).")]
+    [SerializeField] private int patternsMaxFallback = 7;
 
     [Tooltip("Distance vide (unités monde) imposée avant d'émettre le pattern Barrage (laisse la route dégagée).")]
     [SerializeField] private float gapAvantBarrage = 10f;
@@ -39,6 +39,11 @@ public class SpawnObstacleV2 : MonoBehaviour
              "Compense l'offset interne du prefab (BarriereInspection localX=-23.9 × scale0.1 = -2.39) " +
              "pour que la barrière tombe au centre et le bureau à droite.")]
     [SerializeField] private float barrageOffsetX = 2.39f;
+
+    [Header("Budget formulaires")]
+    [Tooltip("Budget ScriptableObject partagé avec la scène Barrage. " +
+             "Détermine quels types de véhicules forcer et combien de patterns spawner.")]
+    [SerializeField] private FormulaireSpawnBudget spawnBudget;
 
     [Header("Speed Reference")]
     [Tooltip("Must match the baseSpeed value on the obstacles' ScrollingElement.")]
@@ -77,10 +82,14 @@ public class SpawnObstacleV2 : MonoBehaviour
     // ── Coroutine handle ──────────────────────────────────────────────────────
     private Coroutine _spawningCoroutine;
 
-    // ── Compteur Barrage ──────────────────────────────────────────────────────
-    private int _signauxEcoules = 0;
+    // ── Compteur Barrage (basé sur patterns, pas sur signaux) ─────────────────
+    private int  _patternsSpawnés    = 0;
+    private int  _patternsNécessaires = 5;
+    private bool _barrageEnAttente   = false;
+
+    // Conservé uniquement pour la compatibilité session (signauxEcoules / prochainBarrageA).
+    private int _signauxEcoules   = 0;
     private int _prochainBarrageA = 0;
-    private bool _barrageEnAttente = false;
 
     /// <summary>
     /// Bloque les mises à jour de vitesse sur les sols et les objets du pool
@@ -128,7 +137,6 @@ public class SpawnObstacleV2 : MonoBehaviour
     {
         _generalSpeed = Mathf.Clamp(_generalSpeed + 0.5f, 0, 30);
 
-        // Ne pas écraser les vitesses pendant le freinage du barrage.
         if (!_miseAJourVitessePausée)
         {
             foreach (List<GameObject> bucket in _pool.Values)
@@ -144,22 +152,38 @@ public class SpawnObstacleV2 : MonoBehaviour
                 _grounds[i].UpdateSpeed(_generalSpeed);
         }
 
-        if (!_barrageEnAttente && patternBarrage != null && !_compteurBarragePausé)
-        {
+        // Le trigger barrage est basé sur le compteur de patterns (IncrémenterCompteurPatterns),
+        // pas sur les signaux. On conserve _signauxEcoules uniquement pour la compatibilité session.
+        if (!_compteurBarragePausé)
             _signauxEcoules++;
-            if (_signauxEcoules >= _prochainBarrageA)
-            {
-                _barrageEnAttente = true;
-            }
+    }
+
+    // ── Compteur patterns (trigger barrage) ───────────────────────────────────
+
+    /// <summary>
+    /// Appelé par SpawnPatternCoroutine après chaque pattern normal spawné.
+    /// Déclenche le barrage quand le nombre de patterns cible est atteint.
+    /// </summary>
+    private void IncrémenterCompteurPatterns()
+    {
+        if (_barrageEnAttente || _compteurBarragePausé) return;
+
+        _patternsSpawnés++;
+        Debug.Log($"[SpawnObstacleV2] Pattern #{_patternsSpawnés}/{_patternsNécessaires} spawné.");
+
+        if (_patternsSpawnés >= _patternsNécessaires && patternBarrage != null)
+        {
+            _barrageEnAttente = true;
+            Debug.Log("[SpawnObstacleV2] Seuil de patterns atteint — barrage en attente.");
         }
     }
 
     // ── Public control ────────────────────────────────────────────────────────
 
-    /// <summary>Gèle le compteur de signaux barrage (mort du joueur).</summary>
+    /// <summary>Gèle le compteur de patterns barrage (mort du joueur).</summary>
     public void PauserCompteurBarrage() => _compteurBarragePausé = true;
 
-    /// <summary>Reprend le compteur de signaux barrage (revive).</summary>
+    /// <summary>Reprend le compteur de patterns barrage (revive).</summary>
     public void ReprendreCompteurBarrage() => _compteurBarragePausé = false;
 
     /// <summary>
@@ -298,8 +322,10 @@ public class SpawnObstacleV2 : MonoBehaviour
         }
 
         // Attendre le gap configuré avant de lancer le pattern suivant.
-        // gapBetweenPatterns est ajustable dans l'Inspector du Spawner.
         yield return StartCoroutine(WaitForDistance(gapBetweenPatterns));
+
+        // Incrémenter le compteur après que le pattern est entièrement sorti.
+        IncrémenterCompteurPatterns();
     }
 
     /// <summary>
@@ -404,6 +430,19 @@ public class SpawnObstacleV2 : MonoBehaviour
                 if (obj.TryGetComponent<ScrollingElement>(out var scrolling))
                     scrolling.UpdateSpeed(_generalSpeed);
 
+                // Si ce véhicule est un Good (porte un ChangeSkin), forcer le skin via le budget.
+                var changeSkin = obj.GetComponentInChildren<ChangeSkin>();
+                if (changeSkin != null && spawnBudget != null && !spawnBudget.BudgetÉpuisé)
+                {
+                    var type = spawnBudget.ConsumeNext();
+                    if (type.HasValue)
+                    {
+                        changeSkin.forcedSkinIndex = -1; // reset avant forçage
+                        changeSkin.ForceSkinParType(type.Value);
+                        Debug.Log($"[SpawnObstacleV2] Good vehicle forcé → {type.Value} (budget restant : {spawnBudget.VéhiculesRestants})");
+                    }
+                }
+
                 OnObstacleSpawne?.Invoke(spawnPos, obj);
             }
         }
@@ -422,12 +461,12 @@ public class SpawnObstacleV2 : MonoBehaviour
     {
         donnees.vitesseGénérale = _generalSpeed;
 
-        // Nouveau cycle : le prochain barrage apparaîtra dans barrageSignauxMin–barrageSignauxMax signaux.
+        // Réinitialiser le compteur de patterns pour le prochain cycle MapRoad.
+        // patternsNécessaires sera recalculé à la fin du prochain barrage par FormulaireSpawnBudget.
         donnees.signauxEcoules   = 0;
-        donnees.prochainBarrageA = Random.Range(barrageSignauxMin, barrageSignauxMax + 1);
+        donnees.prochainBarrageA = 0;
 
-        Debug.Log($"[SpawnObstacleV2] Session sauvegardée — nouveau cycle barrage planifié : " +
-                  $"signaux=0/{donnees.prochainBarrageA}");
+        Debug.Log($"[SpawnObstacleV2] Session sauvegardée — patterns={_patternsSpawnés}/{_patternsNécessaires}");
     }
 
     /// <summary>Restaure la vitesse générale depuis les données de session.</summary>
@@ -437,31 +476,28 @@ public class SpawnObstacleV2 : MonoBehaviour
     }
 
     /// <summary>
-    /// Restaure la progression barrage (signaux écoulés + seuil) depuis les données de session.
-    /// À appeler depuis MapRoadSessionBridge après un retour de barrage réussi
-    /// ET pour toute session valide (le seuil et les signaux ont pu être sauvegardés).
-    /// Remet toujours _compteurBarragePausé à false : au retour de barrage, le joueur
-    /// est vivant et le compteur doit être actif, quelle que soit la cause de l'arrêt précédent.
+    /// Restaure la progression barrage depuis les données de session.
+    /// Lit <see cref="DonnéesSession.patternsNécessaires"/> calculé par FormulaireSpawnBudget
+    /// à la fin du dernier barrage.
     /// </summary>
     public void RestaurerProgressionDepuisSession(DonnéesSession donnees)
     {
-        _signauxEcoules      = donnees.signauxEcoules;
-        _prochainBarrageA    = donnees.prochainBarrageA > 0
-            ? donnees.prochainBarrageA
-            : Random.Range(barrageSignauxMin, barrageSignauxMax + 1);
+        _patternsSpawnés     = 0;
+        _patternsNécessaires = donnees.patternsNécessaires > 0
+            ? donnees.patternsNécessaires
+            : UnityEngine.Random.Range(patternsMinFallback, patternsMaxFallback + 1);
         _barrageEnAttente    = false;
-        _compteurBarragePausé = false;   // ← toujours actif au retour de barrage
+        _compteurBarragePausé = false;
 
-        Debug.Log($"[SpawnObstacleV2] Progression restaurée : signaux={_signauxEcoules}/{_prochainBarrageA}, compteur actif.");
+        Debug.Log($"[SpawnObstacleV2] Progression restaurée : 0/{_patternsNécessaires} patterns avant barrage.");
     }
 
     /// <summary>
-    /// Réinitialise complètement le compteur barrage pour une nouvelle partie.
-    /// À appeler quand sessionValide est false (nouvelle partie ou game over).
+    /// Réinitialise complètement le compteur pour une nouvelle partie.
     /// </summary>
     public void RéinitialiserProgressionBarrage()
     {
-        _signauxEcoules   = 0;
+        _patternsSpawnés  = 0;
         _barrageEnAttente = false;
         TirerProchainSeuilBarrage();
     }
@@ -469,14 +505,12 @@ public class SpawnObstacleV2 : MonoBehaviour
     // ── Progression barrage (0 → 1) ───────────────────────────────────────────
 
     /// <summary>
-    /// Progression discrète (0 → 1) basée uniquement sur le décompte de signaux.
-    /// Retourne 1 dès que le seuil est atteint, indépendamment de _barrageEnAttente.
-    /// Ne redescend jamais — TirerProchainSeuilBarrage() ne remet PAS _signauxEcoules à 0 ici.
-    /// C'est RéinitialiserPourNouveauCycle() côté UI qui repart de 0.
+    /// Progression discrète (0 → 1) basée sur le nombre de patterns spawned.
+    /// Retourne 1 dès que le seuil est atteint.
     /// </summary>
     public float Progression =>
-        (_prochainBarrageA > 0
-            ? Mathf.Clamp01((float)_signauxEcoules / _prochainBarrageA)
+        (_patternsNécessaires > 0
+            ? Mathf.Clamp01((float)_patternsSpawnés / _patternsNécessaires)
             : 0f);
 
     /// <summary>Durée en secondes d'un signal TimeManager — utilisée pour lisser la progression.</summary>
@@ -485,12 +519,11 @@ public class SpawnObstacleV2 : MonoBehaviour
     /// <summary>Vrai si le barrage est en attente de spawn (progression = 1 verrouillée).</summary>
     public bool BarrageEnAttente => _barrageEnAttente;
 
-    /// <summary>Seuil total de signaux pour ce cycle — utilisé pour calculer la durée totale attendue.</summary>
-    public int SeuilBarrage => _prochainBarrageA;
+    /// <summary>Seuil total de patterns pour ce cycle.</summary>
+    public int SeuilBarrage => _patternsNécessaires;
 
     /// <summary>
     /// Durée en secondes du gap vide avant le barrage, convertie depuis la distance monde.
-    /// Utilisée par BarreProgressionBarrage pour inclure ce délai dans le timing total.
     /// </summary>
     public float DuréeGapAvantBarrage =>
         (baseObstacleSpeed > 0f) ? gapAvantBarrage / baseObstacleSpeed : 0f;
@@ -518,9 +551,15 @@ public class SpawnObstacleV2 : MonoBehaviour
 
     // ── Barrage ───────────────────────────────────────────────────────────────
 
+    /// <summary>
+    /// Tirage de secours utilisé uniquement quand aucune session valide n'est disponible
+    /// (nouvelle partie, premier barrage, game over).
+    /// </summary>
     private void TirerProchainSeuilBarrage()
     {
-        _prochainBarrageA = Random.Range(barrageSignauxMin, barrageSignauxMax + 1);
+        _patternsSpawnés     = 0;
+        _patternsNécessaires = UnityEngine.Random.Range(patternsMinFallback, patternsMaxFallback + 1);
+        Debug.Log($"[SpawnObstacleV2] Fallback — seuil tiré : {_patternsNécessaires} patterns.");
     }
 
     // ── Object pool ───────────────────────────────────────────────────────────

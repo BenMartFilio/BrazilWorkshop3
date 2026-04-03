@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Barrage.Formulaires.FormulaireInventaire
   "quantit\xE9sInitiales":
   - type: 0
-    "quantit\xE9": 5
+    "quantit\xE9": 0
   - type: 1
-    "quantit\xE9": 3
+    "quantit\xE9": 0
   - type: 2
-    "quantit\xE9": 2
+    "quantit\xE9": 0
   - type: 3
-    "quantit\xE9": 6
+    "quantit\xE9": 0
