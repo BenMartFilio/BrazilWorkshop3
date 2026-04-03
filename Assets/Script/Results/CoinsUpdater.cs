@@ -120,39 +120,42 @@ public class CoinsUpdater : MonoBehaviour
 
     IEnumerator CoinToCounter()
     {
-        //faire spawn pièce
+        //faire spawn piï¿½ce
         yield return StartCoroutine(SpawnCoins());
 
         yield return new WaitForSeconds(0.3f);
 
-        coinAudioSource.Play();
-        // faire monter le premier (1/3 des pièces)
+        if (coinAudioSource != null)
+            coinAudioSource.Play();
+        else
+            Debug.LogWarning("[CoinsUpdater] coinAudioSource non assignÃ© â€” audio ignorÃ©.", this);
+
+        // faire monter le premier (1/3 des piÃ¨ces)
         yield return MoveCoin(spawnedCoins[0]);
-        valueCoin = _playerDatas.generalMonney - Mathf.CeilToInt((_playerDatas.actualCoinsNotSaved/3)*2);
+        valueCoin = _playerDatas.generalMonney - Mathf.CeilToInt((_playerDatas.actualCoinsNotSaved / 3) * 2);
         _textCoin.text = SystemOfChange(valueCoin);
         StartCoroutine(SizeText());
 
-    //    yield return new WaitForSeconds(0.1f);
         yield return MoveCoin(spawnedCoins[1]);
-        // faire monter le deuxième (2/3 des pièces)
-        valueCoin = _playerDatas.generalMonney - Mathf.CeilToInt((_playerDatas.actualCoinsNotSaved/3));
+        // faire monter le deuxiÃ¨me (2/3 des piÃ¨ces)
+        valueCoin = _playerDatas.generalMonney - Mathf.CeilToInt(_playerDatas.actualCoinsNotSaved / 3);
         _textCoin.text = SystemOfChange(valueCoin);
         StartCoroutine(SizeText());
 
-    //    yield return new WaitForSeconds(0.1f);
         yield return MoveCoin(spawnedCoins[2]);
-        // faire monter le dernier (3/3 des pièces)
+        // faire monter le dernier (3/3 des piÃ¨ces)
         valueCoin = _playerDatas.generalMonney;
         _textCoin.text = SystemOfChange(valueCoin);
         StartCoroutine(SizeText());
 
-        coinAudioSource.Stop();
+        if (coinAudioSource != null)
+            coinAudioSource.Stop();
 
     }
 
     IEnumerator SizeText()
     {
-        Vector3 targetScale = originalScale * 1.3f; // agrandir à 130%
+        Vector3 targetScale = originalScale * 1.3f; // agrandir ï¿½ 130%
 
         float duration = 0.15f;
         float t = 0;
@@ -167,7 +170,7 @@ public class CoinsUpdater : MonoBehaviour
 
         t = 0;
 
-        // Rétrécir
+        // Rï¿½trï¿½cir
         while (t < duration)
         {
             t += Time.deltaTime;
