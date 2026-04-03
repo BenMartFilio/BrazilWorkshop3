@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -9,10 +10,18 @@ public class SoundManager : MonoBehaviour
 
     [SerializeField] private AudioMixerGroup musicGroup;
     [SerializeField] private AudioMixerGroup backgroundGroup;
+    [SerializeField] private AudioMixer audioMixer;
+
     private AudioSource musicSource;
     private AudioSource backgroundSource;
 
     [SerializeField] private AudioEventDispatcher _AudioEventDispatcher;
+
+    private string MusicLowPassParam = "Music_LowPass";
+    private string MusicVolumeParam = "Music_Volume";
+    private float MaxCutoff = 22000f;
+    private float MinCutoff = 400f;
+    private float TransitionDuration = 1.5f;
 
     private void OnEnable()
     {
@@ -40,9 +49,7 @@ public class SoundManager : MonoBehaviour
         foreach (AudioSource source in sources)
         {
             if (source.clip == null)
-            {
                 soundEffectAudio = source;
-            }
         }
     }
 
@@ -52,11 +59,9 @@ public class SoundManager : MonoBehaviour
         {
             if (source.outputAudioMixerGroup == musicGroup)
                 musicSource = source;
-
             else if (source.outputAudioMixerGroup == backgroundGroup)
                 backgroundSource = source;
         }
-        // A UTILISER POUR CALL     _AudioEventDispatcher.PlayAudio(_DeathAudioType);
     }
 
     private void PlaySound(AudioClip son)
@@ -64,13 +69,55 @@ public class SoundManager : MonoBehaviour
         backgroundSource.PlayOneShot(son);
     }
 
-
+    
     public void PlayMusic(AudioClip music)
     {
         musicSource.Stop();
         musicSource.clip = music;
         musicSource.Play();
     }
+
+    
+    public void PlayMusicWithLowPass(AudioClip music)
+    {
+        if (musicSource.clip == music) return;
+        StartCoroutine(LowPassTransition(music));
+    }
+
+    private IEnumerator LowPassTransition(AudioClip nextMusic)
+    {
+        float elapsed = 0f;
+
+        
+        while (elapsed < TransitionDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / TransitionDuration;
+            audioMixer.SetFloat(MusicLowPassParam, Mathf.Lerp(MaxCutoff, MinCutoff, t));
+            
+            audioMixer.SetFloat(MusicVolumeParam, Mathf.Lerp(0f, -80f, t));
+            yield return null;
+        }
+
+        
+        musicSource.Stop();
+        musicSource.clip = nextMusic;
+        musicSource.Play();
+
+        elapsed = 0f;
+
+        
+        while (elapsed < TransitionDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / TransitionDuration;
+            audioMixer.SetFloat(MusicLowPassParam, Mathf.Lerp(MinCutoff, MaxCutoff, t));
+            audioMixer.SetFloat(MusicVolumeParam, Mathf.Lerp(-80f, 0f, t));
+            yield return null;
+        }
+
+        audioMixer.SetFloat(MusicLowPassParam, MaxCutoff);
+        audioMixer.SetFloat(MusicVolumeParam, 0f);
+    }
+
 }
-
-
