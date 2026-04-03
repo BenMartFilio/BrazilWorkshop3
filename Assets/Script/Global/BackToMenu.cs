@@ -8,6 +8,13 @@ public class BackToMenu : MonoBehaviour
     private bool inScore = false;
     private Coroutine _timer;
     [SerializeField] private Image _toFill;
+    [SerializeField] private SoundManager _soundManager;
+    [SerializeField] private AudioClip _menuMusic;
+
+    private void Start()
+    {
+        _soundManager.PlayMusicWithLowPass(_menuMusic);
+    }
     public void DisplayEndScore()
     {
         Debug.Log("Display end");

@@ -15,8 +15,12 @@ public class SessionReinitialiseur : MonoBehaviour
     [Tooltip("Inventaire de formulaires à remettre à zéro pour chaque nouvelle partie.")]
     [SerializeField] private FormulaireInventaire formulaireInventaire;
 
+    [SerializeField] private SoundManager _soundManager;
+    [SerializeField] private AudioClip _mainMenuMusic;
+
     private void Awake()
     {
+        _soundManager.PlayMusicWithLowPass(_mainMenuMusic);
         if (donnéesSession == null)
         {
             Debug.LogError("[SessionReinitialiseur] donnéesSession non assignée dans l'Inspector — " +
