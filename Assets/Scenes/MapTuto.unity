@@ -3125,6 +3125,8 @@ MonoBehaviour:
   conteneurSlots: {fileID: 844100767}
   prefabSlot: {fileID: 1328219132230380046, guid: ad57d753eeace7c4bb16d87d8196ced7, type: 3}
   spriteCircleTimer: {fileID: 21300000, guid: e3908689e31230340aef88613caf60ea, type: 3}
+  _audioEventDispatcher: {fileID: 0}
+  _getObject: 16
 --- !u!114 &844100769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5222,10 +5224,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Objectif : Roulez pour \xE9chapper au r\xE9gime ! Traversez la ville et
-    collectez les bons documents.\n\nEvitez les obstacles pour rester sur la route.\nLes
-    inspections n\xE9cessitent des documents pr\xE9cis, gardez un oeil sur ce qu'il
-    vous faut !"
+  m_text: "Objectif : Roulez pour \xE9chapper \xE0 la bureaucratie ! Traversez la
+    ville et collectez les bons documents.\n\nEvitez les obstacles pour rester sur
+    la route.\nLes inspections n\xE9cessitent des documents pr\xE9cis, gardez un
+    oeil sur ce qu'il vous faut !"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5513,6 +5515,42 @@ MonoBehaviour:
   canAspire: 0
   isDead: 0
   finished: 1
+  _grossissementAmplitude: 0.3
+  _grossissementDuree: 0.35
+  _grossissementCourbe:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 8
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.25
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -2
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _player: {fileID: 0}
 --- !u!50 &1185453012
 Rigidbody2D:
   serializedVersion: 5
