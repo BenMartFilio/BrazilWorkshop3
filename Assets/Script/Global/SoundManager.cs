@@ -33,18 +33,24 @@ public class SoundManager : MonoBehaviour
         _AudioEventDispatcher.OnAudioEvent -= PlaySound;
     }
 
-    private void Start()
+    private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
             Init();
         }
         else if (Instance != this)
         {
             Destroy(gameObject);
+            return;
         }
+    }
 
+    private void Start()
+    {
+        // soundEffectAudio : source sans clip assigné (utilisée pour les effets ponctuels)
         AudioSource[] sources = GetComponents<AudioSource>();
         foreach (AudioSource source in sources)
         {

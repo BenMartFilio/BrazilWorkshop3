@@ -1166,9 +1166,7 @@ UnityEngine.PlayerConnectionInternal::RegisterInternal_Injected
 UnityEngine.PlayerConnectionInternal::SendMessage_Injected
 UnityEngine.PlayerConnectionInternal::UnregisterInternal_Injected
 UnityEngine.PlayerPrefs::HasKey_Injected
-UnityEngine.PlayerPrefs::TrySetInt_Injected
 UnityEngine.PlayerPrefs::TrySetSetString_Injected
-UnityEngine.PlayerPrefs::GetInt_Injected
 UnityEngine.PlayerPrefs::DeleteKey_Injected
 UnityEngine.PlayerPrefs::GetString_Injected
 UnityEngine.PlayerPrefs::Save
