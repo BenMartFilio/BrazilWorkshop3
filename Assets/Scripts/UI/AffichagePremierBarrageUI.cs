@@ -100,26 +100,30 @@ namespace Barrage.UI
         /// </summary>
         private IEnumerator SéquenceRappel(List<FormulaireType> types)
         {
-            // Filtrage : ne conserver que les types affichables
-            var affichables = new List<FormulaireType>();
+            // Pré-résoudre les textures par type (une fois par type, pas par entrée).
             var texturesParType = new Dictionary<FormulaireType, Texture2D>();
-
             foreach (var type in types)
             {
                 if (texturesParType.ContainsKey(type)) continue;
                 if (!_dataParType.TryGetValue(type, out var data)) continue;
                 Texture2D texture = data.ExtraireTexture();
-                if (texture == null) continue;
-                affichables.Add(type);
-                texturesParType[type] = texture;
+                if (texture != null)
+                    texturesParType[type] = texture;
             }
 
-            int nbSlots = Mathf.Min(affichables.Count, slots.Count);
+            // Une entrée de la liste brute = un slot. Pas de déduplication.
+            int nbSlots = Mathf.Min(types.Count, slots.Count);
             Debug.Log($"[AffichagePremierBarrageUI] Affichage de {nbSlots} icône(s) de rappel.");
 
             for (int i = 0; i < nbSlots; i++)
             {
-                slots[i].Afficher(texturesParType[affichables[i]], 1);
+                FormulaireType type = types[i];
+                if (!texturesParType.TryGetValue(type, out Texture2D tex))
+                {
+                    Debug.LogWarning($"[AffichagePremierBarrageUI] Slot {i} — texture introuvable pour {type}.");
+                    continue;
+                }
+                slots[i].Afficher(tex, 1);
                 yield return new WaitForSeconds(délaiEntreIcones);
             }
 

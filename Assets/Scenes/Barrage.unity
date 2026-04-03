@@ -3275,10 +3275,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Barrage.UI.AffichageProchaineDemandeUI
   slots:
-  - {fileID: 2109976642}
-  - {fileID: 827962560}
-  - {fileID: 1211884128}
   - {fileID: 11131575}
+  - {fileID: 1211884128}
+  - {fileID: 827962560}
+  - {fileID: 2109976642}
   demande: {fileID: 11400000, guid: 3a7fb2656c6338e4ebf52e17309b00d7, type: 2}
   formulairesData:
   - {fileID: 11400000, guid: ae3b1f880cadc224db2f252514dc1330, type: 2}
@@ -3294,7 +3294,7 @@ MonoBehaviour:
   "d\xE9laiAvantRetour": 2
   boutonRetour: {fileID: 1216015514}
   "d\xE9laiApparitionBouton": 2
-  barrePatience: {fileID: 0}
+  barrePatience: {fileID: 1689963564}
 --- !u!1 &1600803564
 GameObject:
   m_ObjectHideFlags: 0

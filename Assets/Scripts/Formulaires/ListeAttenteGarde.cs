@@ -75,9 +75,11 @@ namespace Barrage.Formulaires
         /// <summary>
         /// Charge la demande runtime depuis les données de session sauvegardées (demande du barrage précédent).
         /// Si aucune demande n'est sauvegardée, charge depuis <paramref name="demandeAléatoire"/>
-        /// en la régénérant aléatoirement.
+        /// en la régénérant avec le bon palier de difficulté.
         /// Ne modifie jamais les données sérialisées de l'asset.
         /// </summary>
+        /// <param name="donnees">Session courante — contient prochaineDemandeBarrage et nombreBarragesComplétés.</param>
+        /// <param name="demandeAléatoire">Utilisé en fallback si aucune demande n'est sauvegardée en session.</param>
         public void ChargerDepuisSession(DonnéesSession donnees, DemandeBarrage demandeAléatoire)
         {
             _comptesRuntime.Clear();
@@ -97,14 +99,16 @@ namespace Barrage.Formulaires
 
                 Debug.Log($"[ListeAttenteGarde] ✓ Demande chargée depuis session. " +
                           $"_restants={_restants}, état : {DescriptionRestants()}");
-                Debug.Log($"[ListeAttenteGarde] prochaineDemandeBarrage effacé après chargement.");
             }
             else if (demandeAléatoire != null)
             {
-                Debug.LogWarning($"[ListeAttenteGarde] Aucune demande en session (AUneDemandeSauvegardée=false). " +
-                                 "FALLBACK — génération aléatoire via DemandeBarrage.");
+                // Transmettre le bon compteur de barrages pour respecter les paliers de difficulté.
+                int barragesComplétés = donnees != null ? donnees.nombreBarragesComplétés : 0;
 
-                demandeAléatoire.Régénérer();
+                Debug.LogWarning($"[ListeAttenteGarde] Aucune demande en session (AUneDemandeSauvegardée=false). " +
+                                 $"FALLBACK — génération aléatoire via DemandeBarrage (barragesComplétés={barragesComplétés}).");
+
+                demandeAléatoire.Régénérer(barragesComplétés);
 
                 foreach (var type in demandeAléatoire.Formulaires)
                     AjouterType(type);

@@ -153,30 +153,18 @@ namespace Barrage.UI
         }
 
         /// <summary>
-        /// Filtre une liste de types en ne conservant que ceux qui ont un FormulaireData
-        /// valide avec texture, et retourne des paires (type, texture).
+        /// Résout la texture associée à un FormulaireType.
+        /// Retourne null si aucun FormulaireData valide n'existe pour ce type.
         /// </summary>
-        private List<(FormulaireType type, Texture2D texture)> FiltrerAffichables(IEnumerable<FormulaireType> types)
+        private Texture2D ObtenirTexture(FormulaireType type)
         {
-            var résultat = new List<(FormulaireType, Texture2D)>();
-            var vus      = new HashSet<FormulaireType>();
-
-            foreach (var type in types)
-            {
-                if (!vus.Add(type)) continue;
-                if (!_dataParType.TryGetValue(type, out var data)) continue;
-                Texture2D tex = data.ExtraireTexture();
-                if (tex == null) continue;
-                résultat.Add((type, tex));
-            }
-
-            return résultat;
+            if (!_dataParType.TryGetValue(type, out var data)) return null;
+            return data.ExtraireTexture();
         }
 
         /// <summary>
-        /// Affiche les icônes une à une en regroupant par type :
-        /// chaque slot reçoit un type distinct avec la quantité totale de ce type dans la demande.
-        /// L'ordre des slots suit l'ordre d'apparition des types dans la demande.
+        /// Affiche les icônes une à une : chaque entrée de la demande brute occupe son propre slot.
+        /// Un même type peut apparaître sur plusieurs slots consécutifs si la demande le répète.
         /// </summary>
         private IEnumerator AfficherIconesUneParUne()
         {
@@ -190,26 +178,30 @@ namespace Barrage.UI
             foreach (var slot in slots)
                 slot.Masquer();
 
-            var affichables = FiltrerAffichables(snapshotBrut);
-            int nbSlots     = Mathf.Min(affichables.Count, slots.Count);
+            // Une entrée de la liste brute = un slot. Pas de déduplication.
+            int nbSlots = Mathf.Min(snapshotBrut.Count, slots.Count);
 
-            Debug.Log($"[AffichageProchaineDemandeUI] Prochaine demande — {nbSlots}/{affichables.Count} icône(s).");
+            Debug.Log($"[AffichageProchaineDemandeUI] Prochaine demande — {nbSlots} icône(s).");
 
             for (int i = 0; i < nbSlots; i++)
             {
-                int quantité = demande != null ? demande.CompterType(affichables[i].type) : 1;
-                Debug.Log($"[AffichageProchaineDemandeUI] Slot {i} ← {affichables[i].type} ×{quantité}");
-                slots[i].Afficher(affichables[i].texture, quantité);
+                FormulaireType type = snapshotBrut[i];
+                Texture2D tex = ObtenirTexture(type);
+                if (tex == null)
+                {
+                    Debug.LogWarning($"[AffichageProchaineDemandeUI] Slot {i} — texture introuvable pour {type}.");
+                    continue;
+                }
+                Debug.Log($"[AffichageProchaineDemandeUI] Slot {i} ← {type}");
+                slots[i].Afficher(tex, 1);
                 yield return new WaitForSeconds(délaiEntreIcones);
             }
 
-            // Sauvegarder immédiatement après l'affichage des icônes,
-            // avant que le joueur puisse cliquer sur le bouton.
-            var àSauvegarder = affichables.Take(nbSlots).Select(p => p.type).ToArray();
-
+            // Sauvegarder la liste BRUTE (avec doublons) pour que le barrage suivant
+            // reçoive exactement la bonne quantité par type.
             if (donnéesSession != null)
             {
-                donnéesSession.prochaineDemandeBarrage = àSauvegarder;
+                donnéesSession.prochaineDemandeBarrage = snapshotBrut.ToArray();
 
                 // Sauvegarder le nombre de patterns calculé par le budget.
                 if (spawnBudget != null)
@@ -219,8 +211,8 @@ namespace Barrage.UI
                 // utilisera ce nouveau total pour calibrer sa difficulté.
                 donnéesSession.nombreBarragesComplétés++;
 
-                Debug.Log($"[AffichageProchaineDemandeUI] ★ Sauvegardé ({àSauvegarder.Length}) : " +
-                          string.Join(", ", àSauvegarder) +
+                Debug.Log($"[AffichageProchaineDemandeUI] ★ Sauvegardé ({snapshotBrut.Count}) : " +
+                          string.Join(", ", snapshotBrut) +
                           $" | barragesComplétés={donnéesSession.nombreBarragesComplétés}" +
                           $" | patternsNécessaires={donnéesSession.patternsNécessaires}");
             }

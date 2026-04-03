@@ -147,10 +147,29 @@ namespace Barrage.Formulaires
 
         // ── Utilitaire ────────────────────────────────────────────────────────
 
-        /// <summary>Retourne une copie mélangée (Fisher-Yates) de tous les FormulaireType disponibles.</summary>
+        /// <summary>
+        /// Retourne true si ce type est un objet spécial non demandable au barrage
+        /// (LiasseDeBillets, FormulairePasePartout, BadgeDuGouvernement).
+        /// </summary>
+        private static bool EstObjetSpécial(FormulaireType type)
+            => type == FormulaireType.LiasseDeBillets
+            || type == FormulaireType.FormulairePasePartout
+            || type == FormulaireType.BadgeDuGouvernement;
+
+        /// <summary>
+        /// Retourne une copie mélangée (Fisher-Yates) des FormulaireType STANDARDS uniquement.
+        /// Les objets spéciaux sont exclus — ils n'ont pas de FormulaireData
+        /// et ne peuvent jamais faire partie d'une demande de barrage.
+        /// </summary>
         private List<FormulaireType> MélangerPool()
         {
-            var pool = new List<FormulaireType>((FormulaireType[])Enum.GetValues(typeof(FormulaireType)));
+            var pool = new List<FormulaireType>();
+            foreach (FormulaireType t in Enum.GetValues(typeof(FormulaireType)))
+            {
+                if (!EstObjetSpécial(t))
+                    pool.Add(t);
+            }
+
             for (int i = pool.Count - 1; i > 0; i--)
             {
                 int j = UnityEngine.Random.Range(0, i + 1);
