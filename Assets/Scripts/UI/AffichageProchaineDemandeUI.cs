@@ -105,6 +105,11 @@ namespace Barrage.UI
 
         private void OnBarrageValidé()
         {
+            // BarrageTuto manages its own end-of-barrage flow via BarrageTutoEndController.
+            // Running the normal next-demand pipeline here would save a demand and auto-redirect
+            // to MapRoad, bypassing SessionReinitialiseur in MainMenu entirely.
+            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "BarrageTuto") return;
+
             Debug.Log("[AffichageProchaineDemandeUI] OnBarrageValidé → Geler() + masquer icônes courantes + afficher prochaine demande.");
 
             barrePatience?.Geler();
