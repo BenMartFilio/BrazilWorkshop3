@@ -33,6 +33,12 @@ public class SessionManager : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
+            // Transfer scene name configuration from the incoming instance to the
+            // persisted one before destroying it. This prevents a SessionManager
+            // created in MapTuto (nomScèneBarrage = "BarrageTuto") from remaining
+            // active with stale scene names when the player starts a normal game.
+            Instance.nomScèneMapRoad = nomScèneMapRoad;
+            Instance.nomScèneBarrage = nomScèneBarrage;
             Destroy(gameObject);
             return;
         }
