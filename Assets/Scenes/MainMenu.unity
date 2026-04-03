@@ -14027,6 +14027,7 @@ GameObject:
   - component: {fileID: 1218804894}
   - component: {fileID: 1218804893}
   - component: {fileID: 1218804892}
+  - component: {fileID: 1218804896}
   m_Layer: 5
   m_Name: Tutoriel
   m_TagString: Untagged
@@ -14116,14 +14117,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 121020225}
-        m_TargetAssemblyTypeName: OptionsMenu, Assembly-CSharp
-        m_MethodName: OpenMenu
-        m_Mode: 1
+      - m_Target: {fileID: 1218804896}
+        m_TargetAssemblyTypeName: GoToTuto, Assembly-CSharp
+        m_MethodName: ChangeLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -14166,6 +14167,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1218804890}
   m_CullTransparentMesh: 1
+--- !u!114 &1218804896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218804890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eae67cc8de19174a8e19f84a21f7b7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GoToTuto
 --- !u!1001 &1220986135
 PrefabInstance:
   m_ObjectHideFlags: 0
