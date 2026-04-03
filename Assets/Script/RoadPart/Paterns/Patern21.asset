@@ -74,7 +74,7 @@ MonoBehaviour:
   - lanes:
     - {fileID: 0}
     - {fileID: 0}
-    - {fileID: 8536000752039434839, guid: 24496006ca44fd34a8ec7b068fe53205, type: 3}
+    - {fileID: 0}
   - lanes:
     - {fileID: 0}
     - {fileID: 0}
