@@ -31,6 +31,10 @@ public class ItemSlotUI : MonoBehaviour
     private const float BADGE_SCALE_MAX = 1.8f;
     private const float BADGE_DUREE     = 0.20f;
 
+    // ── Annulation flash ──────────────────────────────────────────────────────
+    private const float ANNULATION_FLASH_DUREE = 0.10f;
+    private const float ANNULATION_FADE_DUREE  = 0.30f;
+
     // ── Apparition ────────────────────────────────────────────────────────────
     private const float APPARITION_DUREE = 0.30f;
 
@@ -58,6 +62,7 @@ public class ItemSlotUI : MonoBehaviour
 
     // ── Animation state ───────────────────────────────────────────────────────
     private Coroutine _coroutinePunch;
+    private Coroutine _coroutineFlash;
 
     // ─────────────────────────────────────────────────────────────────────────
 
@@ -166,6 +171,13 @@ public class ItemSlotUI : MonoBehaviour
     /// </summary>
     public void DemarrerTimer(Color couleur, float duree)
     {
+        // If a cancel-flash is running on this slot, stop it before rebuilding the ring.
+        if (_coroutineFlash != null)
+        {
+            StopCoroutine(_coroutineFlash);
+            _coroutineFlash = null;
+        }
+
         ArreterTimer(supprimerSlot: false);
 
         _couleurEffet = couleur;
@@ -236,6 +248,12 @@ public class ItemSlotUI : MonoBehaviour
     /// </summary>
     public void ArreterTimer(bool supprimerSlot)
     {
+        if (_coroutineFlash != null)
+        {
+            StopCoroutine(_coroutineFlash);
+            _coroutineFlash = null;
+        }
+
         _timerActif = false;
         _timerArc   = null;
         _timerTexte = null;
@@ -256,8 +274,29 @@ public class ItemSlotUI : MonoBehaviour
     // ── Animations publiques ──────────────────────────────────────────────────
 
     /// <summary>
-    /// Joue une animation de punch (scale 1 → 1.25 → 1) pour confirmer l'activation.
-    /// Appelé depuis <see cref="InventaireObjetsUI"/> au moment du clic.
+    /// Plays a flash-to-white then fade-out on the timer arc to signal that the effect
+    /// was cancelled by a new one. Stops the tick so the fill stays frozen during the animation.
+    /// Calls <paramref name="onComplete"/> when finished so EffetsDureeUI can clean up the slot.
+    /// Safe to call even if no timer is active — calls onComplete immediately in that case.
+    /// </summary>
+    public void FlasherAnnulation(Color couleurOrigine, System.Action onComplete)
+    {
+        if (_timerArc == null)
+        {
+            onComplete?.Invoke();
+            return;
+        }
+
+        // Stop any previous flash so its stale onComplete never fires.
+        if (_coroutineFlash != null)
+            StopCoroutine(_coroutineFlash);
+
+        _coroutineFlash = StartCoroutine(CoroutineFlashAnnulation(couleurOrigine, onComplete));
+    }
+
+    /// <summary>
+    /// Animate the slot icon scale 1 → 1.25 → 1 to confirm activation.
+    /// Called by InventaireObjetsUI on click.
     /// </summary>
     public void JouerPunchAnimation()
     {
@@ -323,6 +362,38 @@ public class ItemSlotUI : MonoBehaviour
         }
 
         texteQuantite.transform.localScale = Vector3.one;
+    }
+
+    private IEnumerator CoroutineFlashAnnulation(Color couleurOrigine, System.Action onComplete)
+    {
+        if (_timerArc == null) { onComplete?.Invoke(); _coroutineFlash = null; yield break; }
+
+        // Freeze the tick so fillAmount stays locked during the animation.
+        _timerActif = false;
+
+        // Flash arc to white.
+        float elapsed = 0f;
+        while (elapsed < ANNULATION_FLASH_DUREE)
+        {
+            if (_timerArc == null) break;
+            elapsed += Time.unscaledDeltaTime;
+            _timerArc.color = Color.Lerp(couleurOrigine, Color.white, Mathf.Clamp01(elapsed / ANNULATION_FLASH_DUREE));
+            yield return null;
+        }
+
+        // Fade white arc to transparent.
+        elapsed = 0f;
+        while (elapsed < ANNULATION_FADE_DUREE)
+        {
+            if (_timerArc == null) break;
+            elapsed += Time.unscaledDeltaTime;
+            float a = Mathf.Lerp(1f, 0f, Mathf.Clamp01(elapsed / ANNULATION_FADE_DUREE));
+            _timerArc.color = new Color(1f, 1f, 1f, a);
+            yield return null;
+        }
+
+        _coroutineFlash = null;
+        onComplete?.Invoke();
     }
 
     private IEnumerator CoroutineApparition()

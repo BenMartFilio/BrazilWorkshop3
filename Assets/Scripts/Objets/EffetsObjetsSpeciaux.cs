@@ -68,8 +68,10 @@ namespace ObjetsSpeciaux
         // ── Événements (abonnés par EffetsDureeUI) ────────────────────────────
         /// <summary>Déclenché quand un effet temporel démarre. (id, durée, couleur, nomAffichage)</summary>
         public event System.Action<string, float, Color, string> OnEffetDemarre;
-        /// <summary>Déclenché quand un effet se termine ou est remplacé.</summary>
+        /// <summary>Déclenché quand un effet arrive à son terme naturellement.</summary>
         public event System.Action<string> OnEffetTermine;
+        /// <summary>Déclenché quand un effet est interrompu par l'activation d'un autre effet.</summary>
+        public event System.Action<string> OnEffetAnnule;
         /// <summary>Déclenché quand le Gâteau Chinois esquive un obstacle.</summary>
         public event System.Action OnEsquiveDeclenchee;
 
@@ -726,11 +728,14 @@ namespace ObjetsSpeciaux
         /// </summary>
         private void AnnulerEffetsActifsHormisCelui(string idAConserver)
         {
-            if (idAConserver != ID_TIRELIRE   && _coroutineTirelire   != null) { StopCoroutine(_coroutineTirelire);   TerminerTirelire(); }
-            if (idAConserver != ID_GATEAU     && _coroutineGateau     != null) { StopCoroutine(_coroutineGateau);     TerminerGateau(); }
-            if (idAConserver != ID_RADAR      && _coroutineRadar      != null) { StopCoroutine(_coroutineRadar);      TerminerRadar(); }
-            if (idAConserver != ID_ASPIRATEUR && _coroutineAspirateur != null) { StopCoroutine(_coroutineAspirateur); TerminerAspirateur(); }
-            if (idAConserver != ID_MONTRE     && _coroutineMontre     != null) { StopCoroutine(_coroutineMontre);     TerminerMontre(); }
+            // OnEffetAnnule fires BEFORE TerminerXxx so EffetsDureeUI can set _timerValide = false
+            // before the subsequent OnEffetTermine (fired inside TerminerXxx) is processed.
+            // This lets the flash-cancel coroutine own the arc cleanup without interference.
+            if (idAConserver != ID_TIRELIRE   && _coroutineTirelire   != null) { OnEffetAnnule?.Invoke(ID_TIRELIRE);   StopCoroutine(_coroutineTirelire);   TerminerTirelire(); }
+            if (idAConserver != ID_GATEAU     && _coroutineGateau     != null) { OnEffetAnnule?.Invoke(ID_GATEAU);     StopCoroutine(_coroutineGateau);     TerminerGateau(); }
+            if (idAConserver != ID_RADAR      && _coroutineRadar      != null) { OnEffetAnnule?.Invoke(ID_RADAR);      StopCoroutine(_coroutineRadar);      TerminerRadar(); }
+            if (idAConserver != ID_ASPIRATEUR && _coroutineAspirateur != null) { OnEffetAnnule?.Invoke(ID_ASPIRATEUR); StopCoroutine(_coroutineAspirateur); TerminerAspirateur(); }
+            if (idAConserver != ID_MONTRE     && _coroutineMontre     != null) { OnEffetAnnule?.Invoke(ID_MONTRE);     StopCoroutine(_coroutineMontre);     TerminerMontre(); }
         }
 
         /// <summary>

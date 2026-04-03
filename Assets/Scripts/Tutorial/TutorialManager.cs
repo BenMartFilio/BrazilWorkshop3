@@ -21,8 +21,9 @@ public class TutorialManager : MonoBehaviour
     [Header("Tutorial Panels")]
     [SerializeField] private GameObject _panelGoal;         // Panel 1: goal of the game
     [SerializeField] private GameObject _panelSwipe;        // Panel 2: swipe to move
-    [SerializeField] private GameObject _panelDocument;     // Panel 3: fichedeposte1
-    [SerializeField] private GameObject _panelSliderInfo;   // Panel 4: SliderBarrage explanation
+    [SerializeField] private GameObject _panelPieces;       // Panel 3: coins & shop (PaternTuto1)
+    [SerializeField] private GameObject _panelDocument;     // Panel 4: fichedeposte1
+    [SerializeField] private GameObject _panelSliderInfo;   // Panel 5: SliderBarrage explanation
 
     [Header("Slider Highlight")]
     [Tooltip("Semi-transparent dark overlay that covers the whole screen, shown with the slider info panel.")]
@@ -42,8 +43,9 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private string _barrageSceneName = "BarrageTuto";
     [SerializeField] private Image _fadeImage;              // full-screen black image
 
-    // PaternTuto3 is at index 4 in the tutorialPatterns array (0-based):
+    // PaternTuto1 is at index 2, PaternTuto3 is at index 4:
     // PaternEmpty(0), PaternEmpty(1), PaternTuto1(2), PaternTuto2(3), PaternTuto3(4)
+    private const int PaternTuto1Index = 2;
     private const int PaternTuto3Index = 4;
 
     private bool _sequenceComplete = false;
@@ -106,6 +108,13 @@ public class TutorialManager : MonoBehaviour
     public void OnSwipePanelClosed()
     {
         if (_panelSwipe != null) _panelSwipe.SetActive(false);
+        ResumeGame();
+    }
+
+    /// <summary>Called by the close button on _panelPieces.</summary>
+    public void OnPiecesPanelClosed()
+    {
+        if (_panelPieces != null) _panelPieces.SetActive(false);
         ResumeGame();
     }
 
@@ -233,6 +242,12 @@ public class TutorialManager : MonoBehaviour
 
     private void OnPatternAboutToStart(int index)
     {
+        if (index == PaternTuto1Index)
+        {
+            PauseGame();
+            if (_panelPieces != null) _panelPieces.SetActive(true);
+        }
+
         if (index == PaternTuto3Index)
         {
             PauseGame();
@@ -277,6 +292,8 @@ public class TutorialManager : MonoBehaviour
             Debug.LogError("[TutorialManager] _panelGoal is not assigned.");
         if (_panelSwipe == null)
             Debug.LogError("[TutorialManager] _panelSwipe is not assigned.");
+        if (_panelPieces == null)
+            Debug.LogError("[TutorialManager] _panelPieces is not assigned.");
         if (_panelDocument == null)
             Debug.LogError("[TutorialManager] _panelDocument is not assigned.");
         if (_panelSliderInfo == null)
