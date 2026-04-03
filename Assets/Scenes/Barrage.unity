@@ -4025,7 +4025,6 @@ MonoBehaviour:
   vignette: {fileID: 1430661140}
   delaiEntreTampons: 0.28
   "d\xE9laiAvantMenu": 2
-  "nomSc\xE8neMenu": MainMenu
   largeurLettre: 240
   hauteurLigne: 360
   espacementH: 15

@@ -104,9 +104,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2f382276a78d2c48b04f3af5186a7a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChangeSkin
-  sprites:
-  - {fileID: 21300000, guid: 4c6d78c366e361c4496880822b189e5a, type: 3}
-  - {fileID: 21300000, guid: 5900743ad8af6b94f997191678e64d2e, type: 3}
+  mappings: []
+  forcedSkinIndex: -1
 --- !u!1 &8536000752039434839
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,3 +246,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionObstacle
   prefabExplosion: {fileID: 0}
+  _crashSound: {fileID: 8300000, guid: c98b5b74f198e2f46aa681eef1dfe4db, type: 3}

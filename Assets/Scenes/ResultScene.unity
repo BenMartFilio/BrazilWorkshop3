@@ -269,9 +269,9 @@ MonoBehaviour:
   bounceScale: 1.06
   animationSpeed: 12
   enableVibration: 1
-  _audioEventDispatcher: {fileID: 0}
-  _click: 0
-  _muteSound: 0
+  _audioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
+  _click: 13
+  _muteSound: 1
 --- !u!1 &121650101
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,8 +497,8 @@ MonoBehaviour:
   bounceScale: 1.06
   animationSpeed: 12
   enableVibration: 1
-  _audioEventDispatcher: {fileID: 0}
-  _click: 0
+  _audioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
+  _click: 13
   _muteSound: 0
 --- !u!1 &315766591
 GameObject:
@@ -594,8 +594,8 @@ MonoBehaviour:
   bounceScale: 1.06
   animationSpeed: 12
   enableVibration: 1
-  _audioEventDispatcher: {fileID: 0}
-  _click: 0
+  _audioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
+  _click: 13
   _muteSound: 0
 --- !u!114 &315766596
 MonoBehaviour:
@@ -898,8 +898,8 @@ MonoBehaviour:
   bounceScale: 1.06
   animationSpeed: 12
   enableVibration: 1
-  _audioEventDispatcher: {fileID: 0}
-  _click: 0
+  _audioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
+  _click: 13
   _muteSound: 0
 --- !u!114 &438307892
 MonoBehaviour:
@@ -1026,6 +1026,7 @@ MonoBehaviour:
   coinPrefab: {fileID: 7319109094036730445, guid: a2c2baa78403bde49b0dda6e1c709419, type: 3}
   spawnPoint: {fileID: 2020874798}
   targetText: {fileID: 1542751289}
+  coinAudioSource: {fileID: 0}
 --- !u!1 &458309831
 GameObject:
   m_ObjectHideFlags: 0
@@ -1330,6 +1331,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoutonBoutiquePrefab (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4511501794170182371, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
+      propertyPath: _click
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511501794170182371, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
+      propertyPath: _audioEventDispatcher
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2231,6 +2240,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoutonBoutiquePrefab (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4511501794170182371, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
+      propertyPath: _click
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511501794170182371, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
+      propertyPath: _audioEventDispatcher
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2621,6 +2638,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoutonBoutiquePrefab (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4511501794170182371, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
+      propertyPath: _click
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511501794170182371, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
+      propertyPath: _audioEventDispatcher
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2845,6 +2870,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoutonBoutiquePrefab (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4511501794170182371, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
+      propertyPath: _click
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511501794170182371, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
+      propertyPath: _audioEventDispatcher
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4101,6 +4134,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoutonBoutiquePrefab (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4511501794170182371, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
+      propertyPath: _click
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511501794170182371, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
+      propertyPath: _audioEventDispatcher
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4442,6 +4483,7 @@ MonoBehaviour:
   canvasContent: {fileID: 0}
   audioEventDispatcher: {fileID: 0}
   _startEngine: 0
+  _swoosh: 0
   rotationAmount: {x: 0, y: 0, z: 120}
   duration: 1.5
   overlay: {fileID: 0}
@@ -4634,6 +4676,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ReviveButtonAd
   _rewardedAdUnitId: YOUR_REWARDED_AD_UNIT_ID
   _endManager: {fileID: 0}
+  _donneesSession: {fileID: 0}
 --- !u!114 &1916566481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4935,6 +4978,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoutonBoutiquePrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 4511501794170182371, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
+      propertyPath: _click
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511501794170182371, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
+      propertyPath: _audioEventDispatcher
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5269,8 +5320,8 @@ MonoBehaviour:
   bounceScale: 1.06
   animationSpeed: 12
   enableVibration: 1
-  _audioEventDispatcher: {fileID: 0}
-  _click: 0
+  _audioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
+  _click: 13
   _muteSound: 0
 --- !u!114 &2094579962
 MonoBehaviour:

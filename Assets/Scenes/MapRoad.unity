@@ -1014,7 +1014,7 @@ Transform:
   m_GameObject: {fileID: 234882523}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5402842, y: -3, z: 0}
+  m_LocalPosition: {x: 1.5384617, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1618,7 +1618,7 @@ Transform:
   m_GameObject: {fileID: 483668379}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.00000011920929, y: -3, z: 0}
+  m_LocalPosition: {x: 0.00000011920929, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2411,6 +2411,8 @@ MonoBehaviour:
   conteneurSlots: {fileID: 844100767}
   prefabSlot: {fileID: 1328219132230380046, guid: ad57d753eeace7c4bb16d87d8196ced7, type: 3}
   spriteCircleTimer: {fileID: 21300000, guid: e3908689e31230340aef88613caf60ea, type: 3}
+  _audioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
+  _getObject: 16
 --- !u!114 &844100769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2824,8 +2826,8 @@ MonoBehaviour:
   bounceScale: 1.06
   animationSpeed: 12
   enableVibration: 1
-  _audioEventDispatcher: {fileID: 0}
-  _click: 0
+  _audioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
+  _click: 13
   _muteSound: 0
 --- !u!1 &1058231961
 GameObject:
@@ -3143,7 +3145,7 @@ Transform:
   m_GameObject: {fileID: 1121532490}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5402844, y: -3, z: 0}
+  m_LocalPosition: {x: -1.5384614, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3527,8 +3529,8 @@ MonoBehaviour:
   bounceScale: 1.06
   animationSpeed: 12
   enableVibration: 1
-  _audioEventDispatcher: {fileID: 0}
-  _click: 0
+  _audioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
+  _click: 13
   _muteSound: 0
 --- !u!1 &1176915240
 GameObject:
@@ -3876,8 +3878,8 @@ MonoBehaviour:
   _aspiration: {fileID: 1185453011}
   _playerDatas: {fileID: 11400000, guid: f469a69765f7c5c4aa607382bdb461df, type: 2}
   _barreProgression: {fileID: 1833950802}
-  _audioEventDispatcher: {fileID: 0}
-  _gameOver: 0
+  _audioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
+  _gameOver: 8
   reviveCounter: 0
 --- !u!4 &1232534110
 Transform:
@@ -4996,7 +4998,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 10, z: 0}
-  m_LocalScale: {x: 0.14258613, y: 0.1937609, z: 1}
+  m_LocalScale: {x: 0.14241739, y: 0.1937609, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -5721,8 +5723,8 @@ MonoBehaviour:
   - {fileID: 234882524}
   m_inputManager: {fileID: 290452987}
   _AudioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
-  _MoveAudioType: 0
-  _coinPickup: 0
+  _MoveAudioType: 4
+  _coinPickup: 10
   moveDuration: 0.1
   maxLeanAngle: 45
   _coinsText: {fileID: 11239705}
@@ -5890,7 +5892,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.14258613, y: 0.1937609, z: 1}
+  m_LocalScale: {x: 0.14241739, y: 0.1937609, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
