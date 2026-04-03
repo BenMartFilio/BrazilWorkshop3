@@ -919,11 +919,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6a9704d5c4443424888fabb67abf4572, type: 2}
   - {fileID: 11400000, guid: 35ad9191018c5c041b5efe8126184b7b, type: 2}
   patternBarrage: {fileID: 11400000, guid: 6c1aba09edc94a640b6f40b8475f0396, type: 2}
-  barrageSignauxMin: 2
-  barrageSignauxMax: 3
+  patternsMinFallback: 5
+  patternsMaxFallback: 7
   gapAvantBarrage: 5
   "gapApr\xE8sBarrage": 5
   barrageOffsetX: 2.39
+  spawnBudget: {fileID: 11400000, guid: 3f329947ef9a0714083218cc86650a19, type: 2}
   baseObstacleSpeed: 5
   gapBetweenPatterns: 2
   isSpawning: 0
@@ -3710,6 +3711,7 @@ MonoBehaviour:
   shatter: {fileID: 55492464}
   _audioEventDispatcher: {fileID: 0}
   _pickup: 0
+  _shatter: 0
   inventaire: {fileID: 11400000, guid: b96ec00b9f42a8742833630eee3708e8, type: 2}
   _effets: {fileID: 0}
   canAspire: 0

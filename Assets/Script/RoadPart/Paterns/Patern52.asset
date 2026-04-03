@@ -79,3 +79,4 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 535104966169734813, guid: 4358817d2666bd84f94e569447100fa3, type: 3}
     - {fileID: 0}
+  bonusVehiculeCount: 1

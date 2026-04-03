@@ -32,6 +32,13 @@ public class ObstaclePattern : ScriptableObject
     [Tooltip("Grid rows, from front to back. Each row has 3 lane slots.")]
     public List<PatternRow> rows = new List<PatternRow>();
 
+    [Tooltip("Nombre de véhicules 'Good' (portant un formulaire, i.e. avec ChangeSkin) " +
+             "contenus dans ce pattern. À renseigner manuellement pour que le système " +
+             "de budget FormulaireSpawnBudget puisse calculer le nombre de patterns " +
+             "nécessaires entre deux barrages.")]
+    [Min(0)]
+    public int bonusVehiculeCount = 0;
+
     private void OnValidate()
     {
         SyncRowCount();

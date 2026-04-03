@@ -3287,6 +3287,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5a3c4ff13e6dfe54987b6018d7a349eb, type: 2}
   mainDuGarde: {fileID: 1172865320}
   "donn\xE9esSession": {fileID: 11400000, guid: a38ed096d3c17df43a3e1b832d57cb13, type: 2}
+  spawnBudget: {fileID: 11400000, guid: 3f329947ef9a0714083218cc86650a19, type: 2}
+  patternsMapRoad:
+  - {fileID: 11400000, guid: 6a9704d5c4443424888fabb67abf4572, type: 2}
   "d\xE9laiEntreIcones": 0.15
   "d\xE9laiAvantRetour": 2
   boutonRetour: {fileID: 1216015514}

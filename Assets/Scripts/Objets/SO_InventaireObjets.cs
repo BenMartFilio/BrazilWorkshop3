@@ -18,6 +18,10 @@ public class DefinitionObjetSpecial
 
     [Tooltip("Si vrai, l'objet est passif : affiché dans l'inventaire mais le bouton est désactivé (utilisation automatique par le système).")]
     public bool estPassif;
+
+    [Tooltip("Description affichée lors du clic sur l'objet dans l'inventaire du menu principal.")]
+    [TextArea(2, 4)]
+    public string description;
 }
 
 [CreateAssetMenu(fileName = "SO_InventaireObjets", menuName = "Scriptable Objects/SO_InventaireObjets")]

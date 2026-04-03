@@ -29,6 +29,14 @@ namespace Barrage.UI
         [Tooltip("ScriptableObject de session partagé — pour sauvegarder la prochaine demande.")]
         [SerializeField] private DonnéesSession donnéesSession;
 
+        [Header("Budget spawn MapRoad")]
+        [Tooltip("Budget partagé avec MapRoad — calcule combien de véhicules de chaque type spawner.")]
+        [SerializeField] private FormulaireSpawnBudget spawnBudget;
+
+        [Tooltip("Patterns normaux de MapRoad — utilisés pour calculer la moyenne de Good véhicules/pattern. " +
+                 "Ne pas inclure le pattern Barrage.")]
+        [SerializeField] private ObstaclePattern[] patternsMapRoad;
+
         [Header("Animation")]
         [Tooltip("Délai entre l'apparition de chaque icône (secondes).")]
         [SerializeField] private float délaiEntreIcones = 0.15f;
@@ -112,6 +120,12 @@ namespace Barrage.UI
             // Passer le nombre de barrages déjà complétés pour calibrer la difficulté.
             int barragesComplétés = donnéesSession != null ? donnéesSession.nombreBarragesComplétés : 0;
             demande?.Régénérer(barragesComplétés);
+
+            // Calculer le budget de spawn pour la prochaine MapRoad dès maintenant,
+            // avant que le joueur ne retourne sur la route (pour ne pas fausser la progression).
+            if (spawnBudget != null && demande != null)
+                spawnBudget.DefinirBudget(demande.Formulaires, patternsMapRoad);
+
             _affichage = StartCoroutine(AfficherIconesUneParUne());
         }
 
@@ -129,6 +143,10 @@ namespace Barrage.UI
             // Au premier barrage le compteur est 0 → palier facile garanti.
             int barragesComplétés = donnéesSession != null ? donnéesSession.nombreBarragesComplétés : 0;
             demande?.Régénérer(barragesComplétés);
+
+            // Calculer le budget de spawn pour la prochaine MapRoad.
+            if (spawnBudget != null && demande != null)
+                spawnBudget.DefinirBudget(demande.Formulaires, patternsMapRoad);
 
             if (_affichage != null) StopCoroutine(_affichage);
             _affichage = StartCoroutine(AfficherIconesUneParUne());
@@ -193,13 +211,18 @@ namespace Barrage.UI
             {
                 donnéesSession.prochaineDemandeBarrage = àSauvegarder;
 
+                // Sauvegarder le nombre de patterns calculé par le budget.
+                if (spawnBudget != null)
+                    donnéesSession.patternsNécessaires = spawnBudget.PatternsNécessaires;
+
                 // Incrémenter le compteur de barrages complétés : le prochain barrage
                 // utilisera ce nouveau total pour calibrer sa difficulté.
                 donnéesSession.nombreBarragesComplétés++;
 
                 Debug.Log($"[AffichageProchaineDemandeUI] ★ Sauvegardé ({àSauvegarder.Length}) : " +
                           string.Join(", ", àSauvegarder) +
-                          $" | barragesComplétés={donnéesSession.nombreBarragesComplétés}");
+                          $" | barragesComplétés={donnéesSession.nombreBarragesComplétés}" +
+                          $" | patternsNécessaires={donnéesSession.patternsNécessaires}");
             }
             else
             {

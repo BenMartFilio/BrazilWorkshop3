@@ -57,6 +57,11 @@ public class DonnéesSession : ScriptableObject
              "Utilisé pour faire évoluer la complexité des demandes (nombre et doublons de formulaires).")]
     public int nombreBarragesComplétés = 0;
 
+    [Header("Budget spawn MapRoad")]
+    [Tooltip("Nombre de patterns normaux à spawner avant de déclencher le barrage. " +
+             "Calculé par FormulaireSpawnBudget à la fin de chaque barrage validé.")]
+    public int patternsNécessaires = 5;
+
     /// <summary>Remet toutes les valeurs à leur état initial.</summary>
     public void Reinitialiser()
     {
@@ -72,5 +77,6 @@ public class DonnéesSession : ScriptableObject
         prochaineDemandeBarrage   = new FormulaireType[0];
         revive                    = 0;
         nombreBarragesComplétés   = 0;
+        patternsNécessaires       = 5;
     }
 }
