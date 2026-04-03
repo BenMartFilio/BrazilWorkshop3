@@ -219,12 +219,16 @@ public class SpawnObstacleV2 : MonoBehaviour
         {
             foreach (GameObject obj in bucket)
             {
-                if (obj != null && obj.activeInHierarchy && obj.TryGetComponent<ScrollingElement>(out var scrolling))
-                {
-                    scrolling.StartMoving();
-                    scrolling.UpdateSpeed(_generalSpeed);
-                    scrolling.Dispawn();
-                }
+                if (obj == null || !obj.activeInHierarchy) continue;
+                if (!obj.TryGetComponent<ScrollingElement>(out var scrolling)) continue;
+
+                // SegmentBarrage instances are mid-sequence (frozen, awaiting the player).
+                // They must not be despawned on revive — SegmentBarrage manages its own lifecycle.
+                if (obj.TryGetComponent<SegmentBarrage>(out _)) continue;
+
+                scrolling.StartMoving();
+                scrolling.UpdateSpeed(_generalSpeed);
+                scrolling.Dispawn();
             }
         }
         _spawningCoroutine ??= StartCoroutine(SpawnRoutine());
