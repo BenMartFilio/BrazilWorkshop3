@@ -4520,6 +4520,7 @@ GameObject:
   - component: {fileID: 431482997}
   - component: {fileID: 431482999}
   - component: {fileID: 431482998}
+  - component: {fileID: 431483000}
   m_Layer: 0
   m_Name: ObjectBiscuit
   m_TagString: Untagged
@@ -4590,19 +4591,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 431482998}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1124431613}
-        m_TargetAssemblyTypeName: InventaireMenuUI, Assembly-CSharp
-        m_MethodName: OnObjetClique
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: GateauChinois
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &431482998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4641,6 +4630,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 431482995}
   m_CullTransparentMesh: 1
+--- !u!114 &431483000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431482995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e6fa54c484fa1b4ea0273d23f46471e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventaireObjetButton
+  menuUI: {fileID: 1124431613}
+  icone: {fileID: 168946691}
+  identifiant: GateauChinois
 --- !u!1 &432383260
 GameObject:
   m_ObjectHideFlags: 0
@@ -7474,6 +7478,7 @@ GameObject:
   - component: {fileID: 703800850}
   - component: {fileID: 703800852}
   - component: {fileID: 703800851}
+  - component: {fileID: 703800853}
   m_Layer: 0
   m_Name: ObjectAntenne
   m_TagString: Untagged
@@ -7544,19 +7549,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 703800851}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1124431613}
-        m_TargetAssemblyTypeName: InventaireMenuUI, Assembly-CSharp
-        m_MethodName: OnObjetClique
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: RadarObstacles
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &703800851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7595,6 +7588,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 703800848}
   m_CullTransparentMesh: 1
+--- !u!114 &703800853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703800848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e6fa54c484fa1b4ea0273d23f46471e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventaireObjetButton
+  menuUI: {fileID: 1124431613}
+  icone: {fileID: 628737469}
+  identifiant: RadarObstacles
 --- !u!1 &737951539
 GameObject:
   m_ObjectHideFlags: 0
@@ -7740,6 +7748,7 @@ GameObject:
   - component: {fileID: 753391604}
   - component: {fileID: 753391606}
   - component: {fileID: 753391605}
+  - component: {fileID: 753391607}
   m_Layer: 0
   m_Name: ObjectTirelire
   m_TagString: Untagged
@@ -7810,19 +7819,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 753391605}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1124431613}
-        m_TargetAssemblyTypeName: InventaireMenuUI, Assembly-CSharp
-        m_MethodName: OnObjetClique
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: TirelireCochon
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &753391605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7861,6 +7858,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 753391602}
   m_CullTransparentMesh: 1
+--- !u!114 &753391607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753391602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e6fa54c484fa1b4ea0273d23f46471e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventaireObjetButton
+  menuUI: {fileID: 1124431613}
+  icone: {fileID: 1289536130}
+  identifiant: TirelireCochon
 --- !u!1 &757488781
 GameObject:
   m_ObjectHideFlags: 0
@@ -8251,6 +8263,7 @@ GameObject:
   - component: {fileID: 780170372}
   - component: {fileID: 780170374}
   - component: {fileID: 780170373}
+  - component: {fileID: 780170375}
   m_Layer: 0
   m_Name: ObjectAspirateur
   m_TagString: Untagged
@@ -8321,19 +8334,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 780170373}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1124431613}
-        m_TargetAssemblyTypeName: InventaireMenuUI, Assembly-CSharp
-        m_MethodName: OnObjetClique
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Aspirateur
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &780170373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8372,6 +8373,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 780170370}
   m_CullTransparentMesh: 1
+--- !u!114 &780170375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780170370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e6fa54c484fa1b4ea0273d23f46471e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventaireObjetButton
+  menuUI: {fileID: 1124431613}
+  icone: {fileID: 519246572}
+  identifiant: Aspirateur
 --- !u!1 &784459354
 GameObject:
   m_ObjectHideFlags: 0
@@ -9304,6 +9320,7 @@ GameObject:
   - component: {fileID: 840119379}
   - component: {fileID: 840119381}
   - component: {fileID: 840119380}
+  - component: {fileID: 840119382}
   m_Layer: 0
   m_Name: ObjectGovernment
   m_TagString: Untagged
@@ -9374,19 +9391,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 840119380}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1124431613}
-        m_TargetAssemblyTypeName: InventaireMenuUI, Assembly-CSharp
-        m_MethodName: OnObjetClique
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: BadgeDuGouvernement
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &840119380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9425,6 +9430,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 840119377}
   m_CullTransparentMesh: 1
+--- !u!114 &840119382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840119377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e6fa54c484fa1b4ea0273d23f46471e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventaireObjetButton
+  menuUI: {fileID: 1124431613}
+  icone: {fileID: 1009451931}
+  identifiant: BadgeDuGouvernement
 --- !u!1 &858106328
 GameObject:
   m_ObjectHideFlags: 0
@@ -10162,6 +10182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SoundManager
   musicGroup: {fileID: -5550578432694838468, guid: 1004856e83b55944ebe242f8e2c4d96f, type: 2}
   backgroundGroup: {fileID: -6447396952168062428, guid: 1004856e83b55944ebe242f8e2c4d96f, type: 2}
+  audioMixer: {fileID: 0}
   _AudioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
 --- !u!114 &903584755
 MonoBehaviour:
@@ -12466,7 +12487,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1124431612
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12520,10 +12541,11 @@ MonoBehaviour:
   - identifiant: BadgeDuGouvernement
     labelQuantite: {fileID: 1206857221}
   fondSombre: {fileID: 1848175299}
-  panelDetail: {fileID: 0}
-  iconDetail: {fileID: 1624103503}
-  texteDescription: {fileID: 1263182107}
   boutonFermeture: {fileID: 1848175302}
+  objectFocus: {fileID: 1873031915}
+  iconeProxy: {fileID: 1624103503}
+  texteDescription: {fileID: 1263182107}
+  canvasRacine: {fileID: 381387310}
 --- !u!1 &1139896274
 GameObject:
   m_ObjectHideFlags: 0
@@ -12996,6 +13018,7 @@ GameObject:
   - component: {fileID: 1187600887}
   - component: {fileID: 1187600889}
   - component: {fileID: 1187600888}
+  - component: {fileID: 1187600890}
   m_Layer: 0
   m_Name: ObjectPass
   m_TagString: Untagged
@@ -13066,19 +13089,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1187600888}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1124431613}
-        m_TargetAssemblyTypeName: InventaireMenuUI, Assembly-CSharp
-        m_MethodName: OnObjetClique
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: FormulairePasePartout
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1187600888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13117,6 +13128,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1187600885}
   m_CullTransparentMesh: 1
+--- !u!114 &1187600890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187600885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e6fa54c484fa1b4ea0273d23f46471e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventaireObjetButton
+  menuUI: {fileID: 1124431613}
+  icone: {fileID: 1834174900}
+  identifiant: FormulairePasePartout
 --- !u!1 &1194873337
 GameObject:
   m_ObjectHideFlags: 0
@@ -13223,6 +13249,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1951577323}
   - {fileID: 1783904085}
   m_Father: {fileID: 1124431612}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14121,10 +14148,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1873031916}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -400}
+  m_SizeDelta: {x: -200, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1263182107
 MonoBehaviour:
@@ -14140,13 +14167,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: New Textjyhnslbkvmcbkclmcbkmbvcbckvbnkv njlvcnjbnbvjl LoremIpsum dhfdbfvhbvkvbhdvbdchcdbhdvshdcjkhdvsjkdvshjkvncjcvnjkvkjvcnjkvhbjkbhjkxbfjkvbnvjkhvjkvhbkchvbklbhdjhfhdfj
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a1184f4c6640ed7468a4815d4d98c39b, type: 2}
   m_sharedMaterial: {fileID: -2826658947947385794, guid: a1184f4c6640ed7468a4815d4d98c39b, type: 2}
@@ -14181,7 +14208,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
@@ -15545,6 +15572,7 @@ GameObject:
   - component: {fileID: 1455655201}
   - component: {fileID: 1455655203}
   - component: {fileID: 1455655202}
+  - component: {fileID: 1455655204}
   m_Layer: 0
   m_Name: ObjectBillet
   m_TagString: Untagged
@@ -15615,19 +15643,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1455655202}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1124431613}
-        m_TargetAssemblyTypeName: InventaireMenuUI, Assembly-CSharp
-        m_MethodName: OnObjetClique
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: LiasseDeBillets
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1455655202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15666,6 +15682,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1455655199}
   m_CullTransparentMesh: 1
+--- !u!114 &1455655204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455655199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e6fa54c484fa1b4ea0273d23f46471e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventaireObjetButton
+  menuUI: {fileID: 1124431613}
+  icone: {fileID: 1888551696}
+  identifiant: LiasseDeBillets
 --- !u!1 &1455742610
 GameObject:
   m_ObjectHideFlags: 0
@@ -17239,7 +17270,7 @@ GameObject:
   - component: {fileID: 1624103504}
   - component: {fileID: 1624103503}
   m_Layer: 0
-  m_Name: Image
+  m_Name: IcoZoomFocus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17261,7 +17292,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -108.12}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1624103503
@@ -17278,15 +17309,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: b50d54af548e04a42819a52ce87afa72, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -17862,6 +17893,7 @@ GameObject:
   - component: {fileID: 1707773387}
   - component: {fileID: 1707773389}
   - component: {fileID: 1707773388}
+  - component: {fileID: 1707773390}
   m_Layer: 0
   m_Name: ObjectMontre
   m_TagString: Untagged
@@ -17932,19 +17964,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1707773388}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1124431613}
-        m_TargetAssemblyTypeName: InventaireMenuUI, Assembly-CSharp
-        m_MethodName: OnObjetClique
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: MontreAGousset
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1707773388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17983,6 +18003,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1707773385}
   m_CullTransparentMesh: 1
+--- !u!114 &1707773390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707773385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e6fa54c484fa1b4ea0273d23f46471e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventaireObjetButton
+  menuUI: {fileID: 1124431613}
+  icone: {fileID: 1212400681}
+  identifiant: MontreAGousset
 --- !u!1 &1726394298
 GameObject:
   m_ObjectHideFlags: 0
@@ -19281,8 +19316,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -29.999994}
-  m_SizeDelta: {x: 879.7334, y: 2018.7358}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1848175299
 MonoBehaviour:
@@ -19334,7 +19369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98a2cfb85a54dfc499c3ea87a8d3ad49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnableAfterDelay
-  delayBTN: 0.5
+  delayBTN: 0.2
 --- !u!114 &1848175302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19562,10 +19597,10 @@ RectTransform:
   - {fileID: 1624103502}
   m_Father: {fileID: 1124431612}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 29.999994}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1878548905
 GameObject:
@@ -20573,6 +20608,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1945057122}
+  m_CullTransparentMesh: 1
+--- !u!1 &1951577322
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1951577323}
+  - component: {fileID: 1951577325}
+  - component: {fileID: 1951577324}
+  m_Layer: 0
+  m_Name: Sol
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1951577323
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951577322}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1196229530}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1951577324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951577322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: fdf83911f0159884f8ff24e91c5dd209, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1951577325
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951577322}
   m_CullTransparentMesh: 1
 --- !u!1 &1962769903
 GameObject:

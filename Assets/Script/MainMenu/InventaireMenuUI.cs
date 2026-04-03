@@ -7,45 +7,57 @@ using TMPro;
 /// <summary>
 /// Gère l'onglet Inventaire du menu principal :
 /// - Affiche la quantité de chaque objet depuis SO_PlayerDatas
-/// - Au clic : agrandit l'objet au centre, assombrit le fond, affiche la description
+/// - Au clic : une icône proxy se place sur l'originale, masque l'originale,
+///   puis glisse et grossit jusqu'au centre. Fermeture : téléportation instantanée.
 /// </summary>
 public class InventaireMenuUI : MonoBehaviour
 {
-    // ── Constantes animation ──────────────────────────────────────────────────
-    private const float DUREE_ANIM = 0.25f;
-    private const float SCALE_AGRANDISSEMENT = 3.0f;
+    // ── Constantes ────────────────────────────────────────────────────────────
+    private const float DUREE_ANIM = 0.3f;
     private const float ALPHA_OVERLAY = 0.6f;
+    private const float FACTEUR_ZOOM = 3f;
 
     // ── Données ───────────────────────────────────────────────────────────────
     [Header("Données")]
     [SerializeField] private SO_PlayerDatas donneesJoueur;
     [SerializeField] private SO_InventaireObjets catalogue;
 
-    // ── Mapping objets scène ──────────────────────────────────────────────────
+    // ── Objets sur l'étagère ──────────────────────────────────────────────────
     [Header("Objets sur l'étagère")]
     [SerializeField] private List<ObjetEtagere> objetsEtagere;
 
-    // ── UI overlay ────────────────────────────────────────────────────────────
-    [Header("UI Overlay")]
-    [Tooltip("Image noire semi-transparente qui couvre le fond (FondNoir dans la hiérarchie).")]
+    // ── Overlay sombre ────────────────────────────────────────────────────────
+    [Header("Overlay")]
+    [Tooltip("Image noire sous FondNoir — couvre le fond.")]
     [SerializeField] private Image fondSombre;
-    [Tooltip("Panel centré contenant l'icone agrandie et la description.")]
-    [SerializeField] private GameObject panelDetail;
-    [SerializeField] private Image iconDetail;
-    [SerializeField] private TMP_Text texteDescription;
-    [Tooltip("Bouton invisible couvrant tout l'écran pour fermer le détail.")]
+    [Tooltip("Bouton invisible plein écran pour capter le clic de fermeture.")]
     [SerializeField] private Button boutonFermeture;
 
-    // ── État ──────────────────────────────────────────────────────────────────
+    // ── ObjectFocus ───────────────────────────────────────────────────────────
+    [Header("Object Focus")]
+    [Tooltip("GameObject désactivé par défaut — s'active à l'ouverture du détail.")]
+    [SerializeField] private GameObject objectFocus;
+    [Tooltip("Image enfant d'ObjectFocus qui sera animée (PAS enfant de l'icône originale).")]
+    [SerializeField] private Image iconeProxy;
+    [Tooltip("TextMeshProUGUI de description — enfant direct d'ObjectFocus, PAS de iconeProxy.")]
+    [SerializeField] private TMP_Text texteDescription;
+
+    // ── Canvas ────────────────────────────────────────────────────────────────
+    [Header("Canvas")]
+    [Tooltip("Canvas racine — nécessaire pour la conversion des positions.")]
+    [SerializeField] private Canvas canvasRacine;
+
+    // ── État interne ──────────────────────────────────────────────────────────
     private Coroutine _coroutineAnim;
     private bool _detailOuvert = false;
+    private Image _iconeOriginale = null;
 
     // ─────────────────────────────────────────────────────────────────────────
 
     private void Awake()
     {
-        if (panelDetail != null)
-            panelDetail.SetActive(false);
+        if (objectFocus != null)
+            objectFocus.SetActive(false);
 
         if (fondSombre != null)
         {
@@ -69,7 +81,7 @@ public class InventaireMenuUI : MonoBehaviour
 
     // ── Quantités ─────────────────────────────────────────────────────────────
 
-    /// <summary>Met à jour les labels de quantité de tous les objets depuis SO_PlayerDatas.</summary>
+    /// <summary>Met à jour les labels de quantité depuis SO_PlayerDatas.</summary>
     public void RafraichirQuantites()
     {
         if (donneesJoueur == null || catalogue == null) return;
@@ -97,94 +109,169 @@ public class InventaireMenuUI : MonoBehaviour
     // ── Clic sur un objet ─────────────────────────────────────────────────────
 
     /// <summary>
-    /// Appelé par le Button de chaque objet sur l'étagère.
-    /// Passe l'identifiant de l'objet pour récupérer sa définition.
+    /// Appelé par le Button de chaque ObjectXxx sur l'étagère.
+    /// iconeSurEtagere : Image du GameObject "Icone" enfant de l'objet.
+    /// identifiant : clé dans SO_InventaireObjets.
     /// </summary>
-    public void OnObjetClique(string identifiant)
+    public void OnObjetClique(Image iconeSurEtagere, string identifiant)
     {
         if (_detailOuvert) return;
 
         DefinitionObjetSpecial def = catalogue.ObtenirDefinition(identifiant);
         if (def == null) return;
 
-        int quantite = 0;
-        foreach (InventoryEntry entree in donneesJoueur.ObtenirInventairePlat())
-        {
-            if (entree.objectName == identifiant)
-            {
-                quantite = entree.quantity;
-                break;
-            }
-        }
-
-        OuvrirDetail(def, quantite);
+        _iconeOriginale = iconeSurEtagere;
+        OuvrirDetail(def);
     }
 
-    // ── Ouverture / Fermeture détail ──────────────────────────────────────────
+    // ── Ouverture ─────────────────────────────────────────────────────────────
 
-    private void OuvrirDetail(DefinitionObjetSpecial def, int quantite)
+    private void OuvrirDetail(DefinitionObjetSpecial def)
     {
         _detailOuvert = true;
 
-        if (iconDetail != null)
-            iconDetail.sprite = def.sprite;
-
+        // Description
         if (texteDescription != null)
             texteDescription.text = string.IsNullOrEmpty(def.description)
                 ? def.nomAffichage
                 : def.description;
 
+        // Sprite sur le proxy
+        if (iconeProxy != null)
+            iconeProxy.sprite = def.sprite;
+
+        // Place le proxy sur l'originale et masque l'originale
+        PlacerProxySurOriginale();
+
+        // Active l'overlay et ObjectFocus
         if (fondSombre != null)
             fondSombre.gameObject.SetActive(true);
 
-        if (panelDetail != null)
-            panelDetail.SetActive(true);
-
         if (boutonFermeture != null)
             boutonFermeture.gameObject.SetActive(true);
+
+        if (objectFocus != null)
+            objectFocus.SetActive(true);
 
         if (_coroutineAnim != null) StopCoroutine(_coroutineAnim);
         _coroutineAnim = StartCoroutine(AnimerOuverture());
     }
 
-    /// <summary>Ferme le panneau de détail.</summary>
+    private void PlacerProxySurOriginale()
+    {
+        if (_iconeOriginale == null || iconeProxy == null) return;
+
+        RectTransform rtOriginale = _iconeOriginale.rectTransform;
+        RectTransform rtProxy = iconeProxy.rectTransform;
+        RectTransform rtParent = rtProxy.parent as RectTransform;
+
+        // Ajuste les ancres pour un positionnement absolu
+        rtProxy.anchorMin = new Vector2(0.5f, 0.5f);
+        rtProxy.anchorMax = new Vector2(0.5f, 0.5f);
+        rtProxy.pivot = new Vector2(0.5f, 0.5f);
+        rtProxy.sizeDelta = rtOriginale.rect.size;
+        rtProxy.localScale = Vector3.one;
+
+        // Convertit le centre monde de l'originale en position canvas du parent du proxy
+        Vector3[] coins = new Vector3[4];
+        rtOriginale.GetWorldCorners(coins);
+        Vector3 centreMondeOriginale = (coins[0] + coins[2]) * 0.5f;
+
+        Camera cam = canvasRacine.renderMode == RenderMode.ScreenSpaceOverlay
+            ? null
+            : canvasRacine.worldCamera;
+
+        Vector2 screenPoint = RectTransformUtility.WorldToScreenPoint(cam, centreMondeOriginale);
+
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            rtParent,
+            screenPoint,
+            cam,
+            out Vector2 posLocale
+        );
+
+        rtProxy.anchoredPosition = posLocale;
+
+        // Cache l'originale
+        _iconeOriginale.enabled = false;
+    }
+
+    // ── Fermeture (instantanée) ───────────────────────────────────────────────
+
+    /// <summary>Ferme le détail immédiatement — pas d'animation retour.</summary>
     public void FermerDetail()
     {
         if (!_detailOuvert) return;
         if (_coroutineAnim != null) StopCoroutine(_coroutineAnim);
-        _coroutineAnim = StartCoroutine(AnimerFermeture());
+
+        // Restaure l'icône originale
+        if (_iconeOriginale != null)
+            _iconeOriginale.enabled = true;
+
+        // Reset proxy
+        if (iconeProxy != null)
+        {
+            RectTransform rtProxy = iconeProxy.rectTransform;
+            rtProxy.anchoredPosition = Vector2.zero;
+            rtProxy.sizeDelta = Vector2.zero;
+        }
+
+        // Désactive tout
+        if (objectFocus != null)
+            objectFocus.SetActive(false);
+
+        if (fondSombre != null)
+        {
+            Color c = fondSombre.color;
+            c.a = 0f;
+            fondSombre.color = c;
+            fondSombre.gameObject.SetActive(false);
+        }
+
+        if (boutonFermeture != null)
+            boutonFermeture.gameObject.SetActive(false);
+
+        _iconeOriginale = null;
+        _detailOuvert = false;
     }
 
-    // ── Coroutines d'animation ────────────────────────────────────────────────
+    // ── Animation ouverture ───────────────────────────────────────────────────
 
     private IEnumerator AnimerOuverture()
     {
+        if (iconeProxy == null) yield break;
+
+        RectTransform rtProxy = iconeProxy.rectTransform;
+
+        Vector2 posDepart = rtProxy.anchoredPosition;
+        Vector2 tailleDepart = rtProxy.sizeDelta;
+        Vector2 tailleCible = tailleDepart * FACTEUR_ZOOM;
+        // Cible = centre du parent (0,0 si l'ancre est bien centrée sur l'écran)
+        Vector2 posCible = Vector2.zero;
+
         float elapsed = 0f;
-        RectTransform rtPanel = panelDetail != null ? panelDetail.GetComponent<RectTransform>() : null;
 
         while (elapsed < DUREE_ANIM)
         {
             elapsed += Time.unscaledDeltaTime;
             float t = Mathf.Clamp01(elapsed / DUREE_ANIM);
-            float easedT = 1f - Mathf.Pow(1f - t, 3f); // ease-out cubic
+            float eased = 1f - Mathf.Pow(1f - t, 3f); // ease-out cubic
 
-            // Fond sombre
+            rtProxy.anchoredPosition = Vector2.Lerp(posDepart, posCible, eased);
+            rtProxy.sizeDelta = Vector2.Lerp(tailleDepart, tailleCible, eased);
+
             if (fondSombre != null)
             {
                 Color c = fondSombre.color;
-                c.a = Mathf.Lerp(0f, ALPHA_OVERLAY, easedT);
+                c.a = Mathf.Lerp(0f, ALPHA_OVERLAY, eased);
                 fondSombre.color = c;
-            }
-
-            // Panel : scale 0.6 → 1
-            if (rtPanel != null)
-            {
-                float s = Mathf.Lerp(0.6f, 1f, easedT);
-                rtPanel.localScale = new Vector3(s, s, 1f);
             }
 
             yield return null;
         }
+
+        rtProxy.anchoredPosition = posCible;
+        rtProxy.sizeDelta = tailleCible;
 
         if (fondSombre != null)
         {
@@ -192,58 +279,17 @@ public class InventaireMenuUI : MonoBehaviour
             c.a = ALPHA_OVERLAY;
             fondSombre.color = c;
         }
-        if (rtPanel != null)
-            rtPanel.localScale = Vector3.one;
-    }
-
-    private IEnumerator AnimerFermeture()
-    {
-        float elapsed = 0f;
-        RectTransform rtPanel = panelDetail != null ? panelDetail.GetComponent<RectTransform>() : null;
-
-        while (elapsed < DUREE_ANIM)
-        {
-            elapsed += Time.unscaledDeltaTime;
-            float t = Mathf.Clamp01(elapsed / DUREE_ANIM);
-            float easedT = t * t; // ease-in
-
-            if (fondSombre != null)
-            {
-                Color c = fondSombre.color;
-                c.a = Mathf.Lerp(ALPHA_OVERLAY, 0f, easedT);
-                fondSombre.color = c;
-            }
-
-            if (rtPanel != null)
-            {
-                float s = Mathf.Lerp(1f, 0.6f, easedT);
-                rtPanel.localScale = new Vector3(s, s, 1f);
-            }
-
-            yield return null;
-        }
-
-        if (panelDetail != null)
-            panelDetail.SetActive(false);
-
-        if (fondSombre != null)
-            fondSombre.gameObject.SetActive(false);
-
-        if (boutonFermeture != null)
-            boutonFermeture.gameObject.SetActive(false);
-
-        _detailOuvert = false;
     }
 }
 
-// ── Classe de configuration par objet ─────────────────────────────────────────
+// ── Config par objet (Inspector) ──────────────────────────────────────────────
 
 [System.Serializable]
 public class ObjetEtagere
 {
-    [Tooltip("Identifiant correspondant à DefinitionObjetSpecial.identifiant dans le catalogue.")]
+    [Tooltip("Identifiant dans SO_InventaireObjets.")]
     public string identifiant;
 
-    [Tooltip("Label TMP qui affiche la quantité (le TextMeshProUGUI 'Number' sous Etiquette).")]
+    [Tooltip("TextMeshProUGUI 'Number' sous Etiquette — affiche la quantité.")]
     public TMP_Text labelQuantite;
 }
