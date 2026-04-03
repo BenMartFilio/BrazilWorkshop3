@@ -265,11 +265,15 @@ public class PlayerMovement : MonoBehaviour
     public void StopMove()
     {
         _canMoving = false;
+        stateOfDeath = false;       
+        IamAlreadyTouched = false;  
+
         if (_coroutine != null)
         {
             StopCoroutine(_coroutine);
         }
     }
+
 
     public void StartMove()
     {
