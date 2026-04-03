@@ -53,6 +53,8 @@ public class InventaireObjetsUI : MonoBehaviour
     private readonly Dictionary<string, ItemSlotUI> _slotsActifs = new Dictionary<string, ItemSlotUI>();
 
     // ─────────────────────────────────────────────────────────────────────────
+    [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
+    [SerializeField] private AudioType _getObject = AudioType.GetObject;
 
     private void Start()
     {
@@ -116,6 +118,9 @@ public class InventaireObjetsUI : MonoBehaviour
             Debug.LogError("[InventaireObjetsUI] EffetsObjetsSpeciaux non assigné.");
             return;
         }
+
+        if (_audioEventDispatcher != null)
+            _audioEventDispatcher.PlayAudio(_getObject);
 
         InventoryEntry entree = TrouverEntree(identifiant);
         if (entree == null || entree.quantity <= 0) return;
