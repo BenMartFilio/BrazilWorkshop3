@@ -61,4 +61,10 @@ public class TimeManager : MonoBehaviour
     {
         _timeStepDuration = newTime;
     }
+
+
+    public void Reupdate()
+    {
+        OnTimePassed?.Invoke();
+    }
 }

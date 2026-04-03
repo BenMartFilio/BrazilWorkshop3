@@ -34,7 +34,7 @@ public class GoundMouvement : MonoBehaviour
     /// <summary>Restaure la vitesse du sol depuis les données de session.</summary>
     public void RestaurerDepuisSession(float vitesse)
     {
-        speed = vitesse;
+     //   speed = vitesse;
     }
 
     void FixedUpdate()
