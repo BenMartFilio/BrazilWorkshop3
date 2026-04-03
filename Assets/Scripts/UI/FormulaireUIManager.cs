@@ -31,7 +31,7 @@ namespace Barrage.UI
         [Header("Objets spéciaux")]
         [Tooltip("Données joueur pour lire les quantités d'objets spéciaux à spawner comme cartes.")]
         [SerializeField] private SO_PlayerDatas donneesJoueur;
-        [SerializeField] private SoundManager soundManager;
+        
         [SerializeField] private AudioClip _barrageMusic;
         private PocheUI[] _poches;
         private readonly Dictionary<FormulaireType, FormulaireData> _dataParType = new();
@@ -51,7 +51,7 @@ namespace Barrage.UI
 
         private void Start()
         {
-            soundManager.PlayMusicWithLowPass(_barrageMusic);
+            SoundManager.Instance.PlayMusicWithLowPass(_barrageMusic);
             // L'inventaire n'est pas réinitialisé ici : il doit persister depuis MapRoad.
             // La réinitialisation est gérée par SessionReinitialiseur et SessionManager.
             SpawnFormulaires();

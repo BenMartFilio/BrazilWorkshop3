@@ -11568,6 +11568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SessionReinitialiseur
   "donn\xE9esSession": {fileID: 11400000, guid: a38ed096d3c17df43a3e1b832d57cb13, type: 2}
   formulaireInventaire: {fileID: 11400000, guid: b96ec00b9f42a8742833630eee3708e8, type: 2}
+  _MainMenuMusic: {fileID: 8300000, guid: 9072dd608974ac54e9ce279abd121559, type: 3}
 --- !u!1001 &1049702347
 PrefabInstance:
   m_ObjectHideFlags: 0

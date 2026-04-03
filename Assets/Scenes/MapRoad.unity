@@ -1253,6 +1253,7 @@ MonoBehaviour:
   - {fileID: 1587615504}
   end: {fileID: 1232534109}
   barreProgression: {fileID: 1833950802}
+  _mapRoadMusic: {fileID: 8300000, guid: 9d3f5904ec6e67041988c9c49a9df47c, type: 3}
 --- !u!4 &378087653
 Transform:
   m_ObjectHideFlags: 0
@@ -2063,6 +2064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BackToMenu
   _toFill: {fileID: 1758289078}
+  _menuMusic: {fileID: 0}
 --- !u!1 &761055256
 GameObject:
   m_ObjectHideFlags: 0

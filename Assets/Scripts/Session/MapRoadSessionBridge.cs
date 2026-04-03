@@ -13,12 +13,12 @@ public class MapRoadSessionBridge : MonoBehaviour
     [SerializeField] private GoundMouvement[]        sols;
     [SerializeField] private EndManager              end;
     [SerializeField] private BarreProgressionBarrage barreProgression;
-    [SerializeField] private SoundManager _soundmanager;
+    
     [SerializeField] private AudioClip _mapRoadMusic;
 
     private void Start()
     {
-        _soundmanager.PlayMusicWithLowPass(_mapRoadMusic);
+        SoundManager.Instance.PlayMusic(_mapRoadMusic);
         if (SessionManager.Instance != null)
         {
             // RestaurerMapRoad gère les deux cas :

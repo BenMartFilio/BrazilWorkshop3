@@ -2381,6 +2381,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1db0672e356f38f4faa938d263edea8a, type: 2}
   _audioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
   donneesJoueur: {fileID: 0}
+  _barrageMusic: {fileID: 8300000, guid: 3ac74b55898ffd94fb33e32b9b87aba0, type: 3}
 --- !u!1 &1211884123
 GameObject:
   m_ObjectHideFlags: 0
