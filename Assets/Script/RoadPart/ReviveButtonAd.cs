@@ -16,6 +16,7 @@ public class ReviveButtonAd : MonoBehaviour
 
     [SerializeField] private string _rewardedAdUnitId = "YOUR_REWARDED_AD_UNIT_ID";
     [SerializeField] private EndManager _endManager;
+    [SerializeField] private DonnéesSession _donneesSession;
 
     private Button _button;
     private LevelPlayRewardedAd _rewardedAd;
@@ -25,9 +26,9 @@ public class ReviveButtonAd : MonoBehaviour
     private void Awake()
     {
         _button = GetComponent<Button>();
-        _reviveCount = PlayerPrefs.GetInt(ReviveCountKey, 0);
+        // Lire depuis le SO au lieu de PlayerPrefs
+        _reviveCount = _donneesSession != null ? _donneesSession.revive : 0;
     }
-
     private void Start()
     {
         ApplyReviveCountState();
@@ -118,8 +119,7 @@ public class ReviveButtonAd : MonoBehaviour
             if (!_rewardGranted) return;
 
             _reviveCount++;
-            PlayerPrefs.SetInt(ReviveCountKey, _reviveCount);
-            PlayerPrefs.Save();
+            if (_donneesSession != null) _donneesSession.adWatched = _reviveCount;
             _endManager.Revive();
             ApplyReviveCountState();
 
@@ -151,8 +151,7 @@ public class ReviveButtonAd : MonoBehaviour
     public void ResetReviveCount()
     {
         _reviveCount = 0;
-        PlayerPrefs.SetInt(ReviveCountKey, 0);
-        PlayerPrefs.Save();
+        if (_donneesSession != null) _donneesSession.adWatched = 0;
         gameObject.SetActive(true);
         SetButtonInteractable(false);
         LoadAd();

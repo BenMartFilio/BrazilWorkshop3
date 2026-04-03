@@ -52,6 +52,8 @@ public class DonnéesSession : ScriptableObject
 
     public int revive = 0;
 
+    public int adWatched = 0;
+
     [Header("Difficulté")]
     [Tooltip("Nombre de barrages déjà complétés par le joueur depuis le début de la partie. " +
              "Utilisé pour faire évoluer la complexité des demandes (nombre et doublons de formulaires).")]
@@ -78,5 +80,7 @@ public class DonnéesSession : ScriptableObject
         revive                    = 0;
         nombreBarragesComplétés   = 0;
         patternsNécessaires       = 5;
+        adWatched = 0;
+
     }
 }
