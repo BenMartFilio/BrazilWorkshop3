@@ -7,6 +7,7 @@ using ObjetsSpeciaux;
 /// le slot grisé est détruit via <see cref="InventaireObjetsUI.SupprimerSlot"/>.
 /// Toute la logique de dessin de l'anneau vit dans <see cref="ItemSlotUI"/>.
 /// </summary>
+[DefaultExecutionOrder(10)] // After InventaireObjetsUI (order 0) has run PopulerSlots
 public class EffetsDureeUI : MonoBehaviour
 {
     // ── État ──────────────────────────────────────────────────────────────────

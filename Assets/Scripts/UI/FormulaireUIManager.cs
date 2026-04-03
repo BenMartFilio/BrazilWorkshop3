@@ -28,6 +28,10 @@ namespace Barrage.UI
         [SerializeField] private List<FormulaireData> formulairesData = new();
         [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
 
+        [Header("Objets spéciaux")]
+        [Tooltip("Données joueur pour lire les quantités d'objets spéciaux à spawner comme cartes.")]
+        [SerializeField] private SO_PlayerDatas donneesJoueur;
+
         private PocheUI[] _poches;
         private readonly Dictionary<FormulaireType, FormulaireData> _dataParType = new();
 
@@ -49,6 +53,7 @@ namespace Barrage.UI
             // L'inventaire n'est pas réinitialisé ici : il doit persister depuis MapRoad.
             // La réinitialisation est gérée par SessionReinitialiseur et SessionManager.
             SpawnFormulaires();
+            SpawnObjetsSpeciaux();
         }
 
         private void OnDestroy()
@@ -78,12 +83,17 @@ namespace Barrage.UI
         /// <summary>
         /// Construit une liste interleaved des types de formulaires selon les quantités de l'inventaire.
         /// Les types les plus fréquents sont distribués en premier pour maximiser la variété par poche.
+        /// Les objets spéciaux (LiasseDeBillets, FormulairePasePartout, BadgeDuGouvernement) sont exclus :
+        /// ils sont gérés par SO_PlayerDatas et injectés séparément par SpawnObjetsSpeciaux.
         /// </summary>
         private List<FormulaireType> BuildListeInterleaved()
         {
             var comptes = new Dictionary<FormulaireType, int>();
             foreach (FormulaireType type in Enum.GetValues(typeof(FormulaireType)))
+            {
+                if (EstObjetSpécial(type)) continue;
                 comptes[type] = inventaire.ObtenirQuantité(type);
+            }
 
             var résultat = new List<FormulaireType>();
             bool anyLeft = true;
@@ -106,6 +116,11 @@ namespace Barrage.UI
 
             return résultat;
         }
+
+        private static bool EstObjetSpécial(FormulaireType type)
+            => type == FormulaireType.LiasseDeBillets
+            || type == FormulaireType.FormulairePasePartout
+            || type == FormulaireType.BadgeDuGouvernement;
 
         private void SpawnDansPoche(FormulaireType type, PocheUI poche)
         {
@@ -165,6 +180,37 @@ namespace Barrage.UI
         public void EnvoyerAMainDuGarde(FormulaireUI formulaire)
         {
             mainDuGarde.RecevoirFormulaire(formulaire);
+        }
+
+        // ── Objets spéciaux ────────────────────────────────────────────────────
+
+        /// <summary>
+        /// Spawne les objets spéciaux du joueur (LiasseDeBillets, FormulairePasePartout, BadgeDuGouvernement)
+        /// comme des cartes draggables dans les poches, à côté des formulaires normaux.
+        /// Chaque objet spawne autant de cartes que la quantité possédée.
+        /// </summary>
+        private void SpawnObjetsSpeciaux()
+        {
+            if (donneesJoueur == null) return;
+
+            var mapping = new Dictionary<string, FormulaireType>
+            {
+                { "LiasseDeBillets",      FormulaireType.LiasseDeBillets      },
+                { "FormulairePasePartout",FormulaireType.FormulairePasePartout },
+                { "BadgeDuGouvernement",  FormulaireType.BadgeDuGouvernement  },
+            };
+
+            foreach (InventoryEntry entree in donneesJoueur.ObtenirInventairePlat())
+            {
+                if (!mapping.TryGetValue(entree.objectName, out FormulaireType type)) continue;
+                if (entree.quantity <= 0) continue;
+
+                for (int i = 0; i < entree.quantity; i++)
+                {
+                    PocheUI poche = _poches[i % _poches.Length];
+                    SpawnDansPoche(type, poche);
+                }
+            }
         }
 
         // ── Helpers de détection ───────────────────────────────────────────────

@@ -27,18 +27,18 @@ MonoBehaviour:
   allObjectInInventory:
   - highScores:
     - objectName: LiasseDeBillets
-      quantity: 16
+      quantity: 1
     - objectName: FormulairePasePartout
-      quantity: 16
+      quantity: 1
     - objectName: BadgeDuGouvernement
-      quantity: 6
+      quantity: 1
     - objectName: TirelireCochon
-      quantity: 12
+      quantity: 1
     - objectName: GateauChinois
-      quantity: 12
+      quantity: 1
     - objectName: RadarObstacles
-      quantity: 13
+      quantity: 1
     - objectName: Aspirateur
-      quantity: 16
+      quantity: 1
     - objectName: MontreAGousset
-      quantity: 15
+      quantity: 1

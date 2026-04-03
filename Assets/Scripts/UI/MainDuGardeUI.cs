@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using Barrage.Formulaires;
+using ObjetsSpeciaux;
 
 namespace Barrage.UI
 {
@@ -35,6 +36,11 @@ namespace Barrage.UI
         [Tooltip("BarrePatience à dégeler au début du barrage (barrages normaux uniquement). " +
                  "Au premier barrage, MainDuGardeUI est désactivé et ne dégèle donc pas la barre.")]
         [SerializeField] private BarrePatience barrePatience;
+
+        [Header("Objets spéciaux")]
+        [Tooltip("Effets des objets spéciaux (LiasseDeBillets, FormulairePasePartout, BadgeDuGouvernement). " +
+                 "Peut être null dans les scènes sans objets spéciaux.")]
+        [SerializeField] private ObjetsSpeciaux.EffetsObjetsSpeciaux effetsObjetsSpeciaux;
         [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
         [SerializeField] private AudioType _correct;
         [SerializeField] private AudioType _incorrect;
@@ -168,6 +174,13 @@ namespace Barrage.UI
                 return;
             }
 
+            // ── Objets spéciaux : effet propre, ne valident pas la séquence ───
+            if (EstObjetSpécial(type))
+            {
+                AppliquerEffetSpécial(type, go);
+                return;
+            }
+
             Debug.Log($"[MainDuGardeUI] RecevoirInterne({type}) — listeAttenteGarde={listeAttenteGarde?.name ?? "NULL"}, " +
                       $"enabled={enabled}");
 
@@ -193,6 +206,45 @@ namespace Barrage.UI
                 Debug.LogWarning($"[MainDuGarde] ✗ Incorrect : {type} (non attendu ou déjà épuisé).");
                 StartCoroutine(AnimerNégatif(go));
             }
+        }
+
+        // ── Objets spéciaux ───────────────────────────────────────────────────
+
+        /// <summary>Retourne true si le type est un objet spécial (effet propre, ne valide pas la séquence).</summary>
+        private static bool EstObjetSpécial(FormulaireType type)
+            => type == FormulaireType.LiasseDeBillets
+            || type == FormulaireType.FormulairePasePartout
+            || type == FormulaireType.BadgeDuGouvernement;
+
+        /// <summary>
+        /// Déclenche l'effet de l'objet spécial correspondant et détruit la carte avec l'animation positive.
+        /// Consomme l'objet dans SO_PlayerDatas via EffetsObjetsSpeciaux.
+        /// </summary>
+        private void AppliquerEffetSpécial(FormulaireType type, GameObject go)
+        {
+            if (effetsObjetsSpeciaux == null)
+            {
+                Debug.LogWarning($"[MainDuGardeUI] effetsObjetsSpeciaux non assigné — objet spécial {type} ignoré.");
+                StartCoroutine(AnimerNégatif(go));
+                return;
+            }
+
+            Debug.Log($"[MainDuGardeUI] Objet spécial reçu : {type}");
+
+            switch (type)
+            {
+                case FormulaireType.LiasseDeBillets:
+                    effetsObjetsSpeciaux.UtiliserLiasseDeBillets();
+                    break;
+                case FormulaireType.FormulairePasePartout:
+                    effetsObjetsSpeciaux.UtiliserFormulairePasePartout();
+                    break;
+                case FormulaireType.BadgeDuGouvernement:
+                    effetsObjetsSpeciaux.UtiliserBadgeDuGouvernement();
+                    break;
+            }
+
+            StartCoroutine(AnimerPositif(go));
         }
 
         /// <summary>

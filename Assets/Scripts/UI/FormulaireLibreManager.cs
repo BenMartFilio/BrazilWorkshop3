@@ -54,6 +54,10 @@ namespace Barrage.UI
         [SerializeField] private FormulaireInventaire inventaire;
         [SerializeField] private List<FormulaireData> formulairesData = new();
 
+        [Tooltip("SO_PlayerDatas — used to read barrage-oriented item quantities (LiasseDeBillets, FormulairePasePartout, BadgeDuGouvernement) " +
+                 "so their draggable cards are spawned alongside regular formulaires. Optional: if null, barrage items are not spawned.")]
+        [SerializeField] private SO_PlayerDatas donneesJoueur;
+
         // ── Collision inter-cartes ────────────────────────────────────────────
         // Zone de collision = centre de la carte, avec 30 % de marge sur chaque bord.
         // → collisionHalfSize = tailleFixeCarte * 0.5 * (1 - 0.30) = tailleFixeCarte * 0.35
@@ -155,9 +159,9 @@ namespace Barrage.UI
 
         private void SpawnCarte(FormulaireType type)
         {
-            if (!_dataParType.TryGetValue(type, out var data) || data.prefab == null)
+            if (!_dataParType.TryGetValue(type, out var data))
             {
-                Debug.LogWarning($"[FormulaireLibreManager] Aucun prefab pour : {type}");
+                Debug.LogWarning($"[FormulaireLibreManager] Aucun FormulaireData pour : {type}");
                 return;
             }
 
@@ -165,12 +169,12 @@ namespace Barrage.UI
 
             if (texture == null)
             {
-                Debug.LogError($"[FormulaireLibreManager] Aucune texture trouvée dans '{data.prefab.name}'. " +
-                               "Vérifier que le prefab contient un RawImage avec une texture assignée.");
+                Debug.LogError($"[FormulaireLibreManager] Aucune texture pour '{type}'. " +
+                               "Assigner textureDirecte ou un prefab avec RawImage dans le FormulaireData.");
                 return;
             }
 
-            var go = new GameObject(data.prefab.name,
+            var go = new GameObject(type.ToString(),
                 typeof(RectTransform), typeof(CanvasRenderer), typeof(UnityEngine.UI.RawImage));
             go.transform.SetParent(partieBasse, false);
             go.layer = LayerMask.NameToLayer("UI");
@@ -238,15 +242,52 @@ namespace Barrage.UI
             }
         }
 
+        // ── Helpers objets spéciaux ────────────────────────────────────────────
+
+        private static bool EstObjetSpécialBarrage(FormulaireType type)
+            => type == FormulaireType.LiasseDeBillets
+            || type == FormulaireType.FormulairePasePartout
+            || type == FormulaireType.BadgeDuGouvernement;
+
+        private static FormulaireType? IdentifiantVersFormulaireType(string id)
+        {
+            return id switch
+            {
+                "LiasseDeBillets"      => FormulaireType.LiasseDeBillets,
+                "FormulairePasePartout" => FormulaireType.FormulairePasePartout,
+                "BadgeDuGouvernement"  => FormulaireType.BadgeDuGouvernement,
+                _                      => null,
+            };
+        }
+
         /// <summary>
         /// Construit la liste de types interleaved (types les plus fréquents distribués en premier)
         /// pour maximiser la variété visible dans le tas.
+        /// Les 4 types standards viennent de FormulaireInventaire.
+        /// Les 3 objets spéciaux (LiasseDeBillets, FormulairePasePartout, BadgeDuGouvernement)
+        /// viennent de SO_PlayerDatas et sont inclus uniquement si donneesJoueur est assigné.
         /// </summary>
         private List<FormulaireType> BuildListeInterleaved()
         {
             var comptes = new Dictionary<FormulaireType, int>();
+
+            // ── Types standards depuis FormulaireInventaire ───────────────────
             foreach (FormulaireType type in Enum.GetValues(typeof(FormulaireType)))
+            {
+                if (EstObjetSpécialBarrage(type)) continue;
                 comptes[type] = inventaire.ObtenirQuantité(type);
+            }
+
+            // ── Objets spéciaux depuis SO_PlayerDatas ─────────────────────────
+            if (donneesJoueur != null)
+            {
+                foreach (InventoryEntry entree in donneesJoueur.ObtenirInventairePlat())
+                {
+                    FormulaireType? type = IdentifiantVersFormulaireType(entree.objectName);
+                    if (type.HasValue && EstObjetSpécialBarrage(type.Value) && entree.quantity > 0)
+                        comptes[type.Value] = entree.quantity;
+                }
+            }
 
             var résultat = new List<FormulaireType>();
             bool anyLeft = true;

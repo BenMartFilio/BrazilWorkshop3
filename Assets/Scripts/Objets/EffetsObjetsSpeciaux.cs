@@ -79,6 +79,9 @@ namespace ObjetsSpeciaux
         [SerializeField] private MainDuGardeUI mainDuGarde;
         [SerializeField] private ListeAttenteGarde listeAttenteGarde;
 
+        [Tooltip("SO_PlayerDatas — consomme l'objet spécial (réduit sa quantité de 1) quand il est utilisé au barrage.")]
+        [SerializeField] private SO_PlayerDatas donneesJoueur;
+
         // ── Dependances : MapRoad (objets actifs) ─────────────────────────────
         [Header("MapRoad -- Objets Actifs")]
         [SerializeField] private PlayerMovement joueur;
@@ -191,6 +194,7 @@ namespace ObjetsSpeciaux
                 return;
             }
 
+            ConsommerObjet("LiasseDeBillets");
             barrePatience.AjouterPatience(LIASSE_PATIENCE_POINTS);
             Debug.Log("[EffetsObjetsSpeciaux] Liasse de billets -- patience remontee de 50 %.");
         }
@@ -216,6 +220,7 @@ namespace ObjetsSpeciaux
                 return;
             }
 
+            ConsommerObjet("FormulairePasePartout");
             mainDuGarde.ValiderAvecPassePartout();
             Debug.Log("[EffetsObjetsSpeciaux] Formulaire passe-partout -- prochain formulaire valide.");
         }
@@ -247,7 +252,54 @@ namespace ObjetsSpeciaux
             if (iterations >= MAX_ITERATIONS)
                 Debug.LogWarning("[EffetsObjetsSpeciaux] Badge du gouvernement -- limite d'iterations atteinte, barrage potentiellement non termine.");
             else
+            {
+                ConsommerObjet("BadgeDuGouvernement");
                 Debug.Log("[EffetsObjetsSpeciaux] Badge du gouvernement -- barrage valide instantanement.");
+            }
+        }
+
+        // ── Consommation ──────────────────────────────────────────────────────
+
+        /// <summary>
+        /// Réduit de 1 la quantité de l'objet identifié dans SO_PlayerDatas et sauvegarde.
+        /// Ne descend jamais en dessous de 0.
+        /// </summary>
+        private void ConsommerObjet(string identifiant)
+        {
+            if (donneesJoueur == null)
+            {
+                Debug.LogWarning($"[EffetsObjetsSpeciaux] donneesJoueur non assigné — '{identifiant}' non consommé.");
+                return;
+            }
+
+            foreach (InventoryObject groupe in donneesJoueur.allObjectInInventory)
+            {
+                foreach (InventoryEntry entree in groupe.highScores)
+                {
+                    if (entree.objectName == identifiant && entree.quantity > 0)
+                    {
+                        entree.quantity--;
+                        donneesJoueur.SaveDatas();
+                        Debug.Log($"[EffetsObjetsSpeciaux] '{identifiant}' consommé. Restant : {entree.quantity}");
+                        return;
+                    }
+                }
+            }
+
+            Debug.LogWarning($"[EffetsObjetsSpeciaux] ConsommerObjet — '{identifiant}' introuvable ou quantité déjà à 0.");
+        }
+
+        // ── Garde-fou route ───────────────────────────────────────────────────
+
+        /// <summary>
+        /// Returns true when the active scene is a road scene (MapRoad or MapTuto).
+        /// Road-only effects must not run in barrage scenes, where spawner/grounds/joueur are null.
+        /// Also ensures the global static speed factors are clean on barrage entry.
+        /// </summary>
+        private bool EstEnSceneRoute()
+        {
+            string nom = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+            return nom == "MapRoad" || nom == "MapTuto";
         }
 
         // ── Objet 4 : Tirelire Cochon (actif, route) ──────────────────────────
@@ -255,6 +307,11 @@ namespace ObjetsSpeciaux
         /// <summary>Declenche l'effet Tirelire Cochon pendant TIRELIRE_DUREE secondes.</summary>
         public void UtiliserTirelireCochon()
         {
+            if (!EstEnSceneRoute())
+            {
+                Debug.LogWarning("[EffetsObjetsSpeciaux] TirelireCochon ignoré hors scène route.");
+                return;
+            }
             AnnulerEffetsActifsHormisCelui(ID_TIRELIRE);
 
             if (_coroutineTirelire != null)
@@ -299,6 +356,11 @@ namespace ObjetsSpeciaux
         /// <summary>Declenche l'effet Gateau Chinois pendant GATEAU_DUREE secondes.</summary>
         public void UtiliserGateauChinois()
         {
+            if (!EstEnSceneRoute())
+            {
+                Debug.LogWarning("[EffetsObjetsSpeciaux] GateauChinois ignoré hors scène route.");
+                return;
+            }
             AnnulerEffetsActifsHormisCelui(ID_GATEAU);
 
             if (_coroutineGateau != null)
@@ -376,6 +438,11 @@ namespace ObjetsSpeciaux
         /// <summary>Declenche l'effet Radar a Obstacles pendant RADAR_DUREE secondes.</summary>
         public void UtiliserRadarObstacles()
         {
+            if (!EstEnSceneRoute())
+            {
+                Debug.LogWarning("[EffetsObjetsSpeciaux] RadarObstacles ignoré hors scène route.");
+                return;
+            }
             AnnulerEffetsActifsHormisCelui(ID_RADAR);
 
             if (_coroutineRadar != null)
@@ -513,6 +580,11 @@ namespace ObjetsSpeciaux
         /// <summary>Declenche l'effet Aspirateur pendant ASPIRATEUR_DUREE secondes.</summary>
         public void UtiliserAspirateur()
         {
+            if (!EstEnSceneRoute())
+            {
+                Debug.LogWarning("[EffetsObjetsSpeciaux] Aspirateur ignoré hors scène route.");
+                return;
+            }
             AnnulerEffetsActifsHormisCelui(ID_ASPIRATEUR);
 
             if (_coroutineAspirateur != null)
@@ -568,6 +640,11 @@ namespace ObjetsSpeciaux
         /// <summary>Declenche l'effet Montre a Gousset pendant MONTRE_DUREE secondes.</summary>
         public void UtiliserMontreAGousset()
         {
+            if (!EstEnSceneRoute())
+            {
+                Debug.LogWarning("[EffetsObjetsSpeciaux] MontreAGousset ignoré hors scène route.");
+                return;
+            }
             AnnulerEffetsActifsHormisCelui(ID_MONTRE);
 
             // Restaurer d'abord si deja actif pour eviter un double-ralentissement.

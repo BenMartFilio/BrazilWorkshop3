@@ -26,9 +26,9 @@ public class InventaireObjetsUI : MonoBehaviour
     private const string ID_ASPIRATEUR    = "Aspirateur";
     private const string ID_MONTRE        = "MontreAGousset";
 
-    /// <summary>Objets gérés par d'autres systèmes, jamais affichés dans la barre.</summary>
+    /// <summary>Objets de type barrage (corruption/influence), jamais affichés dans la barre inventaire.</summary>
     private static readonly HashSet<string> IDS_EXCLUS
-        = new HashSet<string> { ID_BADGE };
+        = new HashSet<string> { ID_LIASSE, ID_PASSE_PARTOUT, ID_BADGE };
 
     // ── Overlay ───────────────────────────────────────────────────────────────
     private const float OVERLAY_DUREE          = 1.2f;
@@ -257,6 +257,8 @@ public class InventaireObjetsUI : MonoBehaviour
             return;
         }
 
+        if (IDS_EXCLUS.Contains(id)) return;
+
         DefinitionObjetSpecial definition = catalogue?.ObtenirDefinition(id);
         if (definition == null || definition.estPassif) return;
 
@@ -295,6 +297,49 @@ public class InventaireObjetsUI : MonoBehaviour
     }
 
     // ── Debug ─────────────────────────────────────────────────────────────────
+
+    /// <summary>
+    /// Retire tous les objets spéciaux de l'inventaire et rafraîchit la barre.
+    /// Inspector : clic droit sur le composant → "DEBUG — Retirer tous les objets".
+    /// Play mode : touche [O].
+    /// </summary>
+    [ContextMenu("DEBUG — Retirer tous les objets")]
+    public void DebugRetirerTous()
+    {
+        if (donneesJoueur == null)
+        {
+            Debug.LogError("[InventaireObjetsUI] SO_PlayerDatas non assigné.");
+            return;
+        }
+
+        string[] tousLesIds =
+        {
+            ID_LIASSE, ID_PASSE_PARTOUT, ID_BADGE, ID_TIRELIRE,
+            ID_GATEAU, ID_RADAR, ID_ASPIRATEUR, ID_MONTRE
+        };
+
+        foreach (InventoryObject groupe in donneesJoueur.allObjectInInventory)
+        {
+            foreach (InventoryEntry e in groupe.highScores)
+            {
+                foreach (string id in tousLesIds)
+                {
+                    if (e.objectName == id)
+                        e.quantity = 0;
+                }
+            }
+        }
+
+#if UNITY_EDITOR
+        UnityEditor.EditorUtility.SetDirty(donneesJoueur);
+#endif
+
+        if (Application.isPlaying)
+            PopulerSlots();
+
+        Debug.Log("[InventaireObjetsUI] DEBUG : tous les objets retirés de l'inventaire.");
+    }
+
 
     /// <summary>
     /// Ajoute 1 exemplaire de chaque objet spécial et rafraîchit la barre immédiatement.
@@ -345,11 +390,13 @@ public class InventaireObjetsUI : MonoBehaviour
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
     private void Update()
     {
-        if (UnityEngine.InputSystem.Keyboard.current != null &&
-            UnityEngine.InputSystem.Keyboard.current.iKey.wasPressedThisFrame)
-        {
+        if (UnityEngine.InputSystem.Keyboard.current == null) return;
+
+        if (UnityEngine.InputSystem.Keyboard.current.iKey.wasPressedThisFrame)
             DebugDonnerUnDeChaque();
-        }
+
+        if (UnityEngine.InputSystem.Keyboard.current.oKey.wasPressedThisFrame)
+            DebugRetirerTous();
     }
 #endif
 }

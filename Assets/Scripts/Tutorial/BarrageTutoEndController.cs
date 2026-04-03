@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Barrage.UI;
 
 namespace Barrage.Tutorial
 {
@@ -10,6 +11,8 @@ namespace Barrage.Tutorial
     ///
     /// Wire Valider.Button.onClick → OnValiderPressed().
     /// Wire PanelFelicitations/BoutonFermer.Button.onClick → OnPanelFermé().
+    /// The Valider button starts hidden and is revealed once the guard confirms
+    /// the first document via OnBarrageValidé.
     /// </summary>
     public class BarrageTutoEndController : MonoBehaviour
     {
@@ -17,12 +20,43 @@ namespace Barrage.Tutorial
         [Tooltip("Root GameObject of the congratulations panel. Must start inactive.")]
         [SerializeField] private GameObject _panelFelicitations;
 
+        [Header("Bouton Valider")]
+        [Tooltip("The Valider button root GameObject. Starts hidden, shown only after the barrage is validated.")]
+        [SerializeField] private GameObject _boutonValider;
+
+        [Tooltip("MainDuGardeUI whose OnBarrageValidé event reveals the Valider button.")]
+        [SerializeField] private MainDuGardeUI _mainDuGarde;
+
         [Header("Navigation")]
         [Tooltip("Name of the main menu scene to load when the player closes the panel.")]
         [SerializeField] private string _nomScèneMenu = "MainMenu";
 
         [Tooltip("Delay in seconds before loading the menu after the panel is closed.")]
         [SerializeField, Min(0f)] private float _délaiAvantMenu = 0.5f;
+
+        private void Awake()
+        {
+            if (_boutonValider != null)
+                _boutonValider.SetActive(false);
+        }
+
+        private void OnEnable()
+        {
+            if (_mainDuGarde != null)
+                _mainDuGarde.OnBarrageValidé += OnBarrageValidé;
+        }
+
+        private void OnDisable()
+        {
+            if (_mainDuGarde != null)
+                _mainDuGarde.OnBarrageValidé -= OnBarrageValidé;
+        }
+
+        private void OnBarrageValidé()
+        {
+            if (_boutonValider != null)
+                _boutonValider.SetActive(true);
+        }
 
         /// <summary>
         /// Called by the Valider button's onClick.

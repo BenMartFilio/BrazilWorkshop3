@@ -6961,6 +6961,7 @@ MonoBehaviour:
   barrePatience: {fileID: 0}
   mainDuGarde: {fileID: 0}
   listeAttenteGarde: {fileID: 0}
+  donneesJoueur: {fileID: 0}
   joueur: {fileID: 1838184139}
   spriteVoiture: {fileID: 1313671861}
   spawner: {fileID: 0}
