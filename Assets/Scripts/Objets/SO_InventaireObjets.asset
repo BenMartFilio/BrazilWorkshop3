@@ -16,11 +16,11 @@ MonoBehaviour:
   - identifiant: LiasseDeBillets
     nomAffichage: Liasse de Billets
     sprite: {fileID: 21300000, guid: eabcb30ab043f5141843b50044a30f4b, type: 3}
-    estPassif: 1
+    estPassif: 0
   - identifiant: FormulairePasePartout
     nomAffichage: Formulaire Passe-Partout
     sprite: {fileID: 21300000, guid: 100c336d51233a742b699a253c4b79db, type: 3}
-    estPassif: 1
+    estPassif: 0
   - identifiant: TirelireCochon
     nomAffichage: Tirelire Cochon
     sprite: {fileID: 21300000, guid: bb1109e944c86da48a0d48e0ec804c2b, type: 3}
@@ -40,4 +40,8 @@ MonoBehaviour:
   - identifiant: MontreAGousset
     nomAffichage: "Montre \xE0 Gousset"
     sprite: {fileID: 21300000, guid: bad5870c01062c841bf1a56840fbb92f, type: 3}
+    estPassif: 0
+  - identifiant: BadgeDuGouvernement
+    nomAffichage: Badge du Gouvernement
+    sprite: {fileID: 21300000, guid: fa6cbb608c60b8c44b64ff4c8ba5c7ce, type: 3}
     estPassif: 0

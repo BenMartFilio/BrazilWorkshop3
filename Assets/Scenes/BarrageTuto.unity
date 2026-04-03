@@ -3789,6 +3789,145 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1278430551}
   m_CullTransparentMesh: 1
+--- !u!1 &1298709693
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1298709695}
+  - component: {fileID: 1298709694}
+  m_Layer: 0
+  m_Name: ObjetsSpeciauxManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1298709694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298709693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbc09f4e2bdc91544a50da763379494a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjetsSpeciaux.EffetsObjetsSpeciaux
+  barrePatience: {fileID: 1689963564}
+  mainDuGarde: {fileID: 1172865320}
+  listeAttenteGarde: {fileID: 11400000, guid: 99ca16e0de509d34390d52a7f36c5133, type: 2}
+  joueur: {fileID: 0}
+  spriteVoiture: {fileID: 0}
+  spawner: {fileID: 0}
+  aspiration: {fileID: 0}
+  grounds: []
+  haloDoree: {fileID: 0}
+  haloRouge: {fileID: 0}
+  ondeRadar: {fileID: 0}
+  spriteAspirateurVoiture: {fileID: 0}
+  spriteExclamation: {fileID: 0}
+  volumePostProcess: {fileID: 0}
+--- !u!4 &1298709695
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298709693}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1311199234
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1311199235}
+  - component: {fileID: 1311199237}
+  - component: {fileID: 1311199236}
+  m_Layer: 0
+  m_Name: InventaireRoot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1311199235
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311199234}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1561070701}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 160}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &1311199236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311199234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efaace2d10f7a0d4487012313fbdf393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InventaireObjetsUI
+  catalogue: {fileID: 11400000, guid: d47cdfa94a0dd93459fb7faf1b3991b7, type: 2}
+  donneesJoueur: {fileID: 11400000, guid: f469a69765f7c5c4aa607382bdb461df, type: 2}
+  effets: {fileID: 1298709694}
+  conteneurSlots: {fileID: 1311199235}
+  prefabSlot: {fileID: 1328219132230380046, guid: ad57d753eeace7c4bb16d87d8196ced7, type: 3}
+  spriteCircleTimer: {fileID: 21300000, guid: e3908689e31230340aef88613caf60ea, type: 3}
+--- !u!114 &1311199237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311199234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.HorizontalLayoutGroup
+  m_Padding:
+    m_Left: 8
+    m_Right: 8
+    m_Top: 4
+    m_Bottom: 4
+  m_ChildAlignment: 4
+  m_Spacing: 8
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &1430661138
 GameObject:
   m_ObjectHideFlags: 0
@@ -4124,6 +4263,7 @@ RectTransform:
   - {fileID: 394224744}
   - {fileID: 1216015510}
   - {fileID: 1720299680}
+  - {fileID: 1311199235}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5833,3 +5973,4 @@ SceneRoots:
   - {fileID: 596540865}
   - {fileID: 346490934}
   - {fileID: 551261912}
+  - {fileID: 1298709695}
