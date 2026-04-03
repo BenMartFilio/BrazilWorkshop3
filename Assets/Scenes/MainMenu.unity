@@ -1376,6 +1376,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoutonBoutiquePrefab (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4511501794170182371, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
+      propertyPath: _click
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511501794170182371, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
+      propertyPath: _audioEventDispatcher
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2020,6 +2028,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoutonBoutiquePrefab (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4511501794170182371, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
+      propertyPath: _click
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511501794170182371, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
+      propertyPath: _audioEventDispatcher
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2119,6 +2135,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: failSound
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: cancelButton
       value: 
       objectReference: {fileID: 794413180}
@@ -2131,6 +2151,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1779022544}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: purchaseSound
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: itemDescription
       value: "La tirelire cochon vous permet d'avoir de doubler vos pi\xE8ces pendant
         20 secondes."
@@ -2139,6 +2163,10 @@ PrefabInstance:
       propertyPath: confirmationPanel
       value: 
       objectReference: {fileID: 1568157196}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: audioEventDispatcher
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: confirmationDescriptionLabel
       value: 
@@ -3001,6 +3029,10 @@ PrefabInstance:
       value: 1500
       objectReference: {fileID: 0}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: failSound
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: cancelButton
       value: 
       objectReference: {fileID: 794413180}
@@ -3013,6 +3045,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1779022544}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: purchaseSound
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: itemDescription
       value: Le badge du gouvernement vous permet de passer n'importe quel barrage.
       objectReference: {fileID: 0}
@@ -3020,6 +3056,10 @@ PrefabInstance:
       propertyPath: confirmationPanel
       value: 
       objectReference: {fileID: 1568157196}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: audioEventDispatcher
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: confirmationDescriptionLabel
       value: 
@@ -3672,8 +3712,8 @@ MonoBehaviour:
   bounceScale: 1.06
   animationSpeed: 12
   enableVibration: 1
-  _audioEventDispatcher: {fileID: 0}
-  _click: 0
+  _audioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
+  _click: 13
   _muteSound: 1
 --- !u!1 &336763047
 GameObject:
@@ -3975,8 +4015,8 @@ MonoBehaviour:
   bounceScale: 1.06
   animationSpeed: 12
   enableVibration: 1
-  _audioEventDispatcher: {fileID: 0}
-  _click: 0
+  _audioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
+  _click: 13
   _muteSound: 0
 --- !u!1 &364529876
 GameObject:
@@ -4654,8 +4694,8 @@ MonoBehaviour:
   bounceScale: 1.06
   animationSpeed: 12
   enableVibration: 1
-  _audioEventDispatcher: {fileID: 0}
-  _click: 0
+  _audioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
+  _click: 13
   _muteSound: 0
 --- !u!1 &411807569
 GameObject:
@@ -5497,8 +5537,8 @@ MonoBehaviour:
   bounceScale: 1.06
   animationSpeed: 12
   enableVibration: 1
-  _audioEventDispatcher: {fileID: 0}
-  _click: 0
+  _audioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
+  _click: 13
   _muteSound: 0
 --- !u!1 &489223995
 GameObject:
@@ -6566,6 +6606,10 @@ PrefabInstance:
       value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: failSound
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: cancelButton
       value: 
       objectReference: {fileID: 794413180}
@@ -6578,6 +6622,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1779022544}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: purchaseSound
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: itemDescription
       value: "Le g\xE2teau chinois \xE0 vous donne 50% de chance de traverser un
         obstacle pendant 20 secondes."
@@ -6586,6 +6634,10 @@ PrefabInstance:
       propertyPath: confirmationPanel
       value: 
       objectReference: {fileID: 1568157196}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: audioEventDispatcher
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: confirmationDescriptionLabel
       value: 
@@ -8901,6 +8953,10 @@ PrefabInstance:
       value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: failSound
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: cancelButton
       value: 
       objectReference: {fileID: 794413180}
@@ -8913,6 +8969,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1779022544}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: purchaseSound
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: itemDescription
       value: "Le radar \xE0 obstacles vous permet de voir les prochaines obstacles
         pendant 20 secondes, gr\xE2ce \xE0 un ! en haut de l'\xE9cran."
@@ -8921,6 +8981,10 @@ PrefabInstance:
       propertyPath: confirmationPanel
       value: 
       objectReference: {fileID: 1568157196}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: audioEventDispatcher
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: confirmationDescriptionLabel
       value: 
@@ -9446,8 +9510,8 @@ MonoBehaviour:
   bounceScale: 1.06
   animationSpeed: 12
   enableVibration: 1
-  _audioEventDispatcher: {fileID: 0}
-  _click: 0
+  _audioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
+  _click: 13
   _muteSound: 0
 --- !u!114 &805418082
 MonoBehaviour:
@@ -10454,7 +10518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SoundManager
   musicGroup: {fileID: -5550578432694838468, guid: 1004856e83b55944ebe242f8e2c4d96f, type: 2}
   backgroundGroup: {fileID: -6447396952168062428, guid: 1004856e83b55944ebe242f8e2c4d96f, type: 2}
-  audioMixer: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: 1004856e83b55944ebe242f8e2c4d96f, type: 2}
   _AudioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
 --- !u!114 &903584755
 MonoBehaviour:
@@ -10644,6 +10708,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoutonBoutiquePrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 4511501794170182371, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
+      propertyPath: _click
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511501794170182371, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
+      propertyPath: _audioEventDispatcher
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11270,6 +11342,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoutonBoutiquePrefab (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4511501794170182371, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
+      propertyPath: _click
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511501794170182371, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
+      propertyPath: _audioEventDispatcher
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11449,9 +11529,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayGame
   serrure: {fileID: 236567905}
   canvasContent: {fileID: 1965207565}
-  audioEventDispatcher: {fileID: 0}
-  _startEngine: 0
-  _swoosh: 0
+  audioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
+  _startEngine: 12
+  _swoosh: 14
   rotationAmount: {x: 0, y: 0, z: 270}
   duration: 0.5
   overlay: {fileID: 794538891}
@@ -11589,6 +11669,10 @@ PrefabInstance:
       value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: failSound
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: cancelButton
       value: 
       objectReference: {fileID: 794413180}
@@ -11601,6 +11685,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1779022544}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: purchaseSound
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: itemDescription
       value: Le formulaire passe partout vous permet de valider un document au barrage.
       objectReference: {fileID: 0}
@@ -11608,6 +11696,10 @@ PrefabInstance:
       propertyPath: confirmationPanel
       value: 
       objectReference: {fileID: 1568157196}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: audioEventDispatcher
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: confirmationDescriptionLabel
       value: 
@@ -12068,6 +12160,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: failSound
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: cancelButton
       value: 
       objectReference: {fileID: 794413180}
@@ -12080,9 +12176,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1779022544}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: purchaseSound
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: confirmationPanel
       value: 
       objectReference: {fileID: 1568157196}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: audioEventDispatcher
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: confirmationDescriptionLabel
       value: 
@@ -13965,8 +14069,8 @@ MonoBehaviour:
   bounceScale: 1.06
   animationSpeed: 12
   enableVibration: 1
-  _audioEventDispatcher: {fileID: 0}
-  _click: 0
+  _audioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
+  _click: 13
   _muteSound: 0
 --- !u!114 &1218804893
 MonoBehaviour:
@@ -14154,6 +14258,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoutonBoutiquePrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 4511501794170182371, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
+      propertyPath: _click
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511501794170182371, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
+      propertyPath: _audioEventDispatcher
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
     - target: {fileID: 5462764888909177377, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
       propertyPath: successPanel
       value: 
@@ -16747,6 +16859,10 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: failSound
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: cancelButton
       value: 
       objectReference: {fileID: 794413180}
@@ -16759,6 +16875,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1779022544}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: purchaseSound
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: itemDescription
       value: La liasse de billets corrompt le garde ce qui fait remonter sa barre
         de patience de 50%.
@@ -16767,6 +16887,10 @@ PrefabInstance:
       propertyPath: confirmationPanel
       value: 
       objectReference: {fileID: 1568157196}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: audioEventDispatcher
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: confirmationDescriptionLabel
       value: 
@@ -17407,6 +17531,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoutonBoutiquePrefab (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4511501794170182371, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
+      propertyPath: _click
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511501794170182371, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
+      propertyPath: _audioEventDispatcher
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17849,8 +17981,8 @@ MonoBehaviour:
   bounceScale: 1.06
   animationSpeed: 12
   enableVibration: 1
-  _audioEventDispatcher: {fileID: 0}
-  _click: 0
+  _audioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
+  _click: 13
   _muteSound: 0
 --- !u!114 &1596310008
 MonoBehaviour:
@@ -18392,6 +18524,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: failSound
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: cancelButton
       value: 
       objectReference: {fileID: 794413180}
@@ -18404,6 +18540,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1779022544}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: purchaseSound
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: itemDescription
       value: "L'aspirateur permet pendant 20 secondes, d'augmenter la distance apr\xE8s
         laquelle vous ne pouvez plus aspirer des document."
@@ -18412,6 +18552,10 @@ PrefabInstance:
       propertyPath: confirmationPanel
       value: 
       objectReference: {fileID: 1568157196}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: audioEventDispatcher
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: confirmationDescriptionLabel
       value: 
@@ -19931,8 +20075,8 @@ MonoBehaviour:
   bounceScale: 1.06
   animationSpeed: 12
   enableVibration: 1
-  _audioEventDispatcher: {fileID: 0}
-  _click: 0
+  _audioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
+  _click: 13
   _muteSound: 0
 --- !u!114 &1832477013
 MonoBehaviour:
@@ -21133,6 +21277,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoutonBoutiquePrefab (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4511501794170182371, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
+      propertyPath: _click
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511501794170182371, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
+      propertyPath: _audioEventDispatcher
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22761,6 +22913,10 @@ PrefabInstance:
       value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: failSound
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: cancelButton
       value: 
       objectReference: {fileID: 794413180}
@@ -22773,6 +22929,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1779022544}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: purchaseSound
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: itemDescription
       value: "La montre \xE0 gousset ralentit le temps de 50% pendant 20 secondes."
       objectReference: {fileID: 0}
@@ -22780,6 +22940,10 @@ PrefabInstance:
       propertyPath: confirmationPanel
       value: 
       objectReference: {fileID: 1568157196}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: audioEventDispatcher
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: confirmationDescriptionLabel
       value: 
@@ -22964,6 +23128,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4511501794170182371, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
+      propertyPath: _click
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4511501794170182371, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
+      propertyPath: _audioEventDispatcher
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
     - target: {fileID: 5828186100100091391, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
       propertyPath: m_Type
       value: 1
@@ -23109,6 +23281,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoutonBoutiquePrefab (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6821960950337425689, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
+      propertyPath: _click
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6821960950337425689, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
+      propertyPath: _audioEventDispatcher
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
