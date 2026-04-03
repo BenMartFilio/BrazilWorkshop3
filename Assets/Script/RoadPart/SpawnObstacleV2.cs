@@ -135,7 +135,7 @@ public class SpawnObstacleV2 : MonoBehaviour
 
     private void OnTimePassed()
     {
-        _generalSpeed = Mathf.Clamp(_generalSpeed + 0.5f, 0, 30);
+        _generalSpeed = Mathf.Clamp(_generalSpeed + 0.3f, 0, 30);
 
         if (!_miseAJourVitessePausée)
         {
