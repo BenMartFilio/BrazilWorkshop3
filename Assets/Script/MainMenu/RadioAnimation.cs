@@ -14,6 +14,7 @@ public class RadioAnimation : MonoBehaviour
     private const float SCALE_BASE = 1f;
     private const float SCALE_AMPLITUDE = 0.06f;   // ±6% autour de la taille de base
     private const float PULSE_SPEED = 3.5f;     // fréquence du pulse (rad/s)
+    private Vector2 _tempPos;
 
     // ── Notes de musique ──────────────────────────────────────────────────────
     [Header("Notes de musique")]
@@ -165,7 +166,9 @@ public class RadioAnimation : MonoBehaviour
             float y = note.posDepart.y
                       + Mathf.Sin(note.tempsVie * 2.5f + note.phaseVerticale) * amplitudeVerticale;
 
-            note.rectTransform.anchoredPosition = new Vector2(x, y);
+            _tempPos.x = x;
+            _tempPos.y = y;
+            note.rectTransform.anchoredPosition = _tempPos;
 
             // Fondu en sortie (derniers 30%)
             float alpha = t < 0.7f ? 1f : Mathf.InverseLerp(1f, 0.7f, t);

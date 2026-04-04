@@ -1,9 +1,10 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
-using UnityEngine;
-using static SO_PlayerDatas;
 using System.Security.Cryptography;
 using System.Text;
+using UnityEngine;
+using static SO_PlayerDatas;
 
 
 [System.Serializable]
@@ -37,6 +38,9 @@ public class PlayerDatas
     public List<CosmetiqueEntry> cosmetiquesInventaire = new List<CosmetiqueEntry>();
 
     public string hash;
+
+    public long savedAtTicks; // DateTime.UtcNow.Ticks au moment du Save()
+
 }
 
 public class SaveController
@@ -52,6 +56,7 @@ public class SaveController
 
     public void Save(PlayerDatas datas)
     {
+        datas.savedAtTicks = DateTime.UtcNow.Ticks;
         datas.hash = GenerateHash(datas);
 
         string json = JsonUtility.ToJson(datas);

@@ -22,7 +22,16 @@ public class ChangeVolume : MonoBehaviour
     private const float SAVE_DELAY = 1f; // secondes d'inactivité avant sauvegarde
 
     private void OnEnable() => SaveGameSystem.OnSaveLoaded += LoadVolume;
-    private void OnDisable() => SaveGameSystem.OnSaveLoaded -= LoadVolume;
+    private void OnDisable()
+    {
+        SaveGameSystem.OnSaveLoaded -= LoadVolume;
+
+        if (_pendingSave)
+        {
+            _pendingSave = false;
+            playerDatas.SaveDatas();
+        }
+    }
 
     private void Update()
     {
@@ -35,6 +44,11 @@ public class ChangeVolume : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        LoadVolume();
+    }
+
     private void RequestSave()
     {
         _pendingSave = true;
@@ -43,13 +57,24 @@ public class ChangeVolume : MonoBehaviour
 
     private void LoadVolume()
     {
-        slider.value = playerDatas.generalVolume;
-        sliderMusic.value = playerDatas.musicVolume;
-        sliderBG.value = playerDatas.SFXVolume;
+        // Applique les valeurs aux sliders sans déclencher leurs callbacks (évite double-appel)
+        slider.SetValueWithoutNotify(playerDatas.generalVolume);
+        sliderMusic.SetValueWithoutNotify(playerDatas.musicVolume);
+        sliderBG.SetValueWithoutNotify(playerDatas.SFXVolume);
 
-        ApplyMixer(masterGroup, "Master_Volume", playerDatas.generalVolume);
-        ApplyMixer(musicGroup, "Music_Volume", playerDatas.musicVolume);
-        ApplyMixer(backgroundGroup, "BG_Volume", playerDatas.SFXVolume);
+        // Applique au mixer via SoundManager (qui persiste entre les scènes)
+        if (SoundManager.Instance != null)
+            SoundManager.Instance.ApplyAllVolumes(
+                playerDatas.generalVolume,
+                playerDatas.musicVolume,
+                playerDatas.SFXVolume);
+        else
+        {
+            // Fallback direct si le SoundManager n'est pas encore prêt
+            ApplyMixer(masterGroup, "Master_Volume", playerDatas.generalVolume);
+            ApplyMixer(musicGroup, "Music_Volume", playerDatas.musicVolume);
+            ApplyMixer(backgroundGroup, "BG_Volume", playerDatas.SFXVolume);
+        }
     }
 
     public void ChangeMasterVolume()

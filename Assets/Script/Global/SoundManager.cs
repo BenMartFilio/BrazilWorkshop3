@@ -17,6 +17,9 @@ public class SoundManager : MonoBehaviour
 
     private const string MusicLowPassParam = "Music_LowPass";
     private const string MusicVolumeParam = "Music_Volume";
+    private const string MasterVolumeParam = "Master_Volume";
+    private const string BGVolumeParam = "BG_Volume";
+
     private const float MaxCutoff = 22000f;
     private const float MinCutoff = 400f;
     private const float TransitionDuration = 2.5f;
@@ -65,15 +68,28 @@ public class SoundManager : MonoBehaviour
         StartCoroutine(LowPassTransition(music));
     }
 
+    private float _currentMusicVolumeDb = 0f; // volume cible mémorisé en dB
+
+    public void ApplyAllVolumes(float master, float music, float sfx)
+    {
+        _currentMusicVolumeDb = LinearToDecibels(music); // ← mémorisé ici
+        audioMixer.SetFloat("Master_Volume", LinearToDecibels(master));
+        audioMixer.SetFloat("Music_Volume", _currentMusicVolumeDb);
+        audioMixer.SetFloat("BG_Volume", LinearToDecibels(sfx));
+    }
+
     private IEnumerator LowPassTransition(AudioClip nextMusic)
     {
+        // Phase 1 : fade out depuis le volume actuel du mixer
+        audioMixer.GetFloat(MusicVolumeParam, out float initialMusicDb);
+
         float elapsed = 0f;
         while (elapsed < TransitionDuration)
         {
             elapsed += Time.deltaTime;
             float t = elapsed / TransitionDuration;
             audioMixer.SetFloat(MusicLowPassParam, Mathf.Lerp(MaxCutoff, MinCutoff, t));
-            audioMixer.SetFloat(MusicVolumeParam, Mathf.Lerp(0f, -80f, t));
+            audioMixer.SetFloat(MusicVolumeParam, Mathf.Lerp(initialMusicDb, -80f, t));
             yield return null;
         }
 
@@ -81,17 +97,24 @@ public class SoundManager : MonoBehaviour
         _musicSource.clip = nextMusic;
         if (nextMusic != null) _musicSource.Play();
 
+        // Phase 2 : fade in vers _currentMusicVolumeDb
+        // Si OnSaveLoaded a appelé ApplyAllVolumes pendant le fade-out,
+        // _currentMusicVolumeDb contient déjà la valeur sauvegardée correcte.
         elapsed = 0f;
         while (elapsed < TransitionDuration)
         {
             elapsed += Time.deltaTime;
             float t = elapsed / TransitionDuration;
             audioMixer.SetFloat(MusicLowPassParam, Mathf.Lerp(MinCutoff, MaxCutoff, t));
-            audioMixer.SetFloat(MusicVolumeParam, Mathf.Lerp(-80f, 0f, t));
+            audioMixer.SetFloat(MusicVolumeParam, Mathf.Lerp(-80f, _currentMusicVolumeDb, t));
             yield return null;
         }
 
         audioMixer.SetFloat(MusicLowPassParam, MaxCutoff);
-        audioMixer.SetFloat(MusicVolumeParam, 0f);
+        audioMixer.SetFloat(MusicVolumeParam, _currentMusicVolumeDb);
     }
+
+
+    private static float LinearToDecibels(float value)
+        => Mathf.Log10(Mathf.Clamp(value, 0.0001f, 1f)) * 20f;
 }

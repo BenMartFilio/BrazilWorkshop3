@@ -64,6 +64,10 @@ public class SaveGameSystem : MonoBehaviour
             Debug.LogError($"Erreur inattendue : {e.Message}");
             return;
         }
+        finally
+        {
+            OnSaveLoaded?.Invoke();
+        }
 
         OnSaveLoaded?.Invoke();
     }
@@ -89,9 +93,18 @@ public class SaveGameSystem : MonoBehaviour
 
         if (data.TryGetValue("playerDatas", out var item))
         {
-            string json = item.Value.GetAsString();
-            JsonUtility.FromJsonOverwrite(json, playerDatas);
-            Debug.Log("Cloud save chargée.");
+            string cloudJson = item.Value.GetAsString();
+            PlayerDatas cloudDatas = JsonUtility.FromJson<PlayerDatas>(cloudJson);
+
+            if (cloudDatas.savedAtTicks > playerDatas.savedAtTicks)
+            {
+                JsonUtility.FromJsonOverwrite(cloudJson, playerDatas);
+                Debug.Log("Cloud save appliquée (plus récente que la locale).");
+            }
+            else
+            {
+                Debug.Log("Save locale plus récente, cloud ignoré.");
+            }
         }
         else
         {

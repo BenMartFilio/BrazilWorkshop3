@@ -4928,7 +4928,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 903584755}
+      - m_Target: {fileID: 833437481}
         m_TargetAssemblyTypeName: ChangeVolume, Assembly-CSharp
         m_MethodName: ChangeBackGroundVolume
         m_Mode: 1
@@ -5690,7 +5690,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 903584755}
+      - m_Target: {fileID: 833437481}
         m_TargetAssemblyTypeName: ChangeVolume, Assembly-CSharp
         m_MethodName: ChangeMusicVolume
         m_Mode: 1
@@ -11866,6 +11866,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814293591}
   m_CullTransparentMesh: 1
+--- !u!1 &833437480
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 833437482}
+  - component: {fileID: 833437481}
+  m_Layer: 0
+  m_Name: VolumeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &833437481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833437480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a863c554ddff014b8cde19a5a4eb0a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChangeVolume
+  musicGroup: {fileID: -5550578432694838468, guid: 1004856e83b55944ebe242f8e2c4d96f, type: 2}
+  backgroundGroup: {fileID: -6447396952168062428, guid: 1004856e83b55944ebe242f8e2c4d96f, type: 2}
+  masterGroup: {fileID: 24300002, guid: 1004856e83b55944ebe242f8e2c4d96f, type: 2}
+  slider: {fileID: 1852506196}
+  sliderMusic: {fileID: 432383262}
+  sliderBG: {fileID: 364529878}
+  save: {fileID: 1972051258}
+  playerDatas: {fileID: 11400000, guid: f469a69765f7c5c4aa607382bdb461df, type: 2}
+--- !u!4 &833437482
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833437480}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 373.48212, y: -2045.4243, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &836728163
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13035,7 +13087,6 @@ GameObject:
   - component: {fileID: 903584751}
   - component: {fileID: 903584753}
   - component: {fileID: 903584754}
-  - component: {fileID: 903584755}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -13268,26 +13319,6 @@ MonoBehaviour:
   backgroundGroup: {fileID: -6447396952168062428, guid: 1004856e83b55944ebe242f8e2c4d96f, type: 2}
   audioMixer: {fileID: 24100000, guid: 1004856e83b55944ebe242f8e2c4d96f, type: 2}
   _AudioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
---- !u!114 &903584755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 903584750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a863c554ddff014b8cde19a5a4eb0a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ChangeVolume
-  musicGroup: {fileID: -5550578432694838468, guid: 1004856e83b55944ebe242f8e2c4d96f, type: 2}
-  backgroundGroup: {fileID: -6447396952168062428, guid: 1004856e83b55944ebe242f8e2c4d96f, type: 2}
-  masterGroup: {fileID: 24300002, guid: 1004856e83b55944ebe242f8e2c4d96f, type: 2}
-  slider: {fileID: 1852506196}
-  sliderMusic: {fileID: 432383262}
-  sliderBG: {fileID: 364529878}
-  save: {fileID: 1972051258}
-  playerDatas: {fileID: 11400000, guid: f469a69765f7c5c4aa607382bdb461df, type: 2}
 --- !u!1 &909203826
 GameObject:
   m_ObjectHideFlags: 0
@@ -26186,7 +26217,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 903584755}
+      - m_Target: {fileID: 833437481}
         m_TargetAssemblyTypeName: ChangeVolume, Assembly-CSharp
         m_MethodName: ChangeMasterVolume
         m_Mode: 1
@@ -29814,6 +29845,7 @@ SceneRoots:
   - {fileID: 877428422}
   - {fileID: 215803648}
   - {fileID: 903584752}
+  - {fileID: 833437482}
   - {fileID: 1972051257}
   - {fileID: 1572064531}
   - {fileID: 375780187}

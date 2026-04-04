@@ -35,10 +35,9 @@ public class SO_PlayerDatas : ScriptableObject
     public List<CosmetiqueEntry> cosmetiquesInventaire = new List<CosmetiqueEntry>();
 
 
-
-
     private SaveController saveSystem;
 
+    public long savedAtTicks;
 
     public event System.Action OnMonneyChanged;
     public void NotifyMonneyChanged() => OnMonneyChanged?.Invoke();
@@ -63,6 +62,7 @@ public class SO_PlayerDatas : ScriptableObject
         premiumMonney = datas.premiumMonney;
         skinEquiped = datas.skinEquiped;
         cosmetiquesInventaire = datas.cosmetiquesInventaire;
+        savedAtTicks = datas.savedAtTicks;
 
     }
 
@@ -85,6 +85,7 @@ public class SO_PlayerDatas : ScriptableObject
         datas.premiumMonney = premiumMonney;
         datas.skinEquiped = skinEquiped;
         datas.cosmetiquesInventaire = cosmetiquesInventaire;
+        datas.savedAtTicks = savedAtTicks;
         // j'envoie �a � la fonction save de savesystem
         saveSystem.Save(datas);
     }
