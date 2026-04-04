@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -48,12 +48,20 @@ public class RadioAnimation : MonoBehaviour
     private float _tempsDepuisEmission = 0f;
     private float _phaseOffset = 0f;
 
+    // Cache du Canvas et de la caméra pour éviter GetComponentInParent dans Update
+    private Canvas _canvas;
+    private Camera _canvasCamera;
+
     // ─────────────────────────────────────────────────────────────────────────
 
     private void Awake()
     {
         if (rectRadio == null)
             rectRadio = GetComponent<RectTransform>();
+
+        _canvas = GetComponentInParent<Canvas>();
+        _canvasCamera = _canvas != null && _canvas.renderMode != RenderMode.ScreenSpaceOverlay
+            ? _canvas.worldCamera : null;
 
         // Pré-crée le pool de notes (désactivées)
         if (conteneurNotes != null && spritesNotes != null && spritesNotes.Length > 0)
@@ -178,25 +186,15 @@ public class RadioAnimation : MonoBehaviour
         if (rectRadio == null || conteneurNotes == null)
             return Vector2.zero;
 
-        // Centre monde du bord droit de la radio
         Vector3[] coins = new Vector3[4];
         rectRadio.GetWorldCorners(coins);
-        // coins[2] = top-right, coins[3] = top-left en espace monde UI
-        // On prend le milieu du côté droit
         Vector3 bordDroit = (coins[2] + coins[3]) * 0.5f;
         bordDroit.x = coins[2].x;
 
-        // Convertit en espace local du conteneur
-        Vector2 posLocale;
-        Canvas canvas = GetComponentInParent<Canvas>();
-        Camera cam = canvas != null && canvas.renderMode != RenderMode.ScreenSpaceOverlay
-            ? canvas.worldCamera : null;
-
-        Vector2 screenPoint = RectTransformUtility.WorldToScreenPoint(cam, bordDroit);
+        Vector2 screenPoint = RectTransformUtility.WorldToScreenPoint(_canvasCamera, bordDroit);
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            conteneurNotes, screenPoint, cam, out posLocale);
+            conteneurNotes, screenPoint, _canvasCamera, out Vector2 posLocale);
 
-        // Légère variation verticale aléatoire
         posLocale.y += Random.Range(-20f, 30f);
         return posLocale;
     }

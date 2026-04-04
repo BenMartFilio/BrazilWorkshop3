@@ -5542,7 +5542,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1009353795}
         m_TargetAssemblyTypeName: GlobalMenu, Assembly-CSharp
         m_MethodName: CloseMenu
         m_Mode: 1

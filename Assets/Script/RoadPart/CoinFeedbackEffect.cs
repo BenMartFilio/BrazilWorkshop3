@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+using System;
+using UnityEngine;
+using UnityEngine.Pool;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class CoinFeedbackEffect : MonoBehaviour
@@ -28,103 +31,117 @@ public class CoinFeedbackEffect : MonoBehaviour
     [SerializeField] private float fadeStartRatio = 0.45f;
 
     // ── runtime ──────────────────────────────────────────────
-    private SpriteRenderer sr;
-    private Vector3 startPos;
-    private Vector3 baseScale;
-    private float elapsed;
-    private float totalDuration;
+    private SpriteRenderer _sr;
+    private Vector3 _startPos;
+    private Vector3 _baseScale;
+    private float _elapsed;
+    private float _totalDuration;
 
-    private void Awake() => sr = GetComponent<SpriteRenderer>();
+    // Pool assigné par CoinsScript au moment du spawn
+    private IObjectPool<CoinFeedbackEffect> _pool;
 
-    private static float lastAngle = 0f; // mémorise le dernier angle utilisé
+    private static float s_lastAngle = 0f;
 
-    private void OnEnable()
+    private void Awake()
     {
-        elapsed = 0f;
-        totalDuration = growDuration + holdDuration + shrinkDuration;
-        startPos = transform.position;
-        baseScale = Vector3.one * worldScale;
-        transform.localScale = Vector3.zero;
+        _sr = GetComponent<SpriteRenderer>();
+        _totalDuration = growDuration + holdDuration + shrinkDuration;
+        _baseScale = Vector3.one * worldScale;
+    }
 
-        // Rotation vraiment variée, en évitant de retomber sur un angle trop proche
+    /// <summary>Référence au pool pour que l'objet puisse se recycler lui-même.</summary>
+    public void SetPool(IObjectPool<CoinFeedbackEffect> pool) => _pool = pool;
+
+    public void Play(Vector3 worldPosition, Vector3 scale)
+    {
+        transform.position = worldPosition;
+        transform.localScale = scale;
+
+        _elapsed = 0f;
+        _startPos = worldPosition;
+
         float angle;
         int attempts = 0;
         do
         {
-            // Plage de 90° seulement car symétrie X et Y → 0-90° couvre tous les cas visuels
-            // On multiplie par 4 quadrants choisis aléatoirement pour garder un vrai aléatoire
-            float baseAngle = Random.Range(0f, 90f);
-            int quadrant = Random.Range(0, 4);
-            angle = baseAngle + quadrant * 90f;
+            angle = Random.Range(0f, 90f) + Random.Range(0, 4) * 90f;
             attempts++;
         }
-        while (Mathf.Abs(Mathf.DeltaAngle(angle, lastAngle)) < 25f && attempts < 10);
+        while (Mathf.Abs(Mathf.DeltaAngle(angle, s_lastAngle)) < 25f && attempts < 10);
 
-        lastAngle = angle;
+        s_lastAngle = angle;
         transform.rotation = Quaternion.Euler(0f, 0f, angle);
+        transform.localScale = Vector3.zero;
 
-        Color c = sr.color;
-        sr.color = new Color(c.r, c.g, c.b, 0f);
+        Color c = _sr.color;
+        _sr.color = new Color(c.r, c.g, c.b, 0f);
     }
 
     private void Update()
     {
-        elapsed += Time.deltaTime;
+        _elapsed += Time.deltaTime;
 
         ApplyScale();
         ApplyDrift();
         ApplyFade();
 
-        if (elapsed >= totalDuration)
-            Destroy(gameObject);
+        if (_elapsed >= _totalDuration)
+            ReturnToPool();
+    }
+
+    /// <summary>Retourne l'objet au pool au lieu de le détruire.</summary>
+    private void ReturnToPool()
+    {
+        if (_pool != null)
+            _pool.Release(this);
+        else
+            gameObject.SetActive(false);
     }
 
     private void ApplyScale()
     {
         float s;
 
-        if (elapsed < growDuration)
+        if (_elapsed < growDuration)
         {
-            float t = elapsed / growDuration;
+            float t = _elapsed / growDuration;
             s = Mathf.Lerp(0f, peakScale + overshoot, EaseOutBack(t));
         }
-        else if (elapsed < growDuration + holdDuration)
+        else if (_elapsed < growDuration + holdDuration)
         {
             s = peakScale;
         }
         else
         {
-            float t = (elapsed - growDuration - holdDuration) / shrinkDuration;
+            float t = (_elapsed - growDuration - holdDuration) / shrinkDuration;
             s = Mathf.Lerp(peakScale, 0f, EaseInQuad(t));
         }
 
-        transform.localScale = baseScale * s;
+        transform.localScale = _baseScale * s;
     }
 
     private void ApplyDrift()
     {
-        float progress = Mathf.Clamp01(elapsed / totalDuration);
+        float progress = Mathf.Clamp01(_elapsed / _totalDuration);
         float y = driftUp * EaseOutQuad(progress);
-        transform.position = startPos + new Vector3(0f, y, 0f);
+        transform.position = _startPos + new Vector3(0f, y, 0f);
     }
 
     private void ApplyFade()
     {
-        float fadeStart = totalDuration * fadeStartRatio;
+        float fadeStart = _totalDuration * fadeStartRatio;
 
-        // Fade in rapide au début
-        float alphaIn = Mathf.Clamp01(elapsed / growDuration);
+        float alphaIn = Mathf.Clamp01(_elapsed / growDuration);
 
-        // Fade out sur la fin
         float alphaOut = 1f;
-        if (elapsed > fadeStart)
+        if (_elapsed > fadeStart)
         {
-            float t = Mathf.Clamp01((elapsed - fadeStart) / (totalDuration - fadeStart));
+            float t = Mathf.Clamp01((_elapsed - fadeStart) / (_totalDuration - fadeStart));
             alphaOut = 1f - EaseInQuad(t);
         }
 
-        Color c = sr.color;
-        sr.color = new Color(c.r, c.g, c.b, maxAlpha * alphaIn * alphaOut);
+        Color c = _sr.color;
+        _sr.color = new Color(c.r, c.g, c.b, maxAlpha * alphaIn * alphaOut);
     }
 
     private static float EaseOutBack(float t)

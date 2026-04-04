@@ -1,9 +1,40 @@
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class CoinsScript : MonoBehaviour
 {
     [Header("Feedback")]
     [SerializeField] private GameObject coinFeedbackPrefab;
+
+    // Pool partag√© entre toutes les pi√®ces de la sc√®ne (statique)
+    private static IObjectPool<CoinFeedbackEffect> s_pool;
+    private static CoinFeedbackEffect s_prefabRef;
+    private static Transform s_poolRoot;
+
+    private void Awake()
+    {
+        if (s_pool != null || coinFeedbackPrefab == null) return;
+
+        if (!coinFeedbackPrefab.TryGetComponent<CoinFeedbackEffect>(out CoinFeedbackEffect prefabEffect))
+        {
+            Debug.LogError("[CoinsScript] Le prefab n'a pas de composant CoinFeedbackEffect.");
+            return;
+        }
+
+        s_prefabRef = prefabEffect;
+        s_poolRoot = new GameObject("[Pool] CoinFeedback").transform;
+        DontDestroyOnLoad(s_poolRoot.gameObject);
+
+        s_pool = new ObjectPool<CoinFeedbackEffect>(
+            createFunc: CreateFeedback,
+            actionOnGet: fx => fx.gameObject.SetActive(true),
+            actionOnRelease: fx => fx.gameObject.SetActive(false),
+            actionOnDestroy: fx => Destroy(fx.gameObject),
+            collectionCheck: false,
+            defaultCapacity: 8,
+            maxSize: 16
+        );
+    }
 
     public void OnCoinRecuperation()
     {
@@ -13,11 +44,16 @@ public class CoinsScript : MonoBehaviour
 
     private void SpawnFeedback()
     {
-        if (coinFeedbackPrefab == null) return;
+        if (s_pool == null) return;
+        CoinFeedbackEffect fx = s_pool.Get();
+        fx.Play(transform.position, transform.localScale);
+    }
 
-        GameObject fx = Instantiate(coinFeedbackPrefab, transform.position, Quaternion.identity);
-
-        // HÈrite de la scale du parent pour rester cohÈrent avec la taille de la piËce
-        fx.transform.localScale = transform.localScale;
+    private static CoinFeedbackEffect CreateFeedback()
+    {
+        CoinFeedbackEffect fx = Instantiate(s_prefabRef, s_poolRoot);
+        fx.gameObject.SetActive(false);
+        fx.SetPool(s_pool);
+        return fx;
     }
 }

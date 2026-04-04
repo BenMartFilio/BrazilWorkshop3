@@ -19,8 +19,14 @@ public class SubMenuCategories : MonoBehaviour
     Vector3 actualSize;
     Vector2 actualWidth;
 
+    // Cache des RectTransform pour Ã©viter GetComponent Ã  chaque frame d'animation
+    private RectTransform _widthSelectedRect;
+    private RectTransform _baseWidthSelectedRect;
+
     private void Start()
     {
+        _widthSelectedRect = WidthSelected != null ? WidthSelected.GetComponent<RectTransform>() : null;
+
         ToAim(BaseSelected);
         ToAim2D(WidthSelected);
         ToAimText(textSelected);
@@ -157,7 +163,7 @@ public class SubMenuCategories : MonoBehaviour
 
 
 
-    // PARTIE CASE QUI S'ÉLARGIS ------------------------------
+    // PARTIE CASE QUI S'ELARGIS ------------------------------
 
     public void ToAim2D(GameObject width)
     {
@@ -172,55 +178,70 @@ public class SubMenuCategories : MonoBehaviour
         }
         else
         {
-            actualWidth = rewidth.GetComponent<RectTransform>().sizeDelta;
+            RectTransform rt = GetOrCacheRect(rewidth);
+            actualWidth = rt.sizeDelta;
             if (baseWidthSelected != rewidth)
             {
-                StartCoroutine(LerpScale2D(animDuration, rewidth));
+                StartCoroutine(LerpScale2D(animDuration, rewidth, rt));
 
                 if (baseWidthSelected != null)
-                {
                     ToSizeDown2D(baseWidthSelected);
-                }
             }
             baseWidthSelected = rewidth;
+            _baseWidthSelectedRect = rt;
         }
     }
 
     private void ToSizeDown2D(GameObject oldSelected)
     {
-        StartCoroutine(LerpUnscale2D(animDuration, oldSelected));
+        RectTransform rt = GetOrCacheRect(oldSelected);
+        StartCoroutine(LerpUnscale2D(animDuration, oldSelected, rt));
     }
 
-    IEnumerator LerpScale2D(float time, GameObject _WidthToUp)
+    IEnumerator LerpScale2D(float time, GameObject _WidthToUp, RectTransform rt)
     {
         float elapsed = 0;
         Vector2 toWidth = new Vector2(actualWidth.x * sizeMultiplier, actualWidth.y);
         while (elapsed < time)
         {
-            _WidthToUp.GetComponent<RectTransform>().sizeDelta = Vector2.Lerp(actualWidth, toWidth, elapsed / time);
+            rt.sizeDelta = Vector2.Lerp(actualWidth, toWidth, elapsed / time);
             elapsed += Time.deltaTime;
             yield return null;
         }
-        _WidthToUp.GetComponent<RectTransform>().sizeDelta = toWidth;
+        rt.sizeDelta = toWidth;
     }
 
-    IEnumerator LerpUnscale2D(float time, GameObject _SizeToDown)
+    IEnumerator LerpUnscale2D(float time, GameObject _SizeToDown, RectTransform rt)
     {
         float elapsed = 0;
-        Vector3 oldWidth = _SizeToDown.GetComponent<RectTransform>().sizeDelta;
-        Vector3 toScale = new Vector2(oldWidth.x / sizeMultiplier, oldWidth.y);
+        Vector2 oldWidth = rt.sizeDelta;
+        Vector2 toScale = new Vector2(oldWidth.x / sizeMultiplier, oldWidth.y);
         while (elapsed < time)
         {
-            _SizeToDown.GetComponent<RectTransform>().sizeDelta = Vector2.Lerp(oldWidth, toScale, elapsed / time);
+            rt.sizeDelta = Vector2.Lerp(oldWidth, toScale, elapsed / time);
             elapsed += Time.deltaTime;
             yield return null;
         }
-        _SizeToDown.GetComponent<RectTransform>().sizeDelta = toScale;
+        rt.sizeDelta = toScale;
+    }
+
+    // Retourne le RectTransform depuis le cache ou via GetComponent (une seule fois)
+    private readonly System.Collections.Generic.Dictionary<GameObject, RectTransform> _rectCache
+        = new System.Collections.Generic.Dictionary<GameObject, RectTransform>();
+
+    private RectTransform GetOrCacheRect(GameObject go)
+    {
+        if (!_rectCache.TryGetValue(go, out RectTransform rt))
+        {
+            rt = go.GetComponent<RectTransform>();
+            _rectCache[go] = rt;
+        }
+        return rt;
     }
 
 
 
-    // PARTIE TEXTE QUI APPARAÎT ----------------------------------------------
+    // PARTIE TEXTE QUI APPARAï¿½T ----------------------------------------------
 
     public void ToAimText(TMP_Text text)
     {

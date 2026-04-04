@@ -74,7 +74,8 @@ public class SpawnObstacleV2 : MonoBehaviour
     private float _generalSpeed = 0f;
 
     // ── Pool ──────────────────────────────────────────────────────────────────
-    private readonly Dictionary<string, List<GameObject>> _pool = new();
+    // Clé : nom du prefab → liste de (GameObject, ScrollingElement) pour éviter TryGetComponent à chaque tick
+    private readonly Dictionary<string, List<(GameObject obj, ScrollingElement scrolling)>> _pool = new();
 
     // ── Shuffle bag ───────────────────────────────────────────────────────────
     private readonly List<int> _shuffleBag = new();
@@ -139,11 +140,11 @@ public class SpawnObstacleV2 : MonoBehaviour
 
         if (!_miseAJourVitessePausée)
         {
-            foreach (List<GameObject> bucket in _pool.Values)
+            foreach (var bucket in _pool.Values)
             {
-                foreach (GameObject obj in bucket)
+                foreach (var (obj, scrolling) in bucket)
                 {
-                    if (obj != null && obj.TryGetComponent<ScrollingElement>(out var scrolling))
+                    if (obj != null && scrolling != null)
                         scrolling.UpdateSpeed(_generalSpeed);
                 }
             }
@@ -152,8 +153,6 @@ public class SpawnObstacleV2 : MonoBehaviour
                 _grounds[i].UpdateSpeed(_generalSpeed);
         }
 
-        // Le trigger barrage est basé sur le compteur de patterns (IncrémenterCompteurPatterns),
-        // pas sur les signaux. On conserve _signauxEcoules uniquement pour la compatibilité session.
         if (!_compteurBarragePausé)
             _signauxEcoules++;
     }
@@ -169,12 +168,15 @@ public class SpawnObstacleV2 : MonoBehaviour
         if (_barrageEnAttente || _compteurBarragePausé) return;
 
         _patternsSpawnés++;
+#if UNITY_EDITOR
         Debug.Log($"[SpawnObstacleV2] Pattern #{_patternsSpawnés}/{_patternsNécessaires} spawné.");
-
+#endif
         if (_patternsSpawnés >= _patternsNécessaires && patternBarrage != null)
         {
             _barrageEnAttente = true;
+#if UNITY_EDITOR
             Debug.Log("[SpawnObstacleV2] Seuil de patterns atteint — barrage en attente.");
+#endif
         }
     }
 
@@ -193,11 +195,11 @@ public class SpawnObstacleV2 : MonoBehaviour
     /// </summary>
     public void RefreshVitesses()
     {
-        foreach (List<GameObject> bucket in _pool.Values)
+        foreach (var bucket in _pool.Values)
         {
-            foreach (GameObject obj in bucket)
+            foreach (var (obj, scrolling) in bucket)
             {
-                if (obj != null && obj.activeInHierarchy && obj.TryGetComponent<ScrollingElement>(out var scrolling))
+                if (obj != null && obj.activeInHierarchy && scrolling != null)
                     scrolling.UpdateSpeed(_generalSpeed);
             }
         }
@@ -215,15 +217,14 @@ public class SpawnObstacleV2 : MonoBehaviour
         isSpawning = true;
         _miseAJourVitessePausée = false;
 
-        foreach (List<GameObject> bucket in _pool.Values)
+        foreach (var bucket in _pool.Values)
         {
-            foreach (GameObject obj in bucket)
+            foreach (var (obj, scrolling) in bucket)
             {
                 if (obj == null || !obj.activeInHierarchy) continue;
-                if (!obj.TryGetComponent<ScrollingElement>(out var scrolling)) continue;
+                if (scrolling == null) continue;
 
                 // SegmentBarrage instances are mid-sequence (frozen, awaiting the player).
-                // They must not be despawned on revive — SegmentBarrage manages its own lifecycle.
                 if (obj.TryGetComponent<SegmentBarrage>(out _)) continue;
 
                 scrolling.StartMoving();
@@ -247,11 +248,11 @@ public class SpawnObstacleV2 : MonoBehaviour
             _spawningCoroutine = null;
         }
 
-        foreach (List<GameObject> bucket in _pool.Values)
+        foreach (var bucket in _pool.Values)
         {
-            foreach (GameObject obj in bucket)
+            foreach (var (obj, scrolling) in bucket)
             {
-                if (obj != null && obj.activeInHierarchy && obj.TryGetComponent<ScrollingElement>(out var scrolling))
+                if (obj != null && obj.activeInHierarchy && scrolling != null)
                     scrolling.StopMoving();
             }
         }
@@ -388,7 +389,9 @@ public class SpawnObstacleV2 : MonoBehaviour
 
         OnObstacleSpawne?.Invoke(spawnPos, obj);
 
+#if UNITY_EDITOR
         Debug.Log($"[SpawnObstacleV2] SegmentBarrage spawné à {spawnPos} | vitesse générale={_generalSpeed}");
+#endif
     }
 
     /// <summary>
@@ -441,9 +444,11 @@ public class SpawnObstacleV2 : MonoBehaviour
                     var type = spawnBudget.ConsumeNext();
                     if (type.HasValue)
                     {
-                        changeSkin.forcedSkinIndex = -1; // reset avant forçage
+                        changeSkin.forcedSkinIndex = -1;
                         changeSkin.ForceSkinParType(type.Value);
+#if UNITY_EDITOR
                         Debug.Log($"[SpawnObstacleV2] Good vehicle forcé → {type.Value} (budget restant : {spawnBudget.VéhiculesRestants})");
+#endif
                     }
                 }
 
@@ -465,12 +470,12 @@ public class SpawnObstacleV2 : MonoBehaviour
     {
         donnees.vitesseGénérale = _generalSpeed;
 
-        // Réinitialiser le compteur de patterns pour le prochain cycle MapRoad.
-        // patternsNécessaires sera recalculé à la fin du prochain barrage par FormulaireSpawnBudget.
         donnees.signauxEcoules   = 0;
         donnees.prochainBarrageA = 0;
 
+#if UNITY_EDITOR
         Debug.Log($"[SpawnObstacleV2] Session sauvegardée — patterns={_patternsSpawnés}/{_patternsNécessaires}");
+#endif
     }
 
     /// <summary>Restaure la vitesse générale depuis les données de session.</summary>
@@ -495,7 +500,9 @@ public class SpawnObstacleV2 : MonoBehaviour
         _barrageEnAttente    = false;
         _compteurBarragePausé = false;
 
+#if UNITY_EDITOR
         Debug.Log($"[SpawnObstacleV2] Progression restaurée : 0/{_patternsNécessaires} patterns avant barrage.");
+#endif
     }
 
     /// <summary>
@@ -565,7 +572,9 @@ public class SpawnObstacleV2 : MonoBehaviour
     {
         _patternsSpawnés     = 0;
         _patternsNécessaires = UnityEngine.Random.Range(patternsMinFallback, patternsMaxFallback + 1);
+#if UNITY_EDITOR
         Debug.Log($"[SpawnObstacleV2] Fallback — seuil tiré : {_patternsNécessaires} patterns.");
+#endif
     }
 
     // ── Object pool ───────────────────────────────────────────────────────────
@@ -575,16 +584,18 @@ public class SpawnObstacleV2 : MonoBehaviour
         string key = prefab.name;
 
         if (!_pool.ContainsKey(key))
-            _pool[key] = new List<GameObject>();
+            _pool[key] = new List<(GameObject, ScrollingElement)>();
 
-        foreach (GameObject obj in _pool[key])
+        foreach (var (obj, _) in _pool[key])
         {
             if (obj != null && !obj.activeInHierarchy)
                 return obj;
         }
 
         GameObject newObj = Instantiate(prefab);
-        _pool[key].Add(newObj);
+        // Mise en cache de la référence ScrollingElement dès la création
+        newObj.TryGetComponent<ScrollingElement>(out var scrolling);
+        _pool[key].Add((newObj, scrolling));
         return newObj;
     }
 }

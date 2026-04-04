@@ -1,5 +1,4 @@
 using System.Collections;
-using System.ComponentModel;
 using TMPro;
 using UnityEngine;
 
@@ -9,53 +8,73 @@ public class ScoreManager : MonoBehaviour
     private int bestscore;
     private bool isDriving;
     private Coroutine scoreCoroutine;
-    private float speedScore=39f;
+    private float speedScore = 39f;
     [SerializeField] private TMP_Text textScore;
     [SerializeField] private TMP_Text bestScoreText;
     [SerializeField] private GameObject bestScoreParent;
     [SerializeField] private SO_PlayerDatas playerDatas;
-    
+
+    // Cache CanvasGroup pour éviter GetComponent dans la coroutine
+    private CanvasGroup _bestScoreCanvasGroup;
+
+    // Guard anti-rebuild : ne met à jour le texte que si la valeur change
+    private int _lastDisplayedScore = -1;
+    private int _lastDisplayedDelta = -1;
+
+    private void Start()
+    {
+        if (bestScoreParent != null)
+        {
+            _bestScoreCanvasGroup = bestScoreParent.GetComponent<CanvasGroup>();
+            if (_bestScoreCanvasGroup == null)
+                _bestScoreCanvasGroup = bestScoreParent.AddComponent<CanvasGroup>();
+        }
+        StartScore();
+    }
+
     IEnumerator ContiniousScore()
     {
         while (isDriving)
         {
             AddToScore(1);
-            yield return new WaitForSeconds(Mathf.Clamp(1/speedScore,0.0001f,1));
+            yield return new WaitForSeconds(Mathf.Clamp(1 / speedScore, 0.0001f, 1));
         }
     }
+
     IEnumerator ContiniousBestScore()
     {
         bestscore = playerDatas.BestScore;
         while (score < bestscore)
         {
-            bestScoreText.text = (bestscore - score).ToString();
-            yield return new WaitForSeconds(Mathf.Clamp(1/speedScore,0.0001f,1));
+            int delta = bestscore - score;
+            // Mise à jour du texte seulement si la valeur a changé
+            if (delta != _lastDisplayedDelta)
+            {
+                bestScoreText.SetText("{0}", delta);
+                _lastDisplayedDelta = delta;
+            }
+            yield return new WaitForSeconds(Mathf.Clamp(1 / speedScore, 0.0001f, 1));
         }
         StartCoroutine(FadeOutBestScore(0.1f));
     }
 
     IEnumerator FadeOutBestScore(float duration)
     {
-        CanvasGroup canvasGroup = bestScoreParent.GetComponent<CanvasGroup>();
+        if (_bestScoreCanvasGroup == null) yield break;
 
-        if (canvasGroup == null)
-            canvasGroup = bestScoreParent.AddComponent<CanvasGroup>();
-
-        float startAlpha = canvasGroup.alpha;
+        float startAlpha = _bestScoreCanvasGroup.alpha;
         float time = 0f;
 
         while (time < duration)
         {
             time += Time.deltaTime;
-            canvasGroup.alpha = Mathf.Lerp(startAlpha, 0f, time / duration);
+            _bestScoreCanvasGroup.alpha = Mathf.Lerp(startAlpha, 0f, time / duration);
             yield return null;
         }
 
-        canvasGroup.alpha = 0f;
-
+        _bestScoreCanvasGroup.alpha = 0f;
         bestScoreParent.SetActive(false);
     }
-
 
     public void StopScore()
     {
@@ -69,7 +88,6 @@ public class ScoreManager : MonoBehaviour
 
     public void StartScore()
     {
-        // Éviter de démarrer deux coroutines en parallèle si StartScore est appelé deux fois.
         if (isDriving) return;
         isDriving = true;
         scoreCoroutine = StartCoroutine(ContiniousScore());
@@ -94,7 +112,12 @@ public class ScoreManager : MonoBehaviour
     public void SetScore(int newScore)
     {
         score = newScore;
-        textScore.text = score.ToString("D6");
+        // SetText avec format numérique évite l'allocation de string ToString()
+        if (score != _lastDisplayedScore)
+        {
+            textScore.SetText("{0:000000}", score);
+            _lastDisplayedScore = score;
+        }
     }
 
     public void AddToScore(int toAdd)
@@ -117,12 +140,6 @@ public class ScoreManager : MonoBehaviour
         speedScore = vitesseSauvegardée;
         SetScore(scoreSauvegardé);
     }
-
-    private void Start()
-    {
-        StartScore();
-    }
-
 
     public int ReturnScore()
     {

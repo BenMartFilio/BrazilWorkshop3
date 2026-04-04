@@ -107,6 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScrollingElement
   baseSpeed: 5
+  _crashSound: {fileID: 0}
   isExploded: 0
   FXExplosion: {fileID: 0}
   carcasse: {fileID: 0}

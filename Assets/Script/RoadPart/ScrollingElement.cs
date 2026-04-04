@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class ScrollingElement : MonoBehaviour
 {
@@ -8,13 +9,17 @@ public class ScrollingElement : MonoBehaviour
     private SpriteRenderer _sprite;
     [SerializeField] private AudioClip _crashSound;
 
-
     /// <summary>
     /// Multiplicateur global applique a toutes les vitesses calculees dans UpdateSpeed.
     /// Mis a 0.5f par EffetsObjetsSpeciaux (Montre a Gousset), restaure a 1f a la fin.
     /// Statique : s'applique automatiquement a tout spawn futur sans snapshot.
     /// </summary>
     public static float FacteurVitesseGlobal = 1f;
+
+    // ── Pool d'explosions (partagé entre toutes les instances) ────────────────
+    private static IObjectPool<GameObject> s_fxPool;
+    private static GameObject s_fxPrefabRef;
+    private static Transform s_fxPoolRoot;
 
     public void UpdateSpeed(float addToNewSpeed)
     {
@@ -73,6 +78,10 @@ public class ScrollingElement : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _sprite = GetComponentInChildren<SpriteRenderer>();
+
+        // Initialise le pool FX une seule fois dès qu'une instance en a besoin
+        if (FXExplosion != null && s_fxPool == null)
+            InitFxPool(FXExplosion);
     }
 
     public void StopMoving()
@@ -122,6 +131,28 @@ public class ScrollingElement : MonoBehaviour
     private Sprite tempSprite;
     public bool canExplose = true;
 
+    private static void InitFxPool(GameObject prefab)
+    {
+        s_fxPrefabRef = prefab;
+        s_fxPoolRoot = new GameObject("[Pool] ExplosionFX").transform;
+        Object.DontDestroyOnLoad(s_fxPoolRoot.gameObject);
+
+        s_fxPool = new ObjectPool<GameObject>(
+            createFunc: () =>
+            {
+                GameObject go = Instantiate(s_fxPrefabRef, s_fxPoolRoot);
+                go.SetActive(false);
+                return go;
+            },
+            actionOnGet: go => go.SetActive(true),
+            actionOnRelease: go => go.SetActive(false),
+            actionOnDestroy: go => Destroy(go),
+            collectionCheck: false,
+            defaultCapacity: 4,
+            maxSize: 8
+        );
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         coll = collision.GetComponent<ScrollingElement>();
@@ -155,8 +186,10 @@ public class ScrollingElement : MonoBehaviour
             AudioSource.PlayClipAtPoint(_crashSound, transform.position);
         if (FXExplosion != null)
         {
-            GameObject fx = Instantiate(FXExplosion, transform.position, Quaternion.identity);
-            fx.GetComponent<ExplosionCircles>()?.Jouer(transform.position); 
+            if (s_fxPool == null) InitFxPool(FXExplosion);
+            GameObject fx = s_fxPool.Get();
+            fx.transform.position = transform.position;
+            fx.GetComponent<ExplosionCircles>()?.Jouer(transform.position);
         }
         if (carcasse != null)
         {
