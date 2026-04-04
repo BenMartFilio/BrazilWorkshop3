@@ -141,4 +141,19 @@ public class SaveGameSystem : MonoBehaviour
     }
 
     //APPELER LES SAVE QUAND : achat monnaie (nouvelle valeur), quand changement monnaie in game (fin de niveau), quand achat object (nouvelle monnaie, et nouveau inventaire)
+
+
+
+    public async System.Threading.Tasks.Task CloudDeleteAsync()
+    {
+        try
+        {
+            await CloudSaveService.Instance.Data.Player.DeleteAllAsync();
+            Debug.Log("Cloud save supprimée.");
+        }
+        catch (Exception e)
+        {
+            Debug.LogWarning($"Erreur suppression cloud : {e.Message}");
+        }
+    }
 }
