@@ -1,23 +1,22 @@
+// CollisionObstacle.cs — cache GetComponent dans Awake
 using UnityEngine;
 
-/// <summary>
-/// Marqueur posé sur les obstacles (YellowCircle, RedCircle, BlackCircle, OrangeCircle).
-/// Référence optionnelle au prefab d'explosion à instancier lors de la collision avec le joueur.
-/// </summary>
 public class CollisionObstacle : MonoBehaviour
 {
-    [Tooltip("Prefab FX_ExplosionCircles à instancier au point de collision.")]
     [SerializeField] private GameObject prefabExplosion;
     [SerializeField] private AudioClip _crashSound;
 
+    // Caché dans Awake — plus de GetComponent à chaque collision
+    private ExplosionBarrel _explosionBarrel;
 
-    /// <summary>
-    /// Instancie l'effet d'explosion à la position donnée et le joue.
-    /// Appelé depuis PlayerMovement lors de OnTriggerEnter2D.
-    /// </summary>
+    private void Awake()
+    {
+        _explosionBarrel = GetComponent<ExplosionBarrel>();
+    }
+
     public void DeclencherExplosion(Vector3 positionCollision)
     {
-        if (GetComponent<ExplosionBarrel>() != null) return;
+        if (_explosionBarrel != null) return;
 
         if (_crashSound != null)
             AudioSource.PlayClipAtPoint(_crashSound, positionCollision);
@@ -26,8 +25,6 @@ public class CollisionObstacle : MonoBehaviour
 
         GameObject instance = Instantiate(prefabExplosion, positionCollision, Quaternion.identity);
         ExplosionCircles fx = instance.GetComponent<ExplosionCircles>();
-        if (fx != null)
-            fx.Jouer(positionCollision);
+        fx?.Jouer(positionCollision);
     }
-
 }
