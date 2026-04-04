@@ -1,37 +1,25 @@
+// SoundManager.cs
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
-    public static SoundManager Instance = null;
-    private AudioSource soundEffectAudio;
+    public static SoundManager Instance { get; private set; }
 
     [SerializeField] private AudioMixerGroup musicGroup;
     [SerializeField] private AudioMixerGroup backgroundGroup;
     [SerializeField] private AudioMixer audioMixer;
-
-    private AudioSource musicSource;
-    private AudioSource backgroundSource;
-
     [SerializeField] private AudioEventDispatcher _AudioEventDispatcher;
 
-    private string MusicLowPassParam = "Music_LowPass";
-    private string MusicVolumeParam = "Music_Volume";
-    private float MaxCutoff = 22000f;
-    private float MinCutoff = 400f;
-    private float TransitionDuration = 2.5f;
+    private AudioSource _musicSource;
+    private AudioSource _backgroundSource;
 
-    private void OnEnable()
-    {
-        _AudioEventDispatcher.OnAudioEvent += PlaySound;
-    }
-
-    private void OnDisable()
-    {
-        _AudioEventDispatcher.OnAudioEvent -= PlaySound;
-    }
+    private const string MusicLowPassParam = "Music_LowPass";
+    private const string MusicVolumeParam = "Music_Volume";
+    private const float MaxCutoff = 22000f;
+    private const float MinCutoff = 400f;
+    private const float TransitionDuration = 2.5f;
 
     private void Awake()
     {
@@ -39,80 +27,61 @@ public class SoundManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            Init();
+            CacheAudioSources(); // une seule fois ici
         }
-        else if (Instance != this)
+        else
         {
             Destroy(gameObject);
-            return;
         }
     }
 
-    private void Start()
-    {
-        // soundEffectAudio : source sans clip assigné (utilisée pour les effets ponctuels)
-        AudioSource[] sources = GetComponents<AudioSource>();
-        foreach (AudioSource source in sources)
-        {
-            if (source.clip == null)
-                soundEffectAudio = source;
-        }
-    }
+    private void OnEnable() => _AudioEventDispatcher.OnAudioEvent += PlaySound;
+    private void OnDisable() => _AudioEventDispatcher.OnAudioEvent -= PlaySound;
 
-    private void Init()
+    // Résout le double-parcours Awake+Start en une seule passe
+    private void CacheAudioSources()
     {
-        foreach (var source in GetComponents<AudioSource>())
+        foreach (AudioSource source in GetComponents<AudioSource>())
         {
             if (source.outputAudioMixerGroup == musicGroup)
-                musicSource = source;
+                _musicSource = source;
             else if (source.outputAudioMixerGroup == backgroundGroup)
-                backgroundSource = source;
+                _backgroundSource = source;
         }
     }
 
-    private void PlaySound(AudioClip son)
-    {
-        backgroundSource.PlayOneShot(son);
-    }
+    private void PlaySound(AudioClip son) => _backgroundSource.PlayOneShot(son);
 
-    
     public void PlayMusic(AudioClip music)
     {
-        musicSource.Stop();
-        musicSource.clip = music;
-        musicSource.Play();
+        _musicSource.Stop();
+        _musicSource.clip = music;
+        _musicSource.Play();
     }
 
-    
     public void PlayMusicWithLowPass(AudioClip music)
     {
-        if (musicSource.clip == music) return;
+        if (_musicSource.clip == music) return;
         StartCoroutine(LowPassTransition(music));
     }
 
     private IEnumerator LowPassTransition(AudioClip nextMusic)
     {
         float elapsed = 0f;
-
-        
         while (elapsed < TransitionDuration)
         {
             elapsed += Time.deltaTime;
             float t = elapsed / TransitionDuration;
             audioMixer.SetFloat(MusicLowPassParam, Mathf.Lerp(MaxCutoff, MinCutoff, t));
-            
             audioMixer.SetFloat(MusicVolumeParam, Mathf.Lerp(0f, -80f, t));
             yield return null;
         }
 
-        
-        musicSource.Stop();
-        musicSource.clip = nextMusic;
-        musicSource.Play();
+        _musicSource.Stop();
+        _musicSource.clip = nextMusic;
+        if (nextMusic != null) _musicSource.Play();
 
         elapsed = 0f;
-
-        
         while (elapsed < TransitionDuration)
         {
             elapsed += Time.deltaTime;
@@ -125,5 +94,4 @@ public class SoundManager : MonoBehaviour
         audioMixer.SetFloat(MusicLowPassParam, MaxCutoff);
         audioMixer.SetFloat(MusicVolumeParam, 0f);
     }
-
 }
