@@ -17,9 +17,9 @@ public class UpdaterScore : MonoBehaviour
     public void UpdateScore()
     {
         StartCoroutine(ScoreScaler(1.5f));
-    } 
+    }
 
-    IEnumerator ScoreScaler(float duration)
+    private IEnumerator ScoreScaler(float duration)
     {
         float time = 0f;
         int score = _playerDatas.actualScoreNotSaved;
@@ -27,35 +27,29 @@ public class UpdaterScore : MonoBehaviour
         while (time < duration)
         {
             time += Time.deltaTime;
-            float t = time / duration;
-
-            int currentScore = Mathf.RoundToInt(Mathf.Lerp(0, score, t));
-
-            _scoreText.text = currentScore.ToString();
-
+            int current = Mathf.RoundToInt(Mathf.Lerp(0, score, time / duration));
+            _scoreText.SetText("{0}", current); // évite ToString() qui alloue
             yield return null;
         }
-        _scoreText.text = score.ToString();
+        _scoreText.SetText("{0}", score);
 
         yield return new WaitForSeconds(1f);
         StartCoroutine(CoinsScaler(duration));
     }
-    IEnumerator CoinsScaler(float duration)
+
+    private IEnumerator CoinsScaler(float duration)
     {
         float time = 0f;
         int coins = _playerDatas.actualCoinsNotSaved;
+
         while (time < duration)
         {
             time += Time.deltaTime;
-            float t = time / duration;
-
-            int currentCoins = Mathf.RoundToInt(Mathf.Lerp(0, coins, t));
-
-            _coinsText.text = currentCoins.ToString();
-
+            int current = Mathf.RoundToInt(Mathf.Lerp(0, coins, time / duration));
+            _coinsText.SetText("{0}", current);
             yield return null;
         }
-        _coinsText.text = coins.ToString();
+        _coinsText.SetText("{0}", coins);
         updater.StartCoroutineCounter();
     }
 
