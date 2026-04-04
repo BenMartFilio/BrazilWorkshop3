@@ -129,18 +129,18 @@ public class Aspiration : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<ChangeSkin>() == null) return;
+        ChangeSkin skin = collision.GetComponent<ChangeSkin>();
+        if (skin == null) return;
 
         // Annuler toute extension en cours d'un véhicule précédent.
         AnnulerExtension();
 
-        _documents            = collision.GetComponent<ChangeSkin>();
+        _documents            = skin;
         _tempsEntreeDansZone  = Time.time;
         canAspire             = true;
         finished = true;
         _feedbackLogo.SetActive(true);
         shatter.ResetShatter();
-        Debug.Log("Enabled");
     }
 
     private void OnTriggerExit2D(Collider2D other)
