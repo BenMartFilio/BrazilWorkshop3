@@ -31,8 +31,11 @@ public class EndManager : MonoBehaviour
         _scoreManager.StopScore();
         for (int i = 0; i < _grounds.Length; i++)
             _grounds[i].StopMove();
-        _spawner.StopSpawning();
-        _spawner.PauserCompteurBarrage();
+        if (_spawner != null)
+        {
+            _spawner.StopSpawning();
+            _spawner.PauserCompteurBarrage();
+        }
         _aspiration.Die();
         _playerMovement.StopMove();
         _barreProgression?.Geler();
@@ -50,8 +53,11 @@ public class EndManager : MonoBehaviour
             _grounds[i].StartMove();
         _playerMovement.StartMove();
         _aspiration.UnDie();
-        _spawner.StartSpawning();
-        _spawner.ReprendreCompteurBarrage();
+        if (_spawner != null)
+        {
+            _spawner.StartSpawning();
+            _spawner.ReprendreCompteurBarrage();
+        }
         _barreProgression?.Dégeler();
         reviveCounter++;
         _revivePanel.SetActive(false);
