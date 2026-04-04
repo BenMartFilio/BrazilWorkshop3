@@ -41,7 +41,7 @@ MonoBehaviour:
     - {fileID: 0}
   - lanes:
     - {fileID: 0}
-    - {fileID: 8536000752039434839, guid: 24496006ca44fd34a8ec7b068fe53205, type: 3}
+    - {fileID: 535104966169734813, guid: 4358817d2666bd84f94e569447100fa3, type: 3}
     - {fileID: 0}
   - lanes:
     - {fileID: 0}
@@ -77,6 +77,6 @@ MonoBehaviour:
     - {fileID: 0}
   - lanes:
     - {fileID: 0}
-    - {fileID: 535104966169734813, guid: 4358817d2666bd84f94e569447100fa3, type: 3}
+    - {fileID: 0}
     - {fileID: 0}
   bonusVehiculeCount: 1
