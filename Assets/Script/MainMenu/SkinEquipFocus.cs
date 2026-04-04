@@ -17,9 +17,6 @@ public class SkinEquipFocus : MonoBehaviour
     private const float ANGLE_MAX = 6f;
     private const float FREQUENCE = 28f;
 
-    [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
-    [SerializeField] private AudioType _bagSound;
-
     [Header("Données")]
     [SerializeField] private SO_PlayerDatas playerDatas;
 
@@ -149,8 +146,6 @@ public class SkinEquipFocus : MonoBehaviour
         if (labelDejaEquipe != null) labelDejaEquipe.gameObject.SetActive(true);
 
         if (_coroutineAnim != null) StopCoroutine(_coroutineAnim);
-
-        if (audioEventDispatcher != null) audioEventDispatcher.PlayAudio(_bagSound);
         _coroutineAnim = StartCoroutine(SequenceEquiper());
     }
 
