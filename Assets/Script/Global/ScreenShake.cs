@@ -1,14 +1,13 @@
+// ScreenShake.cs — évite les allocations Vector3 par frame
 using UnityEngine;
 using System.Collections;
 
 public class ScreenShake : MonoBehaviour
 {
-    Vector3 originalPos;
+    private Vector3 _originalPos;
+    private Vector3 _shakePos; // réutilisé, pas de new à chaque frame
 
-    private void Awake()
-    {
-        originalPos = transform.localPosition;
-    }
+    private void Awake() => _originalPos = transform.localPosition;
 
     public IEnumerator Shake(float duration, float magnitude)
     {
@@ -16,20 +15,15 @@ public class ScreenShake : MonoBehaviour
 
         while (elapsed < duration)
         {
-            float x = Random.Range(-1f, 1f) * magnitude;
-            float y = Random.Range(-1f, 1f) * magnitude;
-
-            transform.localPosition = new Vector3(
-                originalPos.x + x,
-                originalPos.y + y,
-                originalPos.z
-            );
+            _shakePos.x = _originalPos.x + Random.Range(-1f, 1f) * magnitude;
+            _shakePos.y = _originalPos.y + Random.Range(-1f, 1f) * magnitude;
+            _shakePos.z = _originalPos.z;
+            transform.localPosition = _shakePos;
 
             elapsed += Time.deltaTime;
-
             yield return null;
         }
 
-        transform.localPosition = originalPos;
+        transform.localPosition = _originalPos;
     }
 }
