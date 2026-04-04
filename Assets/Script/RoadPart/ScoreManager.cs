@@ -21,6 +21,9 @@ public class ScoreManager : MonoBehaviour
     private int _lastDisplayedScore = -1;
     private int _lastDisplayedDelta = -1;
 
+    private WaitForSeconds _cachedWait;
+    private float _cachedWaitDuration = -1f;
+
     private void Start()
     {
         if (bestScoreParent != null)
@@ -32,12 +35,21 @@ public class ScoreManager : MonoBehaviour
         StartScore();
     }
 
+    private WaitForSeconds GetWait()
+    {
+        float duration = Mathf.Clamp(1f / speedScore, 0.0001f, 1f);
+        if (Mathf.Approximately(duration, _cachedWaitDuration)) return _cachedWait;
+        _cachedWaitDuration = duration;
+        _cachedWait = new WaitForSeconds(duration);
+        return _cachedWait;
+    }
+
     IEnumerator ContiniousScore()
     {
         while (isDriving)
         {
             AddToScore(1);
-            yield return new WaitForSeconds(Mathf.Clamp(1 / speedScore, 0.0001f, 1));
+            yield return GetWait();
         }
     }
 
@@ -53,7 +65,7 @@ public class ScoreManager : MonoBehaviour
                 bestScoreText.SetText("{0}", delta);
                 _lastDisplayedDelta = delta;
             }
-            yield return new WaitForSeconds(Mathf.Clamp(1 / speedScore, 0.0001f, 1));
+            yield return GetWait();
         }
         StartCoroutine(FadeOutBestScore(0.1f));
     }

@@ -102,7 +102,6 @@ GameObject:
   - component: {fileID: 7879828450109075521}
   - component: {fileID: 9152511351518655459}
   - component: {fileID: 2330047812532237329}
-  - component: {fileID: 7588603797172267857}
   - component: {fileID: -5950177233794210091}
   m_Layer: 0
   m_Name: BarrelObstacle
@@ -140,6 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScrollingElement
   baseSpeed: 5
+  _crashSound: {fileID: 0}
   isExploded: 0
   FXExplosion: {fileID: 4791631959593948771, guid: 0dd8d9523f3eb4d46afa4593215849f5, type: 3}
   carcasse: {fileID: 0}
@@ -191,20 +191,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.5, y: 0.2}
   m_EdgeRadius: 0
---- !u!114 &7588603797172267857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8536000752039434839}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf6dc92363f435a4eaf3490f65833eba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ExplosionBarrel
-  _explosionSound: {fileID: 8300000, guid: a58df645a50e6e04295a1bda3fa98525, type: 3}
-  fxPrefab: {fileID: 4791631959593948771, guid: 0dd8d9523f3eb4d46afa4593215849f5, type: 3}
 --- !u!114 &-5950177233794210091
 MonoBehaviour:
   m_ObjectHideFlags: 0
