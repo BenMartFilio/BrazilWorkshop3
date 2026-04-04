@@ -3767,7 +3767,6 @@ MonoBehaviour:
   _input: {fileID: 290452987}
   shatter: {fileID: 55492464}
   _audioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
-  _pickup: 10
   _shatter: 17
   inventaire: {fileID: 11400000, guid: b96ec00b9f42a8742833630eee3708e8, type: 2}
   _effets: {fileID: 0}

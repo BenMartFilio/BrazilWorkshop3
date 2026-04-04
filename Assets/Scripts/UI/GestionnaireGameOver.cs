@@ -53,6 +53,9 @@ namespace Barrage.UI
                  "Doit être supérieur à celui de tous les Canvas déjà présents dans la scène.")]
         [SerializeField] private int sortingOrderOverlay = 200;
 
+        [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
+        [SerializeField] private AudioType _gameOverSound; 
+
         // ── État interne ──────────────────────────────────────────────────────
         private Canvas   _overlayCanvas;
         private RawImage _overlayImage;
@@ -68,6 +71,8 @@ namespace Barrage.UI
         {
             if (_déclenché) return;
             _déclenché = true;
+
+            if(_audioEventDispatcher != null) _audioEventDispatcher.PlayAudio(_gameOverSound);
 
             if (utiliserAnimationComplète)
             {
