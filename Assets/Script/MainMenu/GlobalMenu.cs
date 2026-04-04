@@ -1,3 +1,4 @@
+// GlobalMenu.cs — stop coroutine avant relance
 using System.Collections;
 using UnityEngine;
 
@@ -5,49 +6,35 @@ public class GlobalMenu : MonoBehaviour
 {
     [SerializeField] private GameObject _SizeToUp;
     [SerializeField] private GameObject _unHideIt;
-    Vector3 aScale;
-    private void Start()
-    {
-        aScale = _SizeToUp.transform.localScale;
-    }
+
+    private Vector3 _originalScale;
+    private Coroutine _scaleCoroutine;
+
+    private void Start() => _originalScale = _SizeToUp.transform.localScale;
+
     public void OpenMenu()
     {
-        StartToPrint();
-        SizeUp();
+        _unHideIt.SetActive(true);
+        if (_scaleCoroutine != null) StopCoroutine(_scaleCoroutine);
+        _scaleCoroutine = StartCoroutine(LerpScale(0.1f));
     }
 
-    public void CloseMenu()
+    public void CloseMenu() => _unHideIt.SetActive(false);
+
+    private IEnumerator LerpScale(float duration)
     {
-        StartToHide();
-    }
+        Vector3 fromScale = _originalScale * 0.85f;
+        float elapsed = 0f;
 
-
-    public void SizeUp()
-    {
-        StartCoroutine(LerpPosition(0.1f));
-
-    }
-
-    IEnumerator LerpPosition(float time)
-    {
-        float elapsed = 0;
-        Vector3 toScale = aScale * 0.85f;
-        while (elapsed < time)
+        while (elapsed < duration)
         {
-            _SizeToUp.transform.localScale = Vector3.Lerp(toScale, aScale, elapsed / time);
             elapsed += Time.deltaTime;
+            _SizeToUp.transform.localScale = Vector3.Lerp(
+                fromScale, _originalScale, EaseOutCubic(elapsed / duration));
             yield return null;
         }
-        _SizeToUp.transform.localScale = aScale;
+        _SizeToUp.transform.localScale = _originalScale;
     }
 
-    public void StartToPrint()
-    {
-        _unHideIt.SetActive(true);
-    }
-
-    public void StartToHide()
-    {
-        _unHideIt.SetActive(false);
-    }
+    private static float EaseOutCubic(float t) => 1f - Mathf.Pow(1f - Mathf.Clamp01(t), 3f);
 }
