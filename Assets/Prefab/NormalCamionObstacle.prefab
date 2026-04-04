@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScrollingElement
   baseSpeed: 4.5
+  _crashSound: {fileID: 8300000, guid: a58df645a50e6e04295a1bda3fa98525, type: 3}
   isExploded: 0
   FXExplosion: {fileID: 4791631959593948771, guid: 0dd8d9523f3eb4d46afa4593215849f5, type: 3}
   carcasse: {fileID: 21300000, guid: 5a4e7bcb0c68cd4488954e5d77cc6584, type: 3}
@@ -144,6 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollisionObstacle
   prefabExplosion: {fileID: 0}
+  _crashSound: {fileID: 0}
 --- !u!1 &2861961816579948195
 GameObject:
   m_ObjectHideFlags: 0

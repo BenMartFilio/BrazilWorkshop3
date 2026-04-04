@@ -18,7 +18,7 @@ public class MapRoadSessionBridge : MonoBehaviour
 
     private void Start()
     {
-        SoundManager.Instance.PlayMusic(_mapRoadMusic);
+        SoundManager.Instance.PlayMusicWithLowPass(_mapRoadMusic);
         if (SessionManager.Instance != null)
         {
             // RestaurerMapRoad gère les deux cas :
