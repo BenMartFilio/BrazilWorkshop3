@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc0bee79655d23f44b94c4ca01b68a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CoinsScript
+  coinFeedbackPrefab: {fileID: 9173424690957685881, guid: eb3921a4128780b4d8ea52d2003d14f2, type: 3}
 --- !u!61 &7841076031898802572
 BoxCollider2D:
   m_ObjectHideFlags: 0
