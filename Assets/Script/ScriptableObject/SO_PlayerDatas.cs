@@ -22,6 +22,7 @@ public class SO_PlayerDatas : ScriptableObject
     public float generalVolume;
     public float musicVolume;
     public float SFXVolume;
+    public int skinEquiped;
     public int generalMonney;
     public int premiumMonney;
     public int actualScoreNotSaved;
@@ -31,6 +32,8 @@ public class SO_PlayerDatas : ScriptableObject
 
     public List<MiniGameHighScores> allHighScores = new List<MiniGameHighScores>();
     public List<InventoryObject> allObjectInInventory = new List<InventoryObject>();
+    public List<CosmetiqueEntry> cosmetiquesInventaire = new List<CosmetiqueEntry>();
+
 
 
 
@@ -58,6 +61,9 @@ public class SO_PlayerDatas : ScriptableObject
         SFXVolume = datas.SFXVolume;
         generalMonney = datas.generalMonney;
         premiumMonney = datas.premiumMonney;
+        skinEquiped = datas.skinEquiped;
+        cosmetiquesInventaire = datas.cosmetiquesInventaire;
+
     }
 
     public void SaveDatas()
@@ -76,6 +82,8 @@ public class SO_PlayerDatas : ScriptableObject
         datas.SFXVolume = SFXVolume;
         datas.generalMonney = generalMonney;
         datas.premiumMonney = premiumMonney;
+        datas.skinEquiped = skinEquiped;
+        datas.cosmetiquesInventaire = cosmetiquesInventaire;
         // j'envoie �a � la fonction save de savesystem
         saveSystem.Save(datas);
     }
@@ -101,4 +109,31 @@ public class SO_PlayerDatas : ScriptableObject
             saveSystem = new SaveController();
         }
     }
+
+
+
+    /// <summary>Retourne l'entrée cosmétique correspondant à l'identifiant, ou null.</summary>
+    public CosmetiqueEntry ObtenirCosmetique(string identifiant)
+    {
+        foreach (CosmetiqueEntry entry in cosmetiquesInventaire)
+            if (entry.identifiant == identifiant) return entry;
+        return null;
+    }
+
+    /// <summary>Marque un cosmétique comme acheté et sauvegarde.</summary>
+    public void AcheterCosmetique(string identifiant)
+    {
+        CosmetiqueEntry entry = ObtenirCosmetique(identifiant);
+        if (entry != null)
+        {
+            entry.estAchete = true;
+            SaveDatas();
+        }
+        else
+        {
+            cosmetiquesInventaire.Add(new CosmetiqueEntry(identifiant, true));
+            SaveDatas();
+        }
+    }
+
 }

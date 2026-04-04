@@ -5,11 +5,25 @@ using static SO_PlayerDatas;
 using System.Security.Cryptography;
 using System.Text;
 
-[System.Serializable]
 
+[System.Serializable]
+public class CosmetiqueEntry
+{
+    public string identifiant;
+    public bool estAchete;
+
+    public CosmetiqueEntry(string identifiant, bool estAchete = false)
+    {
+        this.identifiant = identifiant;
+        this.estAchete = estAchete;
+    }
+}
+
+
+[System.Serializable]
 public class PlayerDatas
 {
-    public string Name = "ErrorName404";
+    public string Name = "Player";
     public int BestScore = 0;
     public int Level = 1;
     public List<MiniGameHighScores> allHighScores = new List<MiniGameHighScores>();
@@ -19,6 +33,8 @@ public class PlayerDatas
     public float SFXVolume = 1f;
     public int generalMonney = 10000;
     public int premiumMonney = 100;
+    public int skinEquiped = 0;
+    public List<CosmetiqueEntry> cosmetiquesInventaire = new List<CosmetiqueEntry>();
 
     public string hash;
 }
