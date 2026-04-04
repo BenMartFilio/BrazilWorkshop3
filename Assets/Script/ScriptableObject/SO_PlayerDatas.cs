@@ -26,7 +26,7 @@ public class SO_PlayerDatas : ScriptableObject
     public int premiumMonney;
     public int actualScoreNotSaved;
     public int actualCoinsNotSaved;
-    public bool isAnHighScore;
+    public bool isAnHighScore = false;
 
 
     public List<MiniGameHighScores> allHighScores = new List<MiniGameHighScores>();

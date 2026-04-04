@@ -12,33 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59fd790e90c710748b0d789766b46e6c, type: 3}
   m_Name: SO_PlayerDatas
   m_EditorClassIdentifier: Assembly-CSharp::SO_PlayerDatas
-  Name: Player
-  BestScore: 7937
+  Name: ErrorName404
+  BestScore: 790
   Level: 1
-  generalVolume: 1
-  musicVolume: 1
+  generalVolume: 0.10769131
+  musicVolume: 0.5627049
   SFXVolume: 1
-  generalMonney: 2200
-  premiumMonney: 60
+  generalMonney: 10000
+  premiumMonney: 100
   actualScoreNotSaved: 791
   actualCoinsNotSaved: 7
-  isAnHighScore: 1
+  isAnHighScore: 0
   allHighScores: []
-  allObjectInInventory:
-  - highScores:
-    - objectName: LiasseDeBillets
-      quantity: 0
-    - objectName: FormulairePasePartout
-      quantity: 0
-    - objectName: BadgeDuGouvernement
-      quantity: 0
-    - objectName: TirelireCochon
-      quantity: 0
-    - objectName: GateauChinois
-      quantity: 0
-    - objectName: RadarObstacles
-      quantity: 0
-    - objectName: Aspirateur
-      quantity: 0
-    - objectName: MontreAGousset
-      quantity: 0
+  allObjectInInventory: []
