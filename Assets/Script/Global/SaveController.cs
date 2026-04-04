@@ -31,8 +31,8 @@ public class PlayerDatas
     public float generalVolume = 1f;
     public float musicVolume = 1f;
     public float SFXVolume = 1f;
-    public int generalMonney = 10000;
-    public int premiumMonney = 100;
+    public int generalMonney = 1000;
+    public int premiumMonney = 20;
     public int skinEquiped = 0;
     public List<CosmetiqueEntry> cosmetiquesInventaire = new List<CosmetiqueEntry>();
 
@@ -66,7 +66,7 @@ public class SaveController
         string path = GetPath();
 
         if (!File.Exists(path))
-            return new PlayerDatas();
+            return CreateDefaultDatas();
 
         try
         {
@@ -81,7 +81,7 @@ public class SaveController
             if (data.hash != expectedHash)
             {
                 Debug.LogWarning("Cheat détecté !");
-                return new PlayerDatas();
+                return CreateDefaultDatas();
             }
 
             return data;
@@ -89,8 +89,18 @@ public class SaveController
         catch
         {
             Debug.LogWarning("Save corrompue !");
-            return new PlayerDatas();
+            return CreateDefaultDatas();
         }
+    }
+
+    private PlayerDatas CreateDefaultDatas()
+    {
+        PlayerDatas datas = new PlayerDatas();
+
+        // Le premier véhicule (index 0) est toujours débloqué par défaut
+        datas.cosmetiquesInventaire.Add(new CosmetiqueEntry("0", true));
+
+        return datas;
     }
 
     private string GenerateHash(PlayerDatas data)

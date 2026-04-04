@@ -18,10 +18,12 @@ MonoBehaviour:
   generalVolume: 0.10769131
   musicVolume: 0.5627049
   SFXVolume: 1
-  generalMonney: 10000
-  premiumMonney: 100
-  actualScoreNotSaved: 791
-  actualCoinsNotSaved: 7
+  skinEquiped: 1
+  generalMonney: 7015
+  premiumMonney: 96
+  actualScoreNotSaved: 235
+  actualCoinsNotSaved: 3
   isAnHighScore: 0
   allHighScores: []
   allObjectInInventory: []
+  cosmetiquesInventaire: []

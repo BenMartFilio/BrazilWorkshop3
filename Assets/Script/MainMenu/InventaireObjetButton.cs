@@ -5,12 +5,17 @@ using UnityEngine.UI;
 public class InventaireObjetButton : MonoBehaviour
 {
     [SerializeField] private InventaireMenuUI menuUI;
-    [SerializeField] private Image icone;       // le Icone enfant direct
+    [SerializeField] private Image icone;
     [SerializeField] private string identifiant;
+    [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
+    [SerializeField] private AudioType _open;
 
     private void Awake()
     {
         GetComponent<Button>().onClick.AddListener(() =>
-            menuUI.OnObjetClique(icone, identifiant));
+        {
+            _audioEventDispatcher?.PlayAudio(_open);
+            menuUI.OnObjetClique(icone, identifiant);
+        });
     }
 }
