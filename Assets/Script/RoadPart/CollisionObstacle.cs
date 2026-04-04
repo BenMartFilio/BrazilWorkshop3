@@ -17,7 +17,7 @@ public class CollisionObstacle : MonoBehaviour
     /// </summary>
     public void DeclencherExplosion(Vector3 positionCollision)
     {
-        
+        if (GetComponent<ExplosionBarrel>() != null) return;
 
         if (_crashSound != null)
             AudioSource.PlayClipAtPoint(_crashSound, positionCollision);
@@ -29,4 +29,5 @@ public class CollisionObstacle : MonoBehaviour
         if (fx != null)
             fx.Jouer(positionCollision);
     }
+
 }

@@ -63,7 +63,7 @@ public class ExplosionCircles : MonoBehaviour
     [Header("Rendu")]
     [SerializeField] private string sortingLayerName = "Gameplay";
     [SerializeField] private int    sortingOrder     = 10;
-    [SerializeField] private AudioClip _explosionSound;
+
 
     // ── API publique ───────────────────────────────────────────────────────────
 
@@ -72,8 +72,7 @@ public class ExplosionCircles : MonoBehaviour
     /// </summary>
     public void Jouer(Vector3 position)
     {
-        if (_explosionSound != null)
-            AudioSource.PlayClipAtPoint(_explosionSound, position);
+       
         transform.position = position;
         StartCoroutine(JouerRoutine());
     }
@@ -150,7 +149,7 @@ public class ExplosionCircles : MonoBehaviour
         fx.dureeJaune              = dureeJaune;
         fx.sortingLayerName        = sortingLayerName;
         fx.sortingOrder            = sortingOrder;
-        fx._explosionSound = _explosionSound;
+       
         // Ne pas activer le preview dans le clone
         fx.previewActif = false;
 

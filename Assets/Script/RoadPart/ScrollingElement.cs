@@ -6,6 +6,8 @@ public class ScrollingElement : MonoBehaviour
     public float baseSpeed = 5f;
     private bool isMoving = true;
     private SpriteRenderer _sprite;
+    [SerializeField] private AudioClip _crashSound;
+
 
     /// <summary>
     /// Multiplicateur global applique a toutes les vitesses calculees dans UpdateSpeed.
@@ -149,6 +151,8 @@ public class ScrollingElement : MonoBehaviour
 
     private void Explosion()
     {
+        if (_crashSound != null)
+            AudioSource.PlayClipAtPoint(_crashSound, transform.position);
         if (FXExplosion != null)
         {
             GameObject fx = Instantiate(FXExplosion, transform.position, Quaternion.identity);
