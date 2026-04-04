@@ -1,3 +1,4 @@
+// NouveauRecord.cs — corrige l'allocation vertices chaque frame
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -17,12 +18,12 @@ public class NouveauRecord : MonoBehaviour
     public float colorSpeed = 2f;
     public float colorWidth = 3f;
 
-    private Mesh mesh;
-    private Vector3[] vertices;
+    private Mesh _mesh;
+    private Vector3[] _vertices; // réutilisé — plus d'allocation par frame
 
-    void Awake()
+    private void Awake()
     {
-        if (playerDatas.isAnHighScore == false)
+        if (!playerDatas.isAnHighScore)
         {
             gameObject.SetActive(false);
             return;
@@ -31,16 +32,23 @@ public class NouveauRecord : MonoBehaviour
         StartCoroutine(Animate());
     }
 
-    IEnumerator Animate()
+    private IEnumerator Animate()
     {
         while (true)
         {
             textMesh.ForceMeshUpdate();
-            mesh = textMesh.mesh;
-            vertices = mesh.vertices;
+            _mesh = textMesh.mesh;
 
-            float waveOffset = Time.time * waveSpeed;
+            // Récupère le tableau UNE fois et le réutilise
+            // (on le copie seulement si la taille a changé)
+            Vector3[] fresh = _mesh.vertices;
+            if (_vertices == null || _vertices.Length != fresh.Length)
+                _vertices = fresh;
+            else
+                System.Array.Copy(fresh, _vertices, fresh.Length);
+
             int patternLength = wavePattern.Length;
+            float waveOffset = Time.time * waveSpeed;
 
             for (int i = 0; i < textMesh.textInfo.characterCount; i++)
             {
@@ -49,7 +57,6 @@ public class NouveauRecord : MonoBehaviour
 
                 int index = charInfo.vertexIndex;
 
-                // === POSITION DANS LE WAVE PATTERN ===
                 float pos = i - waveOffset;
                 float wrappedPos = pos % patternLength;
                 if (wrappedPos < 0) wrappedPos += patternLength;
@@ -58,26 +65,22 @@ public class NouveauRecord : MonoBehaviour
                 int indexB = (indexA + 1) % patternLength;
                 float t = wrappedPos - indexA;
 
-                float height = Mathf.Lerp(wavePattern[indexA], wavePattern[indexB], t);
-                float yOffset = height * waveHeight;
+                float yOffset = Mathf.Lerp(wavePattern[indexA], wavePattern[indexB], t) * waveHeight;
                 Vector3 offset = new Vector3(0, yOffset, 0);
 
-                vertices[index + 0] += offset;
-                vertices[index + 1] += offset;
-                vertices[index + 2] += offset;
-                vertices[index + 3] += offset;
+                _vertices[index + 0] += offset;
+                _vertices[index + 1] += offset;
+                _vertices[index + 2] += offset;
+                _vertices[index + 3] += offset;
 
-                float wavePos = Time.time * colorSpeed;
+                // Couleur
                 float charCount = textMesh.textInfo.characterCount;
-                float normalizedWave = (wavePos % charCount + charCount) % charCount;
+                float normalizedWave = (Time.time * colorSpeed % charCount + charCount) % charCount;
                 float dist = Mathf.Abs(i - normalizedWave);
-                // Prend le chemin le plus court dans la boucle
-                if (dist > charCount / 2f) dist = charCount - dist;
-                float te = Mathf.Clamp01(1f - dist / colorWidth);
-                te = Mathf.SmoothStep(0f, 1f, te);
+                if (dist > charCount * 0.5f) dist = charCount - dist;
+                float te = Mathf.SmoothStep(0f, 1f, Mathf.Clamp01(1f - dist / colorWidth));
 
-                Color32 col = gradient.Evaluate(te); 
-
+                Color32 col = gradient.Evaluate(te);
                 var colors = textMesh.textInfo.meshInfo[charInfo.materialReferenceIndex].colors32;
                 colors[index + 0] = col;
                 colors[index + 1] = col;
@@ -85,9 +88,8 @@ public class NouveauRecord : MonoBehaviour
                 colors[index + 3] = col;
             }
 
-            mesh.vertices = vertices;
-            textMesh.canvasRenderer.SetMesh(mesh);
-
+            _mesh.vertices = _vertices;
+            textMesh.canvasRenderer.SetMesh(_mesh);
             textMesh.UpdateVertexData(TMP_VertexDataUpdateFlags.Colors32);
 
             yield return null;
