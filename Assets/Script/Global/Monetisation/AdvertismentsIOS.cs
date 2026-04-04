@@ -12,6 +12,12 @@ public class AdvertismentsIOS : MonoBehaviour
         LevelPlay.Init("25b40871d");
     }
 
+    private void OnDestroy()
+    {
+        LevelPlay.OnInitSuccess -= SdkInitializationCompletedEvent;
+        LevelPlay.OnInitFailed -= SdkInitializationFailedEvent;
+    }
+
     /// <summary>Called when the LevelPlay SDK initialization succeeds.</summary>
     private void SdkInitializationCompletedEvent(LevelPlayConfiguration config)
     {

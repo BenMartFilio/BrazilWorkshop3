@@ -121,8 +121,7 @@ public class SaveGameSystem : MonoBehaviour
     {
         if (pause)
         {
-            SaveGame();              // local immédiat (synchrone, safe)
-            _ = CloudSaveAsync();   // cloud best-effort (fire & forget)
+            TriggerSave();
         }
     }
 
@@ -130,8 +129,7 @@ public class SaveGameSystem : MonoBehaviour
     {
         if (!focus)
         {
-            SaveGame();
-            _ = CloudSaveAsync();
+            TriggerSave();
         }
     }
 
@@ -142,7 +140,11 @@ public class SaveGameSystem : MonoBehaviour
 
     //APPELER LES SAVE QUAND : achat monnaie (nouvelle valeur), quand changement monnaie in game (fin de niveau), quand achat object (nouvelle monnaie, et nouveau inventaire)
 
-
+    private void TriggerSave()
+    {
+        SaveGame();
+        _ = CloudSaveAsync();
+    }
 
     public async System.Threading.Tasks.Task CloudDeleteAsync()
     {
