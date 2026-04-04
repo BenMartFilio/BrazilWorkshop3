@@ -2523,7 +2523,7 @@ MonoBehaviour:
   _sliderHighlightOverlay: {fileID: 475502067}
   _tutoSliderAnimator: {fileID: 1833950804}
   _inventaireObjetsUI: {fileID: 844100768}
-  _fakeBrrageFadeDuration: 2
+  _fakeBrrageFadeDuration: 1
   _barrageSceneName: BarrageTuto
   _fadeImage: {fileID: 1388883382}
 --- !u!4 &703772291
@@ -3418,7 +3418,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Glissez vers la gauche ou la droite pour changer de voie !
+  m_text: Glissez vers la gauche ou la droite pour changer de voie.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5225,10 +5225,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Objectif : Roulez pour \xE9chapper \xE0 la bureaucratie ! Traversez la
-    ville et collectez les bons documents.\n\nEvitez les obstacles pour rester sur
-    la route.\nLes inspections n\xE9cessitent des documents pr\xE9cis, gardez un
-    oeil sur ce qu'il vous faut !"
+  m_text: "Roulez pour \xE9chapper \xE0 la bureaucratie ! Traversez la ville et collectez
+    les bons documents.\n\nEvitez les obstacles pour rester sur la route.\nLes inspections
+    n\xE9cessitent des documents pr\xE9cis, gardez un oeil sur ce qu'il vous faut
+    !"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5509,7 +5509,6 @@ MonoBehaviour:
   _input: {fileID: 290452987}
   shatter: {fileID: 55492464}
   _audioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
-  _pickup: 10
   _shatter: 17
   inventaire: {fileID: 0}
   _effets: {fileID: 0}
@@ -6094,7 +6093,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 12
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 0.96608377, b: 0.87358487, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
