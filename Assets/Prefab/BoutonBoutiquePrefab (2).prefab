@@ -416,7 +416,7 @@ MonoBehaviour:
       m_Calls: []
   fondAchatSkin: {fileID: 21300000, guid: db1a037e218f13542a79cf7321dec568, type: 3}
   fondAcheteSkin: {fileID: 21300000, guid: e125a7571d1629543b3ea47ec80da37b, type: 3}
-  fondEquipeSkin: {fileID: 21300000, guid: 5516578343f2d9346959b338eaab76d6, type: 3}
+  fondEquipeSkin: {fileID: 21300000, guid: 6be91397bc748ed4bb4740c1b1ff744a, type: 3}
   fondImage: {fileID: 4653215784175534434}
   labelEtatEquipe: {fileID: 2637219257665658531}
   texteEquipe: "\xC9quip\xE9"

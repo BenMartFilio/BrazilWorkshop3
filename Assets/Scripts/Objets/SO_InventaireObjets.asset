@@ -29,26 +29,26 @@ MonoBehaviour:
     nomAffichage: Tirelire Cochon
     sprite: {fileID: 21300000, guid: bb1109e944c86da48a0d48e0ec804c2b, type: 3}
     estPassif: 0
-    description: "La tirelire cochon vous permet d'avoir de doubler vos pi\xE8ces
-      pendant 20 secondes."
+    description: "La tirelire cochon vous permet de doubler vos pi\xE8ces pendant
+      20 secondes."
   - identifiant: GateauChinois
     nomAffichage: "G\xE2teau Chinois"
     sprite: {fileID: 21300000, guid: 06b187de32c092f4799d2a0d9844a373, type: 3}
     estPassif: 0
-    description: "Le g\xE2teau chinois \xE0 vous donne 50% de chance de traverser
-      un obstacle pendant 20 secondes."
+    description: "Le g\xE2teau chinois vous donne 50% de chance de traverser un obstacle
+      pendant 20 secondes."
   - identifiant: RadarObstacles
     nomAffichage: "Radar \xE0 Obstacles"
     sprite: {fileID: 21300000, guid: 59cfb477aa900da4093bede88e317cb7, type: 3}
     estPassif: 0
-    description: "Le radar \xE0 obstacles vous permet de voir les prochaines obstacles
+    description: "Le radar \xE0 obstacles vous permet de voir les prochains obstacles
       pendant 20 secondes, gr\xE2ce \xE0 un ! en haut de l'\xE9cran."
   - identifiant: Aspirateur
     nomAffichage: Aspirateur
     sprite: {fileID: 21300000, guid: d311b8af498717743b649d0ff9c03dbc, type: 3}
     estPassif: 0
-    description: "L'aspirateur permet pendant 20 secondes, d'augmenter la distance
-      apr\xE8s laquelle vous ne pouvez plus aspirer des document."
+    description: "L\u2019aspirateur vous donne plus de temps pour aspirer les documents
+      pendant 20 secondes."
   - identifiant: MontreAGousset
     nomAffichage: "Montre \xE0 Gousset"
     sprite: {fileID: 21300000, guid: bad5870c01062c841bf1a56840fbb92f, type: 3}
