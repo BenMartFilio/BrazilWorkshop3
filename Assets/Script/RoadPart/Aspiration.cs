@@ -13,7 +13,7 @@ public class Aspiration : MonoBehaviour
     [SerializeField] private InputPlayerMovement _input;
     [SerializeField] private SpriteShatter shatter;
     [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
-    [SerializeField] private AudioType _pickup;
+    
     [SerializeField] private AudioType _shatter;
 
     [Header("Inventaire")]
@@ -95,7 +95,7 @@ public class Aspiration : MonoBehaviour
         canAspire = false;
         AnnulerExtension();
         FeedbackClicked();
-        if (_audioEventDispatcher != null) _audioEventDispatcher.PlayAudio(_pickup);
+        
 
         FormulaireType? type = _documents != null ? _documents.ObtenirType() : null;
 

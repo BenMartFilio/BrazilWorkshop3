@@ -22,7 +22,9 @@ public enum AudioType
     GetObject,
     Shatter,
     Coin,
-    FailPay
+    FailPay,
+    PickupPaper,
+    Inventroy
 }
 //Deux audio source (à faire) une qui fait la musique, et l'autre les sons (les sons sont joué un par un)
 [System.Serializable]
