@@ -54,6 +54,10 @@ namespace Barrage.UI
         [SerializeField] private FormulaireInventaire inventaire;
         [SerializeField] private List<FormulaireData> formulairesData = new();
 
+        [SerializeField] private AudioEventDispatcher audioEventDispatcher;
+
+
+
         [Tooltip("SO_PlayerDatas — used to read barrage-oriented item quantities (LiasseDeBillets, FormulairePasePartout, BadgeDuGouvernement) " +
                  "so their draggable cards are spawned alongside regular formulaires. Optional: if null, barrage items are not spawned.")]
         [SerializeField] private SO_PlayerDatas donneesJoueur;
@@ -166,7 +170,7 @@ namespace Barrage.UI
             }
 
             Texture2D texture = data.ExtraireTexture();
-
+            
             if (texture == null)
             {
                 Debug.LogError($"[FormulaireLibreManager] Aucune texture pour '{type}'. " +
@@ -184,7 +188,7 @@ namespace Barrage.UI
             img.raycastTarget = true;
 
             var carte = go.AddComponent<FormulaireLibre>();
-            carte.Initialiser(type, this, partieBasse, coucheGlissement, ObtenirTaille(type));
+            carte.Initialiser(type, this, partieBasse, coucheGlissement, ObtenirTaille(type), audioEventDispatcher);
 
             _cartes.Add(carte);
         }

@@ -126,6 +126,7 @@ namespace Barrage.UI
 
         private void SpawnDansPoche(FormulaireType type, PocheUI poche)
         {
+
             if (!_dataParType.TryGetValue(type, out var data) || data.prefab == null)
             {
                 Debug.LogWarning($"[FormulaireUIManager] Aucun prefab configuré pour : {type}");

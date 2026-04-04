@@ -19,7 +19,7 @@ namespace Barrage.UI
         private const float DUREE_CHUTE = 0.35f;
 
         public FormulaireType Type { get; private set; }
-        [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
+      
         
         private RectTransform _rectTransform;
         private RawImage _rawImage;
@@ -36,7 +36,7 @@ namespace Barrage.UI
             Type = type;
             _tailleOriginale = tailleOriginale;
             _uiManager = uiManager;
-            _audioEventDispatcher = audioEventDispatcher;
+            
             _rectTransform = GetComponent<RectTransform>();
             _rawImage = GetComponent<RawImage>();
         }
@@ -46,10 +46,12 @@ namespace Barrage.UI
 
         public void OnBeginDrag(PointerEventData eventData)
         {
+            
             if (_coroutineChute != null) return;
+          
             if (_pocheActuelle != null && !_pocheActuelle.EstAuSommet(this)) return;
 
-            if (_audioEventDispatcher != null) _audioEventDispatcher.PlayAudio(AudioType.PaperGet);
+            
 
             _dragActif = true;
             _pocheActuelle?.RetirerFormulaire(this);
@@ -93,7 +95,7 @@ namespace Barrage.UI
 
             if (_rawImage != null) _rawImage.raycastTarget = true;
 
-            if (_audioEventDispatcher != null) _audioEventDispatcher.PlayAudio(AudioType.PaperSet);
+           
 
             Vector2 screenPos = eventData.position;
             // Camera.main est utilisée à la place de eventData.pressEventCamera qui peut être

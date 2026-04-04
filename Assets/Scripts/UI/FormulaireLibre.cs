@@ -42,9 +42,11 @@ namespace Barrage.UI
         private RectTransform _rectTransform;
         private RawImage      _rawImage;
         private FormulaireLibreManager _manager;
+        private AudioEventDispatcher _audioEventDispatcher;
         private RectTransform _partieBasse;
         private RectTransform _coucheGlissement;
         private Vector2       _tailleFixe;
+        
 
         private Vector2 _velocity;        // px/s dans l'espace local de _partieBasse (hors drag)
         private Vector2 _lastAnchoredPos;
@@ -62,13 +64,15 @@ namespace Barrage.UI
         /// <summary>Initialise la carte avec sa taille fixe et ses dépendances.</summary>
         public void Initialiser(FormulaireType type, FormulaireLibreManager manager,
                                 RectTransform partieBasse, RectTransform coucheGlissement,
-                                Vector2 tailleFixe)
+                                Vector2 tailleFixe, AudioEventDispatcher audioEventDispatcher)
         {
             Type              = type;
             _manager          = manager;
             _partieBasse      = partieBasse;
             _coucheGlissement = coucheGlissement;
             _tailleFixe       = tailleFixe;
+
+            _audioEventDispatcher = audioEventDispatcher;
 
             _rectTransform = GetComponent<RectTransform>();
             _rawImage      = GetComponent<RawImage>();
@@ -114,7 +118,7 @@ namespace Barrage.UI
         {
             // Bloquer le drag si la carte est grisée (barrage terminé)
             if (_grisée) return;
-
+            _audioEventDispatcher?.PlayAudio(AudioType.PaperGet);
             _enDrag   = true;
             _enDerive = false;
             _velocity = Vector2.zero;
@@ -162,6 +166,7 @@ namespace Barrage.UI
         public void OnEndDrag(PointerEventData eventData)
         {
             if (!_enDrag) return;
+            _audioEventDispatcher?.PlayAudio(AudioType.PaperSet);
             _enDrag = false;
 
             if (_rawImage != null) _rawImage.raycastTarget = true;

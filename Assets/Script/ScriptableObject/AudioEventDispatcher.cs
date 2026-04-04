@@ -42,6 +42,7 @@ public class AudioEventDispatcher : ScriptableObject
 
     public void PlayAudio(AudioType audioType)
     {
+        Debug.Log($"[AudioDispatcher] PlayAudio({audioType}) — abonnés: {OnAudioEvent?.GetInvocationList().Length ?? 0}");
         for (int i = 0; i < audioClips.Length; i++)
         {
             if (audioClips[i].audioType == audioType)

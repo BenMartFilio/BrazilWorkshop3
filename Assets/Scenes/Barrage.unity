@@ -3991,6 +3991,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 59408a31026bdcb4b9cd64a15ffde59d, type: 2}
   - {fileID: 11400000, guid: 7fa2dcd5934871c4cb775e8a57244ecb, type: 2}
   - {fileID: 11400000, guid: afda0e32c5df4144a918f3bf1d6e9bd9, type: 2}
+  audioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
   donneesJoueur: {fileID: 11400000, guid: f469a69765f7c5c4aa607382bdb461df, type: 2}
 --- !u!4 &1914613287
 Transform:
