@@ -1027,6 +1027,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 2020874798}
   targetText: {fileID: 1542751289}
   coinAudioSource: {fileID: 531920904}
+  musicAudioClip: {fileID: 8300000, guid: 9072dd608974ac54e9ce279abd121559, type: 3}
 --- !u!1 &458309831
 GameObject:
   m_ObjectHideFlags: 0

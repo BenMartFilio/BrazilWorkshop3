@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioEventDispatcher _AudioEventDispatcher;
     [SerializeField] private AudioType _MoveAudioType;
     [SerializeField] private AudioType _coinPickup;
+    [SerializeField] private AudioType _semiCrash;
 
     public float moveDuration = 0.1f;
     public float maxLeanAngle = 45f;
@@ -238,8 +239,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnSemiCollision()
     {
+
+        if (_AudioEventDispatcher != false) _AudioEventDispatcher.PlayAudio(_semiCrash);
+       
         if (IamAlreadyTouched == false)
         {
+
                 StartCoroutine(Camera.main.GetComponent<ScreenShake>().Shake(0.2f, 0.15f));
                 StartCoroutine(SimpleCollision());
         }

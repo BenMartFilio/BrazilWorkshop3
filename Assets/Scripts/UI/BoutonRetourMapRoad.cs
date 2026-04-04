@@ -23,6 +23,9 @@ namespace Barrage.UI
         [Tooltip("Durée du fondu d'apparition du bouton (secondes).")]
         [SerializeField, Min(0f)] private float duréeFondu = 0.4f;
 
+        [SerializeField] private AudioEventDispatcher audioEventDispatcher;
+        [SerializeField] private AudioType _ClickSound;    
+
         private Coroutine _coroutine;
 
         private void Awake()
@@ -106,6 +109,7 @@ namespace Barrage.UI
 
         private void OnClic()
         {
+            if(audioEventDispatcher != null) audioEventDispatcher.PlayAudio(_ClickSound);
             if (SessionManager.Instance != null)
             {
                 SessionManager.Instance.RetournerAMapRoad();
