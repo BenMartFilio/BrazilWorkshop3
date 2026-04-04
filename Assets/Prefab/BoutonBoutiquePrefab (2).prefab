@@ -227,6 +227,7 @@ GameObject:
   - component: {fileID: 5616533564462721609}
   - component: {fileID: 6936706646142849461}
   - component: {fileID: 45277559010422860}
+  - component: {fileID: 8010561776950710526}
   m_Layer: 0
   m_Name: BoutonBoutiquePrefab (2)
   m_TagString: Untagged
@@ -372,8 +373,8 @@ MonoBehaviour:
   animationSpeed: 12
   enableVibration: 1
   _audioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
-  _click: 0
-  _muteSound: 1
+  _click: 13
+  _muteSound: 0
 --- !u!114 &45277559010422860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,7 +391,7 @@ MonoBehaviour:
   catalogue: {fileID: 11400000, guid: 80ef1b6857815b240a63cedf81c56858, type: 2}
   skinIndex: 0
   deviseAchat: 0
-  cost: 500
+  cost: 10
   priceLabel: {fileID: 2045128903678038055}
   affordableColor: {r: 0, g: 0, b: 0, a: 1}
   unaffordableColor: {r: 1, g: 0, b: 0, a: 1}
@@ -405,15 +406,27 @@ MonoBehaviour:
   successPanel: {fileID: 0}
   successItemIcon: {fileID: 0}
   audioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
-  purchaseSound: 0
-  failSound: 0
+  purchaseSound: 15
+  failSound: 19
   coinsUpdater: {fileID: 0}
   onPurchaseSuccess:
     m_PersistentCalls:
       m_Calls: []
   onPurchaseFailed:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8010561776950710526}
+        m_TargetAssemblyTypeName: BoutonEchecEffect, Assembly-CSharp
+        m_MethodName: JouerEffetEchec
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   fondAchatSkin: {fileID: 21300000, guid: db1a037e218f13542a79cf7321dec568, type: 3}
   fondAcheteSkin: {fileID: 21300000, guid: e125a7571d1629543b3ea47ec80da37b, type: 3}
   fondEquipeSkin: {fileID: 21300000, guid: 6be91397bc748ed4bb4740c1b1ff744a, type: 3}
@@ -424,6 +437,24 @@ MonoBehaviour:
   equipFocus: {fileID: 0}
   iconeSource: {fileID: 401743767433183514}
   prixContainer: {fileID: 6774930178532144358}
+--- !u!114 &8010561776950710526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3502999268918929335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5812fa09e51c4abe10a84f80bd354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoutonEchecEffect
+  "dur\xE9e": 0.45
+  angleMax: 6
+  "fr\xE9quence": 28
+  graphic: {fileID: 0}
+  couleurEchec: {r: 1, g: 0.25, b: 0.25, a: 1}
+  "dur\xE9eFonduRetour": 0.3
 --- !u!1 &6774930178532144358
 GameObject:
   m_ObjectHideFlags: 0

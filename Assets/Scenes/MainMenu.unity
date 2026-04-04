@@ -386,6 +386,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 674746703}
     m_Modifications:
     - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: cost
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       propertyPath: failSound
       value: 19
       objectReference: {fileID: 0}
@@ -433,6 +437,34 @@ PrefabInstance:
       propertyPath: confirmationDescriptionLabel
       value: 
       objectReference: {fileID: 1075464783}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 50602399}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: JouerEffetEchec
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BoutonEchecEffect, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 401743767433183514, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -551,6 +583,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 50602391}
+    - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 50602399}
   m_SourcePrefab: {fileID: 100100000, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
 --- !u!224 &50602389 stripped
 RectTransform:
@@ -574,7 +609,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dfd40a537840b40ad31cf1498dce55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopButtonRevealEffect
-  wipeMaterialTemplate: {fileID: 2100000, guid: 8336043158f706f4a82e9926520363d7, type: 2}
 --- !u!225 &50602392
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -587,6 +621,24 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &50602399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50602390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5812fa09e51c4abe10a84f80bd354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoutonEchecEffect
+  "dur\xE9e": 0.45
+  angleMax: 6
+  "fr\xE9quence": 28
+  graphic: {fileID: 0}
+  couleurEchec: {r: 1, g: 0.25, b: 0.25, a: 1}
+  "dur\xE9eFonduRetour": 0.3
 --- !u!1 &61589360
 GameObject:
   m_ObjectHideFlags: 0
@@ -2451,7 +2503,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dfd40a537840b40ad31cf1498dce55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopButtonRevealEffect
-  wipeMaterialTemplate: {fileID: 2100000, guid: 8336043158f706f4a82e9926520363d7, type: 2}
 --- !u!225 &206927020
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3537,7 +3588,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dfd40a537840b40ad31cf1498dce55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopButtonRevealEffect
-  wipeMaterialTemplate: {fileID: 2100000, guid: 8336043158f706f4a82e9926520363d7, type: 2}
 --- !u!225 &244497295
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4434,6 +4484,34 @@ PrefabInstance:
       propertyPath: confirmationDescriptionLabel
       value: 
       objectReference: {fileID: 1075464783}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 345751939}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: JouerEffetEchec
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BoutonEchecEffect, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 401743767433183514, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -4552,6 +4630,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 345751931}
+    - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 345751939}
   m_SourcePrefab: {fileID: 100100000, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
 --- !u!224 &345751929 stripped
 RectTransform:
@@ -4575,7 +4656,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dfd40a537840b40ad31cf1498dce55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopButtonRevealEffect
-  wipeMaterialTemplate: {fileID: 2100000, guid: 8336043158f706f4a82e9926520363d7, type: 2}
 --- !u!225 &345751932
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4588,6 +4668,24 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &345751939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345751930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5812fa09e51c4abe10a84f80bd354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoutonEchecEffect
+  "dur\xE9e": 0.45
+  angleMax: 6
+  "fr\xE9quence": 28
+  graphic: {fileID: 0}
+  couleurEchec: {r: 1, g: 0.25, b: 0.25, a: 1}
+  "dur\xE9eFonduRetour": 0.3
 --- !u!1 &348806592
 GameObject:
   m_ObjectHideFlags: 0
@@ -6036,7 +6134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dfd40a537840b40ad31cf1498dce55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopButtonRevealEffect
-  wipeMaterialTemplate: {fileID: 2100000, guid: 8336043158f706f4a82e9926520363d7, type: 2}
 --- !u!225 &482957425
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -6986,6 +7083,34 @@ PrefabInstance:
       propertyPath: confirmationDescriptionLabel
       value: 
       objectReference: {fileID: 1075464783}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 569468352}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: JouerEffetEchec
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BoutonEchecEffect, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 401743767433183514, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -7104,6 +7229,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 569468344}
+    - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 569468352}
   m_SourcePrefab: {fileID: 100100000, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
 --- !u!224 &569468342 stripped
 RectTransform:
@@ -7127,7 +7255,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dfd40a537840b40ad31cf1498dce55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopButtonRevealEffect
-  wipeMaterialTemplate: {fileID: 2100000, guid: 8336043158f706f4a82e9926520363d7, type: 2}
 --- !u!225 &569468345
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -7140,6 +7267,24 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &569468352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569468343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5812fa09e51c4abe10a84f80bd354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoutonEchecEffect
+  "dur\xE9e": 0.45
+  angleMax: 6
+  "fr\xE9quence": 28
+  graphic: {fileID: 0}
+  couleurEchec: {r: 1, g: 0.25, b: 0.25, a: 1}
+  "dur\xE9eFonduRetour": 0.3
 --- !u!1 &577831718
 GameObject:
   m_ObjectHideFlags: 0
@@ -7968,6 +8113,34 @@ PrefabInstance:
       propertyPath: confirmationDescriptionLabel
       value: 
       objectReference: {fileID: 1075464783}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 645760221}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: JouerEffetEchec
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BoutonEchecEffect, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 401743767433183514, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -8086,6 +8259,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 645760213}
+    - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 645760221}
   m_SourcePrefab: {fileID: 100100000, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
 --- !u!224 &645760211 stripped
 RectTransform:
@@ -8109,7 +8285,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dfd40a537840b40ad31cf1498dce55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopButtonRevealEffect
-  wipeMaterialTemplate: {fileID: 2100000, guid: 8336043158f706f4a82e9926520363d7, type: 2}
 --- !u!225 &645760214
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -8122,6 +8297,24 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &645760221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645760212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5812fa09e51c4abe10a84f80bd354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoutonEchecEffect
+  "dur\xE9e": 0.45
+  angleMax: 6
+  "fr\xE9quence": 28
+  graphic: {fileID: 0}
+  couleurEchec: {r: 1, g: 0.25, b: 0.25, a: 1}
+  "dur\xE9eFonduRetour": 0.3
 --- !u!1 &646053069
 GameObject:
   m_ObjectHideFlags: 0
@@ -11733,6 +11926,34 @@ PrefabInstance:
       propertyPath: confirmationDescriptionLabel
       value: 
       objectReference: {fileID: 1075464783}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 836728174}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: JouerEffetEchec
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BoutonEchecEffect, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 401743767433183514, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -11851,6 +12072,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 836728166}
+    - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 836728174}
   m_SourcePrefab: {fileID: 100100000, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
 --- !u!224 &836728164 stripped
 RectTransform:
@@ -11874,7 +12098,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dfd40a537840b40ad31cf1498dce55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopButtonRevealEffect
-  wipeMaterialTemplate: {fileID: 2100000, guid: 8336043158f706f4a82e9926520363d7, type: 2}
 --- !u!225 &836728167
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -11887,6 +12110,24 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &836728174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836728165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5812fa09e51c4abe10a84f80bd354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoutonEchecEffect
+  "dur\xE9e": 0.45
+  angleMax: 6
+  "fr\xE9quence": 28
+  graphic: {fileID: 0}
+  couleurEchec: {r: 1, g: 0.25, b: 0.25, a: 1}
+  "dur\xE9eFonduRetour": 0.3
 --- !u!1 &840119377
 GameObject:
   m_ObjectHideFlags: 0
@@ -12580,6 +12821,34 @@ PrefabInstance:
       propertyPath: confirmationDescriptionLabel
       value: 
       objectReference: {fileID: 1075464783}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 893728864}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: JouerEffetEchec
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BoutonEchecEffect, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 401743767433183514, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -12698,6 +12967,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 893728856}
+    - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 893728864}
   m_SourcePrefab: {fileID: 100100000, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
 --- !u!224 &893728854 stripped
 RectTransform:
@@ -12721,7 +12993,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dfd40a537840b40ad31cf1498dce55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopButtonRevealEffect
-  wipeMaterialTemplate: {fileID: 2100000, guid: 8336043158f706f4a82e9926520363d7, type: 2}
 --- !u!225 &893728857
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -12734,6 +13005,24 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &893728864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893728855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5812fa09e51c4abe10a84f80bd354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoutonEchecEffect
+  "dur\xE9e": 0.45
+  angleMax: 6
+  "fr\xE9quence": 28
+  graphic: {fileID: 0}
+  couleurEchec: {r: 1, g: 0.25, b: 0.25, a: 1}
+  "dur\xE9eFonduRetour": 0.3
 --- !u!1 &903584750
 GameObject:
   m_ObjectHideFlags: 0
@@ -14465,7 +14754,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dfd40a537840b40ad31cf1498dce55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopButtonRevealEffect
-  wipeMaterialTemplate: {fileID: 2100000, guid: 8336043158f706f4a82e9926520363d7, type: 2}
 --- !u!225 &1049702357
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -14604,7 +14892,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dfd40a537840b40ad31cf1498dce55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopButtonRevealEffect
-  wipeMaterialTemplate: {fileID: 2100000, guid: 8336043158f706f4a82e9926520363d7, type: 2}
 --- !u!225 &1061615896
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -14829,7 +15116,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dfd40a537840b40ad31cf1498dce55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopButtonRevealEffect
-  wipeMaterialTemplate: {fileID: 2100000, guid: 8336043158f706f4a82e9926520363d7, type: 2}
 --- !u!225 &1069960509
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -15696,6 +15982,34 @@ PrefabInstance:
       propertyPath: confirmationDescriptionLabel
       value: 
       objectReference: {fileID: 1075464783}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1105331092}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: JouerEffetEchec
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BoutonEchecEffect, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 401743767433183514, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -15814,6 +16128,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1105331084}
+    - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1105331092}
   m_SourcePrefab: {fileID: 100100000, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
 --- !u!224 &1105331082 stripped
 RectTransform:
@@ -15837,7 +16154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dfd40a537840b40ad31cf1498dce55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopButtonRevealEffect
-  wipeMaterialTemplate: {fileID: 2100000, guid: 8336043158f706f4a82e9926520363d7, type: 2}
 --- !u!225 &1105331085
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -15850,6 +16166,24 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1105331092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105331083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5812fa09e51c4abe10a84f80bd354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoutonEchecEffect
+  "dur\xE9e": 0.45
+  angleMax: 6
+  "fr\xE9quence": 28
+  graphic: {fileID: 0}
+  couleurEchec: {r: 1, g: 0.25, b: 0.25, a: 1}
+  "dur\xE9eFonduRetour": 0.3
 --- !u!1 &1124431611
 GameObject:
   m_ObjectHideFlags: 0
@@ -16449,6 +16783,34 @@ PrefabInstance:
       propertyPath: confirmationDescriptionLabel
       value: 
       objectReference: {fileID: 1075464783}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1161066036}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: JouerEffetEchec
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BoutonEchecEffect, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 401743767433183514, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -16567,6 +16929,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1161066028}
+    - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1161066036}
   m_SourcePrefab: {fileID: 100100000, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
 --- !u!224 &1161066026 stripped
 RectTransform:
@@ -16590,7 +16955,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dfd40a537840b40ad31cf1498dce55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopButtonRevealEffect
-  wipeMaterialTemplate: {fileID: 2100000, guid: 8336043158f706f4a82e9926520363d7, type: 2}
 --- !u!225 &1161066029
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -16603,6 +16967,24 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1161066036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161066027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5812fa09e51c4abe10a84f80bd354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoutonEchecEffect
+  "dur\xE9e": 0.45
+  angleMax: 6
+  "fr\xE9quence": 28
+  graphic: {fileID: 0}
+  couleurEchec: {r: 1, g: 0.25, b: 0.25, a: 1}
+  "dur\xE9eFonduRetour": 0.3
 --- !u!1 &1164745539
 GameObject:
   m_ObjectHideFlags: 0
@@ -17722,7 +18104,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dfd40a537840b40ad31cf1498dce55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopButtonRevealEffect
-  wipeMaterialTemplate: {fileID: 2100000, guid: 8336043158f706f4a82e9926520363d7, type: 2}
 --- !u!225 &1220986139
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -18740,14 +19121,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 674746703}
     m_Modifications:
     - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-      propertyPath: cost
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-      propertyPath: failSound
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       propertyPath: equipFocus
       value: 
       objectReference: {fileID: 272788612}
@@ -18767,10 +19140,6 @@ PrefabInstance:
       propertyPath: confirmButton
       value: 
       objectReference: {fileID: 686853570}
-    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-      propertyPath: purchaseSound
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       propertyPath: successItemIcon
       value: 
@@ -18871,23 +19240,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6936706646142849461, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-      propertyPath: _click
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 6936706646142849461, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-      propertyPath: _muteSound
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-      insertIndex: -1
+      insertIndex: 7
       addedObject: {fileID: 1298307604}
     - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-      insertIndex: -1
+      insertIndex: 8
       addedObject: {fileID: 1298307603}
   m_SourcePrefab: {fileID: 100100000, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
 --- !u!224 &1298307601 stripped
@@ -18912,7 +19273,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dfd40a537840b40ad31cf1498dce55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopButtonRevealEffect
-  wipeMaterialTemplate: {fileID: 2100000, guid: 8336043158f706f4a82e9926520363d7, type: 2}
 --- !u!225 &1298307604
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -19756,7 +20116,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dfd40a537840b40ad31cf1498dce55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopButtonRevealEffect
-  wipeMaterialTemplate: {fileID: 2100000, guid: 8336043158f706f4a82e9926520363d7, type: 2}
 --- !u!225 &1390242647
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -20577,6 +20936,34 @@ PrefabInstance:
       propertyPath: confirmationDescriptionLabel
       value: 
       objectReference: {fileID: 1075464783}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1471993946}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: JouerEffetEchec
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BoutonEchecEffect, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 401743767433183514, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -20695,6 +21082,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1471993938}
+    - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1471993946}
   m_SourcePrefab: {fileID: 100100000, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
 --- !u!224 &1471993936 stripped
 RectTransform:
@@ -20718,7 +21108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dfd40a537840b40ad31cf1498dce55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopButtonRevealEffect
-  wipeMaterialTemplate: {fileID: 2100000, guid: 8336043158f706f4a82e9926520363d7, type: 2}
 --- !u!225 &1471993939
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -20731,6 +21120,24 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1471993946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471993937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5812fa09e51c4abe10a84f80bd354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoutonEchecEffect
+  "dur\xE9e": 0.45
+  angleMax: 6
+  "fr\xE9quence": 28
+  graphic: {fileID: 0}
+  couleurEchec: {r: 1, g: 0.25, b: 0.25, a: 1}
+  "dur\xE9eFonduRetour": 0.3
 --- !u!1 &1481863673
 GameObject:
   m_ObjectHideFlags: 0
@@ -20812,7 +21219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dfd40a537840b40ad31cf1498dce55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopButtonRevealEffect
-  wipeMaterialTemplate: {fileID: 2100000, guid: 8336043158f706f4a82e9926520363d7, type: 2}
 --- !u!225 &1487586025
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -21100,7 +21506,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dfd40a537840b40ad31cf1498dce55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopButtonRevealEffect
-  wipeMaterialTemplate: {fileID: 2100000, guid: 8336043158f706f4a82e9926520363d7, type: 2}
 --- !u!225 &1503949456
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -21177,6 +21582,34 @@ PrefabInstance:
       propertyPath: confirmationDescriptionLabel
       value: 
       objectReference: {fileID: 1075464783}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1504667989}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: JouerEffetEchec
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BoutonEchecEffect, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 401743767433183514, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -21295,6 +21728,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1504667981}
+    - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1504667989}
   m_SourcePrefab: {fileID: 100100000, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
 --- !u!224 &1504667979 stripped
 RectTransform:
@@ -21318,7 +21754,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dfd40a537840b40ad31cf1498dce55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopButtonRevealEffect
-  wipeMaterialTemplate: {fileID: 2100000, guid: 8336043158f706f4a82e9926520363d7, type: 2}
 --- !u!225 &1504667982
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -21331,6 +21766,24 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1504667989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504667980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5812fa09e51c4abe10a84f80bd354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoutonEchecEffect
+  "dur\xE9e": 0.45
+  angleMax: 6
+  "fr\xE9quence": 28
+  graphic: {fileID: 0}
+  couleurEchec: {r: 1, g: 0.25, b: 0.25, a: 1}
+  "dur\xE9eFonduRetour": 0.3
 --- !u!1 &1507163753
 GameObject:
   m_ObjectHideFlags: 0
@@ -23104,7 +23557,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dfd40a537840b40ad31cf1498dce55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopButtonRevealEffect
-  wipeMaterialTemplate: {fileID: 2100000, guid: 8336043158f706f4a82e9926520363d7, type: 2}
 --- !u!225 &1658042315
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -24234,6 +24686,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 674746703}
     m_Modifications:
     - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: cost
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       propertyPath: failSound
       value: 19
       objectReference: {fileID: 0}
@@ -24281,6 +24737,34 @@ PrefabInstance:
       propertyPath: confirmationDescriptionLabel
       value: 
       objectReference: {fileID: 1075464783}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1808758928}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: JouerEffetEchec
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BoutonEchecEffect, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 401743767433183514, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -24399,6 +24883,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1808758920}
+    - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1808758928}
   m_SourcePrefab: {fileID: 100100000, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
 --- !u!224 &1808758918 stripped
 RectTransform:
@@ -24422,7 +24909,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dfd40a537840b40ad31cf1498dce55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopButtonRevealEffect
-  wipeMaterialTemplate: {fileID: 2100000, guid: 8336043158f706f4a82e9926520363d7, type: 2}
 --- !u!225 &1808758921
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -24435,6 +24921,24 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1808758928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808758919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5812fa09e51c4abe10a84f80bd354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoutonEchecEffect
+  "dur\xE9e": 0.45
+  angleMax: 6
+  "fr\xE9quence": 28
+  graphic: {fileID: 0}
+  couleurEchec: {r: 1, g: 0.25, b: 0.25, a: 1}
+  "dur\xE9eFonduRetour": 0.3
 --- !u!1 &1810539048
 GameObject:
   m_ObjectHideFlags: 0
@@ -25168,6 +25672,34 @@ PrefabInstance:
       propertyPath: confirmationDescriptionLabel
       value: 
       objectReference: {fileID: 1075464783}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1842301167}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: JouerEffetEchec
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BoutonEchecEffect, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 401743767433183514, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -25286,6 +25818,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1842301159}
+    - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1842301167}
   m_SourcePrefab: {fileID: 100100000, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
 --- !u!224 &1842301157 stripped
 RectTransform:
@@ -25309,7 +25844,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dfd40a537840b40ad31cf1498dce55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopButtonRevealEffect
-  wipeMaterialTemplate: {fileID: 2100000, guid: 8336043158f706f4a82e9926520363d7, type: 2}
 --- !u!225 &1842301160
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -25322,6 +25856,24 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1842301167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842301158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5812fa09e51c4abe10a84f80bd354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoutonEchecEffect
+  "dur\xE9e": 0.45
+  angleMax: 6
+  "fr\xE9quence": 28
+  graphic: {fileID: 0}
+  couleurEchec: {r: 1, g: 0.25, b: 0.25, a: 1}
+  "dur\xE9eFonduRetour": 0.3
 --- !u!1 &1844332322
 GameObject:
   m_ObjectHideFlags: 0
@@ -27005,6 +27557,34 @@ PrefabInstance:
       propertyPath: confirmationDescriptionLabel
       value: 
       objectReference: {fileID: 1075464783}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1970998998}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: JouerEffetEchec
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BoutonEchecEffect, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 401743767433183514, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -27123,6 +27703,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1970998990}
+    - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1970998998}
   m_SourcePrefab: {fileID: 100100000, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
 --- !u!224 &1970998988 stripped
 RectTransform:
@@ -27146,7 +27729,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dfd40a537840b40ad31cf1498dce55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopButtonRevealEffect
-  wipeMaterialTemplate: {fileID: 2100000, guid: 8336043158f706f4a82e9926520363d7, type: 2}
 --- !u!225 &1970998991
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -27159,6 +27741,24 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1970998998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970998989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5812fa09e51c4abe10a84f80bd354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoutonEchecEffect
+  "dur\xE9e": 0.45
+  angleMax: 6
+  "fr\xE9quence": 28
+  graphic: {fileID: 0}
+  couleurEchec: {r: 1, g: 0.25, b: 0.25, a: 1}
+  "dur\xE9eFonduRetour": 0.3
 --- !u!1 &1972051256
 GameObject:
   m_ObjectHideFlags: 0
@@ -27973,6 +28573,34 @@ PrefabInstance:
       propertyPath: confirmationDescriptionLabel
       value: 
       objectReference: {fileID: 1075464783}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2072374133}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: JouerEffetEchec
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BoutonEchecEffect, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 45277559010422860, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      propertyPath: onPurchaseFailed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 401743767433183514, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -28091,6 +28719,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2072374125}
+    - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2072374133}
   m_SourcePrefab: {fileID: 100100000, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
 --- !u!224 &2072374123 stripped
 RectTransform:
@@ -28114,7 +28745,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dfd40a537840b40ad31cf1498dce55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopButtonRevealEffect
-  wipeMaterialTemplate: {fileID: 2100000, guid: 8336043158f706f4a82e9926520363d7, type: 2}
 --- !u!225 &2072374126
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -28127,6 +28757,24 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &2072374133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072374124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e5812fa09e51c4abe10a84f80bd354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoutonEchecEffect
+  "dur\xE9e": 0.45
+  angleMax: 6
+  "fr\xE9quence": 28
+  graphic: {fileID: 0}
+  couleurEchec: {r: 1, g: 0.25, b: 0.25, a: 1}
+  "dur\xE9eFonduRetour": 0.3
 --- !u!1 &2081316476
 GameObject:
   m_ObjectHideFlags: 0
@@ -28356,7 +29004,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dfd40a537840b40ad31cf1498dce55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopButtonRevealEffect
-  wipeMaterialTemplate: {fileID: 2100000, guid: 8336043158f706f4a82e9926520363d7, type: 2}
 --- !u!225 &2126130641
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -28546,7 +29193,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dfd40a537840b40ad31cf1498dce55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopButtonRevealEffect
-  wipeMaterialTemplate: {fileID: 2100000, guid: 8336043158f706f4a82e9926520363d7, type: 2}
 --- !u!225 &2144411222
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -28966,7 +29612,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dfd40a537840b40ad31cf1498dce55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopButtonRevealEffect
-  wipeMaterialTemplate: {fileID: 2100000, guid: 8336043158f706f4a82e9926520363d7, type: 2}
 --- !u!225 &3254380190229409661
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -29139,7 +29784,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82dfd40a537840b40ad31cf1498dce55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopButtonRevealEffect
-  wipeMaterialTemplate: {fileID: 2100000, guid: 8336043158f706f4a82e9926520363d7, type: 2}
 --- !u!225 &4853651697836556413
 CanvasGroup:
   m_ObjectHideFlags: 0
