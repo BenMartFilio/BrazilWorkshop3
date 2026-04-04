@@ -13,7 +13,6 @@ public class SkinEquipFocus : MonoBehaviour
 {
     private const float DUREE_ANIM = 0.3f;
     private const float ALPHA_OVERLAY = 0.6f;
-    private const float FACTEUR_ZOOM = 3f;
     private const float DUREE_TREMBLEMENT = 0.45f;
     private const float ANGLE_MAX = 6f;
     private const float FREQUENCE = 28f;
@@ -45,15 +44,22 @@ public class SkinEquipFocus : MonoBehaviour
     private int _skinIndex = -1;
     private System.Action _onEquippedCallback;
 
+    private Vector2 _proxyPositionOriginale;
+    private Vector2 _proxySizeOriginale;
+
     #region Unity Lifecycle
 
     private void Awake()
     {
-        // Listeners — Awake tourne une seule fois au chargement de la scène
+        if (iconeProxy != null)
+        {
+            _proxyPositionOriginale = iconeProxy.rectTransform.anchoredPosition;
+            _proxySizeOriginale = iconeProxy.rectTransform.sizeDelta;
+        }
+
         if (boutonFermeture != null) boutonFermeture.onClick.AddListener(Fermer);
         if (boutonEquiper != null) boutonEquiper.onClick.AddListener(OnEquiperClique);
 
-        // Se désactive après l'init pour ne pas apparaître au démarrage
         gameObject.SetActive(false);
     }
 
@@ -116,10 +122,11 @@ public class SkinEquipFocus : MonoBehaviour
 
         if (iconeProxy != null)
         {
-            iconeProxy.rectTransform.anchoredPosition = Vector2.zero;
-            iconeProxy.rectTransform.sizeDelta = Vector2.zero;
+            iconeProxy.rectTransform.anchoredPosition = _proxyPositionOriginale;
+            iconeProxy.rectTransform.sizeDelta = _proxySizeOriginale;
             iconeProxy.rectTransform.localRotation = Quaternion.identity;
         }
+
 
         _iconeSource = null;
         _skinIndex = -1;
@@ -201,8 +208,8 @@ public class SkinEquipFocus : MonoBehaviour
         RectTransform rt = iconeProxy.rectTransform;
         Vector2 posDepart = rt.anchoredPosition;
         Vector2 tailleDepart = rt.sizeDelta;
-        Vector2 posCible = Vector2.zero;
-        Vector2 tailleCible = tailleDepart * FACTEUR_ZOOM;
+        Vector2 posCible = _proxyPositionOriginale;
+        Vector2 tailleCible = _proxySizeOriginale;
         float elapsed = 0f;
 
         while (elapsed < DUREE_ANIM)
@@ -227,6 +234,7 @@ public class SkinEquipFocus : MonoBehaviour
         rt.anchoredPosition = posCible;
         rt.sizeDelta = tailleCible;
     }
+
 
     private IEnumerator AnimerTremblement()
     {

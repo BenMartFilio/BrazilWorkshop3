@@ -73,6 +73,9 @@ public class SkinPurchaseButton : MonoBehaviour
     [SerializeField] private SkinEquipFocus equipFocus;
     [SerializeField] private Image iconeSource;  // enfant Icone du bouton
 
+    [SerializeField] private GameObject prixContainer; // ← le GO "Price" parent de priceLabel et deviseIcone
+
+
 
     private Button _button;
     private int _cachedMonney = -1;
@@ -266,8 +269,7 @@ public class SkinPurchaseButton : MonoBehaviour
 
         if (achete)
         {
-            if (priceLabel != null) priceLabel.gameObject.SetActive(false);
-            if (deviseIcone != null) deviseIcone.gameObject.SetActive(false);
+            if (prixContainer != null) prixContainer.SetActive(false);
             if (labelEtatEquipe != null)
             {
                 labelEtatEquipe.gameObject.SetActive(true);
@@ -276,8 +278,7 @@ public class SkinPurchaseButton : MonoBehaviour
         }
         else
         {
-            if (priceLabel != null) priceLabel.gameObject.SetActive(true);
-            if (deviseIcone != null) deviseIcone.gameObject.SetActive(true);
+            if (prixContainer != null) prixContainer.SetActive(true);
             if (labelEtatEquipe != null) labelEtatEquipe.gameObject.SetActive(false);
 
             if (priceLabel != null)
