@@ -6,6 +6,7 @@ public class PlaySubMenu : MonoBehaviour
     [SerializeField] private GameObject _playMenu;
     [SerializeField] private GameObject _playBouton;
     [SerializeField] private GameObject _optionBouton;
+    [SerializeField] private GameObject _tutoBouton;
 
     [SerializeField] private GameObject _shopMenu;
     [SerializeField] private GameObject _inventoryMenu;
@@ -26,6 +27,7 @@ public class PlaySubMenu : MonoBehaviour
         _inventoryMenu.SetActive(false);
         StartButtonDisplay();
         StartButtonOptionDisplay();
+        StartButtonTutoDisplay();
     }
 
     private void StartButtonDisplay()
@@ -35,6 +37,10 @@ public class PlaySubMenu : MonoBehaviour
     private void StartButtonOptionDisplay()
     {
         StartCoroutine(LerpPosition(0.2f,_optionBouton, new Vector3(-150,0,0)));
+    }
+    private void StartButtonTutoDisplay()
+    {
+        StartCoroutine(LerpPosition(0.2f,_tutoBouton, new Vector3(150,0,0)));
     }
 
 

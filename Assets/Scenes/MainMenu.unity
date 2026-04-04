@@ -2712,6 +2712,7 @@ MonoBehaviour:
   _playMenu: {fileID: 578683884}
   _playBouton: {fileID: 330534695}
   _optionBouton: {fileID: 348806592}
+  _tutoBouton: {fileID: 1218804890}
   _shopMenu: {fileID: 1938874020}
   _inventoryMenu: {fileID: 1124431611}
 --- !u!4 &215803648
@@ -18407,12 +18408,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1503949447}
-  - {fileID: 1049702348}
   - {fileID: 206927011}
+  - {fileID: 1658042306}
   - {fileID: 625276534}
   - {fileID: 794025170}
-  - {fileID: 1658042306}
+  - {fileID: 1503949447}
+  - {fileID: 1049702348}
   - {fileID: 1390242637}
   - {fileID: 244497286}
   - {fileID: 1073900527}
