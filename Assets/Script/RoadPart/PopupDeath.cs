@@ -1,29 +1,36 @@
+// PopupDeath.cs — capture la scale dans Awake
 using System.Collections;
 using UnityEngine;
 
 public class PopupDeath : MonoBehaviour
 {
-    Vector3 aScale;
+    private Vector3 _originalScale;
 
-    private void Start()
+    private void Awake()
     {
+        // Capturé une seule fois à l'initialisation — stable
+        _originalScale = transform.localScale;
     }
+
     private void OnEnable()
     {
-        aScale = transform.localScale;
         StartCoroutine(LerpScale(0.1f));
     }
-    IEnumerator LerpScale(float time)
+
+    private IEnumerator LerpScale(float time)
     {
-        Debug.Log("ScaleAgain");
-        float elapsed = 0;
-        Vector3 toScale = aScale * 0.85f;
+        Vector3 fromScale = _originalScale * 0.85f;
+        float elapsed = 0f;
+
         while (elapsed < time)
         {
-            transform.localScale = Vector3.Lerp(toScale, aScale, elapsed / time);
             elapsed += Time.deltaTime;
+            transform.localScale = Vector3.Lerp(fromScale, _originalScale,
+                EaseOutCubic(elapsed / time));
             yield return null;
         }
-        transform.localScale = aScale;
+        transform.localScale = _originalScale;
     }
+
+    private static float EaseOutCubic(float t) => 1f - Mathf.Pow(1f - Mathf.Clamp01(t), 3f);
 }
