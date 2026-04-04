@@ -10,6 +10,8 @@ public class GoundMouvement : MonoBehaviour
     public bool started = true;
     [SerializeField] private int maxSpeed = 35;
 
+    private Vector3 _repositionOffset;
+
     /// <summary>
     /// Multiplicateur global applique dans UpdateSpeed.
     /// Partage la meme semantique que ScrollingElement.FacteurVitesseGlobal.
@@ -18,7 +20,8 @@ public class GoundMouvement : MonoBehaviour
 
     private void Start()
     {
-        speed = baseSpeed;
+    //    speed = baseSpeed;
+        _repositionOffset = new Vector3(0f, width * 2f, 0f);
     }
 
     public void UpdateSpeed(float addToNewSpeed)
@@ -48,7 +51,7 @@ public class GoundMouvement : MonoBehaviour
 
         if (transform.position.y <= -width)
         {
-            transform.position += new Vector3(0,width * 2f, 0);
+            transform.position += _repositionOffset;
         }
     }
 
