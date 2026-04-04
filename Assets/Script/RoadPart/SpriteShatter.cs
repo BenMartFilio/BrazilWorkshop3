@@ -49,6 +49,8 @@ public class SpriteShatter : MonoBehaviour
 
     [SerializeField] private Aspiration aspi;
 
+    private readonly List<Coroutine> _pieceCoroutines = new List<Coroutine>();
+
     private void Awake()
     {
         _image = GetComponent<Image>();
@@ -141,7 +143,7 @@ public class SpriteShatter : MonoBehaviour
                 float angular = Random.Range(RotationSpeedMin, RotationSpeedMax);
 
                 _pieces.Add(piece);
-                StartCoroutine(SimulatePiece(pieceRT, rawImg, velocity, angular, screenBottomY));
+                _pieceCoroutines.Add(StartCoroutine(SimulatePiece(pieceRT, rawImg, velocity, angular, screenBottomY)));
             }
         }
 
@@ -201,7 +203,9 @@ public class SpriteShatter : MonoBehaviour
     /// </summary>
     public void ResetShatter()
     {
-        StopAllCoroutines();
+        foreach (Coroutine c in _pieceCoroutines)
+            if (c != null) StopCoroutine(c);
+        _pieceCoroutines.Clear();
 
         foreach (GameObject p in _pieces)
             if (p != null) Destroy(p);
