@@ -21,7 +21,7 @@ public class SoundManager : MonoBehaviour
     private string MusicVolumeParam = "Music_Volume";
     private float MaxCutoff = 22000f;
     private float MinCutoff = 400f;
-    private float TransitionDuration = 1.5f;
+    private float TransitionDuration = 2.5f;
 
     private void OnEnable()
     {

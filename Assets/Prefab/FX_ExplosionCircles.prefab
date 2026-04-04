@@ -48,6 +48,7 @@ MonoBehaviour:
   spriteRouge: {fileID: 21300000, guid: c9fcd30eec0e68c4d8fc4fbd53d96223, type: 3}
   spriteOrange: {fileID: 21300000, guid: 0ac99566be83c4c40ac41585a7a0fbe1, type: 3}
   spriteJaune: {fileID: 21300000, guid: edd6999c7727e8d428b0e386ff0e80fc, type: 3}
+  previewActif: 0
   nombreDebrisNoirs: 10
   tailleDebrisNoir: 0.12
   vitesseDebrisMin: 2.5
@@ -72,3 +73,4 @@ MonoBehaviour:
   dureeJaune: 0.3
   sortingLayerName: Gameplay
   sortingOrder: 10
+  _explosionSound: {fileID: 8300000, guid: a58df645a50e6e04295a1bda3fa98525, type: 3}

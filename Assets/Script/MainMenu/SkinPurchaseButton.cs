@@ -77,6 +77,8 @@ public class SkinPurchaseButton : MonoBehaviour
 
 
 
+
+
     private Button _button;
     private int _cachedMonney = -1;
 
