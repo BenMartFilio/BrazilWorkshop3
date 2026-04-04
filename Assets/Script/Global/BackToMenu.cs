@@ -1,3 +1,4 @@
+// BackToMenu.cs
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -5,48 +6,45 @@ using UnityEngine.UI;
 
 public class BackToMenu : MonoBehaviour
 {
-    private bool inScore = false;
-    private Coroutine _timer;
     [SerializeField] private Image _toFill;
-    
 
+    private bool _inScore = false;
+    public bool _watchinAds = false;
+    private Coroutine _timer;
 
- 
     public void DisplayEndScore()
     {
-        Debug.Log("Display end");
-        StopCoroutine(_timer);
-        inScore = true;
+        // null check — peut être appelé avant StartTimer
+        if (_timer != null) StopCoroutine(_timer);
+        _inScore = true;
         SceneManager.LoadScene(3);
     }
 
     public void StartTimer()
     {
+        _inScore = false; // reset au cas où réutilisé
         _timer = StartCoroutine(Timer(9f));
     }
 
-    IEnumerator Timer(float time)
-    {
-        float elapsed = 0f;
-        while (elapsed < time)
-        {
-            if (inScore)
-            {
-                yield return null;
-            }
-            _toFill.fillAmount = Mathf.InverseLerp(time, 0f, elapsed);
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
-        if (!inScore)
-        {
-            DisplayEndScore();
-        }
-    }
-
-
     public void OnRevival()
     {
-        StopCoroutine(_timer);
+        if (_timer != null) StopCoroutine(_timer);
+
+        _watchinAds = false;
+    }
+
+    private IEnumerator Timer(float duration)
+    {
+        float elapsed = 0f;
+
+        while (elapsed < duration && !_inScore)
+        {
+            elapsed += Time.deltaTime;
+            _toFill.fillAmount = Mathf.InverseLerp(duration, 0f, elapsed);
+            yield return null;
+        }
+
+        if (!_inScore && !_watchinAds)
+            DisplayEndScore();
     }
 }

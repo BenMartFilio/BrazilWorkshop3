@@ -17,6 +17,7 @@ public class ReviveButtonAd : MonoBehaviour
     [SerializeField] private string _rewardedAdUnitId = "YOUR_REWARDED_AD_UNIT_ID";
     [SerializeField] private EndManager _endManager;
     [SerializeField] private DonnéesSession _donneesSession;
+    [SerializeField] private BackToMenu _backToMenu;
 
     private Button _button;
     private LevelPlayRewardedAd _rewardedAd;
@@ -78,7 +79,9 @@ public class ReviveButtonAd : MonoBehaviour
         if (_rewardedAd.IsAdReady())
         {
             _rewardGranted = false;
+            _backToMenu._watchinAds = true;
             _rewardedAd.ShowAd();
+            
         }
         else
         {
@@ -116,7 +119,11 @@ public class ReviveButtonAd : MonoBehaviour
     {
         MainThreadDispatcher.Enqueue(() =>
         {
-            if (!_rewardGranted) return;
+            if (!_rewardGranted)
+            { 
+                _backToMenu.DisplayEndScore();
+                return; 
+            }
 
             _reviveCount++;
             if (_donneesSession != null) _donneesSession.adWatched = _reviveCount;
