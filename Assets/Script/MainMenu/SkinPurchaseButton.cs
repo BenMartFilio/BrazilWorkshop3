@@ -109,26 +109,20 @@ public class SkinPurchaseButton : MonoBehaviour
     private void OnEnable()
     {
         OnAnySkinEquipped += RefreshButtonState;
+        if (playerDatas != null)
+            playerDatas.OnMonneyChanged += RefreshButtonState;
+        SaveGameSystem.OnSaveLoaded += RefreshButtonState;
         RefreshButtonState();
     }
 
     private void OnDisable()
     {
         OnAnySkinEquipped -= RefreshButtonState;
+        if (playerDatas != null)
+            playerDatas.OnMonneyChanged -= RefreshButtonState;
+        SaveGameSystem.OnSaveLoaded -= RefreshButtonState;
     }
 
-
-    private void Update()
-    {
-        if (playerDatas == null) return;
-
-        int currentMonney = deviseAchat == Devise.Pieces
-            ? playerDatas.generalMonney
-            : playerDatas.premiumMonney;
-
-        if (currentMonney != _cachedMonney)
-            RefreshButtonState();
-    }
 
     private void OnDestroy()
     {
@@ -210,9 +204,15 @@ public class SkinPurchaseButton : MonoBehaviour
         if (!ValidateSetup() || !CanAfford()) return;
 
         if (deviseAchat == Devise.Pieces)
+        {
             playerDatas.generalMonney -= cost;
+            playerDatas.NotifyMonneyChanged();
+        }
         else
+        {
             playerDatas.premiumMonney -= cost;
+            playerDatas.NotifyMonneyChanged();
+        }
 
         DefinitionCosmetique def = ObtenirDefinition();
         if (def != null)

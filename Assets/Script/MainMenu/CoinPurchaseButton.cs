@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿// CoinPurchaseButton.cs — remplace le Update par un event
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
@@ -31,7 +32,6 @@ public class CoinPurchaseButton : MonoBehaviour
     [SerializeField] private AudioType failSound;
 
     private Button _button;
-    private int _cachedMonney = -1;
 
     #region Unity Lifecycle
 
@@ -39,13 +39,9 @@ public class CoinPurchaseButton : MonoBehaviour
     {
         _button = GetComponent<Button>();
         _button.onClick.AddListener(OnButtonClicked);
-
-        // Panel fermé au départ
         if (confirmationPanel != null)
             confirmationPanel.SetActive(false);
     }
-
-    private void OnEnable() => RefreshButtonState();
 
     private void Start()
     {
@@ -53,10 +49,18 @@ public class CoinPurchaseButton : MonoBehaviour
         RefreshButtonState();
     }
 
-    private void Update()
+    private void OnEnable()
     {
-        if (playerDatas != null && playerDatas.generalMonney != _cachedMonney)
-            RefreshButtonState();
+        // S'abonne à l'event monnaie au lieu de poller dans Update
+        if (playerDatas != null)
+            playerDatas.OnMonneyChanged += RefreshButtonState;
+        RefreshButtonState();
+    }
+
+    private void OnDisable()
+    {
+        if (playerDatas != null)
+            playerDatas.OnMonneyChanged -= RefreshButtonState;
     }
 
     private void OnDestroy()
@@ -76,84 +80,60 @@ public class CoinPurchaseButton : MonoBehaviour
 
         if (!CanAfford())
         {
-            if (audioEventDispatcher != null) audioEventDispatcher.PlayAudio(failSound);
-            Debug.LogWarning("[CoinPurchaseButton] Pièces insuffisantes.");
+            audioEventDispatcher?.PlayAudio(failSound);
             onPurchaseFailed?.Invoke();
             return;
         }
-
         OpenConfirmationPanel();
     }
 
     private void OpenConfirmationPanel()
     {
-        if (confirmationPanel == null)
-        {
-            // Pas de panel assigné : on achète directement
-            ExecutePurchase();
-            return;
-        }
+        if (confirmationPanel == null) { ExecutePurchase(); return; }
+
         if (confirmationDescriptionLabel != null)
             confirmationDescriptionLabel.text = itemDescription;
 
         confirmButton?.onClick.AddListener(OnConfirm);
         cancelButton?.onClick.AddListener(OnCancel);
-
         confirmationPanel.SetActive(true);
     }
 
-    private void OnConfirm()
-    {
-        CloseConfirmationPanel();
-        ExecutePurchase();
-    }
-
-    private void OnCancel()
-    {
-        CloseConfirmationPanel();
-    }
+    private void OnConfirm() { CloseConfirmationPanel(); ExecutePurchase(); }
+    private void OnCancel() { CloseConfirmationPanel(); }
 
     private void ExecutePurchase()
     {
         if (!ValidateSetup() || !CanAfford()) return;
-        if(audioEventDispatcher != null) audioEventDispatcher.PlayAudio(purchaseSound);
+
+        audioEventDispatcher?.PlayAudio(purchaseSound);
         playerDatas.generalMonney -= cost;
+        playerDatas.NotifyMonneyChanged(); // déclenche RefreshButtonState sur tous les abonnés
         playerDatas.SaveDatas();
-        coinsUpdater.AffichageCoin();
+        coinsUpdater?.AffichageCoin();
         onPurchaseSuccess?.Invoke();
-        RefreshButtonState();
     }
 
     private void CloseConfirmationPanel()
     {
-        if (confirmationPanel != null)
-            confirmationPanel.SetActive(false);
-
-        if (confirmButton != null) confirmButton.onClick.RemoveListener(OnConfirm);
-        if (cancelButton != null) cancelButton.onClick.RemoveListener(OnCancel);
+        if (confirmationPanel != null) confirmationPanel.SetActive(false);
+        confirmButton?.onClick.RemoveListener(OnConfirm);
+        cancelButton?.onClick.RemoveListener(OnCancel);
     }
 
     private void RefreshButtonState()
     {
         if (_button == null || playerDatas == null) return;
-
-        bool affordable = CanAfford();
-    //    _button.interactable = affordable;
-
         if (priceLabel != null)
-            priceLabel.color = affordable ? affordableColor : unaffordableColor;
-
-        _cachedMonney = playerDatas.generalMonney;
+            priceLabel.color = CanAfford() ? affordableColor : unaffordableColor;
     }
 
     private void UpdatePriceLabel()
     {
-        if (priceLabel != null)
-            priceLabel.text = cost.ToString();
+        if (priceLabel != null) priceLabel.text = cost.ToString();
     }
 
     private bool CanAfford() => playerDatas != null && playerDatas.generalMonney >= cost;
-
     private bool ValidateSetup()
     {
         if (playerDatas != null) return true;
@@ -163,14 +143,10 @@ public class CoinPurchaseButton : MonoBehaviour
 
     #endregion
 
-    #region Public API
-
     public void SetCost(int newCost)
     {
         cost = Mathf.Max(0, newCost);
         UpdatePriceLabel();
         RefreshButtonState();
     }
-
-    #endregion
 }
