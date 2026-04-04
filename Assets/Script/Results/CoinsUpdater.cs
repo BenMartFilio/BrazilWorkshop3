@@ -25,12 +25,16 @@ public class CoinsUpdater : MonoBehaviour
     {
         if (_playerDatas != null)
             _playerDatas.OnMonneyChanged += RefreshAll;
+
+        SaveGameSystem.OnSaveLoaded += RefreshAll;
     }
 
     private void OnDisable()
     {
         if (_playerDatas != null)
             _playerDatas.OnMonneyChanged -= RefreshAll;
+
+        SaveGameSystem.OnSaveLoaded -= RefreshAll;
     }
 
     private void RefreshAll()
