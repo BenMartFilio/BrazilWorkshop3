@@ -1,9 +1,7 @@
-using Unity.Collections.LowLevel.Unsafe;
+// ChangeVolume.cs — debounce de la sauvegarde + imports nettoyés
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
-using static UnityEngine.Rendering.DebugUI;
 
 public class ChangeVolume : MonoBehaviour
 {
@@ -18,19 +16,29 @@ public class ChangeVolume : MonoBehaviour
     [SerializeField] private SaveGameSystem save;
     [SerializeField] private SO_PlayerDatas playerDatas;
 
-    void OnEnable()
+    // Debounce : on ne sauvegarde qu'après que le joueur a arrêté de glisser
+    private float _saveTimer = 0f;
+    private bool _pendingSave = false;
+    private const float SAVE_DELAY = 1f; // secondes d'inactivité avant sauvegarde
+
+    private void OnEnable() => SaveGameSystem.OnSaveLoaded += LoadVolume;
+    private void OnDisable() => SaveGameSystem.OnSaveLoaded -= LoadVolume;
+
+    private void Update()
     {
-        SaveGameSystem.OnSaveLoaded += Init;
+        if (!_pendingSave) return;
+        _saveTimer -= Time.unscaledDeltaTime;
+        if (_saveTimer <= 0f)
+        {
+            _pendingSave = false;
+            playerDatas.SaveDatas();
+        }
     }
 
-    void OnDisable()
+    private void RequestSave()
     {
-        SaveGameSystem.OnSaveLoaded -= Init;
-    }
-
-    void Init()
-    {
-        LoadVolume();
+        _pendingSave = true;
+        _saveTimer = SAVE_DELAY;
     }
 
     private void LoadVolume()
@@ -38,33 +46,35 @@ public class ChangeVolume : MonoBehaviour
         slider.value = playerDatas.generalVolume;
         sliderMusic.value = playerDatas.musicVolume;
         sliderBG.value = playerDatas.SFXVolume;
-        masterGroup.audioMixer.SetFloat("Master_Volume", Mathf.Log10(Mathf.Clamp(playerDatas.generalVolume, 0.0001f, 1f)) * 20);
-        musicGroup.audioMixer.SetFloat("Music_Volume", Mathf.Log10(Mathf.Clamp(playerDatas.musicVolume, 0.0001f, 1f)) * 20);
-        backgroundGroup.audioMixer.SetFloat("BG_Volume", Mathf.Log10(Mathf.Clamp(playerDatas.SFXVolume, 0.0001f, 1f)) * 20);
-    }
 
+        ApplyMixer(masterGroup, "Master_Volume", playerDatas.generalVolume);
+        ApplyMixer(musicGroup, "Music_Volume", playerDatas.musicVolume);
+        ApplyMixer(backgroundGroup, "BG_Volume", playerDatas.SFXVolume);
+    }
 
     public void ChangeMasterVolume()
     {
-        float newvalue = slider.value;
-        masterGroup.audioMixer.SetFloat("Master_Volume", Mathf.Log10(Mathf.Clamp(newvalue, 0.0001f, 1f)) * 20);
-        playerDatas.generalVolume = newvalue;
-        save.SaveGame();
+        playerDatas.generalVolume = slider.value;
+        ApplyMixer(masterGroup, "Master_Volume", slider.value);
+        RequestSave();
     }
 
     public void ChangeMusicVolume()
     {
-        float newvalue = sliderMusic.value;
-        musicGroup.audioMixer.SetFloat("Music_Volume", Mathf.Log10(Mathf.Clamp(newvalue, 0.0001f, 1f)) * 20);
-        playerDatas.musicVolume = newvalue;
-        save.SaveGame();
+        playerDatas.musicVolume = sliderMusic.value;
+        ApplyMixer(musicGroup, "Music_Volume", sliderMusic.value);
+        RequestSave();
     }
 
     public void ChangeBackGroundVolume()
     {
-        float newvalue = sliderBG.value;
-        backgroundGroup.audioMixer.SetFloat("BG_Volume", Mathf.Log10(Mathf.Clamp(newvalue, 0.0001f, 1f)) * 20);
-        playerDatas.SFXVolume = newvalue;
-        save.SaveGame();
+        playerDatas.SFXVolume = sliderBG.value;
+        ApplyMixer(backgroundGroup, "BG_Volume", sliderBG.value);
+        RequestSave();
+    }
+
+    private static void ApplyMixer(AudioMixerGroup group, string param, float value)
+    {
+        group.audioMixer.SetFloat(param, Mathf.Log10(Mathf.Clamp(value, 0.0001f, 1f)) * 20f);
     }
 }
