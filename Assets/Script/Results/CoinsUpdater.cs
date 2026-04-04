@@ -19,7 +19,7 @@ public class CoinsUpdater : MonoBehaviour
     [SerializeField] Transform spawnPoint;
     [SerializeField] Transform targetText;
     [SerializeField] private AudioSource coinAudioSource;
-
+    [SerializeField] private AudioClip musicAudioClip;
     List<GameObject> spawnedCoins = new List<GameObject>();
     private void OnEnable()
     {
@@ -42,6 +42,9 @@ public class CoinsUpdater : MonoBehaviour
 
     private void Start()
     {
+
+        if (musicAudioClip != null)
+            SoundManager.Instance?.PlayMusicWithLowPass(musicAudioClip);
         originalScale = _textCoin.transform.localScale;
         if (waitCoin)
         {

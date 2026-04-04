@@ -18,6 +18,7 @@ public class EndManager : MonoBehaviour
     [SerializeField] private BarreProgressionBarrage _barreProgression;
     [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
     [SerializeField] private AudioType _gameOver;
+    [SerializeField] private AudioClip _RoadMusic;
     public int reviveCounter = 0;
 
     /// <summary>Fired immediately when the player dies. Subscribers are called before the revive panel appears.</summary>
@@ -25,6 +26,7 @@ public class EndManager : MonoBehaviour
 
     public void OnDeath()
     {
+        SoundManager.Instance?.PlayMusicWithLowPass(null);
         OnPlayerDied?.Invoke();
         if(_audioEventDispatcher != null) _audioEventDispatcher.PlayAudio(_gameOver);
         _timeManager.StopTime();
@@ -46,6 +48,7 @@ public class EndManager : MonoBehaviour
 
     public void Revive()
     {
+        SoundManager.Instance?.PlayMusicWithLowPass(_RoadMusic);
         StartCoroutine(Whiter(0.3f));
         _timeManager.StartTime();
         _scoreManager.StartScore();

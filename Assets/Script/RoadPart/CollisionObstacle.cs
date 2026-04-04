@@ -17,10 +17,12 @@ public class CollisionObstacle : MonoBehaviour
     /// </summary>
     public void DeclencherExplosion(Vector3 positionCollision)
     {
-        if (prefabExplosion == null) return;
+        
 
         if (_crashSound != null)
             AudioSource.PlayClipAtPoint(_crashSound, positionCollision);
+
+        if (prefabExplosion == null) return;
 
         GameObject instance = Instantiate(prefabExplosion, positionCollision, Quaternion.identity);
         ExplosionCircles fx = instance.GetComponent<ExplosionCircles>();
