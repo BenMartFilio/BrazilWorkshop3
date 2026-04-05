@@ -1854,7 +1854,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.Volume
   m_IsGlobal: 1
-  priority: 0
+  priority: 1
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: ba3c4d056602c3b4d9fa14dad17e204a, type: 2}
@@ -2778,6 +2778,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BackToMenu
   _toFill: {fileID: 1758289078}
+  _watchinAds: 0
 --- !u!1 &761055256
 GameObject:
   m_ObjectHideFlags: 0
@@ -3418,7 +3419,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Glissez vers la gauche ou la droite pour changer de voie.
+  m_text: Glissez vers la gauche ou la droite pour changer de voie !
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3933,6 +3934,7 @@ MonoBehaviour:
   _rewardedAdUnitId: YOUR_REWARDED_AD_UNIT_ID
   _endManager: {fileID: 1232534109}
   _donneesSession: {fileID: 0}
+  _backToMenu: {fileID: 0}
 --- !u!114 &1035029386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5759,6 +5761,7 @@ MonoBehaviour:
   _barreProgression: {fileID: 1833950802}
   _audioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
   _gameOver: 8
+  _RoadMusic: {fileID: 0}
   reviveCounter: 0
 --- !u!4 &1232534110
 Transform:
@@ -7663,6 +7666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimeBeforeClickOnDieButton
   buttonToEnable: {fileID: 1711705946}
+  delay: 1
 --- !u!1 &1716630450
 GameObject:
   m_ObjectHideFlags: 0
@@ -8058,7 +8062,7 @@ MonoBehaviour:
     m_Top: 40
     m_Bottom: 40
   m_ChildAlignment: 4
-  m_Spacing: 320
+  m_Spacing: 330
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
@@ -8528,6 +8532,7 @@ MonoBehaviour:
   _AudioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
   _MoveAudioType: 4
   _coinPickup: 10
+  _semiCrash: 0
   moveDuration: 0.1
   maxLeanAngle: 45
   _coinsText: {fileID: 11239705}
