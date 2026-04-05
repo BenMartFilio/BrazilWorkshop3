@@ -1,32 +1,33 @@
+// TimeBeforeClickOnDieButton.cs — supprime import inutile + cache WaitForSeconds
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TimeBeforeClickOnDieButton : MonoBehaviour
 {
     [SerializeField] private Button buttonToEnable;
-    private Coroutine coroutine;
+    [SerializeField] private float delay = 1f;
+
+    private Coroutine _coroutine;
+    private WaitForSeconds _wait;
+
+    private void Awake() => _wait = new WaitForSeconds(delay);
+
     private void OnEnable()
     {
         buttonToEnable.interactable = false;
-        coroutine = StartCoroutine(TimeBefore());
+        _coroutine = StartCoroutine(TimeBefore());
     }
 
     private void OnDisable()
     {
-        StopCoroutine(coroutine);
+        if (_coroutine != null) StopCoroutine(_coroutine);
         buttonToEnable.interactable = false;
     }
 
-    IEnumerator TimeBefore()
+    private IEnumerator TimeBefore()
     {
-        yield return new WaitForSeconds(1);
-        EnableButton();
-    }
-
-    private void EnableButton()
-    {
+        yield return _wait;
         buttonToEnable.interactable = true;
     }
 }
