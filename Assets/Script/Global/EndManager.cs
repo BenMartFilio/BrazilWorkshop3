@@ -27,8 +27,16 @@ public class EndManager : MonoBehaviour
     public void OnDeath()
     {
         SoundManager.Instance?.PlayMusicWithLowPass(null);
+        if (_audioEventDispatcher != null) _audioEventDispatcher.PlayAudio(_gameOver);
         OnPlayerDied?.Invoke();
-        if(_audioEventDispatcher != null) _audioEventDispatcher.PlayAudio(_gameOver);
+        StopGame();
+        RevivePanelDisplay();
+        _backToMenu.StartTimer();
+        SaveScoreAndCoin();
+    }
+
+    public void StopGame()
+    {
         _timeManager.StopTime();
         _scoreManager.StopScore();
         for (int i = 0; i < _grounds.Length; i++)
@@ -41,15 +49,10 @@ public class EndManager : MonoBehaviour
         _aspiration.Die();
         _playerMovement.StopMove();
         _barreProgression?.Geler();
-        RevivePanelDisplay();
-        _backToMenu.StartTimer();
-        SaveScoreAndCoin();
     }
 
-    public void Revive()
+    public void RestartGame()
     {
-        SoundManager.Instance?.PlayMusicWithLowPass(_RoadMusic);
-        StartCoroutine(Whiter(0.3f));
         _timeManager.StartTime();
         _scoreManager.StartScore();
         for (int i = 0; i < _grounds.Length; i++)
@@ -62,6 +65,13 @@ public class EndManager : MonoBehaviour
             _spawner.ReprendreCompteurBarrage();
         }
         _barreProgression?.Dégeler();
+    }
+
+    public void Revive()
+    {
+        SoundManager.Instance?.PlayMusicWithLowPass(_RoadMusic);
+        StartCoroutine(Whiter(0.3f));
+        RestartGame();
         reviveCounter++;
         _revivePanel.SetActive(false);
     }
