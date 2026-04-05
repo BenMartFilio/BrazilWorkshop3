@@ -50,7 +50,7 @@ namespace Barrage.UI
             if (donnéesSession != null && !donnéesSession.sessionValide && donnéesSession.AUneDemandeSauvegardée)
             {
                 Debug.Log("[PremierBarrageController] Résidu ScriptableObject détecté (sessionValide=false mais prochaineDemandeBarrage non-vide) — Reinitialiser().");
-                donnéesSession.Reinitialiser();
+              //  donnéesSession.Reinitialiser();
             }
 
             // On lit la valeur ici, avant que d'autres Awake() ne consomment la demande.

@@ -20,7 +20,7 @@ public class SessionReinitialiseur : MonoBehaviour
 
     private void Awake()
     {
-        SoundManager.Instance.PlayMusicWithLowPass(_MainMenuMusic);
+        SoundManager.Instance?.PlayMusicWithLowPass(_MainMenuMusic);
         if (donnéesSession == null)
         {
             Debug.LogError("[SessionReinitialiseur] donnéesSession non assignée dans l'Inspector — " +

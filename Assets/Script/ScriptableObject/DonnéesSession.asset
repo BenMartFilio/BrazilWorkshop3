@@ -13,12 +13,16 @@ MonoBehaviour:
   m_Name: "Donn\xE9esSession"
   m_EditorClassIdentifier: "Assembly-CSharp::Donn\xE9esSession"
   indexLane: 1
-  "pi\xE8ces": 14
-  score: 1302
+  "pi\xE8ces": 0
+  score: 0
   vitesseScore: 39
-  "vitesseG\xE9n\xE9rale": 1
-  vitesseSol: 6
+  "vitesseG\xE9n\xE9rale": 0
+  vitesseSol: 5
   sessionValide: 0
-  documentsPosseded: 
   signauxEcoules: 0
-  prochainBarrageA: 3
+  prochainBarrageA: 0
+  prochaineDemandeBarrage: 
+  revive: 0
+  adWatched: 0
+  "nombreBarragesCompl\xE9t\xE9s": 0
+  "patternsN\xE9cessaires": 5
