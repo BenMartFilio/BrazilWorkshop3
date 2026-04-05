@@ -22,7 +22,7 @@ public class SoundManager : MonoBehaviour
 
     private const float MaxCutoff = 22000f;
     private const float MinCutoff = 400f;
-    private const float TransitionDuration = 2.5f;
+    private const float TransitionDuration = 1f;
 
     private void Awake()
     {

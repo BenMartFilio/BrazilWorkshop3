@@ -14,6 +14,8 @@ public class SubMenuCategories : MonoBehaviour
     [SerializeField] private GameObject WidthSelected;
     [SerializeField] private GameObject FondSelected;
     [SerializeField] private TMP_Text textSelected;
+    [SerializeField] private AudioEventDispatcher _audioEventDispatcher;
+    [SerializeField] private AudioType _tabSound;
     private bool coroutineAnim;
     private float animDuration = 0.1f;
     Vector3 actualSize;
@@ -63,12 +65,12 @@ public class SubMenuCategories : MonoBehaviour
 
             if (actualSelected != resized)
             {
+                _audioEventDispatcher?.PlayAudio(_tabSound);
+
                 StartCoroutine(LerpScale(animDuration, resized));
 
                 if (actualSelected != null)
-                {
                     ToSizeDown(actualSelected);
-                }
             }
             actualSelected = resized;
         }
