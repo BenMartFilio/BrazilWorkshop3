@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -63,6 +64,9 @@ namespace Barrage.UI
         private Canvas   _overlayCanvas;
         private RawImage _overlayImage;
         private bool     _déclenché;
+        /// <summary>Déclenché quand le game over est entièrement affiché (animation ou fondu terminé).</summary>
+        public event Action OnGameOverTerminé;
+
 
         // ── API publique ──────────────────────────────────────────────────────
 
@@ -76,7 +80,7 @@ namespace Barrage.UI
             _déclenché = true;
             _tictac.Stop();
 
-            SoundManager.Instance.PlayMusicWithLowPass(null);
+            SoundManager.Instance?.PlayMusicWithLowPass(null);
             if (_audioEventDispatcher != null) _audioEventDispatcher.PlayAudio(_gameOverSound);
 
             if (utiliserAnimationComplète)
@@ -99,19 +103,34 @@ namespace Barrage.UI
             }
         }
 
+        /// <summary>Masque ou détruit l'affichage du game over. Appelé lors d'un revive.</summary>
+        public void Cacher()
+        {
+            if (utiliserAnimationComplète)
+                animationGameOver?.Nettoyer();
+            else if (_overlayCanvas != null)
+                _overlayCanvas.gameObject.SetActive(false);
+
+            _déclenché = false;
+        }
+
+
         // ── Lifecycle ─────────────────────────────────────────────────────────
 
         private void OnEnable()
         {
-            if (barrePatience != null)
-                barrePatience.OnPatienceEpuisée += Déclencher;
+            if (animationGameOver != null)
+                animationGameOver.OnAnimationTerminée += RelayerTerminée;
         }
 
         private void OnDisable()
         {
-            if (barrePatience != null)
-                barrePatience.OnPatienceEpuisée -= Déclencher;
+            if (animationGameOver != null)
+                animationGameOver.OnAnimationTerminée -= RelayerTerminée;
         }
+
+        private void RelayerTerminée() => OnGameOverTerminé?.Invoke();
+
 
         // ── Affichage de l'illustration ───────────────────────────────────────
 
@@ -137,6 +156,7 @@ namespace Barrage.UI
             }
 
             _overlayImage.color = Color.white;
+            OnGameOverTerminé?.Invoke();
         }
 
         /// <summary>

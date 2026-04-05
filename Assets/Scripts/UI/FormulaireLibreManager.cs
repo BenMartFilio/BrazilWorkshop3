@@ -110,10 +110,47 @@ namespace Barrage.UI
             StartCoroutine(SpawnApresLayout());
         }
 
+
+
+        /// <summary>
+        /// Détruit toutes les cartes libres (liste interne + cartes supplémentaires dans la couche de glissement).
+        /// Réinitialise le voile de la PartieBasse. Appelé lors d'un revive.
+        /// </summary>
+        public void NettoyerCartes()
+        {
+            // Détruire les cartes de la liste interne
+            foreach (var carte in _cartes)
+            {
+                if (carte != null)
+                    Destroy(carte.gameObject);
+            }
+            _cartes.Clear();
+
+            // Détruire les cartes supplémentaires injectées dans coucheGlissement par CompleterCartesGameOver()
+            if (coucheGlissement != null)
+            {
+                foreach (Transform enfant in coucheGlissement)
+                {
+                    if (enfant.GetComponent<FormulaireLibre>() != null)
+                        Destroy(enfant.gameObject);
+                }
+            }
+
+            // Restaurer le voile de la PartieBasse (alpha grisé par GriserToutesLesCartes)
+            if (_voilePartieBasse != null)
+            {
+                _voilePartieBasse.alpha = 1f;
+                _voilePartieBasse.interactable = true;
+                _voilePartieBasse.blocksRaycasts = true;
+            }
+        }
+
+
         /// <summary>
         /// Attend que le layout Canvas soit calculé avant de spawner et positionner les cartes,
         /// afin que partieBasse.rect retourne des dimensions réelles.
         /// </summary>
+        ///
         private IEnumerator SpawnApresLayout()
         {
             // Attendre deux frames : le premier EndOfFrame initialise le Canvas,

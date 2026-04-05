@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using TMPro;
+using System;
+using Random = UnityEngine.Random;
 
 namespace Barrage.UI
 {
@@ -57,8 +58,6 @@ namespace Barrage.UI
         [Header("Retour au menu")]
         [Tooltip("Délai en secondes après le dernier tampon avant le chargement de la scène menu.")]
         [SerializeField] private float délaiAvantMenu = 2f;
-        [Tooltip("Nom exact de la scène menu à charger (doit être présente dans Build Settings).")]
-        private string nomScèneMenu = "ResultScene";
 
         [Header("Cartes — taille et disposition")]
         [Tooltip("Largeur d'une carte-lettre en pixels. Valeur originale : 175.")]
@@ -89,6 +88,10 @@ namespace Barrage.UI
         [SerializeField] private float anneauBaveExt  = 9f;
         [Tooltip("Amplitude du bruit sur le bord intérieur (bavure interne). Valeur originale : 8.")]
         [SerializeField] private float anneauBaveInt  = 5f;
+
+        /// <summary>Déclenché après la fin de l'animation et du délai final, à la place du chargement de scène.</summary>
+        public event Action OnAnimationTerminée;
+
 
         private void OnEnable()
         {
@@ -235,8 +238,26 @@ namespace Barrage.UI
 
             // Attendre puis retourner sur la scène menu
             yield return new WaitForSeconds(délaiAvantMenu);
-            SceneManager.LoadScene(nomScèneMenu);
+            OnAnimationTerminée?.Invoke();
         }
+
+        /// <summary>Supprime les tampons visuels créés pendant l'animation et masque la vignette. Appelé lors d'un revive.</summary>
+        public void Nettoyer()
+        {
+
+            foreach (Transform child in coucheGlissement)
+            {
+                if (child.name.StartsWith("Tampon_"))
+                    Destroy(child.gameObject);
+            }
+
+            if (vignette != null)
+                vignette.gameObject.SetActive(false);
+
+            if (mainDuGarde != null)
+                mainDuGarde.gameObject.SetActive(true);
+        }
+
 
         // ── Tamponnage ────────────────────────────────────────────────────────
 

@@ -40,6 +40,22 @@ namespace Barrage.UI
             return _pile.Count - 1;
         }
 
+
+        /// <summary>Détruit toutes les cartes de la pile. Appelé lors d'un revive.</summary>
+        public void Vider()
+        {
+            // Copier la liste pour éviter la modification pendant l'itération
+            var copies = new System.Collections.Generic.List<FormulaireUI>(_pile);
+            _pile.Clear();
+
+            foreach (var formulaire in copies)
+            {
+                if (formulaire != null)
+                    Destroy(formulaire.gameObject);
+            }
+        }
+
+
         /// <summary>Retire un formulaire de la pile et repositionne les cartes restantes.</summary>
         public void RetirerFormulaire(FormulaireUI formulaire)
         {

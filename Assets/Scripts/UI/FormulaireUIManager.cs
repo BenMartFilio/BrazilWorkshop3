@@ -51,7 +51,7 @@ namespace Barrage.UI
 
         private void Start()
         {
-            SoundManager.Instance.PlayMusicWithLowPass(_barrageMusic);
+            SoundManager.Instance?.PlayMusicWithLowPass(_barrageMusic);
             // L'inventaire n'est pas réinitialisé ici : il doit persister depuis MapRoad.
             // La réinitialisation est gérée par SessionReinitialiseur et SessionManager.
             SpawnFormulaires();
@@ -65,6 +65,29 @@ namespace Barrage.UI
         }
 
         // ── Spawn & distribution ───────────────────────────────────────────────
+
+
+        /// <summary>
+        /// Détruit toutes les cartes présentes dans les poches et dans la couche de glissement.
+        /// Appelé lors d'un revive pour nettoyer visuellement la scène avant d'afficher la prochaine demande.
+        /// </summary>
+        public void NettoyerCartes()
+        {
+            foreach (var poche in _poches)
+                poche?.Vider();
+
+            // Cartes potentiellement en cours de glissement au moment de la mort
+            if (coucheGlissement != null)
+            {
+                foreach (Transform enfant in coucheGlissement)
+                {
+                    if (enfant.GetComponent<FormulaireUI>() != null)
+                        Destroy(enfant.gameObject);
+                }
+            }
+        }
+
+
 
         private void SpawnFormulaires()
         {

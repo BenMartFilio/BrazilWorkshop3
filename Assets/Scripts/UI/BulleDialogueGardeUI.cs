@@ -134,6 +134,28 @@ namespace Barrage.UI
                 LancerRéplique(REPLIQUES_DEMANDE, duréeAffichage: -1f);
         }
 
+        /// <summary>
+        /// Réinitialise la bulle et affiche la réplique "prochain poste".
+        /// Appelé lors d'un revive, côté des deux bulles — seule la bulle active pour l'état courant s'affiche.
+        /// </summary>
+        public void AfficherSequenceSuivante()
+        {
+            // Réautoriser l'affichage (_barrageTerminé était true suite au OnPatienceEpuisée)
+            _barrageTerminé = false;
+
+            if (!EstActive) return;
+
+            if (_coroutineActive != null)
+            {
+                StopCoroutine(_coroutineActive);
+                _coroutineActive = null;
+            }
+
+            LancerRéplique(REPLIQUES_SEQUENCE_SUIVANTE, duréeAffichage: -1f);
+        }
+
+
+
         private void OnEnable()
         {
             if (mainDuGarde != null)
