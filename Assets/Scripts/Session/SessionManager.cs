@@ -125,7 +125,7 @@ public class SessionManager : MonoBehaviour
         scoreManager.StartScore();
 
         // Invalider la session immédiatement après restauration.
-        donnees.sessionValide = false;
+     //   donnees.sessionValide = false;
 
         Debug.Log("[SessionManager] Session MapRoad restaurée avec succès.");
     }
