@@ -2149,6 +2149,8 @@ GameObject:
   m_Component:
   - component: {fileID: 400828209}
   - component: {fileID: 400828208}
+  - component: {fileID: 400828211}
+  - component: {fileID: 400828210}
   m_Layer: 0
   m_Name: SessionManager
   m_TagString: Untagged
@@ -2170,23 +2172,65 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SessionManager
   donnees: {fileID: 11400000, guid: a38ed096d3c17df43a3e1b832d57cb13, type: 2}
   formulaireInventaire: {fileID: 11400000, guid: b96ec00b9f42a8742833630eee3708e8, type: 2}
+  spawnBudget: {fileID: 0}
   "nomSc\xE8neMapRoad": MapRoad
   "nomSc\xE8neBarrage": Barrage
---- !u!4 &400828209
-Transform:
+--- !u!224 &400828209
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 400828207}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -974.184, y: 1908.9272, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -974.184, y: 1908.9272}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &400828210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400828207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a04ebda619e78943b985d5822922bd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: "Assembly-CSharp::FondeurTransitionSc\xE8ne"
+  "dur\xE9eFadeOut": 0.4
+  "dur\xE9eFadeIn": 0.5
+--- !u!223 &400828211
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400828207}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &436952750
 GameObject:
   m_ObjectHideFlags: 0

@@ -35,11 +35,11 @@ public class DonnéesSession : ScriptableObject
     public bool sessionValide = false;
 
     [Header("Progression barrage")]
-    [Tooltip("Signaux TimeManager écoulés depuis le dernier tirage.")]
-    public int signauxEcoules = 0;
+    [Tooltip("Non utilisé à la restauration — SpawnObstacleV2 repart toujours d'un cycle neuf après un barrage.")]
+    [HideInInspector] public int signauxEcoules = 0;
 
-    [Tooltip("Seuil tiré aléatoirement pour le prochain barrage.")]
-    public int prochainBarrageA = 0;
+    [Tooltip("Non utilisé à la restauration — SpawnObstacleV2 repart toujours d'un cycle neuf après un barrage.")]
+    [HideInInspector] public int prochainBarrageA = 0;
 
     [Header("Prochaine demande barrage")]
     [Tooltip("Liste des formulaires demandés au prochain barrage. " +

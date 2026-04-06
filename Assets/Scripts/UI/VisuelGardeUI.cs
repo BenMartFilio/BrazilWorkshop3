@@ -54,6 +54,26 @@ namespace Barrage.UI
         /// <summary>État courant du garde (mis à jour chaque frame).</summary>
         public EtatGarde EtatCourant => _etatActuel;
 
+        /// <summary>Sprite de l'état Rouge (GardeLow) — utilisé par DetecteurSituationDesespérée.</summary>
+        public Sprite SpriteRouge => spriteRouge;
+
+        // ── API publique ──────────────────────────────────────────────────────
+
+        /// <summary>
+        /// Force immédiatement l'état Rouge sans attendre que la patience s'épuise.
+        /// Met à jour <see cref="EtatCourant"/>, change le sprite et émet <see cref="OnEtatChange"/>
+        /// pour que les bulles de dialogue basculent correctement.
+        /// Utilisé par <see cref="DetecteurSituationDesespérée"/> en situation désespérée.
+        /// </summary>
+        public void ForcerEtatRouge()
+        {
+            if (_etatActuel == EtatGarde.Rouge) return;
+
+            _etatActuel   = EtatGarde.Rouge;
+            _image.sprite = spriteRouge;
+            OnEtatChange?.Invoke(EtatGarde.Rouge);
+        }
+
         // ── Lifecycle ─────────────────────────────────────────────────────────
 
         private void Awake()

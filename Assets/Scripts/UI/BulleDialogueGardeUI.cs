@@ -67,7 +67,7 @@ namespace Barrage.UI
 
         private static readonly string[] REPLIQUES_PREMIER_BARRAGE = new[]
         {
-            "Il vous faudrait ces formulaires pour passer le prochain contrôle, souvenez vous en !"
+            "Il vous faudra ces formulaires pour passer le prochain contrôle, souvenez vous en !"
         };
 
         // ── Champs sérialisés ─────────────────────────────────────────────────
@@ -132,6 +132,22 @@ namespace Barrage.UI
                 LancerRéplique(REPLIQUES_PREMIER_BARRAGE, duréeAffichage: -1f);
             else
                 LancerRéplique(REPLIQUES_DEMANDE, duréeAffichage: -1f);
+        }
+
+        /// <summary>
+        /// Affiche un message de désespoir directement dans cette bulle, sans tenir compte de l'état courant
+        /// du garde ni de <see cref="estBulleRouge"/>. Utilisé par DetecteurSituationDesespérée
+        /// pour forcer l'affichage du message "Vous n'avez pas les formulaires ?!" dans la bulle basse.
+        /// </summary>
+        public void AfficherMessageDesespoir(string message)
+        {
+            _barrageTerminé = true;
+            if (_coroutineActive != null)
+            {
+                StopCoroutine(_coroutineActive);
+                _coroutineActive = null;
+            }
+            LancerRéplicueDirecte(message, duréeAffichage: -1f);
         }
 
         /// <summary>

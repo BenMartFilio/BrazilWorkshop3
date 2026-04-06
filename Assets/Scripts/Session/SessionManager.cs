@@ -1,3 +1,4 @@
+using System.Collections;
 using Barrage.Formulaires;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -20,6 +21,9 @@ public class SessionManager : MonoBehaviour
 
     [Tooltip("Inventaire de formulaires à remettre à zéro lors d'un game over ou d'une nouvelle partie.")]
     [SerializeField] private FormulaireInventaire formulaireInventaire;
+
+    [Tooltip("Budget de spawn des véhicules Good à réinitialiser lors d'un game over ou d'une nouvelle partie.")]
+    [SerializeField] private FormulaireSpawnBudget spawnBudget;
 
     [Tooltip("Nom exact de la scène MapRoad.")]
     [SerializeField] private string nomScèneMapRoad = "MapRoad";
@@ -50,7 +54,8 @@ public class SessionManager : MonoBehaviour
     // ── API publique ──────────────────────────────────────────────────────────
 
     /// <summary>
-    /// Sauvegarde l'état courant de la scène MapRoad puis charge la scène Barrage.
+    /// Sauvegarde l'état courant de la scène MapRoad puis charge la scène Barrage
+    /// avec un fondu au noir.
     /// À appeler depuis MapRoad quand le joueur atteint un barrage.
     /// </summary>
     public void AllerAuBarrage(
@@ -62,16 +67,17 @@ public class SessionManager : MonoBehaviour
         float vitesseSolAvantRalentissement = -1f)
     {
         SauvegarderMapRoad(joueur, scoreManager, spawner, end, sols, vitesseSolAvantRalentissement);
-        SceneManager.LoadScene(nomScèneBarrage);
+        StartCoroutine(TransitionAvecFondu(nomScèneBarrage));
     }
 
     /// <summary>
-    /// Charge la scène MapRoad. La restauration se fait automatiquement
-    /// via <see cref="RestaurerMapRoad"/> appelé depuis MapRoad au démarrage.
+    /// Charge la scène MapRoad avec un fondu au noir.
+    /// La restauration se fait automatiquement via <see cref="RestaurerMapRoad"/>
+    /// appelé depuis MapRoad au démarrage.
     /// </summary>
     public void RetournerAMapRoad()
     {
-        SceneManager.LoadScene(nomScèneMapRoad);
+        StartCoroutine(TransitionAvecFondu(nomScèneMapRoad));
     }
 
     /// <summary>
@@ -100,6 +106,8 @@ public class SessionManager : MonoBehaviour
             donnees.Reinitialiser();
             spawner?.RéinitialiserProgressionBarrage();
             formulaireInventaire?.ResetInventaire();
+            spawnBudget?.Réinitialiser();
+            FondeurTransitionScène.Instance?.FondreDepuisNoir();
             Debug.Log("[SessionManager] Pas de session valide — nouvelle partie initialisée.");
             return;
         }
@@ -127,6 +135,9 @@ public class SessionManager : MonoBehaviour
         // Invalider la session immédiatement après restauration.
      //   donnees.sessionValide = false;
 
+        // Fade-in depuis le noir — la scène est prête, on révèle.
+        FondeurTransitionScène.Instance?.FondreDepuisNoir();
+
         Debug.Log("[SessionManager] Session MapRoad restaurée avec succès.");
     }
 
@@ -134,10 +145,46 @@ public class SessionManager : MonoBehaviour
     public void NouvellePartie()
     {
         donnees.Reinitialiser();
+        spawnBudget?.Réinitialiser();
+    }
+
+    // ── Transition avec fondu ─────────────────────────────────────────────────
+
+    /// <summary>
+    /// Fondu au noir → chargement de scène → fade-in déclenché depuis la scène de destination.
+    /// Le fade-in est lancé automatiquement depuis <see cref="RestaurerMapRoad"/>
+    /// et depuis <see cref="LancerFadeInBarrage"/> appelé dans la scène Barrage.
+    /// </summary>
+    private IEnumerator TransitionAvecFondu(string nomScène)
+    {
+        bool chargementLancé = false;
+
+        if (FondeurTransitionScène.Instance != null)
+            FondeurTransitionScène.Instance.FondreVersNoir(onNoir: () => chargementLancé = true);
+        else
+            chargementLancé = true;
+
+        // Attendre que le fondu soit terminé avant de charger.
+        float timeout = 2f;
+        while (!chargementLancé && timeout > 0f)
+        {
+            timeout -= Time.unscaledDeltaTime;
+            yield return null;
+        }
+
+        SceneManager.LoadScene(nomScène);
+    }
+
+    /// <summary>
+    /// Déclenche le fade-in depuis le noir dans la scène Barrage.
+    /// À appeler depuis un composant de la scène Barrage dans son Start().
+    /// </summary>
+    public void LancerFadeInBarrage()
+    {
+        FondeurTransitionScène.Instance?.FondreDepuisNoir();
     }
 
     // ── Sauvegarde interne ────────────────────────────────────────────────────
-
     private void SauvegarderMapRoad(
         PlayerMovement   joueur,
         ScoreManager     scoreManager,

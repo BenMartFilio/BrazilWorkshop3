@@ -12536,6 +12536,8 @@ MonoBehaviour:
   WidthSelected: {fileID: 757488781}
   FondSelected: {fileID: 1379671540}
   textSelected: {fileID: 1641717039}
+  _audioEventDispatcher: {fileID: 0}
+  _tabSound: 0
 --- !u!1 &888883650
 GameObject:
   m_ObjectHideFlags: 0
@@ -16325,7 +16327,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.423, y: 0.26158395}
-  m_AnchoredPosition: {x: -219.5, y: -9}
+  m_AnchoredPosition: {x: -219.50006, y: -9.000061}
   m_SizeDelta: {x: 439, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1132034355

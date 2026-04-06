@@ -3331,6 +3331,8 @@ GameObject:
   - component: {fileID: 1191513936}
   - component: {fileID: 1191513935}
   - component: {fileID: 1191513937}
+  - component: {fileID: 1191513938}
+  - component: {fileID: 1191513939}
   m_Layer: 0
   m_Name: FormulaireManager
   m_TagString: Untagged
@@ -3397,6 +3399,37 @@ MonoBehaviour:
   _audioEventDispatcher: {fileID: 11400000, guid: 3e7a72b02b873d246a7e92377dbfd52f, type: 2}
   donneesJoueur: {fileID: 0}
   _barrageMusic: {fileID: 8300000, guid: 3ac74b55898ffd94fb33e32b9b87aba0, type: 3}
+--- !u!114 &1191513938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191513934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b9339cd00e742f4aa6a6cd55fcdc58d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: "Assembly-CSharp::Barrage.UI.DetecteurSituationDesesp\xE9r\xE9e"
+  "donn\xE9esSession": {fileID: 11400000, guid: a38ed096d3c17df43a3e1b832d57cb13, type: 2}
+  inventaire: {fileID: 11400000, guid: b96ec00b9f42a8742833630eee3708e8, type: 2}
+  donneesJoueur: {fileID: 11400000, guid: f469a69765f7c5c4aa607382bdb461df, type: 2}
+  visuelGarde: {fileID: 1875195585}
+  bulleBasse: {fileID: 1985469384}
+  gestionnaireGameOver: {fileID: 1914613289}
+  barrePatience: {fileID: 1689963564}
+--- !u!114 &1191513939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191513934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f982507b88c35e54c99dc9cb823d844c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BarrageFadeIn
 --- !u!1 &1211884123
 GameObject:
   m_ObjectHideFlags: 0
@@ -5035,7 +5068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9619967b7934ec94bb7d10fbca8989e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Barrage.UI.BarrePatience
-  patienceDepart: 160
+  patienceDepart: 50
   vitesseVidage: 3
   pointsPenalite: 10
   visualisateurExterne: {fileID: 1689963565}
