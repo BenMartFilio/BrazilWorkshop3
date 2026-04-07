@@ -19486,7 +19486,7 @@ GameObject:
   - component: {fileID: 1324188846}
   - component: {fileID: 1324188845}
   m_Layer: 0
-  m_Name: GemIco
+  m_Name: PubIco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19531,7 +19531,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fc6481987d65d4d42bf52411f33cde6a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d2a3fb503f89825448bd73a7ebbfa2a4, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -29467,8 +29467,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -7.5, y: 0}
-  m_SizeDelta: {x: -65, y: -40}
+  m_AnchoredPosition: {x: -2.5, y: 0}
+  m_SizeDelta: {x: -55, y: -40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1626670416860128095
 RectTransform:
@@ -30399,9 +30399,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Regardez
-
-'
+  m_text: Regardez
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a1184f4c6640ed7468a4815d4d98c39b, type: 2}
   m_sharedMaterial: {fileID: -2826658947947385794, guid: a1184f4c6640ed7468a4815d4d98c39b, type: 2}
