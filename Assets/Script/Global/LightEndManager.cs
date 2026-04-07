@@ -85,6 +85,12 @@ public class LightEndManager : MonoBehaviour
 
     private IEnumerator Whiter(float duration)
     {
+        if (_whiteScreen == null)
+        {
+            Debug.LogWarning("[LightEndManager] Whiter : _whiteScreen non assigné, animation ignorée.");
+            yield break;
+        }
+
         Color baseColor = _whiteScreen.color;
         float time = 0f;
 

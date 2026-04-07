@@ -5,12 +5,12 @@ using UnityEngine.UI;
 /// Pilote un Slider Unity (vertical, BottomToTop) représentant la progression
 /// vers le prochain barrage.
 ///
-/// Timing : duréeTotale = (DuréeSignal × SeuilBarrage) + DuréeGapAvantBarrage + délaiArrivéeBarrage
-///   → la roue atteint 1 exactement quand le barrage arrive visuellement à l'écran.
+/// Phase normale : la barre avance à vitesse autonome constante et est attirée
+/// vers SpawnObstacleV2.Progression quand elle est en retard.
 ///
-/// Mort / Revive : Geler() fige _tempsEcoulé. Dégeler() recalcule _tempsEcoulé
-///   depuis _valeurAffichée pour repartir du bon point même si la durée totale
-///   a légèrement dérivé.
+/// Phase barrage : dès que BarrageEnAttente est vrai, la barre décélère via
+/// SmoothStep pour atteindre 1.0 exactement après délaiArrivéeBarrage secondes,
+/// synchronisé avec l'arrivée visuelle du barrage à l'écran.
 /// </summary>
 public class BarreProgressionBarrage : MonoBehaviour
 {
@@ -23,17 +23,33 @@ public class BarreProgressionBarrage : MonoBehaviour
     [Tooltip("Degrés par seconde de rotation de la roue (vitesse de base).")]
     [SerializeField] private float vitesseRotation = 120f;
 
-    [Header("Correction timing")]
-    [Tooltip("Durée en secondes entre l'arrivée du barrage à l'écran et le moment où il a spawné. " +
-             "Ajustez jusqu'à ce que la roue atteigne le haut exactement quand le barrage est visible.")]
-    [SerializeField] private float délaiArrivéeBarrage = 2f;
+    [Header("Phase normale — progression autonome")]
+    [Tooltip("Vitesse à laquelle la barre progresse seule, indépendamment des patterns (unités/seconde, 0-1). " +
+             "Calibrez pour que la barre soit entre 0.5 et 0.9 au moment où le barrage spawne.")]
+    [SerializeField] private float vitesseAutonome = 0.008f;
+
+    [Tooltip("Force d'attraction vers la progression réelle du joueur quand la barre est en retard. " +
+             "0 = ignore complètement le spawner, valeurs hautes = rattrapage plus agressif.")]
+    [SerializeField, Min(0f)] private float forceAttraction = 2f;
+
+    [Header("Phase barrage — arrivée synchronisée")]
+    [Tooltip("Durée en secondes depuis BarrageEnAttente jusqu'à l'arrivée visuelle du barrage. " +
+             "La barre décélère (SmoothStep) pour atteindre exactement 1.0 à ce moment. " +
+             "Ajustez jusqu'à ce que la barre remplisse pile quand le barrage est à l'écran.")]
+    [SerializeField] private float délaiArrivéeBarrage = 3f;
+
+    [Tooltip("Seuil (0-1) à partir duquel la barre se gèle définitivement à 1.")]
+    [SerializeField] private float seuilGel = 0.999f;
 
     // ── État interne ──────────────────────────────────────────────────────────
-    private float _valeurAffichée = 0f;
-    private float _tempsEcoulé   = 0f;
-    private float _duréeTotale   = 0f;
-    private bool  _gelé          = false;   // bloqué à 1 quand barrage est en attente
-    private bool  _pausé         = false;   // mort du joueur
+    private float _valeurAffichée        = 0f;
+    private bool  _gelé                  = false;
+    private bool  _pausé                 = false;
+
+    // Phase barrage
+    private bool  _phaseBarrage          = false;
+    private float _valeurAuDéclenchement = 0f;
+    private float _tempsPhaseBarrage     = 0f;
 
     private void Start()
     {
@@ -45,12 +61,6 @@ public class BarreProgressionBarrage : MonoBehaviour
         _slider.wholeNumbers = false;
         _slider.interactable = false;
         _slider.value        = 0f;
-
-        // Le cycle sera initialisé dans le premier Update() une fois que
-        // SpawnObstacleV2 a été restauré par SessionManager (ordre Start() garanti
-        // par MapRoadSessionBridge qui s'exécute en Start() aussi).
-        // On diffère l'initialisation d'une frame pour laisser le spawner être prêt.
-        _duréeTotale = 0f;
     }
 
     private void Update()
@@ -63,22 +73,44 @@ public class BarreProgressionBarrage : MonoBehaviour
             return;
         }
 
-        if (_duréeTotale <= 0f)
-            InitialiserCycle();
-
-        _tempsEcoulé    += Time.deltaTime;
-        float cible      = Mathf.Clamp01(_tempsEcoulé / _duréeTotale);
-        _valeurAffichée  = Mathf.Max(_valeurAffichée, cible);
-        _slider.value    = _valeurAffichée;
-
-        // Gel dès que le barrage est en attente
+        // ── Phase barrage : SmoothStep vers 1.0 ─────────────────────────────
         if (_spawner.BarrageEnAttente)
         {
-            _valeurAffichée = 1f;
-            _slider.value   = 1f;
-            _gelé           = true;
+            if (!_phaseBarrage)
+            {
+                _phaseBarrage          = true;
+                _valeurAuDéclenchement = _valeurAffichée;
+                _tempsPhaseBarrage     = 0f;
+            }
+
+            _tempsPhaseBarrage += Time.deltaTime;
+            float t = Mathf.Clamp01(_tempsPhaseBarrage / délaiArrivéeBarrage);
+            _valeurAffichée = Mathf.Lerp(_valeurAuDéclenchement, 1f, Mathf.SmoothStep(0f, 1f, t));
+            _slider.value   = _valeurAffichée;
+
+            if (_valeurAffichée >= seuilGel)
+            {
+                _valeurAffichée = 1f;
+                _slider.value   = 1f;
+                _gelé           = true;
+            }
+
+            TournerRoue(_valeurAffichée);
+            return;
         }
 
+        // ── Phase normale ─────────────────────────────────────────────────────
+
+        // 1. Avance autonome constante
+        _valeurAffichée += vitesseAutonome * Time.deltaTime;
+
+        // 2. Attraction vers la progression réelle quand on est en retard
+        float progressionRéelle = _spawner.Progression;
+        if (_valeurAffichée < progressionRéelle)
+            _valeurAffichée = Mathf.Lerp(_valeurAffichée, progressionRéelle, Time.deltaTime * forceAttraction);
+
+        _valeurAffichée = Mathf.Clamp01(_valeurAffichée);
+        _slider.value   = _valeurAffichée;
         TournerRoue(_valeurAffichée);
     }
 
@@ -87,50 +119,29 @@ public class BarreProgressionBarrage : MonoBehaviour
     /// </summary>
     public void RéinitialiserPourNouveauCycle()
     {
-        _valeurAffichée = 0f;
-        _tempsEcoulé    = 0f;
-        _gelé           = false;
-        _pausé          = false;
+        _valeurAffichée        = 0f;
+        _phaseBarrage          = false;
+        _valeurAuDéclenchement = 0f;
+        _tempsPhaseBarrage     = 0f;
+        _gelé                  = false;
+        _pausé                 = false;
 
         if (_slider != null)
             _slider.value = 0f;
-
-        InitialiserCycle();
     }
 
     /// <summary>Stoppe la progression (mort du joueur).</summary>
     public void Geler() => _pausé = true;
 
-    /// <summary>
-    /// Reprend la progression (revive).
-    /// Recalcule _tempsEcoulé depuis _valeurAffichée pour que la distance
-    /// restante corresponde exactement à ce qu'il restait avant la mort.
-    /// </summary>
+    /// <summary>Reprend la progression (revive).</summary>
     public void Dégeler()
     {
-        // On repositionne le curseur de temps au bon endroit dans la durée totale
-        // en partant de la valeur affichée figée, peu importe le temps réel écoulé.
-        if (_duréeTotale > 0f)
-            _tempsEcoulé = _valeurAffichée * _duréeTotale;
-
+        // Si le barrage était déjà en route avant la mort, le SmoothStep
+        // repart depuis _valeurAffichée figée sans sauter.
         _pausé = false;
     }
 
     // ── Utilitaires ───────────────────────────────────────────────────────────
-
-    /// <summary>
-    /// Durée totale du cycle = signaux × durée/signal + gap avant barrage + délai visuel.
-    /// </summary>
-    private void InitialiserCycle()
-    {
-        if (_spawner == null) return;
-
-        float duréeSignal    = Mathf.Max(0.1f, _spawner.DuréeSignal);
-        int   seuil          = Mathf.Max(1, _spawner.SeuilBarrage);
-        float duréeGap       = _spawner.DuréeGapAvantBarrage;
-
-        _duréeTotale = duréeSignal * seuil + duréeGap + délaiArrivéeBarrage;
-    }
 
     private void TournerRoue(float progression)
     {

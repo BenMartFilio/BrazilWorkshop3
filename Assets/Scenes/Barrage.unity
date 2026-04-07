@@ -5530,9 +5530,9 @@ MonoBehaviour:
   "dur\xE9eSecousseCartes": 0.8
   "intensit\xE9SecousseCartes": 50
   tailleCentraleDuRavitaillement: {x: 300, y: 300}
-  "tailleConformit\xE9Sociale": {x: 438, y: 264}
-  tailleReclassificationDesIndividus: {x: 295, y: 447}
-  "tailleSecurit\xE9DesFronti\xE8resInt\xE9rieures": {x: 295, y: 255}
+  "tailleConformit\xE9Sociale": {x: 438, y: 224}
+  tailleReclassificationDesIndividus: {x: 255, y: 447}
+  "tailleSecurit\xE9DesFronti\xE8resInt\xE9rieures": {x: 295, y: 235}
   rotationMax: 14
   margeSpawnBords: 20
   vitesseSpawnMax: 80
