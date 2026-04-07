@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Patern49
   m_EditorClassIdentifier: Assembly-CSharp::ObstaclePattern
   rowCount: 16
-  rowSpacing: 2
+  rowSpacing: 3
   rows:
   - lanes:
     - {fileID: 0}
