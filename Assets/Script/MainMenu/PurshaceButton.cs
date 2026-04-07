@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 /// <summary>Triggers an IAP purchase when the button is clicked.</summary>
 public class PurchaseButton : MonoBehaviour
@@ -40,18 +41,37 @@ public class PurchaseButton : MonoBehaviour
             Debug.LogError("[PurchaseButton] IAPManager not found in scene.");
             return;
         }
+
+        IAPManager.Instance.OnPurchaseSuccess += OnPuchased;
+
         IAPManager.Instance.BuyProduct(productKey);
-        OnPuchased();
     }
 
     private void OnDestroy()
     {
         if (_button != null)
             _button.onClick.RemoveListener(OnButtonClicked);
+
+        if (IAPManager.Instance != null)
+        {
+            IAPManager.Instance.OnPurchaseSuccess -= OnPuchased;
+        }
     }
 
-    private void OnPuchased()
+    private void OnDisable()
     {
+        if (IAPManager.Instance != null)
+        {
+            IAPManager.Instance.OnPurchaseSuccess -= OnPuchased;
+        }
+    }
+
+    private void OnPuchased(string obj)
+    {
+        if (IAPManager.Instance != null)
+        {
+            IAPManager.Instance.OnPurchaseSuccess -= OnPuchased;
+        }
         OpenSuccessPanel(successSprite);
     }
 
