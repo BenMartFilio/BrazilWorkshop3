@@ -8,6 +8,7 @@ public class PlaySubMenu : MonoBehaviour
     [SerializeField] private GameObject _playBouton;
     [SerializeField] private GameObject _optionBouton;
     [SerializeField] private GameObject _tutoBouton;
+    [SerializeField] private GameObject _leaderboardBouton;
     [SerializeField] private GameObject _shopMenu;
     [SerializeField] private GameObject _inventoryMenu;
 
@@ -15,14 +16,17 @@ public class PlaySubMenu : MonoBehaviour
     private RectTransform _rtPlayBouton;
     private RectTransform _rtOptionBouton;
     private RectTransform _rtTutoBouton;
+    private RectTransform _rtLeaderboardBouton;
 
     private Vector3 _posPlayBouton;
     private Vector3 _posOptionBouton;
     private Vector3 _posTutoBouton;
+    private Vector3 _posLeaderboardBouton;
 
     private Coroutine _animPlay;
     private Coroutine _animOption;
     private Coroutine _animTuto;
+    private Coroutine _animLeaderboard;
 
     private void Awake()
     {
@@ -33,9 +37,11 @@ public class PlaySubMenu : MonoBehaviour
         _rtPlayBouton = _playBouton.GetComponent<RectTransform>();
         _rtOptionBouton = _optionBouton.GetComponent<RectTransform>();
         _rtTutoBouton = _tutoBouton.GetComponent<RectTransform>();
+        _rtLeaderboardBouton = _leaderboardBouton.GetComponent<RectTransform>();
         _posPlayBouton = _rtPlayBouton.localPosition;
         _posOptionBouton = _rtOptionBouton.localPosition;
         _posTutoBouton = _rtTutoBouton.localPosition;
+        _posLeaderboardBouton = _rtLeaderboardBouton.localPosition;
         OnPlayDisplay();
     }
 
@@ -51,6 +57,7 @@ public class PlaySubMenu : MonoBehaviour
         StartAnim(ref _animPlay, _rtPlayBouton, _posPlayBouton, new Vector3(0, -200, 0));
         StartAnim(ref _animOption, _rtOptionBouton, _posOptionBouton, new Vector3(-150, 0, 0));
         StartAnim(ref _animTuto, _rtTutoBouton, _posTutoBouton, new Vector3(150, 0, 0));
+        StartAnim(ref _animLeaderboard, _rtLeaderboardBouton, _posLeaderboardBouton, new Vector3(150, 0, 0));
     }
 
     public void OnShopDisplay()

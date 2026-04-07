@@ -25,7 +25,7 @@ public class SO_PlayerDatas : ScriptableObject
     public int skinEquiped;
     public int generalMonney;
     public int premiumMonney;
-    public int actualScoreNotSaved;
+    public int actualScoreNotSaved = 0;
     public int actualCoinsNotSaved;
     public bool isAnHighScore = false;
 
