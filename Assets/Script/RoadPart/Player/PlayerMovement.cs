@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    [SerializeField] private float _collisionCheckRadius = 0.4f;
+    [SerializeField] private float _collisionCheckRadius = 200.4f;
 
     /// <summary>Retourne true si un obstacle occupe la lane à la position X cible.</summary>
     private bool IsLaneBlocked(float targetX)

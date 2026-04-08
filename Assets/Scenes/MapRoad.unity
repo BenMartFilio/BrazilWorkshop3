@@ -7905,7 +7905,7 @@ MonoBehaviour:
   _coinsText: {fileID: 11239705}
   _endManager: {fileID: 1232534109}
   _effets: {fileID: 1708633720}
-  _collisionCheckRadius: 0.4
+  _collisionCheckRadius: 0.8
 --- !u!61 &1838184140
 BoxCollider2D:
   m_ObjectHideFlags: 0
