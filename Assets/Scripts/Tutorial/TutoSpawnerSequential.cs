@@ -83,7 +83,7 @@ public class TutoSpawnerSequential : MonoBehaviour
         Aspiration.OnDocumentCollected -= OnDocumentCollectedDuringLoop;
     }
 
-    private void OnDocumentCollectedDuringLoop()
+    private void OnDocumentCollectedDuringLoop(Barrage.Formulaires.FormulaireType _)
     {
         _documentCollectedThisLoop = true;
     }

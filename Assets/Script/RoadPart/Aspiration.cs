@@ -6,8 +6,9 @@ using UnityEngine;
 
 public class Aspiration : MonoBehaviour
 {
-    /// <summary>Fired whenever the player successfully collects a document from a colored car.</summary>
-    public static event Action OnDocumentCollected;
+    /// <summary>Fired whenever the player successfully collects a document from a colored car.
+    /// Passes the FormulaireType of the collected document.</summary>
+    public static event Action<FormulaireType> OnDocumentCollected;
 
     [SerializeField] private GameObject _feedbackLogo;
     [SerializeField] private InputPlayerMovement _input;
@@ -24,6 +25,7 @@ public class Aspiration : MonoBehaviour
     [SerializeField] private EffetsObjetsSpeciaux _effets;
 
     private ChangeSkin _documents;
+    private Transform  _sourceActuelle;
 
     public bool canAspire = false;
     public bool isDead    = false;
@@ -103,7 +105,7 @@ public class Aspiration : MonoBehaviour
         {
             inventaire?.Ajouter(type.Value);
             Debug.Log($"[Aspiration] +1 {type.Value} → total : {inventaire?.ObtenirQuantité(type.Value)}");
-            OnDocumentCollected?.Invoke();
+            OnDocumentCollected?.Invoke(type.Value);
             if (_player != null)
                 LancerGrossissement(_player.transform);
         }
@@ -136,12 +138,19 @@ public class Aspiration : MonoBehaviour
         AnnulerExtension();
 
         _documents            = skin;
+        _sourceActuelle       = collision.transform;
         _tempsEntreeDansZone  = Time.time;
         canAspire             = true;
         finished = true;
         _feedbackLogo.SetActive(true);
         shatter.ResetShatter();
     }
+
+    /// <summary>
+    /// Retourne le Transform de la dernière voiture colorée entrée dans la zone d'aspiration.
+    /// Utilisé par <see cref="Barrage.Effets.EffetDocumentAspire"/> pour positionner l'effet.
+    /// </summary>
+    public Transform ObtenirSourceActuelle() => _sourceActuelle;
 
     private void OnTriggerExit2D(Collider2D other)
     {

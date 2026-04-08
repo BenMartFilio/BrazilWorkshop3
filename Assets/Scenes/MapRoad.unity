@@ -1249,7 +1249,7 @@ Transform:
   m_GameObject: {fileID: 234882523}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5402842, y: -3, z: 0}
+  m_LocalPosition: {x: 1.6666665, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4902,7 +4902,7 @@ Transform:
   m_GameObject: {fileID: 1121532490}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5402844, y: -3, z: 0}
+  m_LocalPosition: {x: -1.6666667, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5486,6 +5486,7 @@ GameObject:
   - component: {fileID: 1185453011}
   - component: {fileID: 1185453010}
   - component: {fileID: 1185453012}
+  - component: {fileID: 1185453013}
   m_Layer: 0
   m_Name: Aspiration
   m_TagString: Untagged
@@ -5639,6 +5640,36 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1185453013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185453008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33a804ab312e68844a4c619a295f45e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Barrage.Effets.EffetDocumentAspire
+  _joueur: {fileID: 1313671860}
+  _prefabDocument: {fileID: 7007551936866475857, guid: 8d339c6b0a844934483489656691d83c, type: 3}
+  _spritesParType:
+  - type: 0
+    sprite: {fileID: 21300000, guid: 5e04c19b8df6f3a458aa55f134789c90, type: 3}
+  - type: 3
+    sprite: {fileID: 21300000, guid: 6c3869e3e74c89d4b90729537c24fbc4, type: 3}
+  - type: 2
+    sprite: {fileID: 21300000, guid: 21653e6ffd42f864a8900b4701b57cf9, type: 3}
+  - type: 1
+    sprite: {fileID: 21300000, guid: 345372161b2ab0b40a8fdb1fb5895f50, type: 3}
+  _dureeVol: 1.2
+  _hauteurArc: 1.2
+  _scaleDepart: 0.025
+  _scaleArrivee: 0.025
+  _vitesseRotation: 360
+  _sortingLayer: Player
+  _sortingOrder: 20
 --- !u!1 &1232534108
 GameObject:
   m_ObjectHideFlags: 0
@@ -7016,7 +7047,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 10, z: 0}
-  m_LocalScale: {x: 0.14258613, y: 0.1937609, z: 1}
+  m_LocalScale: {x: 0.1542855, y: 0.1937609, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -8112,7 +8143,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.14258613, y: 0.1937609, z: 1}
+  m_LocalScale: {x: 0.1542855, y: 0.1937609, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
