@@ -67,7 +67,7 @@ namespace Barrage.UI
 
         private static readonly string[] REPLIQUES_PREMIER_BARRAGE = new[]
         {
-            "Il vous faudra ces formulaires pour passer le prochain contrôle, souvenez vous en !"
+            "Il vous faudra ces formulaires pour passer le prochain contrôle, souvenez-vous en !"
         };
 
         // ── Champs sérialisés ─────────────────────────────────────────────────
