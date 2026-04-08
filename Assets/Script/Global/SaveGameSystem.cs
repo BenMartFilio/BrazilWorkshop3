@@ -24,8 +24,6 @@ public class SaveGameSystem : MonoBehaviour
     {
 #if UNITY_ANDROID || UNITY_IOS
         Application.targetFrameRate = 60;
-        System.GC.Collect();
-        Resources.UnloadUnusedAssets();
 #endif
 
         lock (lockObj)

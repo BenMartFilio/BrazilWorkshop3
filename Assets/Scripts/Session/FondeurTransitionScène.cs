@@ -56,10 +56,28 @@ public class FondeurTransitionScène : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
+        // Nettoyer les FondeurCanvas orphelins laissés par des instances précédentes
+        // (SessionManager présent dans plusieurs scènes, transitions interrompues).
+        NettoyerCanvasOrphelins();
+
+        _canvasGroup = GetComponent<CanvasGroup>();
+
         _canvasGroup = CréerPanneauNoir();
-        _canvasGroup.alpha          = 0f;
-        _canvasGroup.interactable   = false;
+        _canvasGroup.alpha = 0f;
+        _canvasGroup.interactable = false;
         _canvasGroup.blocksRaycasts = false;
+    }
+
+    /// <summary>
+    /// Détruit tout FondeurCanvas déjà présent pour éviter les doublons et alphas résiduels.
+    /// </summary>
+    private static void NettoyerCanvasOrphelins()
+    {
+        foreach (var canvas in FindObjectsByType<Canvas>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+        {
+            if (canvas.gameObject.name == "FondeurCanvas")
+                Destroy(canvas.gameObject);
+        }
     }
 
     // ── Construction du panneau ───────────────────────────────────────────────
