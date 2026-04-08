@@ -1072,7 +1072,7 @@ struct __StaticArrayInitTypeSizeU3D32_tC3894D25C1E879699FE1C9BAB1BBF2787B405069
 };
 #pragma pack(pop, tp)
 #pragma pack(push, tp, 1)
-struct __StaticArrayInitTypeSizeU3D5579_t55AE8FBACA8DB7755BAA3892BECFDEE7485B125C 
+struct __StaticArrayInitTypeSizeU3D5907_t859708779B4286DEF38D68118BE48C1C4CF96282 
 {
 	union
 	{
@@ -1082,12 +1082,12 @@ struct __StaticArrayInitTypeSizeU3D5579_t55AE8FBACA8DB7755BAA3892BECFDEE7485B125
 			{
 			};
 		};
-		uint8_t __StaticArrayInitTypeSizeU3D5579_t55AE8FBACA8DB7755BAA3892BECFDEE7485B125C__padding[5579];
+		uint8_t __StaticArrayInitTypeSizeU3D5907_t859708779B4286DEF38D68118BE48C1C4CF96282__padding[5907];
 	};
 };
 #pragma pack(pop, tp)
 #pragma pack(push, tp, 1)
-struct __StaticArrayInitTypeSizeU3D9668_t3539D5CC290A1838EF9089CA66C7EA14689DE2A2 
+struct __StaticArrayInitTypeSizeU3D9945_t873B76A8C164EDF21CEE9EDC87F1228BEEB36AD5 
 {
 	union
 	{
@@ -1097,7 +1097,7 @@ struct __StaticArrayInitTypeSizeU3D9668_t3539D5CC290A1838EF9089CA66C7EA14689DE2A
 			{
 			};
 		};
-		uint8_t __StaticArrayInitTypeSizeU3D9668_t3539D5CC290A1838EF9089CA66C7EA14689DE2A2__padding[9668];
+		uint8_t __StaticArrayInitTypeSizeU3D9945_t873B76A8C164EDF21CEE9EDC87F1228BEEB36AD5__padding[9945];
 	};
 };
 #pragma pack(pop, tp)
@@ -2704,9 +2704,9 @@ struct List_1_tA239CB83DE5615F348BB0507E45F490F4F7C9A8D_StaticFields
 };
 struct U3CPrivateImplementationDetailsU3E_t0F5473E849A5A5185A9F4C5246F0C32816C49FCA_StaticFields
 {
-	__StaticArrayInitTypeSizeU3D5579_t55AE8FBACA8DB7755BAA3892BECFDEE7485B125C ___32E93B18837DAC6D31CAB2D1770E6CBAEE29C5E71C05952AA8DE5CE64039C87D;
-	__StaticArrayInitTypeSizeU3D9668_t3539D5CC290A1838EF9089CA66C7EA14689DE2A2 ___93E4182A8502682F29DF6FC645E5DFDCACF011D0158C33FCAA6E872E8784179F;
 	__StaticArrayInitTypeSizeU3D32_tC3894D25C1E879699FE1C9BAB1BBF2787B405069 ___99FE91EB62A71E04CA90F0958DA5DDC6CA0567E6B0B58F9130E6C34A2114E40E;
+	__StaticArrayInitTypeSizeU3D5907_t859708779B4286DEF38D68118BE48C1C4CF96282 ___D2F221F89D4CD05D0AE64CCA2F813EC0C478835CEA5CB8CBDDD84489BF380B70;
+	__StaticArrayInitTypeSizeU3D9945_t873B76A8C164EDF21CEE9EDC87F1228BEEB36AD5 ___EAA510F800E3E194DD5E8FA4290336C11DEF259371698EF82A424FAA3EA4F20D;
 };
 struct Random_t79716069EDE67D1D7734F60AE402D0CA3FB6B4C8_StaticFields
 {
@@ -3793,7 +3793,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Array_Clear_m50BAA3751899858B097D3FF2ED3
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 75177
+// Method Definition Index: 75235
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__cctor_mDCCB346D8BDA3E1B9AA406B21380EBD932E1F8E9 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3810,7 +3810,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__cctor_mDCCB346D8BDA3E1B9AA406B2
 		return;
 	}
 }
-// Method Definition Index: 75178
+// Method Definition Index: 75236
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__ctor_mB60334E4C80F9A3E3388399638E49AF016B1758A (U3CU3Ec_t8A64516E557B2EDBBFD84E401F55FAD9D14D598B* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3818,7 +3818,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__ctor_mB60334E4C80F9A3E338839963
 		return;
 	}
 }
-// Method Definition Index: 75179
+// Method Definition Index: 75237
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec_U3CAwakeU3Eb__27_0_m244018E908A241C4EBF923F1B705CBBA0EAE0452 (U3CU3Ec_t8A64516E557B2EDBBFD84E401F55FAD9D14D598B* __this, FormulaireData_t7CB85E86176143BDC24E5268FB72A648009BF91D* ___0_d, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3828,7 +3828,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec_U3CAwakeU3Eb__27_0_m244018E908A2
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireLibreManager.cs:83>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireLibreManager.cs:83>
 		FormulaireData_t7CB85E86176143BDC24E5268FB72A648009BF91D* L_0 = ___0_d;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -3836,7 +3836,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec_U3CAwakeU3Eb__27_0_m244018E908A2
 		return L_1;
 	}
 }
-// Method Definition Index: 75180
+// Method Definition Index: 75238
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t U3CU3Ec_U3CBuildListeInterleavedU3Eb__39_0_m5246ABB8860D02B09740B527A2638608B275BE1E (U3CU3Ec_t8A64516E557B2EDBBFD84E401F55FAD9D14D598B* __this, KeyValuePair_2_tF294D6781E44AF635AF142AB6F2C7CA26674B8B5 ___0_kv, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3846,13 +3846,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t U3CU3Ec_U3CBuildListeInterleavedU3Eb_
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireLibreManager.cs:339>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireLibreManager.cs:339>
 		int32_t L_0;
 		L_0 = KeyValuePair_2_get_Value_m936D221FC756038069E5A9B83B2E8EE2847FC56E_inline((&___0_kv), KeyValuePair_2_get_Value_m936D221FC756038069E5A9B83B2E8EE2847FC56E_RuntimeMethod_var);
 		return L_0;
 	}
 }
-// Method Definition Index: 75181
+// Method Definition Index: 75239
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t U3CU3Ec_U3CBuildListeInterleavedU3Eb__39_1_mC033DBA1D145919CECD5730252B26A546ADED15B (U3CU3Ec_t8A64516E557B2EDBBFD84E401F55FAD9D14D598B* __this, KeyValuePair_2_tF294D6781E44AF635AF142AB6F2C7CA26674B8B5 ___0_kv, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3862,7 +3862,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t U3CU3Ec_U3CBuildListeInterleavedU3Eb_
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireLibreManager.cs:339>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireLibreManager.cs:339>
 		int32_t L_0;
 		L_0 = KeyValuePair_2_get_Key_mAE3325D5964D02A46029FB9C73DBFF00C02C4CD4_inline((&___0_kv), KeyValuePair_2_get_Key_mAE3325D5964D02A46029FB9C73DBFF00C02C4CD4_RuntimeMethod_var);
 		return L_0;
@@ -3876,7 +3876,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t U3CU3Ec_U3CBuildListeInterleavedU3Eb_
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 75182
+// Method Definition Index: 75240
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CSpawnApresLayoutU3Ed__30__ctor_m5742C5BC43CB5D988F6D869632A4DAF772D5880E (U3CSpawnApresLayoutU3Ed__30_tBEAF83B67EC986DC8D8323044E969BD7E6716396* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -3886,14 +3886,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CSpawnApresLayoutU3Ed__30__ctor_m5742C
 		return;
 	}
 }
-// Method Definition Index: 75183
+// Method Definition Index: 75241
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CSpawnApresLayoutU3Ed__30_System_IDisposable_Dispose_m18F4627216237CCF1C0CC6D862193EB1867000F5 (U3CSpawnApresLayoutU3Ed__30_tBEAF83B67EC986DC8D8323044E969BD7E6716396* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 75184
+// Method Definition Index: 75242
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CSpawnApresLayoutU3Ed__30_MoveNext_m1F0A4689CCBF394B586D38B14D755B950D66A4A8 (U3CSpawnApresLayoutU3Ed__30_tBEAF83B67EC986DC8D8323044E969BD7E6716396* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -3933,7 +3933,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CSpawnApresLayoutU3Ed__30_MoveNext_m1F
 IL_0022:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireLibreManager.cs:159>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireLibreManager.cs:159>
 		WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663* L_3 = (WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663*)il2cpp_codegen_object_new(WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663_il2cpp_TypeInfo_var);
 		WaitForEndOfFrame__ctor_m4AF7E576C01E6B04443BB898B1AE5D645F7D45AB(L_3, NULL);
 		__this->___U3CU3E2__current = L_3;
@@ -3945,7 +3945,7 @@ IL_0022:
 IL_003d:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireLibreManager.cs:160>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireLibreManager.cs:160>
 		WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663* L_4 = (WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663*)il2cpp_codegen_object_new(WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663_il2cpp_TypeInfo_var);
 		WaitForEndOfFrame__ctor_m4AF7E576C01E6B04443BB898B1AE5D645F7D45AB(L_4, NULL);
 		__this->___U3CU3E2__current = L_4;
@@ -3957,15 +3957,15 @@ IL_003d:
 IL_0058:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireLibreManager.cs:162>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireLibreManager.cs:162>
 		FormulaireLibreManager_t80AC95713F63FCEA13BE0451CFB0013572548829* L_5 = V_1;
 		NullCheck(L_5);
 		FormulaireLibreManager_SpawnToutesLesCartes_mDAB8E05C8C402F111166C34F2355807968054F42(L_5, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireLibreManager.cs:163>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireLibreManager.cs:163>
 		return (bool)0;
 	}
 }
-// Method Definition Index: 75185
+// Method Definition Index: 75243
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CSpawnApresLayoutU3Ed__30_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mBABC9A37B30029800262F390C3F30F1FCC1B3A6F (U3CSpawnApresLayoutU3Ed__30_tBEAF83B67EC986DC8D8323044E969BD7E6716396* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3973,7 +3973,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CSpawnApresLayoutU3Ed__30_Sy
 		return L_0;
 	}
 }
-// Method Definition Index: 75186
+// Method Definition Index: 75244
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CSpawnApresLayoutU3Ed__30_System_Collections_IEnumerator_Reset_m754984F8E64639E2DF449FE46CCA779C52D08332 (U3CSpawnApresLayoutU3Ed__30_tBEAF83B67EC986DC8D8323044E969BD7E6716396* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3982,7 +3982,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CSpawnApresLayoutU3Ed__30_System_Colle
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CSpawnApresLayoutU3Ed__30_System_Collections_IEnumerator_Reset_m754984F8E64639E2DF449FE46CCA779C52D08332_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 75187
+// Method Definition Index: 75245
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CSpawnApresLayoutU3Ed__30_System_Collections_IEnumerator_get_Current_m155A15FE24024B0901E3D6C544976B3ABEC17CA0 (U3CSpawnApresLayoutU3Ed__30_tBEAF83B67EC986DC8D8323044E969BD7E6716396* __this, const RuntimeMethod* method) 
 {
 	{
@@ -3998,26 +3998,26 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CSpawnApresLayoutU3Ed__30_Sy
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 75188
+// Method Definition Index: 75246
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t FormulaireUI_get_Type_m61D4919A02ADD6AF6CEA33EC4C9A7C108B0C1031 (FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:21>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:21>
 		int32_t L_0 = __this->___U3CTypeU3Ek__BackingField;
 		return L_0;
 	}
 }
-// Method Definition Index: 75189
+// Method Definition Index: 75247
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUI_set_Type_m04618C4FF8EA6A69DF0EE1E313123997701E1CBD (FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:21>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:21>
 		int32_t L_0 = ___0_value;
 		__this->___U3CTypeU3Ek__BackingField = L_0;
 		return;
 	}
 }
-// Method Definition Index: 75190
+// Method Definition Index: 75248
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUI_Initialiser_mBEC8B436ACC55C5267C54C5ABA62DA223B9AF97F (FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* __this, int32_t ___0_type, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___1_tailleOriginale, FormulaireUIManager_tB65E87C3CB7E98557788D461CC36FB7AC45D2AC2* ___2_uiManager, AudioEventDispatcher_t7B65C93D86A38683B05B108578B96D716FAE6C44* ___3_audioEventDispatcher, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4028,42 +4028,42 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUI_Initialiser_mBEC8B436ACC55C
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:36>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:36>
 		int32_t L_0 = ___0_type;
 		FormulaireUI_set_Type_m04618C4FF8EA6A69DF0EE1E313123997701E1CBD_inline(__this, L_0, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:37>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:37>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_1 = ___1_tailleOriginale;
 		__this->____tailleOriginale = L_1;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:38>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:38>
 		FormulaireUIManager_tB65E87C3CB7E98557788D461CC36FB7AC45D2AC2* L_2 = ___2_uiManager;
 		__this->____uiManager = L_2;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____uiManager), (void*)L_2);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:40>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:40>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_3;
 		L_3 = Component_GetComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m0640480E7E38BB88B0D1F6AD59E697C8EE6AAFA4(__this, Component_GetComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m0640480E7E38BB88B0D1F6AD59E697C8EE6AAFA4_RuntimeMethod_var);
 		__this->____rectTransform = L_3;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____rectTransform), (void*)L_3);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:41>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:41>
 		RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* L_4;
 		L_4 = Component_GetComponent_TisRawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179_m56775E1085C53732A0C2D919F000176C7BC11C3D(__this, Component_GetComponent_TisRawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179_m56775E1085C53732A0C2D919F000176C7BC11C3D_RuntimeMethod_var);
 		__this->____rawImage = L_4;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____rawImage), (void*)L_4);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:42>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:42>
 		return;
 	}
 }
-// Method Definition Index: 75191
+// Method Definition Index: 75249
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUI_AssignerPoche_m4E4221E6EFB9EBCDAD4604A299B5D554ACDFD7F1 (FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* __this, PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* ___0_poche, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:45>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:45>
 		PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* L_0 = ___0_poche;
 		__this->____pocheActuelle = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____pocheActuelle), (void*)L_0);
 		return;
 	}
 }
-// Method Definition Index: 75192
+// Method Definition Index: 75250
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUI_OnBeginDrag_m95A3288BCB6B9E61C9F65406FA6D380516B5C612 (FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* __this, PointerEventData_t9670F3C7D823CCB738A1604C72A1EB90292396FB* ___0_eventData, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4080,7 +4080,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUI_OnBeginDrag_m95A3288BCB6B9E
 	PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* G_B7_0 = NULL;
 	PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* G_B6_0 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:50>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:50>
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_0 = __this->____coroutineChute;
 		if (!L_0)
 		{
@@ -4088,13 +4088,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUI_OnBeginDrag_m95A3288BCB6B9E
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:50>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:50>
 		return;
 	}
 
 IL_0009:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:52>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:52>
 		PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* L_1 = __this->____pocheActuelle;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_2;
@@ -4115,15 +4115,15 @@ IL_0009:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:52>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:52>
 		return;
 	}
 
 IL_0026:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:56>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:56>
 		__this->____dragActif = (bool)1;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:57>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:57>
 		PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* L_5 = __this->____pocheActuelle;
 		PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* L_6 = L_5;
 		if (L_6)
@@ -4145,7 +4145,7 @@ IL_0039:
 
 IL_003f:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:59>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:59>
 		RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* L_7 = __this->____rawImage;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_8;
@@ -4156,7 +4156,7 @@ IL_003f:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:59>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:59>
 		RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* L_9 = __this->____rawImage;
 		NullCheck(L_9);
 		VirtualActionInvoker1< bool >::Invoke(25, L_9, (bool)0);
@@ -4164,13 +4164,13 @@ IL_003f:
 
 IL_0059:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:62>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:62>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_10 = __this->____rectTransform;
 		NullCheck(L_10);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_11;
 		L_11 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_10, NULL);
 		V_0 = L_11;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:65>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:65>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_12;
 		L_12 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		FormulaireUIManager_tB65E87C3CB7E98557788D461CC36FB7AC45D2AC2* L_13 = __this->____uiManager;
@@ -4179,45 +4179,45 @@ IL_0059:
 		L_14 = FormulaireUIManager_get_CoucheGlissement_mF715EE20B9D2AEE36E0B1AA312F45C859801E6E6_inline(L_13, NULL);
 		NullCheck(L_12);
 		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_12, L_14, (bool)0, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:66>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:66>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_15;
 		L_15 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		NullCheck(L_15);
 		Transform_SetAsLastSibling_m848AF1A0B4C7912FE88D8CBCF92B83D57B2B917E(L_15, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:68>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:68>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_16 = __this->____rectTransform;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_17;
 		memset((&L_17), 0, sizeof(L_17));
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_17), (0.5f), (0.5f), NULL);
 		NullCheck(L_16);
 		RectTransform_set_anchorMin_m931442ABE3368D6D4309F43DF1D64AB64B0F52E3(L_16, L_17, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:69>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:69>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_18 = __this->____rectTransform;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_19;
 		memset((&L_19), 0, sizeof(L_19));
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_19), (0.5f), (0.5f), NULL);
 		NullCheck(L_18);
 		RectTransform_set_anchorMax_m52829ABEDD229ABD3DA20BCA676FA1DCA4A39B7D(L_18, L_19, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:70>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:70>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_20 = __this->____rectTransform;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_21;
 		memset((&L_21), 0, sizeof(L_21));
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_21), (0.5f), (0.5f), NULL);
 		NullCheck(L_20);
 		RectTransform_set_pivot_m79D0177D383D432A93C2615F1932B739B1C6E146(L_20, L_21, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:71>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:71>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_22 = __this->____rectTransform;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_23 = __this->____tailleOriginale;
 		NullCheck(L_22);
 		RectTransform_set_sizeDelta_mC9A980EA6036E6725EF24CEDF3EE80A9B2B50EE5(L_22, L_23, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:72>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:72>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_24 = __this->____rectTransform;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_25 = V_0;
 		NullCheck(L_24);
 		Transform_set_position_mA1A817124BB41B685043DED2A9BA48CDF37C4156(L_24, L_25, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:74>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:75>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:76>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:74>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:75>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:76>
 		FormulaireUIManager_tB65E87C3CB7E98557788D461CC36FB7AC45D2AC2* L_26 = __this->____uiManager;
 		NullCheck(L_26);
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_27;
@@ -4233,7 +4233,7 @@ IL_0059:
 		il2cpp_codegen_runtime_class_init_inline(RectTransformUtility_t65C00A84A72F17D78B81F2E7D88C2AA98AB61244_il2cpp_TypeInfo_var);
 		bool L_32;
 		L_32 = RectTransformUtility_ScreenPointToLocalPointInRectangle_m01A75CAFB6D1019F1C65BA606635EAB10AF31195(L_27, L_29, L_31, (&V_1), NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:77>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:77>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_33 = __this->____rectTransform;
 		NullCheck(L_33);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_34;
@@ -4242,11 +4242,11 @@ IL_0059:
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_36;
 		L_36 = Vector2_op_Subtraction_m44475FCDAD2DA2F98D78A6625EC2DCDFE8803837_inline(L_34, L_35, NULL);
 		__this->____offsetGlissement = L_36;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:78>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:78>
 		return;
 	}
 }
-// Method Definition Index: 75193
+// Method Definition Index: 75251
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUI_OnDrag_m200FCD8324AB46A71142D00D7DD90F1D171504E8 (FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* __this, PointerEventData_t9670F3C7D823CCB738A1604C72A1EB90292396FB* ___0_eventData, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4258,7 +4258,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUI_OnDrag_m200FCD8324AB46A7114
 	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 V_0;
 	memset((&V_0), 0, sizeof(V_0));
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:82>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:82>
 		bool L_0 = __this->____dragActif;
 		if (L_0)
 		{
@@ -4266,15 +4266,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUI_OnDrag_m200FCD8324AB46A7114
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:82>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:82>
 		return;
 	}
 
 IL_0009:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:84>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:85>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:86>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:84>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:85>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:86>
 		FormulaireUIManager_tB65E87C3CB7E98557788D461CC36FB7AC45D2AC2* L_1 = __this->____uiManager;
 		NullCheck(L_1);
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_2;
@@ -4290,7 +4290,7 @@ IL_0009:
 		il2cpp_codegen_runtime_class_init_inline(RectTransformUtility_t65C00A84A72F17D78B81F2E7D88C2AA98AB61244_il2cpp_TypeInfo_var);
 		bool L_7;
 		L_7 = RectTransformUtility_ScreenPointToLocalPointInRectangle_m01A75CAFB6D1019F1C65BA606635EAB10AF31195(L_2, L_4, L_6, (&V_0), NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:88>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:88>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_8 = __this->____rectTransform;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_9 = V_0;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_10 = __this->____offsetGlissement;
@@ -4298,11 +4298,11 @@ IL_0009:
 		L_11 = Vector2_op_Addition_m8136742CE6EE33BA4EB81C5F584678455917D2AE_inline(L_9, L_10, NULL);
 		NullCheck(L_8);
 		RectTransform_set_anchoredPosition_mF903ACE04F6959B1CD67E2B94FABC0263068F965(L_8, L_11, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:89>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:89>
 		return;
 	}
 }
-// Method Definition Index: 75194
+// Method Definition Index: 75252
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUI_OnEndDrag_m7B8431003ACC9B01E821387C5AD28EA0B3D17D31 (FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* __this, PointerEventData_t9670F3C7D823CCB738A1604C72A1EB90292396FB* ___0_eventData, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4318,7 +4318,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUI_OnEndDrag_m7B8431003ACC9B01
 	PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* G_B8_0 = NULL;
 	PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* G_B7_0 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:93>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:93>
 		bool L_0 = __this->____dragActif;
 		if (L_0)
 		{
@@ -4326,15 +4326,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUI_OnEndDrag_m7B8431003ACC9B01
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:93>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:93>
 		return;
 	}
 
 IL_0009:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:94>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:94>
 		__this->____dragActif = (bool)0;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:96>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:96>
 		RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* L_1 = __this->____rawImage;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_2;
@@ -4345,7 +4345,7 @@ IL_0009:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:96>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:96>
 		RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* L_3 = __this->____rawImage;
 		NullCheck(L_3);
 		VirtualActionInvoker1< bool >::Invoke(25, L_3, (bool)1);
@@ -4353,17 +4353,17 @@ IL_0009:
 
 IL_002a:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:100>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:100>
 		PointerEventData_t9670F3C7D823CCB738A1604C72A1EB90292396FB* L_4 = ___0_eventData;
 		NullCheck(L_4);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_5;
 		L_5 = PointerEventData_get_position_m5BE71C28EB72EFB8435749E4E6E839213AEF458C_inline(L_4, NULL);
 		V_0 = L_5;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:104>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:104>
 		Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* L_6;
 		L_6 = Camera_get_main_m52C992F18E05355ABB9EEB64A4BF2215E12762DF(NULL);
 		V_1 = L_6;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:106>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:106>
 		FormulaireUIManager_tB65E87C3CB7E98557788D461CC36FB7AC45D2AC2* L_7 = __this->____uiManager;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_8 = V_0;
 		Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* L_9 = V_1;
@@ -4376,18 +4376,18 @@ IL_002a:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:108>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:108>
 		FormulaireUIManager_tB65E87C3CB7E98557788D461CC36FB7AC45D2AC2* L_11 = __this->____uiManager;
 		NullCheck(L_11);
 		FormulaireUIManager_EnvoyerAMainDuGarde_mF026915A2C998ED29201FC650BCCCB613466CCDC(L_11, __this, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:109>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:109>
 		return;
 	}
 
 IL_0053:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:112>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:113>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:112>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:113>
 		FormulaireUIManager_tB65E87C3CB7E98557788D461CC36FB7AC45D2AC2* L_12 = __this->____uiManager;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_13 = V_0;
 		Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* L_14 = V_1;
@@ -4417,7 +4417,7 @@ IL_0053:
 IL_007a:
 	{
 		V_2 = G_B8_0;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:115>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:115>
 		PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* L_21 = V_2;
 		RuntimeObject* L_22;
 		L_22 = FormulaireUI_TomberVersPoche_mDB9080B5C9E77279146AD201396F8B80F9D0CC90(__this, L_21, NULL);
@@ -4425,11 +4425,11 @@ IL_007a:
 		L_23 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_22, NULL);
 		__this->____coroutineChute = L_23;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____coroutineChute), (void*)L_23);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:116>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:116>
 		return;
 	}
 }
-// Method Definition Index: 75195
+// Method Definition Index: 75253
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* FormulaireUI_TomberVersPoche_mDB9080B5C9E77279146AD201396F8B80F9D0CC90 (FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* __this, PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* ___0_poche, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4453,7 +4453,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* FormulaireUI_TomberVersPoche_m
 		return L_2;
 	}
 }
-// Method Definition Index: 75196
+// Method Definition Index: 75254
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUI__ctor_mA5750D08E958E55F3A1F56BA429171B1A35E24C7 (FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* __this, const RuntimeMethod* method) 
 {
 	{
@@ -4469,7 +4469,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUI__ctor_mA5750D08E958E55F3A1F
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 75197
+// Method Definition Index: 75255
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CTomberVersPocheU3Ed__18__ctor_mE267101C5EFB86EC924DDB6BEFBDE707C886E867 (U3CTomberVersPocheU3Ed__18_t1FC35D52D4F6F6494CAEA2B1FE19F838F4307FBE* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -4479,14 +4479,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CTomberVersPocheU3Ed__18__ctor_mE26710
 		return;
 	}
 }
-// Method Definition Index: 75198
+// Method Definition Index: 75256
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CTomberVersPocheU3Ed__18_System_IDisposable_Dispose_m62D4E7A6BF3F75C99FDCE4EBF9A03F2709AE49B9 (U3CTomberVersPocheU3Ed__18_t1FC35D52D4F6F6494CAEA2B1FE19F838F4307FBE* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 75199
+// Method Definition Index: 75257
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CTomberVersPocheU3Ed__18_MoveNext_mD505D5416CE8D30719CD91677A6EB5D3F25E3ADB (U3CTomberVersPocheU3Ed__18_t1FC35D52D4F6F6494CAEA2B1FE19F838F4307FBE* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4527,7 +4527,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CTomberVersPocheU3Ed__18_MoveNext_mD50
 IL_001a:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:121>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:121>
 		FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* L_4 = V_1;
 		NullCheck(L_4);
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_5 = L_4->____rectTransform;
@@ -4535,14 +4535,14 @@ IL_001a:
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_6;
 		L_6 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_5, NULL);
 		V_2 = L_6;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:124>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:124>
 		PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* L_7 = __this->___poche;
 		FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* L_8 = V_1;
 		NullCheck(L_7);
 		int32_t L_9;
 		L_9 = PocheUI_AjouterFormulaire_m64980D239575C64C57E06EB8FC46A3CA2FE23A8C(L_7, L_8, NULL);
 		V_3 = L_9;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:125>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:125>
 		FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* L_10 = V_1;
 		NullCheck(L_10);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_11;
@@ -4553,14 +4553,14 @@ IL_001a:
 		L_13 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(L_12, NULL);
 		NullCheck(L_11);
 		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_11, L_13, (bool)0, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:126>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:126>
 		FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* L_14 = V_1;
 		NullCheck(L_14);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_15;
 		L_15 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(L_14, NULL);
 		NullCheck(L_15);
 		Transform_SetAsLastSibling_m848AF1A0B4C7912FE88D8CBCF92B83D57B2B917E(L_15, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:129>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:129>
 		FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* L_16 = V_1;
 		NullCheck(L_16);
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_17 = L_16->____rectTransform;
@@ -4569,7 +4569,7 @@ IL_001a:
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_18), (0.5f), (0.5f), NULL);
 		NullCheck(L_17);
 		RectTransform_set_anchorMin_m931442ABE3368D6D4309F43DF1D64AB64B0F52E3(L_17, L_18, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:130>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:130>
 		FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* L_19 = V_1;
 		NullCheck(L_19);
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_20 = L_19->____rectTransform;
@@ -4578,7 +4578,7 @@ IL_001a:
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_21), (0.5f), (0.5f), NULL);
 		NullCheck(L_20);
 		RectTransform_set_anchorMax_m52829ABEDD229ABD3DA20BCA676FA1DCA4A39B7D(L_20, L_21, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:131>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:131>
 		FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* L_22 = V_1;
 		NullCheck(L_22);
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_23 = L_22->____rectTransform;
@@ -4587,7 +4587,7 @@ IL_001a:
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_24), (0.5f), (0.5f), NULL);
 		NullCheck(L_23);
 		RectTransform_set_pivot_m79D0177D383D432A93C2615F1932B739B1C6E146(L_23, L_24, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:132>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:132>
 		FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* L_25 = V_1;
 		NullCheck(L_25);
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_26 = L_25->____rectTransform;
@@ -4596,21 +4596,21 @@ IL_001a:
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_28 = L_27->____tailleOriginale;
 		NullCheck(L_26);
 		RectTransform_set_sizeDelta_mC9A980EA6036E6725EF24CEDF3EE80A9B2B50EE5(L_26, L_28, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:135>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:135>
 		PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* L_29 = __this->___poche;
 		int32_t L_30 = V_3;
 		NullCheck(L_29);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_31;
 		L_31 = PocheUI_ObtenirPositionPourIndex_m004033E1FF8A9A6E3BEE34497185FC53A6C5D9E4(L_29, L_30, NULL);
 		__this->___U3CpositionCibleU3E5__2 = L_31;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:141>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:141>
 		Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* L_32;
 		L_32 = Camera_get_main_m52C992F18E05355ABB9EEB64A4BF2215E12762DF(NULL);
 		V_4 = L_32;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:142>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:143>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:144>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:145>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:142>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:143>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:144>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:145>
 		PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* L_33 = __this->___poche;
 		NullCheck(L_33);
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_34;
@@ -4624,31 +4624,31 @@ IL_001a:
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* L_39 = (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7*)(&__this->___U3CpositionDepartU3E5__3);
 		bool L_40;
 		L_40 = RectTransformUtility_ScreenPointToLocalPointInRectangle_m01A75CAFB6D1019F1C65BA606635EAB10AF31195(L_34, L_37, L_38, L_39, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:147>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:147>
 		FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* L_41 = V_1;
 		NullCheck(L_41);
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_42 = L_41->____rectTransform;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_43 = __this->___U3CpositionDepartU3E5__3;
 		NullCheck(L_42);
 		RectTransform_set_anchoredPosition_mF903ACE04F6959B1CD67E2B94FABC0263068F965(L_42, L_43, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:149>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:149>
 		__this->___U3CelapsedU3E5__4 = (0.0f);
 		goto IL_0177;
 	}
 
 IL_0113:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:152>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:152>
 		float L_44 = __this->___U3CelapsedU3E5__4;
 		float L_45;
 		L_45 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
 		__this->___U3CelapsedU3E5__4 = ((float)il2cpp_codegen_add(L_44, L_45));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:153>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:153>
 		float L_46 = __this->___U3CelapsedU3E5__4;
 		float L_47;
 		L_47 = Mathf_SmoothStep_mEFDC738EB0AA162D71013BDBBDD157B080A8E524_inline((0.0f), (1.0f), ((float)(L_46/(0.349999994f))), NULL);
 		V_5 = L_47;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:154>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:154>
 		FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* L_48 = V_1;
 		NullCheck(L_48);
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_49 = L_48->____rectTransform;
@@ -4659,7 +4659,7 @@ IL_0113:
 		L_53 = Vector2_Lerp_m1A36103F7967F653A929556E26E6D052C298C00C_inline(L_50, L_51, L_52, NULL);
 		NullCheck(L_49);
 		RectTransform_set_anchoredPosition_mF903ACE04F6959B1CD67E2B94FABC0263068F965(L_49, L_53, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:155>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:155>
 		__this->___U3CU3E2__current = NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)NULL);
 		__this->___U3CU3E1__state = 1;
@@ -4673,7 +4673,7 @@ IL_0170:
 
 IL_0177:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:150>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:150>
 		float L_54 = __this->___U3CelapsedU3E5__4;
 		if ((((float)L_54) < ((float)(0.349999994f))))
 		{
@@ -4681,23 +4681,23 @@ IL_0177:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:158>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:158>
 		FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* L_55 = V_1;
 		NullCheck(L_55);
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_56 = L_55->____rectTransform;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_57 = __this->___U3CpositionCibleU3E5__2;
 		NullCheck(L_56);
 		RectTransform_set_anchoredPosition_mF903ACE04F6959B1CD67E2B94FABC0263068F965(L_56, L_57, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:159>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:159>
 		FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* L_58 = V_1;
 		NullCheck(L_58);
 		L_58->____coroutineChute = (Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&L_58->____coroutineChute), (void*)(Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B*)NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:160>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:160>
 		return (bool)0;
 	}
 }
-// Method Definition Index: 75200
+// Method Definition Index: 75258
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CTomberVersPocheU3Ed__18_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m31B32AC68AF7D1D74992F1791F1722B5E7CA16B4 (U3CTomberVersPocheU3Ed__18_t1FC35D52D4F6F6494CAEA2B1FE19F838F4307FBE* __this, const RuntimeMethod* method) 
 {
 	{
@@ -4705,7 +4705,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CTomberVersPocheU3Ed__18_Sys
 		return L_0;
 	}
 }
-// Method Definition Index: 75201
+// Method Definition Index: 75259
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CTomberVersPocheU3Ed__18_System_Collections_IEnumerator_Reset_mA2F7CFD95D8E3B27FBFF8F21BB375CACE6AC0F49 (U3CTomberVersPocheU3Ed__18_t1FC35D52D4F6F6494CAEA2B1FE19F838F4307FBE* __this, const RuntimeMethod* method) 
 {
 	{
@@ -4714,7 +4714,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CTomberVersPocheU3Ed__18_System_Collec
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CTomberVersPocheU3Ed__18_System_Collections_IEnumerator_Reset_mA2F7CFD95D8E3B27FBFF8F21BB375CACE6AC0F49_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 75202
+// Method Definition Index: 75260
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CTomberVersPocheU3Ed__18_System_Collections_IEnumerator_get_Current_m463C5258E09DC31A9B0C96C2F2C2157FE23F3628 (U3CTomberVersPocheU3Ed__18_t1FC35D52D4F6F6494CAEA2B1FE19F838F4307FBE* __this, const RuntimeMethod* method) 
 {
 	{
@@ -4730,16 +4730,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CTomberVersPocheU3Ed__18_Sys
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 75203
+// Method Definition Index: 75261
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* FormulaireUIManager_get_CoucheGlissement_mF715EE20B9D2AEE36E0B1AA312F45C859801E6E6 (FormulaireUIManager_tB65E87C3CB7E98557788D461CC36FB7AC45D2AC2* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:40>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:40>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_0 = __this->___coucheGlissement;
 		return L_0;
 	}
 }
-// Method Definition Index: 75204
+// Method Definition Index: 75262
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUIManager_Awake_m78B2E96EF3A5CCEAA8439C0720DD286F237112C1 (FormulaireUIManager_tB65E87C3CB7E98557788D461CC36FB7AC45D2AC2* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4766,7 +4766,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUIManager_Awake_m78B2E96EF3A5C
 	Func_2_t6DB4B600FAF67C700A73BC167E15B0C7EE87349C* G_B1_0 = NULL;
 	List_1_t0614420961010EDD575996D07075CB8FF5B32CE7* G_B1_1 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:44>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:44>
 		PocheUIU5BU5D_t24DE7532CA23E985D521EBCD6FBA1170448BA0CC* L_0 = (PocheUIU5BU5D_t24DE7532CA23E985D521EBCD6FBA1170448BA0CC*)(PocheUIU5BU5D_t24DE7532CA23E985D521EBCD6FBA1170448BA0CC*)SZArrayNew(PocheUIU5BU5D_t24DE7532CA23E985D521EBCD6FBA1170448BA0CC_il2cpp_TypeInfo_var, (uint32_t)3);
 		PocheUIU5BU5D_t24DE7532CA23E985D521EBCD6FBA1170448BA0CC* L_1 = L_0;
 		PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* L_2 = __this->___premiUE8rePoche;
@@ -4785,7 +4785,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUIManager_Awake_m78B2E96EF3A5C
 		(L_5)->SetAt(static_cast<il2cpp_array_size_t>(2), (PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77*)L_6);
 		__this->____poches = L_5;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____poches), (void*)L_5);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:46>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:46>
 		List_1_t0614420961010EDD575996D07075CB8FF5B32CE7* L_7 = __this->___formulairesData;
 		il2cpp_codegen_runtime_class_init_inline(U3CU3Ec_tBF871CFDD3B67337F1DE26EF9B6991B23CF4D434_il2cpp_TypeInfo_var);
 		Func_2_t6DB4B600FAF67C700A73BC167E15B0C7EE87349C* L_8 = ((U3CU3Ec_tBF871CFDD3B67337F1DE26EF9B6991B23CF4D434_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_tBF871CFDD3B67337F1DE26EF9B6991B23CF4D434_il2cpp_TypeInfo_var))->___U3CU3E9__14_0;
@@ -4853,13 +4853,13 @@ IL_0085:
 
 IL_0059_1:
 			{
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:46>
+				//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:46>
 				RuntimeObject* L_17 = V_0;
 				NullCheck(L_17);
 				FormulaireData_t7CB85E86176143BDC24E5268FB72A648009BF91D* L_18;
 				L_18 = InterfaceFuncInvoker0< FormulaireData_t7CB85E86176143BDC24E5268FB72A648009BF91D* >::Invoke(0, IEnumerator_1_tAB07B81137CBDE2CE459D40A061B104750A565FB_il2cpp_TypeInfo_var, L_17);
 				V_1 = L_18;
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:47>
+				//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:47>
 				Dictionary_2_t69C08A5E0C83BC93483BC1B0A7B135AB6F8632DB* L_19 = __this->____dataParType;
 				FormulaireData_t7CB85E86176143BDC24E5268FB72A648009BF91D* L_20 = V_1;
 				NullCheck(L_20);
@@ -4871,7 +4871,7 @@ IL_0059_1:
 
 IL_0072_1:
 			{
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:46>
+				//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:46>
 				RuntimeObject* L_23 = V_0;
 				NullCheck(L_23);
 				bool L_24;
@@ -4893,23 +4893,23 @@ IL_0072_1:
 
 IL_0086:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:49>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:49>
 		MainDuGardeUI_tC321F2958259BF8098C4744C19FED866FA99A361* L_25 = __this->___mainDuGarde;
 		Action_1_t6BCE20F4C75325D3F762D20CB5D17CA40BCDD8C6* L_26 = (Action_1_t6BCE20F4C75325D3F762D20CB5D17CA40BCDD8C6*)il2cpp_codegen_object_new(Action_1_t6BCE20F4C75325D3F762D20CB5D17CA40BCDD8C6_il2cpp_TypeInfo_var);
 		Action_1__ctor_m85A626021E3916F09FF7A606722DA7CC412D53D3(L_26, __this, (intptr_t)((void*)FormulaireUIManager_OnFormulaireRemisAuGarde_mD12560B65385A95E20643079846F25D56ACE4FBA_RuntimeMethod_var), NULL);
 		NullCheck(L_25);
 		MainDuGardeUI_add_OnFormulaireRemis_m7D1AA2AB5E7281A814A3855FEF28246A6EE7DCA9(L_25, L_26, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:50>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:50>
 		return;
 	}
 }
-// Method Definition Index: 75205
+// Method Definition Index: 75263
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUIManager_Start_mB9A297FCB0CAD7EE83710584B17C40B9ACF018F7 (FormulaireUIManager_tB65E87C3CB7E98557788D461CC36FB7AC45D2AC2* __this, const RuntimeMethod* method) 
 {
 	SoundManager_tCA2CCAC5CDF1BA10E525C01C8D1D0DFAC9BE3734* G_B2_0 = NULL;
 	SoundManager_tCA2CCAC5CDF1BA10E525C01C8D1D0DFAC9BE3734* G_B1_0 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:54>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:54>
 		SoundManager_tCA2CCAC5CDF1BA10E525C01C8D1D0DFAC9BE3734* L_0;
 		L_0 = SoundManager_get_Instance_mE37BC6A788B14F6895B2B50A4E461F8C7895BAEA_inline(NULL);
 		SoundManager_tCA2CCAC5CDF1BA10E525C01C8D1D0DFAC9BE3734* L_1 = L_0;
@@ -4933,15 +4933,15 @@ IL_000b:
 
 IL_0016:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:57>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:57>
 		FormulaireUIManager_SpawnFormulaires_mAA161D3ED9408963F0F3255035A80C5B828B91B9(__this, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:58>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:58>
 		FormulaireUIManager_SpawnObjetsSpeciaux_mE583329195541E0E801E8BA0F86A39EA89608CBE(__this, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:59>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:59>
 		return;
 	}
 }
-// Method Definition Index: 75206
+// Method Definition Index: 75264
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUIManager_OnDestroy_m6545D5B9FDBE26E903745EEBE5A240D4752F7935 (FormulaireUIManager_tB65E87C3CB7E98557788D461CC36FB7AC45D2AC2* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4953,7 +4953,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUIManager_OnDestroy_m6545D5B9F
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:63>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:63>
 		MainDuGardeUI_tC321F2958259BF8098C4744C19FED866FA99A361* L_0 = __this->___mainDuGarde;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -4964,7 +4964,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUIManager_OnDestroy_m6545D5B9F
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:64>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:64>
 		MainDuGardeUI_tC321F2958259BF8098C4744C19FED866FA99A361* L_2 = __this->___mainDuGarde;
 		Action_1_t6BCE20F4C75325D3F762D20CB5D17CA40BCDD8C6* L_3 = (Action_1_t6BCE20F4C75325D3F762D20CB5D17CA40BCDD8C6*)il2cpp_codegen_object_new(Action_1_t6BCE20F4C75325D3F762D20CB5D17CA40BCDD8C6_il2cpp_TypeInfo_var);
 		Action_1__ctor_m85A626021E3916F09FF7A606722DA7CC412D53D3(L_3, __this, (intptr_t)((void*)FormulaireUIManager_OnFormulaireRemisAuGarde_mD12560B65385A95E20643079846F25D56ACE4FBA_RuntimeMethod_var), NULL);
@@ -4974,11 +4974,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUIManager_OnDestroy_m6545D5B9F
 
 IL_0025:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:65>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:65>
 		return;
 	}
 }
-// Method Definition Index: 75207
+// Method Definition Index: 75265
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUIManager_NettoyerCartes_mB2E10D7F7C477FEC49B27D0AE802F4E6CCB1E104 (FormulaireUIManager_tB65E87C3CB7E98557788D461CC36FB7AC45D2AC2* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -4999,7 +4999,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUIManager_NettoyerCartes_mB2E1
 	PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* G_B3_0 = NULL;
 	PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* G_B2_0 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:76>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:76>
 		PocheUIU5BU5D_t24DE7532CA23E985D521EBCD6FBA1170448BA0CC* L_0 = __this->____poches;
 		V_0 = L_0;
 		V_1 = 0;
@@ -5008,13 +5008,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUIManager_NettoyerCartes_mB2E1
 
 IL_000b:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:76>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:76>
 		PocheUIU5BU5D_t24DE7532CA23E985D521EBCD6FBA1170448BA0CC* L_1 = V_0;
 		int32_t L_2 = V_1;
 		NullCheck(L_1);
 		int32_t L_3 = L_2;
 		PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* L_4 = (L_1)->GetAt(static_cast<il2cpp_array_size_t>(L_3));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:77>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:77>
 		PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* L_5 = L_4;
 		if (L_5)
 		{
@@ -5041,7 +5041,7 @@ IL_0019:
 
 IL_001d:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:76>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:76>
 		int32_t L_7 = V_1;
 		PocheUIU5BU5D_t24DE7532CA23E985D521EBCD6FBA1170448BA0CC* L_8 = V_0;
 		NullCheck(L_8);
@@ -5051,7 +5051,7 @@ IL_001d:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:80>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:80>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_9 = __this->___coucheGlissement;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_10;
@@ -5062,7 +5062,7 @@ IL_001d:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:82>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:82>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_11 = __this->___coucheGlissement;
 		NullCheck(L_11);
 		RuntimeObject* L_12;
@@ -5104,13 +5104,13 @@ IL_0081:
 
 IL_003f_1:
 			{
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:82>
+				//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:82>
 				RuntimeObject* L_16 = V_2;
 				NullCheck(L_16);
 				RuntimeObject* L_17;
 				L_17 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1, IEnumerator_t7B609C2FFA6EB5167D9C62A0C32A21DE2F666DAA_il2cpp_TypeInfo_var, L_16);
 				V_3 = ((Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1*)CastclassClass((RuntimeObject*)L_17, Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1_il2cpp_TypeInfo_var));
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:84>
+				//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:84>
 				Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_18 = V_3;
 				NullCheck(L_18);
 				FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* L_19;
@@ -5124,7 +5124,7 @@ IL_003f_1:
 				}
 			}
 			{
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:85>
+				//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:85>
 				Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_21 = V_3;
 				NullCheck(L_21);
 				GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_22;
@@ -5135,7 +5135,7 @@ IL_003f_1:
 
 IL_0064_1:
 			{
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:82>
+				//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:82>
 				RuntimeObject* L_23 = V_2;
 				NullCheck(L_23);
 				bool L_24;
@@ -5157,11 +5157,11 @@ IL_0064_1:
 
 IL_0082:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:88>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:88>
 		return;
 	}
 }
-// Method Definition Index: 75208
+// Method Definition Index: 75266
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUIManager_SpawnFormulaires_mAA161D3ED9408963F0F3255035A80C5B828B91B9 (FormulaireUIManager_tB65E87C3CB7E98557788D461CC36FB7AC45D2AC2* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5181,42 +5181,42 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUIManager_SpawnFormulaires_mAA
 	int32_t V_7 = 0;
 	int32_t V_8 = 0;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:94>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:94>
 		List_1_t08097C722915BED936C07F6EE2EBF6F8CCDE11B1* L_0;
 		L_0 = FormulaireUIManager_BuildListeInterleaved_m633B4CA920FBAD1EEF5A6B7EABCB738FA638EE61(__this, NULL);
 		V_0 = L_0;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:95>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:95>
 		List_1_t08097C722915BED936C07F6EE2EBF6F8CCDE11B1* L_1 = V_0;
 		NullCheck(L_1);
 		int32_t L_2;
 		L_2 = List_1_get_Count_mED1CB65668255CAD6E50608B7443685189D3D9F2_inline(L_1, List_1_get_Count_mED1CB65668255CAD6E50608B7443685189D3D9F2_RuntimeMethod_var);
 		V_1 = L_2;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:98>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:98>
 		int32_t L_3 = V_1;
 		int32_t L_4;
 		L_4 = Mathf_CeilToInt_mF2BF9F4261B3431DC20E10A46CFEEED103C48963_inline(((float)(((float)L_3)/(2.0f))), NULL);
 		V_2 = L_4;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:99>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:99>
 		int32_t L_5 = V_1;
 		int32_t L_6 = V_2;
 		int32_t L_7;
 		L_7 = Mathf_CeilToInt_mF2BF9F4261B3431DC20E10A46CFEEED103C48963_inline(((float)(((float)((int32_t)il2cpp_codegen_subtract(L_5, L_6)))/(2.0f))), NULL);
 		V_3 = L_7;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:100>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:100>
 		int32_t L_8 = V_1;
 		int32_t L_9 = V_2;
 		int32_t L_10 = V_3;
 		V_4 = ((int32_t)il2cpp_codegen_subtract(((int32_t)il2cpp_codegen_subtract(L_8, L_9)), L_10));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:102>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:102>
 		V_5 = 0;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:103>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:103>
 		V_6 = 0;
 		goto IL_005a;
 	}
 
 IL_003b:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:103>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:103>
 		List_1_t08097C722915BED936C07F6EE2EBF6F8CCDE11B1* L_11 = V_0;
 		int32_t L_12 = V_5;
 		int32_t L_13 = L_12;
@@ -5226,14 +5226,14 @@ IL_003b:
 		L_14 = List_1_get_Item_mE578941BDBF42C01FE080AF53A2325A7202E17F9(L_11, L_13, List_1_get_Item_mE578941BDBF42C01FE080AF53A2325A7202E17F9_RuntimeMethod_var);
 		PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* L_15 = __this->___premiUE8rePoche;
 		FormulaireUIManager_SpawnDansPoche_mE5A77390920CD73A6F83C0D393222A94DF94952C(__this, L_14, L_15, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:103>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:103>
 		int32_t L_16 = V_6;
 		V_6 = ((int32_t)il2cpp_codegen_add(L_16, 1));
 	}
 
 IL_005a:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:103>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:103>
 		int32_t L_17 = V_6;
 		int32_t L_18 = V_2;
 		if ((((int32_t)L_17) >= ((int32_t)L_18)))
@@ -5252,14 +5252,14 @@ IL_005a:
 
 IL_0064:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:104>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:104>
 		V_7 = 0;
 		goto IL_0088;
 	}
 
 IL_0069:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:104>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:104>
 		List_1_t08097C722915BED936C07F6EE2EBF6F8CCDE11B1* L_21 = V_0;
 		int32_t L_22 = V_5;
 		int32_t L_23 = L_22;
@@ -5269,14 +5269,14 @@ IL_0069:
 		L_24 = List_1_get_Item_mE578941BDBF42C01FE080AF53A2325A7202E17F9(L_21, L_23, List_1_get_Item_mE578941BDBF42C01FE080AF53A2325A7202E17F9_RuntimeMethod_var);
 		PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* L_25 = __this->___deuxiUE8mePoche;
 		FormulaireUIManager_SpawnDansPoche_mE5A77390920CD73A6F83C0D393222A94DF94952C(__this, L_24, L_25, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:104>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:104>
 		int32_t L_26 = V_7;
 		V_7 = ((int32_t)il2cpp_codegen_add(L_26, 1));
 	}
 
 IL_0088:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:104>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:104>
 		int32_t L_27 = V_7;
 		int32_t L_28 = V_3;
 		if ((((int32_t)L_27) >= ((int32_t)L_28)))
@@ -5295,14 +5295,14 @@ IL_0088:
 
 IL_0092:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:105>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:105>
 		V_8 = 0;
 		goto IL_00b6;
 	}
 
 IL_0097:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:105>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:105>
 		List_1_t08097C722915BED936C07F6EE2EBF6F8CCDE11B1* L_31 = V_0;
 		int32_t L_32 = V_5;
 		int32_t L_33 = L_32;
@@ -5312,14 +5312,14 @@ IL_0097:
 		L_34 = List_1_get_Item_mE578941BDBF42C01FE080AF53A2325A7202E17F9(L_31, L_33, List_1_get_Item_mE578941BDBF42C01FE080AF53A2325A7202E17F9_RuntimeMethod_var);
 		PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* L_35 = __this->___derniUE8rePoche;
 		FormulaireUIManager_SpawnDansPoche_mE5A77390920CD73A6F83C0D393222A94DF94952C(__this, L_34, L_35, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:105>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:105>
 		int32_t L_36 = V_8;
 		V_8 = ((int32_t)il2cpp_codegen_add(L_36, 1));
 	}
 
 IL_00b6:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:105>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:105>
 		int32_t L_37 = V_8;
 		int32_t L_38 = V_4;
 		if ((((int32_t)L_37) >= ((int32_t)L_38)))
@@ -5338,11 +5338,11 @@ IL_00b6:
 
 IL_00c1:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:106>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:106>
 		return;
 	}
 }
-// Method Definition Index: 75209
+// Method Definition Index: 75267
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_t08097C722915BED936C07F6EE2EBF6F8CCDE11B1* FormulaireUIManager_BuildListeInterleaved_m633B4CA920FBAD1EEF5A6B7EABCB738FA638EE61 (FormulaireUIManager_tB65E87C3CB7E98557788D461CC36FB7AC45D2AC2* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5389,11 +5389,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR List_1_t08097C722915BED936C07F6EE2EBF6F8CCDE1
 	Func_2_tDA0ECC08C04376457BDEC26B48FE0ACCB37632A0* G_B13_0 = NULL;
 	RuntimeObject* G_B13_1 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:116>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:116>
 		Dictionary_2_tC6AD236505EC15B9F6E1C43FABC866691185F3BB* L_0 = (Dictionary_2_tC6AD236505EC15B9F6E1C43FABC866691185F3BB*)il2cpp_codegen_object_new(Dictionary_2_tC6AD236505EC15B9F6E1C43FABC866691185F3BB_il2cpp_TypeInfo_var);
 		Dictionary_2__ctor_mB106C6F4314DF814C8E94614B138BD864CFC0E0E(L_0, Dictionary_2__ctor_mB106C6F4314DF814C8E94614B138BD864CFC0E0E_RuntimeMethod_var);
 		V_0 = L_0;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:117>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:117>
 		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_1 = { reinterpret_cast<intptr_t> (FormulaireType_t229C352478F59ED69B48A75857A0C74DF1AE4201_0_0_0_var) };
 		il2cpp_codegen_runtime_class_init_inline(il2cpp_defaults.systemtype_class);
 		Type_t* L_2;
@@ -5441,13 +5441,13 @@ IL_0065:
 
 IL_001d_1:
 			{
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:117>
+				//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:117>
 				RuntimeObject* L_8 = V_3;
 				NullCheck(L_8);
 				RuntimeObject* L_9;
 				L_9 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(1, IEnumerator_t7B609C2FFA6EB5167D9C62A0C32A21DE2F666DAA_il2cpp_TypeInfo_var, L_8);
 				V_4 = ((*(int32_t*)UnBox(L_9, FormulaireType_t229C352478F59ED69B48A75857A0C74DF1AE4201_il2cpp_TypeInfo_var)));
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:119>
+				//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:119>
 				int32_t L_10 = V_4;
 				bool L_11;
 				L_11 = FormulaireUIManager_EstObjetSpUE9cial_m06573FE4EEEFE76207C8C793B8BF558012B5187D(L_10, NULL);
@@ -5457,7 +5457,7 @@ IL_001d_1:
 				}
 			}
 			{
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:120>
+				//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:120>
 				Dictionary_2_tC6AD236505EC15B9F6E1C43FABC866691185F3BB* L_12 = V_0;
 				int32_t L_13 = V_4;
 				FormulaireInventaire_t34C7A7E0E44EE996542D8CC81ACBF74BC0A623B7* L_14 = __this->___inventaire;
@@ -5471,7 +5471,7 @@ IL_001d_1:
 
 IL_0048_1:
 			{
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:117>
+				//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:117>
 				RuntimeObject* L_17 = V_3;
 				NullCheck(L_17);
 				bool L_18;
@@ -5493,22 +5493,22 @@ IL_0048_1:
 
 IL_0066:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:123>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:123>
 		List_1_t08097C722915BED936C07F6EE2EBF6F8CCDE11B1* L_19 = (List_1_t08097C722915BED936C07F6EE2EBF6F8CCDE11B1*)il2cpp_codegen_object_new(List_1_t08097C722915BED936C07F6EE2EBF6F8CCDE11B1_il2cpp_TypeInfo_var);
 		List_1__ctor_m4E08D1E47EDE14479036E2191F9BFF294174EE57(L_19, List_1__ctor_m4E08D1E47EDE14479036E2191F9BFF294174EE57_RuntimeMethod_var);
 		V_1 = L_19;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:124>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:124>
 		V_2 = (bool)1;
 		goto IL_0116;
 	}
 
 IL_0073:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:128>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:128>
 		V_2 = (bool)0;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:129>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:130>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:131>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:129>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:130>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:131>
 		Dictionary_2_tC6AD236505EC15B9F6E1C43FABC866691185F3BB* L_20 = V_0;
 		il2cpp_codegen_runtime_class_init_inline(U3CU3Ec_tBF871CFDD3B67337F1DE26EF9B6991B23CF4D434_il2cpp_TypeInfo_var);
 		Func_2_t0BD5B5EFC96A9F91C4520D7262783511EBC6CDEC* L_21 = ((U3CU3Ec_tBF871CFDD3B67337F1DE26EF9B6991B23CF4D434_StaticFields*)il2cpp_codegen_static_fields_for(U3CU3Ec_tBF871CFDD3B67337F1DE26EF9B6991B23CF4D434_il2cpp_TypeInfo_var))->___U3CU3E9__19_0;
@@ -5566,7 +5566,7 @@ IL_00b9:
 	{
 		RuntimeObject* L_32;
 		L_32 = Enumerable_Select_TisKeyValuePair_2_tF294D6781E44AF635AF142AB6F2C7CA26674B8B5_TisFormulaireType_t229C352478F59ED69B48A75857A0C74DF1AE4201_mF2DA790AF2E86719D242739D0CA9A963224538CE(G_B14_1, G_B14_0, Enumerable_Select_TisKeyValuePair_2_tF294D6781E44AF635AF142AB6F2C7CA26674B8B5_TisFormulaireType_t229C352478F59ED69B48A75857A0C74DF1AE4201_mF2DA790AF2E86719D242739D0CA9A963224538CE_RuntimeMethod_var);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:133>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:133>
 		NullCheck(L_32);
 		RuntimeObject* L_33;
 		L_33 = InterfaceFuncInvoker0< RuntimeObject* >::Invoke(0, IEnumerable_1_t57574C55994C98F13822A6F56762499661FE0BA7_il2cpp_TypeInfo_var, L_32);
@@ -5605,13 +5605,13 @@ IL_0115:
 
 IL_00c7_1:
 			{
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:133>
+				//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:133>
 				RuntimeObject* L_36 = V_6;
 				NullCheck(L_36);
 				int32_t L_37;
 				L_37 = InterfaceFuncInvoker0< int32_t >::Invoke(0, IEnumerator_1_tA62EE6FE2F7077D6F8285B8D0EC4882942E6CE52_il2cpp_TypeInfo_var, L_36);
 				V_7 = L_37;
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:135>
+				//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:135>
 				Dictionary_2_tC6AD236505EC15B9F6E1C43FABC866691185F3BB* L_38 = V_0;
 				int32_t L_39 = V_7;
 				NullCheck(L_38);
@@ -5623,12 +5623,12 @@ IL_00c7_1:
 				}
 			}
 			{
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:136>
+				//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:136>
 				List_1_t08097C722915BED936C07F6EE2EBF6F8CCDE11B1* L_41 = V_1;
 				int32_t L_42 = V_7;
 				NullCheck(L_41);
 				List_1_Add_m3B7E86CA5492248D9F974DC1A1FFA399BDFF61B4_inline(L_41, L_42, List_1_Add_m3B7E86CA5492248D9F974DC1A1FFA399BDFF61B4_RuntimeMethod_var);
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:137>
+				//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:137>
 				Dictionary_2_tC6AD236505EC15B9F6E1C43FABC866691185F3BB* L_43 = V_0;
 				int32_t L_44 = V_7;
 				V_8 = L_44;
@@ -5642,13 +5642,13 @@ IL_00c7_1:
 				int32_t L_49 = V_9;
 				NullCheck(L_45);
 				Dictionary_2_set_Item_m53F9BE635A95B00A60F928163B5A35EB7B02FFDB(L_45, L_48, ((int32_t)il2cpp_codegen_subtract(L_49, 1)), Dictionary_2_set_Item_m53F9BE635A95B00A60F928163B5A35EB7B02FFDB_RuntimeMethod_var);
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:138>
+				//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:138>
 				V_2 = (bool)1;
 			}
 
 IL_00ff_1:
 			{
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:133>
+				//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:133>
 				RuntimeObject* L_50 = V_6;
 				NullCheck(L_50);
 				bool L_51;
@@ -5670,7 +5670,7 @@ IL_00ff_1:
 
 IL_0116:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:126>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:126>
 		bool L_52 = V_2;
 		if (L_52)
 		{
@@ -5678,18 +5678,18 @@ IL_0116:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:142>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:142>
 		List_1_t08097C722915BED936C07F6EE2EBF6F8CCDE11B1* L_53 = V_1;
 		return L_53;
 	}
 }
-// Method Definition Index: 75210
+// Method Definition Index: 75268
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool FormulaireUIManager_EstObjetSpUE9cial_m06573FE4EEEFE76207C8C793B8BF558012B5187D (int32_t ___0_type, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:146>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:147>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:148>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:146>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:147>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:148>
 		int32_t L_0 = ___0_type;
 		if ((((int32_t)L_0) == ((int32_t)4)))
 		{
@@ -5713,7 +5713,7 @@ IL_000d:
 		return (bool)1;
 	}
 }
-// Method Definition Index: 75211
+// Method Definition Index: 75269
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUIManager_SpawnDansPoche_mE5A77390920CD73A6F83C0D393222A94DF94952C (FormulaireUIManager_tB65E87C3CB7E98557788D461CC36FB7AC45D2AC2* __this, int32_t ___0_type, PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* ___1_poche, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5748,7 +5748,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUIManager_SpawnDansPoche_mE5A7
 	int32_t V_6 = 0;
 	Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* G_B6_0 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:153>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:153>
 		Dictionary_2_t69C08A5E0C83BC93483BC1B0A7B135AB6F8632DB* L_0 = __this->____dataParType;
 		int32_t L_1 = ___0_type;
 		NullCheck(L_0);
@@ -5774,7 +5774,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUIManager_SpawnDansPoche_mE5A7
 
 IL_001e:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:155>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:155>
 		int32_t L_6 = ___0_type;
 		int32_t L_7 = L_6;
 		RuntimeObject* L_8 = Box(FormulaireType_t229C352478F59ED69B48A75857A0C74DF1AE4201_il2cpp_TypeInfo_var, &L_7);
@@ -5782,13 +5782,13 @@ IL_001e:
 		L_9 = String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8(_stringLiteral96004A77A783563C2A8C438B33B91B06B62E6161, L_8, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogWarning_m33EF1B897E0C7C6FF538989610BFAFFEF4628CA9(L_9, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:156>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:156>
 		return;
 	}
 
 IL_0034:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:160>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:160>
 		FormulaireData_t7CB85E86176143BDC24E5268FB72A648009BF91D* L_10 = V_0;
 		NullCheck(L_10);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_11 = L_10->___prefab;
@@ -5796,7 +5796,7 @@ IL_0034:
 		RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* L_12;
 		L_12 = GameObject_GetComponentInChildren_TisRawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179_m25B6E30615A468D89D98D306F02D816F8FF9F508(L_11, (bool)1, GameObject_GetComponentInChildren_TisRawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179_m25B6E30615A468D89D98D306F02D816F8FF9F508_RuntimeMethod_var);
 		V_1 = L_12;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:161>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:161>
 		RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* L_13 = V_1;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_14;
@@ -5823,7 +5823,7 @@ IL_004d:
 IL_0058:
 	{
 		V_2 = G_B6_0;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:163>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:163>
 		Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* L_17 = V_2;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_18;
@@ -5834,7 +5834,7 @@ IL_0058:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:165>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:165>
 		FormulaireData_t7CB85E86176143BDC24E5268FB72A648009BF91D* L_19 = V_0;
 		NullCheck(L_19);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_20 = L_19->___prefab;
@@ -5845,18 +5845,18 @@ IL_0058:
 		L_22 = String_Concat_m8855A6DE10F84DA7F4EC113CADDB59873A25573B(_stringLiteralB84112D4201B9233F1B8E0BFE8691001530F9640, L_21, _stringLiteralC7A7939E82BEFEF8DDB755713442AA62963F09F8, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogError_mB00B2B4468EF3CAF041B038D840820FB84C924B2(L_22, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:166>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:166>
 		return;
 	}
 
 IL_0082:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:170>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:170>
 		FormulaireData_t7CB85E86176143BDC24E5268FB72A648009BF91D* L_23 = V_0;
 		NullCheck(L_23);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_24 = L_23->___taille;
 		V_3 = L_24;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:173>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:173>
 		FormulaireData_t7CB85E86176143BDC24E5268FB72A648009BF91D* L_25 = V_0;
 		NullCheck(L_25);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_26 = L_25->___prefab;
@@ -5888,7 +5888,7 @@ IL_0082:
 		(L_35)->SetAt(static_cast<il2cpp_array_size_t>(2), (Type_t*)L_37);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_38 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
 		GameObject__ctor_m721D643351E55308EA4F5F41B67D5446D11C61F0(L_38, L_27, L_35, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:174>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:174>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_39 = L_38;
 		NullCheck(L_39);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_40;
@@ -5899,77 +5899,77 @@ IL_0082:
 		L_42 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(L_41, NULL);
 		NullCheck(L_40);
 		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_40, L_42, (bool)0, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:177>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:177>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_43 = L_39;
 		NullCheck(L_43);
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_44;
 		L_44 = GameObject_GetComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m1592DCB5AA07291F73A76006F0913A64DFB8A9C4(L_43, GameObject_GetComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m1592DCB5AA07291F73A76006F0913A64DFB8A9C4_RuntimeMethod_var);
 		V_4 = L_44;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:178>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:178>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_45 = V_4;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_46;
 		memset((&L_46), 0, sizeof(L_46));
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_46), (0.5f), (0.5f), NULL);
 		NullCheck(L_45);
 		RectTransform_set_anchorMin_m931442ABE3368D6D4309F43DF1D64AB64B0F52E3(L_45, L_46, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:179>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:179>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_47 = V_4;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_48;
 		memset((&L_48), 0, sizeof(L_48));
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_48), (0.5f), (0.5f), NULL);
 		NullCheck(L_47);
 		RectTransform_set_anchorMax_m52829ABEDD229ABD3DA20BCA676FA1DCA4A39B7D(L_47, L_48, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:180>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:180>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_49 = V_4;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_50;
 		memset((&L_50), 0, sizeof(L_50));
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_50), (0.5f), (0.5f), NULL);
 		NullCheck(L_49);
 		RectTransform_set_pivot_m79D0177D383D432A93C2615F1932B739B1C6E146(L_49, L_50, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:181>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:181>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_51 = V_4;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_52 = V_3;
 		NullCheck(L_51);
 		RectTransform_set_sizeDelta_mC9A980EA6036E6725EF24CEDF3EE80A9B2B50EE5(L_51, L_52, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:182>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:182>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_53 = V_4;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_54;
 		L_54 = Vector2_get_zero_m32506C40EC2EE7D5D4410BF40D3EE683A3D5F32C_inline(NULL);
 		NullCheck(L_53);
 		RectTransform_set_anchoredPosition_mF903ACE04F6959B1CD67E2B94FABC0263068F965(L_53, L_54, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:185>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:185>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_55 = L_43;
 		NullCheck(L_55);
 		RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* L_56;
 		L_56 = GameObject_GetComponent_TisRawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179_m51636C7F3481A344AA96C18C0C1471F72CEE7A3E(L_55, GameObject_GetComponent_TisRawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179_m51636C7F3481A344AA96C18C0C1471F72CEE7A3E_RuntimeMethod_var);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:186>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:186>
 		RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* L_57 = L_56;
 		Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* L_58 = V_2;
 		NullCheck(L_57);
 		RawImage_set_texture_mC016318C95CC17A826D57DD219DBCB6DFD295C02(L_57, L_58, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:187>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:187>
 		NullCheck(L_57);
 		VirtualActionInvoker1< bool >::Invoke(25, L_57, (bool)1);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:190>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:190>
 		NullCheck(L_55);
 		FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* L_59;
 		L_59 = GameObject_AddComponent_TisFormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64_mBC2CB697D5A86422C076B610BD91263CF81FDEFA(L_55, GameObject_AddComponent_TisFormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64_mBC2CB697D5A86422C076B610BD91263CF81FDEFA_RuntimeMethod_var);
 		V_5 = L_59;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:191>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:191>
 		FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* L_60 = V_5;
 		int32_t L_61 = ___0_type;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_62 = V_3;
 		AudioEventDispatcher_t7B65C93D86A38683B05B108578B96D716FAE6C44* L_63 = __this->____audioEventDispatcher;
 		NullCheck(L_60);
 		FormulaireUI_Initialiser_mBEC8B436ACC55C5267C54C5ABA62DA223B9AF97F(L_60, L_61, L_62, __this, L_63, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:193>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:193>
 		PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* L_64 = ___1_poche;
 		FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* L_65 = V_5;
 		NullCheck(L_64);
 		int32_t L_66;
 		L_66 = PocheUI_AjouterFormulaire_m64980D239575C64C57E06EB8FC46A3CA2FE23A8C(L_64, L_65, NULL);
 		V_6 = L_66;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:194>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:194>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_67 = V_4;
 		PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* L_68 = ___1_poche;
 		int32_t L_69 = V_6;
@@ -5978,11 +5978,11 @@ IL_0082:
 		L_70 = PocheUI_ObtenirPositionPourIndex_m004033E1FF8A9A6E3BEE34497185FC53A6C5D9E4(L_68, L_69, NULL);
 		NullCheck(L_67);
 		RectTransform_set_anchoredPosition_mF903ACE04F6959B1CD67E2B94FABC0263068F965(L_67, L_70, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:195>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:195>
 		return;
 	}
 }
-// Method Definition Index: 75212
+// Method Definition Index: 75270
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUIManager_OnFormulaireRemisAuGarde_mD12560B65385A95E20643079846F25D56ACE4FBA (FormulaireUIManager_tB65E87C3CB7E98557788D461CC36FB7AC45D2AC2* __this, int32_t ___0_type, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -5994,13 +5994,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUIManager_OnFormulaireRemisAuG
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:201>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:201>
 		FormulaireInventaire_t34C7A7E0E44EE996542D8CC81ACBF74BC0A623B7* L_0 = __this->___inventaire;
 		int32_t L_1 = ___0_type;
 		NullCheck(L_0);
 		bool L_2;
 		L_2 = FormulaireInventaire_Retirer_mD980900E0A6BAAF386A6E2D33DAD7629F77AA72D(L_0, L_1, 1, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:202>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:202>
 		int32_t L_3 = ___0_type;
 		int32_t L_4 = L_3;
 		RuntimeObject* L_5 = Box(FormulaireType_t229C352478F59ED69B48A75857A0C74DF1AE4201_il2cpp_TypeInfo_var, &L_4);
@@ -6015,24 +6015,24 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUIManager_OnFormulaireRemisAuG
 		L_11 = String_Format_mFB7DA489BD99F4670881FF50EC017BFB0A5C0987(_stringLiteral9293F492900D56E603C2B814D50F3C71AFA4194A, L_5, L_10, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_11, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:203>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:203>
 		return;
 	}
 }
-// Method Definition Index: 75213
+// Method Definition Index: 75271
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUIManager_EnvoyerAMainDuGarde_mF026915A2C998ED29201FC650BCCCB613466CCDC (FormulaireUIManager_tB65E87C3CB7E98557788D461CC36FB7AC45D2AC2* __this, FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* ___0_formulaire, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:208>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:208>
 		MainDuGardeUI_tC321F2958259BF8098C4744C19FED866FA99A361* L_0 = __this->___mainDuGarde;
 		FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* L_1 = ___0_formulaire;
 		NullCheck(L_0);
 		MainDuGardeUI_RecevoirFormulaire_mFAEF0518A13D7B3172B60C2EDEB86585B2EB51C4(L_0, L_1, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:209>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:209>
 		return;
 	}
 }
-// Method Definition Index: 75214
+// Method Definition Index: 75272
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUIManager_SpawnObjetsSpeciaux_mE583329195541E0E801E8BA0F86A39EA89608CBE (FormulaireUIManager_tB65E87C3CB7E98557788D461CC36FB7AC45D2AC2* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6060,7 +6060,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUIManager_SpawnObjetsSpeciaux_
 	int32_t V_4 = 0;
 	PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* V_5 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:220>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:220>
 		SO_PlayerDatas_t52246EF1803ADDDCE936501CAE3D1672145DDC0C* L_0 = __this->___donneesJoueur;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -6071,18 +6071,18 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUIManager_SpawnObjetsSpeciaux_
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:220>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:220>
 		return;
 	}
 
 IL_000f:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:222>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:223>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:224>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:225>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:226>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:227>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:222>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:223>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:224>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:225>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:226>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:227>
 		Dictionary_2_tDA3B53E3269E294D1AE8F663881061A77D624E0D* L_2 = (Dictionary_2_tDA3B53E3269E294D1AE8F663881061A77D624E0D*)il2cpp_codegen_object_new(Dictionary_2_tDA3B53E3269E294D1AE8F663881061A77D624E0D_il2cpp_TypeInfo_var);
 		Dictionary_2__ctor_mA48E8FDD855682461D9CE292AF734A7F8F3F81F4(L_2, Dictionary_2__ctor_mA48E8FDD855682461D9CE292AF734A7F8F3F81F4_RuntimeMethod_var);
 		Dictionary_2_tDA3B53E3269E294D1AE8F663881061A77D624E0D* L_3 = L_2;
@@ -6095,7 +6095,7 @@ IL_000f:
 		NullCheck(L_5);
 		Dictionary_2_Add_mF7D7147596B689D77C53AFCAA1C6F504870BA191(L_5, _stringLiteral07DC1391E37EE6B727FB4AFD1EDCF4773028F8F9, 6, Dictionary_2_Add_mF7D7147596B689D77C53AFCAA1C6F504870BA191_RuntimeMethod_var);
 		V_0 = L_5;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:229>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:229>
 		SO_PlayerDatas_t52246EF1803ADDDCE936501CAE3D1672145DDC0C* L_6 = __this->___donneesJoueur;
 		NullCheck(L_6);
 		List_1_t19E50387029AE8297AE7A074A10180D993908569* L_7;
@@ -6123,11 +6123,11 @@ FINALLY_00aa:
 
 IL_004c_1:
 			{
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:229>
+				//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:229>
 				InventoryEntry_t9334932BF21B294942F8F4AA3885254B9196DF4C* L_9;
 				L_9 = Enumerator_get_Current_m61B7DE87C0792D80C19DCACCC7C1F950F19771B8_inline((&V_1), Enumerator_get_Current_m61B7DE87C0792D80C19DCACCC7C1F950F19771B8_RuntimeMethod_var);
 				V_2 = L_9;
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:231>
+				//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:231>
 				Dictionary_2_tDA3B53E3269E294D1AE8F663881061A77D624E0D* L_10 = V_0;
 				InventoryEntry_t9334932BF21B294942F8F4AA3885254B9196DF4C* L_11 = V_2;
 				NullCheck(L_11);
@@ -6141,7 +6141,7 @@ IL_004c_1:
 				}
 			}
 			{
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:232>
+				//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:232>
 				InventoryEntry_t9334932BF21B294942F8F4AA3885254B9196DF4C* L_14 = V_2;
 				NullCheck(L_14);
 				int32_t L_15 = L_14->___quantity;
@@ -6151,14 +6151,14 @@ IL_004c_1:
 				}
 			}
 			{
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:234>
+				//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:234>
 				V_4 = 0;
 				goto IL_0095_1;
 			}
 
 IL_0072_1:
 			{
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:236>
+				//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:236>
 				PocheUIU5BU5D_t24DE7532CA23E985D521EBCD6FBA1170448BA0CC* L_16 = __this->____poches;
 				int32_t L_17 = V_4;
 				PocheUIU5BU5D_t24DE7532CA23E985D521EBCD6FBA1170448BA0CC* L_18 = __this->____poches;
@@ -6167,18 +6167,18 @@ IL_0072_1:
 				int32_t L_19 = ((int32_t)(L_17%((int32_t)(((RuntimeArray*)L_18)->max_length))));
 				PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* L_20 = (L_16)->GetAt(static_cast<il2cpp_array_size_t>(L_19));
 				V_5 = L_20;
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:237>
+				//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:237>
 				int32_t L_21 = V_3;
 				PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* L_22 = V_5;
 				FormulaireUIManager_SpawnDansPoche_mE5A77390920CD73A6F83C0D393222A94DF94952C(__this, L_21, L_22, NULL);
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:234>
+				//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:234>
 				int32_t L_23 = V_4;
 				V_4 = ((int32_t)il2cpp_codegen_add(L_23, 1));
 			}
 
 IL_0095_1:
 			{
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:234>
+				//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:234>
 				int32_t L_24 = V_4;
 				InventoryEntry_t9334932BF21B294942F8F4AA3885254B9196DF4C* L_25 = V_2;
 				NullCheck(L_25);
@@ -6191,7 +6191,7 @@ IL_0095_1:
 
 IL_009f_1:
 			{
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:229>
+				//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:229>
 				bool L_27;
 				L_27 = Enumerator_MoveNext_m387F2E8DB07CA24493F8980049BE075CFE6A93B7((&V_1), Enumerator_MoveNext_m387F2E8DB07CA24493F8980049BE075CFE6A93B7_RuntimeMethod_var);
 				if (L_27)
@@ -6211,11 +6211,11 @@ IL_009f_1:
 
 IL_00b8:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:240>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:240>
 		return;
 	}
 }
-// Method Definition Index: 75215
+// Method Definition Index: 75273
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool FormulaireUIManager_EstSurMainDuGarde_mA699CD2F955548E91C05E8AD35087F883EFD8A84 (FormulaireUIManager_tB65E87C3CB7E98557788D461CC36FB7AC45D2AC2* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_screenPos, Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* ___1__, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6230,7 +6230,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool FormulaireUIManager_EstSurMainDuGarde_mA
 	Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* V_1 = NULL;
 	Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* G_B9_0 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:255>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:255>
 		MainDuGardeUI_tC321F2958259BF8098C4744C19FED866FA99A361* L_0 = __this->___mainDuGarde;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -6253,13 +6253,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool FormulaireUIManager_EstSurMainDuGarde_mA
 
 IL_001b:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:255>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:255>
 		return (bool)0;
 	}
 
 IL_001d:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:257>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:257>
 		MainDuGardeUI_tC321F2958259BF8098C4744C19FED866FA99A361* L_4 = __this->___mainDuGarde;
 		NullCheck(L_4);
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_5;
@@ -6268,7 +6268,7 @@ IL_001d:
 		Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* L_6;
 		L_6 = Component_GetComponentInParent_TisCanvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26_m5FB554DD7C0F662DAB84C0F292B221CAE3F0A5B3(L_5, Component_GetComponentInParent_TisCanvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26_m5FB554DD7C0F662DAB84C0F292B221CAE3F0A5B3_RuntimeMethod_var);
 		V_0 = L_6;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:258>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:258>
 		Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* L_7 = V_0;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_8;
@@ -6279,7 +6279,7 @@ IL_001d:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:258>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:258>
 		Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* L_9 = V_0;
 		NullCheck(L_9);
 		Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* L_10;
@@ -6289,9 +6289,9 @@ IL_001d:
 
 IL_003e:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:259>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:260>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:261>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:259>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:260>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:261>
 		Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* L_11 = V_0;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_12;
@@ -6330,7 +6330,7 @@ IL_0052:
 IL_0058:
 	{
 		V_1 = G_B9_0;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:262>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:262>
 		MainDuGardeUI_tC321F2958259BF8098C4744C19FED866FA99A361* L_17 = __this->___mainDuGarde;
 		NullCheck(L_17);
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_18;
@@ -6343,7 +6343,7 @@ IL_0058:
 		return L_21;
 	}
 }
-// Method Definition Index: 75216
+// Method Definition Index: 75274
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* FormulaireUIManager_TrouverPocheSousPointeur_m2286B1112DB0273492BBC2A50A13AB6C959C479A (FormulaireUIManager_tB65E87C3CB7E98557788D461CC36FB7AC45D2AC2* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_screenPos, Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* ___1_cam, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6356,7 +6356,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA72
 	int32_t V_1 = 0;
 	PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* V_2 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:268>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:268>
 		PocheUIU5BU5D_t24DE7532CA23E985D521EBCD6FBA1170448BA0CC* L_0 = __this->____poches;
 		V_0 = L_0;
 		V_1 = 0;
@@ -6365,14 +6365,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA72
 
 IL_000b:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:268>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:268>
 		PocheUIU5BU5D_t24DE7532CA23E985D521EBCD6FBA1170448BA0CC* L_1 = V_0;
 		int32_t L_2 = V_1;
 		NullCheck(L_1);
 		int32_t L_3 = L_2;
 		PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* L_4 = (L_1)->GetAt(static_cast<il2cpp_array_size_t>(L_3));
 		V_2 = L_4;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:270>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:270>
 		PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* L_5 = V_2;
 		NullCheck(L_5);
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_6;
@@ -6388,7 +6388,7 @@ IL_000b:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:271>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:271>
 		PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* L_10 = V_2;
 		return L_10;
 	}
@@ -6401,7 +6401,7 @@ IL_0020:
 
 IL_0024:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:268>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:268>
 		int32_t L_12 = V_1;
 		PocheUIU5BU5D_t24DE7532CA23E985D521EBCD6FBA1170448BA0CC* L_13 = V_0;
 		NullCheck(L_13);
@@ -6411,11 +6411,11 @@ IL_0024:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:273>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:273>
 		return (PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77*)NULL;
 	}
 }
-// Method Definition Index: 75217
+// Method Definition Index: 75275
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* FormulaireUIManager_TrouverPocheProche_m2EAF834BE242A5CEE00EA845D6E49BDEA42E2E68 (FormulaireUIManager_tB65E87C3CB7E98557788D461CC36FB7AC45D2AC2* __this, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_positionMonde, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6437,7 +6437,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA72
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_2 = ___0_positionMonde;
 		NullCheck(L_1);
 		L_1->___positionMonde = L_2;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:279>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:279>
 		PocheUIU5BU5D_t24DE7532CA23E985D521EBCD6FBA1170448BA0CC* L_3 = __this->____poches;
 		U3CU3Ec__DisplayClass27_0_t4A9310F18F1F105929F21FC63937467F74E31B71* L_4 = V_0;
 		Func_2_t960D0F407537BF27A9584E04B6252EEBFC74AB54* L_5 = (Func_2_t960D0F407537BF27A9584E04B6252EEBFC74AB54*)il2cpp_codegen_object_new(Func_2_t960D0F407537BF27A9584E04B6252EEBFC74AB54_il2cpp_TypeInfo_var);
@@ -6449,7 +6449,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA72
 		return L_7;
 	}
 }
-// Method Definition Index: 75218
+// Method Definition Index: 75276
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUIManager__ctor_m13F403C7081A96C82799FC7F38D0E76C92364526 (FormulaireUIManager_tB65E87C3CB7E98557788D461CC36FB7AC45D2AC2* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6462,12 +6462,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUIManager__ctor_m13F403C7081A9
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:28>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:28>
 		List_1_t0614420961010EDD575996D07075CB8FF5B32CE7* L_0 = (List_1_t0614420961010EDD575996D07075CB8FF5B32CE7*)il2cpp_codegen_object_new(List_1_t0614420961010EDD575996D07075CB8FF5B32CE7_il2cpp_TypeInfo_var);
 		List_1__ctor_mC4284C27D0875551ABB0E7C04163789428D1A340(L_0, List_1__ctor_mC4284C27D0875551ABB0E7C04163789428D1A340_RuntimeMethod_var);
 		__this->___formulairesData = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___formulairesData), (void*)L_0);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:37>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:37>
 		Dictionary_2_t69C08A5E0C83BC93483BC1B0A7B135AB6F8632DB* L_1 = (Dictionary_2_t69C08A5E0C83BC93483BC1B0A7B135AB6F8632DB*)il2cpp_codegen_object_new(Dictionary_2_t69C08A5E0C83BC93483BC1B0A7B135AB6F8632DB_il2cpp_TypeInfo_var);
 		Dictionary_2__ctor_mF9BE676C8FC0FDC5262CD9233D56F845E58FF887(L_1, Dictionary_2__ctor_mF9BE676C8FC0FDC5262CD9233D56F845E58FF887_RuntimeMethod_var);
 		__this->____dataParType = L_1;
@@ -6484,7 +6484,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FormulaireUIManager__ctor_m13F403C7081A9
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 75219
+// Method Definition Index: 75277
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__cctor_mE4531E713A75A5696B2345EB32C91289E39DDF16 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6501,7 +6501,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__cctor_mE4531E713A75A5696B2345EB
 		return;
 	}
 }
-// Method Definition Index: 75220
+// Method Definition Index: 75278
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__ctor_m7B665C0B36704B6ECF48CB14BAFDACAF0AFA18A2 (U3CU3Ec_tBF871CFDD3B67337F1DE26EF9B6991B23CF4D434* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6509,7 +6509,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__ctor_m7B665C0B36704B6ECF48CB14B
 		return;
 	}
 }
-// Method Definition Index: 75221
+// Method Definition Index: 75279
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec_U3CAwakeU3Eb__14_0_m53CF287C783D3651C8F23F80F82982FE86EE0E61 (U3CU3Ec_tBF871CFDD3B67337F1DE26EF9B6991B23CF4D434* __this, FormulaireData_t7CB85E86176143BDC24E5268FB72A648009BF91D* ___0_d, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6519,7 +6519,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec_U3CAwakeU3Eb__14_0_m53CF287C783D
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:46>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:46>
 		FormulaireData_t7CB85E86176143BDC24E5268FB72A648009BF91D* L_0 = ___0_d;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -6527,7 +6527,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CU3Ec_U3CAwakeU3Eb__14_0_m53CF287C783D
 		return L_1;
 	}
 }
-// Method Definition Index: 75222
+// Method Definition Index: 75280
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t U3CU3Ec_U3CBuildListeInterleavedU3Eb__19_0_m5AA09BB22A241B7984248FBA538FC936F3FF7A14 (U3CU3Ec_tBF871CFDD3B67337F1DE26EF9B6991B23CF4D434* __this, KeyValuePair_2_tF294D6781E44AF635AF142AB6F2C7CA26674B8B5 ___0_kv, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6537,13 +6537,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t U3CU3Ec_U3CBuildListeInterleavedU3Eb_
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:130>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:130>
 		int32_t L_0;
 		L_0 = KeyValuePair_2_get_Value_m936D221FC756038069E5A9B83B2E8EE2847FC56E_inline((&___0_kv), KeyValuePair_2_get_Value_m936D221FC756038069E5A9B83B2E8EE2847FC56E_RuntimeMethod_var);
 		return L_0;
 	}
 }
-// Method Definition Index: 75223
+// Method Definition Index: 75281
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t U3CU3Ec_U3CBuildListeInterleavedU3Eb__19_1_m4939DA5AB5E33F84B6944F54B082777335FB4BE4 (U3CU3Ec_tBF871CFDD3B67337F1DE26EF9B6991B23CF4D434* __this, KeyValuePair_2_tF294D6781E44AF635AF142AB6F2C7CA26674B8B5 ___0_kv, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6553,7 +6553,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t U3CU3Ec_U3CBuildListeInterleavedU3Eb_
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:131>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:131>
 		int32_t L_0;
 		L_0 = KeyValuePair_2_get_Key_mAE3325D5964D02A46029FB9C73DBFF00C02C4CD4_inline((&___0_kv), KeyValuePair_2_get_Key_mAE3325D5964D02A46029FB9C73DBFF00C02C4CD4_RuntimeMethod_var);
 		return L_0;
@@ -6567,7 +6567,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t U3CU3Ec_U3CBuildListeInterleavedU3Eb_
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 75224
+// Method Definition Index: 75282
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass27_0__ctor_mB66B455150A9CA603D18E3E4BCFA2AB0D930955C (U3CU3Ec__DisplayClass27_0_t4A9310F18F1F105929F21FC63937467F74E31B71* __this, const RuntimeMethod* method) 
 {
 	{
@@ -6575,11 +6575,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass27_0__ctor_mB66B455
 		return;
 	}
 }
-// Method Definition Index: 75225
+// Method Definition Index: 75283
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float U3CU3Ec__DisplayClass27_0_U3CTrouverPocheProcheU3Eb__0_m2264ACF7F5B81FCF32DFFBA2FF37661D32AE9710 (U3CU3Ec__DisplayClass27_0_t4A9310F18F1F105929F21FC63937467F74E31B71* __this, PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* ___0_p, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:279>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:279>
 		PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* L_0 = ___0_p;
 		NullCheck(L_0);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_1;
@@ -6601,7 +6601,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float U3CU3Ec__DisplayClass27_0_U3CTrouverPoc
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 75226
+// Method Definition Index: 75284
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GestionnaireGameOver_add_OnGameOverTerminUE9_mB31BAAC0D728DCAF810F063175906FB9B8B3D2AB (GestionnaireGameOver_t1570AA1EC2D09CFD824CD6C8BD2DC4DC3C25106C* __this, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6644,7 +6644,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 75227
+// Method Definition Index: 75285
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GestionnaireGameOver_remove_OnGameOverTerminUE9_m965F50D02D035F12B324DBEB3BA759923EF3B3A7 (GestionnaireGameOver_t1570AA1EC2D09CFD824CD6C8BD2DC4DC3C25106C* __this, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6687,7 +6687,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 75228
+// Method Definition Index: 75286
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GestionnaireGameOver_DUE9clencher_mC1F4ADFCDD4D7C5BBCF3FE914D74B0A324BA7C0E (GestionnaireGameOver_t1570AA1EC2D09CFD824CD6C8BD2DC4DC3C25106C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6702,7 +6702,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GestionnaireGameOver_DUE9clencher_mC1F4A
 	SoundManager_tCA2CCAC5CDF1BA10E525C01C8D1D0DFAC9BE3734* G_B4_0 = NULL;
 	SoundManager_tCA2CCAC5CDF1BA10E525C01C8D1D0DFAC9BE3734* G_B3_0 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:79>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:79>
 		bool L_0 = __this->____dUE9clenchUE9;
 		if (!L_0)
 		{
@@ -6710,19 +6710,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GestionnaireGameOver_DUE9clencher_mC1F4A
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:79>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:79>
 		return;
 	}
 
 IL_0009:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:80>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:80>
 		__this->____dUE9clenchUE9 = (bool)1;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:81>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:81>
 		AudioSource_t871AC2272F896738252F04EE949AEF5B241D3299* L_1 = __this->____tictac;
 		NullCheck(L_1);
 		AudioSource_Stop_m318F17F17A147C77FF6E0A5A7A6BE057DB90F537(L_1, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:83>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:83>
 		SoundManager_tCA2CCAC5CDF1BA10E525C01C8D1D0DFAC9BE3734* L_2;
 		L_2 = SoundManager_get_Instance_mE37BC6A788B14F6895B2B50A4E461F8C7895BAEA_inline(NULL);
 		SoundManager_tCA2CCAC5CDF1BA10E525C01C8D1D0DFAC9BE3734* L_3 = L_2;
@@ -6745,7 +6745,7 @@ IL_0026:
 
 IL_002c:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:84>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:84>
 		AudioEventDispatcher_t7B65C93D86A38683B05B108578B96D716FAE6C44* L_4 = __this->____audioEventDispatcher;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_5;
@@ -6756,7 +6756,7 @@ IL_002c:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:84>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:84>
 		AudioEventDispatcher_t7B65C93D86A38683B05B108578B96D716FAE6C44* L_6 = __this->____audioEventDispatcher;
 		int32_t L_7 = __this->____gameOverSound;
 		NullCheck(L_6);
@@ -6765,7 +6765,7 @@ IL_002c:
 
 IL_004b:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:86>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:86>
 		bool L_8 = __this->___utiliserAnimationComplUE8te;
 		if (!L_8)
 		{
@@ -6773,7 +6773,7 @@ IL_004b:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:88>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:88>
 		AnimationGameOver_t070507BAC3D57E084B77F475206B56A8402AE129* L_9 = __this->___animationGameOver;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_10;
@@ -6784,7 +6784,7 @@ IL_004b:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:89>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:89>
 		AnimationGameOver_t070507BAC3D57E084B77F475206B56A8402AE129* L_11 = __this->___animationGameOver;
 		NullCheck(L_11);
 		AnimationGameOver_DUE9clencher_mF9DF0C78499FB658927967D5E80E2AC1AA46175A(L_11, NULL);
@@ -6793,8 +6793,8 @@ IL_004b:
 
 IL_006d:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:91>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:92>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:91>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:92>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogError_mB00B2B4468EF3CAF041B038D840820FB84C924B2(_stringLiteral73F2333D56DD8887B6BCEDC50DA500EEFC90828B, NULL);
 		return;
@@ -6802,7 +6802,7 @@ IL_006d:
 
 IL_0078:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:96>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:96>
 		Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* L_12 = __this->___textureGameOver;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_13;
@@ -6813,26 +6813,26 @@ IL_0078:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:98>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:99>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:98>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:99>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogError_mB00B2B4468EF3CAF041B038D840820FB84C924B2(_stringLiteralA12F9C52F4E15B6ED4D8CC63BA2F2A705E6C4542, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:100>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:100>
 		return;
 	}
 
 IL_0091:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:102>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:102>
 		RuntimeObject* L_14;
 		L_14 = GestionnaireGameOver_AfficherIllustration_mD64B1F1B66ADFF7F09920C23190F83C787515881(__this, NULL);
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_15;
 		L_15 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_14, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:104>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:104>
 		return;
 	}
 }
-// Method Definition Index: 75229
+// Method Definition Index: 75287
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GestionnaireGameOver_Cacher_m2B3183EF73BFC842F0388BC1136AAAF6483D5DF5 (GestionnaireGameOver_t1570AA1EC2D09CFD824CD6C8BD2DC4DC3C25106C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6844,7 +6844,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GestionnaireGameOver_Cacher_m2B3183EF73B
 	AnimationGameOver_t070507BAC3D57E084B77F475206B56A8402AE129* G_B3_0 = NULL;
 	AnimationGameOver_t070507BAC3D57E084B77F475206B56A8402AE129* G_B2_0 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:109>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:109>
 		bool L_0 = __this->___utiliserAnimationComplUE8te;
 		if (!L_0)
 		{
@@ -6852,7 +6852,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GestionnaireGameOver_Cacher_m2B3183EF73B
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:110>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:110>
 		AnimationGameOver_t070507BAC3D57E084B77F475206B56A8402AE129* L_1 = __this->___animationGameOver;
 		AnimationGameOver_t070507BAC3D57E084B77F475206B56A8402AE129* L_2 = L_1;
 		if (L_2)
@@ -6875,7 +6875,7 @@ IL_0014:
 
 IL_001b:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:111>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:111>
 		Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* L_3 = __this->____overlayCanvas;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_4;
@@ -6886,7 +6886,7 @@ IL_001b:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:112>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:112>
 		Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* L_5 = __this->____overlayCanvas;
 		NullCheck(L_5);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_6;
@@ -6897,13 +6897,13 @@ IL_001b:
 
 IL_003a:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:114>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:114>
 		__this->____dUE9clenchUE9 = (bool)0;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:115>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:115>
 		return;
 	}
 }
-// Method Definition Index: 75230
+// Method Definition Index: 75288
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GestionnaireGameOver_OnEnable_mC2C62A07A6C190F3F18D7409D868F9BED773AC65 (GestionnaireGameOver_t1570AA1EC2D09CFD824CD6C8BD2DC4DC3C25106C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6915,7 +6915,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GestionnaireGameOver_OnEnable_mC2C62A07A
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:122>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:122>
 		AnimationGameOver_t070507BAC3D57E084B77F475206B56A8402AE129* L_0 = __this->___animationGameOver;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -6926,7 +6926,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GestionnaireGameOver_OnEnable_mC2C62A07A
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:123>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:123>
 		AnimationGameOver_t070507BAC3D57E084B77F475206B56A8402AE129* L_2 = __this->___animationGameOver;
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_3 = (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07*)il2cpp_codegen_object_new(Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07_il2cpp_TypeInfo_var);
 		Action__ctor_mBDC7B0B4A3F583B64C2896F01BDED360772F67DC(L_3, __this, (intptr_t)((void*)GestionnaireGameOver_RelayerTerminUE9e_m031C5B88129B0094F72F27474E68B7406B735A12_RuntimeMethod_var), NULL);
@@ -6936,11 +6936,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GestionnaireGameOver_OnEnable_mC2C62A07A
 
 IL_0025:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:124>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:124>
 		return;
 	}
 }
-// Method Definition Index: 75231
+// Method Definition Index: 75289
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GestionnaireGameOver_OnDisable_mAC2ED293E2D3CE086FB1D9D9B22D56D3AAC367D4 (GestionnaireGameOver_t1570AA1EC2D09CFD824CD6C8BD2DC4DC3C25106C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -6952,7 +6952,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GestionnaireGameOver_OnDisable_mAC2ED293
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:128>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:128>
 		AnimationGameOver_t070507BAC3D57E084B77F475206B56A8402AE129* L_0 = __this->___animationGameOver;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -6963,7 +6963,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GestionnaireGameOver_OnDisable_mAC2ED293
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:129>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:129>
 		AnimationGameOver_t070507BAC3D57E084B77F475206B56A8402AE129* L_2 = __this->___animationGameOver;
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_3 = (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07*)il2cpp_codegen_object_new(Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07_il2cpp_TypeInfo_var);
 		Action__ctor_mBDC7B0B4A3F583B64C2896F01BDED360772F67DC(L_3, __this, (intptr_t)((void*)GestionnaireGameOver_RelayerTerminUE9e_m031C5B88129B0094F72F27474E68B7406B735A12_RuntimeMethod_var), NULL);
@@ -6973,17 +6973,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GestionnaireGameOver_OnDisable_mAC2ED293
 
 IL_0025:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:130>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:130>
 		return;
 	}
 }
-// Method Definition Index: 75232
+// Method Definition Index: 75290
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GestionnaireGameOver_RelayerTerminUE9e_m031C5B88129B0094F72F27474E68B7406B735A12 (GestionnaireGameOver_t1570AA1EC2D09CFD824CD6C8BD2DC4DC3C25106C* __this, const RuntimeMethod* method) 
 {
 	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* G_B2_0 = NULL;
 	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* G_B1_0 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:132>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:132>
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_0 = __this->___OnGameOverTerminUE9;
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_1 = L_0;
 		if (L_1)
@@ -7004,7 +7004,7 @@ IL_000b:
 		return;
 	}
 }
-// Method Definition Index: 75233
+// Method Definition Index: 75291
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GestionnaireGameOver_AfficherIllustration_mD64B1F1B66ADFF7F09920C23190F83C787515881 (GestionnaireGameOver_t1570AA1EC2D09CFD824CD6C8BD2DC4DC3C25106C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7023,7 +7023,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* GestionnaireGameOver_AfficherI
 		return L_1;
 	}
 }
-// Method Definition Index: 75234
+// Method Definition Index: 75292
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GestionnaireGameOver_AssurerOverlay_mD9981F1C2ACEE96BC53E0D6A8C340B4B77C823C3 (GestionnaireGameOver_t1570AA1EC2D09CFD824CD6C8BD2DC4DC3C25106C* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7047,7 +7047,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GestionnaireGameOver_AssurerOverlay_mD99
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* V_2 = NULL;
 	RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* V_3 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:169>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:169>
 		Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* L_0 = __this->____overlayCanvas;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -7058,47 +7058,47 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GestionnaireGameOver_AssurerOverlay_mD99
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:169>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:169>
 		return;
 	}
 
 IL_000f:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:172>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:172>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
 		GameObject__ctor_m37D512B05D292F954792225E6C6EEE95293A9B88(L_2, _stringLiteral7CE4A3DCA01A04007A9FFCE6DE9CE645AD5FC0E2, NULL);
 		V_0 = L_2;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:173>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:173>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_3 = V_0;
 		NullCheck(L_3);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_4;
 		L_4 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_3, NULL);
 		NullCheck(L_4);
 		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_4, (Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1*)NULL, (bool)0, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:175>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:175>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_5 = V_0;
 		NullCheck(L_5);
 		Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* L_6;
 		L_6 = GameObject_AddComponent_TisCanvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26_m13C85FD585C0679530F8B35D0B39D965702FD0F5(L_5, GameObject_AddComponent_TisCanvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26_m13C85FD585C0679530F8B35D0B39D965702FD0F5_RuntimeMethod_var);
 		V_1 = L_6;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:176>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:176>
 		Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* L_7 = V_1;
 		NullCheck(L_7);
 		Canvas_set_renderMode_mD73E953F8A115CF469508448A00D0EDAFAF5AB47(L_7, 0, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:177>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:177>
 		Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* L_8 = V_1;
 		int32_t L_9 = __this->___sortingOrderOverlay;
 		NullCheck(L_8);
 		Canvas_set_sortingOrder_m70D89DB61A3C0589C0FAB525E613DE9D0C799AAC(L_8, L_9, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:180>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:180>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_10 = V_0;
 		NullCheck(L_10);
 		CanvasScaler_t3BC095205EAD308CF3EAC27136A73387AC32FC3B* L_11;
 		L_11 = GameObject_AddComponent_TisCanvasScaler_t3BC095205EAD308CF3EAC27136A73387AC32FC3B_m1D199D3A55BF0356D541CB3048142A8D7E52521A(L_10, GameObject_AddComponent_TisCanvasScaler_t3BC095205EAD308CF3EAC27136A73387AC32FC3B_m1D199D3A55BF0356D541CB3048142A8D7E52521A_RuntimeMethod_var);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:181>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:181>
 		NullCheck(L_11);
 		CanvasScaler_set_uiScaleMode_m064C83FFA35E2AED4E9FA7D5EC1AD19630D8FC2A_inline(L_11, 1, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:184>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:184>
 		TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB* L_12 = (TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB*)(TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB*)SZArrayNew(TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB_il2cpp_TypeInfo_var, (uint32_t)1);
 		TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB* L_13 = L_12;
 		RuntimeTypeHandle_t332A452B8B6179E4469B69525D0FE82A88030F7B L_14 = { reinterpret_cast<intptr_t> (RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_0_0_0_var) };
@@ -7111,7 +7111,7 @@ IL_000f:
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_16 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)il2cpp_codegen_object_new(GameObject_t76FEDD663AB33C991A9C9A23129337651094216F_il2cpp_TypeInfo_var);
 		GameObject__ctor_m721D643351E55308EA4F5F41B67D5446D11C61F0(L_16, _stringLiteral5C460604A50110492E49B290350CCFC2937C96F6, L_13, NULL);
 		V_2 = L_16;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:185>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:185>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_17 = V_2;
 		NullCheck(L_17);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_18;
@@ -7122,60 +7122,60 @@ IL_000f:
 		L_20 = GameObject_get_transform_m0BC10ADFA1632166AE5544BDF9038A2650C2AE56(L_19, NULL);
 		NullCheck(L_18);
 		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_18, L_20, (bool)0, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:187>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:187>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_21 = V_2;
 		NullCheck(L_21);
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_22;
 		L_22 = GameObject_GetComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m1592DCB5AA07291F73A76006F0913A64DFB8A9C4(L_21, GameObject_GetComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m1592DCB5AA07291F73A76006F0913A64DFB8A9C4_RuntimeMethod_var);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:188>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:188>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_23 = L_22;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_24;
 		L_24 = Vector2_get_zero_m32506C40EC2EE7D5D4410BF40D3EE683A3D5F32C_inline(NULL);
 		NullCheck(L_23);
 		RectTransform_set_anchorMin_m931442ABE3368D6D4309F43DF1D64AB64B0F52E3(L_23, L_24, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:189>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:189>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_25 = L_23;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_26;
 		L_26 = Vector2_get_one_m9097EB8DC23C26118A591AF16702796C3EF51DFB_inline(NULL);
 		NullCheck(L_25);
 		RectTransform_set_anchorMax_m52829ABEDD229ABD3DA20BCA676FA1DCA4A39B7D(L_25, L_26, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:190>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:190>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_27 = L_25;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_28;
 		L_28 = Vector2_get_zero_m32506C40EC2EE7D5D4410BF40D3EE683A3D5F32C_inline(NULL);
 		NullCheck(L_27);
 		RectTransform_set_offsetMin_m07F38B4105C7CA9CC9FBDC9ED0DB008602880AB9(L_27, L_28, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:191>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:191>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_29 = L_27;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_30;
 		L_30 = Vector2_get_zero_m32506C40EC2EE7D5D4410BF40D3EE683A3D5F32C_inline(NULL);
 		NullCheck(L_29);
 		RectTransform_set_offsetMax_m5514D09D86516F2C0E25FA6D11A3A4274D3D002D(L_29, L_30, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:192>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:192>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_31;
 		memset((&L_31), 0, sizeof(L_31));
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_31), (0.5f), (0.5f), NULL);
 		NullCheck(L_29);
 		RectTransform_set_pivot_m79D0177D383D432A93C2615F1932B739B1C6E146(L_29, L_31, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:194>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:194>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_32 = V_2;
 		NullCheck(L_32);
 		RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* L_33;
 		L_33 = GameObject_AddComponent_TisRawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179_mF832D1CFB763BE172F50826618A3D458EE451B43(L_32, GameObject_AddComponent_TisRawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179_mF832D1CFB763BE172F50826618A3D458EE451B43_RuntimeMethod_var);
 		V_3 = L_33;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:195>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:195>
 		RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* L_34 = V_3;
 		Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* L_35 = __this->___textureGameOver;
 		NullCheck(L_34);
 		RawImage_set_texture_mC016318C95CC17A826D57DD219DBCB6DFD295C02(L_34, L_35, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:196>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:196>
 		RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* L_36 = V_3;
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_37;
 		memset((&L_37), 0, sizeof(L_37));
 		Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline((&L_37), (1.0f), (1.0f), (1.0f), (0.0f), NULL);
 		NullCheck(L_36);
 		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_36, L_37);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:199>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:199>
 		Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* L_38 = __this->___textureGameOver;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_39;
@@ -7186,16 +7186,16 @@ IL_000f:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:201>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:201>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_40 = V_2;
 		NullCheck(L_40);
 		AspectRatioFitter_tEA1004A8240374C9BE7623981F999AA9789CDD09* L_41;
 		L_41 = GameObject_AddComponent_TisAspectRatioFitter_tEA1004A8240374C9BE7623981F999AA9789CDD09_m70B47343D5D8DBE5E6D615A1905D9909649210A6(L_40, GameObject_AddComponent_TisAspectRatioFitter_tEA1004A8240374C9BE7623981F999AA9789CDD09_m70B47343D5D8DBE5E6D615A1905D9909649210A6_RuntimeMethod_var);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:202>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:202>
 		AspectRatioFitter_tEA1004A8240374C9BE7623981F999AA9789CDD09* L_42 = L_41;
 		NullCheck(L_42);
 		AspectRatioFitter_set_aspectMode_m1CDA777FF728BD01AB939C074D03F9C18675FB65(L_42, 4, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:203>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:203>
 		Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* L_43 = __this->___textureGameOver;
 		NullCheck(L_43);
 		int32_t L_44;
@@ -7210,31 +7210,31 @@ IL_000f:
 
 IL_012e:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:206>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:206>
 		Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* L_47 = V_1;
 		__this->____overlayCanvas = L_47;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____overlayCanvas), (void*)L_47);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:207>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:207>
 		RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* L_48 = V_3;
 		__this->____overlayImage = L_48;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____overlayImage), (void*)L_48);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:210>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:210>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_49 = V_0;
 		NullCheck(L_49);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_49, (bool)0, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:211>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:211>
 		return;
 	}
 }
-// Method Definition Index: 75235
+// Method Definition Index: 75293
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GestionnaireGameOver__ctor_m2B5132D465CE82BE6E381AEC8068BA61D61E34F4 (GestionnaireGameOver_t1570AA1EC2D09CFD824CD6C8BD2DC4DC3C25106C* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:32>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:32>
 		__this->___utiliserAnimationComplUE8te = (bool)1;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:51>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:51>
 		__this->___durUE9eFondu = (0.800000012f);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:55>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:55>
 		__this->___sortingOrderOverlay = ((int32_t)200);
 		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
 		return;
@@ -7248,7 +7248,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GestionnaireGameOver__ctor_m2B5132D465CE
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 75236
+// Method Definition Index: 75294
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAfficherIllustrationU3Ed__20__ctor_mAB36F542255BF4C8DD3CB624C1AFADB56E481179 (U3CAfficherIllustrationU3Ed__20_t7BE51B1F975E61C2AA0101ADB051ACE1074CE52F* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -7258,14 +7258,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAfficherIllustrationU3Ed__20__ctor_mA
 		return;
 	}
 }
-// Method Definition Index: 75237
+// Method Definition Index: 75295
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAfficherIllustrationU3Ed__20_System_IDisposable_Dispose_mB5DD9592B08F3DE0242247DED034D8491E5B1C16 (U3CAfficherIllustrationU3Ed__20_t7BE51B1F975E61C2AA0101ADB051ACE1074CE52F* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 75238
+// Method Definition Index: 75296
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CAfficherIllustrationU3Ed__20_MoveNext_m7E41E124875EAD5DBEE4369B0EAD1D83337BE9A6 (U3CAfficherIllustrationU3Ed__20_t7BE51B1F975E61C2AA0101ADB051ACE1074CE52F* __this, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -7297,11 +7297,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CAfficherIllustrationU3Ed__20_MoveNext
 IL_001a:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:139>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:139>
 		GestionnaireGameOver_t1570AA1EC2D09CFD824CD6C8BD2DC4DC3C25106C* L_4 = V_1;
 		NullCheck(L_4);
 		GestionnaireGameOver_AssurerOverlay_mD9981F1C2ACEE96BC53E0D6A8C340B4B77C823C3(L_4, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:140>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:140>
 		GestionnaireGameOver_t1570AA1EC2D09CFD824CD6C8BD2DC4DC3C25106C* L_5 = V_1;
 		NullCheck(L_5);
 		Canvas_t2DB4CEFDFF732884866C83F11ABF75F5AE8FFB26* L_6 = L_5->____overlayCanvas;
@@ -7310,7 +7310,7 @@ IL_001a:
 		L_7 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_6, NULL);
 		NullCheck(L_7);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_7, (bool)1, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:142>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:142>
 		GestionnaireGameOver_t1570AA1EC2D09CFD824CD6C8BD2DC4DC3C25106C* L_8 = V_1;
 		NullCheck(L_8);
 		float L_9 = L_8->___durUE9eFondu;
@@ -7320,7 +7320,7 @@ IL_001a:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:144>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:144>
 		GestionnaireGameOver_t1570AA1EC2D09CFD824CD6C8BD2DC4DC3C25106C* L_10 = V_1;
 		NullCheck(L_10);
 		RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* L_11 = L_10->____overlayImage;
@@ -7328,15 +7328,15 @@ IL_001a:
 		L_12 = Color_get_white_m068F5AF879B0FCA584E3693F762EA41BB65532C6_inline(NULL);
 		NullCheck(L_11);
 		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_11, L_12);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:145>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:145>
 		return (bool)0;
 	}
 
 IL_0057:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:148>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:148>
 		__this->___U3CtU3E5__2 = (0.0f);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:149>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:149>
 		GestionnaireGameOver_t1570AA1EC2D09CFD824CD6C8BD2DC4DC3C25106C* L_13 = V_1;
 		NullCheck(L_13);
 		RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* L_14 = L_13->____overlayImage;
@@ -7350,12 +7350,12 @@ IL_0057:
 
 IL_0088:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:153>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:153>
 		float L_16 = __this->___U3CtU3E5__2;
 		float L_17;
 		L_17 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
 		__this->___U3CtU3E5__2 = ((float)il2cpp_codegen_add(L_16, L_17));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:154>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:154>
 		GestionnaireGameOver_t1570AA1EC2D09CFD824CD6C8BD2DC4DC3C25106C* L_18 = V_1;
 		NullCheck(L_18);
 		RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* L_19 = L_18->____overlayImage;
@@ -7370,7 +7370,7 @@ IL_0088:
 		Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline((&L_24), (1.0f), (1.0f), (1.0f), L_23, NULL);
 		NullCheck(L_19);
 		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_19, L_24);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:155>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:155>
 		__this->___U3CU3E2__current = NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)NULL);
 		__this->___U3CU3E1__state = 1;
@@ -7384,7 +7384,7 @@ IL_00db:
 
 IL_00e2:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:151>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:151>
 		float L_25 = __this->___U3CtU3E5__2;
 		GestionnaireGameOver_t1570AA1EC2D09CFD824CD6C8BD2DC4DC3C25106C* L_26 = V_1;
 		NullCheck(L_26);
@@ -7395,7 +7395,7 @@ IL_00e2:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:158>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:158>
 		GestionnaireGameOver_t1570AA1EC2D09CFD824CD6C8BD2DC4DC3C25106C* L_28 = V_1;
 		NullCheck(L_28);
 		RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* L_29 = L_28->____overlayImage;
@@ -7403,7 +7403,7 @@ IL_00e2:
 		L_30 = Color_get_white_m068F5AF879B0FCA584E3693F762EA41BB65532C6_inline(NULL);
 		NullCheck(L_29);
 		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_29, L_30);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:159>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:159>
 		GestionnaireGameOver_t1570AA1EC2D09CFD824CD6C8BD2DC4DC3C25106C* L_31 = V_1;
 		NullCheck(L_31);
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_32 = L_31->___OnGameOverTerminUE9;
@@ -7427,11 +7427,11 @@ IL_010c:
 
 IL_0111:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:160>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/GestionnaireGameOver.cs:160>
 		return (bool)0;
 	}
 }
-// Method Definition Index: 75239
+// Method Definition Index: 75297
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CAfficherIllustrationU3Ed__20_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m9DBFCC863E92F9F6203A9F5ADF76761DED99786A (U3CAfficherIllustrationU3Ed__20_t7BE51B1F975E61C2AA0101ADB051ACE1074CE52F* __this, const RuntimeMethod* method) 
 {
 	{
@@ -7439,7 +7439,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CAfficherIllustrationU3Ed__2
 		return L_0;
 	}
 }
-// Method Definition Index: 75240
+// Method Definition Index: 75298
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAfficherIllustrationU3Ed__20_System_Collections_IEnumerator_Reset_m885A95FDC4187FF670A1059D7E1588B77EB06FCC (U3CAfficherIllustrationU3Ed__20_t7BE51B1F975E61C2AA0101ADB051ACE1074CE52F* __this, const RuntimeMethod* method) 
 {
 	{
@@ -7448,7 +7448,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAfficherIllustrationU3Ed__20_System_C
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CAfficherIllustrationU3Ed__20_System_Collections_IEnumerator_Reset_m885A95FDC4187FF670A1059D7E1588B77EB06FCC_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 75241
+// Method Definition Index: 75299
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CAfficherIllustrationU3Ed__20_System_Collections_IEnumerator_get_Current_m2C09E9C592E3D64485C7D8C2DF46F02DEF4699DD (U3CAfficherIllustrationU3Ed__20_t7BE51B1F975E61C2AA0101ADB051ACE1074CE52F* __this, const RuntimeMethod* method) 
 {
 	{
@@ -7464,28 +7464,28 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CAfficherIllustrationU3Ed__2
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 75244
+// Method Definition Index: 75302
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IconFormulaireUI_Awake_m4F78E5116242D0327FC4DDC1FD667297B1ED0372 (IconFormulaireUI_tF3F540B535FC44FFE347B2F59F92EE93242B74B0* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:29>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:29>
 		IconFormulaireUI_InitialiserComposants_mA565505654EE0D0B83CB3C18C51DAA94041E4D44(__this, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:33>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:33>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_0;
 		L_0 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_1;
 		L_1 = Vector3_get_zero_m0C1249C3F25B1C70EAD3CC8B31259975A457AE39_inline(NULL);
 		NullCheck(L_0);
 		Transform_set_localScale_mBA79E811BAF6C47B80FF76414C12B47B3CD03633(L_0, L_1, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:34>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:34>
 		return;
 	}
 }
-// Method Definition Index: 75245
+// Method Definition Index: 75303
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IconFormulaireUI_OnEnable_m060A3C344986C270D612F019C6BD0179D4727D15 (IconFormulaireUI_tF3F540B535FC44FFE347B2F59F92EE93242B74B0* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:40>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:40>
 		bool L_0 = __this->____animationEnAttente;
 		if (!L_0)
 		{
@@ -7493,9 +7493,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IconFormulaireUI_OnEnable_m060A3C344986C
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:42>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:42>
 		__this->____animationEnAttente = (bool)0;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:43>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:43>
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_1 = __this->____animation;
 		if (!L_1)
 		{
@@ -7503,14 +7503,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IconFormulaireUI_OnEnable_m060A3C344986C
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:43>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:43>
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_2 = __this->____animation;
 		MonoBehaviour_StopCoroutine_mB0FC91BE84203BD8E360B3FBAE5B958B4C5ED22A(__this, L_2, NULL);
 	}
 
 IL_0023:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:44>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:44>
 		RuntimeObject* L_3;
 		L_3 = IconFormulaireUI_AnimerApparition_m226DF8241F10D764704935D63441802B1830FB76(__this, NULL);
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_4;
@@ -7521,11 +7521,11 @@ IL_0023:
 
 IL_0035:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:46>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:46>
 		return;
 	}
 }
-// Method Definition Index: 75246
+// Method Definition Index: 75304
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IconFormulaireUI_Afficher_mA5C659C68EC478C6A83D22EA5C5993B045459F56 (IconFormulaireUI_tF3F540B535FC44FFE347B2F59F92EE93242B74B0* __this, Texture_t791CBB51219779964E0E8A2ED7C1AA5F92A4A700* ___0_texture, int32_t ___1_quantitUE9, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7543,14 +7543,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IconFormulaireUI_Afficher_mA5C659C68EC47
 	String_t* G_B4_0 = NULL;
 	TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* G_B4_1 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:55>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:55>
 		IconFormulaireUI_InitialiserComposants_mA565505654EE0D0B83CB3C18C51DAA94041E4D44(__this, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:57>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:57>
 		RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* L_0 = __this->____rawImage;
 		Texture_t791CBB51219779964E0E8A2ED7C1AA5F92A4A700* L_1 = ___0_texture;
 		NullCheck(L_0);
 		RawImage_set_texture_mC016318C95CC17A826D57DD219DBCB6DFD295C02(L_0, L_1, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:59>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:59>
 		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_2 = __this->___texteQuantitUE9;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_3;
@@ -7561,7 +7561,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IconFormulaireUI_Afficher_mA5C659C68EC47
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:60>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:60>
 		TextMeshProUGUI_t101091AF4B578BB534C92E9D1EEAF0611636D957* L_4 = __this->___texteQuantitUE9;
 		int32_t L_5 = ___1_quantitUE9;
 		if ((((int32_t)L_5) > ((int32_t)1)))
@@ -7598,7 +7598,7 @@ IL_0041:
 
 IL_0048:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:62>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:62>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_11;
 		L_11 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
 		NullCheck(L_11);
@@ -7612,24 +7612,24 @@ IL_0048:
 
 IL_0068:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:66>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:66>
 		__this->____animationEnAttente = (bool)1;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:67>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:67>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_14;
 		L_14 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
 		NullCheck(L_14);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_14, (bool)1, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:68>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:68>
 		return;
 	}
 }
-// Method Definition Index: 75247
+// Method Definition Index: 75305
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IconFormulaireUI_Masquer_m6230A9B924DD9265F08F63D5BCA5E0B2D3890EC4 (IconFormulaireUI_tF3F540B535FC44FFE347B2F59F92EE93242B74B0* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:73>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:73>
 		__this->____animationEnAttente = (bool)0;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:75>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:75>
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_0 = __this->____animation;
 		if (!L_0)
 		{
@@ -7637,33 +7637,33 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IconFormulaireUI_Masquer_m6230A9B924DD92
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:77>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:77>
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_1 = __this->____animation;
 		MonoBehaviour_StopCoroutine_mB0FC91BE84203BD8E360B3FBAE5B958B4C5ED22A(__this, L_1, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:78>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:78>
 		__this->____animation = (Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____animation), (void*)(Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B*)NULL);
 	}
 
 IL_0022:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:81>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:81>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2;
 		L_2 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
 		NullCheck(L_2);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_2, (bool)0, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:82>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:82>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_3;
 		L_3 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_4;
 		L_4 = Vector3_get_zero_m0C1249C3F25B1C70EAD3CC8B31259975A457AE39_inline(NULL);
 		NullCheck(L_3);
 		Transform_set_localScale_mBA79E811BAF6C47B80FF76414C12B47B3CD03633(L_3, L_4, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:83>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:83>
 		return;
 	}
 }
-// Method Definition Index: 75248
+// Method Definition Index: 75306
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IconFormulaireUI_InitialiserComposants_mA565505654EE0D0B83CB3C18C51DAA94041E4D44 (IconFormulaireUI_tF3F540B535FC44FFE347B2F59F92EE93242B74B0* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7674,7 +7674,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IconFormulaireUI_InitialiserComposants_m
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:87>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:87>
 		RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* L_0 = __this->____rawImage;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -7685,7 +7685,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IconFormulaireUI_InitialiserComposants_m
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:88>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:88>
 		RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* L_2;
 		L_2 = Component_GetComponent_TisRawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179_m56775E1085C53732A0C2D919F000176C7BC11C3D(__this, Component_GetComponent_TisRawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179_m56775E1085C53732A0C2D919F000176C7BC11C3D_RuntimeMethod_var);
 		__this->____rawImage = L_2;
@@ -7694,11 +7694,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IconFormulaireUI_InitialiserComposants_m
 
 IL_001a:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:89>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:89>
 		return;
 	}
 }
-// Method Definition Index: 75249
+// Method Definition Index: 75307
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* IconFormulaireUI_AnimerApparition_m226DF8241F10D764704935D63441802B1830FB76 (IconFormulaireUI_tF3F540B535FC44FFE347B2F59F92EE93242B74B0* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7717,11 +7717,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* IconFormulaireUI_AnimerApparit
 		return L_1;
 	}
 }
-// Method Definition Index: 75250
+// Method Definition Index: 75308
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IconFormulaireUI__ctor_mB32643CF9DC5025DFE2083E267AD2AA346299514 (IconFormulaireUI_tF3F540B535FC44FFE347B2F59F92EE93242B74B0* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:21>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:21>
 		__this->___durUE9eApparition = (0.25f);
 		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
 		return;
@@ -7735,7 +7735,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void IconFormulaireUI__ctor_mB32643CF9DC5025D
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 75251
+// Method Definition Index: 75309
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAnimerApparitionU3Ed__10__ctor_m15BA7F03BB2EE7F6512C6A1DB779EA177D49B1ED (U3CAnimerApparitionU3Ed__10_tD71A9E6FB3140BD605FAEF9BB630F3630C7F18B0* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -7745,14 +7745,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAnimerApparitionU3Ed__10__ctor_m15BA7
 		return;
 	}
 }
-// Method Definition Index: 75252
+// Method Definition Index: 75310
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAnimerApparitionU3Ed__10_System_IDisposable_Dispose_mF4B4F0DC8F4BF9ABBE99495CEE737AB63CE67A93 (U3CAnimerApparitionU3Ed__10_tD71A9E6FB3140BD605FAEF9BB630F3630C7F18B0* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 75253
+// Method Definition Index: 75311
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CAnimerApparitionU3Ed__10_MoveNext_m1E9E792C7AF25585265EF1D8B3562CD42CD35338 (U3CAnimerApparitionU3Ed__10_tD71A9E6FB3140BD605FAEF9BB630F3630C7F18B0* __this, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -7783,7 +7783,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CAnimerApparitionU3Ed__10_MoveNext_m1E
 IL_0017:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:93>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:93>
 		IconFormulaireUI_tF3F540B535FC44FFE347B2F59F92EE93242B74B0* L_4 = V_1;
 		NullCheck(L_4);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_5;
@@ -7792,19 +7792,19 @@ IL_0017:
 		L_6 = Vector3_get_zero_m0C1249C3F25B1C70EAD3CC8B31259975A457AE39_inline(NULL);
 		NullCheck(L_5);
 		Transform_set_localScale_mBA79E811BAF6C47B80FF76414C12B47B3CD03633(L_5, L_6, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:94>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:94>
 		__this->___U3CtU3E5__2 = (0.0f);
 		goto IL_0097;
 	}
 
 IL_003b:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:98>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:98>
 		float L_7 = __this->___U3CtU3E5__2;
 		float L_8;
 		L_8 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
 		__this->___U3CtU3E5__2 = ((float)il2cpp_codegen_add(L_7, L_8));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:99>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:99>
 		float L_9 = __this->___U3CtU3E5__2;
 		IconFormulaireUI_tF3F540B535FC44FFE347B2F59F92EE93242B74B0* L_10 = V_1;
 		NullCheck(L_10);
@@ -7812,7 +7812,7 @@ IL_003b:
 		float L_12;
 		L_12 = Mathf_SmoothStep_mEFDC738EB0AA162D71013BDBBDD157B080A8E524_inline((0.0f), (1.0f), ((float)(L_9/L_11)), NULL);
 		V_2 = L_12;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:100>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:100>
 		IconFormulaireUI_tF3F540B535FC44FFE347B2F59F92EE93242B74B0* L_13 = V_1;
 		NullCheck(L_13);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_14;
@@ -7824,7 +7824,7 @@ IL_003b:
 		L_17 = Vector3_op_Multiply_m87BA7C578F96C8E49BB07088DAAC4649F83B0353_inline(L_15, L_16, NULL);
 		NullCheck(L_14);
 		Transform_set_localScale_mBA79E811BAF6C47B80FF76414C12B47B3CD03633(L_14, L_17, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:101>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:101>
 		__this->___U3CU3E2__current = NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)NULL);
 		__this->___U3CU3E1__state = 1;
@@ -7838,7 +7838,7 @@ IL_0090:
 
 IL_0097:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:96>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:96>
 		float L_18 = __this->___U3CtU3E5__2;
 		IconFormulaireUI_tF3F540B535FC44FFE347B2F59F92EE93242B74B0* L_19 = V_1;
 		NullCheck(L_19);
@@ -7849,7 +7849,7 @@ IL_0097:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:104>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:104>
 		IconFormulaireUI_tF3F540B535FC44FFE347B2F59F92EE93242B74B0* L_21 = V_1;
 		NullCheck(L_21);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_22;
@@ -7858,16 +7858,16 @@ IL_0097:
 		L_23 = Vector3_get_one_mC9B289F1E15C42C597180C9FE6FB492495B51D02_inline(NULL);
 		NullCheck(L_22);
 		Transform_set_localScale_mBA79E811BAF6C47B80FF76414C12B47B3CD03633(L_22, L_23, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:105>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:105>
 		IconFormulaireUI_tF3F540B535FC44FFE347B2F59F92EE93242B74B0* L_24 = V_1;
 		NullCheck(L_24);
 		L_24->____animation = (Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&L_24->____animation), (void*)(Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B*)NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:106>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/IconFormulaireUI.cs:106>
 		return (bool)0;
 	}
 }
-// Method Definition Index: 75254
+// Method Definition Index: 75312
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CAnimerApparitionU3Ed__10_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mFE1F195F5720983C48B614CDD636F47B50DA6185 (U3CAnimerApparitionU3Ed__10_tD71A9E6FB3140BD605FAEF9BB630F3630C7F18B0* __this, const RuntimeMethod* method) 
 {
 	{
@@ -7875,7 +7875,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CAnimerApparitionU3Ed__10_Sy
 		return L_0;
 	}
 }
-// Method Definition Index: 75255
+// Method Definition Index: 75313
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAnimerApparitionU3Ed__10_System_Collections_IEnumerator_Reset_mD5BAD47CC7D6A0A38373F2AB148C38670D876272 (U3CAnimerApparitionU3Ed__10_tD71A9E6FB3140BD605FAEF9BB630F3630C7F18B0* __this, const RuntimeMethod* method) 
 {
 	{
@@ -7884,7 +7884,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAnimerApparitionU3Ed__10_System_Colle
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CAnimerApparitionU3Ed__10_System_Collections_IEnumerator_Reset_mD5BAD47CC7D6A0A38373F2AB148C38670D876272_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 75256
+// Method Definition Index: 75314
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CAnimerApparitionU3Ed__10_System_Collections_IEnumerator_get_Current_m233637ACA427B46D9A7B2BE75B9420155A55779F (U3CAnimerApparitionU3Ed__10_tD71A9E6FB3140BD605FAEF9BB630F3630C7F18B0* __this, const RuntimeMethod* method) 
 {
 	{
@@ -7900,27 +7900,27 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CAnimerApparitionU3Ed__10_Sy
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 75257
+// Method Definition Index: 75315
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* MainDuGardeUI_get_RectTransform_m0E7BE14E946963EB853D1921CB8026B17076C048 (MainDuGardeUI_tC321F2958259BF8098C4744C19FED866FA99A361* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:59>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:59>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_0 = __this->___U3CRectTransformU3Ek__BackingField;
 		return L_0;
 	}
 }
-// Method Definition Index: 75258
+// Method Definition Index: 75316
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_set_RectTransform_m3B5FBCF5BE768637FA7941BA2FFACE8947E33C35 (MainDuGardeUI_tC321F2958259BF8098C4744C19FED866FA99A361* __this, RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* ___0_value, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:59>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:59>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_0 = ___0_value;
 		__this->___U3CRectTransformU3Ek__BackingField = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CRectTransformU3Ek__BackingField), (void*)L_0);
 		return;
 	}
 }
-// Method Definition Index: 75259
+// Method Definition Index: 75317
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_add_OnFormulaireRemis_m7D1AA2AB5E7281A814A3855FEF28246A6EE7DCA9 (MainDuGardeUI_tC321F2958259BF8098C4744C19FED866FA99A361* __this, Action_1_t6BCE20F4C75325D3F762D20CB5D17CA40BCDD8C6* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -7963,7 +7963,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 75260
+// Method Definition Index: 75318
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_remove_OnFormulaireRemis_mC638D6AE3B00847AF9CFB60C208C049A176C714C (MainDuGardeUI_tC321F2958259BF8098C4744C19FED866FA99A361* __this, Action_1_t6BCE20F4C75325D3F762D20CB5D17CA40BCDD8C6* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8006,7 +8006,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 75261
+// Method Definition Index: 75319
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_add_OnFormulaireIncorrect_m3FE32FE565F51A101DC5E32FA4AA8BB5BDC783BD (MainDuGardeUI_tC321F2958259BF8098C4744C19FED866FA99A361* __this, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8049,7 +8049,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 75262
+// Method Definition Index: 75320
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_remove_OnFormulaireIncorrect_mA4103D77B3BCD2700E350B3A8735036CE175B12B (MainDuGardeUI_tC321F2958259BF8098C4744C19FED866FA99A361* __this, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8092,7 +8092,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 75263
+// Method Definition Index: 75321
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_add_OnBarrageValidUE9_mC372C3D049D2E8BA86BE05E55AD2E76BBF700DBD (MainDuGardeUI_tC321F2958259BF8098C4744C19FED866FA99A361* __this, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8135,7 +8135,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 75264
+// Method Definition Index: 75322
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_remove_OnBarrageValidUE9_m975AD3980D7DF596F12AFCCE624755DAC2672700 (MainDuGardeUI_tC321F2958259BF8098C4744C19FED866FA99A361* __this, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8178,7 +8178,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 75265
+// Method Definition Index: 75323
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_Awake_mA1D6247A59C7F6E16C9DFD8EC0D8149B3F6130D8 (MainDuGardeUI_tC321F2958259BF8098C4744C19FED866FA99A361* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8229,11 +8229,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_Awake_mA1D6247A59C7F6E16C9
 	String_t* G_B20_0 = NULL;
 	String_t* G_B20_1 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:72>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:72>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_0;
 		L_0 = Component_GetComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m0640480E7E38BB88B0D1F6AD59E697C8EE6AAFA4(__this, Component_GetComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m0640480E7E38BB88B0D1F6AD59E697C8EE6AAFA4_RuntimeMethod_var);
 		MainDuGardeUI_set_RectTransform_m3B5FBCF5BE768637FA7941BA2FFACE8947E33C35_inline(__this, L_0, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:74>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:74>
 		DonnUE9esSession_t1CFA1835B32890AB9D02B828E3675C625BD7BC1A* L_1 = __this->___donnUE9esSession;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_2;
@@ -8260,8 +8260,8 @@ IL_0027:
 IL_0028:
 	{
 		V_0 = (bool)G_B3_0;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:76>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:77>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:76>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:77>
 		DonnUE9esSession_t1CFA1835B32890AB9D02B828E3675C625BD7BC1A* L_5 = __this->___donnUE9esSession;
 		DonnUE9esSession_t1CFA1835B32890AB9D02B828E3675C625BD7BC1A* L_6 = L_5;
 		if (L_6)
@@ -8316,7 +8316,7 @@ IL_0049:
 		L_13 = String_Concat_m093934F71A9B351911EE46311674ED463B180006(G_B8_1, G_B8_0, _stringLiteral758733BDBED83CBFF4F635AC26CA92AAE477F75D, L_12, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_13, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:79>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:79>
 		bool L_14 = V_0;
 		if (L_14)
 		{
@@ -8324,18 +8324,18 @@ IL_0049:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:81>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:81>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteral2FF7FFE279611334CF2E36A513542B4D48185F67, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:82>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:82>
 		Behaviour_set_enabled_mF1DCFE60EB09E0529FE9476CA804A3AA2D72B16A(__this, (bool)0, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:83>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:83>
 		return;
 	}
 
 IL_007d:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:86>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:86>
 		DonnUE9esSession_t1CFA1835B32890AB9D02B828E3675C625BD7BC1A* L_15 = __this->___donnUE9esSession;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_16;
@@ -8346,10 +8346,10 @@ IL_007d:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:88>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:89>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:90>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:91>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:88>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:89>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:90>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:91>
 		DonnUE9esSession_t1CFA1835B32890AB9D02B828E3675C625BD7BC1A* L_17 = __this->___donnUE9esSession;
 		NullCheck(L_17);
 		FormulaireTypeU5BU5D_t681FB60E858CBD6DD764B34ACAA483518992431E* L_18 = L_17->___prochaineDemandeBarrage;
@@ -8444,7 +8444,7 @@ IL_00e2:
 
 IL_00ec:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:94>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:94>
 		ListeAttenteGarde_t80719BBBAC1BD7D5D80B9D0A2702CE4178980626* L_30 = __this->___listeAttenteGarde;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_31;
@@ -8455,7 +8455,7 @@ IL_00ec:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:96>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:96>
 		ListeAttenteGarde_t80719BBBAC1BD7D5D80B9D0A2702CE4178980626* L_32 = __this->___listeAttenteGarde;
 		NullCheck(L_32);
 		String_t* L_33;
@@ -8464,7 +8464,7 @@ IL_00ec:
 		L_34 = String_Concat_m8855A6DE10F84DA7F4EC113CADDB59873A25573B(_stringLiteralBE2F558459F76BE0425A461F9DAA8FAD6862C73E, L_33, _stringLiteralC7A7939E82BEFEF8DDB755713442AA62963F09F8, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_34, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:97>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:97>
 		ListeAttenteGarde_t80719BBBAC1BD7D5D80B9D0A2702CE4178980626* L_35 = __this->___listeAttenteGarde;
 		DonnUE9esSession_t1CFA1835B32890AB9D02B828E3675C625BD7BC1A* L_36 = __this->___donnUE9esSession;
 		DemandeBarrage_t56EFE46E5AA5800F98801C7312A3FDFE46B626BE* L_37 = __this->___demandeAlUE9atoire;
@@ -8475,14 +8475,14 @@ IL_00ec:
 
 IL_0131:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:101>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:101>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogError_mB00B2B4468EF3CAF041B038D840820FB84C924B2(_stringLiteral010B9E4122A393431C6BA84B681B40A9BB5ED2F7, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:103>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:103>
 		return;
 	}
 }
-// Method Definition Index: 75266
+// Method Definition Index: 75324
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_Start_mD0152FA0DB95B7DF9B78F409E3975DF7FCA7BB65 (MainDuGardeUI_tC321F2958259BF8098C4744C19FED866FA99A361* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8494,7 +8494,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_Start_mD0152FA0DB95B7DF9B7
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:110>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:110>
 		AudioEventDispatcher_t7B65C93D86A38683B05B108578B96D716FAE6C44* L_0 = __this->____audioEventDispatcher;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -8505,7 +8505,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_Start_mD0152FA0DB95B7DF9B7
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:110>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:110>
 		AudioEventDispatcher_t7B65C93D86A38683B05B108578B96D716FAE6C44* L_2 = __this->____audioEventDispatcher;
 		int32_t L_3 = __this->____carWindow;
 		NullCheck(L_2);
@@ -8514,7 +8514,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_Start_mD0152FA0DB95B7DF9B7
 
 IL_001f:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:111>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:111>
 		BarrePatience_tCA75555EAD585C76CCEE678BC51881BDB91D46B1* L_4 = __this->___barrePatience;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_5;
@@ -8525,26 +8525,26 @@ IL_001f:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:113>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:113>
 		BarrePatience_tCA75555EAD585C76CCEE678BC51881BDB91D46B1* L_6 = __this->___barrePatience;
 		NullCheck(L_6);
 		BarrePatience_DUE9geler_m4D5703E05C7A8CBB90BFECB2352AE5C755353398(L_6, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:114>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:114>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteral4B6DE71C4FBECAA7004943749997AB09BCF363BE, NULL);
 	}
 
 IL_0042:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:116>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:116>
 		return;
 	}
 }
-// Method Definition Index: 75267
+// Method Definition Index: 75325
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_RecevoirFormulaire_mFAEF0518A13D7B3172B60C2EDEB86585B2EB51C4 (MainDuGardeUI_tC321F2958259BF8098C4744C19FED866FA99A361* __this, FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* ___0_formulaire, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:120>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:120>
 		FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* L_0 = ___0_formulaire;
 		NullCheck(L_0);
 		int32_t L_1;
@@ -8557,11 +8557,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_RecevoirFormulaire_mFAEF05
 		return;
 	}
 }
-// Method Definition Index: 75268
+// Method Definition Index: 75326
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_RecevoirFormulaire_m8D281989D6A45E3A70A54BC327C2E9D6D55B1AB9 (MainDuGardeUI_tC321F2958259BF8098C4744C19FED866FA99A361* __this, FormulaireLibre_t13BACFDC02F5E5230E84C0694BDA7CB93579D113* ___0_formulaire, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:124>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:124>
 		FormulaireLibre_t13BACFDC02F5E5230E84C0694BDA7CB93579D113* L_0 = ___0_formulaire;
 		NullCheck(L_0);
 		int32_t L_1;
@@ -8574,7 +8574,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_RecevoirFormulaire_m8D2819
 		return;
 	}
 }
-// Method Definition Index: 75269
+// Method Definition Index: 75327
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_ValiderAvecPassePartout_mA65D4A802FF87364E049819C01D0ECB2E037BD93 (MainDuGardeUI_tC321F2958259BF8098C4744C19FED866FA99A361* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8597,7 +8597,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_ValiderAvecPassePartout_mA
 	Action_1_t6BCE20F4C75325D3F762D20CB5D17CA40BCDD8C6* G_B9_0 = NULL;
 	Action_1_t6BCE20F4C75325D3F762D20CB5D17CA40BCDD8C6* G_B8_0 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:133>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:133>
 		ListeAttenteGarde_t80719BBBAC1BD7D5D80B9D0A2702CE4178980626* L_0 = __this->___listeAttenteGarde;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -8608,16 +8608,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_ValiderAvecPassePartout_mA
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:135>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:135>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogError_mB00B2B4468EF3CAF041B038D840820FB84C924B2(_stringLiteral2AE68AD68A8592DBE30B6D707D6067E91335728D, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:136>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:136>
 		return;
 	}
 
 IL_0019:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:139>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:139>
 		ListeAttenteGarde_t80719BBBAC1BD7D5D80B9D0A2702CE4178980626* L_2 = __this->___listeAttenteGarde;
 		NullCheck(L_2);
 		bool L_3;
@@ -8628,22 +8628,22 @@ IL_0019:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:141>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:141>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogWarning_m33EF1B897E0C7C6FF538989610BFAFFEF4628CA9(_stringLiteral50C53E66C51A7C06485C868213A6C52098FA5BB1, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:142>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:142>
 		return;
 	}
 
 IL_0031:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:146>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:146>
 		ListeAttenteGarde_t80719BBBAC1BD7D5D80B9D0A2702CE4178980626* L_4 = __this->___listeAttenteGarde;
 		NullCheck(L_4);
 		Nullable_1_tB6326C2A54181127102571E6752CF0EB843C505A L_5;
 		L_5 = ListeAttenteGarde_ProchainTypeRestant_mBDC59A27C3C9FEE2119AAD4943A32B409D68883E(L_4, NULL);
 		V_0 = L_5;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:147>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:147>
 		bool L_6;
 		L_6 = Nullable_1_get_HasValue_m800A0460AC09371EFCF23CACEDFE8271AB7E7649_inline((&V_0), Nullable_1_get_HasValue_m800A0460AC09371EFCF23CACEDFE8271AB7E7649_RuntimeMethod_var);
 		if (L_6)
@@ -8652,30 +8652,30 @@ IL_0031:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:149>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:149>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogWarning_m33EF1B897E0C7C6FF538989610BFAFFEF4628CA9(_stringLiteral2EA9D954081DC523C11C7112F2B73A84896F6399, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:150>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:150>
 		return;
 	}
 
 IL_0051:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:153>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:153>
 		ListeAttenteGarde_t80719BBBAC1BD7D5D80B9D0A2702CE4178980626* L_7 = __this->___listeAttenteGarde;
 		int32_t L_8;
 		L_8 = Nullable_1_get_Value_m36A7D8A8FFF8A0712747477DFB9EFE2EE0D18977((&V_0), Nullable_1_get_Value_m36A7D8A8FFF8A0712747477DFB9EFE2EE0D18977_RuntimeMethod_var);
 		NullCheck(L_7);
 		bool L_9;
 		L_9 = ListeAttenteGarde_ValiderProchain_mEBEBAEF68C489254D5A761DAFF42AEBF013875C7(L_7, L_8, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:154>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:154>
 		if (!L_9)
 		{
 			goto IL_00c5;
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:156>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:156>
 		Action_1_t6BCE20F4C75325D3F762D20CB5D17CA40BCDD8C6* L_10 = __this->___OnFormulaireRemis;
 		Action_1_t6BCE20F4C75325D3F762D20CB5D17CA40BCDD8C6* L_11 = L_10;
 		if (L_11)
@@ -8699,7 +8699,7 @@ IL_0071:
 
 IL_007d:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:157>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:157>
 		int32_t L_13;
 		L_13 = Nullable_1_get_Value_m36A7D8A8FFF8A0712747477DFB9EFE2EE0D18977((&V_0), Nullable_1_get_Value_m36A7D8A8FFF8A0712747477DFB9EFE2EE0D18977_RuntimeMethod_var);
 		int32_t L_14 = L_13;
@@ -8714,7 +8714,7 @@ IL_007d:
 		L_20 = String_Format_mFB7DA489BD99F4670881FF50EC017BFB0A5C0987(_stringLiteral8DD8FF2D86ABD810E169DE048D5A89CC4BA1708D, L_15, L_19, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_20, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:159>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:159>
 		ListeAttenteGarde_t80719BBBAC1BD7D5D80B9D0A2702CE4178980626* L_21 = __this->___listeAttenteGarde;
 		NullCheck(L_21);
 		bool L_22;
@@ -8725,20 +8725,20 @@ IL_007d:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:161>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:161>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteralFE8DA67956CE652035C9BF4E4A6086835765C917, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:162>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:162>
 		MainDuGardeUI_GelerEtValider_m4EDE50C121F8A9A9D0FD326302E1D848CA38CFE5(__this, NULL);
 	}
 
 IL_00c5:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:165>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:165>
 		return;
 	}
 }
-// Method Definition Index: 75270
+// Method Definition Index: 75328
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_RecevoirInterne_m3AC51DBBC154009CA1D5B8AEB40F430172EF1191 (MainDuGardeUI_tC321F2958259BF8098C4744C19FED866FA99A361* __this, int32_t ___0_type, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___1_go, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -8777,7 +8777,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_RecevoirInterne_m3AC51DBBC
 	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* G_B24_0 = NULL;
 	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* G_B23_0 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:171>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:171>
 		bool L_0;
 		L_0 = Behaviour_get_enabled_mAAC9F15E9EBF552217A5AE2681589CC0BFA300C1(__this, NULL);
 		if (L_0)
@@ -8786,16 +8786,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_RecevoirInterne_m3AC51DBBC
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:173>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:173>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogWarning_m33EF1B897E0C7C6FF538989610BFAFFEF4628CA9(_stringLiteral0A1B2D2BAE88BC22A44F37F92EE1A5059CF1F37A, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:174>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:174>
 		return;
 	}
 
 IL_0013:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:178>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:178>
 		int32_t L_1 = ___0_type;
 		bool L_2;
 		L_2 = MainDuGardeUI_EstObjetSpUE9cial_m3BB75B5920288B3BBFD8231EB66D643AA53D8EF8(L_1, NULL);
@@ -8805,18 +8805,18 @@ IL_0013:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:180>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:180>
 		int32_t L_3 = ___0_type;
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_4 = ___1_go;
 		MainDuGardeUI_AppliquerEffetSpUE9cial_m6C75B29145984763F22B5C0EF07649D8DD012B58(__this, L_3, L_4, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:181>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:181>
 		return;
 	}
 
 IL_0024:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:184>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:185>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:184>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:185>
 		int32_t L_5 = ___0_type;
 		int32_t L_6 = L_5;
 		RuntimeObject* L_7 = Box(FormulaireType_t229C352478F59ED69B48A75857A0C74DF1AE4201_il2cpp_TypeInfo_var, &L_6);
@@ -8884,7 +8884,7 @@ IL_004a:
 		L_17 = String_Concat_m9E3155FB84015C823606188F53B47CB44C444991(L_12, L_16, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_17, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:187>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:187>
 		ListeAttenteGarde_t80719BBBAC1BD7D5D80B9D0A2702CE4178980626* L_18 = __this->___listeAttenteGarde;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_19;
@@ -8911,14 +8911,14 @@ IL_008a:
 
 IL_008b:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:189>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:189>
 		if (!G_B12_0)
 		{
 			goto IL_0112;
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:191>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:191>
 		AudioEventDispatcher_t7B65C93D86A38683B05B108578B96D716FAE6C44* L_23 = __this->____audioEventDispatcher;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_24;
@@ -8929,7 +8929,7 @@ IL_008b:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:191>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:191>
 		AudioEventDispatcher_t7B65C93D86A38683B05B108578B96D716FAE6C44* L_25 = __this->____audioEventDispatcher;
 		int32_t L_26 = __this->____correct;
 		NullCheck(L_25);
@@ -8938,7 +8938,7 @@ IL_008b:
 
 IL_00af:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:192>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:192>
 		Action_1_t6BCE20F4C75325D3F762D20CB5D17CA40BCDD8C6* L_27 = __this->___OnFormulaireRemis;
 		Action_1_t6BCE20F4C75325D3F762D20CB5D17CA40BCDD8C6* L_28 = L_27;
 		if (L_28)
@@ -8961,7 +8961,7 @@ IL_00bb:
 
 IL_00c1:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:193>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:193>
 		int32_t L_30 = ___0_type;
 		int32_t L_31 = L_30;
 		RuntimeObject* L_32 = Box(FormulaireType_t229C352478F59ED69B48A75857A0C74DF1AE4201_il2cpp_TypeInfo_var, &L_31);
@@ -8975,13 +8975,13 @@ IL_00c1:
 		L_37 = String_Format_mFB7DA489BD99F4670881FF50EC017BFB0A5C0987(_stringLiteralB911E45902764BB4741524C81EFA4E59F09388EA, L_32, L_36, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_37, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:194>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:194>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_38 = ___1_go;
 		RuntimeObject* L_39;
 		L_39 = MainDuGardeUI_AnimerPositif_mCE69E229D2DA390A3AB0B1E3DB29D6A183E393FD(__this, L_38, NULL);
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_40;
 		L_40 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_39, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:196>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:196>
 		ListeAttenteGarde_t80719BBBAC1BD7D5D80B9D0A2702CE4178980626* L_41 = __this->___listeAttenteGarde;
 		NullCheck(L_41);
 		bool L_42;
@@ -8992,17 +8992,17 @@ IL_00c1:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:198>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:198>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteral09CE647E8E6A3E339F5E77719A86BE6C8F45E792, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:199>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:199>
 		MainDuGardeUI_GelerEtValider_m4EDE50C121F8A9A9D0FD326302E1D848CA38CFE5(__this, NULL);
 		return;
 	}
 
 IL_0112:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:204>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:204>
 		AudioEventDispatcher_t7B65C93D86A38683B05B108578B96D716FAE6C44* L_43 = __this->____audioEventDispatcher;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_44;
@@ -9013,7 +9013,7 @@ IL_0112:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:204>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:204>
 		AudioEventDispatcher_t7B65C93D86A38683B05B108578B96D716FAE6C44* L_45 = __this->____audioEventDispatcher;
 		int32_t L_46 = __this->____incorrect;
 		NullCheck(L_45);
@@ -9022,7 +9022,7 @@ IL_0112:
 
 IL_0131:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:205>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:205>
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_47 = __this->___OnFormulaireIncorrect;
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_48 = L_47;
 		if (L_48)
@@ -9044,7 +9044,7 @@ IL_013d:
 
 IL_0142:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:206>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:206>
 		int32_t L_49 = ___0_type;
 		int32_t L_50 = L_49;
 		RuntimeObject* L_51 = Box(FormulaireType_t229C352478F59ED69B48A75857A0C74DF1AE4201_il2cpp_TypeInfo_var, &L_50);
@@ -9052,7 +9052,7 @@ IL_0142:
 		L_52 = String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8(_stringLiteral65FEDB70D3F888AED38BEDC1072299403789C737, L_51, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogWarning_m33EF1B897E0C7C6FF538989610BFAFFEF4628CA9(L_52, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:207>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:207>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_53 = ___1_go;
 		RuntimeObject* L_54;
 		L_54 = MainDuGardeUI_AnimerNUE9gatif_m4984B17C53713B1C61949C39DE19E0D92865F9E8(__this, L_53, NULL);
@@ -9062,17 +9062,17 @@ IL_0142:
 
 IL_0165:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:209>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:209>
 		return;
 	}
 }
-// Method Definition Index: 75271
+// Method Definition Index: 75329
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool MainDuGardeUI_EstObjetSpUE9cial_m3BB75B5920288B3BBFD8231EB66D643AA53D8EF8 (int32_t ___0_type, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:215>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:216>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:217>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:215>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:216>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:217>
 		int32_t L_0 = ___0_type;
 		if ((((int32_t)L_0) == ((int32_t)4)))
 		{
@@ -9096,7 +9096,7 @@ IL_000d:
 		return (bool)1;
 	}
 }
-// Method Definition Index: 75272
+// Method Definition Index: 75330
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_AppliquerEffetSpUE9cial_m6C75B29145984763F22B5C0EF07649D8DD012B58 (MainDuGardeUI_tC321F2958259BF8098C4744C19FED866FA99A361* __this, int32_t ___0_type, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___1_go, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9110,7 +9110,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_AppliquerEffetSpUE9cial_m6
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:225>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:225>
 		EffetsObjetsSpeciaux_tDD2658CFA94383F69E4E3AE1C80F707A1F15BFE8* L_0 = __this->___effetsObjetsSpeciaux;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -9121,7 +9121,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_AppliquerEffetSpUE9cial_m6
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:227>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:227>
 		int32_t L_2 = ___0_type;
 		int32_t L_3 = L_2;
 		RuntimeObject* L_4 = Box(FormulaireType_t229C352478F59ED69B48A75857A0C74DF1AE4201_il2cpp_TypeInfo_var, &L_3);
@@ -9129,19 +9129,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_AppliquerEffetSpUE9cial_m6
 		L_5 = String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8(_stringLiteral6767BC577CC43484F6232D3440CBE07956922693, L_4, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogWarning_m33EF1B897E0C7C6FF538989610BFAFFEF4628CA9(L_5, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:228>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:228>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_6 = ___1_go;
 		RuntimeObject* L_7;
 		L_7 = MainDuGardeUI_AnimerNUE9gatif_m4984B17C53713B1C61949C39DE19E0D92865F9E8(__this, L_6, NULL);
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_8;
 		L_8 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_7, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:229>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:229>
 		return;
 	}
 
 IL_0032:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:232>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:232>
 		int32_t L_9 = ___0_type;
 		int32_t L_10 = L_9;
 		RuntimeObject* L_11 = Box(FormulaireType_t229C352478F59ED69B48A75857A0C74DF1AE4201_il2cpp_TypeInfo_var, &L_10);
@@ -9172,27 +9172,27 @@ IL_0032:
 
 IL_005d:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:237>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:237>
 		EffetsObjetsSpeciaux_tDD2658CFA94383F69E4E3AE1C80F707A1F15BFE8* L_14 = __this->___effetsObjetsSpeciaux;
 		NullCheck(L_14);
 		EffetsObjetsSpeciaux_UtiliserLiasseDeBillets_m20D9CE90DE5DF588589401261BDD54C94EBF7553(L_14, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:238>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:238>
 		goto IL_0082;
 	}
 
 IL_006a:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:240>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:240>
 		EffetsObjetsSpeciaux_tDD2658CFA94383F69E4E3AE1C80F707A1F15BFE8* L_15 = __this->___effetsObjetsSpeciaux;
 		NullCheck(L_15);
 		EffetsObjetsSpeciaux_UtiliserFormulairePasePartout_m0905D6115826C80481C19A6B401BCC4634F34969(L_15, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:241>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:241>
 		goto IL_0082;
 	}
 
 IL_0077:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:243>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:243>
 		EffetsObjetsSpeciaux_tDD2658CFA94383F69E4E3AE1C80F707A1F15BFE8* L_16 = __this->___effetsObjetsSpeciaux;
 		NullCheck(L_16);
 		EffetsObjetsSpeciaux_UtiliserBadgeDuGouvernement_mDF1D121E1557E618B797A79F42490958C38DA43F(L_16, NULL);
@@ -9200,17 +9200,17 @@ IL_0077:
 
 IL_0082:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:247>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:247>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_17 = ___1_go;
 		RuntimeObject* L_18;
 		L_18 = MainDuGardeUI_AnimerPositif_mCE69E229D2DA390A3AB0B1E3DB29D6A183E393FD(__this, L_17, NULL);
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_19;
 		L_19 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_18, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:248>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:248>
 		return;
 	}
 }
-// Method Definition Index: 75273
+// Method Definition Index: 75331
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_GelerEtValider_m4EDE50C121F8A9A9D0FD326302E1D848CA38CFE5 (MainDuGardeUI_tC321F2958259BF8098C4744C19FED866FA99A361* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9224,7 +9224,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_GelerEtValider_m4EDE50C121
 	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* G_B4_0 = NULL;
 	Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* G_B3_0 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:259>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:259>
 		BarrePatience_tCA75555EAD585C76CCEE678BC51881BDB91D46B1* L_0 = __this->___barrePatience;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -9235,18 +9235,18 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_GelerEtValider_m4EDE50C121
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:261>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:261>
 		BarrePatience_tCA75555EAD585C76CCEE678BC51881BDB91D46B1* L_2 = __this->___barrePatience;
 		NullCheck(L_2);
 		BarrePatience_Geler_mDDF97492A104272026B355D4425233E2CAA71A7D(L_2, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:262>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:262>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteral1A47C3B09DA622BF5E9671A90EE6AD131BDFB24B, NULL);
 	}
 
 IL_0023:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:265>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:265>
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_3 = __this->___OnBarrageValidUE9;
 		Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* L_4 = L_3;
 		if (L_4)
@@ -9264,11 +9264,11 @@ IL_002e:
 	{
 		NullCheck(G_B4_0);
 		Action_Invoke_m7126A54DACA72B845424072887B5F3A51FC3808E_inline(G_B4_0, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:266>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:266>
 		return;
 	}
 }
-// Method Definition Index: 75274
+// Method Definition Index: 75332
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* MainDuGardeUI_AnimerPositif_mCE69E229D2DA390A3AB0B1E3DB29D6A183E393FD (MainDuGardeUI_tC321F2958259BF8098C4744C19FED866FA99A361* __this, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_go, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9288,7 +9288,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* MainDuGardeUI_AnimerPositif_mC
 		return L_1;
 	}
 }
-// Method Definition Index: 75275
+// Method Definition Index: 75333
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* MainDuGardeUI_AnimerNUE9gatif_m4984B17C53713B1C61949C39DE19E0D92865F9E8 (MainDuGardeUI_tC321F2958259BF8098C4744C19FED866FA99A361* __this, GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_go, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9312,7 +9312,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* MainDuGardeUI_AnimerNUE9gatif_
 		return L_2;
 	}
 }
-// Method Definition Index: 75276
+// Method Definition Index: 75334
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_SetRaycast_mD92F29EDB8003D8D62CEFF12963E3EF365FA943D (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_go, bool ___1_actif, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9324,7 +9324,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_SetRaycast_mD92F29EDB8003D
 	GraphicU5BU5D_t81AB09C67D8A58A146D74F24CFF6EEFDE096830F* V_0 = NULL;
 	int32_t V_1 = 0;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:432>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:432>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = ___0_go;
 		NullCheck(L_0);
 		GraphicU5BU5D_t81AB09C67D8A58A146D74F24CFF6EEFDE096830F* L_1;
@@ -9336,13 +9336,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI_SetRaycast_mD92F29EDB8003D
 
 IL_000c:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:432>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:432>
 		GraphicU5BU5D_t81AB09C67D8A58A146D74F24CFF6EEFDE096830F* L_2 = V_0;
 		int32_t L_3 = V_1;
 		NullCheck(L_2);
 		int32_t L_4 = L_3;
 		Graphic_tCBFCA4585A19E2B75465AECFEAC43F4016BF7931* L_5 = (L_2)->GetAt(static_cast<il2cpp_array_size_t>(L_4));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:433>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:433>
 		bool L_6 = ___1_actif;
 		NullCheck(L_5);
 		VirtualActionInvoker1< bool >::Invoke(25, L_5, L_6);
@@ -9352,7 +9352,7 @@ IL_000c:
 
 IL_0019:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:432>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:432>
 		int32_t L_8 = V_1;
 		GraphicU5BU5D_t81AB09C67D8A58A146D74F24CFF6EEFDE096830F* L_9 = V_0;
 		NullCheck(L_9);
@@ -9362,11 +9362,11 @@ IL_0019:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:434>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:434>
 		return;
 	}
 }
-// Method Definition Index: 75277
+// Method Definition Index: 75335
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI__ctor_m0C687CE59D19F85532536E57BD4929CCB27E6ED7 (MainDuGardeUI_tC321F2958259BF8098C4744C19FED866FA99A361* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9382,7 +9382,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MainDuGardeUI__ctor_m0C687CE59D19F855325
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 75278
+// Method Definition Index: 75336
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAnimerNUE9gatifU3Ed__45__ctor_m86DF2254642BD08CCD54A5DE15BEB40443F63DCB (U3CAnimerNUE9gatifU3Ed__45_t52CB220AFBA74F1DE2315489D019CE4A5BB24DB1* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -9392,14 +9392,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAnimerNUE9gatifU3Ed__45__ctor_m86DF22
 		return;
 	}
 }
-// Method Definition Index: 75279
+// Method Definition Index: 75337
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAnimerNUE9gatifU3Ed__45_System_IDisposable_Dispose_m45AD81CAD5AF398A2F2E3222A952550F1414C249 (U3CAnimerNUE9gatifU3Ed__45_t52CB220AFBA74F1DE2315489D019CE4A5BB24DB1* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 75280
+// Method Definition Index: 75338
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CAnimerNUE9gatifU3Ed__45_MoveNext_m328033D5172E1C8419518BFFD907D92DFD0811E6 (U3CAnimerNUE9gatifU3Ed__45_t52CB220AFBA74F1DE2315489D019CE4A5BB24DB1* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9446,7 +9446,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CAnimerNUE9gatifU3Ed__45_MoveNext_m328
 IL_001a:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:353>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:353>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_4 = __this->___go;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_5;
@@ -9457,20 +9457,20 @@ IL_001a:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:353>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:353>
 		return (bool)0;
 	}
 
 IL_0031:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:355>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:355>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_6 = __this->___go;
 		NullCheck(L_6);
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_7;
 		L_7 = GameObject_GetComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m1592DCB5AA07291F73A76006F0913A64DFB8A9C4(L_6, GameObject_GetComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m1592DCB5AA07291F73A76006F0913A64DFB8A9C4_RuntimeMethod_var);
 		__this->___U3CrtU3E5__2 = L_7;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CrtU3E5__2), (void*)L_7);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:356>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:356>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_8 = __this->___U3CrtU3E5__2;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_9;
@@ -9481,17 +9481,17 @@ IL_0031:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:356>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:356>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_10 = __this->___go;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB(L_10, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:356>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:356>
 		return (bool)0;
 	}
 
 IL_005d:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:358>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:358>
 		MainDuGardeUI_tC321F2958259BF8098C4744C19FED866FA99A361* L_11 = V_1;
 		NullCheck(L_11);
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_12 = L_11->___partieHaute;
@@ -9504,66 +9504,66 @@ IL_005d:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:360>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:360>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogWarning_m33EF1B897E0C7C6FF538989610BFAFFEF4628CA9(_stringLiteralBD6CE582A28912ACCDADD48DBDC2C7EA251FC803, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:361>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:361>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_14 = __this->___go;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB(L_14, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:362>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:362>
 		return (bool)0;
 	}
 
 IL_0082:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:365>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:365>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_15 = __this->___go;
 		MainDuGardeUI_SetRaycast_mD92F29EDB8003D8D62CEFF12963E3EF365FA943D(L_15, (bool)0, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:368>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:368>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_16 = __this->___U3CrtU3E5__2;
 		NullCheck(L_16);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_17;
 		L_17 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_16, NULL);
 		V_2 = L_17;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:369>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:369>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_18 = __this->___U3CrtU3E5__2;
 		MainDuGardeUI_tC321F2958259BF8098C4744C19FED866FA99A361* L_19 = V_1;
 		NullCheck(L_19);
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_20 = L_19->___partieHaute;
 		NullCheck(L_18);
 		Transform_SetParent_m9BDD7B7476714B2D7919B10BDC22CE75C0A0A195(L_18, L_20, (bool)0, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:370>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:370>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_21 = __this->___U3CrtU3E5__2;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_22;
 		memset((&L_22), 0, sizeof(L_22));
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_22), (0.5f), (0.5f), NULL);
 		NullCheck(L_21);
 		RectTransform_set_anchorMin_m931442ABE3368D6D4309F43DF1D64AB64B0F52E3(L_21, L_22, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:371>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:371>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_23 = __this->___U3CrtU3E5__2;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_24;
 		memset((&L_24), 0, sizeof(L_24));
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_24), (0.5f), (0.5f), NULL);
 		NullCheck(L_23);
 		RectTransform_set_anchorMax_m52829ABEDD229ABD3DA20BCA676FA1DCA4A39B7D(L_23, L_24, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:372>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:372>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_25 = __this->___U3CrtU3E5__2;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_26;
 		memset((&L_26), 0, sizeof(L_26));
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&L_26), (0.5f), (0.5f), NULL);
 		NullCheck(L_25);
 		RectTransform_set_pivot_m79D0177D383D432A93C2615F1932B739B1C6E146(L_25, L_26, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:373>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:373>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_27 = __this->___U3CrtU3E5__2;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_28 = V_2;
 		NullCheck(L_27);
 		Transform_set_position_mA1A817124BB41B685043DED2A9BA48CDF37C4156(L_27, L_28, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:376>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:376>
 		float L_29;
 		L_29 = Random_Range_m5236C99A7D8AE6AC9190592DC66016652A2D2494((25.0f), (65.0f), NULL);
 		V_3 = L_29;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:377>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:377>
 		float L_30;
 		L_30 = Random_get_value_m2CEA87FADF5222EF9E13D32695F15E2BA282E24B(NULL);
 		if ((!(((float)L_30) > ((float)(0.5f)))))
@@ -9572,16 +9572,16 @@ IL_0082:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:377>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:377>
 		float L_31 = V_3;
 		V_3 = ((float)il2cpp_codegen_subtract((180.0f), L_31));
 	}
 
 IL_012a:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:379>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:380>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:381>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:379>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:380>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:381>
 		float L_32 = V_3;
 		float L_33;
 		L_33 = cosf(((float)il2cpp_codegen_multiply(L_32, (0.0174532924f))));
@@ -9594,33 +9594,33 @@ IL_012a:
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_37;
 		L_37 = Vector2_op_Multiply_m2D984B613020089BF5165BA4CA10988E2DC771FE_inline(L_36, (3200.0f), NULL);
 		__this->___U3CvitesseU3E5__3 = L_37;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:383>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:383>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_38 = __this->___U3CrtU3E5__2;
 		NullCheck(L_38);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_39;
 		L_39 = RectTransform_get_sizeDelta_m822A8493F2035677384F1540A2E9E5ACE63010BB(L_38, NULL);
 		float L_40 = L_39.___x;
 		__this->___U3ChwU3E5__4 = ((float)il2cpp_codegen_multiply(L_40, (0.5f)));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:384>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:384>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_41 = __this->___U3CrtU3E5__2;
 		NullCheck(L_41);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_42;
 		L_42 = RectTransform_get_sizeDelta_m822A8493F2035677384F1540A2E9E5ACE63010BB(L_41, NULL);
 		float L_43 = L_42.___y;
 		__this->___U3ChhU3E5__5 = ((float)il2cpp_codegen_multiply(L_43, (0.5f)));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:385>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:385>
 		__this->___U3CtempsU3E5__6 = (0.0f);
 		goto IL_0392;
 	}
 
 IL_019f:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:389>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:389>
 		float L_44 = __this->___U3CtempsU3E5__6;
 		float L_45;
 		L_45 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
 		__this->___U3CtempsU3E5__6 = ((float)il2cpp_codegen_add(L_44, L_45));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:392>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:392>
 		MainDuGardeUI_tC321F2958259BF8098C4744C19FED866FA99A361* L_46 = V_1;
 		NullCheck(L_46);
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_47 = L_46->___partieHaute;
@@ -9628,7 +9628,7 @@ IL_019f:
 		Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D L_48;
 		L_48 = RectTransform_get_rect_mC82A60F8C3805ED9833508CCC233689641207488(L_47, NULL);
 		V_4 = L_48;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:393>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:393>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_49 = __this->___U3CrtU3E5__2;
 		NullCheck(L_49);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_50;
@@ -9641,7 +9641,7 @@ IL_019f:
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_54;
 		L_54 = Vector2_op_Addition_m8136742CE6EE33BA4EB81C5F584678455917D2AE_inline(L_50, L_53, NULL);
 		V_5 = L_54;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:396>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:396>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_55 = V_5;
 		float L_56 = L_55.___x;
 		float L_57 = __this->___U3ChwU3E5__4;
@@ -9654,13 +9654,13 @@ IL_019f:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:398>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:398>
 		il2cpp_codegen_runtime_class_init_inline(Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D_il2cpp_TypeInfo_var);
 		float L_59;
 		L_59 = Rect_get_xMin_mE89C40702926D016A633399E20DB9501E251630D_inline((&V_4), NULL);
 		float L_60 = __this->___U3ChwU3E5__4;
 		(&V_5)->___x = ((float)il2cpp_codegen_add(L_59, L_60));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:399>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:399>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* L_61 = (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7*)(&__this->___U3CvitesseU3E5__3);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* L_62 = (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7*)(&__this->___U3CvitesseU3E5__3);
 		float L_63 = L_62->___x;
@@ -9672,7 +9672,7 @@ IL_019f:
 
 IL_0235:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:401>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:401>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_65 = V_5;
 		float L_66 = L_65.___x;
 		float L_67 = __this->___U3ChwU3E5__4;
@@ -9685,13 +9685,13 @@ IL_0235:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:403>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:403>
 		il2cpp_codegen_runtime_class_init_inline(Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D_il2cpp_TypeInfo_var);
 		float L_69;
 		L_69 = Rect_get_xMax_m2339C7D2FCDA98A9B007F815F6E2059BA6BE425F_inline((&V_4), NULL);
 		float L_70 = __this->___U3ChwU3E5__4;
 		(&V_5)->___x = ((float)il2cpp_codegen_subtract(L_69, L_70));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:404>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:404>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* L_71 = (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7*)(&__this->___U3CvitesseU3E5__3);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* L_72 = (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7*)(&__this->___U3CvitesseU3E5__3);
 		float L_73 = L_72->___x;
@@ -9702,7 +9702,7 @@ IL_0235:
 
 IL_0289:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:408>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:408>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_75 = V_5;
 		float L_76 = L_75.___y;
 		float L_77 = __this->___U3ChhU3E5__5;
@@ -9715,13 +9715,13 @@ IL_0289:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:410>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:410>
 		il2cpp_codegen_runtime_class_init_inline(Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D_il2cpp_TypeInfo_var);
 		float L_79;
 		L_79 = Rect_get_yMin_mB19848FB25DE61EDF958F7A22CFDD86DE103062F_inline((&V_4), NULL);
 		float L_80 = __this->___U3ChhU3E5__5;
 		(&V_5)->___y = ((float)il2cpp_codegen_add(L_79, L_80));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:411>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:411>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* L_81 = (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7*)(&__this->___U3CvitesseU3E5__3);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* L_82 = (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7*)(&__this->___U3CvitesseU3E5__3);
 		float L_83 = L_82->___y;
@@ -9733,7 +9733,7 @@ IL_0289:
 
 IL_02de:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:413>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:413>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_85 = V_5;
 		float L_86 = L_85.___y;
 		float L_87 = __this->___U3ChhU3E5__5;
@@ -9746,13 +9746,13 @@ IL_02de:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:415>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:415>
 		il2cpp_codegen_runtime_class_init_inline(Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D_il2cpp_TypeInfo_var);
 		float L_89;
 		L_89 = Rect_get_yMax_mBC37BEE1CD632AADD8B9EAF9FE3BA143F79CAF8E_inline((&V_4), NULL);
 		float L_90 = __this->___U3ChhU3E5__5;
 		(&V_5)->___y = ((float)il2cpp_codegen_subtract(L_89, L_90));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:416>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:416>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* L_91 = (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7*)(&__this->___U3CvitesseU3E5__3);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* L_92 = (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7*)(&__this->___U3CvitesseU3E5__3);
 		float L_93 = L_92->___y;
@@ -9763,12 +9763,12 @@ IL_02de:
 
 IL_0332:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:419>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:419>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_95 = __this->___U3CrtU3E5__2;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_96 = V_5;
 		NullCheck(L_95);
 		RectTransform_set_anchoredPosition_mF903ACE04F6959B1CD67E2B94FABC0263068F965(L_95, L_96, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:420>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:420>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_97 = __this->___U3CrtU3E5__2;
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_98 = L_97;
 		NullCheck(L_98);
@@ -9785,7 +9785,7 @@ IL_0332:
 		L_104 = Vector3_op_Addition_m78C0EC70CB66E8DCAC225743D82B268DAEE92067_inline(L_99, L_103, NULL);
 		NullCheck(L_98);
 		Transform_set_localEulerAngles_m0458551662A1A51FDCA4C0417282B25D391661DF(L_98, L_104, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:422>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:422>
 		__this->___U3CU3E2__current = NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)NULL);
 		__this->___U3CU3E1__state = 1;
@@ -9799,7 +9799,7 @@ IL_038b:
 
 IL_0392:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:387>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:387>
 		float L_105 = __this->___U3CtempsU3E5__6;
 		if ((!(((float)L_105) < ((float)(1.0f)))))
 		{
@@ -9819,7 +9819,7 @@ IL_0392:
 
 IL_03b0:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:425>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:425>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_108 = __this->___go;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_109;
@@ -9830,7 +9830,7 @@ IL_03b0:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:425>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:425>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_110 = __this->___go;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB(L_110, NULL);
@@ -9838,11 +9838,11 @@ IL_03b0:
 
 IL_03c9:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:426>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:426>
 		return (bool)0;
 	}
 }
-// Method Definition Index: 75281
+// Method Definition Index: 75339
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CAnimerNUE9gatifU3Ed__45_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m562A64E6B4842AC56A0EF9EC4BC615603AE0321B (U3CAnimerNUE9gatifU3Ed__45_t52CB220AFBA74F1DE2315489D019CE4A5BB24DB1* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9850,7 +9850,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CAnimerNUE9gatifU3Ed__45_Sys
 		return L_0;
 	}
 }
-// Method Definition Index: 75282
+// Method Definition Index: 75340
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAnimerNUE9gatifU3Ed__45_System_Collections_IEnumerator_Reset_m33C467D6E00152E6655C172950A1A00475E760CD (U3CAnimerNUE9gatifU3Ed__45_t52CB220AFBA74F1DE2315489D019CE4A5BB24DB1* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9859,7 +9859,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAnimerNUE9gatifU3Ed__45_System_Collec
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CAnimerNUE9gatifU3Ed__45_System_Collections_IEnumerator_Reset_m33C467D6E00152E6655C172950A1A00475E760CD_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 75283
+// Method Definition Index: 75341
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CAnimerNUE9gatifU3Ed__45_System_Collections_IEnumerator_get_Current_m9E9C5E43C3BC1699C8284635C100769C02E6A6B9 (U3CAnimerNUE9gatifU3Ed__45_t52CB220AFBA74F1DE2315489D019CE4A5BB24DB1* __this, const RuntimeMethod* method) 
 {
 	{
@@ -9875,7 +9875,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CAnimerNUE9gatifU3Ed__45_Sys
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 75284
+// Method Definition Index: 75342
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAnimerPositifU3Ed__44__ctor_m80FDC67E740A494AB6ADDFC2EA6C368C1621BF7D (U3CAnimerPositifU3Ed__44_t197688B1425A6141BA9651B046EDBF4B9C738C43* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -9885,14 +9885,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAnimerPositifU3Ed__44__ctor_m80FDC67E
 		return;
 	}
 }
-// Method Definition Index: 75285
+// Method Definition Index: 75343
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAnimerPositifU3Ed__44_System_IDisposable_Dispose_mB88B8979A6455EADBE1268B3B87E49F2440557A3 (U3CAnimerPositifU3Ed__44_t197688B1425A6141BA9651B046EDBF4B9C738C43* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 75286
+// Method Definition Index: 75344
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CAnimerPositifU3Ed__44_MoveNext_m42BE5AE19E6E0C2D9FCDF1546C5A84A68BFE0724 (U3CAnimerPositifU3Ed__44_t197688B1425A6141BA9651B046EDBF4B9C738C43* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -9940,7 +9940,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CAnimerPositifU3Ed__44_MoveNext_m42BE5
 IL_001b:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:280>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:280>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = __this->___go;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_3;
@@ -9951,20 +9951,20 @@ IL_001b:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:280>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:280>
 		return (bool)0;
 	}
 
 IL_0032:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:282>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:282>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_4 = __this->___go;
 		NullCheck(L_4);
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_5;
 		L_5 = GameObject_GetComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m1592DCB5AA07291F73A76006F0913A64DFB8A9C4(L_4, GameObject_GetComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m1592DCB5AA07291F73A76006F0913A64DFB8A9C4_RuntimeMethod_var);
 		__this->___U3CrtU3E5__2 = L_5;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CrtU3E5__2), (void*)L_5);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:283>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:283>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_6 = __this->___U3CrtU3E5__2;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_7;
@@ -9975,39 +9975,39 @@ IL_0032:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:283>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:283>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_8 = __this->___go;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB(L_8, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:283>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:283>
 		return (bool)0;
 	}
 
 IL_005e:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:285>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:285>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_9 = __this->___go;
 		MainDuGardeUI_SetRaycast_mD92F29EDB8003D8D62CEFF12963E3EF365FA943D(L_9, (bool)0, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:289>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:289>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_10 = __this->___U3CrtU3E5__2;
 		NullCheck(L_10);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_11;
 		L_11 = Transform_get_localScale_m804A002A53A645CDFCD15BB0F37209162720363F(L_10, NULL);
 		__this->___U3CUE9chelleInitialeU3E5__3 = L_11;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:290>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:290>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_12 = __this->___U3CrtU3E5__2;
 		NullCheck(L_12);
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_13;
 		L_13 = Transform_get_localEulerAngles_m358AA9AE8FA24FD1BB7842D231C8644D1C2910C6(L_12, NULL);
 		__this->___U3CrotInitialeU3E5__4 = L_13;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:293>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:293>
 		__this->___U3CtU3E5__5 = (0.0f);
 		goto IL_0183;
 	}
 
 IL_009c:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:296>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:296>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_14 = __this->___go;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_15;
@@ -10018,38 +10018,38 @@ IL_009c:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:296>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:296>
 		return (bool)0;
 	}
 
 IL_00ac:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:297>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:297>
 		float L_16 = __this->___U3CtU3E5__5;
 		float L_17;
 		L_17 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
 		__this->___U3CtU3E5__5 = ((float)il2cpp_codegen_add(L_16, L_17));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:299>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:299>
 		float L_18 = __this->___U3CtU3E5__5;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:301>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:301>
 		float L_19;
 		L_19 = sinf(((float)il2cpp_codegen_multiply(((float)(L_18/(0.550000012f))), (3.14159274f))));
 		V_1 = L_19;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:304>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:305>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:304>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:305>
 		float L_20 = __this->___U3CtU3E5__5;
 		float L_21;
 		L_21 = sinf(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(L_20, (18.0f))), (3.14159274f))), (2.0f))));
 		float L_22 = V_1;
 		V_2 = ((float)il2cpp_codegen_add((1.0f), ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(L_21, (0.0599999987f))), L_22))));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:308>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:309>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:308>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:309>
 		float L_23 = __this->___U3CtU3E5__5;
 		float L_24;
 		L_24 = sinf(((float)il2cpp_codegen_add(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(L_23, (9.0f))), (3.14159274f))), (2.0f))), (1.57079637f))));
 		float L_25 = V_1;
 		V_3 = ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(L_24, (3.0f))), L_25));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:311>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:311>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_26 = __this->___U3CrtU3E5__2;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_27 = __this->___U3CUE9chelleInitialeU3E5__3;
 		float L_28 = V_2;
@@ -10057,7 +10057,7 @@ IL_00ac:
 		L_29 = Vector3_op_Multiply_m87BA7C578F96C8E49BB07088DAAC4649F83B0353_inline(L_27, L_28, NULL);
 		NullCheck(L_26);
 		Transform_set_localScale_mBA79E811BAF6C47B80FF76414C12B47B3CD03633(L_26, L_29, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:312>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:312>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_30 = __this->___U3CrtU3E5__2;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* L_31 = (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2*)(&__this->___U3CrotInitialeU3E5__4);
 		float L_32 = L_31->___z;
@@ -10067,7 +10067,7 @@ IL_00ac:
 		Vector3__ctor_m376936E6B999EF1ECBE57D990A386303E2283DE0_inline((&L_34), (0.0f), (0.0f), ((float)il2cpp_codegen_add(L_32, L_33)), NULL);
 		NullCheck(L_30);
 		Transform_set_localEulerAngles_m0458551662A1A51FDCA4C0417282B25D391661DF(L_30, L_34, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:313>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:313>
 		__this->___U3CU3E2__current = NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)NULL);
 		__this->___U3CU3E1__state = 1;
@@ -10081,7 +10081,7 @@ IL_017c:
 
 IL_0183:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:294>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:294>
 		float L_35 = __this->___U3CtU3E5__5;
 		if ((((float)L_35) < ((float)(0.550000012f))))
 		{
@@ -10089,27 +10089,27 @@ IL_0183:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:318>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:318>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_36 = __this->___go;
 		NullCheck(L_36);
 		GraphicU5BU5D_t81AB09C67D8A58A146D74F24CFF6EEFDE096830F* L_37;
 		L_37 = GameObject_GetComponentsInChildren_TisGraphic_tCBFCA4585A19E2B75465AECFEAC43F4016BF7931_mFC4EC25FD182C4F37ED458A181E072574F7ED5EF(L_36, (bool)1, GameObject_GetComponentsInChildren_TisGraphic_tCBFCA4585A19E2B75465AECFEAC43F4016BF7931_mFC4EC25FD182C4F37ED458A181E072574F7ED5EF_RuntimeMethod_var);
 		__this->___U3CgraphicsU3E5__6 = L_37;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CgraphicsU3E5__6), (void*)L_37);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:321>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:321>
 		GraphicU5BU5D_t81AB09C67D8A58A146D74F24CFF6EEFDE096830F* L_38 = __this->___U3CgraphicsU3E5__6;
 		NullCheck(L_38);
 		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_39 = (SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C*)(SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C*)SZArrayNew(SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C_il2cpp_TypeInfo_var, (uint32_t)((int32_t)(((RuntimeArray*)L_38)->max_length)));
 		__this->___U3CalphasInitU3E5__7 = L_39;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CalphasInitU3E5__7), (void*)L_39);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:322>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:322>
 		V_4 = 0;
 		goto IL_01df;
 	}
 
 IL_01bd:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:323>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:323>
 		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_40 = __this->___U3CalphasInitU3E5__7;
 		int32_t L_41 = V_4;
 		GraphicU5BU5D_t81AB09C67D8A58A146D74F24CFF6EEFDE096830F* L_42 = __this->___U3CgraphicsU3E5__6;
@@ -10123,14 +10123,14 @@ IL_01bd:
 		float L_47 = L_46.___a;
 		NullCheck(L_40);
 		(L_40)->SetAt(static_cast<il2cpp_array_size_t>(L_41), (float)L_47);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:322>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:322>
 		int32_t L_48 = V_4;
 		V_4 = ((int32_t)il2cpp_codegen_add(L_48, 1));
 	}
 
 IL_01df:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:322>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:322>
 		int32_t L_49 = V_4;
 		GraphicU5BU5D_t81AB09C67D8A58A146D74F24CFF6EEFDE096830F* L_50 = __this->___U3CgraphicsU3E5__6;
 		NullCheck(L_50);
@@ -10140,14 +10140,14 @@ IL_01df:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:325>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:325>
 		__this->___U3CtU3E5__5 = (0.0f);
 		goto IL_02cb;
 	}
 
 IL_01fb:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:328>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:328>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_51 = __this->___go;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_52;
@@ -10158,23 +10158,23 @@ IL_01fb:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:328>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:328>
 		return (bool)0;
 	}
 
 IL_020b:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:329>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:329>
 		float L_53 = __this->___U3CtU3E5__5;
 		float L_54;
 		L_54 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
 		__this->___U3CtU3E5__5 = ((float)il2cpp_codegen_add(L_53, L_54));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:330>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:330>
 		float L_55 = __this->___U3CtU3E5__5;
 		float L_56;
 		L_56 = Mathf_SmoothStep_mEFDC738EB0AA162D71013BDBBDD157B080A8E524_inline((0.0f), (1.0f), ((float)(L_55/(0.300000012f))), NULL);
 		V_5 = L_56;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:333>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:333>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_57 = __this->___U3CrtU3E5__2;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_58 = __this->___U3CUE9chelleInitialeU3E5__3;
 		float L_59 = V_5;
@@ -10184,14 +10184,14 @@ IL_020b:
 		L_61 = Vector3_op_Multiply_m87BA7C578F96C8E49BB07088DAAC4649F83B0353_inline(L_58, L_60, NULL);
 		NullCheck(L_57);
 		Transform_set_localScale_mBA79E811BAF6C47B80FF76414C12B47B3CD03633(L_57, L_61, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:336>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:336>
 		V_6 = 0;
 		goto IL_02a8;
 	}
 
 IL_0266:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:338>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:338>
 		GraphicU5BU5D_t81AB09C67D8A58A146D74F24CFF6EEFDE096830F* L_62 = __this->___U3CgraphicsU3E5__6;
 		int32_t L_63 = V_6;
 		NullCheck(L_62);
@@ -10201,7 +10201,7 @@ IL_0266:
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_66;
 		L_66 = VirtualFuncInvoker0< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(22, L_65);
 		V_7 = L_66;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:339>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:339>
 		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_67 = __this->___U3CalphasInitU3E5__7;
 		int32_t L_68 = V_6;
 		NullCheck(L_67);
@@ -10211,7 +10211,7 @@ IL_0266:
 		float L_72;
 		L_72 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_70, (0.0f), L_71, NULL);
 		(&V_7)->___a = L_72;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:340>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:340>
 		GraphicU5BU5D_t81AB09C67D8A58A146D74F24CFF6EEFDE096830F* L_73 = __this->___U3CgraphicsU3E5__6;
 		int32_t L_74 = V_6;
 		NullCheck(L_73);
@@ -10220,14 +10220,14 @@ IL_0266:
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_77 = V_7;
 		NullCheck(L_76);
 		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_76, L_77);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:336>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:336>
 		int32_t L_78 = V_6;
 		V_6 = ((int32_t)il2cpp_codegen_add(L_78, 1));
 	}
 
 IL_02a8:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:336>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:336>
 		int32_t L_79 = V_6;
 		GraphicU5BU5D_t81AB09C67D8A58A146D74F24CFF6EEFDE096830F* L_80 = __this->___U3CgraphicsU3E5__6;
 		NullCheck(L_80);
@@ -10237,7 +10237,7 @@ IL_02a8:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:343>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:343>
 		__this->___U3CU3E2__current = NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)NULL);
 		__this->___U3CU3E1__state = 2;
@@ -10251,7 +10251,7 @@ IL_02c4:
 
 IL_02cb:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:326>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:326>
 		float L_81 = __this->___U3CtU3E5__5;
 		if ((((float)L_81) < ((float)(0.300000012f))))
 		{
@@ -10259,7 +10259,7 @@ IL_02cb:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:346>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:346>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_82 = __this->___go;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_83;
@@ -10270,7 +10270,7 @@ IL_02cb:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:346>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:346>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_84 = __this->___go;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB(L_84, NULL);
@@ -10278,11 +10278,11 @@ IL_02cb:
 
 IL_02f4:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:347>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:347>
 		return (bool)0;
 	}
 }
-// Method Definition Index: 75287
+// Method Definition Index: 75345
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CAnimerPositifU3Ed__44_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m3AF5E13435DF1B02A4D45CB3F8B08C60D0678DB4 (U3CAnimerPositifU3Ed__44_t197688B1425A6141BA9651B046EDBF4B9C738C43* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10290,7 +10290,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CAnimerPositifU3Ed__44_Syste
 		return L_0;
 	}
 }
-// Method Definition Index: 75288
+// Method Definition Index: 75346
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAnimerPositifU3Ed__44_System_Collections_IEnumerator_Reset_mEF026993B770A354CDDAE536D0B8B1A964378049 (U3CAnimerPositifU3Ed__44_t197688B1425A6141BA9651B046EDBF4B9C738C43* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10299,7 +10299,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAnimerPositifU3Ed__44_System_Collecti
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CAnimerPositifU3Ed__44_System_Collections_IEnumerator_Reset_mEF026993B770A354CDDAE536D0B8B1A964378049_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 75289
+// Method Definition Index: 75347
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CAnimerPositifU3Ed__44_System_Collections_IEnumerator_get_Current_m7360BD47FF4181567DD93A5C046167A46C8CF5E3 (U3CAnimerPositifU3Ed__44_t197688B1425A6141BA9651B046EDBF4B9C738C43* __this, const RuntimeMethod* method) 
 {
 	{
@@ -10315,27 +10315,27 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CAnimerPositifU3Ed__44_Syste
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 75290
+// Method Definition Index: 75348
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* PocheUI_get_RectTransform_m2CFE0097A9DC3FC2B46BBDB529EDAD5D139E614E (PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:17>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:17>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_0 = __this->___U3CRectTransformU3Ek__BackingField;
 		return L_0;
 	}
 }
-// Method Definition Index: 75291
+// Method Definition Index: 75349
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PocheUI_set_RectTransform_m35AF0326EC697451A3BCAD4A83FC5FAC7F252FCE (PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* __this, RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* ___0_value, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:17>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:17>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_0 = ___0_value;
 		__this->___U3CRectTransformU3Ek__BackingField = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CRectTransformU3Ek__BackingField), (void*)L_0);
 		return;
 	}
 }
-// Method Definition Index: 75292
+// Method Definition Index: 75350
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PocheUI_Awake_m31D53EF0A79E398BE8D5DB8B3CFBED206D8E130D (PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10345,15 +10345,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PocheUI_Awake_m31D53EF0A79E398BE8D5DB8B3
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:23>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:23>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_0;
 		L_0 = Component_GetComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m0640480E7E38BB88B0D1F6AD59E697C8EE6AAFA4(__this, Component_GetComponent_TisRectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5_m0640480E7E38BB88B0D1F6AD59E697C8EE6AAFA4_RuntimeMethod_var);
 		PocheUI_set_RectTransform_m35AF0326EC697451A3BCAD4A83FC5FAC7F252FCE_inline(__this, L_0, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:24>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:24>
 		return;
 	}
 }
-// Method Definition Index: 75293
+// Method Definition Index: 75351
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* PocheUI_get_SommetPile_m89A6E504117564716B1F9B813309B4CB49AE683C (PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10364,7 +10364,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B30
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:27>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:27>
 		List_1_t8FA4BB912D5F714D08AB0837605293CC638889FB* L_0 = __this->____pile;
 		NullCheck(L_0);
 		int32_t L_1;
@@ -10391,7 +10391,7 @@ IL_0010:
 		return L_5;
 	}
 }
-// Method Definition Index: 75294
+// Method Definition Index: 75352
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PocheUI_EstAuSommet_m0928714C77C079346F81C1463640AB6E5C2A79D6 (PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* __this, FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* ___0_formulaire, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10401,7 +10401,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PocheUI_EstAuSommet_m0928714C77C079346F8
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:30>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:30>
 		FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* L_0;
 		L_0 = PocheUI_get_SommetPile_m89A6E504117564716B1F9B813309B4CB49AE683C(__this, NULL);
 		FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* L_1 = ___0_formulaire;
@@ -10411,7 +10411,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool PocheUI_EstAuSommet_m0928714C77C079346F8
 		return L_2;
 	}
 }
-// Method Definition Index: 75295
+// Method Definition Index: 75353
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t PocheUI_AjouterFormulaire_m64980D239575C64C57E06EB8FC46A3CA2FE23A8C (PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* __this, FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* ___0_formulaire, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10424,7 +10424,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t PocheUI_AjouterFormulaire_m64980D2395
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:35>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:35>
 		List_1_t8FA4BB912D5F714D08AB0837605293CC638889FB* L_0 = __this->____pile;
 		FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* L_1 = ___0_formulaire;
 		NullCheck(L_0);
@@ -10436,7 +10436,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t PocheUI_AjouterFormulaire_m64980D2395
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:36>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:36>
 		List_1_t8FA4BB912D5F714D08AB0837605293CC638889FB* L_3 = __this->____pile;
 		FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* L_4 = ___0_formulaire;
 		NullCheck(L_3);
@@ -10447,16 +10447,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t PocheUI_AjouterFormulaire_m64980D2395
 
 IL_001b:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:38>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:38>
 		List_1_t8FA4BB912D5F714D08AB0837605293CC638889FB* L_6 = __this->____pile;
 		FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* L_7 = ___0_formulaire;
 		NullCheck(L_6);
 		List_1_Add_m3C26872D7F0D303C6662D2E590C9DF4CE788C8BF_inline(L_6, L_7, List_1_Add_m3C26872D7F0D303C6662D2E590C9DF4CE788C8BF_RuntimeMethod_var);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:39>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:39>
 		FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* L_8 = ___0_formulaire;
 		NullCheck(L_8);
 		FormulaireUI_AssignerPoche_m4E4221E6EFB9EBCDAD4604A299B5D554ACDFD7F1_inline(L_8, __this, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:40>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:40>
 		List_1_t8FA4BB912D5F714D08AB0837605293CC638889FB* L_9 = __this->____pile;
 		NullCheck(L_9);
 		int32_t L_10;
@@ -10464,7 +10464,7 @@ IL_001b:
 		return ((int32_t)il2cpp_codegen_subtract(L_10, 1));
 	}
 }
-// Method Definition Index: 75296
+// Method Definition Index: 75354
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PocheUI_Vider_mE246DF4B6C0B750B3F188F39B735EAED51748F16 (PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10484,15 +10484,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PocheUI_Vider_mE246DF4B6C0B750B3F188F39B
 	memset((&V_0), 0, sizeof(V_0));
 	FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* V_1 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:48>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:48>
 		List_1_t8FA4BB912D5F714D08AB0837605293CC638889FB* L_0 = __this->____pile;
 		List_1_t8FA4BB912D5F714D08AB0837605293CC638889FB* L_1 = (List_1_t8FA4BB912D5F714D08AB0837605293CC638889FB*)il2cpp_codegen_object_new(List_1_t8FA4BB912D5F714D08AB0837605293CC638889FB_il2cpp_TypeInfo_var);
 		List_1__ctor_m86D16CE0604BDDECBD1C02253A87F9AE1B755B38(L_1, L_0, List_1__ctor_m86D16CE0604BDDECBD1C02253A87F9AE1B755B38_RuntimeMethod_var);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:49>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:49>
 		List_1_t8FA4BB912D5F714D08AB0837605293CC638889FB* L_2 = __this->____pile;
 		NullCheck(L_2);
 		List_1_Clear_mDBAFBA263EADC3DC8774CDAB08A57293F8EB1C56_inline(L_2, List_1_Clear_mDBAFBA263EADC3DC8774CDAB08A57293F8EB1C56_RuntimeMethod_var);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:51>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:51>
 		NullCheck(L_1);
 		Enumerator_t154493041D019B73FDA09DC2E13CF4609516671C L_3;
 		L_3 = List_1_GetEnumerator_m0F659E4F7B8747052D9B1764CFC5759A536D1BD3(L_1, List_1_GetEnumerator_m0F659E4F7B8747052D9B1764CFC5759A536D1BD3_RuntimeMethod_var);
@@ -10516,11 +10516,11 @@ FINALLY_0045:
 
 IL_001e_1:
 			{
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:51>
+				//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:51>
 				FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* L_4;
 				L_4 = Enumerator_get_Current_mC1493E2F0FAAACD9A390FBE8D05824819F3A0F1D_inline((&V_0), Enumerator_get_Current_mC1493E2F0FAAACD9A390FBE8D05824819F3A0F1D_RuntimeMethod_var);
 				V_1 = L_4;
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:53>
+				//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:53>
 				FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* L_5 = V_1;
 				il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 				bool L_6;
@@ -10531,7 +10531,7 @@ IL_001e_1:
 				}
 			}
 			{
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:54>
+				//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:54>
 				FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* L_7 = V_1;
 				NullCheck(L_7);
 				GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_8;
@@ -10542,7 +10542,7 @@ IL_001e_1:
 
 IL_003a_1:
 			{
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:51>
+				//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:51>
 				bool L_9;
 				L_9 = Enumerator_MoveNext_m0F47125532FFCA91FD0525F508878311AF8BDD31((&V_0), Enumerator_MoveNext_m0F47125532FFCA91FD0525F508878311AF8BDD31_RuntimeMethod_var);
 				if (L_9)
@@ -10562,11 +10562,11 @@ IL_003a_1:
 
 IL_0053:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:56>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:56>
 		return;
 	}
 }
-// Method Definition Index: 75297
+// Method Definition Index: 75355
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PocheUI_RetirerFormulaire_mE0FBD2D00330C29B02C8CB9A8AE95C3895C84ACA (PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* __this, FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* ___0_formulaire, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10576,7 +10576,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PocheUI_RetirerFormulaire_mE0FBD2D00330C
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:62>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:62>
 		List_1_t8FA4BB912D5F714D08AB0837605293CC638889FB* L_0 = __this->____pile;
 		FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* L_1 = ___0_formulaire;
 		NullCheck(L_0);
@@ -10588,23 +10588,23 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PocheUI_RetirerFormulaire_mE0FBD2D00330C
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:62>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:62>
 		return;
 	}
 
 IL_000f:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:64>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:64>
 		FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* L_3 = ___0_formulaire;
 		NullCheck(L_3);
 		FormulaireUI_AssignerPoche_m4E4221E6EFB9EBCDAD4604A299B5D554ACDFD7F1_inline(L_3, (PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77*)NULL, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:65>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:65>
 		PocheUI_RafraichirDisposition_m22D5C38C9A6C0FE0060B1B6790C73E64140CCAC0(__this, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:66>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:66>
 		return;
 	}
 }
-// Method Definition Index: 75298
+// Method Definition Index: 75356
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 PocheUI_ObtenirPositionPourIndex_m004033E1FF8A9A6E3BEE34497185FC53A6C5D9E4 (PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* __this, int32_t ___0_index, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10615,14 +10615,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D
 	}
 	int32_t V_0 = 0;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:74>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:74>
 		List_1_t8FA4BB912D5F714D08AB0837605293CC638889FB* L_0 = __this->____pile;
 		NullCheck(L_0);
 		int32_t L_1;
 		L_1 = List_1_get_Count_m9D6B833650B3B860F41C0ABA9EE4814A42B953CB_inline(L_0, List_1_get_Count_m9D6B833650B3B860F41C0ABA9EE4814A42B953CB_RuntimeMethod_var);
 		int32_t L_2 = ___0_index;
 		V_0 = ((int32_t)il2cpp_codegen_subtract(((int32_t)il2cpp_codegen_subtract(L_1, 1)), L_2));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:75>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:75>
 		int32_t L_3 = V_0;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_4;
 		memset((&L_4), 0, sizeof(L_4));
@@ -10630,7 +10630,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D
 		return L_4;
 	}
 }
-// Method Definition Index: 75299
+// Method Definition Index: 75357
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PocheUI_RafraichirDisposition_m22D5C38C9A6C0FE0060B1B6790C73E64140CCAC0 (PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10644,14 +10644,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PocheUI_RafraichirDisposition_m22D5C38C9
 	}
 	int32_t V_0 = 0;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:81>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:81>
 		V_0 = 0;
 		goto IL_0039;
 	}
 
 IL_0004:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:83>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:83>
 		List_1_t8FA4BB912D5F714D08AB0837605293CC638889FB* L_0 = __this->____pile;
 		int32_t L_1 = V_0;
 		NullCheck(L_0);
@@ -10666,7 +10666,7 @@ IL_0004:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:84>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:84>
 		List_1_t8FA4BB912D5F714D08AB0837605293CC638889FB* L_4 = __this->____pile;
 		int32_t L_5 = V_0;
 		NullCheck(L_4);
@@ -10684,14 +10684,14 @@ IL_0004:
 
 IL_0035:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:81>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:81>
 		int32_t L_10 = V_0;
 		V_0 = ((int32_t)il2cpp_codegen_add(L_10, 1));
 	}
 
 IL_0039:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:81>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:81>
 		int32_t L_11 = V_0;
 		List_1_t8FA4BB912D5F714D08AB0837605293CC638889FB* L_12 = __this->____pile;
 		NullCheck(L_12);
@@ -10703,11 +10703,11 @@ IL_0039:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:86>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:86>
 		return;
 	}
 }
-// Method Definition Index: 75300
+// Method Definition Index: 75358
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PocheUI__ctor_m7E1C43257D9826E30DCDF64BA2A2FF273F3BB35A (PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10718,7 +10718,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PocheUI__ctor_m7E1C43257D9826E30DCDF64BA
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:19>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:19>
 		List_1_t8FA4BB912D5F714D08AB0837605293CC638889FB* L_0 = (List_1_t8FA4BB912D5F714D08AB0837605293CC638889FB*)il2cpp_codegen_object_new(List_1_t8FA4BB912D5F714D08AB0837605293CC638889FB_il2cpp_TypeInfo_var);
 		List_1__ctor_mFD49B4F0F27F7CAC461E689BC477A31478A37D89(L_0, List_1__ctor_mFD49B4F0F27F7CAC461E689BC477A31478A37D89_RuntimeMethod_var);
 		__this->____pile = L_0;
@@ -10735,7 +10735,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PocheUI__ctor_m7E1C43257D9826E30DCDF64BA
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 75301
+// Method Definition Index: 75359
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PremierBarrageController_Awake_mF810695006F39AABD0B8CEAC405D17FC08E93955 (PremierBarrageController_tFC671B56910964887F50C8E4FA4102651CDDFCCA* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -10821,7 +10821,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PremierBarrageController_Awake_mF8106950
 	String_t* G_B26_0 = NULL;
 	String_t* G_B26_1 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:50>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:50>
 		DonnUE9esSession_t1CFA1835B32890AB9D02B828E3675C625BD7BC1A* L_0 = __this->___donnUE9esSession;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -10851,14 +10851,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PremierBarrageController_Awake_mF8106950
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:52>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:52>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteral27568FC36B9D96B15A133B1E323712257E7DE0CC, NULL);
 	}
 
 IL_0032:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:57>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:57>
 		DonnUE9esSession_t1CFA1835B32890AB9D02B828E3675C625BD7BC1A* L_6 = __this->___donnUE9esSession;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_7;
@@ -10890,10 +10890,10 @@ IL_0052:
 	{
 		NullCheck(G_B7_1);
 		G_B7_1->____estPremierBarrage = (bool)G_B7_0;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:59>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:60>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:61>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:62>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:59>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:60>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:61>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:62>
 		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_10 = (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)SZArrayNew(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var, (uint32_t)6);
 		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_11 = L_10;
 		NullCheck(L_11);
@@ -11068,7 +11068,7 @@ IL_00c8:
 		L_37 = String_Concat_m647EBF831F54B6DF7D5AFA5FD012CF4EE7571B6A(L_32, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_37, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:64>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:64>
 		bool L_38 = __this->____estPremierBarrage;
 		if (!L_38)
 		{
@@ -11086,10 +11086,10 @@ IL_00c8:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:66>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:67>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:68>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:69>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:66>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:67>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:68>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:69>
 		DonnUE9esSession_t1CFA1835B32890AB9D02B828E3675C625BD7BC1A* L_41 = __this->___donnUE9esSession;
 		NullCheck(L_41);
 		FormulaireTypeU5BU5D_t681FB60E858CBD6DD764B34ACAA483518992431E* L_42 = L_41->___prochaineDemandeBarrage;
@@ -11152,11 +11152,11 @@ IL_0144:
 
 IL_014e:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:71>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:71>
 		return;
 	}
 }
-// Method Definition Index: 75302
+// Method Definition Index: 75360
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PremierBarrageController_Start_m88EFBE8E9CF0ED36C88F1E5AB12DCFE9633FC75D (PremierBarrageController_tFC671B56910964887F50C8E4FA4102651CDDFCCA* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11171,7 +11171,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PremierBarrageController_Start_m88EFBE8E
 	Scene_tA1DC762B79745EB5140F054C884855B922318356 V_0;
 	memset((&V_0), 0, sizeof(V_0));
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:75>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:75>
 		bool L_0 = __this->____estPremierBarrage;
 		bool L_1 = L_0;
 		RuntimeObject* L_2 = Box(il2cpp_defaults.boolean_class, &L_1);
@@ -11179,7 +11179,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PremierBarrageController_Start_m88EFBE8E
 		L_3 = String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8(_stringLiteralC9ED61BB78CFC9A2DEE7C118E00E7A671EB994FE, L_2, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_3, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:78>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:78>
 		il2cpp_codegen_runtime_class_init_inline(SceneManager_tA0EF56A88ACA4A15731AF7FDC10A869FA4C698FA_il2cpp_TypeInfo_var);
 		Scene_tA1DC762B79745EB5140F054C884855B922318356 L_4;
 		L_4 = SceneManager_GetActiveScene_m0B320EC4302F51A71495D1CCD1A0FF9C2ED1FDC8(NULL);
@@ -11194,13 +11194,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PremierBarrageController_Start_m88EFBE8E
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:78>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:78>
 		return;
 	}
 
 IL_0034:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:80>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:80>
 		bool L_7 = __this->____estPremierBarrage;
 		if (L_7)
 		{
@@ -11208,22 +11208,22 @@ IL_0034:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:80>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:80>
 		return;
 	}
 
 IL_003d:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:82>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:82>
 		RuntimeObject* L_8;
 		L_8 = PremierBarrageController_SUE9quencePremierBarrage_m6252B22279BAF6C4D4E710CB772ABAB8098EA4BD(__this, NULL);
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_9;
 		L_9 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_8, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:83>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:83>
 		return;
 	}
 }
-// Method Definition Index: 75303
+// Method Definition Index: 75361
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* PremierBarrageController_SUE9quencePremierBarrage_m6252B22279BAF6C4D4E710CB772ABAB8098EA4BD (PremierBarrageController_tFC671B56910964887F50C8E4FA4102651CDDFCCA* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11242,11 +11242,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* PremierBarrageController_SUE9q
 		return L_1;
 	}
 }
-// Method Definition Index: 75304
+// Method Definition Index: 75362
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PremierBarrageController__ctor_mCD5491264AEF7E0D466393655F7CB7E31BB8097F (PremierBarrageController_tFC671B56910964887F50C8E4FA4102651CDDFCCA* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:39>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:39>
 		__this->___dUE9laiAvantAffichageDemande = (2.5f);
 		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
 		return;
@@ -11260,7 +11260,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PremierBarrageController__ctor_mCD549126
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 75305
+// Method Definition Index: 75363
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CSUE9quencePremierBarrageU3Ed__7__ctor_m1F4B6D6976554F923DE337F41DBCE74B50915BBA (U3CSUE9quencePremierBarrageU3Ed__7_tD240E5B00CD1434B644CD634BBFE666BD506BD0E* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -11270,14 +11270,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CSUE9quencePremierBarrageU3Ed__7__ctor
 		return;
 	}
 }
-// Method Definition Index: 75306
+// Method Definition Index: 75364
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CSUE9quencePremierBarrageU3Ed__7_System_IDisposable_Dispose_mCEF11FF2D37CA0C613604160839F82FE06B274B8 (U3CSUE9quencePremierBarrageU3Ed__7_tD240E5B00CD1434B644CD634BBFE666BD506BD0E* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 75307
+// Method Definition Index: 75365
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CSUE9quencePremierBarrageU3Ed__7_MoveNext_mE03057E8EDCCBAE238375A27F3817953D226C4BC (U3CSUE9quencePremierBarrageU3Ed__7_tD240E5B00CD1434B644CD634BBFE666BD506BD0E* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11320,7 +11320,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CSUE9quencePremierBarrageU3Ed__7_MoveN
 IL_0017:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:87>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:87>
 		PremierBarrageController_tFC671B56910964887F50C8E4FA4102651CDDFCCA* L_4 = V_1;
 		NullCheck(L_4);
 		float L_5 = L_4->___dUE9laiAvantAffichageDemande;
@@ -11330,7 +11330,7 @@ IL_0017:
 		L_8 = String_Format_mA8DBB4C2516B9723C5A41E6CB1E2FAF4BBE96DD8(_stringLiteralF4DD811AE8CA71877FFF5943AEAED62CD4341AA2, L_7, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(L_8, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:88>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:88>
 		PremierBarrageController_tFC671B56910964887F50C8E4FA4102651CDDFCCA* L_9 = V_1;
 		NullCheck(L_9);
 		float L_10 = L_9->___dUE9laiAvantAffichageDemande;
@@ -11345,7 +11345,7 @@ IL_0017:
 IL_0052:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:92>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:92>
 		PremierBarrageController_tFC671B56910964887F50C8E4FA4102651CDDFCCA* L_12 = V_1;
 		NullCheck(L_12);
 		FormulaireLibreManager_t80AC95713F63FCEA13BE0451CFB0013572548829* L_13 = L_12->___formulaireManager;
@@ -11358,10 +11358,10 @@ IL_0052:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:94>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:94>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteralF84275E96CFA6903940C514927AFA7E314CFB31F, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:95>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:95>
 		PremierBarrageController_tFC671B56910964887F50C8E4FA4102651CDDFCCA* L_15 = V_1;
 		NullCheck(L_15);
 		FormulaireLibreManager_t80AC95713F63FCEA13BE0451CFB0013572548829* L_16 = L_15->___formulaireManager;
@@ -11372,14 +11372,14 @@ IL_0052:
 
 IL_007e:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:99>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:99>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogWarning_m33EF1B897E0C7C6FF538989610BFAFFEF4628CA9(_stringLiteralF72EDD7E5C1487D5B788628CEB95A2D72ED2366D, NULL);
 	}
 
 IL_0088:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:102>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:102>
 		PremierBarrageController_tFC671B56910964887F50C8E4FA4102651CDDFCCA* L_17 = V_1;
 		NullCheck(L_17);
 		AffichageProchaineDemandeUI_t9E284ECEEFBFCB083BAEC2FDA51E008F7B44A437* L_18 = L_17->___affichageDemande;
@@ -11392,10 +11392,10 @@ IL_0088:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:104>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:104>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteral89268ECE6FB5C867A4404221A7C21371718D9105, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:105>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:105>
 		PremierBarrageController_tFC671B56910964887F50C8E4FA4102651CDDFCCA* L_20 = V_1;
 		NullCheck(L_20);
 		AffichageProchaineDemandeUI_t9E284ECEEFBFCB083BAEC2FDA51E008F7B44A437* L_21 = L_20->___affichageDemande;
@@ -11406,19 +11406,19 @@ IL_0088:
 
 IL_00ad:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:109>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:110>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:109>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:110>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogError_mB00B2B4468EF3CAF041B038D840820FB84C924B2(_stringLiteral0930662AE3DB29ED97597E7DA9F69348E192ED5F, NULL);
 	}
 
 IL_00b7:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:112>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PremierBarrageController.cs:112>
 		return (bool)0;
 	}
 }
-// Method Definition Index: 75308
+// Method Definition Index: 75366
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CSUE9quencePremierBarrageU3Ed__7_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m9A0186FB31F35F41675A3BD4E9325D4AC31C7368 (U3CSUE9quencePremierBarrageU3Ed__7_tD240E5B00CD1434B644CD634BBFE666BD506BD0E* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11426,7 +11426,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CSUE9quencePremierBarrageU3E
 		return L_0;
 	}
 }
-// Method Definition Index: 75309
+// Method Definition Index: 75367
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CSUE9quencePremierBarrageU3Ed__7_System_Collections_IEnumerator_Reset_mCD5BAAA81C99F72460558EDB88831F9EB95292F0 (U3CSUE9quencePremierBarrageU3Ed__7_tD240E5B00CD1434B644CD634BBFE666BD506BD0E* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11435,7 +11435,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CSUE9quencePremierBarrageU3Ed__7_Syste
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CSUE9quencePremierBarrageU3Ed__7_System_Collections_IEnumerator_Reset_mCD5BAAA81C99F72460558EDB88831F9EB95292F0_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 75310
+// Method Definition Index: 75368
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CSUE9quencePremierBarrageU3Ed__7_System_Collections_IEnumerator_get_Current_mF6D94D733C3389443F7587621E4EA68A47272968 (U3CSUE9quencePremierBarrageU3Ed__7_tD240E5B00CD1434B644CD634BBFE666BD506BD0E* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11451,7 +11451,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CSUE9quencePremierBarrageU3E
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 75311
+// Method Definition Index: 75369
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RetourHaptique_Awake_mF0CF664EBDDF919DD653E577D7B4A7ACCE862912 (RetourHaptique_t477E0309561A4D26C6D4B8D46B3F5FE6877FCD70* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11462,7 +11462,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RetourHaptique_Awake_mF0CF664EBDDF919DD6
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:21>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:21>
 		RetourHaptique_t477E0309561A4D26C6D4B8D46B3F5FE6877FCD70* L_0 = ((RetourHaptique_t477E0309561A4D26C6D4B8D46B3F5FE6877FCD70_StaticFields*)il2cpp_codegen_static_fields_for(RetourHaptique_t477E0309561A4D26C6D4B8D46B3F5FE6877FCD70_il2cpp_TypeInfo_var))->____instance;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -11483,35 +11483,35 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RetourHaptique_Awake_mF0CF664EBDDF919DD6
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:23>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:23>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_4;
 		L_4 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB(L_4, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:24>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:24>
 		return;
 	}
 
 IL_0026:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:27>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:27>
 		((RetourHaptique_t477E0309561A4D26C6D4B8D46B3F5FE6877FCD70_StaticFields*)il2cpp_codegen_static_fields_for(RetourHaptique_t477E0309561A4D26C6D4B8D46B3F5FE6877FCD70_il2cpp_TypeInfo_var))->____instance = __this;
 		Il2CppCodeGenWriteBarrier((void**)(&((RetourHaptique_t477E0309561A4D26C6D4B8D46B3F5FE6877FCD70_StaticFields*)il2cpp_codegen_static_fields_for(RetourHaptique_t477E0309561A4D26C6D4B8D46B3F5FE6877FCD70_il2cpp_TypeInfo_var))->____instance), (void*)__this);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:28>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:28>
 		return;
 	}
 }
-// Method Definition Index: 75312
+// Method Definition Index: 75370
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RetourHaptique_VibrerCourt_m1BF2EAB36D0AB2CC03CBA3F2D853CDDFAB7CF263 (const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:39>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:39>
 		Handheld_Vibrate_m820B68A9A3A1C5C0173B99A94C2054778BC3A2F9(NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:41>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:41>
 		return;
 	}
 }
-// Method Definition Index: 75313
+// Method Definition Index: 75371
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RetourHaptique_VibrerDoubleImpulsion_m598857278F48190ED93908F19B779D148DAD9A52 (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11524,7 +11524,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RetourHaptique_VibrerDoubleImpulsion_m59
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:49>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:49>
 		RetourHaptique_t477E0309561A4D26C6D4B8D46B3F5FE6877FCD70* L_0 = ((RetourHaptique_t477E0309561A4D26C6D4B8D46B3F5FE6877FCD70_StaticFields*)il2cpp_codegen_static_fields_for(RetourHaptique_t477E0309561A4D26C6D4B8D46B3F5FE6877FCD70_il2cpp_TypeInfo_var))->____instance;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -11535,18 +11535,18 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RetourHaptique_VibrerDoubleImpulsion_m59
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:51>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:51>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogWarning_m33EF1B897E0C7C6FF538989610BFAFFEF4628CA9(_stringLiteralCBC4D3FC3765C1144E659858C8A5369A177790B8, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:52>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:52>
 		RetourHaptique_VibrerCourt_m1BF2EAB36D0AB2CC03CBA3F2D853CDDFAB7CF263(NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:53>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:53>
 		return;
 	}
 
 IL_001d:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:56>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:56>
 		RetourHaptique_t477E0309561A4D26C6D4B8D46B3F5FE6877FCD70* L_2 = ((RetourHaptique_t477E0309561A4D26C6D4B8D46B3F5FE6877FCD70_StaticFields*)il2cpp_codegen_static_fields_for(RetourHaptique_t477E0309561A4D26C6D4B8D46B3F5FE6877FCD70_il2cpp_TypeInfo_var))->____instance;
 		RetourHaptique_t477E0309561A4D26C6D4B8D46B3F5FE6877FCD70* L_3 = ((RetourHaptique_t477E0309561A4D26C6D4B8D46B3F5FE6877FCD70_StaticFields*)il2cpp_codegen_static_fields_for(RetourHaptique_t477E0309561A4D26C6D4B8D46B3F5FE6877FCD70_il2cpp_TypeInfo_var))->____instance;
 		NullCheck(L_3);
@@ -11555,11 +11555,11 @@ IL_001d:
 		NullCheck(L_2);
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_5;
 		L_5 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(L_2, L_4, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:57>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:57>
 		return;
 	}
 }
-// Method Definition Index: 75314
+// Method Definition Index: 75372
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* RetourHaptique_PatternDoubleImpulsion_m72AB02432B6B117CFEA5B01E1794855594919409 (RetourHaptique_t477E0309561A4D26C6D4B8D46B3F5FE6877FCD70* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11574,7 +11574,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* RetourHaptique_PatternDoubleIm
 		return L_0;
 	}
 }
-// Method Definition Index: 75315
+// Method Definition Index: 75373
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RetourHaptique__ctor_mA68006D32941B4C1BED6AF35FD4DD34211F680D2 (RetourHaptique_t477E0309561A4D26C6D4B8D46B3F5FE6877FCD70* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11590,7 +11590,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RetourHaptique__ctor_mA68006D32941B4C1BE
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 75316
+// Method Definition Index: 75374
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CPatternDoubleImpulsionU3Ed__4__ctor_mC1C9FC1BD31BD572638D0565AE57475AE6CF28A7 (U3CPatternDoubleImpulsionU3Ed__4_t1AF7C5854E28B009E4DC6F69E5E43E4EA14C8389* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -11600,14 +11600,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CPatternDoubleImpulsionU3Ed__4__ctor_m
 		return;
 	}
 }
-// Method Definition Index: 75317
+// Method Definition Index: 75375
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CPatternDoubleImpulsionU3Ed__4_System_IDisposable_Dispose_m906B679C74788EE7D11D10C4E89359F2136F73FB (U3CPatternDoubleImpulsionU3Ed__4_t1AF7C5854E28B009E4DC6F69E5E43E4EA14C8389* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 75318
+// Method Definition Index: 75376
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CPatternDoubleImpulsionU3Ed__4_MoveNext_mF5EC5F03C6FF45FF26F37C29F9346004034A06DC (U3CPatternDoubleImpulsionU3Ed__4_t1AF7C5854E28B009E4DC6F69E5E43E4EA14C8389* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11640,9 +11640,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CPatternDoubleImpulsionU3Ed__4_MoveNex
 IL_0010:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:64>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:64>
 		Handheld_Vibrate_m820B68A9A3A1C5C0173B99A94C2054778BC3A2F9(NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:65>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:65>
 		WaitForSecondsRealtime_tA8CE0AAB4B0C872B843E7973637037D17682BA01* L_3 = (WaitForSecondsRealtime_tA8CE0AAB4B0C872B843E7973637037D17682BA01*)il2cpp_codegen_object_new(WaitForSecondsRealtime_tA8CE0AAB4B0C872B843E7973637037D17682BA01_il2cpp_TypeInfo_var);
 		WaitForSecondsRealtime__ctor_mBFC1E4F0E042D5EC6E7EEB211A2FE5193A8F6D6F(L_3, (0.119999997f), NULL);
 		__this->___U3CU3E2__current = L_3;
@@ -11654,13 +11654,13 @@ IL_0010:
 IL_0035:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:66>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:66>
 		Handheld_Vibrate_m820B68A9A3A1C5C0173B99A94C2054778BC3A2F9(NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:70>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/RetourHaptique.cs:70>
 		return (bool)0;
 	}
 }
-// Method Definition Index: 75319
+// Method Definition Index: 75377
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CPatternDoubleImpulsionU3Ed__4_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m25DC284EAF507D003153DEA10352E158382B199A (U3CPatternDoubleImpulsionU3Ed__4_t1AF7C5854E28B009E4DC6F69E5E43E4EA14C8389* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11668,7 +11668,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CPatternDoubleImpulsionU3Ed_
 		return L_0;
 	}
 }
-// Method Definition Index: 75320
+// Method Definition Index: 75378
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CPatternDoubleImpulsionU3Ed__4_System_Collections_IEnumerator_Reset_mCBB709A3990A480B3F6A7C3D0A92F48F938D6F50 (U3CPatternDoubleImpulsionU3Ed__4_t1AF7C5854E28B009E4DC6F69E5E43E4EA14C8389* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11677,7 +11677,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CPatternDoubleImpulsionU3Ed__4_System_
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CPatternDoubleImpulsionU3Ed__4_System_Collections_IEnumerator_Reset_mCBB709A3990A480B3F6A7C3D0A92F48F938D6F50_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 75321
+// Method Definition Index: 75379
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CPatternDoubleImpulsionU3Ed__4_System_Collections_IEnumerator_get_Current_mB06600AB87014E9ACDC54FA10FDF1B025C307336 (U3CPatternDoubleImpulsionU3Ed__4_t1AF7C5854E28B009E4DC6F69E5E43E4EA14C8389* __this, const RuntimeMethod* method) 
 {
 	{
@@ -11693,7 +11693,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CPatternDoubleImpulsionU3Ed_
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 75322
+// Method Definition Index: 75380
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SecousseEcran_Awake_mD719625E8AA3B245DBDA7BED63EB9677D9A41447 (SecousseEcran_tF70610368D0C402C353F61AE1A8CD5BA869E84A3* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11703,7 +11703,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SecousseEcran_Awake_mD719625E8AA3B245DBD
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:32>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:32>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_0 = __this->___cible;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -11714,7 +11714,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SecousseEcran_Awake_mD719625E8AA3B245DBD
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:33>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:33>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_2;
 		L_2 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
 		__this->___cible = L_2;
@@ -11723,26 +11723,26 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SecousseEcran_Awake_mD719625E8AA3B245DBD
 
 IL_001a:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:34>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:34>
 		return;
 	}
 }
-// Method Definition Index: 75323
+// Method Definition Index: 75381
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SecousseEcran_Secouer_mB7F1B757199B7110DABEAF90148E1007A163BE3E (SecousseEcran_tF70610368D0C402C353F61AE1A8CD5BA869E84A3* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:43>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:43>
 		float L_0 = __this->___durUE9e;
 		float L_1 = __this->___intensitUE9;
 		SecousseEcran_Secouer_mAB93C31A275A666710087B1F8287FE192897441D(__this, L_0, L_1, NULL);
 		return;
 	}
 }
-// Method Definition Index: 75324
+// Method Definition Index: 75382
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SecousseEcran_Secouer_mAB93C31A275A666710087B1F8287FE192897441D (SecousseEcran_tF70610368D0C402C353F61AE1A8CD5BA869E84A3* __this, float ___0_durUE9eS, float ___1_intensitUE9Px, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:50>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:50>
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_0 = __this->____coroutine;
 		if (!L_0)
 		{
@@ -11750,10 +11750,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SecousseEcran_Secouer_mAB93C31A275A66671
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:52>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:52>
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_1 = __this->____coroutine;
 		MonoBehaviour_StopCoroutine_mB0FC91BE84203BD8E360B3FBAE5B958B4C5ED22A(__this, L_1, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:53>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:53>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_2 = __this->___cible;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_3 = __this->____positionBase;
 		NullCheck(L_2);
@@ -11762,7 +11762,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SecousseEcran_Secouer_mAB93C31A275A66671
 
 IL_0025:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:56>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:56>
 		float L_4 = ___0_durUE9eS;
 		float L_5 = ___1_intensitUE9Px;
 		RuntimeObject* L_6;
@@ -11771,11 +11771,11 @@ IL_0025:
 		L_7 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_6, NULL);
 		__this->____coroutine = L_7;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____coroutine), (void*)L_7);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:57>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:57>
 		return;
 	}
 }
-// Method Definition Index: 75325
+// Method Definition Index: 75383
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* SecousseEcran_CoroutineSecousse_m5BBEE3EDFCB773928C6ED02CA16419ABE5B8517E (SecousseEcran_tF70610368D0C402C353F61AE1A8CD5BA869E84A3* __this, float ___0_durUE9eS, float ___1_intensitUE9Px, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -11802,13 +11802,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* SecousseEcran_CoroutineSecouss
 		return L_4;
 	}
 }
-// Method Definition Index: 75326
+// Method Definition Index: 75384
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SecousseEcran__ctor_mF0E235C67B96644F8CCE38B1D89D408BF85AE09F (SecousseEcran_tF70610368D0C402C353F61AE1A8CD5BA869E84A3* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:22>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:22>
 		__this->___durUE9e = (0.400000006f);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:25>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:25>
 		__this->___intensitUE9 = (18.0f);
 		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
 		return;
@@ -11822,7 +11822,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SecousseEcran__ctor_mF0E235C67B96644F8CC
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 75327
+// Method Definition Index: 75385
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CCoroutineSecousseU3Ed__11__ctor_m783D2012A7FDAF465009F1BAC095A232E4DE97AD (U3CCoroutineSecousseU3Ed__11_t83A5557C73E0021E3233E875B3A15562AC3CB2BC* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -11832,14 +11832,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CCoroutineSecousseU3Ed__11__ctor_m783D
 		return;
 	}
 }
-// Method Definition Index: 75328
+// Method Definition Index: 75386
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CCoroutineSecousseU3Ed__11_System_IDisposable_Dispose_m95AB5EB5128C692A3B43F06964712F06D87A9808 (U3CCoroutineSecousseU3Ed__11_t83A5557C73E0021E3233E875B3A15562AC3CB2BC* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 75329
+// Method Definition Index: 75387
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CCoroutineSecousseU3Ed__11_MoveNext_m8B039212EC4CA2434EA48863E26A239DC24E5A5C (U3CCoroutineSecousseU3Ed__11_t83A5557C73E0021E3233E875B3A15562AC3CB2BC* __this, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -11873,7 +11873,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CCoroutineSecousseU3Ed__11_MoveNext_m8
 IL_001a:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:63>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:63>
 		SecousseEcran_tF70610368D0C402C353F61AE1A8CD5BA869E84A3* L_4 = V_1;
 		SecousseEcran_tF70610368D0C402C353F61AE1A8CD5BA869E84A3* L_5 = V_1;
 		NullCheck(L_5);
@@ -11883,53 +11883,53 @@ IL_001a:
 		L_7 = Transform_get_localPosition_mA9C86B990DF0685EA1061A120218993FDCC60A95(L_6, NULL);
 		NullCheck(L_4);
 		L_4->____positionBase = L_7;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:67>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:67>
 		int32_t L_8;
 		L_8 = Screen_get_height_m01A3102DE71EE1FBEA51D09D6B0261CF864FE8F9(NULL);
 		V_2 = ((float)(((float)L_8)/(1920.0f)));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:68>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:68>
 		float L_9 = __this->___intensitUE9Px;
 		float L_10 = V_2;
 		__this->___U3CintensitUE9U3E5__2 = ((float)il2cpp_codegen_multiply(L_9, L_10));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:71>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:71>
 		float L_11;
 		L_11 = Random_Range_m5236C99A7D8AE6AC9190592DC66016652A2D2494((0.0f), (100.0f), NULL);
 		__this->___U3CoffsetXU3E5__3 = L_11;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:72>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:72>
 		float L_12;
 		L_12 = Random_Range_m5236C99A7D8AE6AC9190592DC66016652A2D2494((0.0f), (100.0f), NULL);
 		__this->___U3CoffsetYU3E5__4 = L_12;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:74>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:74>
 		__this->___U3CtU3E5__5 = (0.0f);
 		goto IL_015e;
 	}
 
 IL_0087:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:77>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:77>
 		float L_13 = __this->___U3CtU3E5__5;
 		float L_14;
 		L_14 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
 		__this->___U3CtU3E5__5 = ((float)il2cpp_codegen_add(L_13, L_14));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:80>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:80>
 		float L_15 = __this->___U3CtU3E5__5;
 		float L_16 = __this->___durUE9eS;
 		float L_17;
 		L_17 = Mathf_SmoothStep_mEFDC738EB0AA162D71013BDBBDD157B080A8E524_inline((0.0f), (1.0f), ((float)(L_15/L_16)), NULL);
 		V_3 = ((float)il2cpp_codegen_subtract((1.0f), L_17));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:83>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:83>
 		float L_18 = __this->___U3CoffsetXU3E5__3;
 		float L_19 = __this->___U3CtU3E5__5;
 		float L_20;
 		L_20 = Mathf_PerlinNoise_mAB0E53C29FE95469CF303364910AD0D8662A9A6A(((float)il2cpp_codegen_add(L_18, ((float)il2cpp_codegen_multiply(L_19, (22.0f))))), (0.0f), NULL);
 		V_4 = ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_subtract(L_20, (0.5f))), (2.0f)));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:84>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:84>
 		float L_21 = __this->___U3CoffsetYU3E5__4;
 		float L_22 = __this->___U3CtU3E5__5;
 		float L_23;
 		L_23 = Mathf_PerlinNoise_mAB0E53C29FE95469CF303364910AD0D8662A9A6A((0.0f), ((float)il2cpp_codegen_add(L_21, ((float)il2cpp_codegen_multiply(L_22, (22.0f))))), NULL);
 		V_5 = ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_subtract(L_23, (0.5f))), (2.0f)));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:86>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:86>
 		SecousseEcran_tF70610368D0C402C353F61AE1A8CD5BA869E84A3* L_24 = V_1;
 		NullCheck(L_24);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_25 = L_24->___cible;
@@ -11951,7 +11951,7 @@ IL_0087:
 		L_35 = Vector3_op_Addition_m78C0EC70CB66E8DCAC225743D82B268DAEE92067_inline(L_27, L_34, NULL);
 		NullCheck(L_25);
 		Transform_set_localPosition_mDE1C997F7D79C0885210B7732B4BA50EE7D73134(L_25, L_35, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:88>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:88>
 		__this->___U3CU3E2__current = NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)NULL);
 		__this->___U3CU3E1__state = 1;
@@ -11965,7 +11965,7 @@ IL_0157:
 
 IL_015e:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:75>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:75>
 		float L_36 = __this->___U3CtU3E5__5;
 		float L_37 = __this->___durUE9eS;
 		if ((((float)L_36) < ((float)L_37)))
@@ -11974,7 +11974,7 @@ IL_015e:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:91>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:91>
 		SecousseEcran_tF70610368D0C402C353F61AE1A8CD5BA869E84A3* L_38 = V_1;
 		NullCheck(L_38);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_39 = L_38->___cible;
@@ -11983,16 +11983,16 @@ IL_015e:
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_41 = L_40->____positionBase;
 		NullCheck(L_39);
 		Transform_set_localPosition_mDE1C997F7D79C0885210B7732B4BA50EE7D73134(L_39, L_41, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:92>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:92>
 		SecousseEcran_tF70610368D0C402C353F61AE1A8CD5BA869E84A3* L_42 = V_1;
 		NullCheck(L_42);
 		L_42->____coroutine = (Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&L_42->____coroutine), (void*)(Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B*)NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:93>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/SecousseEcran.cs:93>
 		return (bool)0;
 	}
 }
-// Method Definition Index: 75330
+// Method Definition Index: 75388
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CCoroutineSecousseU3Ed__11_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m901A2BCCB0E70963D3017ABA6FA8B75365131EF5 (U3CCoroutineSecousseU3Ed__11_t83A5557C73E0021E3233E875B3A15562AC3CB2BC* __this, const RuntimeMethod* method) 
 {
 	{
@@ -12000,7 +12000,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CCoroutineSecousseU3Ed__11_S
 		return L_0;
 	}
 }
-// Method Definition Index: 75331
+// Method Definition Index: 75389
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CCoroutineSecousseU3Ed__11_System_Collections_IEnumerator_Reset_mFC4D51DC2FBF59FE9713B8DC30D8680D710D250B (U3CCoroutineSecousseU3Ed__11_t83A5557C73E0021E3233E875B3A15562AC3CB2BC* __this, const RuntimeMethod* method) 
 {
 	{
@@ -12009,7 +12009,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CCoroutineSecousseU3Ed__11_System_Coll
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CCoroutineSecousseU3Ed__11_System_Collections_IEnumerator_Reset_mFC4D51DC2FBF59FE9713B8DC30D8680D710D250B_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 75332
+// Method Definition Index: 75390
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CCoroutineSecousseU3Ed__11_System_Collections_IEnumerator_get_Current_m7FD1C5A34799EDCED0DD84F05F931FEA297DE61A (U3CCoroutineSecousseU3Ed__11_t83A5557C73E0021E3233E875B3A15562AC3CB2BC* __this, const RuntimeMethod* method) 
 {
 	{
@@ -12025,34 +12025,34 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CCoroutineSecousseU3Ed__11_S
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 75333
+// Method Definition Index: 75391
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TamponCirculaireUI_Initialiser_mF186D8023BF26847B20305C9E28A5423B36DC7F6 (TamponCirculaireUI_tA86F60A1D383E68EB8ED9730B067CB7D82365DA6* __this, int32_t ___0_graine, float ___1_rayon, float ___2_epaisseur, float ___3_baveExt, float ___4_baveInt, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:39>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:39>
 		int32_t L_0 = ___0_graine;
 		__this->____graine = L_0;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:40>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:40>
 		float L_1 = ___1_rayon;
 		__this->____rayonBase = L_1;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:41>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:41>
 		float L_2 = ___2_epaisseur;
 		__this->____epaisseur = L_2;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:42>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:42>
 		float L_3 = ___3_baveExt;
 		__this->____baveExt = L_3;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:43>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:43>
 		float L_4 = ___4_baveInt;
 		__this->____baveInt = L_4;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:44>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:44>
 		VirtualActionInvoker1< bool >::Invoke(25, __this, (bool)0);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:45>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:45>
 		VirtualActionInvoker0::Invoke(28, __this);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:46>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:46>
 		return;
 	}
 }
-// Method Definition Index: 75334
+// Method Definition Index: 75392
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TamponCirculaireUI_OnPopulateMesh_m4D68166A5EC488D56669004C4A914DBEFE30C484 (TamponCirculaireUI_tA86F60A1D383E68EB8ED9730B067CB7D82365DA6* __this, VertexHelper_tB905FCB02AE67CBEE5F265FE37A5938FC5D136FE* ___0_vh, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12096,52 +12096,52 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TamponCirculaireUI_OnPopulateMesh_m4D681
 	memset((&V_25), 0, sizeof(V_25));
 	int32_t V_26 = 0;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:50>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:50>
 		VertexHelper_tB905FCB02AE67CBEE5F265FE37A5938FC5D136FE* L_0 = ___0_vh;
 		NullCheck(L_0);
 		VertexHelper_Clear_mB19E51AD5AF1C04CB2C6E6A272D032D651EC40F5(L_0, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:53>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:53>
 		int32_t L_1 = __this->____graine;
 		Random_t79716069EDE67D1D7734F60AE402D0CA3FB6B4C8* L_2 = (Random_t79716069EDE67D1D7734F60AE402D0CA3FB6B4C8*)il2cpp_codegen_object_new(Random_t79716069EDE67D1D7734F60AE402D0CA3FB6B4C8_il2cpp_TypeInfo_var);
 		Random__ctor_mFB386F0C0ED85F26CD069C3527052B81878A2F1E(L_2, L_1, NULL);
 		V_0 = L_2;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:54>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:54>
 		Random_t79716069EDE67D1D7734F60AE402D0CA3FB6B4C8* L_3 = V_0;
 		NullCheck(L_3);
 		double L_4;
 		L_4 = VirtualFuncInvoker0< double >::Invoke(8, L_3);
 		V_1 = ((float)((double)il2cpp_codegen_multiply(L_4, (100.0))));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:57>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:57>
 		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_5 = (SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C*)(SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C*)SZArrayNew(SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C_il2cpp_TypeInfo_var, (uint32_t)((int32_t)81));
 		V_2 = L_5;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:58>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:58>
 		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_6 = (SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C*)(SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C*)SZArrayNew(SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C_il2cpp_TypeInfo_var, (uint32_t)((int32_t)81));
 		V_3 = L_6;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:59>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:59>
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_7 = (BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4*)(BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4*)SZArrayNew(BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4_il2cpp_TypeInfo_var, (uint32_t)((int32_t)80));
 		V_4 = L_7;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:61>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:61>
 		V_6 = 0;
 		goto IL_00ec;
 	}
 
 IL_0045:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:63>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:63>
 		int32_t L_8 = V_6;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:64>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:64>
 		float L_9 = ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(((float)(((float)L_8)/(80.0f))), (3.14159274f))), (2.0f)));
 		float L_10;
 		L_10 = cosf(L_9);
 		float L_11 = __this->____freqNoise;
 		V_7 = ((float)il2cpp_codegen_multiply(L_10, L_11));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:65>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:65>
 		float L_12;
 		L_12 = sinf(L_9);
 		float L_13 = __this->____freqNoise;
 		V_8 = ((float)il2cpp_codegen_multiply(L_12, L_13));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:66>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:67>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:66>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:67>
 		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_14 = V_2;
 		int32_t L_15 = V_6;
 		float L_16 = __this->____rayonBase;
@@ -12153,9 +12153,9 @@ IL_0045:
 		float L_21 = __this->____baveExt;
 		NullCheck(L_14);
 		(L_14)->SetAt(static_cast<il2cpp_array_size_t>(L_15), (float)((float)il2cpp_codegen_add(L_16, ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_subtract(((float)il2cpp_codegen_multiply(L_20, (2.0f))), (1.0f))), L_21)))));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:68>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:69>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:70>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:68>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:69>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:70>
 		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_22 = V_3;
 		int32_t L_23 = V_6;
 		float L_24 = __this->____rayonBase;
@@ -12170,14 +12170,14 @@ IL_0045:
 		L_31 = Mathf_Max_mF5379E63D2BBAC76D090748695D833934F8AD051_inline((1.0f), ((float)il2cpp_codegen_add(((float)il2cpp_codegen_subtract(L_24, L_25)), ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_subtract(((float)il2cpp_codegen_multiply(L_29, (2.0f))), (1.0f))), L_30)))), NULL);
 		NullCheck(L_22);
 		(L_22)->SetAt(static_cast<il2cpp_array_size_t>(L_23), (float)L_31);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:61>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:61>
 		int32_t L_32 = V_6;
 		V_6 = ((int32_t)il2cpp_codegen_add(L_32, 1));
 	}
 
 IL_00ec:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:61>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:61>
 		int32_t L_33 = V_6;
 		if ((((int32_t)L_33) <= ((int32_t)((int32_t)80))))
 		{
@@ -12185,14 +12185,14 @@ IL_00ec:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:73>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:73>
 		V_9 = 0;
 		goto IL_0114;
 	}
 
 IL_00fa:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:74>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:74>
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_34 = V_4;
 		int32_t L_35 = V_9;
 		Random_t79716069EDE67D1D7734F60AE402D0CA3FB6B4C8* L_36 = V_0;
@@ -12202,14 +12202,14 @@ IL_00fa:
 		float L_38 = __this->____probGap;
 		NullCheck(L_34);
 		(L_34)->SetAt(static_cast<il2cpp_array_size_t>(L_35), (bool)((((double)L_37) < ((double)((double)L_38)))? 1 : 0));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:73>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:73>
 		int32_t L_39 = V_9;
 		V_9 = ((int32_t)il2cpp_codegen_add(L_39, 1));
 	}
 
 IL_0114:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:73>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:73>
 		int32_t L_40 = V_9;
 		if ((((int32_t)L_40) < ((int32_t)((int32_t)80))))
 		{
@@ -12217,20 +12217,20 @@ IL_0114:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:76>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:76>
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_41;
 		L_41 = VirtualFuncInvoker0< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(22, __this);
 		Color32_t73C5004937BF5BB8AD55323D51AAA40A898EF48B L_42;
 		L_42 = Color32_op_Implicit_m79AF5E0BDE9CE041CAC4D89CBFA66E71C6DD1B70_inline(L_41, NULL);
 		V_5 = L_42;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:79>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:79>
 		V_10 = 0;
 		goto IL_024f;
 	}
 
 IL_012f:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:81>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:81>
 		BooleanU5BU5D_tD317D27C31DB892BE79FAE3AEBC0B3FFB73DE9B4* L_43 = V_4;
 		int32_t L_44 = V_10;
 		NullCheck(L_43);
@@ -12242,13 +12242,13 @@ IL_012f:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:83>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:83>
 		int32_t L_47 = V_10;
 		V_11 = ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(((float)(((float)L_47)/(80.0f))), (3.14159274f))), (2.0f)));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:84>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:84>
 		int32_t L_48 = V_10;
 		V_12 = ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(((float)(((float)((int32_t)il2cpp_codegen_add(L_48, 1)))/(80.0f))), (3.14159274f))), (2.0f)));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:85>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:85>
 		float L_49 = V_11;
 		float L_50;
 		L_50 = cosf(L_49);
@@ -12256,7 +12256,7 @@ IL_012f:
 		float L_52;
 		L_52 = sinf(L_51);
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&V_13), L_50, L_52, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:86>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:86>
 		float L_53 = V_12;
 		float L_54;
 		L_54 = cosf(L_53);
@@ -12264,13 +12264,13 @@ IL_012f:
 		float L_56;
 		L_56 = sinf(L_55);
 		Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline((&V_14), L_54, L_56, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:88>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:88>
 		VertexHelper_tB905FCB02AE67CBEE5F265FE37A5938FC5D136FE* L_57 = ___0_vh;
 		NullCheck(L_57);
 		int32_t L_58;
 		L_58 = VertexHelper_get_currentVertCount_m45BFEBD6FCB7DF3BF9F76946D6002BDC58B173A4(L_57, NULL);
 		V_15 = L_58;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:89>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:89>
 		VertexHelper_tB905FCB02AE67CBEE5F265FE37A5938FC5D136FE* L_59 = ___0_vh;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_60 = V_13;
 		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_61 = V_2;
@@ -12289,7 +12289,7 @@ IL_012f:
 		L_69 = Vector4_op_Implicit_mB193CD8DA20DEB9E9F95CFEB5A2B1B9B3B7ECFEB_inline(L_68, NULL);
 		NullCheck(L_59);
 		VertexHelper_AddVert_m2187D76DC2CE7E9AF69280424660739858901287(L_59, L_66, L_67, L_69, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:90>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:90>
 		VertexHelper_tB905FCB02AE67CBEE5F265FE37A5938FC5D136FE* L_70 = ___0_vh;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_71 = V_13;
 		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_72 = V_3;
@@ -12308,7 +12308,7 @@ IL_012f:
 		L_80 = Vector4_op_Implicit_mB193CD8DA20DEB9E9F95CFEB5A2B1B9B3B7ECFEB_inline(L_79, NULL);
 		NullCheck(L_70);
 		VertexHelper_AddVert_m2187D76DC2CE7E9AF69280424660739858901287(L_70, L_77, L_78, L_80, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:91>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:91>
 		VertexHelper_tB905FCB02AE67CBEE5F265FE37A5938FC5D136FE* L_81 = ___0_vh;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_82 = V_14;
 		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_83 = V_2;
@@ -12327,7 +12327,7 @@ IL_012f:
 		L_91 = Vector4_op_Implicit_mB193CD8DA20DEB9E9F95CFEB5A2B1B9B3B7ECFEB_inline(L_90, NULL);
 		NullCheck(L_81);
 		VertexHelper_AddVert_m2187D76DC2CE7E9AF69280424660739858901287(L_81, L_88, L_89, L_91, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:92>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:92>
 		VertexHelper_tB905FCB02AE67CBEE5F265FE37A5938FC5D136FE* L_92 = ___0_vh;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_93 = V_14;
 		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_94 = V_3;
@@ -12346,14 +12346,14 @@ IL_012f:
 		L_102 = Vector4_op_Implicit_mB193CD8DA20DEB9E9F95CFEB5A2B1B9B3B7ECFEB_inline(L_101, NULL);
 		NullCheck(L_92);
 		VertexHelper_AddVert_m2187D76DC2CE7E9AF69280424660739858901287(L_92, L_99, L_100, L_102, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:94>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:94>
 		VertexHelper_tB905FCB02AE67CBEE5F265FE37A5938FC5D136FE* L_103 = ___0_vh;
 		int32_t L_104 = V_15;
 		int32_t L_105 = V_15;
 		int32_t L_106 = V_15;
 		NullCheck(L_103);
 		VertexHelper_AddTriangle_mBA2504734E550C672A33168BE119D76D92C788A4(L_103, L_104, ((int32_t)il2cpp_codegen_add(L_105, 1)), ((int32_t)il2cpp_codegen_add(L_106, 2)), NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:95>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:95>
 		VertexHelper_tB905FCB02AE67CBEE5F265FE37A5938FC5D136FE* L_107 = ___0_vh;
 		int32_t L_108 = V_15;
 		int32_t L_109 = V_15;
@@ -12364,14 +12364,14 @@ IL_012f:
 
 IL_0249:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:79>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:79>
 		int32_t L_111 = V_10;
 		V_10 = ((int32_t)il2cpp_codegen_add(L_111, 1));
 	}
 
 IL_024f:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:79>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:79>
 		int32_t L_112 = V_10;
 		if ((((int32_t)L_112) < ((int32_t)((int32_t)80))))
 		{
@@ -12379,15 +12379,15 @@ IL_024f:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:99>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:99>
 		V_16 = 0;
 		goto IL_03ca;
 	}
 
 IL_0260:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:102>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:103>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:102>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:103>
 		int32_t L_113 = V_16;
 		int32_t L_114 = __this->____nbGouttes;
 		Random_t79716069EDE67D1D7734F60AE402D0CA3FB6B4C8* L_115 = V_0;
@@ -12395,7 +12395,7 @@ IL_0260:
 		double L_116;
 		L_116 = VirtualFuncInvoker0< double >::Invoke(8, L_115);
 		V_17 = ((float)il2cpp_codegen_add(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(((float)(((float)L_113)/((float)L_114))), (3.14159274f))), (2.0f))), ((float)((double)il2cpp_codegen_subtract(((double)il2cpp_codegen_multiply(L_116, (1.3999999999999999))), (0.69999999999999996))))));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:105>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:105>
 		float L_117 = __this->____rayonBase;
 		Random_t79716069EDE67D1D7734F60AE402D0CA3FB6B4C8* L_118 = V_0;
 		NullCheck(L_118);
@@ -12403,14 +12403,14 @@ IL_0260:
 		L_119 = VirtualFuncInvoker0< double >::Invoke(8, L_118);
 		float L_120 = __this->____baveExt;
 		V_18 = ((float)il2cpp_codegen_add(L_117, ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(((float)((double)il2cpp_codegen_subtract(((double)il2cpp_codegen_multiply(L_119, (2.0))), (1.0)))), L_120)), (0.5f)))));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:106>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:106>
 		float L_121 = __this->____tailleGoutte;
 		Random_t79716069EDE67D1D7734F60AE402D0CA3FB6B4C8* L_122 = V_0;
 		NullCheck(L_122);
 		double L_123;
 		L_123 = VirtualFuncInvoker0< double >::Invoke(8, L_122);
 		V_19 = ((float)il2cpp_codegen_multiply(L_121, ((float)il2cpp_codegen_add((0.400000006f), ((float)il2cpp_codegen_multiply(((float)L_123), (1.29999995f)))))));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:108>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:108>
 		float L_124 = V_17;
 		float L_125;
 		L_125 = cosf(L_124);
@@ -12424,13 +12424,13 @@ IL_0260:
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_130;
 		L_130 = Vector2_op_Multiply_m2D984B613020089BF5165BA4CA10988E2DC771FE_inline(L_128, L_129, NULL);
 		V_20 = L_130;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:109>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:109>
 		VertexHelper_tB905FCB02AE67CBEE5F265FE37A5938FC5D136FE* L_131 = ___0_vh;
 		NullCheck(L_131);
 		int32_t L_132;
 		L_132 = VertexHelper_get_currentVertCount_m45BFEBD6FCB7DF3BF9F76946D6002BDC58B173A4(L_131, NULL);
 		V_21 = L_132;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:111>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:111>
 		VertexHelper_tB905FCB02AE67CBEE5F265FE37A5938FC5D136FE* L_133 = ___0_vh;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_134 = V_20;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_135;
@@ -12442,24 +12442,24 @@ IL_0260:
 		L_138 = Vector4_op_Implicit_mB193CD8DA20DEB9E9F95CFEB5A2B1B9B3B7ECFEB_inline(L_137, NULL);
 		NullCheck(L_133);
 		VertexHelper_AddVert_m2187D76DC2CE7E9AF69280424660739858901287(L_133, L_135, L_136, L_138, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:113>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:113>
 		V_22 = 0;
 		goto IL_0395;
 	}
 
 IL_0324:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:115>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:115>
 		int32_t L_139 = V_22;
 		V_23 = ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(((float)(((float)L_139)/(7.0f))), (3.14159274f))), (2.0f)));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:117>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:117>
 		float L_140 = V_19;
 		Random_t79716069EDE67D1D7734F60AE402D0CA3FB6B4C8* L_141 = V_0;
 		NullCheck(L_141);
 		double L_142;
 		L_142 = VirtualFuncInvoker0< double >::Invoke(8, L_141);
 		V_24 = ((float)il2cpp_codegen_multiply(L_140, ((float)il2cpp_codegen_add((0.5f), ((float)il2cpp_codegen_multiply(((float)L_142), (1.10000002f)))))));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:118>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:118>
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_143 = V_20;
 		float L_144 = V_23;
 		float L_145;
@@ -12476,7 +12476,7 @@ IL_0324:
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_151;
 		L_151 = Vector2_op_Addition_m8136742CE6EE33BA4EB81C5F584678455917D2AE_inline(L_143, L_150, NULL);
 		V_25 = L_151;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:119>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:119>
 		VertexHelper_tB905FCB02AE67CBEE5F265FE37A5938FC5D136FE* L_152 = ___0_vh;
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_153 = V_25;
 		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_154;
@@ -12488,14 +12488,14 @@ IL_0324:
 		L_157 = Vector4_op_Implicit_mB193CD8DA20DEB9E9F95CFEB5A2B1B9B3B7ECFEB_inline(L_156, NULL);
 		NullCheck(L_152);
 		VertexHelper_AddVert_m2187D76DC2CE7E9AF69280424660739858901287(L_152, L_154, L_155, L_157, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:113>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:113>
 		int32_t L_158 = V_22;
 		V_22 = ((int32_t)il2cpp_codegen_add(L_158, 1));
 	}
 
 IL_0395:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:113>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:113>
 		int32_t L_159 = V_22;
 		if ((((int32_t)L_159) < ((int32_t)7)))
 		{
@@ -12503,14 +12503,14 @@ IL_0395:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:123>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:123>
 		V_26 = 0;
 		goto IL_03bf;
 	}
 
 IL_039f:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:124>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:124>
 		VertexHelper_tB905FCB02AE67CBEE5F265FE37A5938FC5D136FE* L_160 = ___0_vh;
 		int32_t L_161 = V_21;
 		int32_t L_162 = V_21;
@@ -12519,14 +12519,14 @@ IL_039f:
 		int32_t L_165 = V_26;
 		NullCheck(L_160);
 		VertexHelper_AddTriangle_mBA2504734E550C672A33168BE119D76D92C788A4(L_160, L_161, ((int32_t)il2cpp_codegen_add(((int32_t)il2cpp_codegen_add(L_162, L_163)), 1)), ((int32_t)il2cpp_codegen_add(((int32_t)il2cpp_codegen_add(L_164, ((int32_t)(((int32_t)il2cpp_codegen_add(L_165, 1))%7)))), 1)), NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:123>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:123>
 		int32_t L_166 = V_26;
 		V_26 = ((int32_t)il2cpp_codegen_add(L_166, 1));
 	}
 
 IL_03bf:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:123>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:123>
 		int32_t L_167 = V_26;
 		if ((((int32_t)L_167) < ((int32_t)7)))
 		{
@@ -12534,14 +12534,14 @@ IL_03bf:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:99>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:99>
 		int32_t L_168 = V_16;
 		V_16 = ((int32_t)il2cpp_codegen_add(L_168, 1));
 	}
 
 IL_03ca:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:99>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:99>
 		int32_t L_169 = V_16;
 		int32_t L_170 = __this->____nbGouttes;
 		if ((((int32_t)L_169) < ((int32_t)L_170)))
@@ -12550,31 +12550,31 @@ IL_03ca:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:126>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:126>
 		return;
 	}
 }
-// Method Definition Index: 75335
+// Method Definition Index: 75393
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TamponCirculaireUI__ctor_m41B6483DABC025E653B845DB2017669C87224C59 (TamponCirculaireUI_tA86F60A1D383E68EB8ED9730B067CB7D82365DA6* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:22>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:22>
 		__this->____graine = ((int32_t)42);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:23>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:23>
 		__this->____rayonBase = (80.0f);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:24>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:24>
 		__this->____epaisseur = (20.0f);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:25>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:25>
 		__this->____baveExt = (15.0f);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:26>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:26>
 		__this->____baveInt = (8.0f);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:27>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:27>
 		__this->____freqNoise = (2.5999999f);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:28>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:28>
 		__this->____nbGouttes = ((int32_t)9);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:29>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:29>
 		__this->____tailleGoutte = (9.0f);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:30>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/TamponCirculaireUI.cs:30>
 		__this->____probGap = (0.0700000003f);
 		MaskableGraphic__ctor_mD2E256F950AAAE0E2445971361B5C54D2066E4C2(__this, NULL);
 		return;
@@ -12588,16 +12588,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void TamponCirculaireUI__ctor_m41B6483DABC025
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 75336
+// Method Definition Index: 75394
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float VignetteGameOver_get_AlphaInitial_m0D68CA7288F0CCFDCD0F2E0D0BEFBCFD355885D7 (VignetteGameOver_t3C351D02D8FE4000F381B6F73A66B7A0903C0FE5* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:58>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:58>
 		float L_0 = __this->___alphaInitial;
 		return L_0;
 	}
 }
-// Method Definition Index: 75337
+// Method Definition Index: 75395
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VignetteGameOver_Awake_mC3D675C5DB8784D211088BB221FB29DDAE0C048D (VignetteGameOver_t3C351D02D8FE4000F381B6F73A66B7A0903C0FE5* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12614,28 +12614,28 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VignetteGameOver_Awake_mC3D675C5DB8784D2
 	float G_B3_0 = 0.0f;
 	Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* G_B3_1 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:65>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:65>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0;
 		L_0 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
 		int32_t L_1;
 		L_1 = LayerMask_NameToLayer_m2764C530EDA9EC3226A36E3FD43E020B413AF139(_stringLiteralB93F5E13E0AD8E8044D7D80E771F9A55F393D87F, NULL);
 		NullCheck(L_0);
 		GameObject_set_layer_m6E1AF478A2CC86BD222B96317BEB78B7D89B18D0(L_0, L_1, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:67>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:67>
 		RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* L_2;
 		L_2 = Component_GetComponent_TisRawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179_m56775E1085C53732A0C2D919F000176C7BC11C3D(__this, Component_GetComponent_TisRawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179_m56775E1085C53732A0C2D919F000176C7BC11C3D_RuntimeMethod_var);
 		__this->____rawImage = L_2;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____rawImage), (void*)L_2);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:68>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:68>
 		RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* L_3 = __this->____rawImage;
 		NullCheck(L_3);
 		VirtualActionInvoker1< bool >::Invoke(25, L_3, (bool)0);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:70>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:70>
 		VignetteGameOver_GenUE9rerTexture_m9FC9D8D0BE2B0C27215EE778F8892C3A63A303C6(__this, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:73>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:73>
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_4 = __this->___couleurVignette;
 		V_0 = L_4;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:74>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:74>
 		bool L_5 = __this->___afficherAuDUE9marrage;
 		if (L_5)
 		{
@@ -12659,16 +12659,16 @@ IL_004b:
 IL_0050:
 	{
 		G_B3_1->___a = G_B3_0;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:75>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:75>
 		RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* L_6 = __this->____rawImage;
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_7 = V_0;
 		NullCheck(L_6);
 		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_6, L_7);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:76>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:76>
 		return;
 	}
 }
-// Method Definition Index: 75338
+// Method Definition Index: 75396
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VignetteGameOver_OnValidate_m2406985E905221E0161D32E0F348DF1B54AEAA42 (VignetteGameOver_t3C351D02D8FE4000F381B6F73A66B7A0903C0FE5* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12680,7 +12680,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VignetteGameOver_OnValidate_m2406985E905
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:80>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:80>
 		il2cpp_codegen_runtime_class_init_inline(Application_tDB03BE91CDF0ACA614A5E0B67CFB77C44EB19B21_il2cpp_TypeInfo_var);
 		bool L_0;
 		L_0 = Application_get_isPlaying_m25B0ABDFEF54F5370CD3F263A813540843D00F34(NULL);
@@ -12690,13 +12690,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VignetteGameOver_OnValidate_m2406985E905
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:80>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:80>
 		return;
 	}
 
 IL_0008:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:81>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:81>
 		RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* L_1 = __this->____rawImage;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_2;
@@ -12707,7 +12707,7 @@ IL_0008:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:81>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:81>
 		RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* L_3;
 		L_3 = Component_GetComponent_TisRawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179_m56775E1085C53732A0C2D919F000176C7BC11C3D(__this, Component_GetComponent_TisRawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179_m56775E1085C53732A0C2D919F000176C7BC11C3D_RuntimeMethod_var);
 		__this->____rawImage = L_3;
@@ -12716,13 +12716,13 @@ IL_0008:
 
 IL_0022:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:82>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:82>
 		VignetteGameOver_GenUE9rerTexture_m9FC9D8D0BE2B0C27215EE778F8892C3A63A303C6(__this, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:83>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:83>
 		return;
 	}
 }
-// Method Definition Index: 75339
+// Method Definition Index: 75397
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VignetteGameOver_OnDestroy_mD2264C45584BB06ECA6CC26BA3647C43538D815A (VignetteGameOver_t3C351D02D8FE4000F381B6F73A66B7A0903C0FE5* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12732,7 +12732,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VignetteGameOver_OnDestroy_mD2264C45584B
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:87>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:87>
 		Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* L_0 = __this->____texture;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -12743,7 +12743,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VignetteGameOver_OnDestroy_mD2264C45584B
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:88>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:88>
 		Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* L_2 = __this->____texture;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB(L_2, NULL);
@@ -12751,11 +12751,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VignetteGameOver_OnDestroy_mD2264C45584B
 
 IL_0019:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:89>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:89>
 		return;
 	}
 }
-// Method Definition Index: 75340
+// Method Definition Index: 75398
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* VignetteGameOver_AnimerApparition_m7632B2443C62F693D0533C73B5178415C0E740F0 (VignetteGameOver_t3C351D02D8FE4000F381B6F73A66B7A0903C0FE5* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12774,11 +12774,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* VignetteGameOver_AnimerApparit
 		return L_1;
 	}
 }
-// Method Definition Index: 75341
+// Method Definition Index: 75399
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VignetteGameOver_AnimerVersAlpha_mA1C19B48E0F3636705DC3679E3ED704C4AA3E5F4 (VignetteGameOver_t3C351D02D8FE4000F381B6F73A66B7A0903C0FE5* __this, float ___0_alphaTarget, float ___1_durUE9e, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:107>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:107>
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_0 = __this->____coroutineEnCours;
 		if (!L_0)
 		{
@@ -12786,14 +12786,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VignetteGameOver_AnimerVersAlpha_mA1C19B
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:108>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:108>
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_1 = __this->____coroutineEnCours;
 		MonoBehaviour_StopCoroutine_mB0FC91BE84203BD8E360B3FBAE5B958B4C5ED22A(__this, L_1, NULL);
 	}
 
 IL_0014:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:109>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:109>
 		float L_2 = ___0_alphaTarget;
 		float L_3;
 		L_3 = Mathf_Clamp01_mA7E048DBDA832D399A581BE4D6DED9FA44CE0F14_inline(L_2, NULL);
@@ -12804,11 +12804,11 @@ IL_0014:
 		L_6 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_5, NULL);
 		__this->____coroutineEnCours = L_6;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____coroutineEnCours), (void*)L_6);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:110>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:110>
 		return;
 	}
 }
-// Method Definition Index: 75342
+// Method Definition Index: 75400
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* VignetteGameOver_AnimerDisparition_m337C2C64AC51FF32CD0C13DF22386B70D47BD277 (VignetteGameOver_t3C351D02D8FE4000F381B6F73A66B7A0903C0FE5* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12827,7 +12827,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* VignetteGameOver_AnimerDispari
 		return L_1;
 	}
 }
-// Method Definition Index: 75343
+// Method Definition Index: 75401
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VignetteGameOver_GenUE9rerTexture_m9FC9D8D0BE2B0C27215EE778F8892C3A63A303C6 (VignetteGameOver_t3C351D02D8FE4000F381B6F73A66B7A0903C0FE5* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -12848,7 +12848,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VignetteGameOver_GenUE9rerTexture_m9FC9D
 	float V_7 = 0.0f;
 	float V_8 = 0.0f;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:123>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:123>
 		Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* L_0 = __this->____texture;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -12859,7 +12859,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VignetteGameOver_GenUE9rerTexture_m9FC9D
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:124>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:124>
 		Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* L_2 = __this->____texture;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Object_Destroy_mE97D0A766419A81296E8D4E5C23D01D3FE91ACBB(L_2, NULL);
@@ -12867,16 +12867,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VignetteGameOver_GenUE9rerTexture_m9FC9D
 
 IL_0019:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:126>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:126>
 		int32_t L_3 = __this->___rUE9solutionTexture;
 		int32_t L_4;
 		L_4 = Mathf_Max_m7FA442918DE37E3A00106D1F2E789D65829792B8_inline(((int32_t)64), L_3, NULL);
 		V_0 = L_4;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:127>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:128>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:129>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:130>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:131>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:127>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:128>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:129>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:130>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:131>
 		int32_t L_5 = V_0;
 		int32_t L_6 = V_0;
 		Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* L_7 = (Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4*)il2cpp_codegen_object_new(Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4_il2cpp_TypeInfo_var);
@@ -12889,38 +12889,38 @@ IL_0019:
 		Texture_set_filterMode_mE423E58C0C16D059EA62BA87AD70F44AEA50CCC9(L_9, 1, NULL);
 		__this->____texture = L_9;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____texture), (void*)L_9);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:133>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:133>
 		int32_t L_10 = V_0;
 		int32_t L_11 = V_0;
 		ColorU5BU5D_t612261CF293F6FFC3D80AB52259FF0DC2B2CC389* L_12 = (ColorU5BU5D_t612261CF293F6FFC3D80AB52259FF0DC2B2CC389*)(ColorU5BU5D_t612261CF293F6FFC3D80AB52259FF0DC2B2CC389*)SZArrayNew(ColorU5BU5D_t612261CF293F6FFC3D80AB52259FF0DC2B2CC389_il2cpp_TypeInfo_var, (uint32_t)((int32_t)il2cpp_codegen_multiply(L_10, L_11)));
 		V_1 = L_12;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:134>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:134>
 		int32_t L_13 = V_0;
 		V_2 = ((float)((1.0f)/((float)il2cpp_codegen_multiply(((float)L_13), (0.5f)))));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:136>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:136>
 		V_3 = 0;
 		goto IL_00fa;
 	}
 
 IL_0063:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:138>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:138>
 		V_4 = 0;
 		goto IL_00ee;
 	}
 
 IL_006b:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:141>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:141>
 		int32_t L_14 = V_4;
 		int32_t L_15 = V_0;
 		float L_16 = V_2;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:142>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:142>
 		int32_t L_17 = V_3;
 		int32_t L_18 = V_0;
 		float L_19 = V_2;
 		V_5 = ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_subtract(((float)L_17), ((float)il2cpp_codegen_multiply(((float)L_18), (0.5f))))), L_19));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:146>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:146>
 		float L_20 = ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_subtract(((float)L_14), ((float)il2cpp_codegen_multiply(((float)L_15), (0.5f))))), L_16));
 		float L_21 = V_5;
 		float L_22 = V_5;
@@ -12929,21 +12929,21 @@ IL_006b:
 		float L_24;
 		L_24 = Mathf_Clamp01_mA7E048DBDA832D399A581BE4D6DED9FA44CE0F14_inline(((float)(L_23/(1.41421354f))), NULL);
 		V_6 = L_24;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:147>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:147>
 		AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354* L_25 = __this->___courbeFalloff;
 		float L_26 = V_6;
 		NullCheck(L_25);
 		float L_27;
 		L_27 = AnimationCurve_Evaluate_m50B857043DE251A186032ADBCBB4CEF817F4EE3C(L_25, L_26, NULL);
 		V_7 = L_27;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:148>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:148>
 		float L_28 = __this->___intensitUE9Centre;
 		float L_29 = __this->___intensitUE9Bords;
 		float L_30 = V_7;
 		float L_31;
 		L_31 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_28, L_29, L_30, NULL);
 		V_8 = L_31;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:151>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:151>
 		ColorU5BU5D_t612261CF293F6FFC3D80AB52259FF0DC2B2CC389* L_32 = V_1;
 		int32_t L_33 = V_3;
 		int32_t L_34 = V_0;
@@ -12954,14 +12954,14 @@ IL_006b:
 		Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline((&L_37), (1.0f), (1.0f), (1.0f), L_36, NULL);
 		NullCheck(L_32);
 		(L_32)->SetAt(static_cast<il2cpp_array_size_t>(((int32_t)il2cpp_codegen_add(((int32_t)il2cpp_codegen_multiply(L_33, L_34)), L_35))), (Color_tD001788D726C3A7F1379BEED0260B9591F440C1F)L_37);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:138>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:138>
 		int32_t L_38 = V_4;
 		V_4 = ((int32_t)il2cpp_codegen_add(L_38, 1));
 	}
 
 IL_00ee:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:138>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:138>
 		int32_t L_39 = V_4;
 		int32_t L_40 = V_0;
 		if ((((int32_t)L_39) < ((int32_t)L_40)))
@@ -12970,14 +12970,14 @@ IL_00ee:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:136>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:136>
 		int32_t L_41 = V_3;
 		V_3 = ((int32_t)il2cpp_codegen_add(L_41, 1));
 	}
 
 IL_00fa:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:136>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:136>
 		int32_t L_42 = V_3;
 		int32_t L_43 = V_0;
 		if ((((int32_t)L_42) < ((int32_t)L_43)))
@@ -12986,16 +12986,16 @@ IL_00fa:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:155>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:155>
 		Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* L_44 = __this->____texture;
 		ColorU5BU5D_t612261CF293F6FFC3D80AB52259FF0DC2B2CC389* L_45 = V_1;
 		NullCheck(L_44);
 		Texture2D_SetPixels_mAE0CDFA15FA96F840D7FFADC31405D8AF20D9073(L_44, L_45, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:156>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:156>
 		Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* L_46 = __this->____texture;
 		NullCheck(L_46);
 		Texture2D_Apply_mCC369BCAB2D3AD3EE50EE01DA67AF227865FA2B3(L_46, (bool)0, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:158>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:158>
 		RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* L_47 = __this->____rawImage;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_48;
@@ -13006,7 +13006,7 @@ IL_00fa:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:159>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:159>
 		RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* L_49 = __this->____rawImage;
 		Texture2D_tE6505BC111DD8A424A9DBE8E05D7D09E11FFFCF4* L_50 = __this->____texture;
 		NullCheck(L_49);
@@ -13015,11 +13015,11 @@ IL_00fa:
 
 IL_0138:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:160>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:160>
 		return;
 	}
 }
-// Method Definition Index: 75344
+// Method Definition Index: 75402
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* VignetteGameOver_FaderVers_m252463ED8BD5E28BDD34562CBEE74E7C388F0784 (VignetteGameOver_t3C351D02D8FE4000F381B6F73A66B7A0903C0FE5* __this, float ___0_alphaTarget, float ___1_durUE9e, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13046,7 +13046,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* VignetteGameOver_FaderVers_m25
 		return L_4;
 	}
 }
-// Method Definition Index: 75345
+// Method Definition Index: 75403
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* VignetteGameOver_FadeCoroutine_m2794E7C3BFBEE97140362D0DBEBCD049DDFEAD14 (VignetteGameOver_t3C351D02D8FE4000F381B6F73A66B7A0903C0FE5* __this, float ___0_alphaTarget, float ___1_durUE9e, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13073,30 +13073,30 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* VignetteGameOver_FadeCoroutine
 		return L_4;
 	}
 }
-// Method Definition Index: 75346
+// Method Definition Index: 75404
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VignetteGameOver__ctor_mBD29BCA7C0A7B1BFF25C161A4C5B757FE57911DA (VignetteGameOver_t3C351D02D8FE4000F381B6F73A66B7A0903C0FE5* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:20>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:20>
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_0;
 		L_0 = Color_get_black_mB50217951591A045844C61E7FF31EEE3FEF16737_inline(NULL);
 		__this->___couleurVignette = L_0;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:23>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:23>
 		__this->___intensitUE9Centre = (0.0500000007f);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:26>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:26>
 		__this->___intensitUE9Bords = (0.850000024f);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:29>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:29>
 		AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354* L_1;
 		L_1 = AnimationCurve_EaseInOut_m01DD06E6C8962F8F62F293C9EAE491C3D3F2CAF3((0.0f), (0.0f), (1.0f), (1.0f), NULL);
 		__this->___courbeFalloff = L_1;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___courbeFalloff), (void*)L_1);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:34>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:34>
 		__this->___rUE9solutionTexture = ((int32_t)256);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:39>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:39>
 		__this->___alphaInitial = (0.300000012f);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:42>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:42>
 		__this->___durUE9eApparition = (1.20000005f);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:45>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:45>
 		__this->___durUE9eDisparition = (0.600000024f);
 		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
 		return;
@@ -13110,7 +13110,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VignetteGameOver__ctor_mBD29BCA7C0A7B1BF
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 75347
+// Method Definition Index: 75405
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAnimerApparitionU3Ed__18__ctor_m559A1FC5C440CFAD12A488EF2B3576C141465C37 (U3CAnimerApparitionU3Ed__18_t930E4A96148B1FD6F1BCAD14225BAB026BBB1119* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -13120,14 +13120,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAnimerApparitionU3Ed__18__ctor_m559A1
 		return;
 	}
 }
-// Method Definition Index: 75348
+// Method Definition Index: 75406
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAnimerApparitionU3Ed__18_System_IDisposable_Dispose_m3ED176C934ABA2969CD63FA17D17919D11D76685 (U3CAnimerApparitionU3Ed__18_t930E4A96148B1FD6F1BCAD14225BAB026BBB1119* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 75349
+// Method Definition Index: 75407
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CAnimerApparitionU3Ed__18_MoveNext_m2735A32DE8544269D39820F2CF2812330F6E7F2E (U3CAnimerApparitionU3Ed__18_t930E4A96148B1FD6F1BCAD14225BAB026BBB1119* __this, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -13157,7 +13157,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CAnimerApparitionU3Ed__18_MoveNext_m27
 IL_0017:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:98>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:98>
 		VignetteGameOver_t3C351D02D8FE4000F381B6F73A66B7A0903C0FE5* L_4 = V_1;
 		VignetteGameOver_t3C351D02D8FE4000F381B6F73A66B7A0903C0FE5* L_5 = V_1;
 		NullCheck(L_5);
@@ -13177,11 +13177,11 @@ IL_0017:
 IL_003f:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:99>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:99>
 		return (bool)0;
 	}
 }
-// Method Definition Index: 75350
+// Method Definition Index: 75408
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CAnimerApparitionU3Ed__18_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m9AB945EA38E1645BA632C53C3610000A5FCCAF34 (U3CAnimerApparitionU3Ed__18_t930E4A96148B1FD6F1BCAD14225BAB026BBB1119* __this, const RuntimeMethod* method) 
 {
 	{
@@ -13189,7 +13189,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CAnimerApparitionU3Ed__18_Sy
 		return L_0;
 	}
 }
-// Method Definition Index: 75351
+// Method Definition Index: 75409
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAnimerApparitionU3Ed__18_System_Collections_IEnumerator_Reset_m5BFFB7609F4654BD3F783566459F3632B09D4D42 (U3CAnimerApparitionU3Ed__18_t930E4A96148B1FD6F1BCAD14225BAB026BBB1119* __this, const RuntimeMethod* method) 
 {
 	{
@@ -13198,7 +13198,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAnimerApparitionU3Ed__18_System_Colle
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CAnimerApparitionU3Ed__18_System_Collections_IEnumerator_Reset_m5BFFB7609F4654BD3F783566459F3632B09D4D42_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 75352
+// Method Definition Index: 75410
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CAnimerApparitionU3Ed__18_System_Collections_IEnumerator_get_Current_m68F28DA8DB1F09BC0C758CBC84A472B19A27850D (U3CAnimerApparitionU3Ed__18_t930E4A96148B1FD6F1BCAD14225BAB026BBB1119* __this, const RuntimeMethod* method) 
 {
 	{
@@ -13214,7 +13214,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CAnimerApparitionU3Ed__18_Sy
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 75353
+// Method Definition Index: 75411
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAnimerDisparitionU3Ed__20__ctor_m29B761508BBB37D3836BD16DEBA6086012DEFE39 (U3CAnimerDisparitionU3Ed__20_t0A566AB07C5838A8C74E58F9A3C4F522BFF7FEA0* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -13224,14 +13224,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAnimerDisparitionU3Ed__20__ctor_m29B7
 		return;
 	}
 }
-// Method Definition Index: 75354
+// Method Definition Index: 75412
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAnimerDisparitionU3Ed__20_System_IDisposable_Dispose_mFF3910A8AF57EDA01D8B0171C224E38A2FA07D2F (U3CAnimerDisparitionU3Ed__20_t0A566AB07C5838A8C74E58F9A3C4F522BFF7FEA0* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 75355
+// Method Definition Index: 75413
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CAnimerDisparitionU3Ed__20_MoveNext_m1B76D3A3A0982442327C0A2BFE2696EC1F89BCE8 (U3CAnimerDisparitionU3Ed__20_t0A566AB07C5838A8C74E58F9A3C4F522BFF7FEA0* __this, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -13261,7 +13261,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CAnimerDisparitionU3Ed__20_MoveNext_m1
 IL_0017:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:115>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:115>
 		VignetteGameOver_t3C351D02D8FE4000F381B6F73A66B7A0903C0FE5* L_4 = V_1;
 		VignetteGameOver_t3C351D02D8FE4000F381B6F73A66B7A0903C0FE5* L_5 = V_1;
 		NullCheck(L_5);
@@ -13278,11 +13278,11 @@ IL_0017:
 IL_003e:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:116>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:116>
 		return (bool)0;
 	}
 }
-// Method Definition Index: 75356
+// Method Definition Index: 75414
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CAnimerDisparitionU3Ed__20_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m461C423CE89CE26FD382CCCA7BACA3D8C0B8FF84 (U3CAnimerDisparitionU3Ed__20_t0A566AB07C5838A8C74E58F9A3C4F522BFF7FEA0* __this, const RuntimeMethod* method) 
 {
 	{
@@ -13290,7 +13290,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CAnimerDisparitionU3Ed__20_S
 		return L_0;
 	}
 }
-// Method Definition Index: 75357
+// Method Definition Index: 75415
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAnimerDisparitionU3Ed__20_System_Collections_IEnumerator_Reset_mE3F951B56C69BE94699B9F548DDA2CA3993D7DE9 (U3CAnimerDisparitionU3Ed__20_t0A566AB07C5838A8C74E58F9A3C4F522BFF7FEA0* __this, const RuntimeMethod* method) 
 {
 	{
@@ -13299,7 +13299,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CAnimerDisparitionU3Ed__20_System_Coll
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CAnimerDisparitionU3Ed__20_System_Collections_IEnumerator_Reset_mE3F951B56C69BE94699B9F548DDA2CA3993D7DE9_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 75358
+// Method Definition Index: 75416
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CAnimerDisparitionU3Ed__20_System_Collections_IEnumerator_get_Current_m2A41A3363BFB760222ACF9FBB7E727A0E206CF22 (U3CAnimerDisparitionU3Ed__20_t0A566AB07C5838A8C74E58F9A3C4F522BFF7FEA0* __this, const RuntimeMethod* method) 
 {
 	{
@@ -13315,7 +13315,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CAnimerDisparitionU3Ed__20_S
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 75359
+// Method Definition Index: 75417
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeCoroutineU3Ed__23__ctor_m41E59B29260AA484C563A6A5FEB14AD235C0FC03 (U3CFadeCoroutineU3Ed__23_tC2B51ADFC972848C94DC80F2AEA7597F67A550A3* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -13325,14 +13325,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeCoroutineU3Ed__23__ctor_m41E59B29
 		return;
 	}
 }
-// Method Definition Index: 75360
+// Method Definition Index: 75418
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeCoroutineU3Ed__23_System_IDisposable_Dispose_m94F62156D252298DFA5BC16DFC59AC8D885E6376 (U3CFadeCoroutineU3Ed__23_tC2B51ADFC972848C94DC80F2AEA7597F67A550A3* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 75361
+// Method Definition Index: 75419
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CFadeCoroutineU3Ed__23_MoveNext_m5740EFA5688475177F4A10B87640F5FE17D9AA63 (U3CFadeCoroutineU3Ed__23_tC2B51ADFC972848C94DC80F2AEA7597F67A550A3* __this, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -13367,7 +13367,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CFadeCoroutineU3Ed__23_MoveNext_m5740E
 IL_001a:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:174>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:174>
 		VignetteGameOver_t3C351D02D8FE4000F381B6F73A66B7A0903C0FE5* L_4 = V_1;
 		NullCheck(L_4);
 		RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* L_5 = L_4->____rawImage;
@@ -13376,19 +13376,19 @@ IL_001a:
 		L_6 = VirtualFuncInvoker0< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(22, L_5);
 		float L_7 = L_6.___a;
 		__this->___U3CalphaDepartU3E5__2 = L_7;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:175>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:175>
 		__this->___U3CtU3E5__3 = (0.0f);
 		goto IL_00bd;
 	}
 
 IL_0044:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:179>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:179>
 		float L_8 = __this->___U3CtU3E5__3;
 		float L_9;
 		L_9 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
 		__this->___U3CtU3E5__3 = ((float)il2cpp_codegen_add(L_8, L_9));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:180>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:180>
 		float L_10 = __this->___U3CtU3E5__3;
 		float L_11 = __this->___durUE9e;
 		float L_12;
@@ -13396,26 +13396,26 @@ IL_0044:
 		float L_13;
 		L_13 = Mathf_SmoothStep_mEFDC738EB0AA162D71013BDBBDD157B080A8E524_inline((0.0f), (1.0f), L_12, NULL);
 		V_3 = L_13;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:181>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:181>
 		VignetteGameOver_t3C351D02D8FE4000F381B6F73A66B7A0903C0FE5* L_14 = V_1;
 		NullCheck(L_14);
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_15 = L_14->___couleurVignette;
 		V_4 = L_15;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:182>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:182>
 		float L_16 = __this->___U3CalphaDepartU3E5__2;
 		float L_17 = __this->___alphaTarget;
 		float L_18 = V_3;
 		float L_19;
 		L_19 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_16, L_17, L_18, NULL);
 		(&V_4)->___a = L_19;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:183>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:183>
 		VignetteGameOver_t3C351D02D8FE4000F381B6F73A66B7A0903C0FE5* L_20 = V_1;
 		NullCheck(L_20);
 		RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* L_21 = L_20->____rawImage;
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_22 = V_4;
 		NullCheck(L_21);
 		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_21, L_22);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:184>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:184>
 		__this->___U3CU3E2__current = NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)NULL);
 		__this->___U3CU3E1__state = 1;
@@ -13429,7 +13429,7 @@ IL_00b6:
 
 IL_00bd:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:177>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:177>
 		float L_23 = __this->___U3CtU3E5__3;
 		float L_24 = __this->___durUE9e;
 		if ((((float)L_23) < ((float)L_24)))
@@ -13438,31 +13438,31 @@ IL_00bd:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:187>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:187>
 		VignetteGameOver_t3C351D02D8FE4000F381B6F73A66B7A0903C0FE5* L_25 = V_1;
 		NullCheck(L_25);
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_26 = L_25->___couleurVignette;
 		V_2 = L_26;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:188>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:188>
 		float L_27 = __this->___alphaTarget;
 		(&V_2)->___a = L_27;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:189>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:189>
 		VignetteGameOver_t3C351D02D8FE4000F381B6F73A66B7A0903C0FE5* L_28 = V_1;
 		NullCheck(L_28);
 		RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* L_29 = L_28->____rawImage;
 		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_30 = V_2;
 		NullCheck(L_29);
 		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_29, L_30);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:190>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:190>
 		VignetteGameOver_t3C351D02D8FE4000F381B6F73A66B7A0903C0FE5* L_31 = V_1;
 		NullCheck(L_31);
 		L_31->____coroutineEnCours = (Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&L_31->____coroutineEnCours), (void*)(Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B*)NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:191>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:191>
 		return (bool)0;
 	}
 }
-// Method Definition Index: 75362
+// Method Definition Index: 75420
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFadeCoroutineU3Ed__23_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m12C7AF1295B78D36F33C8E20702C24581D4BC1E9 (U3CFadeCoroutineU3Ed__23_tC2B51ADFC972848C94DC80F2AEA7597F67A550A3* __this, const RuntimeMethod* method) 
 {
 	{
@@ -13470,7 +13470,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFadeCoroutineU3Ed__23_Syste
 		return L_0;
 	}
 }
-// Method Definition Index: 75363
+// Method Definition Index: 75421
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeCoroutineU3Ed__23_System_Collections_IEnumerator_Reset_m0719F85E6F01917C26A19CE7CDFF2BE2858F9EC2 (U3CFadeCoroutineU3Ed__23_tC2B51ADFC972848C94DC80F2AEA7597F67A550A3* __this, const RuntimeMethod* method) 
 {
 	{
@@ -13479,7 +13479,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFadeCoroutineU3Ed__23_System_Collecti
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CFadeCoroutineU3Ed__23_System_Collections_IEnumerator_Reset_m0719F85E6F01917C26A19CE7CDFF2BE2858F9EC2_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 75364
+// Method Definition Index: 75422
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFadeCoroutineU3Ed__23_System_Collections_IEnumerator_get_Current_m735BB09E530ADE7761D5FDEBAD59480B08A27E89 (U3CFadeCoroutineU3Ed__23_tC2B51ADFC972848C94DC80F2AEA7597F67A550A3* __this, const RuntimeMethod* method) 
 {
 	{
@@ -13495,7 +13495,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFadeCoroutineU3Ed__23_Syste
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 75365
+// Method Definition Index: 75423
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFaderVersU3Ed__22__ctor_m82F38E16D13DFFD756D6EC3B42CAE02222D5D130 (U3CFaderVersU3Ed__22_t781B654238693F641DE5E85E2EC6113BC213C41D* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
 {
 	{
@@ -13505,14 +13505,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFaderVersU3Ed__22__ctor_m82F38E16D13D
 		return;
 	}
 }
-// Method Definition Index: 75366
+// Method Definition Index: 75424
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFaderVersU3Ed__22_System_IDisposable_Dispose_m2946EF01978B2A6B6E08D2DD39E526CF6393BBD0 (U3CFaderVersU3Ed__22_t781B654238693F641DE5E85E2EC6113BC213C41D* __this, const RuntimeMethod* method) 
 {
 	{
 		return;
 	}
 }
-// Method Definition Index: 75367
+// Method Definition Index: 75425
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CFaderVersU3Ed__22_MoveNext_mF7DA6094AE33F3B2531D1C08DA5F0981BCAB6FA3 (U3CFaderVersU3Ed__22_t781B654238693F641DE5E85E2EC6113BC213C41D* __this, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -13542,7 +13542,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CFaderVersU3Ed__22_MoveNext_mF7DA6094A
 IL_0017:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:166>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:166>
 		VignetteGameOver_t3C351D02D8FE4000F381B6F73A66B7A0903C0FE5* L_4 = V_1;
 		NullCheck(L_4);
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_5 = L_4->____coroutineEnCours;
@@ -13552,7 +13552,7 @@ IL_0017:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:167>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:167>
 		VignetteGameOver_t3C351D02D8FE4000F381B6F73A66B7A0903C0FE5* L_6 = V_1;
 		VignetteGameOver_t3C351D02D8FE4000F381B6F73A66B7A0903C0FE5* L_7 = V_1;
 		NullCheck(L_7);
@@ -13563,7 +13563,7 @@ IL_0017:
 
 IL_0032:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:168>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:168>
 		VignetteGameOver_t3C351D02D8FE4000F381B6F73A66B7A0903C0FE5* L_9 = V_1;
 		VignetteGameOver_t3C351D02D8FE4000F381B6F73A66B7A0903C0FE5* L_10 = V_1;
 		VignetteGameOver_t3C351D02D8FE4000F381B6F73A66B7A0903C0FE5* L_11 = V_1;
@@ -13578,7 +13578,7 @@ IL_0032:
 		NullCheck(L_9);
 		L_9->____coroutineEnCours = L_15;
 		Il2CppCodeGenWriteBarrier((void**)(&L_9->____coroutineEnCours), (void*)L_15);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:169>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:169>
 		VignetteGameOver_t3C351D02D8FE4000F381B6F73A66B7A0903C0FE5* L_16 = V_1;
 		NullCheck(L_16);
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_17 = L_16->____coroutineEnCours;
@@ -13591,11 +13591,11 @@ IL_0032:
 IL_0065:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:170>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VignetteGameOver.cs:170>
 		return (bool)0;
 	}
 }
-// Method Definition Index: 75368
+// Method Definition Index: 75426
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFaderVersU3Ed__22_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m20E11B312FA3EB4660CC317069AC1F0DEB061692 (U3CFaderVersU3Ed__22_t781B654238693F641DE5E85E2EC6113BC213C41D* __this, const RuntimeMethod* method) 
 {
 	{
@@ -13603,7 +13603,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFaderVersU3Ed__22_System_Co
 		return L_0;
 	}
 }
-// Method Definition Index: 75369
+// Method Definition Index: 75427
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFaderVersU3Ed__22_System_Collections_IEnumerator_Reset_mFE7493BAE9E67DB570A91BFB834EE2C55A139189 (U3CFaderVersU3Ed__22_t781B654238693F641DE5E85E2EC6113BC213C41D* __this, const RuntimeMethod* method) 
 {
 	{
@@ -13612,7 +13612,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CFaderVersU3Ed__22_System_Collections_
 		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CFaderVersU3Ed__22_System_Collections_IEnumerator_Reset_mFE7493BAE9E67DB570A91BFB834EE2C55A139189_RuntimeMethod_var)));
 	}
 }
-// Method Definition Index: 75370
+// Method Definition Index: 75428
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFaderVersU3Ed__22_System_Collections_IEnumerator_get_Current_m822BE4BB2EFC6C67877E210D738AFFCD0E1C4CE4 (U3CFaderVersU3Ed__22_t781B654238693F641DE5E85E2EC6113BC213C41D* __this, const RuntimeMethod* method) 
 {
 	{
@@ -13628,7 +13628,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CFaderVersU3Ed__22_System_Co
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 75371
+// Method Definition Index: 75429
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VisuelGardeUI_add_OnEtatChange_mF4CFEA04F12CBF193037B8F5DBD406460AAC84F8 (VisuelGardeUI_t797ED5D9857D56CFCA8D9F5F31B2BEDC77B41E7D* __this, Action_1_t973FF385D588E10A60843F0661781E560D775ADE* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13671,7 +13671,7 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 75372
+// Method Definition Index: 75430
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VisuelGardeUI_remove_OnEtatChange_mB5929FCB0BE7A4CCB193FD52C4DE8846BD057A49 (VisuelGardeUI_t797ED5D9857D56CFCA8D9F5F31B2BEDC77B41E7D* __this, Action_1_t973FF385D588E10A60843F0661781E560D775ADE* ___0_value, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13714,31 +13714,31 @@ IL_0007:
 		return;
 	}
 }
-// Method Definition Index: 75373
+// Method Definition Index: 75431
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t VisuelGardeUI_get_EtatCourant_m76CA6B7657C4E96FA41212314C7F2A84356E933E (VisuelGardeUI_t797ED5D9857D56CFCA8D9F5F31B2BEDC77B41E7D* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:55>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:55>
 		int32_t L_0 = __this->____etatActuel;
 		return L_0;
 	}
 }
-// Method Definition Index: 75374
+// Method Definition Index: 75432
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* VisuelGardeUI_get_SpriteRouge_mED3CFE388CB839B988D3EA590D3C1EE92F2B3C9C (VisuelGardeUI_t797ED5D9857D56CFCA8D9F5F31B2BEDC77B41E7D* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:58>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:58>
 		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_0 = __this->___spriteRouge;
 		return L_0;
 	}
 }
-// Method Definition Index: 75375
+// Method Definition Index: 75433
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VisuelGardeUI_ForcerEtatRouge_m0F8EF9398973B82209DC5AB925E014EFC0E5AB4B (VisuelGardeUI_t797ED5D9857D56CFCA8D9F5F31B2BEDC77B41E7D* __this, const RuntimeMethod* method) 
 {
 	Action_1_t973FF385D588E10A60843F0661781E560D775ADE* G_B4_0 = NULL;
 	Action_1_t973FF385D588E10A60843F0661781E560D775ADE* G_B3_0 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:70>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:70>
 		int32_t L_0 = __this->____etatActuel;
 		if ((!(((uint32_t)L_0) == ((uint32_t)2))))
 		{
@@ -13746,20 +13746,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VisuelGardeUI_ForcerEtatRouge_m0F8EF9398
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:70>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:70>
 		return;
 	}
 
 IL_000a:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:72>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:72>
 		__this->____etatActuel = 2;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:73>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:73>
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_1 = __this->____image;
 		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_2 = __this->___spriteRouge;
 		NullCheck(L_1);
 		Image_set_sprite_mC0C248340BA27AAEE56855A3FAFA0D8CA12956DE(L_1, L_2, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:74>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:74>
 		Action_1_t973FF385D588E10A60843F0661781E560D775ADE* L_3 = __this->___OnEtatChange;
 		Action_1_t973FF385D588E10A60843F0661781E560D775ADE* L_4 = L_3;
 		if (L_4)
@@ -13777,11 +13777,11 @@ IL_002d:
 	{
 		NullCheck(G_B4_0);
 		Action_1_Invoke_m8F6DE05957633C4DA64BCECC05D39F20FD6BC7D8_inline(G_B4_0, 2, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:75>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:75>
 		return;
 	}
 }
-// Method Definition Index: 75376
+// Method Definition Index: 75434
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VisuelGardeUI_Awake_mB5B4B550D1B74C11CBC47D9B8072B44A200CAD73 (VisuelGardeUI_t797ED5D9857D56CFCA8D9F5F31B2BEDC77B41E7D* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13791,23 +13791,23 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VisuelGardeUI_Awake_mB5B4B550D1B74C11CBC
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:81>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:81>
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_0;
 		L_0 = Component_GetComponent_TisImage_tBC1D03F63BF71132E9A5E472B8742F172A011E7E_mE74EE63C85A63FC34DCFC631BC229207B420BC79(__this, Component_GetComponent_TisImage_tBC1D03F63BF71132E9A5E472B8742F172A011E7E_mE74EE63C85A63FC34DCFC631BC229207B420BC79_RuntimeMethod_var);
 		__this->____image = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____image), (void*)L_0);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:84>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:84>
 		__this->____etatActuel = 0;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:85>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:85>
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_1 = __this->____image;
 		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_2 = __this->___spriteVert;
 		NullCheck(L_1);
 		Image_set_sprite_mC0C248340BA27AAEE56855A3FAFA0D8CA12956DE(L_1, L_2, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:86>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:86>
 		return;
 	}
 }
-// Method Definition Index: 75377
+// Method Definition Index: 75435
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VisuelGardeUI_Update_m1F73B73C84533A09F9795BAC8A1F9968B6E7E06A (VisuelGardeUI_t797ED5D9857D56CFCA8D9F5F31B2BEDC77B41E7D* __this, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -13820,7 +13820,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VisuelGardeUI_Update_m1F73B73C84533A09F9
 	Action_1_t973FF385D588E10A60843F0661781E560D775ADE* G_B6_0 = NULL;
 	Action_1_t973FF385D588E10A60843F0661781E560D775ADE* G_B5_0 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:90>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:90>
 		BarrePatience_tCA75555EAD585C76CCEE678BC51881BDB91D46B1* L_0 = __this->___barrePatience;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -13831,13 +13831,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VisuelGardeUI_Update_m1F73B73C84533A09F9
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:90>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:90>
 		return;
 	}
 
 IL_000f:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:92>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:92>
 		BarrePatience_tCA75555EAD585C76CCEE678BC51881BDB91D46B1* L_2 = __this->___barrePatience;
 		NullCheck(L_2);
 		float L_3;
@@ -13845,7 +13845,7 @@ IL_000f:
 		int32_t L_4;
 		L_4 = VisuelGardeUI_DUE9terminerEtat_m7B33C5A34D33C5030A1033FF0B924F7EC960DE2D(__this, L_3, NULL);
 		V_0 = L_4;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:94>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:94>
 		int32_t L_5 = V_0;
 		int32_t L_6 = __this->____etatActuel;
 		if ((!(((uint32_t)L_5) == ((uint32_t)L_6))))
@@ -13854,23 +13854,23 @@ IL_000f:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:94>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:94>
 		return;
 	}
 
 IL_002b:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:96>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:96>
 		int32_t L_7 = V_0;
 		__this->____etatActuel = L_7;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:97>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:97>
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_8 = __this->____image;
 		int32_t L_9 = V_0;
 		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_10;
 		L_10 = VisuelGardeUI_SpriteDeEtat_mA75367994F633F226522A9ACF11D14C755E35142(__this, L_9, NULL);
 		NullCheck(L_8);
 		Image_set_sprite_mC0C248340BA27AAEE56855A3FAFA0D8CA12956DE(L_8, L_10, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:98>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:98>
 		Action_1_t973FF385D588E10A60843F0661781E560D775ADE* L_11 = __this->___OnEtatChange;
 		Action_1_t973FF385D588E10A60843F0661781E560D775ADE* L_12 = L_11;
 		if (L_12)
@@ -13889,15 +13889,15 @@ IL_004f:
 		int32_t L_13 = V_0;
 		NullCheck(G_B6_0);
 		Action_1_Invoke_m8F6DE05957633C4DA64BCECC05D39F20FD6BC7D8_inline(G_B6_0, L_13, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:99>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:99>
 		return;
 	}
 }
-// Method Definition Index: 75378
+// Method Definition Index: 75436
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t VisuelGardeUI_DUE9terminerEtat_m7B33C5A34D33C5030A1033FF0B924F7EC960DE2D (VisuelGardeUI_t797ED5D9857D56CFCA8D9F5F31B2BEDC77B41E7D* __this, float ___0_patience, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:105>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:105>
 		float L_0 = ___0_patience;
 		BarrePatience_tCA75555EAD585C76CCEE678BC51881BDB91D46B1* L_1 = __this->___barrePatience;
 		NullCheck(L_1);
@@ -13909,13 +13909,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t VisuelGardeUI_DUE9terminerEtat_m7B33C
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:105>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:105>
 		return (int32_t)(0);
 	}
 
 IL_0010:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:106>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:106>
 		float L_3 = ___0_patience;
 		BarrePatience_tCA75555EAD585C76CCEE678BC51881BDB91D46B1* L_4 = __this->___barrePatience;
 		NullCheck(L_4);
@@ -13927,28 +13927,28 @@ IL_0010:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:106>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:106>
 		return (int32_t)(1);
 	}
 
 IL_0020:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:107>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:107>
 		return (int32_t)(2);
 	}
 }
-// Method Definition Index: 75379
+// Method Definition Index: 75437
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* VisuelGardeUI_SpriteDeEtat_mA75367994F633F226522A9ACF11D14C755E35142 (VisuelGardeUI_t797ED5D9857D56CFCA8D9F5F31B2BEDC77B41E7D* __this, int32_t ___0_etat, const RuntimeMethod* method) 
 {
 	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* V_0 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:110>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:111>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:112>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:113>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:114>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:115>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:116>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:110>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:111>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:112>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:113>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:114>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:115>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:116>
 		int32_t L_0 = ___0_etat;
 		switch (L_0)
 		{
@@ -13972,7 +13972,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CA
 
 IL_0014:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:112>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:112>
 		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_1 = __this->___spriteVert;
 		V_0 = L_1;
 		goto IL_0031;
@@ -13980,7 +13980,7 @@ IL_0014:
 
 IL_001d:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:113>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:113>
 		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_2 = __this->___spriteOrange;
 		V_0 = L_2;
 		goto IL_0031;
@@ -13988,7 +13988,7 @@ IL_001d:
 
 IL_0026:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:114>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:114>
 		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_3 = __this->___spriteRouge;
 		V_0 = L_3;
 		goto IL_0031;
@@ -13996,7 +13996,7 @@ IL_0026:
 
 IL_002f:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:115>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/VisuelGardeUI.cs:115>
 		V_0 = (Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99*)NULL;
 	}
 
@@ -14006,7 +14006,7 @@ IL_0031:
 		return L_4;
 	}
 }
-// Method Definition Index: 75380
+// Method Definition Index: 75438
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VisuelGardeUI__ctor_m6797D7A07F0D1BC667F585826F311E3B7E6849FE (VisuelGardeUI_t797ED5D9857D56CFCA8D9F5F31B2BEDC77B41E7D* __this, const RuntimeMethod* method) 
 {
 	{
@@ -14030,7 +14030,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void VisuelGardeUI__ctor_m6797D7A07F0D1BC667F
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 75381
+// Method Definition Index: 75439
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint32_t U3CPrivateImplementationDetailsU3E_ComputeStringHash_m6EA1F233618497AEFF8902A5EDFA24C74E2F2876 (String_t* ___0_s, const RuntimeMethod* method) 
 {
 	uint32_t V_0 = 0;
@@ -14107,26 +14107,26 @@ IL_002a:
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-// Method Definition Index: 75189
+// Method Definition Index: 75247
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void FormulaireUI_set_Type_m04618C4FF8EA6A69DF0EE1E313123997701E1CBD_inline (FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:21>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:21>
 		int32_t L_0 = ___0_value;
 		__this->___U3CTypeU3Ek__BackingField = L_0;
 		return;
 	}
 }
-// Method Definition Index: 75203
+// Method Definition Index: 75261
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* FormulaireUIManager_get_CoucheGlissement_mF715EE20B9D2AEE36E0B1AA312F45C859801E6E6_inline (FormulaireUIManager_tB65E87C3CB7E98557788D461CC36FB7AC45D2AC2* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:40>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUIManager.cs:40>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_0 = __this->___coucheGlissement;
 		return L_0;
 	}
 }
-// Method Definition Index: 49870
+// Method Definition Index: 49871
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Vector2__ctor_m9525B79969AFFE3254B303A40997A56DEEB6F548_inline (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* __this, float ___0_x, float ___1_y, const RuntimeMethod* method) 
 {
 	{
@@ -14137,7 +14137,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Vector2__ctor_m9525B79969AFF
 		return;
 	}
 }
-// Method Definition Index: 91878
+// Method Definition Index: 91936
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 PointerEventData_get_position_m5BE71C28EB72EFB8435749E4E6E839213AEF458C_inline (PointerEventData_t9670F3C7D823CCB738A1604C72A1EB90292396FB* __this, const RuntimeMethod* method) 
 {
 	{
@@ -14146,7 +14146,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2D
 		return L_0;
 	}
 }
-// Method Definition Index: 49891
+// Method Definition Index: 49892
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 Vector2_op_Subtraction_m44475FCDAD2DA2F98D78A6625EC2DCDFE8803837_inline (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_a, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___1_b, const RuntimeMethod* method) 
 {
 	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 V_0;
@@ -14167,7 +14167,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2D
 		return L_8;
 	}
 }
-// Method Definition Index: 49890
+// Method Definition Index: 49891
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 Vector2_op_Addition_m8136742CE6EE33BA4EB81C5F584678455917D2AE_inline (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_a, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___1_b, const RuntimeMethod* method) 
 {
 	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 V_0;
@@ -14188,16 +14188,16 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2D
 		return L_8;
 	}
 }
-// Method Definition Index: 75290
+// Method Definition Index: 75348
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* PocheUI_get_RectTransform_m2CFE0097A9DC3FC2B46BBDB529EDAD5D139E614E_inline (PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:17>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:17>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_0 = __this->___U3CRectTransformU3Ek__BackingField;
 		return L_0;
 	}
 }
-// Method Definition Index: 49851
+// Method Definition Index: 49852
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Mathf_SmoothStep_mEFDC738EB0AA162D71013BDBBDD157B080A8E524_inline (float ___0_from, float ___1_to, float ___2_t, const RuntimeMethod* method) 
 {
 	float V_0 = 0.0f;
@@ -14226,7 +14226,7 @@ IL_0030:
 		return L_11;
 	}
 }
-// Method Definition Index: 49871
+// Method Definition Index: 49872
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 Vector2_Lerp_m1A36103F7967F653A929556E26E6D052C298C00C_inline (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_a, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___1_b, float ___2_t, const RuntimeMethod* method) 
 {
 	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 V_0;
@@ -14265,7 +14265,7 @@ IL_0047:
 		return L_17;
 	}
 }
-// Method Definition Index: 73013
+// Method Definition Index: 73015
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR SoundManager_tCA2CCAC5CDF1BA10E525C01C8D1D0DFAC9BE3734* SoundManager_get_Instance_mE37BC6A788B14F6895B2B50A4E461F8C7895BAEA_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14275,12 +14275,12 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR SoundManager_tCA2CCAC5CDF1BA10E52
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/Global/SoundManager.cs:8>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/Global/SoundManager.cs:8>
 		SoundManager_tCA2CCAC5CDF1BA10E525C01C8D1D0DFAC9BE3734* L_0 = ((SoundManager_tCA2CCAC5CDF1BA10E525C01C8D1D0DFAC9BE3734_StaticFields*)il2cpp_codegen_static_fields_for(SoundManager_tCA2CCAC5CDF1BA10E525C01C8D1D0DFAC9BE3734_il2cpp_TypeInfo_var))->___U3CInstanceU3Ek__BackingField;
 		return L_0;
 	}
 }
-// Method Definition Index: 49841
+// Method Definition Index: 49842
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Mathf_CeilToInt_mF2BF9F4261B3431DC20E10A46CFEEED103C48963_inline (float ___0_f, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14305,7 +14305,7 @@ IL_000c:
 		return L_2;
 	}
 }
-// Method Definition Index: 91160
+// Method Definition Index: 91218
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Texture_t791CBB51219779964E0E8A2ED7C1AA5F92A4A700* RawImage_get_texture_m84CCFDF78F6886F73EBE5A7C78D6E9C3CA903813_inline (RawImage_tFF12F7DB574FBDC1863CF607C7A12A5D9F8D6179* __this, const RuntimeMethod* method) 
 {
 	{
@@ -14314,7 +14314,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Texture_t791CBB51219779964E0E8A2E
 		return L_0;
 	}
 }
-// Method Definition Index: 49902
+// Method Definition Index: 49903
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 Vector2_get_zero_m32506C40EC2EE7D5D4410BF40D3EE683A3D5F32C_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14328,16 +14328,16 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2D
 		return L_0;
 	}
 }
-// Method Definition Index: 75257
+// Method Definition Index: 75315
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* MainDuGardeUI_get_RectTransform_m0E7BE14E946963EB853D1921CB8026B17076C048_inline (MainDuGardeUI_tC321F2958259BF8098C4744C19FED866FA99A361* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:59>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:59>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_0 = __this->___U3CRectTransformU3Ek__BackingField;
 		return L_0;
 	}
 }
-// Method Definition Index: 49739
+// Method Definition Index: 49740
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Vector3_Distance_m2314DB9B8BD01157E013DF87BEA557375C7F9FF9_inline (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_a, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_b, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14391,7 +14391,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Action_Invoke_m7126A54DACA72
 	typedef void (*FunctionPointerType) (RuntimeObject*, const RuntimeMethod*);
 	((FunctionPointerType)__this->___invoke_impl)((Il2CppObject*)__this->___method_code, reinterpret_cast<RuntimeMethod*>(__this->___method));
 }
-// Method Definition Index: 90873
+// Method Definition Index: 90931
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void CanvasScaler_set_uiScaleMode_m064C83FFA35E2AED4E9FA7D5EC1AD19630D8FC2A_inline (CanvasScaler_t3BC095205EAD308CF3EAC27136A73387AC32FC3B* __this, int32_t ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -14402,7 +14402,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void CanvasScaler_set_uiScaleMode
 		return;
 	}
 }
-// Method Definition Index: 49903
+// Method Definition Index: 49904
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 Vector2_get_one_m9097EB8DC23C26118A591AF16702796C3EF51DFB_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14416,7 +14416,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2D
 		return L_0;
 	}
 }
-// Method Definition Index: 49576
+// Method Definition Index: 49577
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Color__ctor_m3786F0D6E510D9CFA544523A955870BD2A514C8C_inline (Color_tD001788D726C3A7F1379BEED0260B9591F440C1F* __this, float ___0_r, float ___1_g, float ___2_b, float ___3_a, const RuntimeMethod* method) 
 {
 	{
@@ -14431,7 +14431,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Color__ctor_m3786F0D6E510D9C
 		return;
 	}
 }
-// Method Definition Index: 49606
+// Method Definition Index: 49607
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F Color_get_white_m068F5AF879B0FCA584E3693F762EA41BB65532C6_inline (const RuntimeMethod* method) 
 {
 	{
@@ -14441,7 +14441,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED02
 		return L_0;
 	}
 }
-// Method Definition Index: 49847
+// Method Definition Index: 49848
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Mathf_Clamp01_mA7E048DBDA832D399A581BE4D6DED9FA44CE0F14_inline (float ___0_value, const RuntimeMethod* method) 
 {
 	bool V_0 = false;
@@ -14489,7 +14489,7 @@ IL_002d:
 		return L_5;
 	}
 }
-// Method Definition Index: 49747
+// Method Definition Index: 49748
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Vector3_get_zero_m0C1249C3F25B1C70EAD3CC8B31259975A457AE39_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14503,7 +14503,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D
 		return L_0;
 	}
 }
-// Method Definition Index: 49748
+// Method Definition Index: 49749
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Vector3_get_one_mC9B289F1E15C42C597180C9FE6FB492495B51D02_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -14517,7 +14517,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D
 		return L_0;
 	}
 }
-// Method Definition Index: 49758
+// Method Definition Index: 49759
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Vector3_op_Multiply_m87BA7C578F96C8E49BB07088DAAC4649F83B0353_inline (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_a, float ___1_d, const RuntimeMethod* method) 
 {
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
@@ -14540,36 +14540,36 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D
 		return L_9;
 	}
 }
-// Method Definition Index: 75258
+// Method Definition Index: 75316
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void MainDuGardeUI_set_RectTransform_m3B5FBCF5BE768637FA7941BA2FFACE8947E33C35_inline (MainDuGardeUI_tC321F2958259BF8098C4744C19FED866FA99A361* __this, RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* ___0_value, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:59>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/MainDuGardeUI.cs:59>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_0 = ___0_value;
 		__this->___U3CRectTransformU3Ek__BackingField = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CRectTransformU3Ek__BackingField), (void*)L_0);
 		return;
 	}
 }
-// Method Definition Index: 75188
+// Method Definition Index: 75246
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t FormulaireUI_get_Type_m61D4919A02ADD6AF6CEA33EC4C9A7C108B0C1031_inline (FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:21>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:21>
 		int32_t L_0 = __this->___U3CTypeU3Ek__BackingField;
 		return L_0;
 	}
 }
-// Method Definition Index: 75105
+// Method Definition Index: 75163
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t FormulaireLibre_get_Type_mE7CA1B6156CC40512ADA86A9CB283738092F3378_inline (FormulaireLibre_t13BACFDC02F5E5230E84C0694BDA7CB93579D113* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireLibre.cs:34>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireLibre.cs:34>
 		int32_t L_0 = __this->___U3CTypeU3Ek__BackingField;
 		return L_0;
 	}
 }
-// Method Definition Index: 49895
+// Method Definition Index: 49896
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 Vector2_op_Multiply_m2D984B613020089BF5165BA4CA10988E2DC771FE_inline (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_a, float ___1_d, const RuntimeMethod* method) 
 {
 	Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 V_0;
@@ -14588,7 +14588,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2D
 		return L_6;
 	}
 }
-// Method Definition Index: 48349
+// Method Definition Index: 48350
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Rect_get_xMin_mE89C40702926D016A633399E20DB9501E251630D_inline (Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D* __this, const RuntimeMethod* method) 
 {
 	{
@@ -14596,7 +14596,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Rect_get_xMin_mE89C40702926
 		return L_0;
 	}
 }
-// Method Definition Index: 48353
+// Method Definition Index: 48354
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Rect_get_xMax_m2339C7D2FCDA98A9B007F815F6E2059BA6BE425F_inline (Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D* __this, const RuntimeMethod* method) 
 {
 	{
@@ -14605,7 +14605,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Rect_get_xMax_m2339C7D2FCDA
 		return ((float)il2cpp_codegen_add(L_0, L_1));
 	}
 }
-// Method Definition Index: 48351
+// Method Definition Index: 48352
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Rect_get_yMin_mB19848FB25DE61EDF958F7A22CFDD86DE103062F_inline (Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D* __this, const RuntimeMethod* method) 
 {
 	{
@@ -14613,7 +14613,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Rect_get_yMin_mB19848FB25DE
 		return L_0;
 	}
 }
-// Method Definition Index: 48355
+// Method Definition Index: 48356
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Rect_get_yMax_mBC37BEE1CD632AADD8B9EAF9FE3BA143F79CAF8E_inline (Rect_tA04E0F8A1830E767F40FB27ECD8D309303571F0D* __this, const RuntimeMethod* method) 
 {
 	{
@@ -14622,7 +14622,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Rect_get_yMax_mBC37BEE1CD63
 		return ((float)il2cpp_codegen_add(L_0, L_1));
 	}
 }
-// Method Definition Index: 49721
+// Method Definition Index: 49722
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Vector3__ctor_m376936E6B999EF1ECBE57D990A386303E2283DE0_inline (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* __this, float ___0_x, float ___1_y, float ___2_z, const RuntimeMethod* method) 
 {
 	{
@@ -14635,7 +14635,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Vector3__ctor_m376936E6B999E
 		return;
 	}
 }
-// Method Definition Index: 49755
+// Method Definition Index: 49756
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Vector3_op_Addition_m78C0EC70CB66E8DCAC225743D82B268DAEE92067_inline (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___0_a, Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___1_b, const RuntimeMethod* method) 
 {
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
@@ -14661,7 +14661,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D
 		return L_12;
 	}
 }
-// Method Definition Index: 49848
+// Method Definition Index: 49849
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline (float ___0_a, float ___1_b, float ___2_t, const RuntimeMethod* method) 
 {
 	float V_0 = 0.0f;
@@ -14682,29 +14682,29 @@ IL_0010:
 		return L_5;
 	}
 }
-// Method Definition Index: 75291
+// Method Definition Index: 75349
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void PocheUI_set_RectTransform_m35AF0326EC697451A3BCAD4A83FC5FAC7F252FCE_inline (PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* __this, RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* ___0_value, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:17>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/PocheUI.cs:17>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_0 = ___0_value;
 		__this->___U3CRectTransformU3Ek__BackingField = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CRectTransformU3Ek__BackingField), (void*)L_0);
 		return;
 	}
 }
-// Method Definition Index: 75191
+// Method Definition Index: 75249
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void FormulaireUI_AssignerPoche_m4E4221E6EFB9EBCDAD4604A299B5D554ACDFD7F1_inline (FormulaireUI_t013DB0A2A63B17FEE901A6A7BB78B302F877DE64* __this, PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* ___0_poche, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:45>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/FormulaireUI.cs:45>
 		PocheUI_tE93CAFD1E19439A048D017F1BFFFDD00FA721B77* L_0 = ___0_poche;
 		__this->____pocheActuelle = L_0;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____pocheActuelle), (void*)L_0);
 		return;
 	}
 }
-// Method Definition Index: 49830
+// Method Definition Index: 49831
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Mathf_Max_mF5379E63D2BBAC76D090748695D833934F8AD051_inline (float ___0_a, float ___1_b, const RuntimeMethod* method) 
 {
 	float V_0 = 0.0f;
@@ -14741,7 +14741,7 @@ IL_000c:
 		return L_4;
 	}
 }
-// Method Definition Index: 49609
+// Method Definition Index: 49610
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Color32_t73C5004937BF5BB8AD55323D51AAA40A898EF48B Color32_op_Implicit_m79AF5E0BDE9CE041CAC4D89CBFA66E71C6DD1B70_inline (Color_tD001788D726C3A7F1379BEED0260B9591F440C1F ___0_c, const RuntimeMethod* method) 
 {
 	Color32_t73C5004937BF5BB8AD55323D51AAA40A898EF48B V_0;
@@ -14780,7 +14780,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Color32_t73C5004937BF5BB8AD55323D
 		return L_16;
 	}
 }
-// Method Definition Index: 49901
+// Method Definition Index: 49902
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Vector2_op_Implicit_m6D9CABB2C791A192867D7A4559D132BE86DD3EB7_inline (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_v, const RuntimeMethod* method) 
 {
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
@@ -14798,7 +14798,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D
 		return L_4;
 	}
 }
-// Method Definition Index: 49986
+// Method Definition Index: 49987
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 Vector4_op_Implicit_mB193CD8DA20DEB9E9F95CFEB5A2B1B9B3B7ECFEB_inline (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_v, const RuntimeMethod* method) 
 {
 	Vector4_t58B63D32F48C0DBF50DE2C60794C4676C80EDBE3 V_0;
@@ -14817,7 +14817,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector4_t58B63D32F48C0DBF50DE2C60
 		return L_4;
 	}
 }
-// Method Definition Index: 49832
+// Method Definition Index: 49833
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t Mathf_Max_m7FA442918DE37E3A00106D1F2E789D65829792B8_inline (int32_t ___0_a, int32_t ___1_b, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -14854,7 +14854,7 @@ IL_000c:
 		return L_4;
 	}
 }
-// Method Definition Index: 49596
+// Method Definition Index: 49597
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F Color_get_black_mB50217951591A045844C61E7FF31EEE3FEF16737_inline (const RuntimeMethod* method) 
 {
 	{
@@ -14864,20 +14864,20 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED02
 		return L_0;
 	}
 }
-// Method Definition Index: 74972
+// Method Definition Index: 75030
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float BarrePatience_get_SeuilMoyenne_mA24F435D4CD951E52888F6B778CCF4CC003B9F93_inline (BarrePatience_tCA75555EAD585C76CCEE678BC51881BDB91D46B1* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/BarrePatience.cs:92>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/BarrePatience.cs:92>
 		float L_0 = __this->___seuilMoyenne;
 		return L_0;
 	}
 }
-// Method Definition Index: 74973
+// Method Definition Index: 75031
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float BarrePatience_get_SeuilBasse_m3F1C363E5F46EB95E515FD9A71A429F6EC783BDA_inline (BarrePatience_tCA75555EAD585C76CCEE678BC51881BDB91D46B1* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Scripts/UI/BarrePatience.cs:95>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/UI/BarrePatience.cs:95>
 		float L_0 = __this->___seuilBasse;
 		return L_0;
 	}
