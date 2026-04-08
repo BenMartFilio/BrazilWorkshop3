@@ -558,6 +558,7 @@ GameObject:
   - component: {fileID: 262222336}
   - component: {fileID: 262222338}
   - component: {fileID: 262222337}
+  - component: {fileID: 262222339}
   m_Layer: 0
   m_Name: TextBouton
   m_TagString: Untagged
@@ -684,6 +685,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 262222335}
   m_CullTransparentMesh: 1
+--- !u!114 &262222339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262222335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: tuto_felicitations_bouton
+  _formatArgs: []
 --- !u!1 &270055787
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,6 +812,7 @@ GameObject:
   - component: {fileID: 277844191}
   - component: {fileID: 277844193}
   - component: {fileID: 277844192}
+  - component: {fileID: 277844194}
   m_Layer: 0
   m_Name: TextTitre
   m_TagString: Untagged
@@ -923,6 +939,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 277844190}
   m_CullTransparentMesh: 1
+--- !u!114 &277844194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277844190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: tuto_felicitations_titre
+  _formatArgs: []
 --- !u!1 &346490932
 GameObject:
   m_ObjectHideFlags: 0
@@ -2877,6 +2907,7 @@ GameObject:
   - component: {fileID: 929313954}
   - component: {fileID: 929313956}
   - component: {fileID: 929313955}
+  - component: {fileID: 929313957}
   m_Layer: 0
   m_Name: TextCorps
   m_TagString: Untagged
@@ -3006,6 +3037,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 929313953}
   m_CullTransparentMesh: 1
+--- !u!114 &929313957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929313953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: tuto_barrage_corps
+  _formatArgs: []
 --- !u!1 &1134787323
 GameObject:
   m_ObjectHideFlags: 0
@@ -4827,6 +4872,7 @@ GameObject:
   - component: {fileID: 1822348976}
   - component: {fileID: 1822348978}
   - component: {fileID: 1822348977}
+  - component: {fileID: 1822348979}
   m_Layer: 0
   m_Name: TextCorps
   m_TagString: Untagged
@@ -4954,6 +5000,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1822348975}
   m_CullTransparentMesh: 1
+--- !u!114 &1822348979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822348975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: tuto_felicitations_corps
+  _formatArgs: []
 --- !u!1 &1875195581
 GameObject:
   m_ObjectHideFlags: 0

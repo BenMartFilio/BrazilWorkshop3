@@ -15,126 +15,126 @@ MonoBehaviour:
   cosmetiques:
   - identifiant: 0
     nomAffichage: Voiture simple
-    cleNom: 
+    cleNom: skin_0_nom
     sprite: {fileID: 21300000, guid: 2d05a58d91e9a544aac4728d66810371, type: 3}
     description: 'C''est la voiture de base, son bleu azur est un camouflage parfait
       pour se cacher dans le ciel ! '
-    cleDescription: 
+    cleDescription: skin_0_desc
     categorie: 0
   - identifiant: 1
     nomAffichage: Kitsch
-    cleNom: 
+    cleNom: skin_1_nom
     sprite: {fileID: 21300000, guid: d36c506ace80c1744b2b9dad24a2fc18, type: 3}
     description: "Cette voiture est un peu d\xE9mod\xE9e mais rappelle des souvenirs
       d'une \xE9poque r\xE9volue... "
-    cleDescription: 
+    cleDescription: skin_1_desc
     categorie: 0
   - identifiant: 2
     nomAffichage: Voiture bleu
-    cleNom: 
+    cleNom: skin_2_nom
     sprite: {fileID: 21300000, guid: b6a2fb549f2f6104e8b92b5a63524205, type: 3}
     description: "Malgr\xE9 son bleu semblable aux fonds marins, cette voiture ne
       peut pas nager."
-    cleDescription: 
+    cleDescription: skin_2_desc
     categorie: 0
   - identifiant: 3
     nomAffichage: Brasier
-    cleNom: 
+    cleNom: skin_3_nom
     sprite: {fileID: 21300000, guid: 00c73c9de6cc3644cb20597725723778, type: 3}
     description: "Cette voiture br\xFBle comme la braise ! Tous les gens cools r\xEAvent
       d'en avoir une !"
-    cleDescription: 
+    cleDescription: skin_3_desc
     categorie: 0
   - identifiant: 4
     nomAffichage: Chabriolet
-    cleNom: 
+    cleNom: skin_4_nom
     sprite: {fileID: 21300000, guid: c0ef4800d74e92947841f53a10a1d3e0, type: 3}
     description: "Tout le monde aime les petits chats ! Mais attention \xE0 ne pas
       les faire conduire sans autorisations. "
-    cleDescription: 
+    cleDescription: skin_4_desc
     categorie: 0
   - identifiant: 5
     nomAffichage: Divauto
-    cleNom: 
+    cleNom: skin_5_nom
     sprite: {fileID: 21300000, guid: e56ac8f58eed41644b4217bf83d21ed6, type: 3}
     description: "C'est une voiture pour les gens de go\xFBt ! M\xEAme si elle ne
       convient pas \xE0 tous les go\xFBts."
-    cleDescription: 
+    cleDescription: skin_5_desc
     categorie: 0
   - identifiant: 6
     nomAffichage: Herbature
-    cleNom: 
+    cleNom: skin_6_nom
     sprite: {fileID: 21300000, guid: 0760c846c6882f741826fb5a512f75f0, type: 3}
     description: "Face au probl\xE8me grandissant des gens qui restent cloitr\xE9s
       chez eux, les plus grands inventeurs ont cr\xE9\xE9 cette voiture qui am\xE8ne
       l'ext\xE9rieur avec vous !"
-    cleDescription: 
+    cleDescription: skin_6_desc
     categorie: 0
   - identifiant: 7
     nomAffichage: Lovauto
-    cleNom: 
+    cleNom: skin_7_nom
     sprite: {fileID: 21300000, guid: 54c0d44d1074a55469f5ae26ef4f464b, type: 3}
     description: "Qu'existe-t-il de plus beau que l'amour ? Cette voiture assur\xE9ment."
-    cleDescription: 
+    cleDescription: skin_7_desc
     categorie: 0
   - identifiant: 8
     nomAffichage: Alphacar
-    cleNom: 
+    cleNom: skin_8_nom
     sprite: {fileID: 21300000, guid: f7deba8b523bf4842b69ad3ac45feab0, type: 3}
     description: Toutes les voitures le suivent et l'adorent, en tout cas c'est ce
       qu'il pense.
-    cleDescription: 
+    cleDescription: skin_8_desc
     categorie: 0
   - identifiant: 9
     nomAffichage: Voiture du gouvrnement
-    cleNom: 
+    cleNom: skin_9_nom
     sprite: {fileID: 21300000, guid: f9db536270d57274983ae16e5014cc6c, type: 3}
     description: "C'est la voiture officielle du gouvernement, c'est \xE0 se demander
       comment elle a atterri ici..."
-    cleDescription: 
+    cleDescription: skin_9_desc
     categorie: 0
   - identifiant: 10
     nomAffichage: Bolide de course
-    cleNom: 
+    cleNom: skin_10_nom
     sprite: {fileID: 21300000, guid: dda1fa6f1cf0f384da23a9ab9f5a9153, type: 3}
     description: "On dit de cette voiture qu'elle a appartenu \xE0 un grand pilote,
       mais depuis les grandes restrictions de vitesse, il est au ch\xF4mage."
-    cleDescription: 
+    cleDescription: skin_10_desc
     categorie: 0
   - identifiant: 11
     nomAffichage: Voiture rouge
-    cleNom: 
+    cleNom: skin_11_nom
     sprite: {fileID: 21300000, guid: cca38764da4c6e94b86f5a12308baa85, type: 3}
     description: C'est une voiture rouge, tout ce qu'il y a de plus banal.
-    cleDescription: 
+    cleDescription: skin_11_desc
     categorie: 0
   - identifiant: 12
     nomAffichage: Carcasse roulante
-    cleNom: 
+    cleNom: skin_12_nom
     sprite: {fileID: 21300000, guid: 104184e7b5f6c5b4499b2ecc237f0167, type: 3}
     description: "On se demande comment cet engin roule encore, et comment il passe
       les contr\xF4les techniques."
-    cleDescription: 
+    cleDescription: skin_12_desc
     categorie: 0
   - identifiant: 13
     nomAffichage: Rouge ondulant
-    cleNom: 
+    cleNom: skin_13_nom
     sprite: {fileID: 21300000, guid: bd8a73da4451db0469fc907266a57c5e, type: 3}
     description: Son motif peut rappeler les vagues.
-    cleDescription: 
+    cleDescription: skin_13_desc
     categorie: 0
   - identifiant: 14
     nomAffichage: Voiture violette
-    cleNom: 
+    cleNom: skin_14_nom
     sprite: {fileID: 21300000, guid: d4141fc9662ab604495e8d7b25591e0b, type: 3}
     description: "Dans beaucoup de cultures, sa couleur symbolise le mal, le gouvernement
       h\xE9sita m\xEAme \xE0 l'interdire."
-    cleDescription: 
+    cleDescription: skin_14_desc
     categorie: 0
   - identifiant: 15
     nomAffichage: L.I.F.E
-    cleNom: 
+    cleNom: skin_15_nom
     sprite: {fileID: 21300000, guid: 9c89a9b0f1844794cb5e93a6d7f70034, type: 3}
     description: On dit que son conducteur triait des papiers, un boulot passionnant.
-    cleDescription: 
+    cleDescription: skin_15_desc
     categorie: 0

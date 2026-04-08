@@ -15,47 +15,63 @@ MonoBehaviour:
   objets:
   - identifiant: LiasseDeBillets
     nomAffichage: Liasse de Billets
+    cleNom: item_liasse_nom
     sprite: {fileID: 21300000, guid: eabcb30ab043f5141843b50044a30f4b, type: 3}
     estPassif: 0
     description: La liasse de billets corrompt le garde ce qui fait remonter sa barre
       de patience de 50%.
+    cleDescription: item_liasse_desc
   - identifiant: FormulairePasePartout
     nomAffichage: Formulaire Passe-Partout
+    cleNom: item_passe_nom
     sprite: {fileID: 21300000, guid: 100c336d51233a742b699a253c4b79db, type: 3}
     estPassif: 0
     description: Le formulaire passe partout vous permet de valider un document au
       barrage.
+    cleDescription: item_passe_desc
   - identifiant: TirelireCochon
     nomAffichage: Tirelire Cochon
+    cleNom: item_tirelire_nom
     sprite: {fileID: 21300000, guid: bb1109e944c86da48a0d48e0ec804c2b, type: 3}
     estPassif: 0
     description: "La tirelire cochon vous permet de doubler vos pi\xE8ces pendant
       20 secondes."
+    cleDescription: item_tirelire_desc
   - identifiant: GateauChinois
     nomAffichage: "G\xE2teau Chinois"
+    cleNom: item_gateau_nom
     sprite: {fileID: 21300000, guid: 06b187de32c092f4799d2a0d9844a373, type: 3}
     estPassif: 0
     description: "Le g\xE2teau chinois vous donne 50% de chance de traverser un obstacle
       pendant 20 secondes."
+    cleDescription: item_gateau_desc
   - identifiant: RadarObstacles
     nomAffichage: "Radar \xE0 Obstacles"
+    cleNom: item_radar_nom
     sprite: {fileID: 21300000, guid: 59cfb477aa900da4093bede88e317cb7, type: 3}
     estPassif: 0
     description: "Le radar \xE0 obstacles vous permet de voir les prochains obstacles
       pendant 20 secondes, gr\xE2ce \xE0 un ! en haut de l'\xE9cran."
+    cleDescription: item_radar_desc
   - identifiant: Aspirateur
     nomAffichage: Aspirateur
+    cleNom: item_aspirateur_nom
     sprite: {fileID: 21300000, guid: d311b8af498717743b649d0ff9c03dbc, type: 3}
     estPassif: 0
     description: "L\u2019aspirateur vous donne plus de temps pour aspirer les documents
       pendant 20 secondes."
+    cleDescription: item_aspirateur_desc
   - identifiant: MontreAGousset
     nomAffichage: "Montre \xE0 Gousset"
+    cleNom: item_montre_nom
     sprite: {fileID: 21300000, guid: bad5870c01062c841bf1a56840fbb92f, type: 3}
     estPassif: 0
     description: "La montre \xE0 gousset ralentit le temps de 50% pendant 20 secondes."
+    cleDescription: item_montre_desc
   - identifiant: BadgeDuGouvernement
     nomAffichage: Badge du Gouvernement
+    cleNom: item_badge_nom
     sprite: {fileID: 21300000, guid: fa6cbb608c60b8c44b64ff4c8ba5c7ce, type: 3}
     estPassif: 0
     description: Le badge du gouvernement vous permet de passer n'importe quel barrage.
+    cleDescription: item_badge_desc

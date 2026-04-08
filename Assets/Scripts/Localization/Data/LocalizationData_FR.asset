@@ -154,3 +154,155 @@ MonoBehaviour:
     value: Monnaies
   - key: options_ambient
     value: Volume ambiant
+  - key: pause_title
+    value: Le jeu est en pause.
+  - key: pause_confirm_quit
+    value: "\xCAtes vous s\xFBr de revenir au menu ? (Vous perdrez la progression
+      en cours)"
+  - key: item_liasse_nom
+    value: Liasse de billets
+  - key: item_passe_nom
+    value: Formulaire passe-partout
+  - key: item_badge_nom
+    value: Badge du gouvernement
+  - key: item_tirelire_nom
+    value: Tirelire cochon
+  - key: item_gateau_nom
+    value: "G\xE2teau chinois"
+  - key: item_radar_nom
+    value: Radar obstacles
+  - key: item_aspirateur_nom
+    value: Aspirateur
+  - key: item_montre_nom
+    value: "Montre \xE0 gousset"
+  - key: item_liasse_desc
+    value: "Soudoie imm\xE9diatement le garde pour passer."
+  - key: item_passe_desc
+    value: Fait office de n'importe quel document manquant au barrage.
+  - key: item_badge_desc
+    value: "Impressionne le garde \u2014 aucune question pos\xE9e."
+  - key: item_tirelire_desc
+    value: "Fait pleuvoir des pi\xE8ces autour de vous pendant quelques secondes."
+  - key: item_gateau_desc
+    value: "Booste temporairement votre multiplicateur de pi\xE8ces."
+  - key: item_radar_desc
+    value: "R\xE9v\xE8le les obstacles \xE0 venir pour esquiver plus t\xF4t."
+  - key: item_aspirateur_desc
+    value: "Aspire automatiquement toutes les pi\xE8ces proches."
+  - key: item_montre_desc
+    value: "Ralentit le temps bri\xE8vement pour vous laisser r\xE9agir."
+  - key: skin_0_nom
+    value: Voiture simple
+  - key: skin_1_nom
+    value: Kitsch
+  - key: skin_2_nom
+    value: Voiture bleue
+  - key: skin_3_nom
+    value: Brasier
+  - key: skin_4_nom
+    value: Chabriolet
+  - key: skin_5_nom
+    value: Divauto
+  - key: skin_6_nom
+    value: Herbature
+  - key: skin_7_nom
+    value: Lovauto
+  - key: skin_8_nom
+    value: Alphacar
+  - key: skin_9_nom
+    value: Voiture du gouvernement
+  - key: skin_10_nom
+    value: Bolide de course
+  - key: skin_11_nom
+    value: Voiture rouge
+  - key: skin_12_nom
+    value: Carcasse roulante
+  - key: skin_13_nom
+    value: Rouge ondulant
+  - key: skin_14_nom
+    value: Voiture violette
+  - key: skin_15_nom
+    value: L.I.F.E
+  - key: skin_0_desc
+    value: C'est la voiture de base, son bleu azur est un camouflage parfait pour
+      se cacher dans le ciel !
+  - key: skin_1_desc
+    value: "Cette voiture est un peu d\xE9mod\xE9e mais rappelle des souvenirs d'une
+      \xE9poque r\xE9volue..."
+  - key: skin_2_desc
+    value: "Malgr\xE9 son bleu semblable aux fonds marins, cette voiture ne peut
+      pas nager."
+  - key: skin_3_desc
+    value: "Cette voiture br\xFBle comme la braise ! Tous les gens cools r\xEAvent
+      d'en avoir une !"
+  - key: skin_4_desc
+    value: "Tout le monde aime les petits chats ! Mais attention \xE0 ne pas les
+      faire conduire sans autorisations."
+  - key: skin_5_desc
+    value: "C'est une voiture pour les gens de go\xFBt ! M\xEAme si elle ne convient
+      pas \xE0 tous les go\xFBts."
+  - key: skin_6_desc
+    value: "Face au probl\xE8me grandissant des gens qui restent cloitr\xE9s chez
+      eux, les plus grands inventeurs ont cr\xE9\xE9 cette voiture qui am\xE8ne l'ext\xE9rieur
+      avec vous !"
+  - key: skin_7_desc
+    value: "Qu'existe-t-il de plus beau que l'amour ? Cette voiture assur\xE9ment."
+  - key: skin_8_desc
+    value: Toutes les voitures le suivent et l'adorent, en tout cas c'est ce qu'il
+      pense.
+  - key: skin_9_desc
+    value: "C'est la voiture officielle du gouvernement, c'est \xE0 se demander comment
+      elle a atterri ici..."
+  - key: skin_10_desc
+    value: "On dit de cette voiture qu'elle a appartenu \xE0 un grand pilote, mais
+      depuis les grandes restrictions de vitesse, il est au ch\xF4mage."
+  - key: skin_11_desc
+    value: C'est une voiture rouge, tout ce qu'il y a de plus banal.
+  - key: skin_12_desc
+    value: "On se demande comment cet engin roule encore, et comment il passe les
+      contr\xF4les techniques."
+  - key: skin_13_desc
+    value: Son motif peut rappeler les vagues.
+  - key: skin_14_desc
+    value: "Dans beaucoup de cultures, sa couleur symbolise le mal, le gouvernement
+      h\xE9sita m\xEAme \xE0 l'interdire."
+  - key: skin_15_desc
+    value: On dit que son conducteur triait des papiers, un boulot passionnant.
+  - key: tuto_barrage_corps
+    value: "\xC0 chaque inspection, remettez au garde les documents demand\xE9s avant
+      que la barre de patience en haut de l'\xE9cran ne se vide. Ici donnez lui un
+      document rouge.\n\nUne fois tous les documents remis, le garde vous indiquera
+      les documents \xE0 pr\xE9parer pour la prochaine inspection."
+  - key: tuto_barrage_bouton
+    value: Retour au menu
+  - key: tuto_felicitations_titre
+    value: "F\xE9licitations !"
+  - key: tuto_felicitations_corps
+    value: "Vous \xEAtes pr\xEAt \xE0 passer les inspections !\n\nBonne chance pour
+      la suite."
+  - key: tuto_felicitations_bouton
+    value: Retour au menu
+  - key: tuto_road_goal
+    value: "Roulez pour \xE9chapper \xE0 la bureaucratie ! Traversez la ville et
+      collectez les bons documents.\n\nEvitez les obstacles pour rester sur la route.\nLes
+      inspections n\xE9cessitent des documents pr\xE9cis, gardez un oeil sur ce qu'il
+      vous faut !"
+  - key: tuto_road_swipe
+    value: Glissez vers la gauche ou la droite pour changer de voie !
+  - key: tuto_road_pieces
+    value: "Sur la route, r\xE9cup\xE9rez des pi\xE8ces en roulant dessus.\n\nCes
+      pi\xE8ces vous permettront d'acheter des objets utiles dans la boutique !"
+  - key: tuto_road_document
+    value: "Voici le document dont vous aurez besoin pour la prochaine inspection.\n\nChaque
+      inspection vous indiquera quels documents collecter. Roulez \xE0 c\xF4t\xE9
+      des voitures de la bonne couleur et appuyez sur l'\xE9cran au bon moment pour
+      attraper leur document ! Une voiture rouge vous donnera un document rouge,
+      etc."
+  - key: tuto_road_slider
+    value: "Cette barre indique votre progression jusqu'\xE0 la prochaine inspection.\n\nQuand
+      elle est pleine, l'inspection commence !\n\nPour ce tutoriel, vous allez \xEAtre
+      transport\xE9 directement \xE0 l'inspection."
+  - key: tuto_road_prix
+    value: Prix
+  - key: tuto_road_continuer
+    value: Continuez
