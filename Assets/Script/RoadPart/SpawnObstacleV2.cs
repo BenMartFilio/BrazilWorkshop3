@@ -212,7 +212,7 @@ public class SpawnObstacleV2 : MonoBehaviour
     }
 
     /// <summary>Starts the spawn coroutine.</summary>
-    public void StartSpawning()
+    public void StartSpawning(bool disparition = true)
     {
         isSpawning = true;
         _miseAJourVitessePausée = false;
@@ -229,7 +229,10 @@ public class SpawnObstacleV2 : MonoBehaviour
 
                 scrolling.StartMoving();
                 scrolling.UpdateSpeed(_generalSpeed);
-                scrolling.Dispawn();
+                if (disparition)
+                {
+                    scrolling.Dispawn();
+                }
             }
         }
         _spawningCoroutine ??= StartCoroutine(SpawnRoutine());

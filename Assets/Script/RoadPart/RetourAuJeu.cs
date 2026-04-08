@@ -27,7 +27,7 @@ public class RetourAuJeu : MonoBehaviour
 
     public void UnPauseGame()
     {
-        _endManager.RestartGame();
+        _endManager.RestartGame(false);
     }
 
     public void CloseMenu() => _unHideIt.SetActive(false);
