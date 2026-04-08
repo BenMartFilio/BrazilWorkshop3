@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
+using Drakensland.Localization;
 
 /// <summary>
 /// Bouton d'achat de skin cosmétique dans la boutique.
@@ -66,8 +67,6 @@ public class SkinPurchaseButton : MonoBehaviour
     [SerializeField] private Sprite fondEquipeSkin;      // acheté ET équipé
     [SerializeField] private Image fondImage;
     [SerializeField] private TMP_Text labelEtatEquipe;
-    [SerializeField] private string texteEquipe = "Équipé";
-    [SerializeField] private string texteNonEquipe = "Non équipé";
 
     [Header("Panel d'équipement")]
     [SerializeField] private SkinEquipFocus equipFocus;
@@ -112,6 +111,7 @@ public class SkinPurchaseButton : MonoBehaviour
         if (playerDatas != null)
             playerDatas.OnMonneyChanged += RefreshButtonState;
         SaveGameSystem.OnSaveLoaded += RefreshButtonState;
+        LocalizationManager.OnLocaleChanged += RefreshButtonState;
         RefreshButtonState();
     }
 
@@ -121,6 +121,7 @@ public class SkinPurchaseButton : MonoBehaviour
         if (playerDatas != null)
             playerDatas.OnMonneyChanged -= RefreshButtonState;
         SaveGameSystem.OnSaveLoaded -= RefreshButtonState;
+        LocalizationManager.OnLocaleChanged -= RefreshButtonState;
     }
 
 
@@ -180,10 +181,10 @@ public class SkinPurchaseButton : MonoBehaviour
         if (def != null)
         {
             if (confirmationNameLabel != null)
-                confirmationNameLabel.text = def.nomAffichage;
+                confirmationNameLabel.text = def.ObtenirNomLocalise();
 
             if (confirmationDescriptionLabel != null)
-                confirmationDescriptionLabel.text = def.description;
+                confirmationDescriptionLabel.text = def.ObtenirDescriptionLocalisee();
         }
 
         confirmButton?.onClick.AddListener(OnConfirm);
@@ -276,6 +277,12 @@ public class SkinPurchaseButton : MonoBehaviour
             if (labelEtatEquipe != null)
             {
                 labelEtatEquipe.gameObject.SetActive(true);
+                string texteEquipe    = LocalizationManager.Instance != null
+                    ? LocalizationManager.Instance.Get(LocalizationKeys.SHOP_EQUIPPED)
+                    : "Équipé";
+                string texteNonEquipe = LocalizationManager.Instance != null
+                    ? LocalizationManager.Instance.Get(LocalizationKeys.SHOP_EQUIP)
+                    : "Équiper";
                 labelEtatEquipe.text = equipe ? texteEquipe : texteNonEquipe;
             }
         }

@@ -1445,6 +1445,7 @@ GameObject:
   - component: {fileID: 595789014}
   - component: {fileID: 595789016}
   - component: {fileID: 595789015}
+  - component: {fileID: 595789017}
   m_Layer: 5
   m_Name: TextPieces
   m_TagString: Untagged
@@ -1572,6 +1573,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 595789013}
   m_CullTransparentMesh: 1
+--- !u!114 &595789017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595789013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: tuto_coins_title
+  _formatArgs: []
 --- !u!1 &600719222
 GameObject:
   m_ObjectHideFlags: 0
@@ -2244,6 +2259,7 @@ GameObject:
   - component: {fileID: 724231375}
   - component: {fileID: 724231377}
   - component: {fileID: 724231376}
+  - component: {fileID: 724231378}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2370,6 +2386,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724231374}
   m_CullTransparentMesh: 1
+--- !u!114 &724231378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724231374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: menu_play
+  _formatArgs: []
 --- !u!1 &740038128
 GameObject:
   m_ObjectHideFlags: 0
@@ -2381,6 +2411,7 @@ GameObject:
   - component: {fileID: 740038129}
   - component: {fileID: 740038131}
   - component: {fileID: 740038130}
+  - component: {fileID: 740038132}
   m_Layer: 5
   m_Name: TextScore
   m_TagString: Untagged
@@ -2508,6 +2539,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740038128}
   m_CullTransparentMesh: 1
+--- !u!114 &740038132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740038128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: leaderboard_score
+  _formatArgs: []
 --- !u!1 &778551666
 GameObject:
   m_ObjectHideFlags: 0
@@ -2594,6 +2639,7 @@ GameObject:
   - component: {fileID: 788941767}
   - component: {fileID: 788941769}
   - component: {fileID: 788941768}
+  - component: {fileID: 788941770}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2720,6 +2766,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 788941766}
   m_CullTransparentMesh: 1
+--- !u!114 &788941770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788941766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: common_no
+  _formatArgs: []
 --- !u!1 &811734797
 GameObject:
   m_ObjectHideFlags: 0
@@ -3516,6 +3576,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4630972342190581020, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 902120495}
+    - targetCorrespondingSourceObject: {fileID: 8100077562801129629, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 902120498}
   m_SourcePrefab: {fileID: 100100000, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
 --- !u!224 &902120493 stripped
 RectTransform:
@@ -3551,6 +3614,25 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!1 &902120497 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8100077562801129629, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
+  m_PrefabInstance: {fileID: 902120492}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &902120498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902120497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: shop_buy
+  _formatArgs: []
 --- !u!1 &933819019
 GameObject:
   m_ObjectHideFlags: 0
@@ -4725,13 +4807,35 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 70135208740948409, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1137020867}
   m_SourcePrefab: {fileID: 100100000, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
 --- !u!224 &1137020865 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 141532913796118228, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
   m_PrefabInstance: {fileID: 1137020864}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1137020866 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 70135208740948409, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
+  m_PrefabInstance: {fileID: 1137020864}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1137020867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137020866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: shop_buy
+  _formatArgs: []
 --- !u!1 &1142356618
 GameObject:
   m_ObjectHideFlags: 0
@@ -5854,13 +5958,35 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 70135208740948409, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1547588690}
   m_SourcePrefab: {fileID: 100100000, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
 --- !u!224 &1547588688 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 141532913796118228, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
   m_PrefabInstance: {fileID: 1547588687}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1547588689 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 70135208740948409, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
+  m_PrefabInstance: {fileID: 1547588687}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1547588690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547588689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: shop_buy
+  _formatArgs: []
 --- !u!1 &1562142686
 GameObject:
   m_ObjectHideFlags: 0
@@ -7366,6 +7492,7 @@ GameObject:
   - component: {fileID: 2047817734}
   - component: {fileID: 2047817736}
   - component: {fileID: 2047817735}
+  - component: {fileID: 2047817737}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -7492,6 +7619,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2047817733}
   m_CullTransparentMesh: 1
+--- !u!114 &2047817737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047817733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: common_yes
+  _formatArgs: []
 --- !u!1001 &2103427842
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7638,6 +7779,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4630972342190581020, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2103427845}
+    - targetCorrespondingSourceObject: {fileID: 8100077562801129629, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2103427848}
   m_SourcePrefab: {fileID: 100100000, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
 --- !u!224 &2103427843 stripped
 RectTransform:
@@ -7673,6 +7817,25 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!1 &2103427847 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8100077562801129629, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
+  m_PrefabInstance: {fileID: 2103427842}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2103427848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103427847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: shop_buy
+  _formatArgs: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

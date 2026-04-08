@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Drakensland.Localization;
 using UnityEngine;
 using Barrage.Formulaires;
 
@@ -25,7 +26,6 @@ namespace Barrage.UI
     [DefaultExecutionOrder(-90)]
     public class DetecteurSituationDesespérée : MonoBehaviour
     {
-        private const string MESSAGE_DESESPOIR    = "Vous n'avez pas les formulaires ?!";
         private const float  DELAI_AVANT_GAMEOVER = 1f;
 
         [Header("Données")]
@@ -203,7 +203,11 @@ namespace Barrage.UI
                 return;
             }
 
-            bulleBasse.AfficherMessageDesespoir(MESSAGE_DESESPOIR);
+            string message = LocalizationManager.Instance != null
+                ? LocalizationManager.Instance.Get(LocalizationKeys.FEEDBACK_DESPAIR)
+                : "Vous n'avez pas les formulaires ?!";
+
+            bulleBasse.AfficherMessageDesespoir(message);
         }
 
         // ── Helpers debug ─────────────────────────────────────────────────────

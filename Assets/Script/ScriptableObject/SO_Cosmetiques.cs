@@ -1,6 +1,7 @@
 // Assets/Script/ScriptableObject/SO_Cosmetiques.cs
 
 using System.Collections.Generic;
+using Drakensland.Localization;
 using UnityEngine;
 
 public enum CategorieCosmetique { SkinPlayer }
@@ -8,17 +9,39 @@ public enum CategorieCosmetique { SkinPlayer }
 [System.Serializable]
 public class DefinitionCosmetique
 {
-    [Tooltip("Identifiant unique — doit correspondre à CosmetiqueEntry.identifiant.")]
+    [Tooltip("Identifiant unique ï¿½ doit correspondre ï¿½ CosmetiqueEntry.identifiant.")]
     public string identifiant;
 
     public string nomAffichage;
+
+    [Tooltip("ClÃ© de localisation pour le nom. Ex: 'skin_dragon_nom'. Si vide, nomAffichage est utilisÃ©.")]
+    public string cleNom;
 
     public Sprite sprite;
 
     [TextArea(2, 4)]
     public string description;
 
+    [Tooltip("ClÃ© de localisation pour la description. Ex: 'skin_dragon_desc'. Si vide, description est utilisÃ©.")]
+    public string cleDescription;
+
     public CategorieCosmetique categorie;
+
+    /// <summary>Retourne le nom localisÃ©, avec fallback sur nomAffichage.</summary>
+    public string ObtenirNomLocalise()
+    {
+        if (!string.IsNullOrEmpty(cleNom) && LocalizationManager.Instance != null)
+            return LocalizationManager.Instance.Get(cleNom);
+        return nomAffichage;
+    }
+
+    /// <summary>Retourne la description localisÃ©e, avec fallback sur description.</summary>
+    public string ObtenirDescriptionLocalisee()
+    {
+        if (!string.IsNullOrEmpty(cleDescription) && LocalizationManager.Instance != null)
+            return LocalizationManager.Instance.Get(cleDescription);
+        return string.IsNullOrEmpty(description) ? nomAffichage : description;
+    }
 }
 
 [CreateAssetMenu(fileName = "SO_Cosmetiques", menuName = "Scriptable Objects/SO_Cosmetiques")]
@@ -26,7 +49,7 @@ public class SO_Cosmetiques : ScriptableObject
 {
     public List<DefinitionCosmetique> cosmetiques = new List<DefinitionCosmetique>();
 
-    /// <summary>Retourne la définition d'un cosmétique par son identifiant, ou null.</summary>
+    /// <summary>Retourne la dï¿½finition d'un cosmï¿½tique par son identifiant, ou null.</summary>
     public DefinitionCosmetique ObtenirDefinition(string identifiant)
     {
         foreach (DefinitionCosmetique def in cosmetiques)
@@ -36,7 +59,7 @@ public class SO_Cosmetiques : ScriptableObject
         return null;
     }
 
-    /// <summary>Retourne tous les cosmétiques d'une catégorie donnée, dans leur ordre de liste.</summary>
+    /// <summary>Retourne tous les cosmï¿½tiques d'une catï¿½gorie donnï¿½e, dans leur ordre de liste.</summary>
     public List<DefinitionCosmetique> ObtenirParCategorie(CategorieCosmetique categorie)
     {
         List<DefinitionCosmetique> resultat = new List<DefinitionCosmetique>();

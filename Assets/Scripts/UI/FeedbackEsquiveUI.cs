@@ -1,4 +1,5 @@
 using System.Collections;
+using Drakensland.Localization;
 using ObjetsSpeciaux;
 using TMPro;
 using UnityEngine;
@@ -69,7 +70,9 @@ public class FeedbackEsquiveUI : MonoBehaviour
 
     private IEnumerator AnimerDodge()
     {
-        _texte.text = "Dodge !";
+        _texte.text = LocalizationManager.Instance != null
+            ? LocalizationManager.Instance.Get(LocalizationKeys.FEEDBACK_DODGE)
+            : "Dodge!";
         _texte.gameObject.SetActive(true);
 
         Vector3 posDepart = _transformJoueur.position + Vector3.up * OFFSET_Y_DEPART;

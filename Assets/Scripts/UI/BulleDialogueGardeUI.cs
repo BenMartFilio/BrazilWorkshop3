@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Drakensland.Localization;
 using TMPro;
 using UnityEngine;
 using Barrage.Formulaires;
@@ -27,47 +28,47 @@ namespace Barrage.UI
         private const float DUREE_AFFICHAGE_VALIDATION = 4.0f;
         private const float DUREE_FONDU                = 0.25f;
 
-        // ── Répliques ─────────────────────────────────────────────────────────
+        // ── Clés de localisation pour les répliques ───────────────────────────
 
-        private static readonly string[] REPLIQUES_DEMANDE = new[]
+        private static readonly string[] CLES_DEMANDE = new[]
         {
-            "Veuillez me fournir les documents requis.",
-            "Fournissez-moi les documents requis."
+            LocalizationKeys.GUARD_REQUEST_1,
+            LocalizationKeys.GUARD_REQUEST_2
         };
 
-        private static readonly string[] REPLIQUES_BON_DOCUMENT = new[]
+        private static readonly string[] CLES_BON_DOCUMENT = new[]
         {
-            "Merci.",
-            "Très bien."
+            LocalizationKeys.GUARD_GOOD_DOC_1,
+            LocalizationKeys.GUARD_GOOD_DOC_2
         };
 
-        private static readonly string[] REPLIQUES_MAUVAIS_DOCUMENT = new[]
+        private static readonly string[] CLES_MAUVAIS_DOCUMENT = new[]
         {
-            "Je commence à croire que vous êtes suspect…",
-            "Mauvais document.",
-            "Ma patience a des limites."
+            LocalizationKeys.GUARD_BAD_DOC_1,
+            LocalizationKeys.GUARD_BAD_DOC_2,
+            LocalizationKeys.GUARD_BAD_DOC_3
         };
 
-        private static readonly string[] REPLIQUES_BARRAGE_VALIDE = new[]
+        private static readonly string[] CLES_BARRAGE_VALIDE = new[]
         {
-            "Les documents sont conformes.",
-            "Bonne route.",
-            "C'est bon, vous pouvez passer."
+            LocalizationKeys.GUARD_CHECKPOINT_PASS_1,
+            LocalizationKeys.GUARD_CHECKPOINT_PASS_2,
+            LocalizationKeys.GUARD_CHECKPOINT_PASS_3
         };
 
-        private static readonly string[] REPLIQUES_BARRAGE_NON_VALIDE = new[]
+        private static readonly string[] CLES_BARRAGE_NON_VALIDE = new[]
         {
-            "Sortez de la voiture, les mains en l'air, je vous arrête !"
+            LocalizationKeys.GUARD_CHECKPOINT_FAIL
         };
 
-        private static readonly string[] REPLIQUES_SEQUENCE_SUIVANTE = new[]
+        private static readonly string[] CLES_SEQUENCE_SUIVANTE = new[]
         {
-            "Au prochain poste, vous devrez présenter ces documents."
+            LocalizationKeys.GUARD_NEXT_POST
         };
 
-        private static readonly string[] REPLIQUES_PREMIER_BARRAGE = new[]
+        private static readonly string[] CLES_PREMIER_BARRAGE = new[]
         {
-            "Il vous faudra ces formulaires pour passer le prochain contrôle, souvenez-vous en !"
+            LocalizationKeys.GUARD_FIRST_CHECKPOINT
         };
 
         // ── Champs sérialisés ─────────────────────────────────────────────────
@@ -129,9 +130,9 @@ namespace Barrage.UI
             if (!EstActive) return;
 
             if (_estPremierBarrage)
-                LancerRéplique(REPLIQUES_PREMIER_BARRAGE, duréeAffichage: -1f);
+                LancerRéplique(CLES_PREMIER_BARRAGE, duréeAffichage: -1f);
             else
-                LancerRéplique(REPLIQUES_DEMANDE, duréeAffichage: -1f);
+                LancerRéplique(CLES_DEMANDE, duréeAffichage: -1f);
         }
 
         /// <summary>
@@ -167,7 +168,7 @@ namespace Barrage.UI
                 _coroutineActive = null;
             }
 
-            LancerRéplique(REPLIQUES_SEQUENCE_SUIVANTE, duréeAffichage: -1f);
+            LancerRéplique(CLES_SEQUENCE_SUIVANTE, duréeAffichage: -1f);
         }
 
 
@@ -210,11 +211,11 @@ namespace Barrage.UI
         {
             if (_barrageTerminé || !EstActive) return;
 
-            LancerRéplique(REPLIQUES_BON_DOCUMENT, DUREE_AFFICHAGE_DOCUMENT,
+            LancerRéplique(CLES_BON_DOCUMENT, DUREE_AFFICHAGE_DOCUMENT,
                 rappel: () =>
                 {
                     if (!_barrageTerminé && EstActive)
-                        LancerRéplique(REPLIQUES_DEMANDE, duréeAffichage: -1f);
+                        LancerRéplique(CLES_DEMANDE, duréeAffichage: -1f);
                 });
         }
 
@@ -222,11 +223,11 @@ namespace Barrage.UI
         {
             if (_barrageTerminé || !EstActive) return;
 
-            LancerRéplique(REPLIQUES_MAUVAIS_DOCUMENT, DUREE_AFFICHAGE_DOCUMENT,
+            LancerRéplique(CLES_MAUVAIS_DOCUMENT, DUREE_AFFICHAGE_DOCUMENT,
                 rappel: () =>
                 {
                     if (!_barrageTerminé && EstActive)
-                        LancerRéplique(REPLIQUES_DEMANDE, duréeAffichage: -1f);
+                        LancerRéplique(CLES_DEMANDE, duréeAffichage: -1f);
                 });
         }
 
@@ -237,8 +238,8 @@ namespace Barrage.UI
             _barrageTerminé = true;
             if (!EstActive) return;
 
-            LancerRéplique(REPLIQUES_BARRAGE_VALIDE, DUREE_AFFICHAGE_VALIDATION,
-                rappel: () => LancerRéplique(REPLIQUES_SEQUENCE_SUIVANTE, duréeAffichage: -1f));
+            LancerRéplique(CLES_BARRAGE_VALIDE, DUREE_AFFICHAGE_VALIDATION,
+                rappel: () => LancerRéplique(CLES_SEQUENCE_SUIVANTE, duréeAffichage: -1f));
         }
 
         private void OnPatienceEpuisée()
@@ -246,7 +247,7 @@ namespace Barrage.UI
             _barrageTerminé = true;
             if (!EstActive) return;
 
-            LancerRéplique(REPLIQUES_BARRAGE_NON_VALIDE, duréeAffichage: -1f);
+            LancerRéplique(CLES_BARRAGE_NON_VALIDE, duréeAffichage: -1f);
         }
 
         /// <summary>
@@ -273,7 +274,7 @@ namespace Barrage.UI
             if (!string.IsNullOrEmpty(texteAReprendre))
                 LancerRéplicueDirecte(texteAReprendre, duréeAffichage: -1f);
             else
-                LancerRéplique(REPLIQUES_DEMANDE, duréeAffichage: -1f);
+                LancerRéplique(CLES_DEMANDE, duréeAffichage: -1f);
         }
 
         // ── API interne (appelée par l'autre bulle) ───────────────────────────
@@ -351,9 +352,12 @@ namespace Barrage.UI
 
         // ── Affichage ─────────────────────────────────────────────────────────
 
-        private void LancerRéplique(string[] répliques, float duréeAffichage, Action rappel = null)
+        private void LancerRéplique(string[] clés, float duréeAffichage, Action rappel = null)
         {
-            string texte = ChoisirAléatoire(répliques);
+            string clé   = ChoisirAléatoire(clés);
+            string texte = LocalizationManager.Instance != null
+                ? LocalizationManager.Instance.Get(clé)
+                : clé;
             LancerRéplicueDirecte(texte, duréeAffichage, rappel);
         }
 

@@ -22,7 +22,12 @@ public class SaveGameSystem : MonoBehaviour
 
     private void Awake()
     {
+#if UNITY_ANDROID || UNITY_IOS
         Application.targetFrameRate = 60;
+        System.GC.Collect();
+        Resources.UnloadUnusedAssets();
+#endif
+
         lock (lockObj)
         {
             if (instance == null)

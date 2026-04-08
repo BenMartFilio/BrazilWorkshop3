@@ -1,0 +1,155 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5970e4372f579db4c97b01d8086683dc, type: 3}
+  m_Name: LocalizationData_EN
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizationData
+  languageCode: en
+  displayName: English
+  _entries:
+  - key: guard_request_1
+    value: Please provide the required documents.
+  - key: guard_request_2
+    value: Hand me the required documents.
+  - key: guard_good_doc_1
+    value: Thank you.
+  - key: guard_good_doc_2
+    value: Very well.
+  - key: guard_bad_doc_1
+    value: "I'm starting to think you're suspicious\u2026"
+  - key: guard_bad_doc_2
+    value: Wrong document.
+  - key: guard_bad_doc_3
+    value: My patience has limits.
+  - key: guard_checkpoint_pass_1
+    value: Documents are in order.
+  - key: guard_checkpoint_pass_2
+    value: Safe travels.
+  - key: guard_checkpoint_pass_3
+    value: You're clear, move along.
+  - key: guard_checkpoint_fail
+    value: "Step out of the vehicle, hands up \u2014 you're under arrest!"
+  - key: guard_next_post
+    value: At the next checkpoint, you'll need to present these documents.
+  - key: guard_first_checkpoint
+    value: "You'll need these forms to pass the next checkpoint \u2014 remember them!"
+  - key: feedback_dodge
+    value: Dodge!
+  - key: feedback_despair
+    value: You don't have the forms?!
+  - key: menu_play
+    value: Play
+  - key: menu_shop
+    value: Shop
+  - key: menu_leaderboard
+    value: Leaderboard
+  - key: menu_options
+    value: Options
+  - key: menu_inventory
+    value: Inventory
+  - key: shop_buy
+    value: Buy
+  - key: shop_equip
+    value: Equip
+  - key: shop_equipped
+    value: Equipped
+  - key: shop_restore_purchases
+    value: Restore Purchases
+  - key: shop_not_enough_coins
+    value: Not enough coins!
+  - key: shop_not_enough_gems
+    value: Not enough gems!
+  - key: options_sound
+    value: General volume
+  - key: options_music
+    value: Music
+  - key: options_vibration
+    value: Vibration
+  - key: gameover_title
+    value: Game Over
+  - key: gameover_score
+    value: Score
+  - key: gameover_best
+    value: Best
+  - key: gameover_revive
+    value: Revive
+  - key: gameover_continue
+    value: Continue
+  - key: gameover_menu
+    value: Menu
+  - key: gameover_new_record
+    value: New Record!
+  - key: tuto_goal_title
+    value: Goal
+  - key: tuto_goal_desc
+    value: Collect the requested forms and get through the checkpoints!
+  - key: tuto_swipe_title
+    value: Movement
+  - key: tuto_swipe_desc
+    value: Swipe to dodge obstacles.
+  - key: tuto_coins_title
+    value: Coins
+  - key: tuto_coins_desc
+    value: Collect coins to unlock skins in the shop.
+  - key: tuto_document_title
+    value: Documents
+  - key: tuto_document_desc
+    value: Collect the right document before reaching the checkpoint!
+  - key: tuto_slider_title
+    value: Checkpoint
+  - key: tuto_slider_desc
+    value: This bar shows how close the next checkpoint is.
+  - key: tuto_ok
+    value: OK!
+  - key: leaderboard_title
+    value: Leaderboard
+  - key: leaderboard_rank
+    value: Rank
+  - key: leaderboard_score
+    value: Score
+  - key: leaderboard_player
+    value: Player
+  - key: leaderboard_loading
+    value: "Loading\u2026"
+  - key: leaderboard_empty
+    value: No scores yet.
+  - key: leaderboard_error
+    value: Failed to load.
+  - key: ad_watch_to_revive
+    value: Watch an ad to revive
+  - key: ad_watch_for_coins
+    value: Watch an ad for coins
+  - key: ad_not_available
+    value: Ad not available.
+  - key: common_ok
+    value: OK
+  - key: common_cancel
+    value: Cancel
+  - key: common_close
+    value: Close
+  - key: common_yes
+    value: Yes
+  - key: common_no
+    value: No
+  - key: common_back
+    value: Back
+  - key: common_loading
+    value: "Loading\u2026"
+  - key: menu_home
+    value: Home
+  - key: shop_section_bonus_items
+    value: Bonus Items
+  - key: shop_section_cosmetics
+    value: Cosmetics
+  - key: shop_section_currency
+    value: Currency
+  - key: options_ambient
+    value: Ambient volume

@@ -5327,6 +5327,9 @@ MonoBehaviour:
   textureGameOver: {fileID: 2800000, guid: 2d3413b8fa2182a43acb503063d2d9b6, type: 3}
   "dur\xE9eFondu": 0.8
   sortingOrderOverlay: 200
+  _audioEventDispatcher: {fileID: 0}
+  _gameOverSound: 0
+  _tictac: {fileID: 0}
 --- !u!1 &1985469382
 GameObject:
   m_ObjectHideFlags: 0

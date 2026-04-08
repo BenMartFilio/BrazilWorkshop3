@@ -1,5 +1,6 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
+using Drakensland.Localization;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -132,9 +133,9 @@ public class InventaireMenuUI : MonoBehaviour
 
         // Description
         if (texteDescription != null)
-            texteDescription.text = string.IsNullOrEmpty(def.description)
-                ? def.nomAffichage
-                : def.description;
+            texteDescription.text = string.IsNullOrEmpty(def.description) && string.IsNullOrEmpty(def.cleDescription)
+                ? def.ObtenirNomLocalise()
+                : def.ObtenirDescriptionLocalisee();
 
         // Sprite sur le proxy
         if (iconeProxy != null)

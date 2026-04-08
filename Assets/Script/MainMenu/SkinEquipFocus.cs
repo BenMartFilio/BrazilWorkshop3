@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// Panel de focus pour l'équipement d'un skin cosmétique.
-/// Le GameObject lui-même est activé/désactivé (pas un focusRoot enfant).
-/// Après équipement, invoque onEquippedCallback pour que les boutons boutique
-/// puissent rafraîchir leur état.
+/// Panel de focus pour l'ï¿½quipement d'un skin cosmï¿½tique.
+/// Le GameObject lui-mï¿½me est activï¿½/dï¿½sactivï¿½ (pas un focusRoot enfant).
+/// Aprï¿½s ï¿½quipement, invoque onEquippedCallback pour que les boutons boutique
+/// puissent rafraï¿½chir leur ï¿½tat.
 /// </summary>
 public class SkinEquipFocus : MonoBehaviour
 {
@@ -17,7 +17,7 @@ public class SkinEquipFocus : MonoBehaviour
     private const float ANGLE_MAX = 6f;
     private const float FREQUENCE = 28f;
 
-    [Header("Données")]
+    [Header("Donnï¿½es")]
     [SerializeField] private SO_PlayerDatas playerDatas;
 
     [Header("Overlay")]
@@ -27,7 +27,7 @@ public class SkinEquipFocus : MonoBehaviour
     [Header("Focus")]
     [SerializeField] private Image iconeProxy;
     [SerializeField] private Button boutonEquiper;
-    [SerializeField] private TMP_Text labelDejaEquipe;   // texte "Équipé" visible quand déjà équipé
+    [SerializeField] private TMP_Text labelDejaEquipe;   // texte "ï¿½quipï¿½" visible quand dï¿½jï¿½ ï¿½quipï¿½
     [SerializeField] private TMP_Text labelNom;
     [SerializeField] private TMP_Text labelDescription;
 
@@ -74,8 +74,8 @@ public class SkinEquipFocus : MonoBehaviour
     #region Public API
 
     /// <summary>
-    /// Ouvre le panel depuis l'icône source du bouton boutique.
-    /// onEquippedCallback : appelé après équipement pour rafraîchir les boutons.
+    /// Ouvre le panel depuis l'icï¿½ne source du bouton boutique.
+    /// onEquippedCallback : appelï¿½ aprï¿½s ï¿½quipement pour rafraï¿½chir les boutons.
     /// </summary>
     public void Ouvrir(Image iconeSource, int skinIndex, DefinitionCosmetique def,
                        System.Action onEquippedCallback = null)
@@ -87,14 +87,14 @@ public class SkinEquipFocus : MonoBehaviour
         _onEquippedCallback = onEquippedCallback;
         _ouvert = true;
 
-        // Active le GO avant tout — nécessaire pour que les coroutines tournent
+        // Active le GO avant tout ï¿½ nï¿½cessaire pour que les coroutines tournent
         gameObject.SetActive(true);
 
         if (iconeProxy != null) iconeProxy.sprite = def.sprite;
-        if (labelNom != null) labelNom.text = def.nomAffichage;
-        if (labelDescription != null) labelDescription.text = def.description;
+        if (labelNom != null) labelNom.text = def.ObtenirNomLocalise();
+        if (labelDescription != null) labelDescription.text = def.ObtenirDescriptionLocalisee();
 
-        // Bouton Équiper vs label "Équipé"
+        // Bouton ï¿½quiper vs label "ï¿½quipï¿½"
         bool dejaEquipe = playerDatas != null && playerDatas.skinEquiped == skinIndex;
         if (boutonEquiper != null) boutonEquiper.gameObject.SetActive(!dejaEquipe);
         if (labelDejaEquipe != null) labelDejaEquipe.gameObject.SetActive(dejaEquipe);
@@ -112,7 +112,7 @@ public class SkinEquipFocus : MonoBehaviour
         _coroutineAnim = StartCoroutine(AnimerOuverture());
     }
 
-    /// <summary>Ferme le panel immédiatement sans équiper.</summary>
+    /// <summary>Ferme le panel immï¿½diatement sans ï¿½quiper.</summary>
     public void Fermer()
     {
         if (!_ouvert) return;

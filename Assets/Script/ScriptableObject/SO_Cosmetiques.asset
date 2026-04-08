@@ -101,3 +101,8 @@ MonoBehaviour:
     description: "Dans beaucoup de cultures, sa couleur symbolise le mal, le gouvernement
       h\xE9sita m\xEAme \xE0 l'interdire."
     categorie: 0
+  - identifiant: 15
+    nomAffichage: L.I.F.E
+    sprite: {fileID: 21300000, guid: c46d7592f33bb4a4892f09e2e1f7847f, type: 3}
+    description: On dit que son conducteur triait des papiers, un boulot passionnant.
+    categorie: 0
