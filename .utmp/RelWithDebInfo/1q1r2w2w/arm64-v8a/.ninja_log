@@ -1,10 +1,12 @@
 # ninja log v5
-31	3792	7962373111437252	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	6db2b25debc34c5e
-21	3928	7962373112069351	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	a808c3835ae81a6
-52	3932	7962373112442626	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	1840362137103854
-1	3981	7962373113929631	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	f5c160062c502915
-74	4029	7962373115038193	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	4033530f166e3df7
-42	4639	7962373121806087	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	40a24a93a5dd656b
-63	4659	7962373121962801	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	c32a00449200c326
-11	4744	7962373122834180	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	58bb851a38145b52
-4744	4939	7962373124909228	C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1q1r2w2w/obj/arm64-v8a/libgame.so	5a1a4c58c38f9f50
+54	489	7973342642189348	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	cfd81c18b562b44b
+529	798	7973342645187254	C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1q1r2w2w/obj/arm64-v8a/libswappywrapper.so	1195969bd8523a4a
+19	3799	7973342675164000	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	6db2b25debc34c5e
+26	3805	7973342675128355	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	1840362137103854
+47	3818	7973342675376030	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	4033530f166e3df7
+1	3907	7973342675339927	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	a808c3835ae81a6
+13	4023	7973342677189662	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	f5c160062c502915
+34	4080	7973342678015938	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	40a24a93a5dd656b
+41	4215	7973342679141184	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	c32a00449200c326
+7	4217	7973342679197828	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	58bb851a38145b52
+4217	4363	7973342680900931	C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1q1r2w2w/obj/arm64-v8a/libgame.so	5a1a4c58c38f9f50

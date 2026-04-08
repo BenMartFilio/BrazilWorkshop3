@@ -3,3 +3,6 @@ C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/.utmp/RelWithDebI
 C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/.utmp/RelWithDebInfo/1q1r2w2w/arm64-v8a/GameActivity/CMakeFiles/game.dir
 C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/.utmp/RelWithDebInfo/1q1r2w2w/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
 C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/.utmp/RelWithDebInfo/1q1r2w2w/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
+C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/.utmp/RelWithDebInfo/1q1r2w2w/arm64-v8a/FramePacing/CMakeFiles/swappywrapper.dir
+C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/.utmp/RelWithDebInfo/1q1r2w2w/arm64-v8a/FramePacing/CMakeFiles/edit_cache.dir
+C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/.utmp/RelWithDebInfo/1q1r2w2w/arm64-v8a/FramePacing/CMakeFiles/rebuild_cache.dir

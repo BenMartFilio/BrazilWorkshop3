@@ -1633,7 +1633,8 @@
             "scenes": [
               "Assets/Scenes/Barrage.unity",
               "Assets/Scenes/BarrageTuto.unity",
-              "Assets/Scenes/MainMenu.unity"
+              "Assets/Scenes/MainMenu.unity",
+              "Assets/Scenes/ResultScene.unity"
             ],
             "dependencyType": 0,
             "icon": null

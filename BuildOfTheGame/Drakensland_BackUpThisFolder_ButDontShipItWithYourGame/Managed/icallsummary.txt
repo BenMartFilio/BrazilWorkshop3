@@ -321,6 +321,7 @@ UnityEngine.AssetBundle::LoadAsset_Internal_Injected
 UnityEngine.AsyncOperation::get_isDone_Injected
 UnityEngine.AsyncOperation::InternalDestroy
 UnityEngine.AsyncOperation::InternalSetManagedObject
+UnityEngine.Audio.AudioMixer::GetFloat_Injected
 UnityEngine.Audio.AudioMixer::SetFloat_Injected
 UnityEngine.Audio.AudioMixerGroup::get_audioMixer_Injected
 UnityEngine.Audio.ScriptableProcessorBindings::CheckProcessorExistsInternal_Injected
@@ -597,6 +598,7 @@ UnityEngine.Font::Internal_CreateFont_Injected
 UnityEngine.FrameTimingManager::GetLatestTimings_Injected
 UnityEngine.FrameTimingManager::CaptureFrameTimings
 UnityEngine.GameObject::GetComponentsInternal_Injected
+UnityEngine.GameObject::CompareTag_Internal_Injected
 UnityEngine.GameObject::get_activeInHierarchy_Injected
 UnityEngine.GameObject::get_activeSelf_Injected
 UnityEngine.GameObject::get_layer_Injected
@@ -1166,7 +1168,9 @@ UnityEngine.PlayerConnectionInternal::RegisterInternal_Injected
 UnityEngine.PlayerConnectionInternal::SendMessage_Injected
 UnityEngine.PlayerConnectionInternal::UnregisterInternal_Injected
 UnityEngine.PlayerPrefs::HasKey_Injected
+UnityEngine.PlayerPrefs::TrySetInt_Injected
 UnityEngine.PlayerPrefs::TrySetSetString_Injected
+UnityEngine.PlayerPrefs::GetInt_Injected
 UnityEngine.PlayerPrefs::DeleteKey_Injected
 UnityEngine.PlayerPrefs::GetString_Injected
 UnityEngine.PlayerPrefs::Save
