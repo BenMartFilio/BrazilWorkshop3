@@ -51,7 +51,7 @@ public class EndManager : MonoBehaviour
         _barreProgression?.Geler();
     }
 
-    public void RestartGame()
+    public void RestartGame(bool dispa = true)
     {
         _timeManager.StartTime();
         _scoreManager.StartScore();
@@ -61,7 +61,7 @@ public class EndManager : MonoBehaviour
         _aspiration.UnDie();
         if (_spawner != null)
         {
-            _spawner.StartSpawning();
+            _spawner.StartSpawning(dispa);
             _spawner.ReprendreCompteurBarrage();
         }
         _barreProgression?.Dégeler();
