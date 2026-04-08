@@ -4695,11 +4695,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_StartScore_m7AF973B3EB29D1F
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GoundMouvement_StartMove_mEE9D436B4C3C3D6812CA8739B1263DA5E9A56EB5 (GoundMouvement_tF7FF55D1086B04C5D1A1BAFC972820ABBE9F23B6* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement_StartMove_mBC779938623C54A574AA90AD9C8686EB24660EB0 (PlayerMovement_t4A0A0A8C937BC1D4FC570D1B5B50847338423351* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Aspiration_UnDie_m85638523340D5A14CC3AE47A68620C783CAE0896 (Aspiration_tA8B66D93E3E750624A574BD27525BBD0A52565D1* __this, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpawnObstacleV2_StartSpawning_m675F5303607894A2FE6483F7932938B5347551A3 (SpawnObstacleV2_t87DB2E905D35C95B2523C0AD7651EE8FDF8A7E3B* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpawnObstacleV2_StartSpawning_m9F9738225065BFFC4660B848EDB9D790F1FE4CC8 (SpawnObstacleV2_t87DB2E905D35C95B2523C0AD7651EE8FDF8A7E3B* __this, bool ___0_disparition, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpawnObstacleV2_ReprendreCompteurBarrage_m610735D080863F1E503B100EF0480D6020D69E68 (SpawnObstacleV2_t87DB2E905D35C95B2523C0AD7651EE8FDF8A7E3B* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void BarreProgressionBarrage_DUE9geler_mA0CA7B0C9CC65ACCB136DA8AE4C11CE3A94F3CC7 (BarreProgressionBarrage_t5FE06F1EF42E4402A9D2545DD49A647CF12AD274* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* EndManager_Whiter_m08DB78A284FC17E7056A06DAC190312F10624D15 (EndManager_tF4B9F90685961FB4ED3326BC14D07138856FB9FD* __this, float ___0_duration, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EndManager_RestartGame_mEA2BB35967AAAA87B25EFEE02A5F59BA1C59A9C9 (EndManager_tF4B9F90685961FB4ED3326BC14D07138856FB9FD* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EndManager_RestartGame_m9EDFF9D09C12C2FF26431EC688E11E1D56D39334 (EndManager_tF4B9F90685961FB4ED3326BC14D07138856FB9FD* __this, bool ___0_dispa, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, bool ___0_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CWhiterU3Ed__23__ctor_mDA081F2E79636F87446CA53D819FB2A5DB65D699 (U3CWhiterU3Ed__23_t4F28A437CDEB188A4D2A13E21A4A7CDFD2DE777F* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t ScoreManager_ReturnScore_m5CB12E21530B04C842D9E3A30EF033D0EA50F649_inline (ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* __this, const RuntimeMethod* method) ;
@@ -6684,7 +6684,7 @@ IL_007b:
 	}
 }
 // Method Definition Index: 72920
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EndManager_RestartGame_mEA2BB35967AAAA87B25EFEE02A5F59BA1C59A9C9 (EndManager_tF4B9F90685961FB4ED3326BC14D07138856FB9FD* __this, const RuntimeMethod* method) 
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EndManager_RestartGame_m9EDFF9D09C12C2FF26431EC688E11E1D56D39334 (EndManager_tF4B9F90685961FB4ED3326BC14D07138856FB9FD* __this, bool ___0_dispa, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -6751,37 +6751,38 @@ IL_002b:
 		L_12 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_11, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 		if (!L_12)
 		{
-			goto IL_0070;
+			goto IL_0071;
 		}
 	}
 	{
 		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/Global/EndManager.cs:64>
 		SpawnObstacleV2_t87DB2E905D35C95B2523C0AD7651EE8FDF8A7E3B* L_13 = __this->____spawner;
+		bool L_14 = ___0_dispa;
 		NullCheck(L_13);
-		SpawnObstacleV2_StartSpawning_m675F5303607894A2FE6483F7932938B5347551A3(L_13, NULL);
+		SpawnObstacleV2_StartSpawning_m9F9738225065BFFC4660B848EDB9D790F1FE4CC8(L_13, L_14, NULL);
 		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/Global/EndManager.cs:65>
-		SpawnObstacleV2_t87DB2E905D35C95B2523C0AD7651EE8FDF8A7E3B* L_14 = __this->____spawner;
-		NullCheck(L_14);
-		SpawnObstacleV2_ReprendreCompteurBarrage_m610735D080863F1E503B100EF0480D6020D69E68(L_14, NULL);
+		SpawnObstacleV2_t87DB2E905D35C95B2523C0AD7651EE8FDF8A7E3B* L_15 = __this->____spawner;
+		NullCheck(L_15);
+		SpawnObstacleV2_ReprendreCompteurBarrage_m610735D080863F1E503B100EF0480D6020D69E68(L_15, NULL);
 	}
 
-IL_0070:
+IL_0071:
 	{
 		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/Global/EndManager.cs:67>
-		BarreProgressionBarrage_t5FE06F1EF42E4402A9D2545DD49A647CF12AD274* L_15 = __this->____barreProgression;
-		BarreProgressionBarrage_t5FE06F1EF42E4402A9D2545DD49A647CF12AD274* L_16 = L_15;
-		if (L_16)
+		BarreProgressionBarrage_t5FE06F1EF42E4402A9D2545DD49A647CF12AD274* L_16 = __this->____barreProgression;
+		BarreProgressionBarrage_t5FE06F1EF42E4402A9D2545DD49A647CF12AD274* L_17 = L_16;
+		if (L_17)
 		{
-			G_B7_0 = L_16;
-			goto IL_007b;
+			G_B7_0 = L_17;
+			goto IL_007c;
 		}
-		G_B6_0 = L_16;
+		G_B6_0 = L_17;
 	}
 	{
 		return;
 	}
 
-IL_007b:
+IL_007c:
 	{
 		NullCheck(G_B7_0);
 		BarreProgressionBarrage_DUE9geler_mA0CA7B0C9CC65ACCB136DA8AE4C11CE3A94F3CC7(G_B7_0, NULL);
@@ -6825,7 +6826,7 @@ IL_0016:
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_4;
 		L_4 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_3, NULL);
 		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/Global/EndManager.cs:74>
-		EndManager_RestartGame_mEA2BB35967AAAA87B25EFEE02A5F59BA1C59A9C9(__this, NULL);
+		EndManager_RestartGame_m9EDFF9D09C12C2FF26431EC688E11E1D56D39334(__this, (bool)1, NULL);
 		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/Global/EndManager.cs:75>
 		int32_t L_5 = __this->___reviveCounter;
 		__this->___reviveCounter = ((int32_t)il2cpp_codegen_add(L_5, 1));
@@ -25701,12 +25702,14 @@ IL_00eb:
 		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:231>
 		SkinPurchaseButton_RefreshButtonState_mBEB0E4F71137F9F31B2A356A0419C766C76CE0FC(__this, NULL);
 		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:232>
+		SkinPurchaseButton_NotifierSkinEquipe_mBD363F38048708B0A9D6B5F6A73D3E9F187699B0(NULL);
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:233>
 		UnityEvent_tDC2C3548799DBC91D1E3F3DE60083A66F4751977* L_32 = __this->___onPurchaseSuccess;
 		UnityEvent_tDC2C3548799DBC91D1E3F3DE60083A66F4751977* L_33 = L_32;
 		if (L_33)
 		{
 			G_B23_0 = L_33;
-			goto IL_0101;
+			goto IL_0106;
 		}
 		G_B22_0 = L_33;
 	}
@@ -25714,11 +25717,11 @@ IL_00eb:
 		return;
 	}
 
-IL_0101:
+IL_0106:
 	{
 		NullCheck(G_B23_0);
 		UnityEvent_Invoke_mFBF80D59B03C30C5FE6A06F897D954ACADE061D2(G_B23_0, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:233>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:234>
 		return;
 	}
 }
@@ -25732,7 +25735,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkinPurchaseButton_CloseConfirmationPane
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:237>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:238>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->___confirmationPanel;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -25743,7 +25746,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkinPurchaseButton_CloseConfirmationPane
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:238>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:239>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = __this->___confirmationPanel;
 		NullCheck(L_2);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_2, (bool)0, NULL);
@@ -25751,9 +25754,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkinPurchaseButton_CloseConfirmationPane
 
 IL_001a:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:240>
-		SkinPurchaseButton_UnsubscribeConfirmPanel_m0D1D4CC93CBA93F41227EDFC880BCCBE4B3928FB(__this, NULL);
 		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:241>
+		SkinPurchaseButton_UnsubscribeConfirmPanel_m0D1D4CC93CBA93F41227EDFC880BCCBE4B3928FB(__this, NULL);
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:242>
 		return;
 	}
 }
@@ -25770,7 +25773,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkinPurchaseButton_UnsubscribeConfirmPan
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:245>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:246>
 		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_0 = __this->___confirmButton;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -25781,7 +25784,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkinPurchaseButton_UnsubscribeConfirmPan
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:245>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:246>
 		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_2 = __this->___confirmButton;
 		NullCheck(L_2);
 		ButtonClickedEvent_t8EA72E90B3BD1392FB3B3EF167D5121C23569E4C* L_3;
@@ -25794,7 +25797,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkinPurchaseButton_UnsubscribeConfirmPan
 
 IL_002a:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:246>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:247>
 		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_5 = __this->___cancelButton;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_6;
@@ -25805,7 +25808,7 @@ IL_002a:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:246>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:247>
 		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_7 = __this->___cancelButton;
 		NullCheck(L_7);
 		ButtonClickedEvent_t8EA72E90B3BD1392FB3B3EF167D5121C23569E4C* L_8;
@@ -25818,7 +25821,7 @@ IL_002a:
 
 IL_0054:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:247>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:248>
 		return;
 	}
 }
@@ -25832,7 +25835,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkinPurchaseButton_OpenSuccessPanel_m563
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:251>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:252>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->___successPanel;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -25843,13 +25846,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkinPurchaseButton_OpenSuccessPanel_m563
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:251>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:252>
 		return;
 	}
 
 IL_000f:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:252>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:253>
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_2 = __this->___successItemIcon;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_3;
@@ -25870,7 +25873,7 @@ IL_000f:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:253>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:254>
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_6 = __this->___successItemIcon;
 		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_7 = ___0_sprite;
 		NullCheck(L_6);
@@ -25879,11 +25882,11 @@ IL_000f:
 
 IL_0032:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:254>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:255>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_8 = __this->___successPanel;
 		NullCheck(L_8);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_8, (bool)1, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:255>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:256>
 		return;
 	}
 }
@@ -25912,7 +25915,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkinPurchaseButton_RefreshButtonState_mB
 	int32_t G_B29_0 = 0;
 	SkinPurchaseButton_t3F36E5EC04AC5E189F7C6611A16636853D3120F4* G_B29_1 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:259>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:260>
 		Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* L_0 = __this->____button;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -25935,23 +25938,23 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkinPurchaseButton_RefreshButtonState_mB
 
 IL_001c:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:259>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:260>
 		return;
 	}
 
 IL_001d:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:261>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:262>
 		bool L_4;
 		L_4 = SkinPurchaseButton_EstAchete_m913882F68F38D20B4ECBBB7A891204E73F3100F3(__this, NULL);
 		V_0 = L_4;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:262>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:263>
 		SO_PlayerDatas_t52246EF1803ADDDCE936501CAE3D1672145DDC0C* L_5 = __this->___playerDatas;
 		NullCheck(L_5);
 		int32_t L_6 = L_5->___skinEquiped;
 		int32_t L_7 = __this->___skinIndex;
 		V_1 = (bool)((((int32_t)L_6) == ((int32_t)L_7))? 1 : 0);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:265>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:266>
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_8 = __this->___fondImage;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_9;
@@ -25962,7 +25965,7 @@ IL_001d:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:267>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:268>
 		bool L_10 = V_0;
 		if (L_10)
 		{
@@ -25970,7 +25973,7 @@ IL_001d:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:267>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:268>
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_11 = __this->___fondImage;
 		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_12 = __this->___fondAchatSkin;
 		NullCheck(L_11);
@@ -25980,7 +25983,7 @@ IL_001d:
 
 IL_005c:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:268>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:269>
 		bool L_13 = V_1;
 		if (!L_13)
 		{
@@ -25988,7 +25991,7 @@ IL_005c:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:268>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:269>
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_14 = __this->___fondImage;
 		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_15 = __this->___fondEquipeSkin;
 		NullCheck(L_14);
@@ -25998,7 +26001,7 @@ IL_005c:
 
 IL_0072:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:269>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:270>
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_16 = __this->___fondImage;
 		Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* L_17 = __this->___fondAcheteSkin;
 		NullCheck(L_16);
@@ -26007,7 +26010,7 @@ IL_0072:
 
 IL_0083:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:272>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:273>
 		bool L_18 = V_0;
 		if (!L_18)
 		{
@@ -26015,7 +26018,7 @@ IL_0083:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:274>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:275>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_19 = __this->___prixContainer;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_20;
@@ -26026,7 +26029,7 @@ IL_0083:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:274>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:275>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_21 = __this->___prixContainer;
 		NullCheck(L_21);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_21, (bool)0, NULL);
@@ -26034,7 +26037,7 @@ IL_0083:
 
 IL_00a0:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:275>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:276>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_22 = __this->___labelEtatEquipe;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_23;
@@ -26045,14 +26048,14 @@ IL_00a0:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:277>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:278>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_24 = __this->___labelEtatEquipe;
 		NullCheck(L_24);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_25;
 		L_25 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(L_24, NULL);
 		NullCheck(L_25);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_25, (bool)1, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:278>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:279>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_26 = __this->___labelEtatEquipe;
 		bool L_27 = V_1;
 		if (L_27)
@@ -26085,7 +26088,7 @@ IL_00d9:
 
 IL_00e0:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:283>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:284>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_30 = __this->___prixContainer;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_31;
@@ -26096,7 +26099,7 @@ IL_00e0:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:283>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:284>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_32 = __this->___prixContainer;
 		NullCheck(L_32);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_32, (bool)1, NULL);
@@ -26104,7 +26107,7 @@ IL_00e0:
 
 IL_00fa:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:284>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:285>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_33 = __this->___labelEtatEquipe;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_34;
@@ -26115,7 +26118,7 @@ IL_00fa:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:284>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:285>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_35 = __this->___labelEtatEquipe;
 		NullCheck(L_35);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_36;
@@ -26126,7 +26129,7 @@ IL_00fa:
 
 IL_0119:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:286>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:287>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_37 = __this->___priceLabel;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_38;
@@ -26137,7 +26140,7 @@ IL_0119:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:287>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:288>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_39 = __this->___priceLabel;
 		bool L_40;
 		L_40 = SkinPurchaseButton_CanAfford_m3EA39631A159BC63BA9AA2222B7B3E2752D2802E(__this, NULL);
@@ -26170,9 +26173,9 @@ IL_0143:
 
 IL_0148:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:290>
 		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:291>
 		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:292>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:293>
 		int32_t L_43 = __this->___deviseAchat;
 		if (!L_43)
 		{
@@ -26203,7 +26206,7 @@ IL_0169:
 	{
 		NullCheck(G_B29_1);
 		G_B29_1->____cachedMonney = G_B29_0;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:293>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:294>
 		return;
 	}
 }
@@ -26221,7 +26224,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkinPurchaseButton_UpdatePriceLabel_mFAD
 	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* G_B6_0 = NULL;
 	Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* G_B6_1 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:298>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:299>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_0 = __this->___priceLabel;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -26232,7 +26235,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkinPurchaseButton_UpdatePriceLabel_mFAD
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:299>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:300>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_2 = __this->___priceLabel;
 		int32_t* L_3 = (int32_t*)(&__this->___cost);
 		String_t* L_4;
@@ -26243,7 +26246,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkinPurchaseButton_UpdatePriceLabel_mFAD
 
 IL_0024:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:301>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:302>
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_5 = __this->___deviseIcone;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_6;
@@ -26254,7 +26257,7 @@ IL_0024:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:302>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:303>
 		Image_tBC1D03F63BF71132E9A5E472B8742F172A011E7E* L_7 = __this->___deviseIcone;
 		int32_t L_8 = __this->___deviseAchat;
 		if (!L_8)
@@ -26286,7 +26289,7 @@ IL_004e:
 
 IL_0053:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:303>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:304>
 		return;
 	}
 }
@@ -26300,7 +26303,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool SkinPurchaseButton_CanAfford_m3EA39631A1
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:307>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:308>
 		SO_PlayerDatas_t52246EF1803ADDDCE936501CAE3D1672145DDC0C* L_0 = __this->___playerDatas;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -26311,15 +26314,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool SkinPurchaseButton_CanAfford_m3EA39631A1
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:307>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:308>
 		return (bool)0;
 	}
 
 IL_0010:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:308>
 		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:309>
 		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:310>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:311>
 		int32_t L_2 = __this->___deviseAchat;
 		if (!L_2)
 		{
@@ -26359,7 +26362,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR DefinitionCosmetique_tDF9552289D5A01705E0EE49
 	}
 	List_1_tBF17E6A1BA6B5F2D7DD10C3F98A62BB6CD64BCD8* V_0 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:315>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:316>
 		SO_Cosmetiques_t94B5FA045745179E164AAD7C575AADCBA69024F4* L_0 = __this->___catalogue;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -26370,19 +26373,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR DefinitionCosmetique_tDF9552289D5A01705E0EE49
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:315>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:316>
 		return (DefinitionCosmetique_tDF9552289D5A01705E0EE4908C74EC1D76D29EAE*)NULL;
 	}
 
 IL_0010:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:317>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:318>
 		SO_Cosmetiques_t94B5FA045745179E164AAD7C575AADCBA69024F4* L_2 = __this->___catalogue;
 		NullCheck(L_2);
 		List_1_tBF17E6A1BA6B5F2D7DD10C3F98A62BB6CD64BCD8* L_3;
 		L_3 = SO_Cosmetiques_ObtenirParCategorie_m993C08F17E71D7A39881CADF62603DF0DB8648A5(L_2, 0, NULL);
 		V_0 = L_3;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:319>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:320>
 		int32_t L_4 = __this->___skinIndex;
 		if ((((int32_t)L_4) < ((int32_t)0)))
 		{
@@ -26403,7 +26406,7 @@ IL_0010:
 
 IL_0034:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:321>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:322>
 		int32_t L_8 = __this->___skinIndex;
 		int32_t L_9 = L_8;
 		RuntimeObject* L_10 = Box(il2cpp_defaults.int32_class, &L_9);
@@ -26417,13 +26420,13 @@ IL_0034:
 		L_15 = String_Format_mA0534D6E2AE4D67A6BD8D45B3321323930EB930C(_stringLiteral176D479E5068221529EDAFA357D48176CCA8CAD6, _stringLiteral331A4DAE2F141E008EBD441F26059E6645DA9306, L_10, L_14, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogWarning_m23033D7E2F0F298BE465B7F3A63CDF40A4EB70EB(L_15, __this, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:322>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:323>
 		return (DefinitionCosmetique_tDF9552289D5A01705E0EE4908C74EC1D76D29EAE*)NULL;
 	}
 
 IL_0061:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:325>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:326>
 		List_1_tBF17E6A1BA6B5F2D7DD10C3F98A62BB6CD64BCD8* L_16 = V_0;
 		int32_t L_17 = __this->___skinIndex;
 		NullCheck(L_16);
@@ -26445,7 +26448,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool SkinPurchaseButton_ValidateSetup_m71212D
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:330>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:331>
 		SO_PlayerDatas_t52246EF1803ADDDCE936501CAE3D1672145DDC0C* L_0 = __this->___playerDatas;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -26456,16 +26459,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool SkinPurchaseButton_ValidateSetup_m71212D
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:332>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:333>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogError_m94F967AB31244EACE68C3BE1DD85B69ED3334C0E(_stringLiteral749E44FD8EB6ED1E3938F75B92E7C540CEF0EB25, __this, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:333>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:334>
 		return (bool)0;
 	}
 
 IL_001b:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:335>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:336>
 		SO_Cosmetiques_t94B5FA045745179E164AAD7C575AADCBA69024F4* L_2 = __this->___catalogue;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_3;
@@ -26476,16 +26479,16 @@ IL_001b:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:337>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:338>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogError_m94F967AB31244EACE68C3BE1DD85B69ED3334C0E(_stringLiteral2EE860F0AA57129F2619B530E454EBBEF0D7C1D4, __this, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:338>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:339>
 		return (bool)0;
 	}
 
 IL_0036:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:340>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:341>
 		return (bool)1;
 	}
 }
@@ -26493,16 +26496,16 @@ IL_0036:
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SkinPurchaseButton_SetCost_m1358A52F560FA0E1B64D2386153183CF12B71403 (SkinPurchaseButton_t3F36E5EC04AC5E189F7C6611A16636853D3120F4* __this, int32_t ___0_newCost, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:350>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:351>
 		int32_t L_0 = ___0_newCost;
 		int32_t L_1;
 		L_1 = Mathf_Max_m7FA442918DE37E3A00106D1F2E789D65829792B8_inline(0, L_0, NULL);
 		__this->___cost = L_1;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:351>
-		SkinPurchaseButton_UpdatePriceLabel_mFADB299935ABBAC1328A238D79BB00935B9376BD(__this, NULL);
 		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:352>
-		SkinPurchaseButton_RefreshButtonState_mBEB0E4F71137F9F31B2A356A0419C766C76CE0FC(__this, NULL);
+		SkinPurchaseButton_UpdatePriceLabel_mFADB299935ABBAC1328A238D79BB00935B9376BD(__this, NULL);
 		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:353>
+		SkinPurchaseButton_RefreshButtonState_mBEB0E4F71137F9F31B2A356A0419C766C76CE0FC(__this, NULL);
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/MainMenu/SkinPurchaseButton.cs:354>
 		return;
 	}
 }
@@ -27623,7 +27626,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t PlayerMovement_ReturnCoin
 		return L_0;
 	}
 }
-// Method Definition Index: 89328
+// Method Definition Index: 89346
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* Item_get_Value_mCEE3C3CA9F56743B0E60F06DA35F302122F4563C_inline (Item_tF94FDCBDD299DA6FFB55215BBC6BFB1E1723F822* __this, const RuntimeMethod* method) 
 {
 	{
@@ -27834,7 +27837,7 @@ IL_0030:
 		return L_11;
 	}
 }
-// Method Definition Index: 90261
+// Method Definition Index: 90279
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ButtonClickedEvent_t8EA72E90B3BD1392FB3B3EF167D5121C23569E4C* Button_get_onClick_m701712A7F7F000CC80D517C4510697E15722C35C_inline (Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* __this, const RuntimeMethod* method) 
 {
 	{
@@ -27989,7 +27992,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void IAPManager_set_Instance_m700
 		return;
 	}
 }
-// Method Definition Index: 93451
+// Method Definition Index: 93469
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ProductDefinition_tB486F56477C49E81BA6704C2DD31F373CDCCC1BD* Product_get_definition_m0B1DCF704219DD58B62DC2718C64D33DD690F92B_inline (Product_tD279BF775D345330FEE8405D2F53EC5D6B971C76* __this, const RuntimeMethod* method) 
 {
 	{
@@ -27998,7 +28001,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ProductDefinition_tB486F56477C49E
 		return L_0;
 	}
 }
-// Method Definition Index: 93487
+// Method Definition Index: 93505
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* ProductDefinition_get_id_mB6D0D1382CB55ED6D3BB44669B66B83135E50C46_inline (ProductDefinition_tB486F56477C49E81BA6704C2DD31F373CDCCC1BD* __this, const RuntimeMethod* method) 
 {
 	{
@@ -28007,7 +28010,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* ProductDefinition_get_i
 		return L_0;
 	}
 }
-// Method Definition Index: 93453
+// Method Definition Index: 93471
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ProductMetadata_t2D6C6454A305A6790D8903169E3B136EB13417E1* Product_get_metadata_m72DA1FE5EBC2909BEDA01D4F7DDDEEF64D9E0E2E_inline (Product_tD279BF775D345330FEE8405D2F53EC5D6B971C76* __this, const RuntimeMethod* method) 
 {
 	{
@@ -28016,7 +28019,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ProductMetadata_t2D6C6454A305A679
 		return L_0;
 	}
 }
-// Method Definition Index: 93504
+// Method Definition Index: 93522
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* ProductMetadata_get_localizedPriceString_mDDD4F344D0224A9F27384E0F0D735BFF49B0AA43_inline (ProductMetadata_t2D6C6454A305A6790D8903169E3B136EB13417E1* __this, const RuntimeMethod* method) 
 {
 	{
@@ -28034,7 +28037,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool IAPManager_get_IsConnected_m
 		return L_0;
 	}
 }
-// Method Definition Index: 92622
+// Method Definition Index: 92640
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* Order_get_CartOrdered_m134E21BEDE41F469365E67B54F1132986016525A_inline (Order_tD1825298A09BBF359EC2F7B272C72E11C0508A4F* __this, const RuntimeMethod* method) 
 {
 	{
@@ -28043,7 +28046,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR RuntimeObject* Order_get_CartOrde
 		return L_0;
 	}
 }
-// Method Definition Index: 92563
+// Method Definition Index: 92581
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Product_tD279BF775D345330FEE8405D2F53EC5D6B971C76* CartItem_get_Product_m1CEE0F7667AB0B7C4454FC03F60C44890FFEF9F9_inline (CartItem_t2AD57E121E5F61C1B5A69160E39D32C1E126C42F* __this, const RuntimeMethod* method) 
 {
 	{
@@ -28052,7 +28055,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Product_tD279BF775D345330FEE8405D
 		return L_0;
 	}
 }
-// Method Definition Index: 92590
+// Method Definition Index: 92608
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t FailedOrder_get_FailureReason_m7D2EA6813A9EFB3801495F7FBAA3E0A3146EAB56_inline (FailedOrder_t4FF159EDE64FC2EAFB4439A3AEC7F46B62F55BD8* __this, const RuntimeMethod* method) 
 {
 	{
@@ -28061,7 +28064,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t FailedOrder_get_FailureRe
 		return L_0;
 	}
 }
-// Method Definition Index: 92304
+// Method Definition Index: 92322
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* ProductFetchFailed_get_FailureReason_m7C5894879E36C1F6ABE644DD87B39B3468E3ACC6_inline (ProductFetchFailed_t264E61FA1462AB7154ECB0A1D68494FE2DC92C8A* __this, const RuntimeMethod* method) 
 {
 	{

@@ -4791,7 +4791,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float PopupDeath_EaseOutCubic_m95189F1095EEE2
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ReviveButtonAd_ResetReviveCount_mD63A36A928A004D65EEF45A9478F95A0E5503219 (ReviveButtonAd_tC6E6D2D6B99D2A01CBC47F6F6D46B1A20939EFDF* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* RetourAuJeu_LerpScale_mC69523E37014ED066830C5A582D83AD975DBFE41 (RetourAuJeu_tE30EA623F45A28F63BB04F71F6839C37CFF94E13* __this, float ___0_duration, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EndManager_StopGame_mC99AD8FBF97D40FC662C334967AAC36E59F85BA5 (EndManager_tF4B9F90685961FB4ED3326BC14D07138856FB9FD* __this, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EndManager_RestartGame_mEA2BB35967AAAA87B25EFEE02A5F59BA1C59A9C9 (EndManager_tF4B9F90685961FB4ED3326BC14D07138856FB9FD* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void EndManager_RestartGame_m9EDFF9D09C12C2FF26431EC688E11E1D56D39334 (EndManager_tF4B9F90685961FB4ED3326BC14D07138856FB9FD* __this, bool ___0_dispa, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CLerpScaleU3Ed__10__ctor_mBA0E4BF441409D448FDB8284D491D744E5DEA25C (U3CLerpScaleU3Ed__10_t34B5812BE6C62AB3CF773E90FB6B5CE19DB621B4* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float RetourAuJeu_EaseOutCubic_mFD240D4D5A8655C51B07FEDC77E0EF5A542081F3 (float ___0_t, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* RetourAuMenu_LerpScale_mEFE39C941AE4767CB1EF8AC8F916E275DBFF2807 (RetourAuMenu_t611C6AF5ED783B68DC3FE6582A8322FFDE196594* __this, float ___0_duration, const RuntimeMethod* method) ;
@@ -5001,7 +5001,7 @@ inline void List_1__ctor_m17F501B5A5C289ECE1B4F3D6EBF05DFA421433F8 (List_1_t0591
 }
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpawnObstacle_Spawn_m6242BE61651D172B8EB1A6556E0AE3A933524210 (SpawnObstacle_t3669A22CA3564B4EC0864D212C34A0E3974C09F1* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpawnObstacleV2_TirerProchainSeuilBarrage_mF432A0AEF96E540220B3854604358E5232A893D4 (SpawnObstacleV2_t87DB2E905D35C95B2523C0AD7651EE8FDF8A7E3B* __this, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpawnObstacleV2_StartSpawning_m675F5303607894A2FE6483F7932938B5347551A3 (SpawnObstacleV2_t87DB2E905D35C95B2523C0AD7651EE8FDF8A7E3B* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpawnObstacleV2_StartSpawning_m9F9738225065BFFC4660B848EDB9D790F1FE4CC8 (SpawnObstacleV2_t87DB2E905D35C95B2523C0AD7651EE8FDF8A7E3B* __this, bool ___0_disparition, const RuntimeMethod* method) ;
 inline ValueCollection_t7CCE4207947108668B74A7A6360D4217D631DC3F* Dictionary_2_get_Values_m8DF92C0E555242E9A907644561789B21A85205FE (Dictionary_2_t5144E2328596A4CCFAAB6866B08608C0D7AC07E5* __this, const RuntimeMethod* method)
 {
 	return ((  ValueCollection_t7CCE4207947108668B74A7A6360D4217D631DC3F* (*) (Dictionary_2_t5144E2328596A4CCFAAB6866B08608C0D7AC07E5*, const RuntimeMethod*))Dictionary_2_get_Values_mA0C01DEA55329E55380E96BBD04D4D228B437EC5_gshared)(__this, method);
@@ -17516,7 +17516,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PlayerMovement__ctor_mB37559C5B063816187
 		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/Player/PlayerMovement.cs:26>
 		__this->____canMoving = (bool)1;
 		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/Player/PlayerMovement.cs:60>
-		__this->____collisionCheckRadius = (0.400000006f);
+		__this->____collisionCheckRadius = (0.800000012f);
 		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
 		return;
 	}
@@ -18388,7 +18388,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RetourAuJeu_UnPauseGame_m6CF1F38EE967A4F
 		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/RetourAuJeu.cs:30>
 		EndManager_tF4B9F90685961FB4ED3326BC14D07138856FB9FD* L_0 = __this->____endManager;
 		NullCheck(L_0);
-		EndManager_RestartGame_mEA2BB35967AAAA87B25EFEE02A5F59BA1C59A9C9(L_0, NULL);
+		EndManager_RestartGame_m9EDFF9D09C12C2FF26431EC688E11E1D56D39334(L_0, (bool)0, NULL);
 		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/RetourAuJeu.cs:31>
 		return;
 	}
@@ -23011,7 +23011,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpawnObstacleV2_Start_mEA4DD873DE955C6D0
 		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:131>
 		SpawnObstacleV2_TirerProchainSeuilBarrage_mF432A0AEF96E540220B3854604358E5232A893D4(__this, NULL);
 		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:132>
-		SpawnObstacleV2_StartSpawning_m675F5303607894A2FE6483F7932938B5347551A3(__this, NULL);
+		SpawnObstacleV2_StartSpawning_m9F9738225065BFFC4660B848EDB9D790F1FE4CC8(__this, (bool)1, NULL);
 		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:133>
 		return;
 	}
@@ -23563,7 +23563,7 @@ IL_00cf:
 	}
 }
 // Method Definition Index: 73850
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpawnObstacleV2_StartSpawning_m675F5303607894A2FE6483F7932938B5347551A3 (SpawnObstacleV2_t87DB2E905D35C95B2523C0AD7651EE8FDF8A7E3B* __this, const RuntimeMethod* method) 
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpawnObstacleV2_StartSpawning_m9F9738225065BFFC4660B848EDB9D790F1FE4CC8 (SpawnObstacleV2_t87DB2E905D35C95B2523C0AD7651EE8FDF8A7E3B* __this, bool ___0_disparition, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
 	if (!s_Il2CppMethodInitialized)
@@ -23607,7 +23607,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpawnObstacleV2_StartSpawning_m675F53036
 		auto __finallyBlock = il2cpp::utils::Finally([&]
 		{
 
-FINALLY_00a7:
+FINALLY_00aa:
 			{
 				Enumerator_Dispose_mB75C39F6D3C0C0A8C459D13810CDFC5737A74C01((&V_0), Enumerator_Dispose_mB75C39F6D3C0C0A8C459D13810CDFC5737A74C01_RuntimeMethod_var);
 				return;
@@ -23616,7 +23616,7 @@ FINALLY_00a7:
 		try
 		{
 			{
-				goto IL_0099_1;
+				goto IL_009c_1;
 			}
 
 IL_0021_1:
@@ -23634,7 +23634,7 @@ IL_0021_1:
 				auto __finallyBlock = il2cpp::utils::Finally([&]
 				{
 
-FINALLY_008b_1:
+FINALLY_008e_1:
 					{
 						Enumerator_Dispose_mCE1EA3E30A75AE535E7899623BCDC3AB58E3D5CA((&V_1), Enumerator_Dispose_mCE1EA3E30A75AE535E7899623BCDC3AB58E3D5CA_RuntimeMethod_var);
 						return;
@@ -23643,7 +23643,7 @@ FINALLY_008b_1:
 				try
 				{
 					{
-						goto IL_0080_2;
+						goto IL_0083_2;
 					}
 
 IL_0030_2:
@@ -23663,7 +23663,7 @@ IL_0030_2:
 						L_10 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_9, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 						if (L_10)
 						{
-							goto IL_0080_2;
+							goto IL_0083_2;
 						}
 					}
 					{
@@ -23673,7 +23673,7 @@ IL_0030_2:
 						L_12 = GameObject_get_activeInHierarchy_m49250F4F168DCC5388D5BE4F6A5681386907B109(L_11, NULL);
 						if (!L_12)
 						{
-							goto IL_0080_2;
+							goto IL_0083_2;
 						}
 					}
 					{
@@ -23684,7 +23684,7 @@ IL_0030_2:
 						L_14 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_13, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
 						if (L_14)
 						{
-							goto IL_0080_2;
+							goto IL_0083_2;
 						}
 					}
 					{
@@ -23695,7 +23695,7 @@ IL_0030_2:
 						L_16 = GameObject_TryGetComponent_TisSegmentBarrage_tCA1AE149127A9B42D86D465B79225E778A73F73B_m4ADE52F05979E3D1152C60AC71FA091BEA09DC3D(L_15, (&V_4), GameObject_TryGetComponent_TisSegmentBarrage_tCA1AE149127A9B42D86D465B79225E778A73F73B_m4ADE52F05979E3D1152C60AC71FA091BEA09DC3D_RuntimeMethod_var);
 						if (L_16)
 						{
-							goto IL_0080_2;
+							goto IL_0083_2;
 						}
 					}
 					{
@@ -23709,23 +23709,31 @@ IL_0030_2:
 						NullCheck(L_18);
 						ScrollingElement_UpdateSpeed_mC237C53D3F3A8D039B5FEE8D95CC10940C5079FD(L_18, L_19, NULL);
 						//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:232>
-						ScrollingElement_t4C0E63C9E09517C4748E77ACB68857C1D474F7B3* L_20 = V_3;
-						NullCheck(L_20);
-						ScrollingElement_Dispawn_m4B15A873E8E21DADC89D5F3B29CE806E3BB40E7D(L_20, NULL);
+						bool L_20 = ___0_disparition;
+						if (!L_20)
+						{
+							goto IL_0083_2;
+						}
+					}
+					{
+						//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:234>
+						ScrollingElement_t4C0E63C9E09517C4748E77ACB68857C1D474F7B3* L_21 = V_3;
+						NullCheck(L_21);
+						ScrollingElement_Dispawn_m4B15A873E8E21DADC89D5F3B29CE806E3BB40E7D(L_21, NULL);
 					}
 
-IL_0080_2:
+IL_0083_2:
 					{
 						//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:222>
-						bool L_21;
-						L_21 = Enumerator_MoveNext_mE75C34B888BF4F1E3249843E20DF638794CE589F((&V_1), Enumerator_MoveNext_mE75C34B888BF4F1E3249843E20DF638794CE589F_RuntimeMethod_var);
-						if (L_21)
+						bool L_22;
+						L_22 = Enumerator_MoveNext_mE75C34B888BF4F1E3249843E20DF638794CE589F((&V_1), Enumerator_MoveNext_mE75C34B888BF4F1E3249843E20DF638794CE589F_RuntimeMethod_var);
+						if (L_22)
 						{
 							goto IL_0030_2;
 						}
 					}
 					{
-						goto IL_0099_1;
+						goto IL_009c_1;
 					}
 				}
 				catch(Il2CppExceptionWrapper& e)
@@ -23734,18 +23742,18 @@ IL_0080_2:
 				}
 			}
 
-IL_0099_1:
+IL_009c_1:
 			{
 				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:220>
-				bool L_22;
-				L_22 = Enumerator_MoveNext_m02204002EEFD5B9ECFC164F1104E7CF8BE3999B5((&V_0), Enumerator_MoveNext_m02204002EEFD5B9ECFC164F1104E7CF8BE3999B5_RuntimeMethod_var);
-				if (L_22)
+				bool L_23;
+				L_23 = Enumerator_MoveNext_m02204002EEFD5B9ECFC164F1104E7CF8BE3999B5((&V_0), Enumerator_MoveNext_m02204002EEFD5B9ECFC164F1104E7CF8BE3999B5_RuntimeMethod_var);
+				if (L_23)
 				{
 					goto IL_0021_1;
 				}
 			}
 			{
-				goto IL_00b5;
+				goto IL_00b8;
 			}
 		}
 		catch(Il2CppExceptionWrapper& e)
@@ -23754,27 +23762,27 @@ IL_0099_1:
 		}
 	}
 
-IL_00b5:
+IL_00b8:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:235>
-		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_23 = __this->____spawningCoroutine;
-		if (L_23)
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:238>
+		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_24 = __this->____spawningCoroutine;
+		if (L_24)
 		{
-			goto IL_00cf;
+			goto IL_00d2;
 		}
 	}
 	{
-		RuntimeObject* L_24;
-		L_24 = SpawnObstacleV2_SpawnRoutine_m9836B77F6BBC2B2C76B0CC2E880459ADF9A8C3FC(__this, NULL);
-		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_25;
-		L_25 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_24, NULL);
-		__this->____spawningCoroutine = L_25;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____spawningCoroutine), (void*)L_25);
+		RuntimeObject* L_25;
+		L_25 = SpawnObstacleV2_SpawnRoutine_m9836B77F6BBC2B2C76B0CC2E880459ADF9A8C3FC(__this, NULL);
+		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_26;
+		L_26 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_25, NULL);
+		__this->____spawningCoroutine = L_26;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->____spawningCoroutine), (void*)L_26);
 	}
 
-IL_00cf:
+IL_00d2:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:236>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:239>
 		return;
 	}
 }
@@ -23803,11 +23811,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpawnObstacleV2_StopSpawning_m3AF46B42CE
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* V_2 = NULL;
 	ScrollingElement_t4C0E63C9E09517C4748E77ACB68857C1D474F7B3* V_3 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:242>
-		__this->___isSpawning = (bool)0;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:243>
-		__this->____miseAJourVitessePausUE9e = (bool)1;
 		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:245>
+		__this->___isSpawning = (bool)0;
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:246>
+		__this->____miseAJourVitessePausUE9e = (bool)1;
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:248>
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_0 = __this->____spawningCoroutine;
 		if (!L_0)
 		{
@@ -23815,17 +23823,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpawnObstacleV2_StopSpawning_m3AF46B42CE
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:247>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:250>
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_1 = __this->____spawningCoroutine;
 		MonoBehaviour_StopCoroutine_mB0FC91BE84203BD8E360B3FBAE5B958B4C5ED22A(__this, L_1, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:248>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:251>
 		__this->____spawningCoroutine = (Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B*)NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->____spawningCoroutine), (void*)(Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B*)NULL);
 	}
 
 IL_0029:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:251>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:254>
 		Dictionary_2_t5144E2328596A4CCFAAB6866B08608C0D7AC07E5* L_2 = __this->____pool;
 		NullCheck(L_2);
 		ValueCollection_t7CCE4207947108668B74A7A6360D4217D631DC3F* L_3;
@@ -23853,10 +23861,10 @@ FINALLY_00a3:
 
 IL_003c_1:
 			{
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:251>
+				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:254>
 				List_1_t10620E1D84E4ED64F01480A78366CFF1E383CADF* L_5;
 				L_5 = Enumerator_get_Current_m45B41C7708A0D5BAFE3D7C25FA650C764FF3131D_inline((&V_0), Enumerator_get_Current_m45B41C7708A0D5BAFE3D7C25FA650C764FF3131D_RuntimeMethod_var);
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:253>
+				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:256>
 				NullCheck(L_5);
 				Enumerator_t0A7413DA0F4CDCA9E20281F364B252DD436E7137 L_6;
 				L_6 = List_1_GetEnumerator_m1BD26207F0703C051A0696D99868C03872E66198(L_5, List_1_GetEnumerator_m1BD26207F0703C051A0696D99868C03872E66198_RuntimeMethod_var);
@@ -23880,7 +23888,7 @@ FINALLY_008a_1:
 
 IL_004b_2:
 					{
-						//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:253>
+						//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:256>
 						ValueTuple_2_t340B586B7B0E2D62342141BD791F8DEDDA848066 L_7;
 						L_7 = Enumerator_get_Current_mB29B22F006C4C445136A390A3AA46F92BE470282_inline((&V_1), Enumerator_get_Current_mB29B22F006C4C445136A390A3AA46F92BE470282_RuntimeMethod_var);
 						ValueTuple_2_t340B586B7B0E2D62342141BD791F8DEDDA848066 L_8 = L_7;
@@ -23888,7 +23896,7 @@ IL_004b_2:
 						V_2 = L_9;
 						ScrollingElement_t4C0E63C9E09517C4748E77ACB68857C1D474F7B3* L_10 = L_8.___Item2;
 						V_3 = L_10;
-						//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:255>
+						//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:258>
 						GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_11 = V_2;
 						il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 						bool L_12;
@@ -23919,7 +23927,7 @@ IL_004b_2:
 						}
 					}
 					{
-						//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:256>
+						//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:259>
 						ScrollingElement_t4C0E63C9E09517C4748E77ACB68857C1D474F7B3* L_17 = V_3;
 						NullCheck(L_17);
 						ScrollingElement_StopMoving_m3FE36E3CB467C1AC2C832AB72DFDAAD2015DF720(L_17, NULL);
@@ -23927,7 +23935,7 @@ IL_004b_2:
 
 IL_007f_2:
 					{
-						//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:253>
+						//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:256>
 						bool L_18;
 						L_18 = Enumerator_MoveNext_mE75C34B888BF4F1E3249843E20DF638794CE589F((&V_1), Enumerator_MoveNext_mE75C34B888BF4F1E3249843E20DF638794CE589F_RuntimeMethod_var);
 						if (L_18)
@@ -23947,7 +23955,7 @@ IL_007f_2:
 
 IL_0098_1:
 			{
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:251>
+				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:254>
 				bool L_19;
 				L_19 = Enumerator_MoveNext_m02204002EEFD5B9ECFC164F1104E7CF8BE3999B5((&V_0), Enumerator_MoveNext_m02204002EEFD5B9ECFC164F1104E7CF8BE3999B5_RuntimeMethod_var);
 				if (L_19)
@@ -23967,7 +23975,7 @@ IL_0098_1:
 
 IL_00b1:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:259>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:262>
 		return;
 	}
 }
@@ -24063,7 +24071,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpawnObstacleV2_SpawnBarrageRow_mA26CB4A
 	Action_2_t806697AE4B8014E7C1D26FCBE77655A6DBF0BA9F* G_B17_0 = NULL;
 	Action_2_t806697AE4B8014E7C1D26FCBE77655A6DBF0BA9F* G_B16_0 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:360>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:363>
 		PatternRow_t3784C89F03B44E3B67E011F27F6BE399B60F98FA* L_0 = ___0_row;
 		if (L_0)
 		{
@@ -24071,15 +24079,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpawnObstacleV2_SpawnBarrageRow_mA26CB4A
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:360>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:363>
 		return;
 	}
 
 IL_0004:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:362>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:365>
 		V_0 = (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)NULL;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:363>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:366>
 		PatternRow_t3784C89F03B44E3B67E011F27F6BE399B60F98FA* L_1 = ___0_row;
 		NullCheck(L_1);
 		GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* L_2 = L_1->___lanes;
@@ -24090,14 +24098,14 @@ IL_0004:
 
 IL_0013:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:363>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:366>
 		GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* L_3 = V_5;
 		int32_t L_4 = V_6;
 		NullCheck(L_3);
 		int32_t L_5 = L_4;
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_6 = (L_3)->GetAt(static_cast<il2cpp_array_size_t>(L_5));
 		V_7 = L_6;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:365>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:368>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_7 = V_7;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_8;
@@ -24108,10 +24116,10 @@ IL_0013:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:365>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:368>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_9 = V_7;
 		V_0 = L_9;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:365>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:368>
 		goto IL_0037;
 	}
 
@@ -24123,7 +24131,7 @@ IL_0029:
 
 IL_002f:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:363>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:366>
 		int32_t L_11 = V_6;
 		GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* L_12 = V_5;
 		NullCheck(L_12);
@@ -24135,7 +24143,7 @@ IL_002f:
 
 IL_0037:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:367>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:370>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_13 = V_0;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_14;
@@ -24146,23 +24154,23 @@ IL_0037:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:369>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:372>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogWarning_m33EF1B897E0C7C6FF538989610BFAFFEF4628CA9(_stringLiteral39E4F1EB5D8AC34487FC6103B425EB251ED85044, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:370>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:373>
 		return;
 	}
 
 IL_004b:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:373>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:376>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_15 = V_0;
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_16;
 		L_16 = SpawnObstacleV2_GetFromPool_mBC678176C4EC78EF2EE0A80E435F1DAE12DC778E(__this, L_15, NULL);
 		V_1 = L_16;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:375>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:376>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:377>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:378>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:379>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:380>
 		GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* L_17 = __this->____fallingLines;
 		if (!L_17)
 		{
@@ -24210,7 +24218,7 @@ IL_008f:
 	{
 		float L_28 = __this->___barrageOffsetX;
 		V_2 = ((float)il2cpp_codegen_add(G_B13_0, L_28));
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:379>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:382>
 		float L_29 = V_2;
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_30;
 		L_30 = Component_get_transform_m2919A1D81931E6932C7F06D4C2F0AB8DDA9A5371(__this, NULL);
@@ -24225,7 +24233,7 @@ IL_008f:
 		L_34 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_33, NULL);
 		float L_35 = L_34.___z;
 		Vector3__ctor_m376936E6B999EF1ECBE57D990A386303E2283DE0_inline((&V_3), L_29, L_32, L_35, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:381>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:384>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_36 = V_1;
 		NullCheck(L_36);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_37;
@@ -24240,11 +24248,11 @@ IL_008f:
 		L_41 = Transform_get_rotation_m32AF40CA0D50C797DA639A696F8EAEC7524C179C(L_40, NULL);
 		NullCheck(L_37);
 		Transform_SetPositionAndRotation_m418859BF59086EEAA084FFD6F258A43FAB408F5A(L_37, L_38, L_41, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:382>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:385>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_42 = V_1;
 		NullCheck(L_42);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_42, (bool)1, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:387>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:390>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_43 = V_1;
 		NullCheck(L_43);
 		bool L_44;
@@ -24255,7 +24263,7 @@ IL_008f:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:388>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:391>
 		ScrollingElement_t4C0E63C9E09517C4748E77ACB68857C1D474F7B3* L_45 = V_4;
 		float L_46 = __this->____generalSpeed;
 		NullCheck(L_45);
@@ -24264,7 +24272,7 @@ IL_008f:
 
 IL_00f4:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:390>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:393>
 		Action_2_t806697AE4B8014E7C1D26FCBE77655A6DBF0BA9F* L_47 = __this->___OnObstacleSpawne;
 		Action_2_t806697AE4B8014E7C1D26FCBE77655A6DBF0BA9F* L_48 = L_47;
 		if (L_48)
@@ -24284,7 +24292,7 @@ IL_00ff:
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_50 = V_1;
 		NullCheck(G_B17_0);
 		Action_2_Invoke_m968475FF4D0FC9B9156AE0032E06ABDC134E373F_inline(G_B17_0, L_49, L_50, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:395>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:398>
 		return;
 	}
 }
@@ -24336,7 +24344,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpawnObstacleV2_SpawnRow_m8B1C52A5C37F82
 	Action_2_t806697AE4B8014E7C1D26FCBE77655A6DBF0BA9F* G_B14_0 = NULL;
 	Action_2_t806697AE4B8014E7C1D26FCBE77655A6DBF0BA9F* G_B13_0 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:417>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:420>
 		PatternRow_t3784C89F03B44E3B67E011F27F6BE399B60F98FA* L_0 = ___0_row;
 		if (L_0)
 		{
@@ -24344,20 +24352,20 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpawnObstacleV2_SpawnRow_m8B1C52A5C37F82
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:417>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:420>
 		return;
 	}
 
 IL_0004:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:419>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:422>
 		V_0 = 0;
 		goto IL_0116;
 	}
 
 IL_000b:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:421>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:424>
 		bool L_1 = __this->___isSpawning;
 		if (!L_1)
 		{
@@ -24365,7 +24373,7 @@ IL_000b:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:423>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:426>
 		PatternRow_t3784C89F03B44E3B67E011F27F6BE399B60F98FA* L_2 = ___0_row;
 		NullCheck(L_2);
 		GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* L_3 = L_2->___lanes;
@@ -24374,7 +24382,7 @@ IL_000b:
 		int32_t L_5 = L_4;
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_6 = (L_3)->GetAt(static_cast<il2cpp_array_size_t>(L_5));
 		V_1 = L_6;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:424>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:427>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_7 = V_1;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_8;
@@ -24385,16 +24393,16 @@ IL_000b:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:426>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:429>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_9 = V_1;
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_10;
 		L_10 = SpawnObstacleV2_GetFromPool_mBC678176C4EC78EF2EE0A80E435F1DAE12DC778E(__this, L_9, NULL);
 		V_2 = L_10;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:428>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:429>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:430>
 		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:431>
 		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:432>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:433>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:434>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:435>
 		GameObjectU5BU5D_tFF67550DFCE87096D7A3734EA15B75896B2722CF* L_11 = __this->____fallingLines;
 		int32_t L_12 = V_0;
 		NullCheck(L_11);
@@ -24420,7 +24428,7 @@ IL_000b:
 		L_22 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_21, NULL);
 		float L_23 = L_22.___z;
 		Vector3__ctor_m376936E6B999EF1ECBE57D990A386303E2283DE0_inline((&V_3), L_17, L_20, L_23, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:434>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:437>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_24 = V_2;
 		NullCheck(L_24);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_25;
@@ -24435,11 +24443,11 @@ IL_000b:
 		L_29 = Transform_get_rotation_m32AF40CA0D50C797DA639A696F8EAEC7524C179C(L_28, NULL);
 		NullCheck(L_25);
 		Transform_SetPositionAndRotation_m418859BF59086EEAA084FFD6F258A43FAB408F5A(L_25, L_26, L_29, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:435>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:438>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_30 = V_2;
 		NullCheck(L_30);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_30, (bool)1, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:437>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:440>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_31 = V_2;
 		NullCheck(L_31);
 		bool L_32;
@@ -24450,7 +24458,7 @@ IL_000b:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:438>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:441>
 		ScrollingElement_t4C0E63C9E09517C4748E77ACB68857C1D474F7B3* L_33 = V_4;
 		float L_34 = __this->____generalSpeed;
 		NullCheck(L_33);
@@ -24459,13 +24467,13 @@ IL_000b:
 
 IL_00a6:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:441>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:444>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_35 = V_2;
 		NullCheck(L_35);
 		ChangeSkin_t2A4F687BEEEF82442737F35DDBE767C539386998* L_36;
 		L_36 = GameObject_GetComponentInChildren_TisChangeSkin_t2A4F687BEEEF82442737F35DDBE767C539386998_mE77A458511F946ED692A4F5B064D17A9E5FC6288(L_35, GameObject_GetComponentInChildren_TisChangeSkin_t2A4F687BEEEF82442737F35DDBE767C539386998_mE77A458511F946ED692A4F5B064D17A9E5FC6288_RuntimeMethod_var);
 		V_5 = L_36;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:442>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:445>
 		ChangeSkin_t2A4F687BEEEF82442737F35DDBE767C539386998* L_37 = V_5;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_38;
@@ -24496,13 +24504,13 @@ IL_00a6:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:444>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:447>
 		FormulaireSpawnBudget_t0397861420904C0AE460C4B2765011B7F49D4762* L_43 = __this->___spawnBudget;
 		NullCheck(L_43);
 		Nullable_1_tB6326C2A54181127102571E6752CF0EB843C505A L_44;
 		L_44 = FormulaireSpawnBudget_ConsumeNext_mE4E15838A3E5D19DA8D23173162C583E18A79CE2(L_43, NULL);
 		V_6 = L_44;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:445>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:448>
 		bool L_45;
 		L_45 = Nullable_1_get_HasValue_m800A0460AC09371EFCF23CACEDFE8271AB7E7649_inline((&V_6), Nullable_1_get_HasValue_m800A0460AC09371EFCF23CACEDFE8271AB7E7649_RuntimeMethod_var);
 		if (!L_45)
@@ -24511,11 +24519,11 @@ IL_00a6:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:447>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:450>
 		ChangeSkin_t2A4F687BEEEF82442737F35DDBE767C539386998* L_46 = V_5;
 		NullCheck(L_46);
 		L_46->___forcedSkinIndex = (-1);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:448>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:451>
 		ChangeSkin_t2A4F687BEEEF82442737F35DDBE767C539386998* L_47 = V_5;
 		int32_t L_48;
 		L_48 = Nullable_1_get_Value_m36A7D8A8FFF8A0712747477DFB9EFE2EE0D18977((&V_6), Nullable_1_get_Value_m36A7D8A8FFF8A0712747477DFB9EFE2EE0D18977_RuntimeMethod_var);
@@ -24525,7 +24533,7 @@ IL_00a6:
 
 IL_00ff:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:455>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:458>
 		Action_2_t806697AE4B8014E7C1D26FCBE77655A6DBF0BA9F* L_49 = __this->___OnObstacleSpawne;
 		Action_2_t806697AE4B8014E7C1D26FCBE77655A6DBF0BA9F* L_50 = L_49;
 		if (L_50)
@@ -24549,14 +24557,14 @@ IL_010b:
 
 IL_0112:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:419>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:422>
 		int32_t L_53 = V_0;
 		V_0 = ((int32_t)il2cpp_codegen_add(L_53, 1));
 	}
 
 IL_0116:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:419>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:422>
 		int32_t L_54 = V_0;
 		if ((((int32_t)L_54) < ((int32_t)3)))
 		{
@@ -24564,7 +24572,7 @@ IL_0116:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:458>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:461>
 		return;
 	}
 }
@@ -24572,20 +24580,20 @@ IL_0116:
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpawnObstacleV2_SauvegarderDansSession_mA70E9C8A166E90CA8AEAE88AE59C25B46D923152 (SpawnObstacleV2_t87DB2E905D35C95B2523C0AD7651EE8FDF8A7E3B* __this, DonnUE9esSession_t1CFA1835B32890AB9D02B828E3675C625BD7BC1A* ___0_donnees, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:471>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:474>
 		DonnUE9esSession_t1CFA1835B32890AB9D02B828E3675C625BD7BC1A* L_0 = ___0_donnees;
 		float L_1 = __this->____generalSpeed;
 		NullCheck(L_0);
 		L_0->___vitesseGUE9nUE9rale = L_1;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:473>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:476>
 		DonnUE9esSession_t1CFA1835B32890AB9D02B828E3675C625BD7BC1A* L_2 = ___0_donnees;
 		NullCheck(L_2);
 		L_2->___signauxEcoules = 0;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:474>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:477>
 		DonnUE9esSession_t1CFA1835B32890AB9D02B828E3675C625BD7BC1A* L_3 = ___0_donnees;
 		NullCheck(L_3);
 		L_3->___prochainBarrageA = 0;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:479>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:482>
 		return;
 	}
 }
@@ -24593,16 +24601,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpawnObstacleV2_SauvegarderDansSession_m
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpawnObstacleV2_RestaurerDepuisSession_m14A7125E2A35FDAC8F74A8A584F9B7577130A112 (SpawnObstacleV2_t87DB2E905D35C95B2523C0AD7651EE8FDF8A7E3B* __this, float ___0_vitesse, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:484>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:487>
 		float L_0 = ___0_vitesse;
 		__this->____generalSpeed = L_0;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:485>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:488>
 		TimeManager_tEC2F0C27F06166CF8A71453CC852EA192AAA8DD9* L_1 = __this->____timeManager;
 		NullCheck(L_1);
 		TimeManager_Reupdate_mD1A43305516B194CC4D349D1AB62E794B54F534B(L_1, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:486>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:489>
 		SpawnObstacleV2_RefreshVitesses_mA385D05243C3AC81371D4C1A926F2082B9623D9A(__this, NULL);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:487>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:490>
 		return;
 	}
 }
@@ -24614,11 +24622,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpawnObstacleV2_RestaurerProgressionDepu
 	int32_t G_B3_0 = 0;
 	SpawnObstacleV2_t87DB2E905D35C95B2523C0AD7651EE8FDF8A7E3B* G_B3_1 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:496>
-		__this->____patternsSpawnUE9s = 0;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:497>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:498>
 		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:499>
+		__this->____patternsSpawnUE9s = 0;
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:500>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:501>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:502>
 		DonnUE9esSession_t1CFA1835B32890AB9D02B828E3675C625BD7BC1A* L_0 = ___0_donnees;
 		NullCheck(L_0);
 		int32_t L_1 = L_0->___patternsNUE9cessaires;
@@ -24652,11 +24660,11 @@ IL_002c:
 	{
 		NullCheck(G_B3_1);
 		G_B3_1->____patternsNUE9cessaires = G_B3_0;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:500>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:503>
 		__this->____barrageEnAttente = (bool)0;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:501>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:504>
 		__this->____compteurBarragePausUE9 = (bool)0;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:506>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:509>
 		return;
 	}
 }
@@ -24664,13 +24672,13 @@ IL_002c:
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpawnObstacleV2_RUE9initialiserProgressionBarrage_m4786AAEC39B30EC392FD51CEF7F55F8314B1B558 (SpawnObstacleV2_t87DB2E905D35C95B2523C0AD7651EE8FDF8A7E3B* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:513>
-		__this->____patternsSpawnUE9s = 0;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:514>
-		__this->____barrageEnAttente = (bool)0;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:515>
-		SpawnObstacleV2_TirerProchainSeuilBarrage_mF432A0AEF96E540220B3854604358E5232A893D4(__this, NULL);
 		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:516>
+		__this->____patternsSpawnUE9s = 0;
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:517>
+		__this->____barrageEnAttente = (bool)0;
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:518>
+		SpawnObstacleV2_TirerProchainSeuilBarrage_mF432A0AEF96E540220B3854604358E5232A893D4(__this, NULL);
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:519>
 		return;
 	}
 }
@@ -24678,9 +24686,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpawnObstacleV2_RUE9initialiserProgressi
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float SpawnObstacleV2_get_Progression_mB9EDC7C3B7F9789AF1841EED7BBB6B73E61C7204 (SpawnObstacleV2_t87DB2E905D35C95B2523C0AD7651EE8FDF8A7E3B* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:525>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:526>
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:527>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:528>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:529>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:530>
 		int32_t L_0 = __this->____patternsNUE9cessaires;
 		if ((((int32_t)L_0) > ((int32_t)0)))
 		{
@@ -24710,7 +24718,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float SpawnObstacleV2_get_DurUE9eSignal_m5705
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:530>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:533>
 		TimeManager_tEC2F0C27F06166CF8A71453CC852EA192AAA8DD9* L_0 = __this->____timeManager;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -24736,7 +24744,7 @@ IL_0014:
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool SpawnObstacleV2_get_BarrageEnAttente_m5502B187375188E58B67D5C518EDDF13352B46EB (SpawnObstacleV2_t87DB2E905D35C95B2523C0AD7651EE8FDF8A7E3B* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:533>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:536>
 		bool L_0 = __this->____barrageEnAttente;
 		return L_0;
 	}
@@ -24745,7 +24753,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool SpawnObstacleV2_get_BarrageEnAttente_m55
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t SpawnObstacleV2_get_SeuilBarrage_m28BFE1BF5EFDAC204852046AA656F40A3EF51355 (SpawnObstacleV2_t87DB2E905D35C95B2523C0AD7651EE8FDF8A7E3B* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:536>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:539>
 		int32_t L_0 = __this->____patternsNUE9cessaires;
 		return L_0;
 	}
@@ -24754,7 +24762,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t SpawnObstacleV2_get_SeuilBarrage_m28B
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float SpawnObstacleV2_get_DurUE9eGapAvantBarrage_m403B72DE78B46D6ECF0422BCDA0B14685D1DF180 (SpawnObstacleV2_t87DB2E905D35C95B2523C0AD7651EE8FDF8A7E3B* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:542>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:545>
 		float L_0 = __this->___baseObstacleSpeed;
 		if ((((float)L_0) > ((float)(0.0f))))
 		{
@@ -24795,7 +24803,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t SpawnObstacleV2_GetNextPatternIndex_m
 	int32_t V_7 = 0;
 	int32_t V_8 = 0;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:548>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:551>
 		List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* L_0 = __this->____shuffleBag;
 		NullCheck(L_0);
 		int32_t L_1;
@@ -24806,26 +24814,26 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t SpawnObstacleV2_GetNextPatternIndex_m
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:550>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:553>
 		V_0 = 0;
 		goto IL_0024;
 	}
 
 IL_0014:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:551>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:554>
 		List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* L_2 = __this->____shuffleBag;
 		int32_t L_3 = V_0;
 		NullCheck(L_2);
 		List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_inline(L_2, L_3, List_1_Add_m0248A96C5334E9A93E6994B7780478BCD994EA3D_RuntimeMethod_var);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:550>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:553>
 		int32_t L_4 = V_0;
 		V_0 = ((int32_t)il2cpp_codegen_add(L_4, 1));
 	}
 
 IL_0024:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:550>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:553>
 		int32_t L_5 = V_0;
 		ObstaclePatternU5BU5D_tBDAC513915C2F7CAEF066686798A27E53E27CCE0* L_6 = __this->___patterns;
 		NullCheck(L_6);
@@ -24835,14 +24843,14 @@ IL_0024:
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:553>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:556>
 		V_1 = 0;
 		goto IL_0091;
 	}
 
 IL_0033:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:555>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:558>
 		int32_t L_7 = V_1;
 		List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* L_8 = __this->____shuffleBag;
 		NullCheck(L_8);
@@ -24851,7 +24859,7 @@ IL_0033:
 		int32_t L_10;
 		L_10 = Random_Range_m6763D9767F033357F88B6637F048F4ACA4123B68(L_7, L_9, NULL);
 		V_2 = L_10;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:556>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:559>
 		List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* L_11 = __this->____shuffleBag;
 		int32_t L_12 = V_1;
 		V_3 = L_12;
@@ -24884,14 +24892,14 @@ IL_0033:
 		V_8 = L_27;
 		NullCheck(L_24);
 		List_1_set_Item_m95629806F31CF369D937590912E0B6A53FF7C587(L_24, L_25, L_27, List_1_set_Item_m95629806F31CF369D937590912E0B6A53FF7C587_RuntimeMethod_var);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:553>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:556>
 		int32_t L_28 = V_1;
 		V_1 = ((int32_t)il2cpp_codegen_add(L_28, 1));
 	}
 
 IL_0091:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:553>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:556>
 		int32_t L_29 = V_1;
 		List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* L_30 = __this->____shuffleBag;
 		NullCheck(L_30);
@@ -24905,16 +24913,16 @@ IL_0091:
 
 IL_009f:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:560>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:563>
 		List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* L_32 = __this->____shuffleBag;
 		NullCheck(L_32);
 		int32_t L_33;
 		L_33 = List_1_get_Item_mD99081BEFA1AB3526715F489192B0F7F596C183D(L_32, 0, List_1_get_Item_mD99081BEFA1AB3526715F489192B0F7F596C183D_RuntimeMethod_var);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:561>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:564>
 		List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* L_34 = __this->____shuffleBag;
 		NullCheck(L_34);
 		List_1_RemoveAt_m76C4CDACF47BA529BAFADFC8D5E13DB9587F4004(L_34, 0, List_1_RemoveAt_m76C4CDACF47BA529BAFADFC8D5E13DB9587F4004_RuntimeMethod_var);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:562>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:565>
 		return L_33;
 	}
 }
@@ -24922,15 +24930,15 @@ IL_009f:
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SpawnObstacleV2_TirerProchainSeuilBarrage_mF432A0AEF96E540220B3854604358E5232A893D4 (SpawnObstacleV2_t87DB2E905D35C95B2523C0AD7651EE8FDF8A7E3B* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:573>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:576>
 		__this->____patternsSpawnUE9s = 0;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:574>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:577>
 		int32_t L_0 = __this->___patternsMinFallback;
 		int32_t L_1 = __this->___patternsMaxFallback;
 		int32_t L_2;
 		L_2 = Random_Range_m6763D9767F033357F88B6637F048F4ACA4123B68(L_0, ((int32_t)il2cpp_codegen_add(L_1, 1)), NULL);
 		__this->____patternsNUE9cessaires = L_2;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:578>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:581>
 		return;
 	}
 }
@@ -24964,13 +24972,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* V_4 = NULL;
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* V_5 = NULL;
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:584>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:587>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = ___0_prefab;
 		NullCheck(L_0);
 		String_t* L_1;
 		L_1 = Object_get_name_mAC2F6B897CF1303BA4249B4CB55271AFACBB6392(L_0, NULL);
 		V_0 = L_1;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:586>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:589>
 		Dictionary_2_t5144E2328596A4CCFAAB6866B08608C0D7AC07E5* L_2 = __this->____pool;
 		String_t* L_3 = V_0;
 		NullCheck(L_2);
@@ -24982,7 +24990,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 		}
 	}
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:587>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:590>
 		Dictionary_2_t5144E2328596A4CCFAAB6866B08608C0D7AC07E5* L_5 = __this->____pool;
 		String_t* L_6 = V_0;
 		List_1_t10620E1D84E4ED64F01480A78366CFF1E383CADF* L_7 = (List_1_t10620E1D84E4ED64F01480A78366CFF1E383CADF*)il2cpp_codegen_object_new(List_1_t10620E1D84E4ED64F01480A78366CFF1E383CADF_il2cpp_TypeInfo_var);
@@ -24993,7 +25001,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651
 
 IL_0026:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:589>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:592>
 		Dictionary_2_t5144E2328596A4CCFAAB6866B08608C0D7AC07E5* L_8 = __this->____pool;
 		String_t* L_9 = V_0;
 		NullCheck(L_8);
@@ -25022,12 +25030,12 @@ FINALLY_006c:
 
 IL_003a_1:
 			{
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:589>
+				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:592>
 				ValueTuple_2_t340B586B7B0E2D62342141BD791F8DEDDA848066 L_12;
 				L_12 = Enumerator_get_Current_mB29B22F006C4C445136A390A3AA46F92BE470282_inline((&V_3), Enumerator_get_Current_mB29B22F006C4C445136A390A3AA46F92BE470282_RuntimeMethod_var);
 				GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_13 = L_12.___Item1;
 				V_4 = L_13;
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:591>
+				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:594>
 				GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_14 = V_4;
 				il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 				bool L_15;
@@ -25048,7 +25056,7 @@ IL_003a_1:
 				}
 			}
 			{
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:592>
+				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:595>
 				GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_18 = V_4;
 				V_5 = L_18;
 				goto IL_00a4;
@@ -25056,7 +25064,7 @@ IL_003a_1:
 
 IL_0061_1:
 			{
-				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:589>
+				//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:592>
 				bool L_19;
 				L_19 = Enumerator_MoveNext_mE75C34B888BF4F1E3249843E20DF638794CE589F((&V_3), Enumerator_MoveNext_mE75C34B888BF4F1E3249843E20DF638794CE589F_RuntimeMethod_var);
 				if (L_19)
@@ -25076,18 +25084,18 @@ IL_0061_1:
 
 IL_007a:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:595>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:598>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_20 = ___0_prefab;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_21;
 		L_21 = Object_Instantiate_TisGameObject_t76FEDD663AB33C991A9C9A23129337651094216F_m10D87C6E0708CA912BBB02555BF7D0FBC5D7A2B3(L_20, Object_Instantiate_TisGameObject_t76FEDD663AB33C991A9C9A23129337651094216F_m10D87C6E0708CA912BBB02555BF7D0FBC5D7A2B3_RuntimeMethod_var);
 		V_1 = L_21;
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:597>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:600>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_22 = V_1;
 		NullCheck(L_22);
 		bool L_23;
 		L_23 = GameObject_TryGetComponent_TisScrollingElement_t4C0E63C9E09517C4748E77ACB68857C1D474F7B3_m433FCEE48772BC822C10A4BE79E3304868305E58(L_22, (&V_2), GameObject_TryGetComponent_TisScrollingElement_t4C0E63C9E09517C4748E77ACB68857C1D474F7B3_m433FCEE48772BC822C10A4BE79E3304868305E58_RuntimeMethod_var);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:598>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:601>
 		Dictionary_2_t5144E2328596A4CCFAAB6866B08608C0D7AC07E5* L_24 = __this->____pool;
 		String_t* L_25 = V_0;
 		NullCheck(L_24);
@@ -25100,14 +25108,14 @@ IL_007a:
 		ValueTuple_2__ctor_m34C91CB2C5C95185A58A75368948401BD133A5FE((&L_29), L_27, L_28, ValueTuple_2__ctor_m34C91CB2C5C95185A58A75368948401BD133A5FE_RuntimeMethod_var);
 		NullCheck(L_26);
 		List_1_Add_mC4D35B2168EDD7B8827DD8274FAF62DA05BDCD61_inline(L_26, L_29, List_1_Add_mC4D35B2168EDD7B8827DD8274FAF62DA05BDCD61_RuntimeMethod_var);
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:599>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:602>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_30 = V_1;
 		return L_30;
 	}
 
 IL_00a4:
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:600>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:603>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_31 = V_5;
 		return L_31;
 	}
@@ -25705,7 +25713,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2D
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool SpawnObstacleV2_get_BarrageEnAttente_m5502B187375188E58B67D5C518EDDF13352B46EB_inline (SpawnObstacleV2_t87DB2E905D35C95B2523C0AD7651EE8FDF8A7E3B* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:533>
+		//<source_info:C:/Users/benjamin.martinez-fi/Documents/GitHub/BrazilWorkshop3/Assets/Script/RoadPart/SpawnObstacleV2.cs:536>
 		bool L_0 = __this->____barrageEnAttente;
 		return L_0;
 	}
@@ -26148,7 +26156,7 @@ IL_001d:
 		return L_9;
 	}
 }
-// Method Definition Index: 74643
+// Method Definition Index: 74661
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t EffetsObjetsSpeciaux_ObtenirMultiplicateurPieces_m476440A65B59268D3A7A289E55B2CE191C172907_inline (EffetsObjetsSpeciaux_tDD2658CFA94383F69E4E3AE1C80F707A1F15BFE8* __this, const RuntimeMethod* method) 
 {
 	{
@@ -26205,7 +26213,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR Vector2_t1FD6F485C871E832B347AB2D
 		return L_0;
 	}
 }
-// Method Definition Index: 90261
+// Method Definition Index: 90279
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ButtonClickedEvent_t8EA72E90B3BD1392FB3B3EF167D5121C23569E4C* Button_get_onClick_m701712A7F7F000CC80D517C4510697E15722C35C_inline (Button_t6786514A57F7AFDEE5431112FEA0CAB24F5AE098* __this, const RuntimeMethod* method) 
 {
 	{
@@ -26214,7 +26222,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR ButtonClickedEvent_t8EA72E90B3BD1
 		return L_0;
 	}
 }
-// Method Definition Index: 100574
+// Method Definition Index: 100592
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR String_t* LevelPlayAdError_get_ErrorMessage_m2DB54305A499C05EA6151FF71E7B8B9386D36039_inline (LevelPlayAdError_t839B39B1D3D7B1F82E28E4C92FD4BF28F6AACE5A* __this, const RuntimeMethod* method) 
 {
 	{
@@ -26293,7 +26301,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR bool Bounds_Contains_m584E9DE0CF9
 		return L_0;
 	}
 }
-// Method Definition Index: 74150
+// Method Definition Index: 74168
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR SessionManager_tE8C169FC3C81F6446261E6770AFC35E81233FAC5* SessionManager_get_Instance_m11F91560085478E23C387FE35F30DFED26DF0028_inline (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;

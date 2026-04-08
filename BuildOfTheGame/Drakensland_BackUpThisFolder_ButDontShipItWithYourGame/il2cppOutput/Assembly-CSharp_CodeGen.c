@@ -46,7 +46,7 @@ extern void EndManager_add_OnPlayerDied_m28F12B6A1BC6FF9345D81A7937A80CE409E7BE3
 extern void EndManager_remove_OnPlayerDied_m6750928B7C68D65590C1F4698E192AF7C431640D (void);
 extern void EndManager_OnDeath_m6E4E81FBE92BDF3229F6738867E1D3A72938F436 (void);
 extern void EndManager_StopGame_mC99AD8FBF97D40FC662C334967AAC36E59F85BA5 (void);
-extern void EndManager_RestartGame_mEA2BB35967AAAA87B25EFEE02A5F59BA1C59A9C9 (void);
+extern void EndManager_RestartGame_m9EDFF9D09C12C2FF26431EC688E11E1D56D39334 (void);
 extern void EndManager_Revive_m364F43C46A0983AF0A90C5F46E88C1536879299B (void);
 extern void EndManager_RevivePanelDisplay_m88AE09752BDE2B3537418D4A3A2E0CBAA7150D69 (void);
 extern void EndManager_Whiter_m08DB78A284FC17E7056A06DAC190312F10624D15 (void);
@@ -976,7 +976,7 @@ extern void SpawnObstacleV2_IncrUE9menterCompteurPatterns_m26EB34D0C3FC57727042B
 extern void SpawnObstacleV2_PauserCompteurBarrage_mA078CB5196B326E95C67DF2058D3D2479EF8A8A0 (void);
 extern void SpawnObstacleV2_ReprendreCompteurBarrage_m610735D080863F1E503B100EF0480D6020D69E68 (void);
 extern void SpawnObstacleV2_RefreshVitesses_mA385D05243C3AC81371D4C1A926F2082B9623D9A (void);
-extern void SpawnObstacleV2_StartSpawning_m675F5303607894A2FE6483F7932938B5347551A3 (void);
+extern void SpawnObstacleV2_StartSpawning_m9F9738225065BFFC4660B848EDB9D790F1FE4CC8 (void);
 extern void SpawnObstacleV2_StopSpawning_m3AF46B42CECD35E7CC5419B11F74679690120011 (void);
 extern void SpawnObstacleV2_SpawnRoutine_m9836B77F6BBC2B2C76B0CC2E880459ADF9A8C3FC (void);
 extern void SpawnObstacleV2_SpawnPatternCoroutine_m4252EE9A7B34A675754AED69A7EBB5A50B29613C (void);
@@ -1200,6 +1200,24 @@ extern void U3CAnimateIconScaleU3Ed__11_MoveNext_m1111C0581FF5FFF73DE8EA11E8FB44
 extern void U3CAnimateIconScaleU3Ed__11_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m7025FC51629704F5B72E69325555C45468C8628B (void);
 extern void U3CAnimateIconScaleU3Ed__11_System_Collections_IEnumerator_Reset_m1AE9A26D24ABE7CA825C908DB223E5AB0329D8D9 (void);
 extern void U3CAnimateIconScaleU3Ed__11_System_Collections_IEnumerator_get_Current_m6CC16F0B94DADEA81529A4E3D69B87B938BD9924 (void);
+extern void LoadingScreen_Awake_mDDED8EA75BD4E78986BC8BD85431A5427483F63F (void);
+extern void LoadingScreen_Start_mF32F3CD7F4200FCB51488C33A1C00EDD9E31076A (void);
+extern void LoadingScreen_Update_m013B091DABEC0879531A05219B55967F405794A6 (void);
+extern void LoadingScreen_OnDestroy_m7124E8FB09B225CDE401FACDE577A6C2F892B816 (void);
+extern void LoadingScreen_ValidateReferences_m289869814630F2F2A5CA7591310FE2703A477613 (void);
+extern void LoadingScreen_ShowLoadingScreen_m494AC78B87E8D4ED7729CFE9FB5E9C70649EEB20 (void);
+extern void LoadingScreen_HideLoadingScreen_m3AD0C7A587D371BD6A0D587BDA7D1B14CF775113 (void);
+extern void LoadingScreen_RunLoadingSequence_m26B6D5D85CB8ED1BFBFD3194E59D367777C91D04 (void);
+extern void LoadingScreen_AnimateRotation_m3E413D5F7967F3D362E55430DB5296398191D78D (void);
+extern void LoadingScreen_ResetLoadingFlag_mB3B232E17B0E92B57A551EEBEC87F76882000626 (void);
+extern void LoadingScreen__ctor_m5ACD65D1AB90195F10390F16E0056D90BEF17815 (void);
+extern void LoadingScreen__cctor_mE1AD16E7F9058B5BA926911D534362374F9255B2 (void);
+extern void U3CRunLoadingSequenceU3Ed__24__ctor_m0B18B6178A9C594A98E5213EE67A05628BD46EF1 (void);
+extern void U3CRunLoadingSequenceU3Ed__24_System_IDisposable_Dispose_m78D83480C10A98B70FCCB0FEE7BB3DB9CB219E5A (void);
+extern void U3CRunLoadingSequenceU3Ed__24_MoveNext_m2CAA121C18CC17BC56FFE3C9B4D7B4066939006C (void);
+extern void U3CRunLoadingSequenceU3Ed__24_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mB8E3C38BEE26D3164EDBEFA3E630680ACCCADBA4 (void);
+extern void U3CRunLoadingSequenceU3Ed__24_System_Collections_IEnumerator_Reset_m51B26AD2D136AF64650A6929D6B52D9187DFF84B (void);
+extern void U3CRunLoadingSequenceU3Ed__24_System_Collections_IEnumerator_get_Current_m12DCA3E71A6EB323F43726CDD593CC3328F28463 (void);
 extern void RewardedAdButton_get_DailyCountKey_mB3A032A652F70340507CF191524D255BE74D5960 (void);
 extern void RewardedAdButton_get_DailyDateKey_m76F66DE849DAB7EFD8F9967F1D1BD1DBD94DAF2E (void);
 extern void RewardedAdButton_Awake_m6235F58059264A443BB8B920F3F81E880F1A3C0C (void);
@@ -2488,7 +2506,7 @@ extern void VisuelGardeUI_DUE9terminerEtat_m7B33C5A34D33C5030A1033FF0B924F7EC960
 extern void VisuelGardeUI_SpriteDeEtat_mA75367994F633F226522A9ACF11D14C755E35142 (void);
 extern void VisuelGardeUI__ctor_m6797D7A07F0D1BC667F585826F311E3B7E6849FE (void);
 extern void U3CPrivateImplementationDetailsU3E_ComputeStringHash_m6EA1F233618497AEFF8902A5EDFA24C74E2F2876 (void);
-static Il2CppMethodPointer s_methodPointers[2483] = 
+static Il2CppMethodPointer s_methodPointers[2501] = 
 {
 	EmbeddedAttribute__ctor_m68CAD82666F0FF415043D7DC217986AA2D3133D1,
 	NullableAttribute__ctor_m771BA0E8EFE1DD8AAAE9E2B867CCF4D3AE8834C7,
@@ -2529,7 +2547,7 @@ static Il2CppMethodPointer s_methodPointers[2483] =
 	EndManager_remove_OnPlayerDied_m6750928B7C68D65590C1F4698E192AF7C431640D,
 	EndManager_OnDeath_m6E4E81FBE92BDF3229F6738867E1D3A72938F436,
 	EndManager_StopGame_mC99AD8FBF97D40FC662C334967AAC36E59F85BA5,
-	EndManager_RestartGame_mEA2BB35967AAAA87B25EFEE02A5F59BA1C59A9C9,
+	EndManager_RestartGame_m9EDFF9D09C12C2FF26431EC688E11E1D56D39334,
 	EndManager_Revive_m364F43C46A0983AF0A90C5F46E88C1536879299B,
 	EndManager_RevivePanelDisplay_m88AE09752BDE2B3537418D4A3A2E0CBAA7150D69,
 	EndManager_Whiter_m08DB78A284FC17E7056A06DAC190312F10624D15,
@@ -3459,7 +3477,7 @@ static Il2CppMethodPointer s_methodPointers[2483] =
 	SpawnObstacleV2_PauserCompteurBarrage_mA078CB5196B326E95C67DF2058D3D2479EF8A8A0,
 	SpawnObstacleV2_ReprendreCompteurBarrage_m610735D080863F1E503B100EF0480D6020D69E68,
 	SpawnObstacleV2_RefreshVitesses_mA385D05243C3AC81371D4C1A926F2082B9623D9A,
-	SpawnObstacleV2_StartSpawning_m675F5303607894A2FE6483F7932938B5347551A3,
+	SpawnObstacleV2_StartSpawning_m9F9738225065BFFC4660B848EDB9D790F1FE4CC8,
 	SpawnObstacleV2_StopSpawning_m3AF46B42CECD35E7CC5419B11F74679690120011,
 	SpawnObstacleV2_SpawnRoutine_m9836B77F6BBC2B2C76B0CC2E880459ADF9A8C3FC,
 	SpawnObstacleV2_SpawnPatternCoroutine_m4252EE9A7B34A675754AED69A7EBB5A50B29613C,
@@ -3683,6 +3701,24 @@ static Il2CppMethodPointer s_methodPointers[2483] =
 	U3CAnimateIconScaleU3Ed__11_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m7025FC51629704F5B72E69325555C45468C8628B,
 	U3CAnimateIconScaleU3Ed__11_System_Collections_IEnumerator_Reset_m1AE9A26D24ABE7CA825C908DB223E5AB0329D8D9,
 	U3CAnimateIconScaleU3Ed__11_System_Collections_IEnumerator_get_Current_m6CC16F0B94DADEA81529A4E3D69B87B938BD9924,
+	LoadingScreen_Awake_mDDED8EA75BD4E78986BC8BD85431A5427483F63F,
+	LoadingScreen_Start_mF32F3CD7F4200FCB51488C33A1C00EDD9E31076A,
+	LoadingScreen_Update_m013B091DABEC0879531A05219B55967F405794A6,
+	LoadingScreen_OnDestroy_m7124E8FB09B225CDE401FACDE577A6C2F892B816,
+	LoadingScreen_ValidateReferences_m289869814630F2F2A5CA7591310FE2703A477613,
+	LoadingScreen_ShowLoadingScreen_m494AC78B87E8D4ED7729CFE9FB5E9C70649EEB20,
+	LoadingScreen_HideLoadingScreen_m3AD0C7A587D371BD6A0D587BDA7D1B14CF775113,
+	LoadingScreen_RunLoadingSequence_m26B6D5D85CB8ED1BFBFD3194E59D367777C91D04,
+	LoadingScreen_AnimateRotation_m3E413D5F7967F3D362E55430DB5296398191D78D,
+	LoadingScreen_ResetLoadingFlag_mB3B232E17B0E92B57A551EEBEC87F76882000626,
+	LoadingScreen__ctor_m5ACD65D1AB90195F10390F16E0056D90BEF17815,
+	LoadingScreen__cctor_mE1AD16E7F9058B5BA926911D534362374F9255B2,
+	U3CRunLoadingSequenceU3Ed__24__ctor_m0B18B6178A9C594A98E5213EE67A05628BD46EF1,
+	U3CRunLoadingSequenceU3Ed__24_System_IDisposable_Dispose_m78D83480C10A98B70FCCB0FEE7BB3DB9CB219E5A,
+	U3CRunLoadingSequenceU3Ed__24_MoveNext_m2CAA121C18CC17BC56FFE3C9B4D7B4066939006C,
+	U3CRunLoadingSequenceU3Ed__24_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mB8E3C38BEE26D3164EDBEFA3E630680ACCCADBA4,
+	U3CRunLoadingSequenceU3Ed__24_System_Collections_IEnumerator_Reset_m51B26AD2D136AF64650A6929D6B52D9187DFF84B,
+	U3CRunLoadingSequenceU3Ed__24_System_Collections_IEnumerator_get_Current_m12DCA3E71A6EB323F43726CDD593CC3328F28463,
 	RewardedAdButton_get_DailyCountKey_mB3A032A652F70340507CF191524D255BE74D5960,
 	RewardedAdButton_get_DailyDateKey_m76F66DE849DAB7EFD8F9967F1D1BD1DBD94DAF2E,
 	RewardedAdButton_Awake_m6235F58059264A443BB8B920F3F81E880F1A3C0C,
@@ -5025,7 +5061,7 @@ static Il2CppTokenAdjustorThunkPair s_adjustorThunks[24] =
 	{ 0x0600049C, U3CSubmitScoreAsyncU3Ed__7_MoveNext_m7D8D33F03D7877475418CC38D7B9690F928E3CA0_AdjustorThunk },
 	{ 0x0600049D, U3CSubmitScoreAsyncU3Ed__7_SetStateMachine_mA2E1C887200C8868AC53E2876D11FC9D4BC89CAF_AdjustorThunk },
 };
-static const int32_t s_InvokerIndices[2483] = 
+static const int32_t s_InvokerIndices[2501] = 
 {
 	15493,
 	11613,
@@ -5066,7 +5102,7 @@ static const int32_t s_InvokerIndices[2483] =
 	25261,
 	15493,
 	15493,
-	15493,
+	11613,
 	15493,
 	15493,
 	10171,
@@ -5996,7 +6032,7 @@ static const int32_t s_InvokerIndices[2483] =
 	15493,
 	15493,
 	15493,
-	15493,
+	11613,
 	15493,
 	15264,
 	10166,
@@ -6214,6 +6250,24 @@ static const int32_t s_InvokerIndices[2483] =
 	10171,
 	24915,
 	15493,
+	11754,
+	15493,
+	15055,
+	15264,
+	15493,
+	15264,
+	15493,
+	15493,
+	15493,
+	15493,
+	15493,
+	15493,
+	15493,
+	15264,
+	15493,
+	26538,
+	15493,
+	26538,
 	11754,
 	15493,
 	15055,
@@ -7515,7 +7569,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	2483,
+	2501,
 	s_methodPointers,
 	24,
 	s_adjustorThunks,
