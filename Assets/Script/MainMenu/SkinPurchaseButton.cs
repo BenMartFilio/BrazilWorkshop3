@@ -229,6 +229,7 @@ public class SkinPurchaseButton : MonoBehaviour
 
         OpenSuccessPanel(def?.sprite);
         RefreshButtonState();
+        NotifierSkinEquipe();
         onPurchaseSuccess?.Invoke();
     }
 
