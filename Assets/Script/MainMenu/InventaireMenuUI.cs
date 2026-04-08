@@ -15,7 +15,7 @@ public class InventaireMenuUI : MonoBehaviour
 {
     // ── Constantes ────────────────────────────────────────────────────────────
     private const float DUREE_ANIM = 0.3f;
-    private const float ALPHA_OVERLAY = 0.6f;
+    private const float ALPHA_OVERLAY = 0.9f;
     private const float FACTEUR_ZOOM = 3f;
 
     // ── Données ───────────────────────────────────────────────────────────────

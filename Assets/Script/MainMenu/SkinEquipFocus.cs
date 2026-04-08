@@ -12,7 +12,7 @@ using UnityEngine.UI;
 public class SkinEquipFocus : MonoBehaviour
 {
     private const float DUREE_ANIM = 0.3f;
-    private const float ALPHA_OVERLAY = 0.6f;
+    private const float ALPHA_OVERLAY = 0.9f;
     private const float DUREE_TREMBLEMENT = 0.45f;
     private const float ANGLE_MAX = 6f;
     private const float FREQUENCE = 28f;
