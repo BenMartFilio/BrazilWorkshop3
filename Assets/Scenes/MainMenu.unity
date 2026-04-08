@@ -348,9 +348,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4630972342190581020, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7807965}
-    - targetCorrespondingSourceObject: {fileID: 8100077562801129629, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7807968}
   m_SourcePrefab: {fileID: 100100000, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
 --- !u!224 &7807963 stripped
 RectTransform:
@@ -386,25 +383,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &7807967 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8100077562801129629, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
-  m_PrefabInstance: {fileID: 7807962}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7807968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7807967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!1001 &10652346
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1143,9 +1121,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 50602399}
-    - targetCorrespondingSourceObject: {fileID: 6774930178532144358, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 50602394}
   m_SourcePrefab: {fileID: 100100000, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
 --- !u!224 &50602389 stripped
 RectTransform:
@@ -1181,25 +1156,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &50602393 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6774930178532144358, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-  m_PrefabInstance: {fileID: 50602388}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &50602394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 50602393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!114 &50602399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3164,34 +3120,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       insertIndex: -1
       addedObject: {fileID: 206927019}
-    - targetCorrespondingSourceObject: {fileID: 4845098722728893645, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 206927013}
   m_SourcePrefab: {fileID: 100100000, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
 --- !u!224 &206927011 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 740860380250662971, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
   m_PrefabInstance: {fileID: 206927010}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &206927012 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4845098722728893645, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
-  m_PrefabInstance: {fileID: 206927010}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &206927013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 206927012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!114 &206927018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4287,34 +4221,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       insertIndex: -1
       addedObject: {fileID: 244497294}
-    - targetCorrespondingSourceObject: {fileID: 4845098722728893645, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 244497288}
   m_SourcePrefab: {fileID: 100100000, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
 --- !u!224 &244497286 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 740860380250662971, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
   m_PrefabInstance: {fileID: 244497285}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &244497287 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4845098722728893645, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
-  m_PrefabInstance: {fileID: 244497285}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &244497288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 244497287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!114 &244497293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4570,9 +4482,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 244797799}
-    - targetCorrespondingSourceObject: {fileID: 6774930178532144358, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1950507831}
   m_SourcePrefab: {fileID: 100100000, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
 --- !u!224 &244797797 stripped
 RectTransform:
@@ -5659,9 +5568,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 345751939}
-    - targetCorrespondingSourceObject: {fileID: 6774930178532144358, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 345751934}
   m_SourcePrefab: {fileID: 100100000, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
 --- !u!224 &345751929 stripped
 RectTransform:
@@ -5697,25 +5603,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &345751933 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6774930178532144358, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-  m_PrefabInstance: {fileID: 345751928}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &345751934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 345751933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!114 &345751939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8556,9 +8443,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 569468352}
-    - targetCorrespondingSourceObject: {fileID: 6774930178532144358, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 569468347}
   m_SourcePrefab: {fileID: 100100000, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
 --- !u!224 &569468342 stripped
 RectTransform:
@@ -8594,25 +8478,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &569468346 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6774930178532144358, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-  m_PrefabInstance: {fileID: 569468341}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &569468347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 569468346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!114 &569468352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9466,34 +9331,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2126130640}
-    - targetCorrespondingSourceObject: {fileID: 4845098722728893645, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 625276536}
   m_SourcePrefab: {fileID: 100100000, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
 --- !u!224 &625276534 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 740860380250662971, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
   m_PrefabInstance: {fileID: 625276533}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &625276535 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4845098722728893645, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
-  m_PrefabInstance: {fileID: 625276533}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &625276536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 625276535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!1 &628737467
 GameObject:
   m_ObjectHideFlags: 0
@@ -9858,9 +9701,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 645760221}
-    - targetCorrespondingSourceObject: {fileID: 6774930178532144358, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 645760216}
   m_SourcePrefab: {fileID: 100100000, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
 --- !u!224 &645760211 stripped
 RectTransform:
@@ -9896,25 +9736,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &645760215 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6774930178532144358, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-  m_PrefabInstance: {fileID: 645760210}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &645760216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 645760215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!114 &645760221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12852,34 +12673,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1487586024}
-    - targetCorrespondingSourceObject: {fileID: 4845098722728893645, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 794025172}
   m_SourcePrefab: {fileID: 100100000, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
 --- !u!224 &794025170 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 740860380250662971, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
   m_PrefabInstance: {fileID: 794025169}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &794025171 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4845098722728893645, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
-  m_PrefabInstance: {fileID: 794025169}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &794025172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 794025171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!1 &794413178
 GameObject:
   m_ObjectHideFlags: 0
@@ -13950,9 +13749,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 836728174}
-    - targetCorrespondingSourceObject: {fileID: 6774930178532144358, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 836728169}
   m_SourcePrefab: {fileID: 100100000, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
 --- !u!224 &836728164 stripped
 RectTransform:
@@ -13988,25 +13784,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &836728168 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6774930178532144358, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-  m_PrefabInstance: {fileID: 836728163}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &836728169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 836728168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!114 &836728174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15015,9 +14792,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 893728864}
-    - targetCorrespondingSourceObject: {fileID: 6774930178532144358, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 893728859}
   m_SourcePrefab: {fileID: 100100000, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
 --- !u!224 &893728854 stripped
 RectTransform:
@@ -15053,25 +14827,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &893728858 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6774930178532144358, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-  m_PrefabInstance: {fileID: 893728853}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &893728859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 893728858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!114 &893728864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16426,35 +16181,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 70135208740948409, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1022699608}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
 --- !u!224 &1022699606 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 141532913796118228, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
   m_PrefabInstance: {fileID: 1022699605}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1022699607 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 70135208740948409, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
-  m_PrefabInstance: {fileID: 1022699605}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1022699608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1022699607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!1 &1029720047
 GameObject:
   m_ObjectHideFlags: 0
@@ -16897,34 +16630,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1049702356}
-    - targetCorrespondingSourceObject: {fileID: 4845098722728893645, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1049702350}
   m_SourcePrefab: {fileID: 100100000, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
 --- !u!224 &1049702348 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 740860380250662971, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
   m_PrefabInstance: {fileID: 1049702347}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1049702349 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4845098722728893645, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
-  m_PrefabInstance: {fileID: 1049702347}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1049702350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1049702349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!114 &1049702355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17494,34 +17205,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2144411221}
-    - targetCorrespondingSourceObject: {fileID: 4845098722728893645, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1073900529}
   m_SourcePrefab: {fileID: 100100000, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
 --- !u!224 &1073900527 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 740860380250662971, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
   m_PrefabInstance: {fileID: 1073900526}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1073900528 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4845098722728893645, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
-  m_PrefabInstance: {fileID: 1073900526}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1073900529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1073900528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!1 &1075016810
 GameObject:
   m_ObjectHideFlags: 0
@@ -18354,9 +18043,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1105331092}
-    - targetCorrespondingSourceObject: {fileID: 6774930178532144358, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1105331087}
   m_SourcePrefab: {fileID: 100100000, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
 --- !u!224 &1105331082 stripped
 RectTransform:
@@ -18392,25 +18078,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &1105331086 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6774930178532144358, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-  m_PrefabInstance: {fileID: 1105331081}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1105331087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1105331086}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!114 &1105331092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19497,9 +19164,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1161066036}
-    - targetCorrespondingSourceObject: {fileID: 6774930178532144358, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1161066031}
   m_SourcePrefab: {fileID: 100100000, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
 --- !u!224 &1161066026 stripped
 RectTransform:
@@ -19535,25 +19199,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &1161066030 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6774930178532144358, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-  m_PrefabInstance: {fileID: 1161066025}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1161066031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1161066030}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!114 &1161066036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20726,9 +20371,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2979617173668973362, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1220986138}
-    - targetCorrespondingSourceObject: {fileID: 70135208740948409, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1220986141}
   m_SourcePrefab: {fileID: 100100000, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
 --- !u!224 &1220986136 stripped
 RectTransform:
@@ -20764,25 +20406,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &1220986140 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 70135208740948409, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
-  m_PrefabInstance: {fileID: 1220986135}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1220986141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1220986140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!1 &1225000583
 GameObject:
   m_ObjectHideFlags: 0
@@ -22027,9 +21650,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       insertIndex: 8
       addedObject: {fileID: 1298307603}
-    - targetCorrespondingSourceObject: {fileID: 6774930178532144358, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1298307606}
   m_SourcePrefab: {fileID: 100100000, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
 --- !u!224 &1298307601 stripped
 RectTransform:
@@ -22065,25 +21685,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &1298307605 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6774930178532144358, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-  m_PrefabInstance: {fileID: 1298307600}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1298307606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1298307605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!1 &1317939539
 GameObject:
   m_ObjectHideFlags: 0
@@ -24119,9 +23720,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1471993946}
-    - targetCorrespondingSourceObject: {fileID: 6774930178532144358, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1471993941}
   m_SourcePrefab: {fileID: 100100000, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
 --- !u!224 &1471993936 stripped
 RectTransform:
@@ -24157,25 +23755,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &1471993940 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6774930178532144358, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-  m_PrefabInstance: {fileID: 1471993935}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1471993941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1471993940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!114 &1471993946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24526,34 +24105,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1503949455}
-    - targetCorrespondingSourceObject: {fileID: 4845098722728893645, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1503949449}
   m_SourcePrefab: {fileID: 100100000, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
 --- !u!224 &1503949447 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 740860380250662971, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
   m_PrefabInstance: {fileID: 1503949446}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1503949448 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4845098722728893645, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
-  m_PrefabInstance: {fileID: 1503949446}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1503949449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1503949448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!114 &1503949454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24809,9 +24366,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1504667989}
-    - targetCorrespondingSourceObject: {fileID: 6774930178532144358, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1504667984}
   m_SourcePrefab: {fileID: 100100000, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
 --- !u!224 &1504667979 stripped
 RectTransform:
@@ -24847,25 +24401,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &1504667983 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6774930178532144358, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-  m_PrefabInstance: {fileID: 1504667978}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1504667984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1504667983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!114 &1504667989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25250,9 +24785,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4630972342190581020, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1518035550}
-    - targetCorrespondingSourceObject: {fileID: 8100077562801129629, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1518035553}
   m_SourcePrefab: {fileID: 100100000, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
 --- !u!224 &1518035548 stripped
 RectTransform:
@@ -25288,25 +24820,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &1518035552 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8100077562801129629, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
-  m_PrefabInstance: {fileID: 1518035547}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1518035553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1518035552}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!1 &1521163760
 GameObject:
   m_ObjectHideFlags: 0
@@ -26844,34 +26357,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1658042314}
-    - targetCorrespondingSourceObject: {fileID: 4845098722728893645, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1658042308}
   m_SourcePrefab: {fileID: 100100000, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
 --- !u!224 &1658042306 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 740860380250662971, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
   m_PrefabInstance: {fileID: 1658042305}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1658042307 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4845098722728893645, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
-  m_PrefabInstance: {fileID: 1658042305}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1658042308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1658042307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!114 &1658042313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28384,9 +27875,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1808758928}
-    - targetCorrespondingSourceObject: {fileID: 6774930178532144358, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1808758923}
   m_SourcePrefab: {fileID: 100100000, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
 --- !u!224 &1808758918 stripped
 RectTransform:
@@ -28422,25 +27910,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &1808758922 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6774930178532144358, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-  m_PrefabInstance: {fileID: 1808758917}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1808758923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1808758922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!114 &1808758928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29413,9 +28882,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1842301167}
-    - targetCorrespondingSourceObject: {fileID: 6774930178532144358, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1842301162}
   m_SourcePrefab: {fileID: 100100000, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
 --- !u!224 &1842301157 stripped
 RectTransform:
@@ -29451,25 +28917,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &1842301161 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6774930178532144358, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-  m_PrefabInstance: {fileID: 1842301156}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1842301162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1842301161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!114 &1842301167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30727,9 +30174,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4630972342190581020, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1917130949}
-    - targetCorrespondingSourceObject: {fileID: 8100077562801129629, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1917130952}
   m_SourcePrefab: {fileID: 100100000, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
 --- !u!224 &1917130947 stripped
 RectTransform:
@@ -30765,25 +30209,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &1917130951 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8100077562801129629, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
-  m_PrefabInstance: {fileID: 1917130946}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1917130952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1917130951}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!1001 &1922526002
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30907,35 +30332,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 70135208740948409, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1922526005}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
 --- !u!224 &1922526003 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 141532913796118228, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
   m_PrefabInstance: {fileID: 1922526002}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1922526004 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 70135208740948409, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
-  m_PrefabInstance: {fileID: 1922526002}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1922526005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1922526004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!1 &1930571982
 GameObject:
   m_ObjectHideFlags: 0
@@ -31264,25 +30667,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1945057122}
   m_CullTransparentMesh: 1
---- !u!1 &1950507830 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6774930178532144358, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-  m_PrefabInstance: {fileID: 244797796}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1950507831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1950507830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!1 &1951577322
 GameObject:
   m_ObjectHideFlags: 0
@@ -31868,9 +31252,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1970998998}
-    - targetCorrespondingSourceObject: {fileID: 6774930178532144358, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1970998993}
   m_SourcePrefab: {fileID: 100100000, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
 --- !u!224 &1970998988 stripped
 RectTransform:
@@ -31906,25 +31287,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &1970998992 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6774930178532144358, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-  m_PrefabInstance: {fileID: 1970998987}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1970998993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1970998992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!114 &1970998998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33059,9 +32421,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3502999268918929335, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2072374133}
-    - targetCorrespondingSourceObject: {fileID: 6774930178532144358, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2072374128}
   m_SourcePrefab: {fileID: 100100000, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
 --- !u!224 &2072374123 stripped
 RectTransform:
@@ -33097,25 +32456,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &2072374127 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6774930178532144358, guid: cefad61a82cc5d94589e74aee5488d73, type: 3}
-  m_PrefabInstance: {fileID: 2072374122}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2072374128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2072374127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!114 &2072374133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34002,29 +33342,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2519733980101488885, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1390242646}
-    - targetCorrespondingSourceObject: {fileID: 4845098722728893645, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2389437790453523073}
   m_SourcePrefab: {fileID: 100100000, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
---- !u!1 &2389437790453523072 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4845098722728893645, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
-  m_PrefabInstance: {fileID: 2389437790453523071}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2389437790453523073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2389437790453523072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!224 &2609841757903887527 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7657435366403075600, guid: 063333b294a765f4990d73dd152df1bd, type: 3}
@@ -34192,9 +33510,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2979617173668973362, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3254380190229409660}
-    - targetCorrespondingSourceObject: {fileID: 70135208740948409, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3254380190229409663}
   m_SourcePrefab: {fileID: 100100000, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
 --- !u!1 &3254380190229409659 stripped
 GameObject:
@@ -34225,25 +33540,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &3254380190229409662 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 70135208740948409, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
-  m_PrefabInstance: {fileID: 3254380190229409658}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3254380190229409663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3254380190229409662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!1001 &4853651697836556410
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34390,9 +33686,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4630972342190581020, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4853651697836556412}
-    - targetCorrespondingSourceObject: {fileID: 8100077562801129629, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4853651697836556415}
   m_SourcePrefab: {fileID: 100100000, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
 --- !u!1 &4853651697836556411 stripped
 GameObject:
@@ -34423,25 +33716,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &4853651697836556414 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8100077562801129629, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
-  m_PrefabInstance: {fileID: 4853651697836556410}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4853651697836556415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4853651697836556414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: shop_buy
-  _formatArgs: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
