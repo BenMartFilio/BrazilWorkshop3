@@ -88,34 +88,42 @@ public class FondeurTransitionScène : MonoBehaviour
     /// </summary>
     private CanvasGroup CréerPanneauNoir()
     {
-        // Canvas en objet racine indépendant — obligatoire pour que le RectTransform
-        // enfant prenne bien la taille plein écran en ScreenSpaceOverlay.
-        var canvasGO = new GameObject("FondeurCanvas");
+   
+        // Réutiliser le FondeurCanvas s'il existe déjà
+        var canvasGO = GameObject.Find("FondeurCanvas");
+        if (canvasGO != null)
+        {
+            var existingCG = canvasGO.GetComponentInChildren<CanvasGroup>();
+            if (existingCG != null)
+                return existingCG;
+        }
+
+        canvasGO = new GameObject("FondeurCanvas");
         DontDestroyOnLoad(canvasGO);
 
         var canvas = canvasGO.AddComponent<Canvas>();
-        canvas.renderMode   = RenderMode.ScreenSpaceOverlay;
+        canvas.renderMode = RenderMode.ScreenSpaceOverlay;
         canvas.sortingOrder = 999;
 
         canvasGO.AddComponent<CanvasScaler>();
         canvasGO.AddComponent<GraphicRaycaster>();
 
-        // Panneau noir plein écran, enfant du Canvas.
         var panneauGO = new GameObject("PanneauNoir");
         panneauGO.transform.SetParent(canvasGO.transform, false);
 
         var img = panneauGO.AddComponent<Image>();
-        img.color   = Color.black;
+        img.color = Color.black;
         img.raycastTarget = false;
 
         var rt = img.rectTransform;
-        rt.anchorMin        = Vector2.zero;
-        rt.anchorMax        = Vector2.one;
+        rt.anchorMin = Vector2.zero;
+        rt.anchorMax = Vector2.one;
         rt.anchoredPosition = Vector2.zero;
-        rt.sizeDelta        = Vector2.zero;
+        rt.sizeDelta = Vector2.zero;
 
         return panneauGO.AddComponent<CanvasGroup>();
     }
+
 
     // ── Coroutines ────────────────────────────────────────────────────────────
 
