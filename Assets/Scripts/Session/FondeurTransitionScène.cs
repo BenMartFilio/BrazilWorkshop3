@@ -58,7 +58,7 @@ public class FondeurTransitionScène : MonoBehaviour
 
         // Nettoyer les FondeurCanvas orphelins laissés par des instances précédentes
         // (SessionManager présent dans plusieurs scènes, transitions interrompues).
-     //   NettoyerCanvasOrphelins();
+        NettoyerCanvasOrphelins();
 
         _canvasGroup = GetComponent<CanvasGroup>();
 

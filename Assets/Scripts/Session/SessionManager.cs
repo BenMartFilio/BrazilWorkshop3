@@ -112,9 +112,25 @@ public class SessionManager : MonoBehaviour
             return;
         }
 
-        if (joueur == null)       { Debug.LogError("[SessionManager] joueur est null — restauration annulée.");       return; }
-        if (scoreManager == null) { Debug.LogError("[SessionManager] scoreManager est null — restauration annulée."); return; }
-        if (spawner == null)      { Debug.LogError("[SessionManager] spawner est null — restauration annulée.");      return; }
+        if (joueur == null)
+        {
+            Debug.LogError("[SessionManager] joueur est null — restauration annulée.");
+            FondeurTransitionScène.Instance?.FondreDepuisNoir();
+            return;
+        }
+        if (scoreManager == null)
+        {
+            Debug.LogError("[SessionManager] scoreManager est null — restauration annulée.");
+            FondeurTransitionScène.Instance?.FondreDepuisNoir();
+            return;
+        }
+        if (spawner == null)
+        {
+            Debug.LogError("[SessionManager] spawner est null — restauration annulée.");
+            FondeurTransitionScène.Instance?.FondreDepuisNoir();
+            return;
+        }
+
 
         // Arrêter le score avant de le restaurer pour éviter le double-démarrage de coroutine.
         scoreManager.StopScore();

@@ -9,14 +9,26 @@
         "name": "Animation",
         "dependencies": [
           {
+            "name": "AnimationClip",
+            "scenes": [
+              "Assets/Scenes/MainMenu.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
             "name": "Animator",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/MainMenu.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "AnimatorController",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/MainMenu.unity"
+            ],
             "dependencyType": 1,
             "icon": null
           },
@@ -24,6 +36,12 @@
             "name": "AnimatorOverrideController",
             "scenes": [],
             "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "Motion",
+            "scenes": [],
+            "dependencyType": 1,
             "icon": null
           },
           {
@@ -52,8 +70,10 @@
             "name": "AudioBehaviour",
             "scenes": [
               "Assets/Scenes/Barrage.unity",
+              "Assets/Scenes/BarrageTuto.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/MapRoad.unity",
+              "Assets/Scenes/MapTuto.unity",
               "Assets/Scenes/ResultScene.unity"
             ],
             "dependencyType": 0,
@@ -61,7 +81,14 @@
           },
           {
             "name": "AudioClip",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/Barrage.unity",
+              "Assets/Scenes/BarrageTuto.unity",
+              "Assets/Scenes/MainMenu.unity",
+              "Assets/Scenes/MapRoad.unity",
+              "Assets/Scenes/MapTuto.unity",
+              "Assets/Scenes/ResultScene.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
@@ -69,8 +96,10 @@
             "name": "AudioListener",
             "scenes": [
               "Assets/Scenes/Barrage.unity",
+              "Assets/Scenes/BarrageTuto.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/MapRoad.unity",
+              "Assets/Scenes/MapTuto.unity",
               "Assets/Scenes/ResultScene.unity"
             ],
             "dependencyType": 0,
@@ -108,14 +137,24 @@
           },
           {
             "name": "AudioResource",
-            "scenes": [],
-            "dependencyType": 1,
+            "scenes": [
+              "Assets/Scenes/Barrage.unity",
+              "Assets/Scenes/BarrageTuto.unity",
+              "Assets/Scenes/MainMenu.unity",
+              "Assets/Scenes/MapRoad.unity",
+              "Assets/Scenes/MapTuto.unity",
+              "Assets/Scenes/ResultScene.unity"
+            ],
+            "dependencyType": 0,
             "icon": null
           },
           {
             "name": "AudioSource",
             "scenes": [
-              "Assets/Scenes/MainMenu.unity"
+              "Assets/Scenes/Barrage.unity",
+              "Assets/Scenes/BarrageTuto.unity",
+              "Assets/Scenes/MainMenu.unity",
+              "Assets/Scenes/ResultScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -147,8 +186,10 @@
             "name": "Camera",
             "scenes": [
               "Assets/Scenes/Barrage.unity",
+              "Assets/Scenes/BarrageTuto.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/MapRoad.unity",
+              "Assets/Scenes/MapTuto.unity",
               "Assets/Scenes/ResultScene.unity"
             ],
             "dependencyType": 0,
@@ -170,8 +211,10 @@
             "name": "Cubemap",
             "scenes": [
               "Assets/Scenes/Barrage.unity",
+              "Assets/Scenes/BarrageTuto.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/MapRoad.unity",
+              "Assets/Scenes/MapTuto.unity",
               "Assets/Scenes/ResultScene.unity"
             ],
             "dependencyType": 0,
@@ -193,8 +236,10 @@
             "name": "EditorExtension",
             "scenes": [
               "Assets/Scenes/Barrage.unity",
+              "Assets/Scenes/BarrageTuto.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/MapRoad.unity",
+              "Assets/Scenes/MapTuto.unity",
               "Assets/Scenes/ResultScene.unity"
             ],
             "dependencyType": 1,
@@ -210,8 +255,10 @@
             "name": "GameObject",
             "scenes": [
               "Assets/Scenes/Barrage.unity",
+              "Assets/Scenes/BarrageTuto.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/MapRoad.unity",
+              "Assets/Scenes/MapTuto.unity",
               "Assets/Scenes/ResultScene.unity"
             ],
             "dependencyType": 0,
@@ -245,8 +292,10 @@
             "name": "LevelGameManager",
             "scenes": [
               "Assets/Scenes/Barrage.unity",
+              "Assets/Scenes/BarrageTuto.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/MapRoad.unity",
+              "Assets/Scenes/MapTuto.unity",
               "Assets/Scenes/ResultScene.unity"
             ],
             "dependencyType": 1,
@@ -256,8 +305,10 @@
             "name": "Light",
             "scenes": [
               "Assets/Scenes/Barrage.unity",
+              "Assets/Scenes/BarrageTuto.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/MapRoad.unity",
+              "Assets/Scenes/MapTuto.unity",
               "Assets/Scenes/ResultScene.unity"
             ],
             "dependencyType": 0,
@@ -285,8 +336,10 @@
             "name": "LightmapSettings",
             "scenes": [
               "Assets/Scenes/Barrage.unity",
+              "Assets/Scenes/BarrageTuto.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/MapRoad.unity",
+              "Assets/Scenes/MapTuto.unity",
               "Assets/Scenes/ResultScene.unity"
             ],
             "dependencyType": 0,
@@ -302,8 +355,10 @@
             "name": "Material",
             "scenes": [
               "Assets/Scenes/Barrage.unity",
+              "Assets/Scenes/BarrageTuto.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/MapRoad.unity",
+              "Assets/Scenes/MapTuto.unity",
               "Assets/Scenes/ResultScene.unity"
             ],
             "dependencyType": 0,
@@ -331,8 +386,10 @@
             "name": "MonoBehaviour",
             "scenes": [
               "Assets/Scenes/Barrage.unity",
+              "Assets/Scenes/BarrageTuto.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/MapRoad.unity",
+              "Assets/Scenes/MapTuto.unity",
               "Assets/Scenes/ResultScene.unity"
             ],
             "dependencyType": 0,
@@ -348,8 +405,10 @@
             "name": "MonoScript",
             "scenes": [
               "Assets/Scenes/Barrage.unity",
+              "Assets/Scenes/BarrageTuto.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/MapRoad.unity",
+              "Assets/Scenes/MapTuto.unity",
               "Assets/Scenes/ResultScene.unity"
             ],
             "dependencyType": 1,
@@ -359,8 +418,10 @@
             "name": "NamedObject",
             "scenes": [
               "Assets/Scenes/Barrage.unity",
+              "Assets/Scenes/BarrageTuto.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/MapRoad.unity",
+              "Assets/Scenes/MapTuto.unity",
               "Assets/Scenes/ResultScene.unity"
             ],
             "dependencyType": 1,
@@ -400,8 +461,10 @@
             "name": "RectTransform",
             "scenes": [
               "Assets/Scenes/Barrage.unity",
+              "Assets/Scenes/BarrageTuto.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/MapRoad.unity",
+              "Assets/Scenes/MapTuto.unity",
               "Assets/Scenes/ResultScene.unity"
             ],
             "dependencyType": 0,
@@ -417,8 +480,10 @@
             "name": "RenderSettings",
             "scenes": [
               "Assets/Scenes/Barrage.unity",
+              "Assets/Scenes/BarrageTuto.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/MapRoad.unity",
+              "Assets/Scenes/MapTuto.unity",
               "Assets/Scenes/ResultScene.unity"
             ],
             "dependencyType": 0,
@@ -433,7 +498,9 @@
           {
             "name": "Renderer",
             "scenes": [
-              "Assets/Scenes/MapRoad.unity"
+              "Assets/Scenes/Barrage.unity",
+              "Assets/Scenes/MapRoad.unity",
+              "Assets/Scenes/MapTuto.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -454,8 +521,10 @@
             "name": "Shader",
             "scenes": [
               "Assets/Scenes/Barrage.unity",
+              "Assets/Scenes/BarrageTuto.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/MapRoad.unity",
+              "Assets/Scenes/MapTuto.unity",
               "Assets/Scenes/ResultScene.unity"
             ],
             "dependencyType": 0,
@@ -483,8 +552,10 @@
             "name": "Sprite",
             "scenes": [
               "Assets/Scenes/Barrage.unity",
+              "Assets/Scenes/BarrageTuto.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/MapRoad.unity",
+              "Assets/Scenes/MapTuto.unity",
               "Assets/Scenes/ResultScene.unity"
             ],
             "dependencyType": 0,
@@ -499,7 +570,9 @@
           {
             "name": "SpriteRenderer",
             "scenes": [
-              "Assets/Scenes/MapRoad.unity"
+              "Assets/Scenes/Barrage.unity",
+              "Assets/Scenes/MapRoad.unity",
+              "Assets/Scenes/MapTuto.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1045,7 +1118,7 @@
           {
             "name": "Collider",
             "scenes": [],
-            "dependencyType": 1,
+            "dependencyType": 0,
             "icon": null
           },
           {
@@ -1092,7 +1165,9 @@
           {
             "name": "BoxCollider2D",
             "scenes": [
-              "Assets/Scenes/MapRoad.unity"
+              "Assets/Scenes/Barrage.unity",
+              "Assets/Scenes/MapRoad.unity",
+              "Assets/Scenes/MapTuto.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1112,7 +1187,9 @@
           {
             "name": "Rigidbody2D",
             "scenes": [
-              "Assets/Scenes/MapRoad.unity"
+              "Assets/Scenes/Barrage.unity",
+              "Assets/Scenes/MapRoad.unity",
+              "Assets/Scenes/MapTuto.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1489,8 +1566,10 @@
             "name": "Font",
             "scenes": [
               "Assets/Scenes/Barrage.unity",
+              "Assets/Scenes/BarrageTuto.unity",
               "Assets/Scenes/MainMenu.unity",
-              "Assets/Scenes/MapRoad.unity"
+              "Assets/Scenes/MapRoad.unity",
+              "Assets/Scenes/MapTuto.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1540,8 +1619,10 @@
             "name": "Canvas",
             "scenes": [
               "Assets/Scenes/Barrage.unity",
+              "Assets/Scenes/BarrageTuto.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/MapRoad.unity",
+              "Assets/Scenes/MapTuto.unity",
               "Assets/Scenes/ResultScene.unity"
             ],
             "dependencyType": 0,
@@ -1551,7 +1632,9 @@
             "name": "CanvasGroup",
             "scenes": [
               "Assets/Scenes/Barrage.unity",
-              "Assets/Scenes/MainMenu.unity"
+              "Assets/Scenes/BarrageTuto.unity",
+              "Assets/Scenes/MainMenu.unity",
+              "Assets/Scenes/ResultScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1560,8 +1643,10 @@
             "name": "CanvasRenderer",
             "scenes": [
               "Assets/Scenes/Barrage.unity",
+              "Assets/Scenes/BarrageTuto.unity",
               "Assets/Scenes/MainMenu.unity",
               "Assets/Scenes/MapRoad.unity",
+              "Assets/Scenes/MapTuto.unity",
               "Assets/Scenes/ResultScene.unity"
             ],
             "dependencyType": 0,
