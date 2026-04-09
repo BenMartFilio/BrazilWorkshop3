@@ -65,7 +65,7 @@ public class ScoreManager : MonoBehaviour
                 bestScoreText.SetText("{0}", delta);
                 _lastDisplayedDelta = delta;
             }
-            yield return GetWait();
+                yield return GetWait();
         }
         StartCoroutine(FadeOutBestScore(0.1f));
     }
@@ -103,7 +103,10 @@ public class ScoreManager : MonoBehaviour
         if (isDriving) return;
         isDriving = true;
         scoreCoroutine = StartCoroutine(ContiniousScore());
-        StartCoroutine(ContiniousBestScore());
+        if (score < playerDatas.BestScore)
+        {
+            StartCoroutine(ContiniousBestScore());
+        }
     }
 
     public void NewSpeed(float newSpeed)

@@ -70,8 +70,6 @@ public class LoadingScreen : MonoBehaviour
 
     private void OnDestroy()
     {
-        // Nettoyage des coroutines si le GameObject est détruit pendant le chargement
-        StopAllCoroutines();
     }
 
     /// <summary>

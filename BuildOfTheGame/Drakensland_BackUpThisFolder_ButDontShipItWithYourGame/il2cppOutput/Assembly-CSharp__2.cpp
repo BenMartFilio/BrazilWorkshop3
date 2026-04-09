@@ -5666,7 +5666,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreen_ValidateReferences_m289869
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreen_HideLoadingScreen_m3AD0C7A587D371BD6A0D587BDA7D1B14CF775113 (LoadingScreen_tFBBB09800C93382F92D7C5E6740BF849FF4AFAD5* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreen_ShowLoadingScreen_m494AC78B87E8D4ED7729CFE9FB5E9C70649EEB20 (LoadingScreen_tFBBB09800C93382F92D7C5E6740BF849FF4AFAD5* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreen_AnimateRotation_m3E413D5F7967F3D362E55430DB5296398191D78D (LoadingScreen_tFBBB09800C93382F92D7C5E6740BF849FF4AFAD5* __this, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MonoBehaviour_StopAllCoroutines_m872033451D42013A99867D09337490017E9ED318 (MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void RectTransform_set_anchorMax_m52829ABEDD229ABD3DA20BCA676FA1DCA4A39B7D (RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* __this, Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 ___0_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* LoadingScreen_RunLoadingSequence_m26B6D5D85CB8ED1BFBFD3194E59D367777C91D04 (LoadingScreen_tFBBB09800C93382F92D7C5E6740BF849FF4AFAD5* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CRunLoadingSequenceU3Ed__24__ctor_m0B18B6178A9C594A98E5213EE67A05628BD46EF1 (U3CRunLoadingSequenceU3Ed__24_tD8934EA1592C061A120C026AD489472DBDDED8C1* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) ;
@@ -5847,7 +5846,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* FondeurTransitionScUE8ne_Anime
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* FondeurTransitionScUE8ne_LancerCoroutine_m813C4B9E6AB0909BF1CB318C6F4A525B2EE2E674 (FondeurTransitionScUE8ne_t56A4A7F7FFCD21F0B5D0FC058C635B2321366F6E* __this, RuntimeObject* ___0_routine, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* FondeurTransitionScUE8ne_AnimerDepuisNoir_mF7FA18E6937DCD84E693378349ED9DEF5164C244 (FondeurTransitionScUE8ne_t56A4A7F7FFCD21F0B5D0FC058C635B2321366F6E* __this, float ___0_durUE9e, const RuntimeMethod* method) ;
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void FondeurTransitionScUE8ne_set_Instance_mAFF064425CD1A4AA35400FB33F1BD336383DFB3D_inline (FondeurTransitionScUE8ne_t56A4A7F7FFCD21F0B5D0FC058C635B2321366F6E* ___0_value, const RuntimeMethod* method) ;
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void FondeurTransitionScUE8ne_NettoyerCanvasOrphelins_mA4617E56E4FDE0B24579EC1BB648AEE3DEF47061 (const RuntimeMethod* method) ;
 inline CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* Component_GetComponent_TisCanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094_mA3B0428368982ED39ADEBB220EE67D1E99D8B2D2 (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* __this, const RuntimeMethod* method)
 {
 	return ((  CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* (*) (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3*, const RuntimeMethod*))Component_GetComponent_TisRuntimeObject_m7181F81CAEC2CF53F5D2BC79B7425C16E1F80D33_gshared)(__this, method);
@@ -15824,9 +15822,7 @@ IL_000e:
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreen_OnDestroy_m7124E8FB09B225CDE401FACDE577A6C2F892B816 (LoadingScreen_tFBBB09800C93382F92D7C5E6740BF849FF4AFAD5* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:74>
-		MonoBehaviour_StopAllCoroutines_m872033451D42013A99867D09337490017E9ED318(__this, NULL);
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:75>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:73>
 		return;
 	}
 }
@@ -15844,7 +15840,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreen_ValidateReferences_m289869
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:82>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:80>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->____loadingPanel;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -15855,14 +15851,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreen_ValidateReferences_m289869
 		}
 	}
 	{
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:83>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:81>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogError_m94F967AB31244EACE68C3BE1DD85B69ED3334C0E(_stringLiteralD31B5BDF71A595F2187B6538640597F2FE491A9E, __this, NULL);
 	}
 
 IL_0019:
 	{
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:85>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:83>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_2 = __this->____sliderFillRect;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_3;
@@ -15873,14 +15869,14 @@ IL_0019:
 		}
 	}
 	{
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:86>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:84>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogError_m94F967AB31244EACE68C3BE1DD85B69ED3334C0E(_stringLiteral0CAB4D4B7BD51F078A7FBE477B244C9C1C13E3D9, __this, NULL);
 	}
 
 IL_0032:
 	{
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:88>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:86>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_4 = __this->____rotationPivot;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_5;
@@ -15891,14 +15887,14 @@ IL_0032:
 		}
 	}
 	{
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:89>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:87>
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_LogError_m94F967AB31244EACE68C3BE1DD85B69ED3334C0E(_stringLiteral9EB5F23A6EAF02597C6052E88A6FFC8491187312, __this, NULL);
 	}
 
 IL_004b:
 	{
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:90>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:88>
 		return;
 	}
 }
@@ -15912,26 +15908,26 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreen_ShowLoadingScreen_m494AC78
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:97>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:95>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->____loadingPanel;
 		NullCheck(L_0);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_0, (bool)1, NULL);
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:98>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:96>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_1 = __this->____sliderFillRect;
 		il2cpp_codegen_runtime_class_init_inline(LoadingScreen_tFBBB09800C93382F92D7C5E6740BF849FF4AFAD5_il2cpp_TypeInfo_var);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_2 = ((LoadingScreen_tFBBB09800C93382F92D7C5E6740BF849FF4AFAD5_StaticFields*)il2cpp_codegen_static_fields_for(LoadingScreen_tFBBB09800C93382F92D7C5E6740BF849FF4AFAD5_il2cpp_TypeInfo_var))->___ANCHOR_START;
 		NullCheck(L_1);
 		RectTransform_set_anchorMax_m52829ABEDD229ABD3DA20BCA676FA1DCA4A39B7D(L_1, L_2, NULL);
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:99>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:97>
 		__this->____currentAngle = (0.0f);
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:100>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:98>
 		__this->____isLoading = (bool)1;
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:101>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:99>
 		RuntimeObject* L_3;
 		L_3 = LoadingScreen_RunLoadingSequence_m26B6D5D85CB8ED1BFBFD3194E59D367777C91D04(__this, NULL);
 		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_4;
 		L_4 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_3, NULL);
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:102>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:100>
 		return;
 	}
 }
@@ -15939,13 +15935,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreen_ShowLoadingScreen_m494AC78
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreen_HideLoadingScreen_m3AD0C7A587D371BD6A0D587BDA7D1B14CF775113 (LoadingScreen_tFBBB09800C93382F92D7C5E6740BF849FF4AFAD5* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:109>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:107>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->____loadingPanel;
 		NullCheck(L_0);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_0, (bool)0, NULL);
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:110>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:108>
 		__this->____isLoading = (bool)0;
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:111>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:109>
 		return;
 	}
 }
@@ -15974,37 +15970,37 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreen_AnimateRotation_m3E413D5F7
 	float V_0 = 0.0f;
 	float V_1 = 0.0f;
 	{
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:152>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:150>
 		float L_0;
 		L_0 = Time_get_time_m3A271BB1B20041144AC5B7863B71AB1F0150374B(NULL);
 		float L_1 = __this->____rotationOscillationSpeed;
 		float L_2;
 		L_2 = sinf(((float)il2cpp_codegen_multiply(L_0, L_1)));
 		V_0 = ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_add(L_2, (1.0f))), (0.5f)));
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:153>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:151>
 		float L_3 = __this->____rotationSpeedMin;
 		float L_4 = __this->____rotationSpeedMax;
 		float L_5 = V_0;
 		float L_6;
 		L_6 = Mathf_Lerp_m47EF2FFB7647BD0A1FDC26DC03E28B19812139B5_inline(L_3, L_4, L_5, NULL);
 		V_1 = L_6;
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:156>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:154>
 		float L_7 = __this->____currentAngle;
 		float L_8 = V_1;
 		float L_9;
 		L_9 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
 		__this->____currentAngle = (fmodf(((float)il2cpp_codegen_add(L_7, ((float)il2cpp_codegen_multiply(L_8, L_9)))), (360.0f)));
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:159>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:157>
 		float L_10 = __this->____currentAngle;
 		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_11;
 		L_11 = Quaternion_Euler_m9262AB29E3E9CE94EF71051F38A28E82AEC73F90_inline((0.0f), (0.0f), L_10, NULL);
 		__this->____rotationCache = L_11;
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:160>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:158>
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_12 = __this->____rotationPivot;
 		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_13 = __this->____rotationCache;
 		NullCheck(L_12);
 		Transform_set_localRotation_mAB4A011D134BA58AB780BECC0025CA65F16185FA(L_12, L_13, NULL);
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:161>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:159>
 		return;
 	}
 }
@@ -16018,10 +16014,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void LoadingScreen_ResetLoadingFlag_mB3B232E1
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:168>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:166>
 		il2cpp_codegen_runtime_class_init_inline(LoadingScreen_tFBBB09800C93382F92D7C5E6740BF849FF4AFAD5_il2cpp_TypeInfo_var);
 		((LoadingScreen_tFBBB09800C93382F92D7C5E6740BF849FF4AFAD5_StaticFields*)il2cpp_codegen_static_fields_for(LoadingScreen_tFBBB09800C93382F92D7C5E6740BF849FF4AFAD5_il2cpp_TypeInfo_var))->____hasShownLoadingScreen = (bool)0;
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:169>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:167>
 		return;
 	}
 }
@@ -16146,25 +16142,25 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CRunLoadingSequenceU3Ed__24_MoveNext_m
 IL_0022:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:118>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:116>
 		__this->___U3CelapsedU3E5__2 = (0.0f);
 		goto IL_0097;
 	}
 
 IL_0036:
 	{
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:122>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:120>
 		float L_3 = __this->___U3CelapsedU3E5__2;
 		float L_4;
 		L_4 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
 		__this->___U3CelapsedU3E5__2 = ((float)il2cpp_codegen_add(L_3, L_4));
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:123>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:121>
 		float L_5 = __this->___U3CelapsedU3E5__2;
 		LoadingScreen_tFBBB09800C93382F92D7C5E6740BF849FF4AFAD5* L_6 = V_1;
 		NullCheck(L_6);
 		float L_7 = L_6->____loadingDuration;
 		V_2 = ((float)(L_5/L_7));
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:126>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:124>
 		LoadingScreen_tFBBB09800C93382F92D7C5E6740BF849FF4AFAD5* L_8 = V_1;
 		NullCheck(L_8);
 		AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354* L_9 = L_8->____progressCurve;
@@ -16173,13 +16169,13 @@ IL_0036:
 		float L_11;
 		L_11 = AnimationCurve_Evaluate_m50B857043DE251A186032ADBCBB4CEF817F4EE3C(L_9, L_10, NULL);
 		V_3 = L_11;
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:129>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:127>
 		LoadingScreen_tFBBB09800C93382F92D7C5E6740BF849FF4AFAD5* L_12 = V_1;
 		NullCheck(L_12);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7* L_13 = (Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7*)(&L_12->____anchorCache);
 		float L_14 = V_3;
 		L_13->___x = L_14;
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:130>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:128>
 		LoadingScreen_tFBBB09800C93382F92D7C5E6740BF849FF4AFAD5* L_15 = V_1;
 		NullCheck(L_15);
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_16 = L_15->____sliderFillRect;
@@ -16188,7 +16184,7 @@ IL_0036:
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_18 = L_17->____anchorCache;
 		NullCheck(L_16);
 		RectTransform_set_anchorMax_m52829ABEDD229ABD3DA20BCA676FA1DCA4A39B7D(L_16, L_18, NULL);
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:132>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:130>
 		__this->___U3CU3E2__current = NULL;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)NULL);
 		__this->___U3CU3E1__state = 1;
@@ -16202,7 +16198,7 @@ IL_0090:
 
 IL_0097:
 	{
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:120>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:118>
 		float L_19 = __this->___U3CelapsedU3E5__2;
 		LoadingScreen_tFBBB09800C93382F92D7C5E6740BF849FF4AFAD5* L_20 = V_1;
 		NullCheck(L_20);
@@ -16213,7 +16209,7 @@ IL_0097:
 		}
 	}
 	{
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:136>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:134>
 		LoadingScreen_tFBBB09800C93382F92D7C5E6740BF849FF4AFAD5* L_22 = V_1;
 		NullCheck(L_22);
 		RectTransform_t6C5DA5E41A89E0F488B001E45E58963480E543A5* L_23 = L_22->____sliderFillRect;
@@ -16221,7 +16217,7 @@ IL_0097:
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_24 = ((LoadingScreen_tFBBB09800C93382F92D7C5E6740BF849FF4AFAD5_StaticFields*)il2cpp_codegen_static_fields_for(LoadingScreen_tFBBB09800C93382F92D7C5E6740BF849FF4AFAD5_il2cpp_TypeInfo_var))->___ANCHOR_COMPLETE;
 		NullCheck(L_23);
 		RectTransform_set_anchorMax_m52829ABEDD229ABD3DA20BCA676FA1DCA4A39B7D(L_23, L_24, NULL);
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:139>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:137>
 		WaitForSeconds_tF179DF251655B8DF044952E70A60DF4B358A3DD3* L_25 = (WaitForSeconds_tF179DF251655B8DF044952E70A60DF4B358A3DD3*)il2cpp_codegen_object_new(WaitForSeconds_tF179DF251655B8DF044952E70A60DF4B358A3DD3_il2cpp_TypeInfo_var);
 		WaitForSeconds__ctor_m579F95BADEDBAB4B3A7E302C6EE3995926EF2EFC(L_25, (0.300000012f), NULL);
 		__this->___U3CU3E2__current = L_25;
@@ -16233,20 +16229,20 @@ IL_0097:
 IL_00ce:
 	{
 		__this->___U3CU3E1__state = (-1);
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:141>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:139>
 		LoadingScreen_tFBBB09800C93382F92D7C5E6740BF849FF4AFAD5* L_26 = V_1;
 		NullCheck(L_26);
 		L_26->____isLoading = (bool)0;
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:142>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:140>
 		il2cpp_codegen_runtime_class_init_inline(LoadingScreen_tFBBB09800C93382F92D7C5E6740BF849FF4AFAD5_il2cpp_TypeInfo_var);
 		((LoadingScreen_tFBBB09800C93382F92D7C5E6740BF849FF4AFAD5_StaticFields*)il2cpp_codegen_static_fields_for(LoadingScreen_tFBBB09800C93382F92D7C5E6740BF849FF4AFAD5_il2cpp_TypeInfo_var))->____hasShownLoadingScreen = (bool)1;
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:143>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:141>
 		LoadingScreen_tFBBB09800C93382F92D7C5E6740BF849FF4AFAD5* L_27 = V_1;
 		NullCheck(L_27);
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_28 = L_27->____loadingPanel;
 		NullCheck(L_28);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_28, (bool)0, NULL);
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:144>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/MainMenu/LoadingScreen.cs:142>
 		return (bool)0;
 	}
 }
@@ -19115,8 +19111,6 @@ IL_0026:
 		L_5 = Component_get_gameObject_m57AEFBB14DB39EC476F740BA000E170355DE691B(__this, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		Object_DontDestroyOnLoad_m4B70C3AEF886C176543D1295507B6455C9DCAEA7(L_5, NULL);
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/Session/FondeurTransitionScène.cs:61>
-		FondeurTransitionScUE8ne_NettoyerCanvasOrphelins_mA4617E56E4FDE0B24579EC1BB648AEE3DEF47061(NULL);
 		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Scripts/Session/FondeurTransitionScène.cs:63>
 		CanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094* L_6;
 		L_6 = Component_GetComponent_TisCanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094_mA3B0428368982ED39ADEBB220EE67D1E99D8B2D2(__this, Component_GetComponent_TisCanvasGroup_t048C1461B14628CFAEBE6E7353093ADB04EBC094_mA3B0428368982ED39ADEBB220EE67D1E99D8B2D2_RuntimeMethod_var);

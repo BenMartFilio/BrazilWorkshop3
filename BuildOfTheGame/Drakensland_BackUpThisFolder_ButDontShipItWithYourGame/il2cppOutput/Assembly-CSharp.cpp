@@ -27729,7 +27729,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void Action_Invoke_m7126A54DACA72
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t ScoreManager_ReturnScore_m5CB12E21530B04C842D9E3A30EF033D0EA50F649_inline (ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:158>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:161>
 		int32_t L_0 = __this->___score;
 		return L_0;
 	}

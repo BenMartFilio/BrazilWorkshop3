@@ -25,7 +25,7 @@ public class ScrollingElement : MonoBehaviour
     {
         if (inCarcasse)
         {
-            speed = Mathf.Clamp((tempbaseSpeed + addToNewSpeed) * FacteurVitesseGlobal, 0, (30 + tempbaseSpeed) * FacteurVitesseGlobal);
+            speed = Mathf.Clamp((5 + addToNewSpeed) * FacteurVitesseGlobal, 0, (30 + 5) * FacteurVitesseGlobal);
         }
         else
         {
@@ -64,7 +64,7 @@ public class ScrollingElement : MonoBehaviour
     }
     private void Start()
     {
-        tempbaseSpeed = -(baseSpeed * carcasseSpeedFactor);
+        tempbaseSpeed = 5 - baseSpeed ;
     }
 
     private void StartToUsed(float addToNewSpeed)

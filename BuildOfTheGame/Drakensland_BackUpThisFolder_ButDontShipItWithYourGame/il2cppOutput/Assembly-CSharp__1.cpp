@@ -19844,11 +19844,26 @@ IL_0009:
 		__this->___scoreCoroutine = L_2;
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___scoreCoroutine), (void*)L_2);
 		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:106>
-		RuntimeObject* L_3;
-		L_3 = ScoreManager_ContiniousBestScore_mD3B689FD52A1D256C82361D90F4CA1706EBD62B4(__this, NULL);
-		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_4;
-		L_4 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_3, NULL);
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:107>
+		int32_t L_3 = __this->___score;
+		SO_PlayerDatas_t52246EF1803ADDDCE936501CAE3D1672145DDC0C* L_4 = __this->___playerDatas;
+		NullCheck(L_4);
+		int32_t L_5 = L_4->___BestScore;
+		if ((((int32_t)L_3) >= ((int32_t)L_5)))
+		{
+			goto IL_0042;
+		}
+	}
+	{
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:108>
+		RuntimeObject* L_6;
+		L_6 = ScoreManager_ContiniousBestScore_mD3B689FD52A1D256C82361D90F4CA1706EBD62B4(__this, NULL);
+		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_7;
+		L_7 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_6, NULL);
+	}
+
+IL_0042:
+	{
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:110>
 		return;
 	}
 }
@@ -19856,10 +19871,10 @@ IL_0009:
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_NewSpeed_mF7C344EC7F95485DC008BB9DE73F9FFB33A1D97F (ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* __this, float ___0_newSpeed, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:111>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:114>
 		float L_0 = ___0_newSpeed;
 		__this->___speedScore = L_0;
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:112>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:115>
 		return;
 	}
 }
@@ -19867,11 +19882,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_NewSpeed_mF7C344EC7F95485DC
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_AddToSpeed_m35C93B20B863FA5A3241C37A1EFAC4B34D2F1CBA (ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* __this, int32_t ___0_toAdd, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:116>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:119>
 		float L_0 = __this->___speedScore;
 		int32_t L_1 = ___0_toAdd;
 		ScoreManager_NewSpeed_mF7C344EC7F95485DC008BB9DE73F9FFB33A1D97F_inline(__this, ((float)il2cpp_codegen_add(L_0, ((float)L_1))), NULL);
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:117>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:120>
 		return;
 	}
 }
@@ -19879,9 +19894,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_AddToSpeed_m35C93B20B863FA5
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_UpdateSpeed_mD2B1D307B0AD0AEC3B98607C5452F787226440E5 (ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:121>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:124>
 		ScoreManager_AddToSpeed_m35C93B20B863FA5A3241C37A1EFAC4B34D2F1CBA(__this, ((int32_t)10), NULL);
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:122>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:125>
 		return;
 	}
 }
@@ -19895,10 +19910,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_SetScore_m4936588FE5117762C
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:126>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:129>
 		int32_t L_0 = ___0_newScore;
 		__this->___score = L_0;
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:128>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:131>
 		int32_t L_1 = __this->___score;
 		int32_t L_2 = __this->____lastDisplayedScore;
 		if ((((int32_t)L_1) == ((int32_t)L_2)))
@@ -19907,19 +19922,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_SetScore_m4936588FE5117762C
 		}
 	}
 	{
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:130>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:133>
 		TMP_Text_tE8D677872D43AD4B2AAF0D6101692A17D0B251A9* L_3 = __this->___textScore;
 		int32_t L_4 = __this->___score;
 		NullCheck(L_3);
 		TMP_Text_SetText_mC6973FFC60DB6A96B0C4253CD2FD9D0789ECC533(L_3, _stringLiteral65CCEA488A1D237F9499CBDCE063B6F6078E2764, ((float)L_4), NULL);
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:131>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:134>
 		int32_t L_5 = __this->___score;
 		__this->____lastDisplayedScore = L_5;
 	}
 
 IL_0038:
 	{
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:133>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:136>
 		return;
 	}
 }
@@ -19927,11 +19942,11 @@ IL_0038:
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_AddToScore_m857D3A1B57D68D5D60F302204A9E64319B0C72A1 (ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* __this, int32_t ___0_toAdd, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:137>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:140>
 		int32_t L_0 = __this->___score;
 		int32_t L_1 = ___0_toAdd;
 		ScoreManager_SetScore_m4936588FE5117762CA0A56BC6BBFE66385DA64BF(__this, ((int32_t)il2cpp_codegen_add(L_0, L_1)), NULL);
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:138>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:141>
 		return;
 	}
 }
@@ -19939,17 +19954,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_AddToScore_m857D3A1B57D68D5
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_SauvegarderDansSession_m903FCD14F7C52262D3C8698434702C3A604B2884 (ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* __this, DonnUE9esSession_t1CFA1835B32890AB9D02B828E3675C625BD7BC1A* ___0_donnUE9es, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:145>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:148>
 		DonnUE9esSession_t1CFA1835B32890AB9D02B828E3675C625BD7BC1A* L_0 = ___0_donnUE9es;
 		int32_t L_1 = __this->___score;
 		NullCheck(L_0);
 		L_0->___score = L_1;
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:146>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:149>
 		DonnUE9esSession_t1CFA1835B32890AB9D02B828E3675C625BD7BC1A* L_2 = ___0_donnUE9es;
 		float L_3 = __this->___speedScore;
 		NullCheck(L_2);
 		L_2->___vitesseScore = L_3;
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:147>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:150>
 		return;
 	}
 }
@@ -19957,13 +19972,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_SauvegarderDansSession_m903
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_RestaurerDepuisSession_m1544C5781C780D5416D0EAB1954AABE3C1BFE46F (ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* __this, int32_t ___0_scoreSauvegardUE9, float ___1_vitesseSauvegardUE9e, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:152>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:155>
 		float L_0 = ___1_vitesseSauvegardUE9e;
 		__this->___speedScore = L_0;
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:153>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:156>
 		int32_t L_1 = ___0_scoreSauvegardUE9;
 		ScoreManager_SetScore_m4936588FE5117762CA0A56BC6BBFE66385DA64BF(__this, L_1, NULL);
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:154>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:157>
 		return;
 	}
 }
@@ -19971,7 +19986,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScoreManager_RestaurerDepuisSession_m154
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t ScoreManager_ReturnScore_m5CB12E21530B04C842D9E3A30EF033D0EA50F649 (ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:158>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:161>
 		int32_t L_0 = __this->___score;
 		return L_0;
 	}
@@ -20490,35 +20505,33 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScrollingElement_UpdateSpeed_mC237C53D3F
 		bool L_0 = __this->___inCarcasse;
 		if (!L_0)
 		{
-			goto IL_0039;
+			goto IL_0031;
 		}
 	}
 	{
 		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScrollingElement.cs:28>
-		float L_1 = __this->___tempbaseSpeed;
-		float L_2 = ___0_addToNewSpeed;
+		float L_1 = ___0_addToNewSpeed;
 		il2cpp_codegen_runtime_class_init_inline(ScrollingElement_t4C0E63C9E09517C4748E77ACB68857C1D474F7B3_il2cpp_TypeInfo_var);
+		float L_2 = ((ScrollingElement_t4C0E63C9E09517C4748E77ACB68857C1D474F7B3_StaticFields*)il2cpp_codegen_static_fields_for(ScrollingElement_t4C0E63C9E09517C4748E77ACB68857C1D474F7B3_il2cpp_TypeInfo_var))->___FacteurVitesseGlobal;
 		float L_3 = ((ScrollingElement_t4C0E63C9E09517C4748E77ACB68857C1D474F7B3_StaticFields*)il2cpp_codegen_static_fields_for(ScrollingElement_t4C0E63C9E09517C4748E77ACB68857C1D474F7B3_il2cpp_TypeInfo_var))->___FacteurVitesseGlobal;
-		float L_4 = __this->___tempbaseSpeed;
-		float L_5 = ((ScrollingElement_t4C0E63C9E09517C4748E77ACB68857C1D474F7B3_StaticFields*)il2cpp_codegen_static_fields_for(ScrollingElement_t4C0E63C9E09517C4748E77ACB68857C1D474F7B3_il2cpp_TypeInfo_var))->___FacteurVitesseGlobal;
-		float L_6;
-		L_6 = Mathf_Clamp_mEB9AEA827D27D20FCC787F7375156AF46BB12BBF_inline(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_add(L_1, L_2)), L_3)), (0.0f), ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_add((30.0f), L_4)), L_5)), NULL);
-		__this->___speed = L_6;
+		float L_4;
+		L_4 = Mathf_Clamp_mEB9AEA827D27D20FCC787F7375156AF46BB12BBF_inline(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_add((5.0f), L_1)), L_2)), (0.0f), ((float)il2cpp_codegen_multiply((35.0f), L_3)), NULL);
+		__this->___speed = L_4;
 		return;
 	}
 
-IL_0039:
+IL_0031:
 	{
 		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScrollingElement.cs:32>
-		float L_7 = __this->___baseSpeed;
-		float L_8 = ___0_addToNewSpeed;
+		float L_5 = __this->___baseSpeed;
+		float L_6 = ___0_addToNewSpeed;
 		il2cpp_codegen_runtime_class_init_inline(ScrollingElement_t4C0E63C9E09517C4748E77ACB68857C1D474F7B3_il2cpp_TypeInfo_var);
+		float L_7 = ((ScrollingElement_t4C0E63C9E09517C4748E77ACB68857C1D474F7B3_StaticFields*)il2cpp_codegen_static_fields_for(ScrollingElement_t4C0E63C9E09517C4748E77ACB68857C1D474F7B3_il2cpp_TypeInfo_var))->___FacteurVitesseGlobal;
+		float L_8 = __this->___baseSpeed;
 		float L_9 = ((ScrollingElement_t4C0E63C9E09517C4748E77ACB68857C1D474F7B3_StaticFields*)il2cpp_codegen_static_fields_for(ScrollingElement_t4C0E63C9E09517C4748E77ACB68857C1D474F7B3_il2cpp_TypeInfo_var))->___FacteurVitesseGlobal;
-		float L_10 = __this->___baseSpeed;
-		float L_11 = ((ScrollingElement_t4C0E63C9E09517C4748E77ACB68857C1D474F7B3_StaticFields*)il2cpp_codegen_static_fields_for(ScrollingElement_t4C0E63C9E09517C4748E77ACB68857C1D474F7B3_il2cpp_TypeInfo_var))->___FacteurVitesseGlobal;
-		float L_12;
-		L_12 = Mathf_Clamp_mEB9AEA827D27D20FCC787F7375156AF46BB12BBF_inline(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_add(L_7, L_8)), L_9)), (0.0f), ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_add((30.0f), L_10)), L_11)), NULL);
-		__this->___speed = L_12;
+		float L_10;
+		L_10 = Mathf_Clamp_mEB9AEA827D27D20FCC787F7375156AF46BB12BBF_inline(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_add(L_5, L_6)), L_7)), (0.0f), ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_add((30.0f), L_8)), L_9)), NULL);
+		__this->___speed = L_10;
 		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScrollingElement.cs:34>
 		return;
 	}
@@ -20673,8 +20686,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ScrollingElement_Start_mD75A5755F32A1D54
 	{
 		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScrollingElement.cs:67>
 		float L_0 = __this->___baseSpeed;
-		float L_1 = __this->___carcasseSpeedFactor;
-		__this->___tempbaseSpeed = ((-((float)il2cpp_codegen_multiply(L_0, L_1))));
+		__this->___tempbaseSpeed = ((float)il2cpp_codegen_subtract((5.0f), L_0));
 		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScrollingElement.cs:68>
 		return;
 	}
@@ -26306,10 +26318,10 @@ IL_0035:
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void ScoreManager_NewSpeed_mF7C344EC7F95485DC008BB9DE73F9FFB33A1D97F_inline (ScoreManager_t86D4A06D4B38717B8C529883F37DA25BA5750F39* __this, float ___0_newSpeed, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:111>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:114>
 		float L_0 = ___0_newSpeed;
 		__this->___speedScore = L_0;
-		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:112>
+		//<source_info:C:/Users/bmart/Documents/GitHub/Mobile/BrazilWorkshop3/Assets/Script/RoadPart/ScoreManager.cs:115>
 		return;
 	}
 }
