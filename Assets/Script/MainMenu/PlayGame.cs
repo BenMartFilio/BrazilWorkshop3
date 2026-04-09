@@ -76,6 +76,9 @@ public class PlayGame : MonoBehaviour
 
     public void ChangeLevel(int level)
     {
-        SceneManager.LoadScene(level);
+        if (SessionManager.Instance != null)
+            SessionManager.Instance.RetournerAMapRoad();
+        else
+            SceneManager.LoadScene(level);
     }
 }
