@@ -5666,7 +5666,7 @@ MonoBehaviour:
   _dureeVol: 1.2
   _hauteurArc: 1.2
   _scaleDepart: 0.025
-  _scaleArrivee: 0.025
+  _scaleArrivee: 0.01
   _vitesseRotation: 360
   _sortingLayer: Player
   _sortingOrder: 20
