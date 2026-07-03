@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: SO_PlayerDatas
   m_EditorClassIdentifier: Assembly-CSharp::SO_PlayerDatas
   Name: Player
-  BestScore: 9223
+  BestScore: 216
   Level: 1
-  generalVolume: 1
+  generalVolume: 0
   musicVolume: 1
   SFXVolume: 1
-  skinEquiped: 8
-  generalMonney: 2572
-  premiumMonney: 9879
-  actualScoreNotSaved: 9223
-  actualCoinsNotSaved: 432
+  skinEquiped: 0
+  generalMonney: 60000
+  premiumMonney: 20
+  actualScoreNotSaved: 216
+  actualCoinsNotSaved: 4
   isAnHighScore: 0
   allHighScores: []
   allObjectInInventory: []
@@ -31,6 +31,4 @@ MonoBehaviour:
     estAchete: 1
   - identifiant: 11
     estAchete: 1
-  - identifiant: 8
-    estAchete: 1
-  savedAtTicks: 639112396530887925
+  savedAtTicks: 639186419881047420

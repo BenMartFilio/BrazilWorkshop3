@@ -73,7 +73,7 @@ MonoBehaviour:
   - key: options_music
     value: Musique
   - key: options_vibration
-    value: Vibration
+    value: Volume ambiant
   - key: gameover_title
     value: "Partie termin\xE9e"
   - key: gameover_score
@@ -118,8 +118,8 @@ MonoBehaviour:
     value: Score
   - key: leaderboard_player
     value: Joueur
-  - key: leaderboard_loading
-    value: "Chargement\u2026"
+  - key: error_loading
+    value: Erreur lors du chargement
   - key: leaderboard_empty
     value: "Aucun score enregistr\xE9."
   - key: leaderboard_error
@@ -143,7 +143,7 @@ MonoBehaviour:
   - key: common_back
     value: Retour
   - key: common_loading
-    value: "Chargement\u2026"
+    value: Chargement...
   - key: menu_home
     value: Accueil
   - key: shop_section_bonus_items
@@ -176,21 +176,25 @@ MonoBehaviour:
   - key: item_montre_nom
     value: "Montre \xE0 gousset"
   - key: item_liasse_desc
-    value: "Soudoie imm\xE9diatement le garde pour passer."
+    value: La liasse de billets corrompt le garde ce qui fait remonter sa barre de
+      patience de 50%.
   - key: item_passe_desc
-    value: Fait office de n'importe quel document manquant au barrage.
+    value: Le formulaire passe-partout vous permet de valider un document au barrage.
   - key: item_badge_desc
-    value: "Impressionne le garde \u2014 aucune question pos\xE9e."
+    value: Le badge du gouvernement vous permet de passer n'importe quel barrage.
   - key: item_tirelire_desc
-    value: "Fait pleuvoir des pi\xE8ces autour de vous pendant quelques secondes."
+    value: "La tirelire cochon vous permet de doubler vos pi\xE8ces pendant 20 secondes."
   - key: item_gateau_desc
-    value: "Booste temporairement votre multiplicateur de pi\xE8ces."
+    value: "Le g\xE2teau chinois vous donne 50% de chance de traverser un obstacle
+      pendant 20 secondes."
   - key: item_radar_desc
-    value: "R\xE9v\xE8le les obstacles \xE0 venir pour esquiver plus t\xF4t."
+    value: "Le radar \xE0 obstacles vous permet de voir les prochains obstacles pendant
+      20 secondes gr\xE2ce \xE0 un ! en haut de l'\xE9cran."
   - key: item_aspirateur_desc
-    value: "Aspire automatiquement toutes les pi\xE8ces proches."
+    value: L'aspirateur vous donne plus de temps pour aspirer les documents pendant
+      20 secondes.
   - key: item_montre_desc
-    value: "Ralentit le temps bri\xE8vement pour vous laisser r\xE9agir."
+    value: "La montre \xE0 goussert ralentit le temps de 50% pendant 20 secondes."
   - key: skin_0_nom
     value: Voiture simple
   - key: skin_1_nom
@@ -306,3 +310,29 @@ MonoBehaviour:
     value: Prix
   - key: tuto_road_continuer
     value: Continuez
+  - key: shop_areyousure
+    value: "\xCAtes-vous s\xFBr de votre achat ?"
+  - key: tier_bronze
+    value: Bronze
+  - key: tier_silver
+    value: Argent
+  - key: tier_gold
+    value: Or
+  - key: tier_diamond
+    value: Diamant
+  - key: tier_emerald
+    value: "\xC9meraude"
+  - key: tier_ruby
+    value: Rubis
+  - key: ad_watch
+    value: Regardez
+  - key: common_continue
+    value: Continuer
+  - key: back_menu
+    value: Retour au menu
+  - key: best_score
+    value: Meilleur \n score
+  - key: guard_validate
+    value: Valider
+  - key: purchase_reward
+    value: 'Bravo ! \n Vous avez obtenu :'

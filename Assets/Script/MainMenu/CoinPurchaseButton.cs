@@ -1,15 +1,16 @@
 ﻿// CoinPurchaseButton.cs — remplace le Update par un event
+using Drakensland.Localization;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using TMPro;
 
 public class CoinPurchaseButton : MonoBehaviour
 {
     [Header("Données")]
     [SerializeField] private SO_PlayerDatas playerDatas;
     [SerializeField] private int cost = 100;
-    [SerializeField][TextArea] private string itemDescription;
+    [SerializeField] private string _key;
 
     [Header("UI")]
     [SerializeField] private TMP_Text priceLabel;
@@ -91,8 +92,10 @@ public class CoinPurchaseButton : MonoBehaviour
     {
         if (confirmationPanel == null) { ExecutePurchase(); return; }
 
+        string translated = LocalizationManager.Instance.Get(_key);
+
         if (confirmationDescriptionLabel != null)
-            confirmationDescriptionLabel.text = itemDescription;
+            confirmationDescriptionLabel.text = translated;
 
         confirmButton?.onClick.AddListener(OnConfirm);
         cancelButton?.onClick.AddListener(OnCancel);

@@ -146,14 +146,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 36973077}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.008727774, y: -0, z: -0, w: 0.9999619}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 724231375}
   m_Father: {fileID: 518259978}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 1, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -2259,6 +2259,7 @@ GameObject:
   - component: {fileID: 724231375}
   - component: {fileID: 724231377}
   - component: {fileID: 724231376}
+  - component: {fileID: 724231378}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2385,6 +2386,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724231374}
   m_CullTransparentMesh: 1
+--- !u!114 &724231378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724231374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: menu_play
+  _formatArgs: []
 --- !u!1 &740038128
 GameObject:
   m_ObjectHideFlags: 0
@@ -2983,6 +2998,7 @@ GameObject:
   - component: {fileID: 844429100}
   - component: {fileID: 844429099}
   - component: {fileID: 844429101}
+  - component: {fileID: 844429102}
   m_Layer: 5
   m_Name: RecordText
   m_TagString: Untagged
@@ -3183,6 +3199,20 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   colorSpeed: 2
   colorWidth: 13
+--- !u!114 &844429102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844429097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: gameover_new_record
+  _formatArgs: []
 --- !u!1 &864670285
 GameObject:
   m_ObjectHideFlags: 0

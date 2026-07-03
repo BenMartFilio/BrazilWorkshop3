@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TierDefinition
   tierId: emerald
   displayName: Emeraude
+  cleNom: tier_emerald
   color: {r: 0.19103774, g: 0.764151, b: 0.1947459, a: 1}
   icon: {fileID: 21300000, guid: 933a43ef5da278f4399c6edee64fc627, type: 3}

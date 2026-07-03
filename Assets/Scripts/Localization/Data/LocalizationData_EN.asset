@@ -71,8 +71,10 @@ MonoBehaviour:
     value: General volume
   - key: options_music
     value: Music
+  - key: options_ambient
+    value: Ambient volume
   - key: options_vibration
-    value: Vibration
+    value: Ambient volume
   - key: gameover_title
     value: Game Over
   - key: gameover_score
@@ -117,8 +119,8 @@ MonoBehaviour:
     value: Score
   - key: leaderboard_player
     value: Player
-  - key: leaderboard_loading
-    value: "Loading\u2026"
+  - key: error_loading
+    value: Error occurred during loading
   - key: leaderboard_empty
     value: No scores yet.
   - key: leaderboard_error
@@ -142,7 +144,7 @@ MonoBehaviour:
   - key: common_back
     value: Back
   - key: common_loading
-    value: "Loading\u2026"
+    value: Loading...
   - key: menu_home
     value: Home
   - key: shop_section_bonus_items
@@ -151,45 +153,45 @@ MonoBehaviour:
     value: Cosmetics
   - key: shop_section_currency
     value: Currency
-  - key: options_ambient
-    value: Ambient volume
   - key: pause_title
     value: Game paused.
   - key: pause_confirm_quit
     value: Are you sure you want to return to the menu? (Your current progress will
       be lost)
   - key: item_liasse_nom
-    value: Bundle of Bills
+    value: Wad of cash
   - key: item_passe_nom
-    value: Master Form
+    value: All-access form
   - key: item_badge_nom
-    value: Government Badge
+    value: Government badge
   - key: item_tirelire_nom
-    value: Piggy Bank
+    value: Piggy bank
   - key: item_gateau_nom
-    value: Fortune Cookie
+    value: Fortune cookie
   - key: item_radar_nom
-    value: Obstacle Radar
+    value: Obstacle radar
   - key: item_aspirateur_nom
     value: Vacuum
   - key: item_montre_nom
-    value: Pocket Watch
+    value: Pocket watch
   - key: item_liasse_desc
-    value: Instantly bribes the guard to let you through.
+    value: The wad of cash bribes the guard, raising his patience meter by 50%.
   - key: item_passe_desc
-    value: Acts as any missing document at the checkpoint.
+    value: The all-access form allows you to clear a document at the checkpoint.
   - key: item_badge_desc
-    value: "Intimidates the guard \u2014 no questions asked."
+    value: The government badge allows you to pass through any checkpoint.
   - key: item_tirelire_desc
-    value: Drops a shower of coins around you for a short time.
+    value: The piggy bank lets you double your coins for 20 seconds.
   - key: item_gateau_desc
-    value: Temporarily boosts your coin multiplier.
+    value: The fortune cookie gives you a 50% chance of passing through an obstacle
+      for 20 seconds.
   - key: item_radar_desc
-    value: Reveals obstacles ahead so you can dodge them early.
+    value: The obstacle radar lets you see upcoming obstacles for 20 seconds, indicated
+      by a "!" at the top of the screen.
   - key: item_aspirateur_desc
-    value: Sucks in all nearby coins automatically.
+    value: The vacuum gives you more time to suck up documents for 20 seconds.
   - key: item_montre_desc
-    value: Slows down time briefly, giving you room to react.
+    value: The pocket watch slows down time by 50% for 20 seconds.
   - key: skin_0_nom
     value: Basic Car
   - key: skin_1_nom
@@ -312,3 +314,31 @@ MonoBehaviour:
     value: Price
   - key: tuto_road_continuer
     value: Continue
+  - key: tier_bronze
+    value: Bronze
+  - key: tier_silver
+    value: Silver
+  - key: tier_gold
+    value: Gold
+  - key: tier_diamond
+    value: Diamond
+  - key: tier_diamond
+    value: Diamond
+  - key: tier_emerald
+    value: Emerald
+  - key: tier_ruby
+    value: Ruby
+  - key: shop_areyousure
+    value: Are you sure about your purchase?
+  - key: ad_watch
+    value: Watch
+  - key: common_continue
+    value: Continue
+  - key: back_menu
+    value: Back to menu
+  - key: best_score
+    value: Best \n score
+  - key: guard_validate
+    value: Confirm
+  - key: purchase_reward
+    value: 'Bravo! \n You have obtained: '

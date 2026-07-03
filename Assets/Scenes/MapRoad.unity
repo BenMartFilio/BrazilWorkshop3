@@ -548,6 +548,7 @@ GameObject:
   - component: {fileID: 128499384}
   - component: {fileID: 128499386}
   - component: {fileID: 128499385}
+  - component: {fileID: 128499387}
   m_Layer: 5
   m_Name: TextBS
   m_TagString: Untagged
@@ -674,6 +675,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 128499383}
   m_CullTransparentMesh: 1
+--- !u!114 &128499387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128499383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: best_score
+  _formatArgs: []
 --- !u!1 &134691926
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,7 +1264,7 @@ Transform:
   m_GameObject: {fileID: 234882523}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.6666665, y: -3, z: 0}
+  m_LocalPosition: {x: 1.5406766, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4004,6 +4019,7 @@ GameObject:
   - component: {fileID: 903374924}
   - component: {fileID: 903374926}
   - component: {fileID: 903374925}
+  - component: {fileID: 903374927}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -4130,6 +4146,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 903374923}
   m_CullTransparentMesh: 1
+--- !u!114 &903374927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903374923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: common_cancel
+  _formatArgs: []
 --- !u!1 &925628589
 GameObject:
   m_ObjectHideFlags: 0
@@ -4713,6 +4743,7 @@ GameObject:
   - component: {fileID: 1093498587}
   - component: {fileID: 1093498589}
   - component: {fileID: 1093498588}
+  - component: {fileID: 1093498590}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -4841,6 +4872,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1093498586}
   m_CullTransparentMesh: 1
+--- !u!114 &1093498590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093498586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: common_continue
+  _formatArgs: []
 --- !u!1 &1099536281
 GameObject:
   m_ObjectHideFlags: 0
@@ -4902,7 +4947,7 @@ Transform:
   m_GameObject: {fileID: 1121532490}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.6666667, y: -3, z: 0}
+  m_LocalPosition: {x: -1.5406768, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5347,7 +5392,6 @@ GameObject:
   - component: {fileID: 1176915241}
   - component: {fileID: 1176915243}
   - component: {fileID: 1176915242}
-  - component: {fileID: 1176915244}
   m_Layer: 5
   m_Name: TextPremiumRevive
   m_TagString: Untagged
@@ -5475,20 +5519,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1176915240}
   m_CullTransparentMesh: 1
---- !u!114 &1176915244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1176915240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
-  _key: tuto_road_prix
-  _formatArgs: []
 --- !u!1 &1185453008
 GameObject:
   m_ObjectHideFlags: 0
@@ -6445,6 +6475,7 @@ GameObject:
   - component: {fileID: 1481567156}
   - component: {fileID: 1481567158}
   - component: {fileID: 1481567157}
+  - component: {fileID: 1481567159}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -6571,6 +6602,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1481567155}
   m_CullTransparentMesh: 1
+--- !u!114 &1481567159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481567155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: back_menu
+  _formatArgs: []
 --- !u!1 &1510821471
 GameObject:
   m_ObjectHideFlags: 0
@@ -7062,7 +7107,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 10, z: 0}
-  m_LocalScale: {x: 0.1542855, y: 0.1937609, z: 1}
+  m_LocalScale: {x: 0.14262246, y: 0.1937609, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -7682,6 +7727,7 @@ GameObject:
   - component: {fileID: 1814102234}
   - component: {fileID: 1814102236}
   - component: {fileID: 1814102235}
+  - component: {fileID: 1814102237}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -7808,6 +7854,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1814102233}
   m_CullTransparentMesh: 1
+--- !u!114 &1814102237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814102233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: common_yes
+  _formatArgs: []
 --- !u!1 &1833950800
 GameObject:
   m_ObjectHideFlags: 0
@@ -8143,7 +8203,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1542855, y: 0.1937609, z: 1}
+  m_LocalScale: {x: 0.14262246, y: 0.1937609, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

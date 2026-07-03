@@ -272,7 +272,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3655882364211666270, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 273.62225
+      value: 273.66382
       objectReference: {fileID: 0}
     - target: {fileID: 3655882364211666270, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
       propertyPath: m_SizeDelta.y
@@ -308,7 +308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3655882364211666270, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 734.05566
+      value: 734.15955
       objectReference: {fileID: 0}
     - target: {fileID: 3655882364211666270, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -507,6 +507,10 @@ PrefabInstance:
       propertyPath: _rewardConfig
       value: 
       objectReference: {fileID: 11400000, guid: 72de20d8d6cfeec428ead4f7ae9901a3, type: 2}
+    - target: {fileID: 8112819278598517605, guid: 063333b294a765f4990d73dd152df1bd, type: 3}
+      propertyPath: m_fontSize
+      value: 19.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -580,7 +584,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &28034339
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1530,6 +1534,7 @@ GameObject:
   - component: {fileID: 81878607}
   - component: {fileID: 81878609}
   - component: {fileID: 81878608}
+  - component: {fileID: 81878610}
   m_Layer: 0
   m_Name: ConfirmText
   m_TagString: Untagged
@@ -1656,6 +1661,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 81878606}
   m_CullTransparentMesh: 1
+--- !u!114 &81878610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 81878606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: shop_areyousure
+  _formatArgs: []
 --- !u!1 &88738788
 GameObject:
   m_ObjectHideFlags: 0
@@ -2785,6 +2804,7 @@ GameObject:
   - component: {fileID: 204970042}
   - component: {fileID: 204970044}
   - component: {fileID: 204970043}
+  - component: {fileID: 204970045}
   m_Layer: 0
   m_Name: LoadingIndictator
   m_TagString: Untagged
@@ -2911,6 +2931,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 204970041}
   m_CullTransparentMesh: 1
+--- !u!114 &204970045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204970041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: common_loading
+  _formatArgs: []
 --- !u!1001 &206927010
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2998,6 +3032,10 @@ PrefabInstance:
     - target: {fileID: 740860380250662971, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: _key
+      value: item_tirelire_desc
       objectReference: {fileID: 0}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: cost
@@ -3526,6 +3564,7 @@ GameObject:
   - component: {fileID: 219953685}
   - component: {fileID: 219953687}
   - component: {fileID: 219953686}
+  - component: {fileID: 219953688}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -3652,6 +3691,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 219953684}
   m_CullTransparentMesh: 1
+--- !u!114 &219953688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219953684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: common_no
+  _formatArgs: []
 --- !u!1 &236567905
 GameObject:
   m_ObjectHideFlags: 0
@@ -4073,6 +4126,10 @@ PrefabInstance:
     - target: {fileID: 740860380250662971, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: _key
+      value: item_badge_desc
       objectReference: {fileID: 0}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: cost
@@ -7226,7 +7283,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 449.8667, y: -1430}
+  m_AnchoredPosition: {x: 449.92908, y: -1430}
   m_SizeDelta: {x: 700, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &482957422
@@ -8941,6 +8998,7 @@ GameObject:
   - component: {fileID: 620168596}
   - component: {fileID: 620168598}
   - component: {fileID: 620168597}
+  - component: {fileID: 620168599}
   m_Layer: 0
   m_Name: ErrorText
   m_TagString: Untagged
@@ -9067,6 +9125,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 620168595}
   m_CullTransparentMesh: 1
+--- !u!114 &620168599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620168595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: error_loading
+  _formatArgs: []
 --- !u!1001 &625276533
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9164,6 +9236,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: _key
+      value: item_gateau_desc
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: cost
       value: 250
       objectReference: {fileID: 0}
@@ -9189,8 +9265,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: itemDescription
-      value: "Le g\xE2teau chinois \xE0 vous donne 50% de chance de traverser un
-        obstacle pendant 20 secondes."
+      value: "Le g\xE2teau chinois vous donne 50% de chance de traverser un obstacle
+        pendant 20 secondes."
       objectReference: {fileID: 0}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: confirmationPanel
@@ -9872,6 +9948,7 @@ GameObject:
   - component: {fileID: 653112446}
   - component: {fileID: 653112448}
   - component: {fileID: 653112447}
+  - component: {fileID: 653112449}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -9998,6 +10075,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 653112445}
   m_CullTransparentMesh: 1
+--- !u!114 &653112449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653112445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: common_yes
+  _formatArgs: []
 --- !u!1 &659164422
 GameObject:
   m_ObjectHideFlags: 0
@@ -10392,7 +10483,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 449.8667, y: -2635}
+  m_AnchoredPosition: {x: 449.92908, y: -2635}
   m_SizeDelta: {x: 860, y: 2250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &674746704
@@ -12275,8 +12366,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.148}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 435.43335, y: -175}
-  m_SizeDelta: {x: 870.8667, y: 350}
+  m_AnchoredPosition: {x: 435.49573, y: -175}
+  m_SizeDelta: {x: 870.99146, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &784459356
 MonoBehaviour:
@@ -12474,6 +12565,10 @@ PrefabInstance:
     - target: {fileID: 740860380250662971, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: _key
+      value: item_radar_desc
       objectReference: {fileID: 0}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: cost
@@ -12984,6 +13079,7 @@ GameObject:
   - component: {fileID: 801995701}
   - component: {fileID: 801995703}
   - component: {fileID: 801995702}
+  - component: {fileID: 801995704}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -13110,6 +13206,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 801995700}
   m_CullTransparentMesh: 1
+--- !u!114 &801995704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 801995700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: shop_equip
+  _formatArgs: []
 --- !u!1 &805418077
 GameObject:
   m_ObjectHideFlags: 0
@@ -15667,7 +15777,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7657435366403075600, guid: 063333b294a765f4990d73dd152df1bd, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 273.62225
+      value: 273.66382
       objectReference: {fileID: 0}
     - target: {fileID: 7657435366403075600, guid: 063333b294a765f4990d73dd152df1bd, type: 3}
       propertyPath: m_SizeDelta.y
@@ -15703,7 +15813,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7657435366403075600, guid: 063333b294a765f4990d73dd152df1bd, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 136.81113
+      value: 136.83191
       objectReference: {fileID: 0}
     - target: {fileID: 7657435366403075600, guid: 063333b294a765f4990d73dd152df1bd, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -16025,7 +16135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 141532913796118228, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 273.62225
+      value: 273.66382
       objectReference: {fileID: 0}
     - target: {fileID: 141532913796118228, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
       propertyPath: m_SizeDelta.y
@@ -16061,7 +16171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 141532913796118228, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 435.43338
+      value: 435.49573
       objectReference: {fileID: 0}
     - target: {fileID: 141532913796118228, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -16124,6 +16234,7 @@ GameObject:
   - component: {fileID: 1029720048}
   - component: {fileID: 1029720050}
   - component: {fileID: 1029720049}
+  - component: {fileID: 1029720051}
   m_Layer: 0
   m_Name: ConfirmText
   m_TagString: Untagged
@@ -16250,6 +16361,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1029720047}
   m_CullTransparentMesh: 1
+--- !u!114 &1029720051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029720047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: shop_areyousure
+  _formatArgs: []
 --- !u!1 &1048711494
 GameObject:
   m_ObjectHideFlags: 0
@@ -16417,6 +16542,10 @@ PrefabInstance:
     - target: {fileID: 740860380250662971, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: _key
+      value: item_passe_desc
       objectReference: {fileID: 0}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: cost
@@ -16676,7 +16805,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 449.8667, y: -3840}
+  m_AnchoredPosition: {x: 449.92908, y: -3840}
   m_SizeDelta: {x: 700, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1061615893
@@ -16900,7 +17029,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 449.8667, y: -160}
+  m_AnchoredPosition: {x: 449.92908, y: -160}
   m_SizeDelta: {x: 700, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1069960506
@@ -18358,6 +18487,7 @@ GameObject:
   - component: {fileID: 1139896275}
   - component: {fileID: 1139896277}
   - component: {fileID: 1139896276}
+  - component: {fileID: 1139896278}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -18484,6 +18614,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1139896274}
   m_CullTransparentMesh: 1
+--- !u!114 &1139896278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139896274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: options_music
+  _formatArgs: []
 --- !u!1 &1146150480
 GameObject:
   m_ObjectHideFlags: 0
@@ -18832,8 +18976,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 435.43335, y: -535}
-  m_SizeDelta: {x: 870.8667, y: 350}
+  m_AnchoredPosition: {x: 435.49573, y: -535}
+  m_SizeDelta: {x: 870.99146, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1160716220
 MonoBehaviour:
@@ -21943,7 +22087,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 449.8667, y: -795}
+  m_AnchoredPosition: {x: 449.92908, y: -795}
   m_SizeDelta: {x: 860, y: 1110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1369043893
@@ -22448,6 +22592,7 @@ GameObject:
   - component: {fileID: 1392256937}
   - component: {fileID: 1392256939}
   - component: {fileID: 1392256938}
+  - component: {fileID: 1392256940}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -22574,6 +22719,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1392256936}
   m_CullTransparentMesh: 1
+--- !u!114 &1392256940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392256936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: options_ambient
+  _formatArgs: []
 --- !u!1 &1398901144
 GameObject:
   m_ObjectHideFlags: 0
@@ -23188,7 +23347,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 449.8667, y: -4285}
+  m_AnchoredPosition: {x: 449.92908, y: -4285}
   m_SizeDelta: {x: 860, y: 730}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1456570068
@@ -23861,6 +24020,10 @@ PrefabInstance:
     - target: {fileID: 740860380250662971, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: _key
+      value: item_liasse_desc
       objectReference: {fileID: 0}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: cost
@@ -25728,6 +25891,7 @@ GameObject:
   - component: {fileID: 1635035628}
   - component: {fileID: 1635035630}
   - component: {fileID: 1635035629}
+  - component: {fileID: 1635035631}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -25854,6 +26018,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1635035627}
   m_CullTransparentMesh: 1
+--- !u!114 &1635035631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635035627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: common_yes
+  _formatArgs: []
 --- !u!1 &1641717037
 GameObject:
   m_ObjectHideFlags: 0
@@ -26102,6 +26280,10 @@ PrefabInstance:
     - target: {fileID: 740860380250662971, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: _key
+      value: item_aspirateur_desc
       objectReference: {fileID: 0}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: failSound
@@ -29443,6 +29625,7 @@ GameObject:
   - component: {fileID: 1881107591}
   - component: {fileID: 1881107593}
   - component: {fileID: 1881107592}
+  - component: {fileID: 1881107594}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -29569,6 +29752,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1881107590}
   m_CullTransparentMesh: 1
+--- !u!114 &1881107594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881107590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: options_sound
+  _formatArgs: []
 --- !u!1 &1885018828
 GameObject:
   m_ObjectHideFlags: 0
@@ -29963,7 +30160,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3655882364211666270, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 273.62225
+      value: 273.66382
       objectReference: {fileID: 0}
     - target: {fileID: 3655882364211666270, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
       propertyPath: m_SizeDelta.y
@@ -29999,7 +30196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3655882364211666270, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 435.43338
+      value: 435.49573
       objectReference: {fileID: 0}
     - target: {fileID: 3655882364211666270, guid: baabe14c0a29ef64192425ee647562c7, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -30108,7 +30305,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 141532913796118228, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 273.62225
+      value: 273.66382
       objectReference: {fileID: 0}
     - target: {fileID: 141532913796118228, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
       propertyPath: m_SizeDelta.y
@@ -30144,7 +30341,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 141532913796118228, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 734.05566
+      value: 734.15955
       objectReference: {fileID: 0}
     - target: {fileID: 141532913796118228, guid: 1da26bfc659a7c149916f656e430acde, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -31599,7 +31796,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7657435366403075600, guid: 063333b294a765f4990d73dd152df1bd, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 273.62225
+      value: 273.66382
       objectReference: {fileID: 0}
     - target: {fileID: 7657435366403075600, guid: 063333b294a765f4990d73dd152df1bd, type: 3}
       propertyPath: m_SizeDelta.y
@@ -31635,7 +31832,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7657435366403075600, guid: 063333b294a765f4990d73dd152df1bd, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 136.81113
+      value: 136.83191
       objectReference: {fileID: 0}
     - target: {fileID: 7657435366403075600, guid: 063333b294a765f4990d73dd152df1bd, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -31694,6 +31891,7 @@ GameObject:
   - component: {fileID: 2027299848}
   - component: {fileID: 2027299850}
   - component: {fileID: 2027299849}
+  - component: {fileID: 2027299851}
   m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -31820,6 +32018,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2027299847}
   m_CullTransparentMesh: 1
+--- !u!114 &2027299851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027299847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: common_no
+  _formatArgs: []
 --- !u!1 &2041210790
 GameObject:
   m_ObjectHideFlags: 0
@@ -31932,6 +32144,7 @@ GameObject:
   - component: {fileID: 2060513993}
   - component: {fileID: 2060513995}
   - component: {fileID: 2060513994}
+  - component: {fileID: 2060513996}
   m_Layer: 5
   m_Name: TextObtention
   m_TagString: Untagged
@@ -32058,6 +32271,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2060513992}
   m_CullTransparentMesh: 1
+--- !u!114 &2060513996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060513992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: purchase_reward
+  _formatArgs: []
 --- !u!1001 &2072374122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32941,6 +33168,10 @@ PrefabInstance:
       propertyPath: _earnMenuIcon
       value: 
       objectReference: {fileID: 2132539704}
+    - target: {fileID: 8112819278598517605, guid: 063333b294a765f4990d73dd152df1bd, type: 3}
+      propertyPath: m_fontSize
+      value: 19.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -33054,6 +33285,10 @@ PrefabInstance:
     - target: {fileID: 740860380250662971, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
+      propertyPath: _key
+      value: item_montre_desc
       objectReference: {fileID: 0}
     - target: {fileID: 1915491685150989616, guid: 504e96e755b720847a2fdd516a88a118, type: 3}
       propertyPath: cost

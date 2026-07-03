@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TierDefinition
   tierId: gold
   displayName: Or
+  cleNom: tier_gold
   color: {r: 0.9056604, g: 0.710858, b: 0.17515129, a: 1}
   icon: {fileID: 21300000, guid: 40586e3d7e2cbd84ea681c6575276998, type: 3}
