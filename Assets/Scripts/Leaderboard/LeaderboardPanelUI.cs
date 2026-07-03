@@ -147,7 +147,7 @@ public class LeaderboardPanelUI : MonoBehaviour
     private IEnumerator LoadTier(TierDefinition tier)
     {
         if (_tierTitleText != null)
-            _tierTitleText.text = tier.displayName;
+            _tierTitleText.text = tier.ObtenirNomLocalise();
 
         var task = LeaderboardService.Instance.GetScoresByTierAsync(tier.tierId);
         yield return new WaitUntil(() => task.IsCompleted);
@@ -156,7 +156,7 @@ public class LeaderboardPanelUI : MonoBehaviour
 
         if (task.IsFaulted || task.Result == null)
         {
-            ShowError($"Impossible de charger le classement {tier.displayName}.\nVérifie ta connexion.");
+            ShowError($"Impossible de charger le classement {tier.ObtenirNomLocalise()}.\nVérifie ta connexion.");
             yield break;
         }
 

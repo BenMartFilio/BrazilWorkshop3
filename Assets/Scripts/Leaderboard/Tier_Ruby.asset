@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TierDefinition
   tierId: ruby
   displayName: Rubis
+  cleNom: tier_ruby
   color: {r: 0.9622642, g: 0.18609825, b: 0.1935503, a: 1}
   icon: {fileID: 21300000, guid: 5637b84a231c1274db245661d85055d7, type: 3}

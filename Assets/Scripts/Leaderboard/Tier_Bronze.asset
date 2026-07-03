@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TierDefinition
   tierId: bronze
   displayName: Bronze
+  cleNom: tier_bronze
   color: {r: 0.8018868, g: 0.42516738, b: 0.23073156, a: 1}
   icon: {fileID: 21300000, guid: 6a87820f37827184ca2cfcd7f1a43785, type: 3}

@@ -71,8 +71,10 @@ MonoBehaviour:
     value: General volume
   - key: options_music
     value: Music
+  - key: options_ambient
+    value: Ambient volume
   - key: options_vibration
-    value: Vibration
+    value: Ambient volume
   - key: gameover_title
     value: Game Over
   - key: gameover_score
@@ -117,8 +119,8 @@ MonoBehaviour:
     value: Score
   - key: leaderboard_player
     value: Player
-  - key: leaderboard_loading
-    value: "Loading\u2026"
+  - key: error_loading
+    value: Error occurred during loading
   - key: leaderboard_empty
     value: No scores yet.
   - key: leaderboard_error
@@ -142,7 +144,7 @@ MonoBehaviour:
   - key: common_back
     value: Back
   - key: common_loading
-    value: "Loading\u2026"
+    value: Loading...
   - key: menu_home
     value: Home
   - key: shop_section_bonus_items
@@ -151,5 +153,192 @@ MonoBehaviour:
     value: Cosmetics
   - key: shop_section_currency
     value: Currency
-  - key: options_ambient
-    value: Ambient volume
+  - key: pause_title
+    value: Game paused.
+  - key: pause_confirm_quit
+    value: Are you sure you want to return to the menu? (Your current progress will
+      be lost)
+  - key: item_liasse_nom
+    value: Wad of cash
+  - key: item_passe_nom
+    value: All-access form
+  - key: item_badge_nom
+    value: Government badge
+  - key: item_tirelire_nom
+    value: Piggy bank
+  - key: item_gateau_nom
+    value: Fortune cookie
+  - key: item_radar_nom
+    value: Obstacle radar
+  - key: item_aspirateur_nom
+    value: Vacuum
+  - key: item_montre_nom
+    value: Pocket watch
+  - key: item_liasse_desc
+    value: The wad of cash bribes the guard, raising his patience meter by 50%.
+  - key: item_passe_desc
+    value: The all-access form allows you to clear a document at the checkpoint.
+  - key: item_badge_desc
+    value: The government badge allows you to pass through any checkpoint.
+  - key: item_tirelire_desc
+    value: The piggy bank lets you double your coins for 20 seconds.
+  - key: item_gateau_desc
+    value: The fortune cookie gives you a 50% chance of passing through an obstacle
+      for 20 seconds.
+  - key: item_radar_desc
+    value: The obstacle radar lets you see upcoming obstacles for 20 seconds, indicated
+      by a "!" at the top of the screen.
+  - key: item_aspirateur_desc
+    value: The vacuum gives you more time to suck up documents for 20 seconds.
+  - key: item_montre_desc
+    value: The pocket watch slows down time by 50% for 20 seconds.
+  - key: skin_0_nom
+    value: Basic Car
+  - key: skin_1_nom
+    value: Kitsch
+  - key: skin_2_nom
+    value: Blue Car
+  - key: skin_3_nom
+    value: Blaze
+  - key: skin_4_nom
+    value: Catmobile
+  - key: skin_5_nom
+    value: Divacar
+  - key: skin_6_nom
+    value: Naturemobile
+  - key: skin_7_nom
+    value: Lovecar
+  - key: skin_8_nom
+    value: Alphacar
+  - key: skin_9_nom
+    value: Government Car
+  - key: skin_10_nom
+    value: Racecar
+  - key: skin_11_nom
+    value: Red Car
+  - key: skin_12_nom
+    value: Rustbucket
+  - key: skin_13_nom
+    value: Wavemobile
+  - key: skin_14_nom
+    value: Purple Car
+  - key: skin_15_nom
+    value: L.I.F.E
+  - key: skin_0_desc
+    value: "The basic car \u2014 its azure blue is the perfect camouflage to hide
+      in the sky!"
+  - key: skin_1_desc
+    value: A bit dated, but it brings back memories of a bygone era...
+  - key: skin_2_desc
+    value: Despite its deep-sea blue, this car definitely cannot swim.
+  - key: skin_3_desc
+    value: This car burns like an ember! Every cool person dreams of having one!
+  - key: skin_4_desc
+    value: Everyone loves little cats! Just don't let them drive without proper authorisation.
+  - key: skin_5_desc
+    value: A car for people of taste! Even if it doesn't suit everyone's taste.
+  - key: skin_6_desc
+    value: Faced with the growing problem of people staying cooped up indoors, the
+      greatest inventors created this car that brings the outdoors with you!
+  - key: skin_7_desc
+    value: What is more beautiful than love? This car, without a doubt.
+  - key: skin_8_desc
+    value: "All cars follow and adore it \u2014 at least that's what it thinks."
+  - key: skin_9_desc
+    value: The official government car. Makes you wonder how it ended up here...
+  - key: skin_10_desc
+    value: They say it once belonged to a great driver, but since the major speed
+      restrictions came in, he's been out of work.
+  - key: skin_11_desc
+    value: A red car. Nothing special.
+  - key: skin_12_desc
+    value: "Nobody knows how this thing is still running \u2014 or how it keeps passing
+      its MOT."
+  - key: skin_13_desc
+    value: Its pattern is reminiscent of waves.
+  - key: skin_14_desc
+    value: In many cultures its colour symbolises evil. The government even considered
+      banning it.
+  - key: skin_15_desc
+    value: They say its driver sorted papers for a living. A thrilling career.
+  - key: tuto_barrage_corps
+    value: 'At each checkpoint, hand the guard the requested documents before the
+      patience bar at the top of the screen runs out. Here, give him a red document.
+
+
+      Once
+      all documents are handed over, the guard will tell you which ones to prepare
+      for the next inspection.'
+  - key: tuto_barrage_bouton
+    value: Back to menu
+  - key: tuto_felicitations_titre
+    value: Congratulations!
+  - key: tuto_felicitations_corps
+    value: 'You are ready to go through the checkpoints!
+
+
+      Good luck!'
+  - key: tuto_felicitations_bouton
+    value: Back to menu
+  - key: tuto_road_goal
+    value: "Drive to escape the bureaucracy! Cross the city and collect the right
+      documents.\n\nAvoid obstacles to stay on the road.\nCheckpoints require specific
+      documents \u2014 keep an eye on what you need!"
+  - key: tuto_road_swipe
+    value: Swipe left or right to change lanes!
+  - key: tuto_road_pieces
+    value: 'On the road, collect coins by driving over them.
+
+
+      You can use
+      these coins to buy useful items in the shop!'
+  - key: tuto_road_document
+    value: 'Here is the document you will need for the next checkpoint.
+
+
+      Each
+      checkpoint will tell you which documents to collect. Drive alongside cars of
+      the right colour and tap the screen at the right moment to grab their document!
+      A red car gives a red document, etc.'
+  - key: tuto_road_slider
+    value: 'This bar shows your progress until the next checkpoint.
+
+
+      When
+      it is full, the inspection begins!
+
+
+      For this tutorial, you will be taken
+      directly to the checkpoint.'
+  - key: tuto_road_prix
+    value: Price
+  - key: tuto_road_continuer
+    value: Continue
+  - key: tier_bronze
+    value: Bronze
+  - key: tier_silver
+    value: Silver
+  - key: tier_gold
+    value: Gold
+  - key: tier_diamond
+    value: Diamond
+  - key: tier_diamond
+    value: Diamond
+  - key: tier_emerald
+    value: Emerald
+  - key: tier_ruby
+    value: Ruby
+  - key: shop_areyousure
+    value: Are you sure about your purchase?
+  - key: ad_watch
+    value: Watch
+  - key: common_continue
+    value: Continue
+  - key: back_menu
+    value: Back to menu
+  - key: best_score
+    value: Best \n score
+  - key: guard_validate
+    value: Confirm
+  - key: purchase_reward
+    value: 'Bravo! \n You have obtained: '

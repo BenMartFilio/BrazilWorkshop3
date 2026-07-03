@@ -472,6 +472,7 @@ GameObject:
   - component: {fileID: 109160967}
   - component: {fileID: 109160969}
   - component: {fileID: 109160968}
+  - component: {fileID: 109160970}
   m_Layer: 0
   m_Name: TextSliderInfo
   m_TagString: Untagged
@@ -600,6 +601,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 109160966}
   m_CullTransparentMesh: 1
+--- !u!114 &109160970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109160966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: tuto_road_slider
+  _formatArgs: []
 --- !u!1 &128499383
 GameObject:
   m_ObjectHideFlags: 0
@@ -3374,6 +3389,7 @@ GameObject:
   - component: {fileID: 895601192}
   - component: {fileID: 895601194}
   - component: {fileID: 895601193}
+  - component: {fileID: 895601195}
   m_Layer: 0
   m_Name: TextSwipe
   m_TagString: Untagged
@@ -3500,6 +3516,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 895601191}
   m_CullTransparentMesh: 1
+--- !u!114 &895601195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895601191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: tuto_road_swipe
+  _formatArgs: []
 --- !u!1 &902850027
 GameObject:
   m_ObjectHideFlags: 0
@@ -3511,6 +3541,7 @@ GameObject:
   - component: {fileID: 902850028}
   - component: {fileID: 902850030}
   - component: {fileID: 902850029}
+  - component: {fileID: 902850031}
   m_Layer: 0
   m_Name: TextPieces
   m_TagString: Untagged
@@ -3638,6 +3669,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 902850027}
   m_CullTransparentMesh: 1
+--- !u!114 &902850031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902850027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: tuto_road_pieces
+  _formatArgs: []
 --- !u!1 &925628589
 GameObject:
   m_ObjectHideFlags: 0
@@ -5044,6 +5089,7 @@ GameObject:
   - component: {fileID: 1176915241}
   - component: {fileID: 1176915243}
   - component: {fileID: 1176915242}
+  - component: {fileID: 1176915244}
   m_Layer: 5
   m_Name: TextPremiumRevive
   m_TagString: Untagged
@@ -5171,6 +5217,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1176915240}
   m_CullTransparentMesh: 1
+--- !u!114 &1176915244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176915240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: tuto_road_prix
+  _formatArgs: []
 --- !u!1 &1179623901
 GameObject:
   m_ObjectHideFlags: 0
@@ -5182,6 +5242,7 @@ GameObject:
   - component: {fileID: 1179623902}
   - component: {fileID: 1179623904}
   - component: {fileID: 1179623903}
+  - component: {fileID: 1179623905}
   m_Layer: 0
   m_Name: TextGoal
   m_TagString: Untagged
@@ -5312,6 +5373,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1179623901}
   m_CullTransparentMesh: 1
+--- !u!114 &1179623905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179623901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: tuto_road_goal
+  _formatArgs: []
 --- !u!1 &1180250228
 GameObject:
   m_ObjectHideFlags: 0
@@ -5940,6 +6015,7 @@ GameObject:
   - component: {fileID: 1253078297}
   - component: {fileID: 1253078299}
   - component: {fileID: 1253078298}
+  - component: {fileID: 1253078300}
   m_Layer: 0
   m_Name: TextDocument
   m_TagString: Untagged
@@ -6069,6 +6145,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1253078296}
   m_CullTransparentMesh: 1
+--- !u!114 &1253078300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253078296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: tuto_road_document
+  _formatArgs: []
 --- !u!1 &1297989846
 GameObject:
   m_ObjectHideFlags: 0
@@ -9183,6 +9273,7 @@ GameObject:
   - component: {fileID: 2103884965}
   - component: {fileID: 2103884967}
   - component: {fileID: 2103884966}
+  - component: {fileID: 2103884968}
   m_Layer: 5
   m_Name: TextPubRevive
   m_TagString: Untagged
@@ -9310,6 +9401,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2103884964}
   m_CullTransparentMesh: 1
+--- !u!114 &2103884968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103884964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0df208bde523046b1915b2e2a8b58a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drakensland.Localization.LocalizedText
+  _key: tuto_road_continuer
+  _formatArgs: []
 --- !u!1 &2137763759
 GameObject:
   m_ObjectHideFlags: 0
