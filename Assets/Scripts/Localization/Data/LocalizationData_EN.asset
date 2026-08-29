@@ -36,11 +36,11 @@ MonoBehaviour:
   - key: guard_checkpoint_pass_3
     value: You're clear, move along.
   - key: guard_checkpoint_fail
-    value: "Step out of the vehicle, hands up \u2014 you're under arrest!"
+    value: Step out of the vehicle, hands up, you're under arrest!
   - key: guard_next_post
     value: At the next checkpoint, you'll need to present these documents.
   - key: guard_first_checkpoint
-    value: "You'll need these forms to pass the next checkpoint \u2014 remember them!"
+    value: You'll need these forms to pass the next checkpoint, remember them!
   - key: feedback_dodge
     value: Dodge!
   - key: feedback_despair
@@ -225,8 +225,8 @@ MonoBehaviour:
   - key: skin_15_nom
     value: L.I.F.E
   - key: skin_0_desc
-    value: "The basic car \u2014 its azure blue is the perfect camouflage to hide
-      in the sky!"
+    value: The basic car, its azure blue is the perfect camouflage to hide in the
+      sky!
   - key: skin_1_desc
     value: A bit dated, but it brings back memories of a bygone era...
   - key: skin_2_desc
@@ -243,7 +243,7 @@ MonoBehaviour:
   - key: skin_7_desc
     value: What is more beautiful than love? This car, without a doubt.
   - key: skin_8_desc
-    value: "All cars follow and adore it \u2014 at least that's what it thinks."
+    value: All cars follow and adore it, at least that's what it thinks.
   - key: skin_9_desc
     value: The official government car. Makes you wonder how it ended up here...
   - key: skin_10_desc
@@ -252,8 +252,8 @@ MonoBehaviour:
   - key: skin_11_desc
     value: A red car. Nothing special.
   - key: skin_12_desc
-    value: "Nobody knows how this thing is still running \u2014 or how it keeps passing
-      its MOT."
+    value: Nobody knows how this thing is still running, or how it keeps passing
+      its MOT.
   - key: skin_13_desc
     value: Its pattern is reminiscent of waves.
   - key: skin_14_desc
@@ -281,9 +281,14 @@ MonoBehaviour:
   - key: tuto_felicitations_bouton
     value: Back to menu
   - key: tuto_road_goal
-    value: "Drive to escape the bureaucracy! Cross the city and collect the right
-      documents.\n\nAvoid obstacles to stay on the road.\nCheckpoints require specific
-      documents \u2014 keep an eye on what you need!"
+    value: 'Drive to escape the bureaucracy! Cross the city and collect the right
+      documents.
+
+
+      Avoid obstacles to stay on the road.
+
+      Checkpoints
+      require specific documents, keep an eye on what you need!'
   - key: tuto_road_swipe
     value: Swipe left or right to change lanes!
   - key: tuto_road_pieces
@@ -342,3 +347,6 @@ MonoBehaviour:
     value: Confirm
   - key: purchase_reward
     value: 'Bravo! \n You have obtained: '
+  - key: tuto_confirm
+    value: 'You are about to start the game''s tutorial. Are you sure you want to
+      play the tutorial? '

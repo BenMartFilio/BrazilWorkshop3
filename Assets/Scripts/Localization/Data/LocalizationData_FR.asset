@@ -336,3 +336,6 @@ MonoBehaviour:
     value: Valider
   - key: purchase_reward
     value: 'Bravo ! \n Vous avez obtenu :'
+  - key: tuto_confirm
+    value: "Vous vous appr\xEAtez \xE0 entrer dans le tutoriel du jeu. \xCAtes vous
+      s\xFBr de vouloir faire le tutoriel\\u00A0?"
